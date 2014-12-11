@@ -1,0 +1,226 @@
+\NeedsTeXFormat{LaTeX2e}
+%\ProvidesPackage{deistesi}[2002/10/10  Redefines maketitle for D.E.I.S. University of Bologna Thesis and changes oddsidemargin and evensidemargins for easier thesis binding; modified by Franco Callegati from original by Gianluca Gorni]
+%\ProvidesPackage{deistesi}[2002/10/10  Redefines maketitle for D.E.I.S. University of Bologna Thesis and changes title size; %modified by Cesare Monti from modified by Franco Callegati see line commented above]
+\RequirePackage{ifthen}
+\RequirePackage{graphicx}
+\RequirePackage{multicol}
+\RequirePackage{bibentry}
+\RequirePackage{natbib}
+\RequirePackage{epsfig}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+%\RequirePackage{hyperref}
+\RequirePackage{lineno}
+\RequirePackage[active]{srcltx}
+\RequirePackage{subfigure}
+
+
+
+
+\newcommand{\@facolta}{?}
+\newcommand{\@dipartimento}{?}
+\newcommand{\@ciclo}{?}
+\newcommand{\@dottorato}{?}
+\newcommand{\@settoreconcorsuale}{?}
+\newcommand{\@settoredisciplinare}{?}
+\newcommand{\@titolo}{Senza Titolo}
+\newcommand{\@annoaccademico}{?}
+\newcommand{\@relatore}{?}
+\newcommand{\@relatorea}{?}
+\newcommand{\@relatoreb}{?}
+\newcommand{\@correlatorea}{?}
+\newcommand{\@correlatoreb}{?}
+\newcommand{\@correlatorec}{?}
+\newcommand{\@correlatored}{?}
+\newcommand{\@candidato}{?}
+\newcommand{\@signature}{?}
+\newcommand{\@dedica}{?}
+\newcommand{\@coordinatore}{?}
+\newcommand{\@tutor}{?}
+\newcommand{\@data}{?}
+
+\newcommand{\facolta}[1]{
+  \renewcommand{\@facolta}{Facolt\`a di #1}}
+\newcommand{\dipartimento}[1]{%
+  \renewcommand{\@dipartimento}{#1}}
+\newcommand{\dottorato}[1]{%
+  \renewcommand{\@dottorato}{#1}}
+\newcommand{\settoreconcorsuale}[1]{%
+  \renewcommand{\@settoreconcorsuale}{#1}}
+\newcommand{\settoredisciplinare}[1]{%
+  \renewcommand{\@settoredisciplinare}{#1}}
+\newcommand{\ciclo}[1]{%
+  \renewcommand{\@ciclo}{#1}}
+\newcommand{\titolo}[1]{%
+  \renewcommand{\@titolo}{\uppercase{#1}}}
+\newcommand{\annoaccademico}[1]{%
+  \renewcommand{\@annoaccademico}{#1}}
+\newcommand{\relatore}[2][Chiar.mo Prof. Ing.]{%
+  \renewcommand{\@relatore}{#1 \uppercase{#2}}}
+\newcommand{\tutor}[2][Chiar.mo Prof. Ing.]{%
+  \renewcommand{\@tutor}{#1 \uppercase{#2}}}
+\newcommand{\relatorea}[2][Ill.mo Prof. Ing.]{%
+  \renewcommand{\@relatorea}{#1 \uppercase{#2}}}
+\newcommand{\relatoreb}[2][Ill.mo Prof. Ing.]{%
+  \renewcommand{\@relatoreb}{#1 \uppercase{#2}}}
+\newcommand{\correlatorea}[2][Chiar.mo Prof. Ing.]{%
+  \renewcommand{\@correlatorea}{#1  \uppercase{#2}}}
+\newcommand{\correlatoreb}[2][Ing.]{%
+  \renewcommand{\@correlatoreb}{#1  \uppercase{#2}}}
+\newcommand{\correlatorec}[2][Ing.]{%
+  \renewcommand{\@correlatorec}{#1  \uppercase{#2}}}
+\newcommand{\correlatored}[2][Ing.]{%
+  \renewcommand{\@correlatored}{#1  \uppercase{#2}}}
+\newcommand{\candidato}[2][Dott. Ing.]{%
+  \renewcommand{\@candidato}{#1 \uppercase{#2}}}
+\newcommand{\signature}[2][]{%
+  \renewcommand{\@signature}{#2}}
+\newcommand{\coordinatore}[2][Chiar.mo Prof. Ing.]{%
+  \renewcommand{\@coordinatore}{#1 \uppercase{#2}}}
+\newcommand{\dedica}[1]{%
+  \renewcommand{\@dedica}{#1}}
+\newcommand{\data}[1]{%
+  \renewcommand{\@data}{#1}}
+
+
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}%
+  \cleardoublepage}}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %                                   %
+    %  Formattazione dell'intestazione  %
+    %  della tesi                       %
+    %                                   %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand\maketitle{\begin{titlepage}
+  {
+  \fontfamily{ptm} \selectfont
+  \begin{center}
+ \begin{large}
+    \uppercase{Alma Mater Studiorum --- Universit\`a di Bologna}
+   \end{large}\\
+  \rule{9cm}{.4pt}\\
+  \smallskip
+  \vspace{.1cm}
+  \begin{large}
+ % \uppercase{\@facolta} \\
+   \@dipartimento\\
+    \@dottorato\\
+     \vspace{0.5cm}
+     Cycle \@ciclo \\
+     Competitive Sector: \@settoreconcorsuale \\
+     Disciplinary Sector: \@settoredisciplinare \\
+       \vspace{1.8cm}
+  \smallskip
+  {\setlength{\baselineskip}{1.5\baselineskip}
+    \begin{Large}
+      \@titolo
+    \end{Large}\\
+  }
+    %\medskip
+     \vspace{1ex}
+      \vspace{1cm}
+    \centering{\emph{Candidate}\\ \vspace{.3cm} \@candidato    \vspace{1.8cm}}\\
+    \centering{\emph{Supervisor}\\ \vspace{.3cm} \@relatore    \vspace{0.5cm}}\\
+    \centering{\emph{Tutor}\\ \vspace{.3cm} \@tutor    \vspace{0.5cm}}\\
+    \centering{\emph{Coordinator}\\ \vspace{.3cm} \@coordinatore    \vspace{0.5cm}}
+  \vfill
+  \rule{9cm}{.4pt}\\
+  \medskip
+  \uppercase{Final Examination Year \@annoaccademico}\\
+  \end{large}
+  \end{center}
+  }
+  \clearemptydoublepage{}
+  \newpage{\pagestyle{empty}}
+    \begin{large}
+    \@dedica\\ \\ \normalsize \@signature, \@data
+  \end{large}
+  \vfill
+  \clearemptydoublepage
+
+\end{titlepage}}
+
+\newcommand{\maude}[0] {\textsc{Maude}}
+\newcommand{\klaim}[0] {\textsc{Klaim}}
+\newcommand{\pklaim}[0] {p\textsc{Klaim}}
+\newcommand{\stocklaim}[0] {\textsc{Sto$c$Klaim}}
+\newcommand{\pepa}[0] {{PEPA}}
+\newcommand{\spim}[0] {\textsf{SPiM}}
+\newcommand{\picalculus}[0] {$\pi$-Calculus}
+\newcommand{\respect}{{\sf{{R}e{S}pec{T}}}}
+\newcommand{\soda}{{\sf{{SODA}}}}
+\newcommand{\tota}{{\sf{TOTA}}}
+\newcommand{\luce}{{\sf{{L}u{C}e}}}
+\newcommand{\tucson}{{\sf{{T}u{CS}o{N}}}}
+\newcommand{\alchemist}{{\sf{Alchemist}}}
+\newcommand{\tuprolog}{{\sf{tu}Prolog}}
+\newcommand{\cartago}{{\sf CArtAgO}}
+\newcommand{\jade}{{\sf JADE}}
+\newcommand{\mars}{{\sf MARS}}
+\newcommand{\aea}{{A\&A}}
+\newcommand{\linda}[0] {\textsc{Linda}}
+\newcommand{\swarmlinda}[0]{SwarmLinda}
+\newcommand{\bluetooth}{Bluetooth\textregistered{}}
+\newcommand{\btle}{\bluetooth{} Low Energy}
+
+
+%******************************************************************************%
+% Typography
+% Typography
+\newcommand{\spbr}{\protect\linebreak[0]}
+\newcommand{\slbr}{/\protect\linebreak[0]}
+\newcommand{\dslbr}{//\protect\linebreak[0]}
+\newcommand{\ptbr}{.\protect\linebreak[0]}
+\newcommand{\atbr}{@\protect\linebreak[0]}
+\newcommand{\combr}{,\protect\linebreak[0]}
+\newcommand{\qmbr}{?\protect\linebreak[0]}
+%******************************************************************************%
+% ---- new commands ---
+% Cross-referencing
+\newcommand{\labelsec}[1]{\label{sec:#1}}
+\newcommand{\xs}[1]{\sectionname~\ref{sec:#1}}
+\newcommand{\xsp}[1]{\sectionname~\ref{sec:#1} \onpagename~\pageref{sec:#1}}
+\newcommand{\labelssec}[1]{\label{ssec:#1}}
+\newcommand{\xss}[1]{\subsectionname~\ref{ssec:#1}}
+\newcommand{\xssp}[1]{\subsectionname~\ref{ssec:#1} \onpagename~\pageref{ssec:#1}}
+\newcommand{\labelsssec}[1]{\label{sssec:#1}}
+\newcommand{\xsss}[1]{\subsectionname~\ref{sssec:#1}}
+\newcommand{\xsssp}[1]{\subsectionname~\ref{sssec:#1} \onpagename~\pageref{sssec:#1}}
+\newcommand{\labelfig}[1]{\label{fig:#1}}
+\newcommand{\xf}[1]{\figurename~\ref{fig:#1}}
+\newcommand{\xfp}[1]{\figurename~\ref{fig:#1} \onpagename~\pageref{fig:#1}}
+\newcommand{\labeltab}[1]{\label{tab:#1}}
+\newcommand{\xt}[1]{\tablename~\ref{tab:#1}}
+\newcommand{\xtp}[1]{\tablename~\ref{tab:#1} \onpagename~\pageref{tab:#1}}
+% Category Names
+%\newcommand{\tablename}{Table}
+%\newcommand{\figurename}{Table}
+\newcommand{\sectionname}{Section}
+\newcommand{\subsectionname}{Subsection}
+\newcommand{\sectionsname}{Sections}
+\newcommand{\subsectionsname}{Subsections}
+\newcommand{\secname}{\sectionname}
+\newcommand{\ssecname}{\subsectionname}
+\newcommand{\secsname}{\sectionsname}
+\newcommand{\ssecsname}{\subsectionsname}
+\newcommand{\onpagename}{on page}
+%\newcommand{\chaptername}{Chapter}
+
+
+
+
+         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+         %  Per facilitare la rilegatura della tesi %
+         %  si cambiano qui i valori dei margini    %
+         %  della pagina                            %
+         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifthenelse{\boolean{@twoside}}%
+  {\setlength{\oddsidemargin}{0.1cm}%
+   \setlength{\evensidemargin}{0.1cm}}%
+  {\setlength{\oddsidemargin}{0.1cm}%
+   \setlength{\evensidemargin}{0.1cm}}
+
+\endinput
