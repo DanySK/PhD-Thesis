@@ -14,7 +14,7 @@
 \usepackage{graphics}
 \usepackage[normalem]{ulem}
 \usepackage[utf8]{inputenc}
-\usepackage[italian,finnish,british]{babel}
+\usepackage[italian,british]{babel}
 \usepackage{float}
 \usepackage{graphicx,algorithm,algorithmic}
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
@@ -36,6 +36,7 @@
 \usepackage{times}
 \usepackage{subfigure}
 \usepackage{stmaryrd,mathtools}
+\usepackage{eurosym}
 \usepackage{cleveref}
 
 
@@ -161,7 +162,7 @@ Finally, I draw conclusions and future works.
 \pagestyle{fancy}
 \fancyhead[LE,RO]{\bfseries\thepage}
 
-\part{Background}
+\part{Background and Motivation}
 \label{background}
 \chapter{Pervasive devices}
 \label{pervasive-devices}
@@ -278,6 +279,7 @@ They largely differ in terms of range, protocols, and availability.
 In this section, I try to resume the most diffused technologies available on today's devices, but the reader is warned: keep in mind that such technologies are evolving very quickly, and the scenario is incredibly fluid.
 
 \subsection{International Mobile Telecommunications}
+\label{International Mobile Telecommunications}
 
 This first mean of communication is designed to allow mobile devices to access the Internet from anywhere in the world, relying on the existing mobile phone infrastructure.
 %
@@ -326,17 +328,209 @@ In particular, a so-called ``spectrum crunch'' is expected due to the expected t
 
 WiFi technology is the most diffused technology for wireless local networking.
 %
-It is widely diffused, integrated in all smartphones and tablets and also in other devices, such as printers and TVs.
+It is widely diffused, integrated in all smartphones and tablets and also in other devices, such as printers, gaming consoles and TVs.
+%
+WiFi devices communicate on a distance that ranges from 20 to 100 meters, depending on the condition of the wireless medium and on the power of the communication devices.
+%
+The communication speed between two linked devices ranges from 56Mb/s to 300Mb/s.
 
-\subsection{Bluetooth}
+WiFi was designed to provide wireless access to a local area network.
+%
+In the most classic ``infrastructure mode'', wireless devices get connected to a so called access point, which is responsible to route packets among wireless devices and bridge the wireless local area network to the wired backbone.
+%
+Multiple access point that share the network name (SSID) may be connected using wired network technologies, and they will appear as a single, bigger access point.
+%
+It is also possible to drop the wired backbone, but specific access points are required.
+
+Also, some WiFi devices provided ``ad-hoc mode'', allowing multiple devices to directly communicate without an intermediate access point.
+%
+This working mode was problematic, mainly due to the fact a standard communication protocol for peer-to-peer WiFi communication was missing.
+%
+This lack was filled with WiFi Direct, which provides a protocol by which one of the devices that want to communicate directly becomes the access point, allowing for direct communication.
+%
+The most common usage of such a feature are direct file sharing between devices and connection to peripheral devices such as printers or scanners.
+
+\subsection{Bluetooth and Bluetooth LE}
+
+Bluetooth is a technology designed for building energy efficient personal area networks (PANs).
+%
+Bluetooth devices are assigned a class which identifies the maximum permitted power and, consequently, the maximum operating range.
+%
+For the most powerful (and power hungry) devices the communication range can go up to 100m.
+%
+The communication speed ranges from 1Mb/s of the earliest 1.0 version to the 24 Mb/s of version 3.0 and later.
+
+The most interesting features of Bluetooth are not the bandwidth nor the range (WiFi performs better on both), but rather the simple association process and the low power consumption.
+%
+Thanks to those features Bluetooth found widespread diffusion as a mean to connect low consumption peripherals, such as headsets.
+%
+Also, it is diffused in cars, and allows user to use the car's audio system as a speakerphone for making calls or listen to music.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.99\textwidth]{img/ibeacon}
+	\caption{
+		A iBeacon, compared to a \EUR{2} coin.
+	}
+	\label{img:ibeacon}
+\end{figure}
+
+A technology which is often associated with Bluetooth but that is actually a separated and not compatible protocol is Bluetooth LE.
+%
+The reason why such technologies get associated is that, since the radio frequency used is the same (2.4GHz), dual mode devices can share a single radio antenna.
+%
+LE stands for Low Energy, and it is the main difference between the two protocols: at the expense of some bandwidth, Bluetooth LE consistently reduce the amount of energy required.
+%
+Bluetooth LE applications are particularly interesting, and range from health care to fitness to alerts to proximity sensing.
+
+Proximity can be estimated using the received signal strength indicator (RSSI), and the very low power consumption of Bluetooth LE allowed for the realisation of electronic leashing systems, namely systems where an electronic device is paired to an object and can be used in order to compute the relative position.
+%
+The applications are, for instance, finding of misplaced, out-of-sight devices (when the electronic device is paired with a movable object) and indoor localisation (if the electronic device is located on a still standing object).
+%
+Relying on this technology, Apple created iBeacon, namely very small (coin sized, see \Cref{img:ibeacon}) electronic devices consisting basically of a battery and a Bluetooth LE device.
+%
+iBeacons can be attached to objects, and they send a universally unique identifier (UUID) to enabled smartphones in range.
+%
+If the smartphone can associate the UUID with a position, it can deduce its location relative to the iBeacon.
+%
+The low energy feature plays a fundamental role in this kind of applications: beacons whose battery would last few hours would be of little practical use.
+%
+With current technologies, a beacon device can be powered by a standard, rather cheap battery for several months, up to a couple of years.
+%
+This technology is probably the prelude to precise indoor localisation. 
+
 \subsection{NFC}
 
-\section{Towards a P2P world?}
-Despite the ongoing research on 5g, we want higher density. Privacy as issue, locality.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.99\textwidth]{img/nfc-tag}
+	\caption{
+		Two NFC tags, mounted on stickers.
+		%
+		In order to understand the size, they are placed above a Samsung Galaxy S3, a 4-inches smartphone.
+		%
+		Moreover, smaller versions of such tags exists, the models pictured here are very common-sized.
+	}
+	\label{img:nfc-tag}
+\end{figure}
 
-IPv6, locality, density
+Near Field Communication, or NFC, is a technology designed for low energy communication between two devices in proximity (typically few centimetres).
+%
+It is designed for low energy consumption rather than high bandwidth: its speed (depending on the specification) ranges from 126kb/s to 242kb/s.
+
+One of the most interesting features of NFC is that one of the two devices (the so-called ``tag'') can be completely passive, and still carry a small amount of information within (currently between 96 and 4096 bytes).
+%
+No battery or energy source is required, the information included can be read by active NFC devices in proximity.
+%
+Having no need of battery at all, NFC tags can really be tiny, even smaller than iBeacons.
+%
+\Cref{img:nfc-tag} shows two NFC tags: compared with iBeacons, they can be much lighter and thinner.
+%
+Brought to the world of humans, it is something like creating a sticker with very small sized text: those who have a powerful enough magnifying glass and are close enough to use it properly can read what it says.
+
+The range of applications of such technology is rather broad.
+%
+The one which was probably most sponsored is contact-less payment, namely the ability to pay just tapping the phone close to the check-out counter.
+%
+This is a very interesting possibility, and indeed in 2007 there were enthusiastic forecasts \cite{nfc2007} about its quick diffusion, that did not happen as quick as expected.
+%
+A number of studies tried to understand the reasons behind this slow adoption, and it appears that reasons are more correlated to marketing and management rather than technological maturity \cite{nfc-diffusion-reasons, nfc-diffusion-europe, nfc-diffusion-asia}.
+%
+Similarly, if the phone stores identity or access tokens, NFC is a very suitable technology for effectively using such tokens: in this case, its very low range is a nice feature.
+%
+NFC can also be used as a technology enabler, namely as a mean to securely bootstrap another connection, or join a local network of devices.
+%
+An example of such use is the Android Beam technology, that relies on NFC in order to establish a Bluetooth connection between two Android devices, transfer a file, then close the Bluetooth connection.
+%
+Technically, NFC could be used to directly transfer files, but both WiFi and Bluetooth offer much wider bandwidths and range, and as a consequence are preferred for such task.
+%
+Another interesting application field is mobile device automation: it is achieved by attaching
+%
+Generally speaking, NFC comes in handy when there is need of a communication mean whose range should be very limited.
+
+
+\section{Towards a P2P world?}
+
+We are living exciting times.
+%
+In about five years from the introduction of the technology on the market, almost everybody got a personal smart device always with her.
+%
+Miniaturisation and power efficiency is constantly growing at a stunning rate, allowing data, communication systems and computation to be spread around in our physical world.
+
+In few decades, we will probably witness the diffusion on computation on everyday object.
+%
+In such a scenario, the device density will be much higher if compared to the current.
+%
+One of the possible strategies is to connect every single device to the Internet, aggregate its information in a remote server, do the necessary computation, then send back eventual results where they are needed.
+%
+This is the strategy behind cloud computing, which is achieving great success.
+%
+In particular, I argue, this strategy is interesting when the information could or should be aggregated with information from other, distant sources, or conserved for historical purposes.
+%
+This path, however, gets harder and harder to follow when device density increase: besides the obvious increasing on the total information produced, and consequently of the information to transmit and process, there are two other problems: the saturation of the wireless medium, and the locality of information.
+
+Who tried to use its own smartphone in a very crowded environment has probably experienced connection or network issues.
+%
+The problem, as discussed in \Cref{International Mobile Telecommunications}, is that current technology must share a common medium among all the devices in the same area.
+%
+Increasing the maximum number of devices per area is one of the goals of the next generation of international mobile telecommunication technologies.
+%
+One of the proposed approaches is to switch to a very dense array of very small cells by deploying multiple antennas at a very short distance one another, e.g. inside the public illumination poles.
+%
+Devices nearby the local antenna would connect to it, and the antenna would then connect them to the rest of the network transparently, in a way somehow similar to the current WiFi ``infrastructure mode''.
+%
+Clearly, diffusing such antennas can possibly represent a major infrastructural upgrade, and, potentially, cost.
+
+Another observation is that not every device needs direct access to the Internet to be able to accomplish its task, and this is increasingly true with increased density.
+%
+Thinking about today's devices, let's consider the current smartwatches and fitbands: the former relies on a smartphone or tablet in order to provide Internet-based services, and the latter uses no Internet connection at all, but just sends data to the smartphone to be processed.
+%
+Along the line of favouring locality, there is a second advantage which relates to privacy issues: there is no reason to send personal information away, if the system does not need data from distant points nor requires more computational power of the amount available locally.
+%
+Privacy issues gain great attention recently, especially after the leaks of classified information started in 2010 on Wikileaks and continued with the more recent leaks by Edward Snowden.
+%
+The content of such documents raised greater attention to privacy issues from general public.
+
+A possible path which would help in both those directions (reduce wireless medium usage and keep data as local as possible) is the usage of local, possibly peer-to-peer interactions.
+%
+This way of organising communication is already exploited by existing applications.
+
+One notable example is Firechat \footnote{\url{https://opengarden.com/firechat}}, which got particularly spotlighted during the ``Umbrella revolution'', namely the sequence of protests that took place in Hong Kong in 2014.
+%
+Similarly to what was done during Arab springs in 2011 \cite{arab-spring}, protesters relied on Internet services to organise and coordinate themselves.
+%
+The Chinese government policy on internet is not exactly a bright example of openness and neutrality \cite{china-censorship}, and services such as Facebook adn Twitter, widely exploited during Arab springs, were already effectively blocked in the land.
+%
+In short time, other social network were closed (such as Instagram), in order to cut protesters' communication means.
+%
+At that point, protesters had to find a communication system free of centralisation in order to prevent targeted Internet filters, and Firechat was the answer.
+%
+Firechat is a messaging application for mobile phones that, when the smartphone has access to the remote Firechat cloud, works as other more famous alternatives, such as WhatsApp\footnote{\url{http://www.whatsapp.com/}} and Telegram\footnote{\url{https://telegram.org/}} do.
+%
+When no access to Firechat servers is available, then the software tries to reach the destination by spreading the message hop-by-hop, building a de-facto mesh network.
+
+Another interesting experiment is Serval Mesh \cite{serval-mesh}.
+%
+Serval Mesh accomplishes similar tasks, but it also supports calls and file transfers besides messaging.
+%
+Its main goal is to provide a networking among users who are in an area where there is no Internet access at all, for instance because of a disaster event.
+%
+It relies on WiFi to create a ad-hoc peer-to-peer network among devices.
+%
+Due to this lower level aspect, Serval Mesh requires privileged access to the hardware and some higher skill than Firechat, which is easier to setup but requires the availability of a Internet connection.
+%
+In \cite{mesh-network-telephony}, Serval Mesh is used to build an alternative, purely peer-to-peer telephony network.
+
+Despite the existence of such mesh-oriented applications, however, a general approach for easily design and program such systems is still missing.
+%
+A consistent part of this work is devoted towards the research of general, well engineered approaches to build such systems.
 
 \chapter{Coordination infrastructures}
+
+In \Cref{pervasive-devices} we took a look to the world of pervasive devices, also describing their communication means and hypothesising the near future development.
+%
+In this chapter, we focus on the software, and in particular on the challenges of engineering the development of software that will run on 
+
 \label{coordination-infrastructures}
 \section{The issue of coordination}
 why do we want a middleware
@@ -369,7 +563,7 @@ biological simulators (ask Sara)
 
 Specific per-use simulators, gener
 
-\part{Motivation}
+% \part{Motivation}
 \chapter{Shortcomings of coordination infrastructures}
 \section{Engineering emergence}
 \section{Local to global}
