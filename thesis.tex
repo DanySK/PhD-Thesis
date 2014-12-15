@@ -8,61 +8,7 @@
                %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                %    Scelta dei package da usare     %
                %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\usepackage[dvips]{graphicx}
-\usepackage{graphics}
-\usepackage[normalem]{ulem}
-\usepackage[utf8]{inputenc}
-\usepackage[italian,british]{babel}
-\usepackage{float}
-\usepackage{graphicx,algorithm,algorithmic}
-\usepackage{amsmath,amsfonts,amssymb,amsthm}
-\usepackage{epsfig}
-\usepackage{deistesi}
-\usepackage{fancyhdr}
-\usepackage{xspace}
-\usepackage[colorlinks=false]{hyperref}
-\usepackage[avantgarde]{quotchap}
-\renewcommand\chapterheadstartvskip{\vspace*{-5\baselineskip}}
-\renewcommand\sectfont{\sffamily\bfseries}
-\usepackage{mathptmx}       % selects Times Roman as basic font
-\usepackage{helvet}         % selects Helvetica as sans-serif font
-\usepackage{courier}        % selects Courier as typewriter font
-\usepackage{type1cm}        % activate if the above 3 fonts are
-\usepackage{makeidx}         % allows index generation
-\usepackage{multicol}        % used for the two-column index
-\usepackage[bottom]{footmisc}% places footnotes at page bottom
-\usepackage{times}
-\usepackage{subfigure}
-\usepackage{stmaryrd,mathtools}
-\usepackage[noend]{distribalgo}
-\usepackage{eurosym}
-\usepackage{cleveref}
-
-
-\newcommand{\bnfs}[0]{\;|\;}
-\newcommand{\opar}[0]{\;|\;}
-\newcommand{\sq}[0]{\oplus}
-\newcommand{\tuple}[2]{#1\langle #2\rangle}
-\newcommand{\tupled}[2]{#1[#2]^{\Rightarrow}}
-\newcommand{\actrate}[2]{#1^{#2}}
-\newcommand{\leave}{{}}
-\newcommand{\near}[3]{#1\!\stackrel{#3}{\rightsquigarrow}\!#2 }
-\newcommand{\scope}[2]{\llbracket #1 \rrbracket_{#2}}
-\newcommand{\law}[1]{[#1]}
-\newcommand{\firing}[3]{#1^\rightsquigarrow(#2,#3)}
-\newcommand{\shfiring}[1]{#1^\rightsquigarrow}
-
-\newcommand{\defn}[2]{\mathit{def} #1 := #2}
-\newcommand{\defnarr}[2]{\mathit{def} #1 & := & #2}
-\newcommand{\call}[1]{call\, #1}
-\newcommand{\tap}[1]{#1}
-\newcommand{\localc}{\texttt{local}}
-\newcommand{\neighborhood}{\texttt{neighborhood}}
-\newcommand{\globalc}{\texttt{global}}
-\newcommand{\lsa}[1]{\langle #1\rangle}
-\newcommand{\rem}[1]{+#1}
+\usepackage{macros}
 
 
                %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -171,7 +117,7 @@ Finally, I draw conclusions and future works.
 
 \part{Background and Motivation}
 \label{background}
-\chapter{Pervasive devices}
+\chapter{Pervasive computing}
 \label{pervasive-devices}
 
 It is no mystery that, with the huge progresses of miniaturisation, computational-capable devices are populating the world.
@@ -456,7 +402,7 @@ Another interesting application field is mobile device automation: it is achieve
 Generally speaking, NFC comes in handy when there is need of a communication mean whose range should be very limited.
 
 
-\section{Towards a P2P world?}
+\section{Towards a P2P pervasive continuum?}
 
 We are living exciting times.
 %
@@ -466,15 +412,17 @@ Miniaturisation and power efficiency is constantly growing at a stunning rate, a
 
 In few decades, we will probably witness the diffusion on computation on everyday object.
 %
-In such a scenario, the device density will be much higher if compared to the current.
+In such a scenario, the device density will be much higher if compared to the current, up to the point that the aggregation of devices participating the system could be seen as a ``pervasive continuum'' \cite{sapere-procedia7}.
 %
+This continuum is studied under a number of names, including pervasive computing, smart cities, and the Internet of Things.
+
 One of the possible strategies is to connect every single device to the Internet, aggregate its information in a remote server, do the necessary computation, then send back eventual results where they are needed.
 %
 This is the strategy behind cloud computing, which is achieving great success.
 %
-In particular, I argue, this strategy is interesting when the information could or should be aggregated with information from other, distant sources, or conserved for historical purposes.
+In particular, we argue, this strategy is interesting when the information could or should be aggregated with information from other, distant sources, or conserved for historical purposes.
 %
-This path, however, gets harder and harder to follow when device density increase: besides the obvious increasing on the total information produced, and consequently of the information to transmit and process, there are two other problems: the saturation of the wireless medium, and the locality of information.
+This path, however, gets harder and harder to follow with device density: besides the obvious increasing on the total information produced, and consequently of the information to transmit and process, there are two other problems: the saturation of the wireless medium, and the locality of information.
 
 Who tried to use its own smartphone in a very crowded environment has probably experienced connection or network issues.
 %
@@ -528,18 +476,18 @@ Due to this lower level aspect, Serval Mesh requires privileged access to the ha
 %
 In \cite{mesh-network-telephony}, Serval Mesh is used to build an alternative, purely peer-to-peer telephony network.
 
-Despite the existence of such mesh-oriented applications, however, a general approach for easily design and program such systems is still missing.
+Despite the existence of such mesh-oriented applications, however, a general and widespread approach for easily design and program the devices that compose our pervasive continuum is still under investigation.
 %
-A consistent part of this work is devoted towards the research of general, well engineered approaches to build such systems.
+The most consistent contribution of this thesis is devoted to the research of general, well engineered approaches to build such systems.
 
-\chapter{Infrastructures for pervasive computing}
+\chapter{Self-organisation}
 \label{coordination-infrastructures}
 
 In \Cref{pervasive-devices} we took a look to the world of pervasive devices, also describing their communication means and hypothesising the near future development.
 %
 In this chapter, we focus on the software, and in particular on the challenges of engineering the development of software that will run on an ensemble of pervasive devices.
 %
-We first discuss the issue of coordination: how do we make all those possibly devices collaborate together in order to achieve a global goal, without a centralised decision-maker?
+We first discuss the issue of coordination and self-organisation: how do we make all those possibly devices collaborate together in order to achieve a global goal, without a centralised decision-maker?
 %
 Which software platform may we devise to ease this operation?
 %
@@ -551,22 +499,29 @@ Finally, we will discuss the shortcomings of the existing technology, and pave t
 
 \section{Software ecosystems}
 
-When we name pervasive systems, we inherently talk about a multitude of interacting software systems.
-%
+Regardless the name that we want to use, being it ``Internet of Things'' rather than ``Smart cities'' or ``Pervasive computing'', in all cases we are talking about a system that is expected to host many computations that are \emph{(i)} context-dependent (many interactions will be opportunistic and involve devices in physical proximity, so that computations involve local data and situation); and \emph{(ii)} self-adaptive and self-organizing (due to scale, they must spontaneously recover from faults and deal with unexpected contingencies).
 
+At the same time, ``traditional'' networks are also increasing in scale and importance for enterprises both large and small.
+%
+In an increasingly information-dependent and interconnected world, the rising cost of managing and maintaining such systems is driving a search for solutions that can increase the autonomy of computing systems, enabling them to act more as collective services than individual machines~\cite{eze2012autonomic, hu2011cloudreview}.
+
+In both of these cases, and a number of other areas facing similar challenges (e.g., large-scale sensor networks, multi-UAV control), there is a growing recognition that new engineering paradigms are needed, which will allow such systems to self-organise in order to act more as a collective service than as individual machines.
 
 
 why do we want a middleware
 \section{Nature inspiration}
 see what exists, mimic
-\section{Coordination platforms and languages}
+
+\section{Tuple-based coordination}
 what is there already
+
 \subsection{Linda}
 and swarmlinda
 \subsection{Lime}
 \cite{murphy2006lime}
 \subsection{TOTA}
 \cite{mamei2009acm}
+\cite{tota2}
 \subsection{Plastic}
 \cite{plastic}
 \subsection{MARS}
@@ -577,12 +532,116 @@ and swarmlinda
 and the semantic extension
 \subsection{Biochemical tuple spaces}
 and MoK?
-\subsection{CArtAgO}
+\subsection{\cartago{}}
 \cite{RPV-JAAMAS2011}
 \subsection{SAPERE}
 general idea of sapere, grounds on previous works.
-\subsection{Proto and Field Calculus}
+
+\section{Aggregate programming}
+
+\begin{figure}
+\centering
+\subfigure[Continuous Space]{\includegraphics[width=0.45\columnwidth]{img/space-continuous}\label{img:medium}}
+\hspace{0.01\columnwidth}
+\subfigure[Discrete Network]{\includegraphics[width=0.45\columnwidth]{img/space-discrete}\label{img:mediumnet}}
+\caption{Computational field models originate from approximation of continuous
+space (a) with discrete networks of devices (b).}
+\label{img:space}
+\end{figure}
+
+Aggregate programming is founded on the observation that in many cases the users of a system are much less concerned with individual devices than with the services provided by the collection of devices as a whole.
+%
+Typical device-centric programming languages, however, force a programmer to focus on individual devices and their interactions.
+%
+As a consequence, several different aspects of a distributed system typically end up entangled together: effectiveness and reliability of communications, coordination in face of changes and failures, and composition of behaviours across different devices and regions.
+%
+This makes it very difficult to effectively design, debug, maintain, and compose complex distributed applications.
+
+Aggregate programming generally attempts to address this problem by providing composable abstractions separating these aspects:
+\begin{enumerate}
+ \item device-to-device communication is typically made entirely implicit, with higher-level abstractions for controlling efficiency/robustness trade-offs;
+ \item distributed coordination methods are encapsulated as aggregate-level operations (e.g., measuring distance from a region, spreading a value by gossip, sampling a collection of sensors at a certain resolution in space and time); and
+ \item the overall system is specified by composing aggregate-level operations, and this specification is then transformed into a complete distributed implementation by a suitable mapping.
+\end{enumerate}
+
+In short, the key idea behind aggregate programming is to provide languages and APIs that allow a distributed collection of devices to be programmed in terms of their collective behaviours, keeping outside the sight of the software designer details on how such coordination is actually implemented.
+
+A large number of very diverse aggregate programming approaches have been proposed, including abstract graph processing (e.g.,~\cite{kairos}), declarative logic (e.g.,~\cite{Meld}), map-reduce (e.g.,~\cite{dean2008mapreduce}), streaming databases (e.g.,~\cite{tinydb}), and knowledge-based ensembles (e.g.,~\cite{SCEL})---for a detailed review, see~\cite{SpatialIGI2013}.
+
+Despite the fact that all of them are based on viewing the collection of devices as an approximation of continuous space (as depicted in \Cref{img:space}), most aggregate programming approaches, however, have been too specialized for particular assumptions or applications to be able to address the complex challenges of these emerging environments.
+
+
+\subsection{Proto}
+\label{proto}
+
+Proto is based on the notion of a {\em computational field}---a map from devices comprising the system to (possibly structured) values, which is treated as unifying first-class abstraction to model system evolution and environment dynamics.
+
+The programming constructs are combined together to form programs, whose semantics is defined in terms of a sequence of synchronous rounds of evaluation by a discrete network of devices called ``computational rounds''.
+%
+In practice, however, there is no requirement for synchrony, and each device can evaluate its own computational rounds independently.
+
+Despite its qualities, Proto still lacks many features expected in a modern programming language and has an implementation encumbered by a number of obsolete considerations that make it difficult to maintain and extend.
+
+
+\cite{proto}
+
+\subsection{Field Calculus}
+\label{field-calculus}
+
+Field Calculus is an attempt to find a unifying model for programming \emph{computational fields} as a generalization of a wide range of existing approaches (Proto in particular, but also \cite{mamei2009acm,regiment,VCMZ-TAAS2011,tota2,nagpalphd,yamins,regiment}).
+%
+Formalized as the computational field calculus~\cite{VDB-FOCLASA-CIC2013}, this universal language appears to provide a theoretical foundation on which effective general aggregate programming platforms can be built.
+
+Critically, although originally derived from continuous-space concepts, the calculus does not depend on them and is applicable to any network.
+%
+Field calculus is expressive enough to be a universal computing model~\cite{BVD-SCW14} but terse enough to enable a provable mapping from aggregate specifications to equivalent local implementations.
+
+Field calculus~\cite{VDB-FOCLASA-CIC2013} hence provides a key theoretical and methodological foundation for aggregate programming.
+%
+Its aim is to provide a universal model that is suitable for mathematical proofs of general properties about aggregate programming and the aggregate/local relationship, just as $\lambda$-calculus~\cite{LambdaCalculus} provides for functional programming, $\pi$-calculus for parallel programming~\cite{PiCalculus}, or Featherweight Java~\cite{FJ} for Java-like object-oriented programming.
+
+In the field calculus, everything is a field: computational fields are used to model every aspect of distributed computation, including input from sensors, network structure, environment interactions, distributed computations (e.g. progressive aggregation and spreading processes), and output for actuators.
+%
+In particular, field calculus is constructed using five basic constructs:
+\begin{enumerate}
+ \item function definition and evaluation;
+ \item ``built-in'' operations for stateless local computation, e.g.,
+addition, multiplication, reading a sensor;
+ \item a time-evolution construct which allows for stateful computation;
+ \item a neighbour-value construct that creates a field of values from a device's neighbours;
+ \item a restriction operator to select which computations to perform in various regions of space and time.
+\end{enumerate}
+
+As well as in Proto, in Field Calculus the semantics of programs created by combining such constructs is defined in terms of a sequence of (possibly synchronous) ``computational rounds''.
+
+The minimal syntax of field calculus has allowed its semantics, including proper coherence of device interactions, to be proven correct and consistent~\cite{VDB-FOCLASA-CIC2013}.
+%
+Additionally, despite its definition in terms of discrete semantics, field calculus is also space-time universal~\cite{BVD-SCW14}, meaning that it can approximate any field computation, either discrete or continuous, with arbitrary precision given a dense enough network of devices.
+
+This, then, is the key contribution of field calculus: any coordination method with a coherent aggregate-level interpretation is guaranteed to be expressible in field calculus.
+%
+Such a method can then be abstracted into a new aggregate-level operation, which can be composed with any other aggregate operation using the rules of built-in functions over fields.
+%
+Moreover, it can have its space-time extent modulated and controlled by restriction, all while guaranteed that the relationship between global specification and local implementation will always be maintained.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.99\textwidth]{img/aggregate-tower}
+\caption{Layered approach for development of spatially-distributed systems via aggregate programming.}
+\label{img:researchprogram}
+\end{figure}
+
+Such a core calculus, like any other, is more a theoretical framework than a practical programming language.
+%
+In practice, in fact, effective aggregate programming for real-world distributed applications is likely to require a layered approach such as the one depicted in \Cref{img:researchprogram}, of which field calculus represents the first block.
+%
+Some of the prior approaches on which field calculus is based provide very similar semantics (most notably Proto), but they all suffer from some combination of design and implementation problems that render them impractical for widespread adoption.
+%
+Besides Proto, which is probably the closest to a practical programming environment and whose problems have already been described in \Cref{proto}, others, such as \cite{VPB-COORD2012}, have only minimal implementation.
+
 \subsubsection{Alignment}
+
+
 \section{Spatial patterns}
 what is a pattern
 patterns before sapere (gossip, gradient)
@@ -1121,7 +1180,7 @@ There is a set of applications which are better tackled by \alchemist{}.
 %
 In particular, \alchemist{} is suitable for all those simulation scenarios in which agents have relatively simple behaviour, and the notion of agent-based environment plays instead a fundamental role in organising and regulating the agents' activities \cite{BandiniE4MAS2006} by both enabling local interactions among the proactive entities \cite{HellebooghAAMAS2007} and enforcing coordination rules \cite{aose-mags5}, allowing the modeller to shift her focus from the local behaviour of the single agent to a more objective vision of the whole MAS \cite{SchumacherCEEMAS2007}. 
 %
-The idea of dealing with a strong notion of environment in multi-agent systems has been deeply developed in a series of work: other than its importance in the simulation context \cite{HellebooghAAMAS2007}, at the infrastructure level \cite{VHRSZ-JAAMAS2007} and at the methodological level \cite{aose-mags5}, there have been proposals of meta-models such as A\&A \cite{artifacts-jaamas17} and infrastructures such as {\sf TuCSoN} \cite{tucson-aamas99} and {\sc CArtAgO} \cite{RPV-JAAMAS2011}.
+The idea of dealing with a strong notion of environment in multi-agent systems has been deeply developed in a series of work: other than its importance in the simulation context \cite{HellebooghAAMAS2007}, at the infrastructure level \cite{VHRSZ-JAAMAS2007} and at the methodological level \cite{aose-mags5}, there have been proposals of meta-models such as A\&A \cite{artifacts-jaamas17} and infrastructures such as {\sf TuCSoN} \cite{tucson-aamas99} and \cartago{} \cite{RPV-JAAMAS2011}.
 %
 A common viewpoint of all these works is that the behaviour of those passive and reactive components structuring the environment (e.g. \emph{artifacts} in A\&A) is well defined in terms of rules expressed as declarative conditions-imply-actions fashion.
 %
@@ -1306,18 +1365,486 @@ SAPERE
 \section{HPC at the urban scale}
 
 \chapter{Aggregate programming languages}
-Protelis
+
+When we introduced Field Calculus in \Cref{field-calculus}, we said that it is more a theoretical than a practical framework.
+%
+Building on the foundation of field calculus, the subsequent step is to provide a framework that can be practically leveraged to express a collection of higher-level ``building block'' algorithms, each a simple and generalized basis element of an ``algebra'' of programs with desirable resilience properties (e.g., the operators presented in~\cite{BV-FOCAS2014}).
+%
+On top of this, higher-level library APIs can be built, enabling simple and transparent construction of robust distributed systems.
+
+Any practical implementation of field calculus must embed a field calculus interpreter within an architecture that handles the pragmatics of communication, execution, and interfacing with hardware, operating system, and other software.
+%
+At the same time, it is important that this system be readily portable across both simulation environments and real networked devices.
+%
+Finally, both system development and maintainability are greatly enhanced if the exact same code is used for execution in all contexts.
+
+Here is where \protelis{} comes into play: it represents our effort to bring Field Calculus to practice, satisfying the requirements stated above.
+
+%TODO: dire che ha anche una parte più teorica, relativa a codice mobile e HOF in field calculus%
+
 \section{Higher order functions in field calculus}
 \subsection{Impact on alignment}
-\section{Java integration}
-\section{Alchemist as a simulation platform}
-\section{Alchemist as a core engine for real devices}
+
+\section{\protelis{}: practical aggregate programming}
+\label{protelis-language}
+We have designed the \protelis{} language as an implementation of the field calculus \cite{VDB-FOCLASA-CIC2013} closely related to Proto~\cite{proto}.
+%
+On the one hand, it incorporates the main spatial computing features of the field calculus, hence enjoying its universality, consistency, and self-stabilization properties \cite{BVD-SCW14,VD-COORD2014-LNCS2014}.
+%
+On the other hand, it turns the field calculus into a modern specification language, improving over Proto by providing
+\begin{itemize}
+ \item access to a richer API through Java integration;
+ \item support for code mobility through first-order functions;
+ \item a novel syntax inspired by the more widely adopted C-family languages.
+\end{itemize}
+
+Protelis is freely available and open source, and can be downloaded as part of the \alchemist{} distribution.
+
+\subsection{Syntax}
+
+We present the \protelis{} language in terms of its abstract syntax, provided in \Cref{img:protelis-syntax} as a means to guide the discussion of the language's features.
+%
+This syntax uses similar conventions to well-known core languages like Featherweight Java \cite{FJ}.
+%
+We let meta-variable $\fname$ range over names of user-defined functions, $\var$ over names of variables and function arguments, $\lit$ over literal values (Booleans, numbers, strings), $\oname$ over names of built-in functions and operators (including the ``hood'' functions described in \Cref{protelis-special-operators}), $\mname$ over Java method names, and $\aname$ over aliases of static Java methods.
+%
+All such meta-variables are used as non-terminal symbols in \Cref{img:protelis-syntax}.
+%
+Overbar notation $\overline{y}$ generally means a comma-separated list $y_1,\ldots,y_n$ of elements of kind $y$, with the two exceptions that in $\overline{\FCFUNCTION}$ we use no comma separator, and in $\overline{\s}\texttt{;}$ semi-colon is used as separator instead.
+
+\begin{figure}
+\centering
+\framebox[0.7\textwidth]{$
+\begin{array}{l@{\hspace{0.1cm}}c@{\hspace{0.1cm}}l}
+     \PROGRAM & \BNFcce & \overline{\tt{I}} \; \overline{\FCFUNCTION} \;
+     \overline{\s}; \comment{Program}     \\
+     \tt{I} & \BNFcce & \km{\tt{import}} \; \mname \; \BNFmid \;
+     \km{\tt{import}} \; \mname \dotK \tt{*} \; % \BNFmid \;
+%      \km{\tt{import}} \; \mname \; \km{as} \; \aname \;
+     \comment{Java import}\\
+       \FCFUNCTION & \BNFcce & \km{\defK} \; \fn{\fname} (\vb{\overline{\var}}) \;\bodyK{\overline{\s};}
+     \comment{Function definition}\\
+         \s & \BNFcce & \e \; \BNFmid \; 
+         \km{\letK} \vb{\var} \km{\asgK} \e \; \BNFmid \;
+         \vb{\var} \km{\asgK} \e 
+         \comment{Statement}\\
+\we & \BNFcce &  \vb{\var}
+    \; \BNFmid \; \lit 
+    \; \BNFmid \; \tupK{\overline{\we}} 
+    \; \BNFmid \; \fname
+    \; \BNFmid \; \lambdaK{\overline{\vb{\var}}}{\bodyK{\overline{\s};}}    \comment{Variable/Value} \\
+\e & \BNFcce &  \we  \comment{Expression} \\ 
+    & \BNFmid & \!\! \oname(\overline{\e})
+    \; \BNFmid \; \fn{\fname}(\overline{\e})
+    \; \BNFmid \; \e\dotK\km{\applyK}(\overline{\e})\qquad\qquad
+    \comment{Fun/Op Calls} \\
+    & \BNFmid &  \e\dotK\mname(\overline{\e})
+    \; \BNFmid \; \aname(\overline{\e})\qquad\qquad
+    \comment{Method Calls} \\ 
+   & \BNFmid & \!\! \repK{\vb{\var}}{\we}{\bodyK{\overline{\s};}}
+      \comment{Persistent state}  \\
+    & \BNFmid & \!\! \ifK{\e}{\bodyK{\overline{\s};}}{\bodyK{\overline{\s}';}}
+      \comment{Exclusive branch}  \\
+    & \BNFmid & \!\! \muxK{\e}{\bodyK{\overline{\s};}}{\bodyK{\overline{\s}';}}
+      \comment{Inclusive branch}  \\
+    & \BNFmid & \!\! \nbrK{\bodyK{\overline{\s};}}
+      \comment{Neighborhood values}  \\
+ \end{array}
+ $}
+\caption{\protelis{} abstract syntax, colored to emphasize definition and application (red), functions (blue), variables (green), and special field calculus operators (purple).}
+\label{img:protelis-syntax}
+\end{figure}
+
+
+\subsection{Ordinary Language Features}
+
+One of the distinctive elements of \protelis{} when compared to other aggregate programming languages (particularly Proto), is the adoption of a familiar C- or Java-like syntax, which can significantly reduce barriers to adoption.
+%
+Despite this syntactic similarity, \protelis{} is a purely functional language: a program is made of a sequence of function definitions ($\FCFUNCTION_1\ldots\FCFUNCTION_n$), modularly specifying reusable parts of system behavior, followed by a main block of statements.
+%
+Following the style of C-family languages, a function's body is a sequence of statements surrounded by curly brackets.  As in the Scala programming language\footnote{http://www.scala-lang.org.}, however, statements can also be just expressions, and a statement sequence evaluates to the result of the last statement.
+%
+Each statement is an expression to be evaluated (\e), possibly in the context of the creation of a new variable ($\km{\letK} \vb{\var} \km{\asgK} \e$) or a re-assignment ($\vb{\var} \km{\asgK} \e$)\footnote{Technically, ``re-assignment'' is actually the creation of a new variable that shadows the old.}.
+%
+As an example, consider the following function taking four fields as parameters, after the ``channel'' pattern from~\cite{butera}:
+\begin{center}
+\begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}]
+\km{def} \fn{channel}(\vb{distA}, \vb{distB}, \vb{distAB}, \vb{width}) \{
+   \km{\letK} \vb{d} \km{\asgK} \vb{distA} + \vb{distB};
+   \vb{d} \km{\asgK} \vb{d} - \vb{distAB};
+   \vb{d} < \vb{width}
+\}
+\end{Verbatim}
+\end{center}
+This function assumes that its input \texttt{\vb{distA}} maps each device to its distance to a region $A$, \texttt{\vb{distB}} maps each device to its distance to a region $B$, \texttt{\vb{distAB}} is a constant field holding at each device the minimum distance between regions $A$ and $B$, and \texttt{\vb{width}} is a constant field holding at each device the same positive number.
+%
+The function then computes a Boolean field, mapping each device to \texttt{true} only if it belongs to a ``channel'' area around the shortest path connecting regions $A$ and $B$ and approximately \texttt{\vb{width}} units wide.
+%
+All devices elsewhere map to \texttt{false}.
+
+Atomic expressions $\we{}$ can be literal values ($\lit$), variables ($\var$), tuples ($\tupK{\overline{\we}}$), function names ($\fname$) or lambdas ($\lambdaK{\overline{\vb{\var}}}{\bodyK{\overline{\s};}}$).
+%
+Structured expressions include three kinds of ``calls'': \emph{(i)} $\oname(\overline{\e})$ is application to arguments $\overline{\e}$ of a built-in operation $\oname$, which could be any (infix- or prefix-style) mathematical, logical or purely algorithmic function
+%
+\footnote{For simplicity of presentation, we omit the syntax for infix operations and order of operations, which is closely patterned after Java.}
+%
+; \emph{(ii)} $\fn{\fname}(\overline{\e})$ is application of a user-defined function; and \emph{(iii)} $\e\dotK\km{\applyK}(\overline{\e})$ is application of arguments to an expression $\e$ evaluating to a lambda or function name.
+%
+The following shows examples of such calls:
+
+\begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}]
+\km{def} \fn{square}(\vb{x}) \{
+   \vb{x} * \vb{x};
+\}
+\km{let} \vb{f} \km{=} \fn{square};
+\km{let} \vb{g} \km{=} (\vb{x}) -> \{
+   \fn{square}(\vb{x}) + 1
+\};
+\vb{f}.\km{apply}(\vb{g}.\km{apply}(2))     \il{gives 25 on all devices}
+\end{Verbatim}
+
+In addition, arbitrary Java method calls can be imported and used by Protelis: \emph{(i)} $\e\dotK\mname(\overline{\e})$ is method call on object $\e$ and \emph{(ii)} $\aname(\overline{\e})$ is invocation of a static method, via an alias $\aname$ (always starting with '\#') defined by an {\tt import} clause.
+%
+The alias is created automatically as the bare method name for single imports or imports of all methods in a class with {\tt *}.
+%
+\protelis{} can thus interact with Java reflection to support dynamic invocation of arbitrary Java code, as shown in the following example:
+
+\begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}]
+\km{import} \ex{java.lang.Class.forName}
+\km{let} \vb{c} \km{=} \ex{#forName}(\str{"String"});
+\km{let} \vb{m} \km{=} \vb{c}.\ex{getMethod}(\str{"length"});
+\vb{m}.\ex{invoke}(\str{"Lorem ipsum dolor sit amet"})\il{gives 26 on all devices}
+\end{Verbatim}
+
+% Note that between {\tt apply} and Java reflection, Protelis offers many of the features of first-class functions.
+%
+% Critically, however, there are important questions about how to manage aggregate/local relations for distributed first-class functions~\cite{beal2009dynamically}, which are not yet addressed by field calculus.
+%
+% For this reason, Protelis does not yet offer any neighborhood summary operations applicable to either Java or Protelis functions.
+
+\subsection{Special Field Calculus Operators}
+\label{protelis-special-operators}
+The remaining constructs of Protelis are the special operations specific to field calculus, dealing with the movement of information across space and time:
+\begin{itemize}
+	\item Construct $\repK{\vb{\var}}{\we}{\bodyK{\overline{\s};}}$ defines a locally-visible variable $\vb{\var}$ initialized with $\we$ and updated at each computation round with the result of executing body $\bodyK{\overline{\s};}$: it provides a means to define a field evolving over time according to the update policy specified by $\bodyK{\overline{\s};}$.
+%
+	\item Construct $\nbrK{\bodyK{\overline{\s};}}$ executed in a device gathers a map (actually, a field) from all neighbors (including the device itself) to their latest value from computing $\overline{\s}$. A special set of built-in ``hood'' functions can then be used to summarize such maps back to ordinary expressions.
+	%
+	For example, {\tt minHood} finds the minimum value in the map.
+%
+  \item The branching constructs $\muxK{\e}{\bodyK{\overline{\s};}}{\bodyK{\overline{\s}';}}$ and $\ifK{\e}{\bodyK{\overline{\s};}}{\bodyK{\overline{\s}';}}$ perform two critically different forms of branching.
+%
+	The {\tt mux} construct is an inclusive ``multiplexing'' branch: the two fields obtained by computing $\overline{\s}$ and $\overline{\s}'$ are superimposed, using the former where $\e$ evaluates to \texttt{true}, and the second where $\e$ evaluates to \texttt{false}.
+%
+	Complementarily, {\tt if} performs an exclusive branch: it partitions the network into two regions: where $\e$ evaluates to \texttt{true} $\overline{\s}$ is computed, and elsewhere $\overline{\s}'$ is computed instead.
+\end{itemize}
+
+The following code shows some example uses of these constructs:
+
+\begin{Verbatim}[samepage=true,frame=single, commandchars=\\\{\}]
+\km{def} \fn{count}() \{
+   \repK{\vb{\var}}{0}{\bodyK{\var + 1\;}}
+\}
+
+\km{def} \fn{maxh}(\vb{field}) \{
+   maxHood(\nbrK{\{\vb{field}\}})
+\}
+
+\km{def} \fn{distanceTo}(\vb{source}) \{
+   \fc{rep}(\vb{d} <- Infinity) \{
+      \fc{mux} (\vb{source}) \{
+         0
+      \} \fc{else} \{
+         minHood(\fc{nbr}\{\vb{d}\} + nbrRange)
+      \}
+  \}
+\}
+
+\km{def} \fn{distanceToWithObstacle}(\vb{source},\vb{obstacle}) \{
+   \fc{if} (\vb{obstacle}) \{
+      \fc{Infinity}
+   \} \fc{else} \{
+      \fn{distanceTo}(\vb{source})
+   \}
+\}
+\end{Verbatim}
+
+Function \texttt{\fn{count}} yields an evolving field, counting how many computation rounds have been executed in each device.
+%
+Function \texttt{\fn{maxh}} yields a field mapping each device the maximum value of \texttt{\vb{field}} across its neighborhood---note a \nbrK{} construct should always be eventually wrapped inside a ``hood'' function.
+%
+Function \texttt{\fn{distanceTo}} nests \nbrK{} inside \texttt{\fc{rep}} to create a chain of interactions across many hops in the network, computing minimum distance from any device to the nearest ``source device'' (i.e., where \texttt{\vb{source}} holds \texttt{true}).
+%
+It does so by a field \texttt{\vb{d}} initially \texttt{Infinity} everywhere, and evolving as follows: \texttt{\vb{d}} is set to $0$ on sources by \texttt{\fc{mux}}, and elsewhere takes the minimum across neighbors of the values obtained by adding to \texttt{\vb{d}} the estimated distance to the current device---a triangle inequality relaxation computing a distance field also often termed \emph{gradient} \cite{original-gradient,crf,VCMZ-TAAS2011}.
+%
+Finally, function \texttt{\fn{distanceToWithObstacle}} shows exclusive branch at work; \texttt{\fn{distanceTo}(\vb{source})} is computed in the sub-region where there is no obstacle, which causes the computation of distances to implicitly circumvent such obstacles.
+
+
+\section{Architecture of \protelis{}}
+\label{protelis-architecture}
+\begin{figure}
+\centering
+\subfigure[Abstract Architecture]{
+\includegraphics[width=0.4\textwidth]{img/abstract}\hspace{0.05\textwidth}\label{img:protelis-abstract}}
+\subfigure[\alchemist{} Simulation]{
+\includegraphics[width=0.5\textwidth]{img/simulated}\label{img:protelis-simulated}}
+\subfigure[Network Service Management]{
+\includegraphics[width=0.6\textwidth]{img/embedded.pdf}\label{img:protelis-embedded}}
+\caption{In the abstract Protelis architecture (a), an interpreter executes a pre-parsed Protelis program at regular intervals, communicating with other devices and drawing contextual information from a store of environment variables.
+%
+This is instantiated by setting when executions occur, how communication is implemented and the contents of the environment.
+%
+Two such instantiations are presented in this paper: as a simulation in the \alchemist{} framework (b) and as a daemon for coordinating management of networked services (c).}
+\label{img:protelis-architecture}
+\end{figure}
+
+
+In \protelis{}, we designed an architecture, subsumed in \Cref{img:protelis-abstract}, following the same general pattern as was used for the Proto Virtual Machine~\cite{protokernel}.
+%
+First, a parser translates a text Protelis program into a valid representation of field calculus semantics.
+%
+This is then executed by a Protelis interpreter at regular intervals, communicating with other devices and drawing contextual information from environment variables implemented as a tuple store of $(token, value)$ pairs.
+%
+This abstraction is instantiated for use on particular devices or simulations by setting when executions occur, how communication is implemented and the contents of the environment.
+
+We have chosen to implement this architecture in Java.
+%
+One key reason for this choice is that Java is highly portable across systems and devices.
+%
+Another key reason (discussed further in the next section) is that Java's reflection mechanisms make it easy to import a large variety of useful libraries and APIs for use in Protelis.
+%
+Finally, the pragmatics of execution on embedded devices have also changed significantly since the publication of~\cite{protokernel}: a much wider variety of low cost embedded devices are now capable of supporting Java, while at the same time improvements in Java implementations have made it much more competitive in speed and resource cost with low-level languages like C \cite{bull2003, oancea2011}.
+
+In particular, we have chosen to implement Protelis and its architecture via the Xtext language generator~\cite{eysholdt2010xtext} and within the \alchemist{} framework~\cite{alchemist-jos2013}.
+%
+Usefully, Xtext also features support for generating a language-specific Eclipse plug-in, which provides developer assistance through code highlighting, completion suggestions, and compile-time error detection.
+
+For an initial validation, we have exercised this architecture by construction of two instantiations: one in the \alchemist{} framework for simulation of large-scale spatially-embedded systems; the other as a daemon for coordinating management of networked services.
+%
+\Cref{img:protelis-simulated} shows the \alchemist{} instantiation: simulations are configured using a simple scripting language, which specifies a Protelis program as well as the collection of devices that will execute it, communication between those devices, and other aspects of the environment to be simulated.
+%
+The \alchemist{} event-driven simulation engine then handles execution scheduling, message delivery, and updates to the environment tuple store.
+%
+\Cref{img:protelis-embedded} shows the network service management instantiation.
+%
+Here, each Protelis device lives on a separate server in an enterprise network, and is tethered to the networked service it is intended to manage by a service manager daemon.
+%
+This daemon monitors the service, injecting information about its status and known dependencies into the environment and maintaining a neighborhood by opening parallel communication links to the corresponding daemons on any other servers that the monitored service communicates with.
+%
+Examples using each of these implementations are shown in \Cref{protelis-applications}.
+
+\section{Application examples}
+\label{protelis-applications}
+
+To demonstrate how these features combine to offer simple programming of complex distributed algorithms across a potentially broad range of applications domains, we now present two example applications.
+%
+The first aims at a pervasive computing scenario and is executed in simulation using Alchemist~\cite{alchemist-jos2013}, the second aims at enterprise network management and is executed on a collection of EmuLab~\cite{EmuLab} servers.
+
+\subsection{Rendezvous at a Mass Event}
+\label{protelis-rendezvous}
+
+\begin{figure}
+\centering
+\subfigure[Initial configuration]{
+\includegraphics[width=0.48\textwidth]{img/sac15-snapshots/london0}
+\label{img:protelis-rendezvous-begin}}
+%
+\subfigure[Path begins to form]{
+\includegraphics[width=0.48\textwidth]{img/sac15-snapshots/london1}\hspace{0.03\textwidth}
+\includegraphics[width=0.48\textwidth]{img/sac15-snapshots/london2}
+\label{img:protelis-rendezvous-middle1}}
+% 
+\subfigure[Path continues to extend]{
+\includegraphics[width=0.48\textwidth]{img/sac15-snapshots/london4}\hspace{0.03\textwidth}
+\includegraphics[width=0.48\textwidth]{img/sac15-snapshots/london5}
+\label{img:protelis-rendezvous-middle2}}
+%
+\subfigure[Path computation complete]{
+\includegraphics[width=0.48\textwidth]{img/sac15-snapshots/london6}
+\label{img:protelis-rendezvous-end}}
+% 
+\caption{Example of computing a rendezvous route for two people in a crowded urban
+environment.}
+\label{img:protelis-rendezvous}
+\end{figure}
+
+A common problem in large public events is to rendezvous with other companions
+attending the same large public event. At mass events, access to external
+cloud-based services may be difficult or impossible, and pre-arranged rendezvous
+points may be inaccessible or inconveniently distant.
+Simple peer-to-peer geometric calculations across the network, however, can
+readily compute a route that will allow two people to rendezvous:
+% \km{def} \fn{broadcast}(\vb{source},\vb{value}) \{
+%   \km{let} \vb{d} \km{=} \fn{distanceTo}(\vb{source});
+%   \fc{rep}(\vb{v} <- \vb{value}) \{ \fc{minHood}([\fc{nbr}(\vb{d}),\fc{nbr}(\vb{v})]).get(1) \}
+% \}
+% \il{Broadcast a value up a distance gradient}
+% \km{def} \fn{broadcast}(\vb{source}, \vb{value}) \{
+%   \km{let} \vb{d} \km{=} \fn{distanceTo}(\vb{source});
+%   \km{let} \vb{lowest} \km{=} \fc{minHood}(\fc{nbr}(\vb{d}));
+%   \fc{rep}(\vb{v} <- \vb{value}) \{
+%      \fc{mux} (\vb{source}) \{
+%        \vb{value}
+%      \} \fc{else} \{
+%        \fc{minHood}(\fc{mux}(\fc{nbr}(\vb{d})==\vb{lowest})\{ \fc{nbr(v)} \}\fc{else}\{ Infinity \}) 
+%      \}
+%   \}
+% \}
+\begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}]
+\il{Follow the gradient of a potential field down from a source}
+\km{def} \fn{descend}(\vb{source},\vb{potential}) \{
+   \fc{rep}(\vb{path} <- \vb{source}) \{
+      \km{let} \vb{nextStep} \km{=} \fc{minHood}(\fc{nbr}([\vb{potential}, \fc{self}.\ex{getId}()]));
+      \fc{if} (\vb{nextStep}.\ex{size}() > 1) \{
+         \km{let} \vb{candidates} = \fc{nbr}([\vb{nextStep}.\ex{get}(1), \vb{path}]);
+         \vb{source} || \fc{anyHood}([\fc{self}.\ex{getId}(), true] == \vb{candidates})
+      \} \fc{else} \{
+         \vb{source}
+      \}
+   \}
+\}
+\km{def} \fn{rendezvous}(\vb{person1}, \vb{person2}) \{
+   \fn{descend} (\vb{person1} == \vb{owner}, \fn{distanceTo}(\vb{person2} == \vb{owner}))
+\}
+\il{Example of using rendezvous}
+\fn{rendezvous}(\str{"Alice"}, \str{"Bob"});
+\end{Verbatim}
+
+\Cref{img:protelis-rendezvous} shows an example of running this rendezvous process in a simulated city center.
+%
+We chose London as a simulation environment, using Alchemist's capability for importing OpenStreetMap data.
+%
+We displaced 1000 devices randomly across the city streets (represented by pale blue dots), with a communication range of 475 meters (this range chosen to ensure no network segmentation).
+%
+We then picked two devices whose owners want to meet: one device on Lambeth Bridge (lower left of the image) and one device on Tower Bridge (upper right), each marked with a yellow square.
+%
+To mark the devices for Protelis, we injected their environments with a property \texttt{\vb{owner}}, assigning the strings \texttt{"Alice"} and \texttt{"Bob"} as values for the first and the second device respectively.
+
+% gradient = 6
+% descend = 11
+% rendezvous = 3
+% expresson = 1
+% Total = 21
+Implementing this application requires only 21 lines of code: the listing above and the function \texttt{\fn{distanceTo}} that can be found in \Cref{protelis-special-operators}.
+%
+This implementation measures distance to one of the participants, creating a potential field, then, starting from the other one, builds an optimal path descending the distance potential field to return to the first participant at distance zero.
+%
+The first half of the algorithm has already been described, and relies on \texttt{\fn{distanceTo}}, while the second half is implemented by the function \texttt{\fn{descend}}.
+%
+This function, given a device and a potential field, builds a path of devices connecting the former with the source of the latter.
+%
+The strategy is to mark the device we want to connect to the potential field's source as part of the path, and then, in every device, compute which of the neighbors is closest to the destination.
+%
+Given this information, a device is in the path if one of the neighbors is in the path already and has marked this device as the closest of its neighbors towards the destination.
+%
+Note how the whole algorithm can be elegantly compressed into just a few lines of code, and how there is no need to explicitly declare any communication protocol for exchanging the required information, thanks to the repeated use of the $\nbrK$ operator.
+
+As \Cref{img:protelis-rendezvous} shows, once the simulation starts, a chain of devices is rapidly identified (red dots), marking a sequence of way-points for both device owners to walk in order to meet in the middle.
+%
+Note also that, due to the ongoing nature of the computation, if one of the device owners moves in a different direction instead, the path will automatically adjust so that it continues to recommend the best path for rendezvous.
+
+\subsection{Example: Network Service Management}
+
+One of the common problems in managing complex enterprise services is that there are often many dependencies between different servers and services.
+%
+Frequently, some of these services are legacy or poorly coded, such that they do not respond gracefully to the failure of their dependencies.  These services may continue to attempt to operate for some time, creating inconsistent state, or may be unable to resume service correctly after the server they depend on is brought back on line.
+
+Thus, responding to a service failure often requires a coordinated shutdown and restart of services in an order dictated by service dependencies.
+%
+This type of service management can be automated by attaching a daemon that watches the state of each service, then communicates with the daemons of other services to coordinate shutdown and restart in accordance with their dependencies.
+
+\begin{figure}[t!]
+\centering
+\subfigure[Example Dependent Services Scenario]{
+\includegraphics[width=0.8\textwidth]{img/managementScenario}\label{f:restartScenario}}
+\subfigure[Example of Coordinated Restart Execution]{
+\includegraphics[width=0.8\textwidth]{img/management}\label{f:restartExecution}}
+\caption{(a) An example scenario of an enterprise network for a small
+manufacturing and supply company. (b) Example of execution on a network of 8
+EmuLab~\cite{EmuLab} machines: the supplies database has crashed (red), and so
+all dependent services have shut themselves down (blue), while other services
+continue to run normally (green).}
+\label{f:restart}
+\end{figure}
+
+\Cref{f:restartScenario} shows an example scenario of an enterprise network for a small manufacturing and supply company, with dependencies between two key databases and the internal and external servers running web applications.
+%
+This scenario was implemented on a network of EmuLab~\cite{EmuLab} servers.
+%
+The services were emulated as simple query-response networking programs in Java that entered a ``hung'' state either upon being externally triggered to crash or after their queries began to consistently fail. 
+
+Each service was wrapped with an embedded Protelis execution engine, which was interfaced with the services by a small piece of monitoring glue code that inserted environment variables containing an identifier for the {\tt serviceID} running on that server, a tuple of identifiers for {\tt dependencies}, and the current {\tt managedServiceStatus} of {\tt stop}, {\tt starting}, {\tt run}, {\tt stopping}, or {\tt hung}.
+%
+The glue code also provides {\tt stopService} and {\tt startService} methods to send signals to the service, tracks interactions between the services in order to maintain the set of neighbors for Protelis, and allows an external monitoring application to attach and receive status reports.
+
+Dependency-directed coordination of service starting and stopping was then implemented as follows:
+%
+\begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}]
+\km{import} \ex{it.unibo.alchemist.language.protelis.datatype.Tuple.*}
+\km{import} \ex{com.bbn.a3.distributedrestart.DaemonNode.*}
+
+\il{Compare required and available services}
+\km{let} \vb{nbr_set} \km{=} \fc{unionHood}(\fc{nbr}([\ex{serviceID}]));
+\km{let} \vb{nbr_missing} \km{=} \ex{dependencies}.\ex{subtract}(\vb{nbr_set});
+\km{let} \vb{nbr_required} \km{=} \ex{#contains}(\ex{dependencies},\fc{nbr}(\ex{serviceID})); 
+\km{let} \vb{nbr_down} \km{=} \fc{nbr}(\ex{managedServiceStatus}==\str{"hung"} ||
+                   \ex{managedServiceStatus}==\str{"stop"});
+
+\il{Is service currently safe to run?}
+\km{let} \vb{problem} \km{=} \fc{anyHood}(\vb{nbr_down} && \vb{nbr_required}) ||
+            !\vb{nbr_missing}.\ex{isEmpty}();
+
+\il{Take managed service up and down accordingly}
+\fc{if} (\ex{managedServiceStatus}==\str{"run"} && \vb{problem}) \{
+  \ex{#stopProcess}(\ex{managedService});
+\} \fc{else} \{
+  \fc{if} (\ex{managedServiceStatus}==\str{"stop"} && !\vb{problem}) \{
+    \ex{#startProcess}(\ex{managedService});
+  \} \fc{else} \{
+    \ex{managedServiceStatus}
+  \}
+\}
+\end{Verbatim}
+In this program, each device shares information about its service ID and status with its neighbors, enabling them to track which dependencies are currently down or missing.
+%
+When there is a problem with dependencies, the device invokes {\tt stopProcess} to shut its service down, when dependencies are good, it brings it up again with {\tt startProcess}, and when it is hung it waits for a human to sort out the problem.
+
+\Cref{f:restartExecution} shows a typical screenshot of the network of services in operation on an EmuLab network of Ubuntu machines, one service per machine, as visualized by the monitoring application.
+%
+In this screenshot, the supplies database has crashed, causing many of the other services to gracefully shut themselves down.  As soon as the supplies database is restarted, however, the rest of the services automatically bring themselves up in dependency order.
 
 \part{Conclusion}
 \chapter{Results achieved}
 
+\section{Integrated toolchain for pervasive ecosystems}
+
+\section{Aggregate programming languages}
+
+%TODO: fixme
+
+\subsection{Higher Order Functions in Field Calculus}
+
+\subsection{\protelis{}}
+Protelis ensures universality and coherence between aggregate specification and local execution by building atop the field calculus introduced in \cite{VDB-FOCLASA-CIC2013}.
+%
+At the same time, accessibility, portability, and ease of integration are ensured by embedding Protelis within Java.
+%
+This enables Protelis programs to draw on the full breadth of available Java APIs and to readily integrate with a wide range of devices and applications, as illustrated by our examples of pervasive computing simulation and networked service management.
+%
+This implementation of Protelis thus forms an important component of the toolchain necessary for practical application of aggregate programming principles and methods to address real-world problems.
+%
+
 \chapter{Future and ongoing work}
-\section{Biochemical meta model for Alchemist}
+
+%TODO fixme
+The \protelis{} framework continues to be actively developed:
+%
+we plan to enrich it in the future by adding higher-level abstractions
+for aggregate programming grounded on the mechanisms discussed in this
+work.
+
+
+\section{Biochemical meta model for \alchemist{}}
 ciao
 
 %\appendix
@@ -1326,8 +1853,6 @@ ciao
 %\input{appendix-c.tex}
 
 %\input{publication.tex}
-
-\part{Bibliography}
 
 %===============================================================================
 \small\protect\newpage\addcontentsline{toc}{chapter}{Bibliography}
