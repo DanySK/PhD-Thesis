@@ -1,0 +1,175 @@
+
+\usepackage[dvips]{graphicx}
+\usepackage{graphics}
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[italian,british]{babel}
+\usepackage{float}
+\usepackage{graphicx,algorithm,algorithmic}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,amstext,wasysym}
+\usepackage{epsfig}
+\usepackage{deistesi}
+\usepackage{fancyhdr}
+\usepackage{xspace}
+\usepackage[colorlinks=false]{hyperref}
+\usepackage[avantgarde]{quotchap}
+\renewcommand\chapterheadstartvskip{\vspace*{-5\baselineskip}}
+\renewcommand\sectfont{\sffamily\bfseries}
+\usepackage{mathptmx}       % selects Times Roman as basic font
+\usepackage{helvet}         % selects Helvetica as sans-serif font
+\usepackage{courier}        % selects Courier as typewriter font
+\usepackage{type1cm}        % activate if the above 3 fonts are
+\usepackage{makeidx}         % allows index generation
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+\usepackage{times}
+\usepackage{subfigure}
+\usepackage{stmaryrd,mathtools}
+\usepackage[noend]{distribalgo}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{alltt}
+\usepackage{url}
+\usepackage{eurosym}
+\usepackage{cleveref}
+
+
+\newcommand{\maude}[0] {\textsc{Maude}}
+\newcommand{\klaim}[0] {\textsc{Klaim}}
+\newcommand{\pklaim}[0] {p\textsc{Klaim}}
+\newcommand{\stocklaim}[0] {\textsc{Sto$c$Klaim}}
+\newcommand{\pepa}[0] {{PEPA}}
+\newcommand{\spim}[0] {\textsf{SPiM}}
+\newcommand{\picalculus}[0] {$\pi$-Calculus}
+\newcommand{\respect}{{\sf{{R}e{S}pec{T}}}}
+\newcommand{\soda}{{\sf{{SODA}}}}
+\newcommand{\tota}{{\sf{TOTA}}}
+\newcommand{\luce}{{\sf{{L}u{C}e}}}
+\newcommand{\tucson}{{\sf{{T}u{CS}o{N}}}}
+\newcommand{\alchemist}{{\sf{Alchemist}}}
+\newcommand{\tuprolog}{{\sf{tu}Prolog}}
+\newcommand{\cartago}{{\sf CArtAgO}}
+\newcommand{\jade}{{\sf JADE}}
+\newcommand{\aea}{{A\&A}}
+\newcommand{\linda}[0] {\textsc{Linda}}
+\newcommand{\swarmlinda}[0]{SwarmLinda}
+\newcommand{\bluetooth}{Bluetooth\textregistered{}}
+\newcommand{\btle}{\bluetooth{} Low Energy}
+
+\newcommand{\spaceof}[1]{\mathbb{\expandafter\MakeUppercase{#1}}}
+% Manifolds:
+\newcommand{\manifold}{M}
+\newcommand{\event}{m}
+\newcommand{\infospeed}{c}
+\newcommand{\futureof}[1]{T^+({#1})}
+\newcommand{\pastof}[1]{T^-({#1})}
+%\newcommand{\simultaneityof}[1]{T^0({#1})}
+\newcommand{\device}{d}
+\newcommand{\sectionof}[1]{S_{#1}}
+% Computations:
+\newcommand{\datavalue}{v}
+\newcommand{\field}{f}
+\newcommand{\fieldsof}[1]{\spaceof{\field}_{#1}}
+\newcommand{\computation}{C}
+%\newcommand{\envstate}{E}
+\newcommand{\environment}{e}
+%\newcommand{\evaluate}[2]{\mathcal{E}_{#1}({#2})}
+% Approximation:
+\newcommand{\discreteset}{D}
+% \epsilon, \discreteset_\epsilon
+\newcommand{\neighborhoods}{\mathcal{N}}
+\newcommand{\hoodof}[1]{\neighborhoods(#1)}
+\newcommand{\hoodradius}{r}
+\newcommand{\closure}[1]{\overline{#1}}
+\newcommand{\directinforegion}[1]{I(#1)}
+\newcommand{\inforegion}[1]{I^\infty(#1)}
+
+% Syntax:
+% Field calculus:
+\newcommand{\comment}[1]{\hfill\footnotesize{\textcolor{gray}{\text{;; {#1}}}}}
+\newcommand{\BNFcce}{{\bf ::=}}
+\newcommand{\BNFmid}{\;\bigr\rvert\;}
+\newcommand{\oname}{\texttt{b}}
+\newcommand{\fname}{\texttt{f}}
+\newcommand{\lit}{\texttt{l}}
+\newcommand{\var}{\texttt{x}}
+\newcommand{\expr}{\texttt{e}}
+\newcommand{\we}{\texttt{w}} % variable or (local) value
+%
+\newcommand{\PROGRAM}{\texttt{P}}
+\newcommand{\FCFUNCTION}{\texttt{F}}
+\newcommand{\e}{\texttt{e}}
+\newcommand{\s}{\texttt{s}}
+% Keywords
+\newcommand{\defK}{\texttt{def}}
+
+
+% Eventually Approximable:
+\newcommand{\senseK}{\texttt{sense}}
+\newcommand{\Boolean}{\spaceof{B}}
+\newcommand{\Integer}{\spaceof{Z}}
+\newcommand{\Real}{\spaceof{R}}
+\newcommand{\local}{\texttt{o}}
+\newcommand{\comparator}{\texttt{<}}
+\newcommand{\cmath}{\texttt{m}}
+\newcommand{\mux}{\texttt{mux}}
+%\newcommand{\prim}[1]{\mathtt{#1}} % primitives
+%
+\newcommand{\OneOp}{\texttt{GPI}} % gradient-path-integral
+\newcommand{\boundary}{\mathcal{B}}
+\newcommand{\calculus}{GPI-calculus{}}
+\newcommand{\validdomain}[1]{#1^{-1}(\spaceof{\datavalue}-\boundary)}
+
+\newcommand{\ltrue}{\textit{true}}
+\newcommand{\lfalse}{\textit{false}}
+
+\newcommand{\bral}{\textrm{{\tt {\char '173}}}\,}
+\newcommand{\brar}{\textrm{{\tt {\char '175}}}}
+\newcommand{\asgK}{~\texttt{=}~}
+\newcommand{\letK}{\texttt{let}~}
+\newcommand{\tupK}[1]{\texttt{[}#1\texttt{]}}
+\newcommand{\lambdaK}[2]{\texttt{(}#1\texttt{)->}#2}
+\newcommand{\bodyK}[1]{\bral\! #1\!\brar}
+\newcommand{\dotK}{\texttt{.}}
+\newcommand{\applyK}{\texttt{apply}}
+\newcommand{\mname}{\ex{\texttt{m}}}
+\newcommand{\aname}{\ex{\texttt{\#a}}}
+\newcommand{\repK}[3]{\texttt{\fc{rep}(#1<-#2)}#3}
+\newcommand{\ifK}[3]{\texttt{\fc{if}}(#1)#2\,\texttt{\fc{else}}\,#3}
+\newcommand{\muxK}[3]{\texttt{\fc{mux}}(#1)#2\,\texttt{\fc{else}}\,#3}
+\newcommand{\nbrK}[1]{\texttt{\fc{nbr}}#1}
+
+\newcommand{\bnfs}[0]{\;|\;}
+\newcommand{\opar}[0]{\;|\;}
+\newcommand{\sq}[0]{\oplus}
+\newcommand{\tuple}[2]{#1\langle #2\rangle}
+\newcommand{\tupled}[2]{#1[#2]^{\Rightarrow}}
+\newcommand{\actrate}[2]{#1^{#2}}
+\newcommand{\leave}{{}}
+\newcommand{\near}[3]{#1\!\stackrel{#3}{\rightsquigarrow}\!#2 }
+\newcommand{\scope}[2]{\llbracket #1 \rrbracket_{#2}}
+\newcommand{\law}[1]{[#1]}
+\newcommand{\firing}[3]{#1^\rightsquigarrow(#2,#3)}
+\newcommand{\shfiring}[1]{#1^\rightsquigarrow}
+
+\newcommand{\defn}[2]{\mathit{def} #1 := #2}
+\newcommand{\defnarr}[2]{\mathit{def} #1 & := & #2}
+\newcommand{\call}[1]{call\, #1}
+\newcommand{\tap}[1]{#1}
+\newcommand{\localc}{\texttt{local}}
+\newcommand{\neighborhood}{\texttt{neighborhood}}
+\newcommand{\globalc}{\texttt{global}}
+\newcommand{\lsa}[1]{\langle #1\rangle}
+\newcommand{\rem}[1]{+#1}
+\newcommand{\protelis}{{Protelis}}
+\newcommand{\il}[1]{{\it \textcolor{gray}{// #1}}} % inline comment
+\newcommand{\km}[1]{\textcolor{purple}{#1}} % key mechanism primitives
+\newcommand{\ex}[1]{\textcolor{blue}{#1}} % external imported Java values
+\newcommand{\fc}[1]{\textcolor{Orchid}{#1}} % field calculus calls
+\newcommand{\fn}[1]{\textcolor{blue}{#1}} % building block / function calls
+\newcommand{\vb}[1]{\textcolor{OliveGreen}{#1}} % variables
+\newcommand{\str}[1]{\textcolor{darkgray}{#1}} % strings
+
