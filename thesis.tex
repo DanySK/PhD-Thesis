@@ -512,15 +512,57 @@ why do we want a middleware
 \section{Nature inspiration}
 see what exists, mimic
 
+\section{Spatial patterns}
+
+%TODO: what is a pattern
+Vedere se c'è qualcosa di utile in NACO \cite{FDMVA-NACO2012} o in \cite{GVO-CEEMAS2007}, o in \cite{ecosystems-jpcc7} o in \cite{BabaogluPatterns}
+
+\subsection{Gossip}
+
+%TODO% what is gossip
+
+\subsection{Gradient}
+\label{gradient}
+A simple though paramount data structure that can be built upon this paradigm and that is a building block of many of the more advanced patterns is the spatial gradient, which assigns to each node a value $\varGamma$ depending on its position in time and space and on its context \cite{mamei2009acm,crf,VCMZ-TAAS2011}.
+%
+This structure originates in one or more devices called sources.
+%
+In every source device, $\varGamma=0$.
+%
+In every other device, let $N$ be the set of devices connected with it, and let $n$ be the n-th neighbouring device.
+%
+For this device, $\varGamma=[\min(f(n)) | n \in N]$: namely, the value of the device is the minimum of a function which operates on the neighbours.
+%
+For instance, if $ \forall n \colon f(n)=\varGamma_{n}+1$, where $\varGamma_{n}$ is the value of the gradient in $n$, then the local value will reflect the minimum hop count towards the nearest source.
+%
+If $f(n) = \varGamma_{n} +d(n)$ where $d(n)$ measures the actual distance from the device towards $n$, then the value of the gradient will approximate the distance from the nearest source.
+%
+Finally, along with the local value, a gradient can carry more information, e.g. some strings, the position of $n$, or numeric values.
+
+% TODO problems with gradient
+\cite{crf}
+
+
 \section{Tuple-based coordination}
 what is there already
 
 \subsection{Linda}
-and swarmlinda
+
+\subsection{Anthill}
+Anthill \cite{anthill} is a framework meant to support design and development of adaptive peer-to-peer applications, in which each node is provided with a local tuple space, agents can travel the network and interact indirectly reading, writing and retrieving tuples.
+
+\subsection{SwarmLinda}
+SwarmLinda \cite{swarmlinda} is a similar middleware.
+
 \subsection{Lime}
 \cite{murphy2006lime}
 \subsection{TOTA}
-\cite{mamei2009acm}
+Also Tuples On The Air (TOTA) \cite{mamei2009acm} is in this category of middlewares.
+%
+In TOTA, each tuple also carries with it a diffusion rule and a maintenance rule in addition to a content.
+%
+Tota inspired other works, such as the evolving tuples model \cite{evolvingtuples}, which adds to the tuples a form of context awareness, in form of possible evolution and adaptation to environmental changes.
+
 \cite{tota2}
 \subsection{Plastic}
 \cite{plastic}
@@ -531,10 +573,13 @@ and swarmlinda
 \cite{tucson-aamas99}
 and the semantic extension
 \subsection{Biochemical tuple spaces}
+\cite{biochemicalTupleSpaces}
 and MoK?
 \subsection{\cartago{}}
 \cite{RPV-JAAMAS2011}
 \subsection{SAPERE}
+SAPERE is the project that attempted to unify multiple works of chemical-inspired coordination, such as \cite{biochemicalTupleSpaces, frameworkSelfOrg, VCMZ-TAAS2011, wordNet} can be seen as precursors of SAPERE \cite{sapere-procedia7}.
+
 general idea of sapere, grounds on previous works.
 
 \section{Aggregate programming}
@@ -641,11 +686,6 @@ Besides Proto, which is probably the closest to a practical programming environm
 
 \subsubsection{Alignment}
 
-
-\section{Spatial patterns}
-what is a pattern
-patterns before sapere (gossip, gradient)
-problems with gradient
 
 \section{Engineering and tools}
 \label{engineering-and-tools}
@@ -1064,7 +1104,19 @@ It is important to note that there is no restriction about the kind of data stru
 
 In order to write a simulation, the user must have, or implement herself, an incarnation of \alchemist{}, as described in \Cref{subsec:architecture}.
 
-As shown in \Cref{img:arch}, the simulations are written in a specific XML language containing a complete description of environment and reactions. This code is interpreted in order to produce an instance of an environment: once it is created, no further interpretation is needed in order to run the simulation. This XML code is not meant to be directly exploited by users, but it represents a way of describing environments in a machine-friendly format and is a formalisation of the generic model of \alchemist{}. The idea behind this choice is that \alchemist{} is flexible enough to be used in various contexts, each one requiring a personalised language and a different instantiation of the model. It is up to the extensor to write a translation module from its personalised language to the \alchemist{} XML. Of course, it is also possible to code the simulation behaviour  directly with Java.
+As shown in \Cref{img:arch}, the simulations are written in a specific XML language containing a complete description of environment and reactions.
+%
+This code is interpreted in order to produce an instance of an environment: once it is created, no further interpretation is needed in order to run the simulation.
+%
+This XML code is not meant to be directly exploited by users: the XML format itself is not exactly human friendly, and XML file is often considerably big (a few megabytes are considered to be normal)
+%
+However, it is a very standard way of describing environments in a machine-friendly format.
+%
+The idea behind this choice is that \alchemist{} is flexible enough to be used in various contexts, each one requiring a personalised language and a different instantiation of the meta-model.
+%
+It is up to the extensor to write a translation module from its personalised language to the \alchemist{} XML.
+%
+Of course, it is also possible to code the simulation behaviour  directly with Java, although this way exposes the user to many more low level details.
 
 \subsection{Implementation details}
 %TODO%
@@ -1129,8 +1181,6 @@ For the latter point, a big difference in terms of performances is due to the he
 Since the concept of neighbourhood was part of the computational model, it was possible to adopt caching strategies in order to ensure a fast access to the neighbourhood and a quick execution of the operations on it.
 %
 This is probably the component which gives the highest impact in this case, since most interactions occur among an agent and its neighbourhood.
-
-
 
 \section{Collocation in literature}
 
@@ -1198,18 +1248,102 @@ In fact, since it is allowed to program different nodes with different reactions
 %
 Although possible in principle, performing this task too frequently is likely breaking the \alchemist{} abstraction, making the programmer losing the nice declarative approach that chemistry endorses, and possibly hampering the optimisation techniques that motivated \alchemist{}.
 
+\section{Meta-model agnostic features}
+
+\subsection{Distributed statistical analysis}
+
+\subsection{Real world maps}
+
+ \begin{figure}
+  \subfigure[GPS trace]{\includegraphics[width=0.315\textwidth]{img/gps}
+   \label{img:gps-alchemist-navi}
+  }
+~
+  \subfigure[Map-based navigation]{\includegraphics[width=0.315\textwidth]{img/map}
+   \label{img:map-alchemist-navi}
+  }
+~
+  \subfigure[Mixed mode]{\includegraphics[width=0.315\textwidth]{img/mixed}
+   \label{img:mixed-alchemist-navi}
+  }
+ \caption{Three snapshots showing the different navigation modes available in \alchemist{}. In \Cref{img:gps-alchemist-navi} there is a GPS trace consisting in four points. If not specified to behave otherwise, \alchemist{} computes the average speed between two points, and moves the node along a straight line with constant speed. This, depending on the precision of the trace, may generate paths that cross over buildings. In \Cref{img:map-alchemist-navi}, the route between the start and end point is computed using the built-in navigator. This could lead the nodes towards paths different from those described by the route. In \Cref{img:mixed-alchemist-navi}, the routing subsystem is used to refine the quality of the GPS traces: \alchemist{} will move the node with constant speed between the two points, using map based routing when necessary to improve precision between two consecutive trace points.}
+ \label{img:traces-navigation}
+\end{figure}
+
+\alchemist{} supports real-world environments.
+%
+The base functionality lies in the possibility to load maps and simulate within them.
+%
+Currently, the simulator supports OpenStreetMap\cite{osm}, and it is able to load data in multiple OSM XML, compressed OSM XML and Protcolbuffer Binary Format (PBF).
+%
+The latter is warmly recommended for both performance and map file size.
+%
+Various websites provide ready-to-use extracts of the world map in PBF format for cities and whole regions, and arbitrarily sized extracts in OSM XML format can be obtained via public web API.
+
+Once the map has been loaded, \alchemist{} offers the possibility to enrich the simulations with the maps data, and in particular offers various ways to move nodes within the environment taking into account the characteristics of the map.
+
+The first feature offered is about the initial node displacing.
+%
+When adding a node to the environment, in fact, it is possible not to displace the node in the exact position indicated, but in the nearest street point.
+%
+This comes in particularly handy in order to realise the network of static devices: the simulator can be fed with a grid of devices, and it automatically modifies the positions of each node in order to displace it on a street.
+
+The second useful feature is the possibility to rely on the map data to compute routes, as in \Cref{img:map-alchemist-navi}.
+%
+\alchemist{} in fact ships with a module based on GraphHopper \footnote{\url{http://graphhopper.com/}} which provides the simulator the ability to compute routes between two points of the map.
+%
+This feature is mainly used to steer nodes correctly along the map, following the allowed ways.
+%
+It is possible to use such feature also specifying different types of vehicle.
+%
+Currently, pedestrians, bikes and cars are supported, and can be used together in the same simulation, and even within the same node (for e.g. simulating a pedestrian taking her car, driving and then walking again).
+%
+Another usage of this system is, for instance, the possibility to use the route distance or expected route time as data items when performing internal calculations, e.g. to compute a spatial gradient where the distance is not the classic euclidean distance but rather the distance computed by the routing subsystem.
+
+The simulator also allows for loading GPS traces.
+%
+The traces must be in a personalised binary format, fortunately, however, this format is easy to generate.
+%
+In fact, it is just a Java object stream containing a List of ``IGPSPoints'', namely a simple structure with latitude, longitude and time.
+%
+A converter from JSON to such format is also available in the simulator distribution.
+%
+Just as the previously mentioned routing system, the GPS traces can be used to move nodes along the scenario, reproducing existing paths, as in \Cref{img:gps-alchemist-navi}.
+
+It is also possible to use a combo of the two techniques: often, the GPS traces could be a bit rough with respect to desired grain of the simulation.
+%
+In these cases, the navigation subsystem can be used to compute the route between two GPS points, with the assumption that the user followed the paths allowed in the map.
+%
+In this way, it is possible to arbitrarily refine the grain of a GPS trace without the disadvantage deriving from a simpler interpolation, namely the possible transit over physical obstacles.
+%
+Such mixed navigation mode is depicted in \Cref{img:mixed-alchemist-navi}.
+
+Obviously, it would be rather hard to understand what is going on on the simulation without proper rendering support.
+%
+In this sense, \alchemist{} automatically detects when a real-world environment is being used, and renders a map relying on MapsForge \footnote{\url{https://code.google.com/p/mapsforge/}}.
+
+
+
 \section{Chemical meta-model}
 \subsection{Example scenario: Morphogenesis}
 \section{SAPERE meta-model}
-\subsection{Example scenario: Crowd Steering}
+
+\chapter{Self-organisation patterns}
+SAPERE
+\section{Crowd evacuation}
+\section{Crowd steering}
 \label{jos-museum}
-In this section, we show the SAPERE meta-model at work in the framework in a crowd steering case study in which a middleware has the goal of leading people in the desired location within a complex environment in short time, avoiding obstacles such as crowded regions and without global supervisioning. 
+In this section, we show a crowd steering case study in which a middleware has the goal of leading people in the desired location within a complex environment in short time, avoiding obstacles such as crowded regions and without global supervisioning. 
+
+\subsection{Reference scenario}
 
 Consider a museum with a  set of rooms, whose floor is covered with a network of computational devices (infrastructure nodes). These devices can exchange information with each other based on proximity, sense the presence of visitors, and hold information about expositions currently active in the museum. Each room has four exits and they are connected via external corridors. Visitors wandering the museum are equipped with a hand-held device that holds the visitor's preferences. By interaction with infrastructure nodes, a visitor can be guided towards rooms with a target matching their interest, thanks to signs dynamically appearing on his smartphone or on public displays. This is done using techniques suggested in the field of spatial computing \cite{VCMZ-TAAS2011}---namely, computational gradients injected in a source and diffusing around such that each node holds the minimum distance value from the source.
 
 The environment is a continuous bidimensional space with walls. 
 %
 Smartphones (or public displays) are agents dynamically linked with the nearest infrastructure node -- the neighbours are the sensors inside a certain radius $r$, parameter of the model -- from which they can retrieve data in order to suggest visitors where to go. Visitors are agents which follow the advices of their hand-held device (or public displays). It is defined a minimum possible distance between them, so as to model the physical limit and the fact that two visitors can't be in the same place at the same time. Visitors can move of fixed size steps inside the environment. If an obstacle is on their path, their movement is shortened to the allowed position nearest to the desired place.
+
+\subsection{Steering strategy}
 
 All the information exchanged is in form of annotations, simply modelled as tuples $\lsa{v_1,\ldots,v_n}$ (ordered sequence) of typed values, which could be for example numbers, strings, structured types, or function names.
 %
@@ -1274,10 +1408,6 @@ The first one, given a source, initiates the field with its possible maximum val
 %
 The second one, when a node contains a field annotation, spreads a copy of it to a neighbouring node picked up randomly with a new value computed considering the crowding around the sensor. The parameter $k$ allows to tune how much crowding should influence the field, while $\#D$ is the measure of the distance between the two involved sensors. 
 %
-% The third eco-law, when a node contains a pre\_field LSA of type $type$ and a field LSA of type $type'$ by which the pre\_field depends, removes the pre\_field LSA and creates a new field LSA with a value computed according to the transformation function,  $\mu$, which elaborates the values $N$ and $M$ of the two reactants. 
-%This is done by removing the pre-field LSA and by adding the field LSA with the new value. 
-% The purpose of this law is to model the interactions between fields. For instance we may assume that if there is a crowd which jams a region of the museum, that path towards the target should have less probability of being picked, so the value of the target field has to be reduced. 
-%
 As a consequence of these laws, each node will carry a field annotation indicating the topological distance from the source. The closest is the field value to $N_{max}$, the nearest is the field source. When the spread values reach the minimum value $0$, the gradient has to become a plateau.
 
 To address the dynamism of the scenario where people move, targets being possibly shifted, and crowds forming and dissolving, we introduced the following mechanism.
@@ -1298,16 +1428,16 @@ For the crowding annotation, we may assume that sensors are calibrated so as to 
 %
 The reaction rates are identified by hand performing different simulations with different parameters. The results reported are obtained with $r_{init} = 1$ and $r_{diff} = 50$. The other laws show no rate because it is assumed to be infinite (as-soon-as-possible semantics).
 
-\subsubsection{Simulation Results}
+\subsection{Simulation in \alchemist{}}
 
-\begin{figure*}[t]
+\begin{figure}
 \begin{center}
     \includegraphics[width=0.3\columnwidth]{img/jos-snapshots/4-1}
     \includegraphics[width=0.3\columnwidth]{img/jos-snapshots/4-3}
     \includegraphics[width=0.3\columnwidth]{img/jos-snapshots/4-4}
     \caption{A simulation run of the reference exposition: three snapshots of \alchemist{}'s graphic reporting module with this simulation. \label{img:museum-generalmap}}    
 \end{center}
-\end{figure*}
+\end{figure}
 
 We here present simulations conducted over an exposition, where nine rooms are connected via corridors. 
 %
@@ -1330,20 +1460,20 @@ In the simulation, dark visitors reach their target soon because it is nearer, t
 %
 Due to this jam the latter visitors choose a different path that is longer but less crowded. 
 
-\begin{figure*}[t]
+\begin{figure}
 \begin{center}
     \includegraphics[width=0.3\columnwidth]{img/jos-snapshots/2-1}
     \includegraphics[width=0.3\columnwidth]{img/jos-snapshots/2-3}
     \includegraphics[width=0.3\columnwidth]{img/jos-snapshots/2-4}
     \caption{A run showing the effect of crowding: dark visitors occupy a central room, making other visitors moving left to right by a longer, less crowded path \label{img:museum-generalmap2}}    
 \end{center}
-\end{figure*}
+\end{figure}
 
 Both tests show qualitative effectiveness of the proposed laws, and suggest that our simulation approach can be used for additional experiments focussing on tuning system parameters (factor $k$) or alternative strategies (e.g., diffusing crowd information) to optimise paths to destinations.
 %
 For instance, in the context of the second case, \Cref{img:jos-graph} shows how factor $k$ can influence the time for (sub)groups of (light) people to reach the destination, by which we can see that even small values of $k$ lead to a significant improvement---which slowly decreases as $k$ grows.
 
-\begin{figure}[t]
+\begin{figure}
 \begin{center}
    \includegraphics[width=0.99\columnwidth]{img/jos-graph}
    \vspace{-10pt}\caption{Time units of convergence time with different values of crowd parameter and different percentages of people}\label{img:jos-graph}\vspace{-10pt}
@@ -1351,19 +1481,186 @@ For instance, in the context of the second case, \Cref{img:jos-graph} shows how 
 \end{figure}
 
 
-\section{Advanced features}
-\subsection{Distributed statistical analysis}
-\subsection{Real world maps}
-
-\chapter{Self-organisation patterns}
-SAPERE
-\section{Crowd evacuation}
 \section{Self composition}
 \section{Semantic resource discovery}
 \section{Anticipative adaptation}
-\section{Crowd disasters prediction}
-\section{HPC at the urban scale}
+\label{anticipative-gradient}
 
+\section{Crowd disasters prediction}
+\section{Crowd steering at the urban scale}
+\label{ahpc-steering}
+In section, we focus on the problem of crowd steering at the urban scale.
+%
+The problem is noticeably different from the classic per-user navigation: we want to consider the current position of people to make the user avoid congested areas, thus reducing the overall trip time and improving the security level.
+%
+Also, this differs from the experiment in \Cref{jos-museum} for the complexity of the environment and the number of devices involved.
+%
+Crowds of people vary with time, and consequently we need a system able to dynamically adapt to such changes.
+%
+As per our line of research, we obviously want the computation to happen in a completely distributed fashion, with no centralised computing system involved.
+
+\subsection{Devices and physical configuration}
+
+We suppose users to be equipped with smart devices, also able to communicate with other devices within a certain range with a wireless technology, and must be able to be aware of their current position.
+
+We also suppose the organisers to have spread around the city some ``static'' network nodes, for instance on public illumination poles, traffic lights, or signals.
+%
+Such nodes must be equipped with network capabilities similar to those of a Wi-Fi access point.
+%
+In particular, they must allow nearby mobile devices to connect to all the static nodes within their communication range.
+%
+There is no upper or lower number or density (devices per square meter) limit to the number of static devices to deploy.
+%
+The only strict requirement involves both the distance among devices and their communication range: the devices must be placed at a distance and have a communication range large enough such as there is no network segmentation.
+%
+Besides strict requirements, some other guidelines apply:
+\begin{itemize}
+ \item it is preferable to displace static nodes in points where there are people, e.g. on streets and crossings;
+ \item the wider the number of static nodes that can communicate, the more precise will be the results;
+ \item the higher the density of static devices, the more precise will be the results.
+\end{itemize}
+
+The last assumption we make is that devices are able to estimate the time needed for walking towards any of the connected device in normal conditions.
+%
+This last assumption is again perfectly acceptable considering the current technology, where smart devices are always connected to the Internet and can access public navigation services.
+
+\subsection{Distributed crowd steering}
+
+Given the structure described above and the mobile smart devices able to communicate with the static nodes, we now outline a possible software solution.
+%
+The device wanting to be steered publishes a gradient including the information about the wanted destination.
+%
+The information about destination can be either expressed as physical location (e.g. latitude and longitude) or as a description: the system works in a fashion totally orthogonal to this choice.
+%
+One or more static devices located near a potential point of interest (POI) receive such gradient, and react becoming sources of a gradient which measures the distances between nodes.
+%
+This response gradient diffuses on static nodes until it reaches the source, carrying within itself information about the chain of static devices forming the shortest path.
+%
+The requester will receive a gradient pointing towards the nearest POI, and can navigate step-by-step by reaching in order all the nodes of the path.
+%
+Although it is not part of this very experiment, the reply could be tuned to be different depending on the request and on the characteristics of the point of interest.
+%
+For instance, a value representing the ``level of matching'' between the request and the response could be embedded in the gradient, and used to modify its spatial structure in such a way that POIs more affine with the request are preferred even if farther.
+%
+Some example of similar usage of gradients is available in \cite{SemMatchingSAC2013}.
+
+Now that a basic form of steering is in place, we can improve it by adding contextual information.
+%
+We assume that static nodes are able to detect the number of people in their surroundings.
+%
+Again, this is not critical even in a real deployment, and can be achieved in numerous ways with a different level of precision, which spans from just keeping track of which mobile nodes are connected (and, as a consequence, within the communication range) to the usage of dedicated sensors and techniques (e.g. cameras and computer vision).
+%
+Let's call $C$ the perceived number of mobile devices surrounding a static node.
+%
+We can alter the spatial shape of the gradient by acting on the function that outputs the actual distance between devices.
+%
+For instance, adopting the notation in \Cref{gradient}, we can use $f(n) = \varGamma_{n} +d(n) + K \cdot{} C$ where $K$ is a system parameter.
+%
+What happens? Basically, areas densely populated with mobile devices will appear as more distant, and consequently the requester will be steered towards alternative routes.
+%
+The whole system works in a totally emergent and distributed way, with no global knowledge of what's going on, no central control involved, and complete distribution of the computation among its components.
+
+A further refinement of these steering mechanisms involve the ability to react to events that will happen in future (given that there is information about that).
+%
+The patterns required to do so have already been presented in \Cref{anticipative-gradient}, and the interested reader can deepen reading \cite{anticipativegradient-SASO12}.
+
+\subsection{Simulation in \alchemist{}}
+\label{ahpc-simulation}
+We decided to focus on the case of mass urban sports events, and in particular on the Vienna City Marathon 2013, an event that every year involves about 40.000 actives and 300.000 spectators.
+%
+During such event, a smartphone application based on SAPERE \cite{sapere-procedia7} concepts was deployed, and gathered 1503 high quality GPS traces \cite{socinfo2013}.
+%
+We relied on such data set to build simulations demonstrating our concepts of crowd steering at a urban level.
+
+\begin{figure*}[h]
+ \includegraphics[width=0.99\textwidth]{img/vienna}
+  \caption{A snapshot of the whole city of Vienna as simulated in \alchemist{}. This snapshot is taken while simulating the city at 10am, each black point corresponds to a GPS trace. The more an area is crowded, the blacker it appears in the image.}
+  \label{img:ahpc-vienna}
+\end{figure*}
+
+As \alchemist{} environment, we obviously used the map of Vienna.
+%
+Another rather straightforward choice was to map each device to a node, supposing the users to carry one and one only device which participates to the system.
+%
+The network of static nodes was built by creating a grid of 572 devices spread around the city and enabling the positioning in the nearest street point.
+%
+After that, we positioned a node at Burggarten (48.203926,16.365765), representing our POI, and a node at (48.21441,16.35825) representing our navigation system user.
+%
+Finally, we positioned the nodes of the users which follow the traces.
+%
+As result, we had in total 2077 simulated nodes, of which 1504 mobile and moving during the actual simulation, 1503 by following the traces using the mixed mode (see \Cref{img:mixed-alchemist-navi}) and one following the steering system.
+
+As linking rule we decided to let the infrastructure nodes connect to every other node within a communication range of 150 meters. 
+%
+We used the same set of reactions for each node in the system, but on the mobile nodes, in which also the reactions needed to program the mobility were included.
+%
+In \Cref{img:ahpc-vienna} a graphical output of the simulator is proposed.
+%
+We relied on the SAPERE meta-model.
+%
+This way, we were able to simulate a network of programmable tuple spaces.
+
+\begin{figure}
+  \subfigure[Level of crowding in the interested area]{\includegraphics[width=0.315\textwidth]{img/crowd}
+   \label{img:ahpc-crowd}
+  }
+~
+  \subfigure[Classic navigation]{\includegraphics[width=0.315\textwidth]{img/vcm_nocd2}
+   \label{img:ahpc-nocrowd}
+  }
+~
+  \subfigure[Crowd-sensitive navigation]{\includegraphics[width=0.315\textwidth]{img/vcm_cd}
+   \label{img:ahpc-crowdsteering}
+  }
+ \caption{In these three snapshots a qualitative evaluation of the crowd-sensitive steering system benefits is offered. The requester is painted in red, while the nearest POI is in blue. In \Cref{img:ahpc-crowd}, the density of people in the area is shown (at the time at which the red node starts): a more intense black mean a more crowded area. In \Cref{img:ahpc-nocrowd} and \Cref{img:ahpc-crowdsteering} is possible to see the suggested routes of, respectively, the classic navigation and the crowd-sensitive navigation. The second suggests a longer but much less jammed path.}
+ \label{img:ahpc-steering}
+\end{figure}
+
+A complete evaluation of such an emergent environment is all but trivial.
+%
+The best way to measure the effectiveness of a crowd-sensitive user steering system would probably be the measure of the average walking time on routes generated probabilistically according to the most walked paths.
+%
+This kind of evaluation has two strong requirements to prove itself scientifically relevant: first, it requires to identify how popular are the routes; second, and most important, it would require a realistic model of pedestrian, including the physical interaction with other people.
+%
+At the time of writing, we do not have such model, although we are working to find a decent approximation.
+
+As proof of concept, we chose to monitor the path of a single user steered from Universit\"{a}tstrasse to Burggarten.
+%
+We chose this path because the shortest path connecting the user to her destination includes a walk in between one of the most crowded areas during the sport event, and as such is the perfect test bed for an approach whose goal is to improve the trip time in such conditions.
+
+In \Cref{img:ahpc-steering} a qualitative impact is given.
+%
+It is immediately clear that the suggested path in \Cref{img:ahpc-crowd} is longer but successfully reduces the space walked within crowded areas, with respect to the one in \Cref{img:ahpc-nocrowd}.
+
+\begin{figure}
+ \includegraphics[width=0.99\textwidth]{img/ahpc-chart}
+ \caption{This chart shows how the number of users surrounding the user (within 100 meters from her) vary with the proximity to the target.
+%
+ With ``normalised distance'', we mean that we divided the distance the user still has to walk to reach the target by the total length of the suggested path.
+ }
+ \label{img:ahpc-chart}
+\end{figure}
+
+The chart in \Cref{img:ahpc-chart} confirms the qualitative evaluation.
+%
+Towards the beginning and the end, the two algorithms have a similar performance, due to the fact that these parts of the walk (as the initial) are common.
+%
+In the central part of the walk, however, the path suggested by the crowd-sensitive algorithm tends to avoid a considerable amount of jammed areas.
+%
+We claim that, assuming the traces to be a representative sampling of the actual population of the area and the more crowded areas to be slower to walk (both assumptions sound rather straightforward to the authors), then the crowd sensitive algorithm guarantees an average lower time to destination.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% AGGREGATE PROGRAMMING %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Aggregate programming languages}
 
 When we introduced Field Calculus in \Cref{field-calculus}, we said that it is more a theoretical than a practical framework.
