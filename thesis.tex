@@ -414,7 +414,7 @@ In few decades, we will probably witness the diffusion on computation on everyda
 %
 In such a scenario, the device density will be much higher if compared to the current, up to the point that the aggregation of devices participating the system could be seen as a ``pervasive continuum'' \cite{sapere-procedia7}.
 %
-This continuum is studied under a number of names, including pervasive computing, smart cities, and the Internet of Things.
+This continuum is studied under a number of names, including pervasive computing, smart cities, and the Internet of Things, in order to provide a wealth of services in an un-intrusive manner \cite{ker2014,Conti12,zam12,Harnie12}.
 
 One of the possible strategies is to connect every single device to the Internet, aggregate its information in a remote server, do the necessary computation, then send back eventual results where they are needed.
 %
@@ -476,7 +476,7 @@ Due to this lower level aspect, Serval Mesh requires privileged access to the ha
 %
 In \cite{mesh-network-telephony}, Serval Mesh is used to build an alternative, purely peer-to-peer telephony network.
 
-Despite the existence of such mesh-oriented applications, however, a general and widespread approach for easily design and program the devices that compose our pervasive continuum is still under investigation.
+Despite the existence of such mesh-oriented applications, however, a general and widespread approach for easily design and program the devices that compose our pervasive continuum is still under investigation \cite{Ray13}.
 %
 The most consistent contribution of this thesis is devoted to the research of general, well engineered approaches to build such systems.
 
@@ -499,18 +499,86 @@ Finally, we will discuss the shortcomings of the existing technology, and pave t
 
 \section{Software ecosystems}
 
-Regardless the name that we want to use, being it ``Internet of Things'' rather than ``Smart cities'' or ``Pervasive computing'', in all cases we are talking about a system that is expected to host many computations that are \emph{(i)} context-dependent (many interactions will be opportunistic and involve devices in physical proximity, so that computations involve local data and situation); and \emph{(ii)} self-adaptive and self-organizing (due to scale, they must spontaneously recover from faults and deal with unexpected contingencies).
+Regardless the name that we want to use, being it ``Internet of Things'' rather than ``Smart cities'' or ``Pervasive computing'', in all cases we are talking about a system that is expected to host many computations that feature, according to \cite{ker2014}:
+\begin{description}
+\item[Situatedness] | Pervasive services are typically time- and space-dependent, and feature physically- or socially-situated activities. Components of pervasive systems should be able to interact with the surrounding physical and social world by adapting their behaviour accordingly.
+%
+\item[Autonomy and self-adaptivity] | While individual components should be autonomous in the face of the inherent dynamics of their operational environment~\cite{agents-ieeecn6}, pervasive systems should also feature \emph{system-level autonomy} to deal globally with the unpredictability of the environment, providing properties such as self-adaptation, self-management, and self-organization~\cite{Mam06}.
+%
+\item[Prosumption and diversity] | Infrastructures for pervasive systems must promote open models of component integration, to be able to take advantage of the injection of new services and components~\cite{ZamO04}. This is particularly true in the context of \emph{socio-technical systems}~\cite{interactioncomplexity-iccci2013}, where human users and software agents act as \emph{prosumers} -- both consumers and producers -- of devices, data, and services.
+%
+\item[Eternity] | As well as short-term adaptation, a pervasive systems infrastructure should allow for the long-term evolution of organizations, components, and patterns of usage, in order to accommodate technological advances as well as the mutable needs of users without requiring extensive re-engineering effort~\cite{softwareevolution-iwpse2005}. In fact, pervasive systems are better conceived as \emph{eternal} systems, engineered for continuous, unlimited service, upgrading, and maintenance over time.
+\end{description}
 
 At the same time, ``traditional'' networks are also increasing in scale and importance for enterprises both large and small.
 %
-In an increasingly information-dependent and interconnected world, the rising cost of managing and maintaining such systems is driving a search for solutions that can increase the autonomy of computing systems, enabling them to act more as collective services than individual machines~\cite{eze2012autonomic, hu2011cloudreview}.
+In an increasingly information-dependent and interconnected world, the rising cost of managing and maintaining such systems is driving a search for solutions that can increase the autonomy of computing systems, enabling them to act more as collective services than individual machines~\cite{eze2012autonomic, hu2011cloudreview}, and continuing working over time.
+%
+In both of these cases, and a number of other areas facing similar challenges (e.g., large-scale sensor networks, multi-UAV control), there is a growing recognition that new paradigms are needed to face the challenge of coordination, namely, engineering the space of interactions \cite{Wegner}.
+%
+The goal of such engineering paradigms is to find reliable processes that lead to self-organising aggregates that act more as a collective service than as individual machines \cite{Cabri03,Bis11,Social12,PSC13}.
 
-In both of these cases, and a number of other areas facing similar challenges (e.g., large-scale sensor networks, multi-UAV control), there is a growing recognition that new engineering paradigms are needed, which will allow such systems to self-organise in order to act more as a collective service than as individual machines.
-
-
-why do we want a middleware
 \section{Nature inspiration}
-see what exists, mimic
+
+Natural systems are good in dealing with the \emph{complexity} of coordinating large-scale software ecosystems \cite{nic-ieeeis19,facets,nic-cacm49}, since they natively feature key properties such as autonomy, openness, fault tolerance, situated behaviour, self-adaptation and robustness.
+%
+Many specific models have been proposed in literature, taking inspiration from natural ecosystems, social insects, biochemistry, chemistry and also physics \cite{ecosystems-jpcc7}.
+
+\subsection{Physical-inspiration}
+
+To the category of physical inspired systems belong all those works that take inspiration on the way physical particles move and self-organise according to gravitational and electromagnetic forces.
+%
+For instance, in \cite{fieldbasedcoordination-mamei06}, computational ``force fields'' -- generated either by coordinated components or by the coordination middleware -- propagate across a spatial environment, leading to distributed data structures that affect the actions and motions of the agents in that environment.
+%
+A similar approach is proposed in Co-fields \cite{cofields--esawIII}, exploiting composite computational fields to coordinate the motion of users and robots in an environment.
+%
+Physical inspiration also has influenced self-assembly, for instance in \cite{guo2012} the adoption of virtual force fields is suggested in order to control the material's shape.
+
+\subsection{(Bio)chemical-inspiration}
+
+Chemical reactions can be seen as an ensemble of myriads of simple laws that generate and regulate the evolution of extraordinarily complex molecular structures.
+%
+Those rules coordinate in some way the behaviours of a huge number of components, up to the point where they reductionistically drive the evolution of complex assemblies such as biological organisms and meteorological systems.
+
+Gamma \cite{gamma-scico15} was the first and the most prominent example of a chemically-inspired model.
+%
+In Gamma, coordination is conceived as the evolution of a space governed by chemical-like rules, globally working as a rewriting system \cite{gamma-lncs2235}.
+%
+In the CHAM (chemical abstract machine) model \cite{cham-tcs96}, states are interpreted as chemical solutions, where floating molecules (representing coordinated entities) interact according to some reaction rules, and where \emph{membranes} constrain the execution of reactions.
+
+In chemical tuple spaces \cite{chemcoord-soarbook} data, devices, and software agents are uniformly represented in the form of chemical reactants, and system behaviour is expressed by means of full-fledged chemical-like laws that are both time-dependent and stochastic rather than in form of rewriting rules.
+%
+\emph{Biochemical tuple spaces}~\cite{VCMZ-TAAS2011} enhance chemical tuple spaces by shaping coordination through distribution and topology.
+%
+Biochemical coordination models appear very flexible in enabling the spatial formation of both localised and distributed activity patterns, and have been exploited in many special-purpose pervasive frameworks, including crowd mobility management~\cite{werfel} and participatory sensing~\cite{lee}. The amorphous computing model can be considered an example of biochemical coordination model~\cite{amorphous}.
+
+Beside having been conceived as general computational model, (bio)chemically-inspired computing can be an effective starting point to realize schemes of dynamic service composition~\cite{frei} or knowledge aggregation~\cite{mariani2013molecules}.
+%
+Network protocols for data distribution and aggregation according to chemical models have also been explored, as in the Fraglets approach~\cite{Meyer07,Monti13}.
+%
+Several proposals exist to support service composition based on chemical models~\cite{BanP09}, including proposals specifically conceived for adaptive pervasive services~\cite{cpe}, or to support the adaptive organization of knowledge~\cite{mariani2013molecules}.
+
+\subsection{Stigmergy}
+
+In the computer science literature, the term ``stigmergy'' refers to a set of nature-inspired coordination mechanisms mediated by the environment~\cite{stigmergyhistory-artificiallife5,stigmergy-artificiallife5}.
+%
+Agents deposit data into a distributed, shared, environment so as to collectively (yet implicitly) build distributed data structures that can help them navigate in such environments.
+%
+The notion of \emph{stigmergy} was introduced in \cite{stigmergy-grasse59} as the fundamental coordination mechanism in termite societies.
+
+Nowadays, the most widely-studied example of stigmergic coordination in insect societies is probably that of ant colonies~\cite{dorigo-aco2004}.
+%
+The basic mechanism is based on \emph{pheromones} that are released in the environment by the ants that find food on their way back to the nest, thus building pheromone trails towards food that other ants are then stimulated to follow.
+%
+The pheromones act as environment markers for specific social activities, driving both the individual and the social behaviour of ants.
+%
+For instance, digital pheromones \cite{pheromoncoord-aamas2002,stigmergy-e4masII} have been fruitfully exploited as the basic mechanism for coordinating the movements of robot swarms and modular robots~\cite{tota-aamas2005}, for helping people find directions in an unknown environment~\cite{MameiZ07}, and for efficiently cluster information in networks \cite{collectivesort-scico74,wordNet}.
+%
+In the area of networking, stigmergy has been exploited to realize effective routing mechanisms in dynamic networks~\cite{swarmintelligence-book1999,AC-Survey}.
+
+
+
+
 
 \section{Spatial patterns}
 
@@ -542,45 +610,86 @@ Finally, along with the local value, a gradient can carry more information, e.g.
 % TODO problems with gradient
 \cite{crf}
 
+\subsection{Gradcast}
+
+\subsection{Voronoi partition}
 
 \section{Tuple-based coordination}
-what is there already
 
-\subsection{Linda}
-
-\subsection{Anthill}
-Anthill \cite{anthill} is a framework meant to support design and development of adaptive peer-to-peer applications, in which each node is provided with a local tuple space, agents can travel the network and interact indirectly reading, writing and retrieving tuples.
-
-\subsection{SwarmLinda}
-SwarmLinda \cite{swarmlinda} is a similar middleware.
-
-\subsection{Lime}
-\cite{murphy2006lime}
-\subsection{TOTA}
-Also Tuples On The Air (TOTA) \cite{mamei2009acm} is in this category of middlewares.
+In a tuple-based coordination model \cite{coordbook2001--ch04}, software agents synchronize, co-operate, and compete based on \emph{tuples}, which are simple data structures representing information chunks.
 %
-In TOTA, each tuple also carries with it a diffusion rule and a maintenance rule in addition to a content.
+Tuples are made available in \emph{tuple spaces}, which are shared information spaces working as the \emph{coordination medium}.
 %
-Tota inspired other works, such as the evolving tuples model \cite{evolvingtuples}, which adds to the tuples a form of context awareness, in form of possible evolution and adaptation to environmental changes.
+Coordination occurs by accessing, consuming, and producing tuples in an \emph{associative} way, relying on the actual content of tuples and not on any form of naming, addressing, or indexing.
+%
+An interesting survey of the technologies and platforms \cite{adaptivenesslinda-esoaI} analyses the suitability of tuple-based coordination systems in supporting openness, unpredictable changes in distributed environments, and several aspects related to adaptiveness: requirements that are of primary importance in pervasive systems.
 
-\cite{tota2}
-\subsection{Plastic}
-\cite{plastic}
-\subsection{MARS}
-\subsection{SELFMAN}
-\cite{selfman}
-\subsection{TuCSoN}
-\cite{tucson-aamas99}
-and the semantic extension
-\subsection{Biochemical tuple spaces}
-\cite{biochemicalTupleSpaces}
-and MoK?
-\subsection{\cartago{}}
-\cite{RPV-JAAMAS2011}
+Several implementations from both academia and industry exist.
+
+\begin{description}
+ \item[Anthill] \cite{anthill} is a framework meant to support design and development of adaptive peer-to-peer applications, in which each node is provided with a local tuple space, agents can travel the network and interact indirectly reading, writing and retrieving tuples.
+
+ \item[Biochemical tuple spaces] \cite{biochemicalTupleSpaces}
+
+ \item[GigaSpaces]\footnote{\url{http://www.gigaspaces.com}}
+
+ \item[JavaSpaces] \cite{javaspaces1999,javaspaces}
+
+ \item[Lime] \cite{murphy2006lime}
+
+ \item[Linda] \cite{linda-toplas7} is the common ancestor of every tuple based coordination framework.
+
+ \item[Molecules of knowledge] \cite{mariani2013molecules}
+
+ \item[SwarmLinda] \cite{swarmlinda}
+
+ \item[T Spaces] \cite{tspaces-ibmsj37}
+
+ \item[TOTA] \cite{mamei2009acm, tota2} is a tuple-based middleware explicitly conceived to support field-based coordination for adaptive context-aware and spatially-aware activities in pervasive computing scenarios.
+ %
+ In TOTA, each tuple also carries with it a diffusion rule and a maintenance rule in addition to a content. Tota inspired other works, such as the evolving tuples model \cite{evolvingtuples}, which adds to the tuples a form of context awareness, in form of possible evolution and adaptation to environmental changes.
+
+ \item[\tucson{}] \cite{tucson-aamas99}
+
+%  \item[] \cite{}
+%  \item[] \cite{}
+%  \item[] \cite{}
+%  \item[] \cite{}
+%  \item[] \cite{}
+%  \item[] \cite{}
+%  \item[] \cite{}
+%  \item[] \cite{}
+\end{description}
+
+SELFMAN? \cite{selfman}
+
+MARS?
+
+Plastic? \cite{plastic}
+
+\cartago{}? \cite{RPV-JAAMAS2011}
+
 \subsection{SAPERE}
-SAPERE is the project that attempted to unify multiple works of chemical-inspired coordination, such as \cite{biochemicalTupleSpaces, frameworkSelfOrg, VCMZ-TAAS2011, wordNet} can be seen as precursors of SAPERE \cite{sapere-procedia7}.
+\begin{figure}
+\centering
+\includegraphics[width=0.99\textwidth]{img/architecture_2.pdf}
+\caption{The SAPERE Reference Architecture.}
+\label{img:sapere-architecture}
+\end{figure}
 
-general idea of sapere, grounds on previous works.
+SAPERE\footnote{The model was developed as part of an EU-funded research project. See \url{http://www.sapere-project.eu/}.} \cite{sapere-procedia7} is a nature-inspired coordination model and framework to support the design and development of composite pervasive service systems.
+%
+Its reference architecture and coordination model synthesize from existing nature-inspired approaches, such as \cite{biochemicalTupleSpaces, frameworkSelfOrg, VCMZ-TAAS2011, wordNet}, and is based on an assumption of spatial, local interactions (to be realized via a network of distributed tuple spaces), which is in line with all nature-inspired approaches.
+%
+Its coordination laws make it possible to express and deploy general nature-inspired distributed algorithms and coordination patterns.
+%
+SAPERE abstracts a pervasive environment as a non-layered \emph{spatial substrate} deployed upon a dense network of connected heterogeneous ICT devices (\Cref{img:sapere-architecture}).
+%
+SAPERE acts as a shared coordination medium embodying the basic laws of coordination.
+%
+Its core components are: 
+% TODO: use SAC12 here %
+
 
 \section{Aggregate programming}
 
@@ -618,6 +727,8 @@ Despite the fact that all of them are based on viewing the collection of devices
 
 \subsection{Proto}
 \label{proto}
+
+Proto language and middleware~\cite{proto} exploits field-based coordination to orchestrate the activities of sensor-actuator networks
 
 Proto is based on the notion of a {\em computational field}---a map from devices comprising the system to (possibly structured) values, which is treated as unifying first-class abstraction to model system evolution and environment dynamics.
 
@@ -689,15 +800,20 @@ Besides Proto, which is probably the closest to a practical programming environm
 
 \section{Engineering and tools}
 \label{engineering-and-tools}
-% JOS %
-Development methodology for complex pervasive systems always include \emph{simulation} as a key step \cite{MCOV-SCP2011,BabulakIJOE2008,BandiniJASSS2009,josMacalN10} to realise what-if analysis prior to actual development, to both assess the general validity of the designed mechanisms and to fine tune system parameters.
+
+Despite the efforts of addressing specific aspects of self-adaptability and openness in pervasive contexts \cite{Mam06,BabaogluPatterns,facets}, yet a comprehensive engineering framework is missing.
 %
+The hardest challenge is due to the fact that most of the complexity of such systems does not come from the individual behaviours, but rather from interaction \cite{Wegner,interactionbook,interaction-interbook}.
+
+
+Multiple methodologies have been proposed to tackle complex pervasive systems \cite{MCOV-SCP2011,BabulakIJOE2008,BandiniJASSS2009,josMacalN10,sapere-procedia7}, and they always include \emph{simulation} as a key step  to realise what-if analysis prior to actual development, to both assess the general validity of the designed mechanisms and to fine tune system parameters.
+% TODO: need of simulation %
 There are many kinds of simulation tools available: they either provide programming/specification languages devoted to ease construction of the simulation process, especially targeting computing and social simulation (e.g. as in the case of multi-agent based simulation \cite{BandiniJASSS2009,SchumacherCEEMAS2007,vizzari-massimulationbook09,repast,sklar2007al}), or they stick to quite foundational computing languages to better tackle performance, mostly used in biology-oriented applications \cite{Priami1995,murata1989,UhrmacherWSC2005,EwaldJOS2007}.
 %
 None of the existing tools, however, aims at bridging the gap between these approaches, trying to extend the basic computing model of chemical reactions -- still retaining its high performance -- toward ease applicability to complex situated computational systems.
 
 
-methodological issues, deployment and testing issues, need of simulation
+
 \subsection{General purpose frameworks}
 MASON \cite{luke2005simulation}, Repast \cite{repast}, NetLogo \cite{sklar2007al} and Swarm
 \subsection{Specific simulators}
@@ -1250,25 +1366,318 @@ Although possible in principle, performing this task too frequently is likely br
 
 \section{Meta-model agnostic features}
 
+This section analyses the main features of \alchemist{} that can be exploited regardless the specific ``incarnation''.
+%
+They add a great value to the tool, since they can be used immediately after the creation of a novel meta-model, with no need to specifically write any new code besides some minimal glue.
+
 \subsection{Distributed statistical analysis}
 
-\subsection{Real world maps}
+As we have seen in \Cref{engineering-and-tools}, simulation represents a key step in the engineering of pervasive systems.
+%
+Being a simulation basically a sampling over an enormous probability space, obvious questions accompany these procedures:
+\begin{itemize}
+ \item how reliable are the obtained values?
+ \item How is the number of performed simulations chosen?
+ \item How many simulations are required in order to state system properties with a certain degree of confidence?
+\end{itemize}
 
- \begin{figure}
-  \subfigure[GPS trace]{\includegraphics[width=0.315\textwidth]{img/gps}
-   \label{img:gps-alchemist-navi}
+Moreover, there is frequently a lack of decoupling between the model specification and the definition of the system's properties of interest: they are often embedded in the model, and their values are obtained via logging operations performed during the simulation process.
+
+This section presents a tool meant to face these challenges, obtained chaining \alchemist{}, with \multivesta{}\footnote{\url{http://code.google.com/p/multivesta/}} \cite{multivesta}, a recently proposed lightweight tool extending \vesta{}~\cite{Sen:2005} and \pvesta{}~\cite{AlTurkiM11} which allows to enrich existing discrete event simulators with automated and distributed statistical analysis capabilities.
+%
+The result is thus a statistical analysis tool tailored to chemical-inspired pervasive systems.
+%
+The benefits obtained by chaining the simulator with \multivesta{} are:
+\begin{enumerate}
+ \item a language (\multiquatex) to compactly and cleanly express systems properties, decoupled from the model specification;
+ \item the automated estimation of the expected values of \multiquatex{} expressions with respect to \emph{n} independent simulations, with \emph{n} large enough to respect a user-specified confidence interval;
+ \item an interactive plot as well as the generation of gnuplot input files to visualize the obtained results;
+ \item a client-server architecture to distribute simulations.
+\end{enumerate}
+
+\multivesta{} is independent on the model specification language: it only assumes that discrete event simulations can be performed on the input model.
+%
+As described in~\cite{multivesta}, the tool offers a clean interface to integrate existing discrete event simulators, enriching them with a property specification language, and with efficient distributed statistical analysis capabilities.
+
+\subsubsection{\multivesta{} and \multiquatex{}}
+
+\multivesta{} performs a statistical (Monte Carlo based) evaluation of \multiquatex{} expressions, allowing to query about expected values of observations performed on simulations of probabilistic models. 
+%
+A \multiquatex{} expression may regard more measures of a model, in which case the same simulations are reused to estimate them, thus improving the performance of the analysis tasks. %
+Moreover, the tool has a client-server architecture allowing to distribute the simulations on different machines.
+%
+A detailed description of \multiquatex{} and of the procedure to estimate its expressions is out of the focus of this work, the interested reader can deepen her knowledge reading \cite{multivesta,AghaMS06}.
+%
+Before defining a \multiquatex{} expression, it is necessary to specify the state characteristics to be observed.
+%
+This model-specific step ``connects'' \multiquatex{} with the model.
+%
+The state observations are offered via the \texttt{{rval}}(\emph{obs}) predicate which returns a real number for each observation, specified by the string parameter \emph{obs}. 
+
+A \multiquatex{} expression consists of a set of definitions of \emph{parametric recursive temporal operators}, followed by a list of \emph{\texttt{eval} clauses}. Each \texttt{eval} clause relies on the defined temporal operators, and specifies a property whose expected value must be evaluated.
+
+In order to evaluate a \multiquatex{} expression, \multivesta{} performs several simulations, obtaining from each a list of samples (real numbers).
+%
+One sample for each \texttt{eval} clause is obtained, thus all the queried measures are evaluated using the same simulations, improving performance.
+%
+Based on the samples obtained from simulations, \multivesta{} estimates \multiquatex{} expressions with respect to two user-provided parameters: $\alpha$ and $\delta$. 
+%
+Considering the case of simple expressions with just one \texttt{eval} clause, the estimations are computed as the mean value of the $n$ samples obtained from $n$ simulations, with $n$ large enough to grant that the size of the $(1 - \alpha)*100\%$  \textit{Confidence Interval} (CI) is bounded by $\delta$.
+%
+In other words, if a simple \multiquatex{} expression is estimated as $\overline{x}$, then, with probability $(1 - \alpha)$, its actual expected value belongs to the interval $[\overline{x} - \delta/2,\overline{x} + \delta/2]$.
+%
+The case of expressions with multiple \texttt{eval} clauses is similar, with the note that the \texttt{eval} clauses may regard values of different orders of magnitude, and thus the user may provide a list of $\delta$ rather than just one. 
+%
+After having obtained a sample for every \texttt{eval} clause from a simulation, these values are used to update the means of the samples obtained from previous simulations (one mean per \texttt{eval} clause). If the CIs have been reached for every \texttt{eval} clause, the evaluation of the expression is terminated, otherwise further simulations are performed.
+%
+Note that each \texttt{eval} clause may require a different number of simulations to reach the required CI. Once the CI of an \texttt{eval} clause has been reached, such \texttt{eval} clause is ignored in eventual further simulations performed for other \texttt{eval} clauses. 
+
+
+\subsubsection{Integrating \multivesta{} and \alchemist{}}
+
+In order to chain the tools, some steps, have been tackled once and for all, while others are model-specific.
+%
+Essentially, in order to allow the interaction with \multivesta{}, \alchemist{} has to fulfill two requirements:
+\begin{enumerate}
+ \item the ability to advance the simulation in a step-by-step manner (which is provided by the \texttt{playSingleStepAndWait} method in \texttt{ISimulation} interface);
+ \item the ability to analyze the model status after each simulation step, providing measures in form of real numbers about properties of interest.
+\end{enumerate}
+
+Since both \multivesta{} and \alchemist{} are Java-based, their interaction has been easily realized by subclassing the \texttt{NewState} class of \multivesta{}.
+%
+The obtained \texttt{AlchemistState} class is sketched in \Cref{lst:alchemiststate}, where unnecessary details are omitted.
+The new class contains some \alchemist{}-specific code, providing \multivesta{} with the simulation control and proper entry points for the analysis.
+
+\begin{lstlisting}[frame=single, basicstyle=\scriptsize, language=Java, mathescape, caption=AlchemistState extending \multivesta{}'s NewState class, label=lst:alchemiststate,float=t,numbers=left]
+public class AlchemistState<N extends Number, D extends Number, T> extends NewState {
+  private final long maxS; 
+  private final ITime maxT;
+  private ISimulation<N, D, T> sim;
+  ...
+  public AlchemistState(final ParametersForState params) throws ...{
+    super(params);
+    final StringTokenizer otherparams = new StringTokenizer(params.getOtherParameters());
+  /* Initialization of Alchemist-specific parameters
+     and execution environment resorting to otherParams */
   }
-~
-  \subfigure[Map-based navigation]{\includegraphics[width=0.315\textwidth]{img/map}
-   \label{img:map-alchemist-navi}
+  ...
+  public void setSimulatorForNewSimulation(final int seed) {
+    /* Stop current simulation, create a new one. */
+    ...
+    sim.stop();
+    ...
+    env = getFreshEnvironment(seed);
+    sim = new Simulation<>(env, maxS, maxT);
+    ...
   }
-~
-  \subfigure[Mixed mode]{\includegraphics[width=0.315\textwidth]{img/mixed}
-   \label{img:mixed-alchemist-navi}
+  ...
+  public void performOneStepOfSimulation() {
+    sim.playSingleStepAndWait();
   }
- \caption{Three snapshots showing the different navigation modes available in \alchemist{}. In \Cref{img:gps-alchemist-navi} there is a GPS trace consisting in four points. If not specified to behave otherwise, \alchemist{} computes the average speed between two points, and moves the node along a straight line with constant speed. This, depending on the precision of the trace, may generate paths that cross over buildings. In \Cref{img:map-alchemist-navi}, the route between the start and end point is computed using the built-in navigator. This could lead the nodes towards paths different from those described by the route. In \Cref{img:mixed-alchemist-navi}, the routing subsystem is used to refine the quality of the GPS traces: \alchemist{} will move the node with constant speed between the two points, using map based routing when necessary to improve precision between two consecutive trace points.}
- \label{img:traces-navigation}
+  ...
+  public double rval(final String obs) {
+    if(obs.equals("time")) return getTime();
+    if(obs.equals("steps")) return getStep();
+    //other model-independent observations 
+    ...
+    return getStateEvaluator().getVal(obs, this);
+  }
+}
+\end{lstlisting}
+
+In the constructor (lines $6$-$10$), the superclass initialization is done by a simple \texttt{super()} call.
+%
+The remaining code initializes \alchemist{}-specific parameters such as the maximum time or steps to simulate.
+%
+Those  are in general not required, since \multivesta{} is able to detect when the analysis requirements have been met, and consequently stop the simulation flow.
+%
+The method \texttt{setSimulatorForNewSimulation()} is depicted in lines $12$-$20$.
+%
+The method is invoked by \multivesta{} before performing a new simulation to (re)initialize the status of the simulator, providing to it a new random seed. 
+%
+In lines $22$-$24$, \texttt{performOneStepOfSimulation()} is provided: resorting to the \alchemist{} method \texttt{playSingleStepAndWait()}, it allows \multivesta{} to order the execution of a single simulation step.
+
+In order to inspect the simulation state, the \texttt{rval()} method defined in lines $26$-$32$ is invoked.
+%
+The argument specifies the observations of interest.
+%
+This method inspects the simulation state for all aspects common to any \alchemist{} model, e.g., in the listing are sketched the current simulated time (line $27$) and the number of performed simulation steps (line $28$).
+%
+Clearly, each \alchemist{} model will have its own observations of interest.
+
+Depending on the model at hand, it may be necessary to refine the model-independent observations exposed by \texttt{AlchemistState} with a set of model-specific ones. This can be done by simply instantiating the \texttt{IStateEvaluator} interface provided by \multivesta, constituted by one method only.
+
+\subsubsection{Example}
+
+This section discusses the analysis performed on a crowd steering scenario, similar to the one which will be presented in detail in \Cref{jos-museum}.
+%
+In such scenario, two group of people are inside an indoor environment, and are steered towards two point of interest (POI) such that their ideal trajectory intersect, creating a crowd.
+%
+The steering system is implemented leveraging the SAPERE meta-model, and as such data items in this scenario are called \texttt{LSA}s.
+%
+This example is not meant to provide significant scientific insights on crowd steering (thoughts about it will be provided in the remainder of this thesis), but rather to act as toy-example to demonstrate the flexibility and possibilities of the chaining of \alchemist{} and \multivesta{}.
+
+The outcome of the analysis is summarized in the three charts of \Cref{img:analysisCharts} (obtained using the gnuplot input files provided by \multivesta{}), showing, at the varying of the simulated time, the expected values of: the number of people which have reached their point of interest (top), the average number of connections of the devices (middle), and the number of LSAs in the system (bottom).
+
+\lstset{caption=The evaluated parametric multi-expression ($MainMQ$), label=listing:parametricMQ}
+\begin{lstlisting}[frame=single, mathescape, morekeywords={parametric,eval,E,if,fi,then,else,s,rval,evalME,evalOnceME}, float=t, numbers=left]
+people@POI($x$) = if{s.rval("time") >= $x$}
+      then s.rval("bPOI")
+      else $\textbf{{\#}}$people@POI($x$)
+   fi;
+people@RPOI($x$) = // similar to people@POI
+people@LPOI($x$) = // similar to people@POI
+avgConn($x$) = if{s.rval("time") >= $x$}
+      then s.rval("degree")
+      else $\textbf{{\#}}$avgConn($x$)
+   fi;
+LSAs($x$) = if{s.rval("time") >= $x$}
+      then s.rval("LSAs") 
+      else $\textbf{{\#}}$LSAs($x$)
+fi;
+eval parametric(E[people@POI($x$)],E[people@RPOI($x$)],              E[people@LPOI($x$)],E[avgConn($x$)],E[LSAs($x$)],$x$,$0.0$,$1.0$,$50.0$);
+\end{lstlisting}
+
+The three charts have been obtained by evaluating $MainMQ$ of \Cref{listing:parametricMQ}, having $5$ parametric temporal operators (lines $1$-$9$):
+%
+\texttt{people@RPOI} and \texttt{people@LPOI} regard the number of people which have reached, respectively, the POI on the right and the one on the left, while \texttt{people@POI} counts instead how many people have reached their destination. The fourth temporal operator (\texttt{avgConn}) regards the connectivity degree of the devices. Finally, \texttt{LSA}s regards the number of LSA in the system, giving insights on the amount of memory required to sustain the system.
+%
+The temporal operators are analysed at the varying of the simulated time from $0$ to $50$ seconds, with step $1$ (line $10$). Thus the analysis consisted in the estimation of the expected values of the $5$ temporal operators instantiated with $50$ parameters, for a total of $250$ expected values. 
+
+\begin{figure}
+\begin{center}
+\vspace{-0.2cm}
+\includegraphics[width=0.7\columnwidth]{img/people}
+\includegraphics[width=0.7\columnwidth]{img/connectivity}
+\includegraphics[width=0.7\columnwidth]{img/lsas}
+\caption{Analysis of the crowd steering scenario: (top) number of people at the POIs, (middle) average number of connections per device, (bottom) number of LSAs in the system.}
+\label{img:analysisCharts}
+\end{center}
 \end{figure}
+
+A high degree of precision has been required: $\alpha$ has been set to $0.01$, while the $\delta$ values (the size of the CIs) have been chosen considering the orders of magnitude of the measures: $0.5$ for the instances of \texttt{people@POI($x$)}, \texttt{people@RPOI($x$)} and \texttt{people@LPOI($x$)}; $0.05$ for  \texttt{avgConn($x$)}; and $3$ for \texttt{LSAs($x$)}.
+%
+To reach such a level of confidence, the tool ran approximately $2500$ simulations, requiring less than a hour.
+%
+The discussed confidence intervals are depicted in the aforementioned charts: the two lines drawn above and below the central lines represent the obtained CIs of the expected values, thus indicating the intervals in which the actual expected values lie with probability $0.99$.
+
+The top chart regards the first $3$ temporal operators: the top plot refers to the number of people in total which have reached their target POI, while the two almost over-imposed lower plots regard the number of people at the right POI and at the left POI. 
+%
+All the three measures under analysis produced monotonically increasing sigmoid curves.
+%
+We can deduce from this behavior that there are no systemic errors in the crowd steering system, such as people with no or wrong suggested final destination, in which case we would have noticed one or more flatted zones flawing the sigmoid curve.
+%
+We note also that after around 30 simulated seconds all the people have reached their target, and that it takes around 10 seconds for the fastest walkers to get to their destination.
+Note that, despite that the analysis has been performed for 50 simulated seconds, the charts presented in \Cref{img:analysisCharts} have been cut at time 35 to better show the most relevant results: in fact, the system reaches stability after this time, and no event of interest happens later.
+%
+Moreover we can also notice that people going from left to right are slightly faster than the other group.
+%
+This difference, due to the asymmetric positioning of people in the center of the scenario, is hardly visible and would have been impossible to spot with a lower precision analysis.
+
+The middle chart shows the evolution in time of the average number of connections of the devices (i.e., both sensors and smartphones).
+%
+Since each device is considered to be connected to all those within a range of 1.5 meters, it also gives us a hint about the crowding level.
+%
+There is a noticeable peak at around 8 seconds: it is due to a high number of people approaching the central group.
+%
+After that, the peak disappears when most people overtook the obstacle and are walking towards their POI.
+%
+Finally, there is a growth: progressively, people reach their destination and tend to create a crowd.
+
+The bottom chart shows the number of LSAs in the whole system, indirectly giving hints on the global memory usage.
+%
+Once the system is started, there is a very quick growth, due to the gradient being spread from the sources to the whole sensors network and to the LSAs produced by the crowd-sensing.
+%
+The system reaches a substantial stability after a couple of seconds.
+%
+From that point on, the number of LSAs has very little variations: the system has no ``memory leak'', in the sense that it does not keep on producing new LSAs without properly removing old data. 
+
+\subsubsection{Performance Assessment}
+All the experiments of the previous section have been run on a machine equipped with four Intel\textregistered{} Xeon\textregistered{} E7540 and 64GB of RAM, running Linux 2.6.32 and Java 1.7.0\_04-b20 64bit.
+
+In order to measure the performance scaling of the tool, we ran our analysis multiple times varying the number of \multivesta{} servers deployed.
+%
+Results are summarized by the dark line of \Cref{img:performance}, showing that with only 1 server (\alchemist{} does not have any parallel capability by its own), the analysis required almost 17 hours, while with more than 30 servers (enabled by the chaining with \multivesta{}) it required less than an hour. For the considered scenario, by distributing simulations we have thus obtained a more than eighteen times faster analysis.
+
+\begin{figure}[t]
+\begin{center}
+\vspace{-0.2cm}
+%  \includegraphics[width=0.49\textwidth]{charts/perfcomp}
+ \includegraphics[width=0.99\textwidth]{img/scaling}
+ \end{center}
+%  \caption{Performance improvement reusing simulations (left), performance scaling a the varying of the number of used cores (right).}
+ \caption{Performance scaling with of the number of running servers.}
+ \label{img:performance}
+\end{figure}
+
+It is worth to note that such comparison of performance is affected by the statistical nature of the analysis procedure. 
+%
+Intuitively, when evaluating a \multiquatex{} expression resorting to $x$ or to $x + y$ servers, in both cases we initialize the first $x$ servers with the same $x$ seeds, generating thus the same $x$ simulations. However, the remaining $y$ servers are initialized with new seeds, and thus produce new simulations.
+Clearly, by having different simulations, we may obtain different sample variances, requiring a different number of simulations.
+%
+For this reason, the bright line of \Cref{img:performance} depicts the time analysis normalized with respect to the number of simulations (obtained dividing the overall analysis time by the number of performed simulations).
+%
+The two lines of \Cref{img:performance} evolve accordingly, thus confirming the great performance gain brought by the distribution of simulations.
+
+\begin{table}[tb]
+ \caption{Time performance improvements reusing simulations (seconds).}
+%\begin{figure}[t]
+%\caption{{Performance improvements reusing simulations. Times are in seconds.}}
+\begin{center}
+\scalebox{0.82}{
+ \begin{tabular}{| c | c | c | c |}
+ \hline
+ %\hline
+ & \textbf{Expressions} & \textbf{Param. expressions} & \textbf{Param. multi-expressions} \\
+ \hline%\hline
+ \textbf{\texttt{people@POI}} & 
+ %THIS IS THE CORRECT NUMBER { 28045.77}
+ 28045.77
+ %39999.32 %IN THE PAPER SUBMITTED TO 4PAD WE DISCUSSED THIS 
+ & 2567.26 & n.a. \\
+ \hline
+ \textbf{\texttt{people@RPOI}} & 15891.13 & 1114.86 & n.a. \\
+ \hline
+ \textbf{\texttt{people@LPOI}} & 15560.83 & 950.30 & n.a. \\
+ \hline
+ \textbf{\texttt{avgConn}} & {%\color{blue}
+ 90111.29}  % 
+ & 1372.64 & n.a. \\
+ \hline
+ \textbf{\texttt{LSAs}} & 58630.45 %1m11.231 
+ & 2504.33 & n.a. \\
+ \hline\hline
+ \textbf{Total time} & {%\color{blue}
+ %220193.02
+  208239.47
+ } & 8509.39 & 3215.95 \\
+ \hline
+ %\hline
+ \end{tabular}}
+\end{center}
+ %\caption{Time performance improvements reusing simulations (seconds).}
+ \label{tab:reuse}
+%\end{figure}
+\end{table}
+
+\multivesta{} has a further important feature which dramatically reduces the analysis time: the reuse of simulations to estimate many expected values. 
+%
+The reusage happens on two levels:
+\begin{enumerate}
+ \item expressions can be made parametric, and thus simulations can be reused for computing the same property at the varying of a parameter (e.g., at different time steps);
+ \item it is possible to write multi-expressions , and thus reuse simulations to evaluate multiple properties.
+\end{enumerate}
+%
+Moreover,  by combining these two features, it is possible to reuse simulations for multiple parametric properties (e.g. $MainMQ$ of \Cref{listing:parametricMQ}).
+%
+As explicated by \Cref{tab:reuse} (whose reported analysis have been performed resorting to 48 servers), 	parametric expressions (second column) allowed us to save a stunning {%\color{blue}
+96}\% of execution time with respect to the simple expressions case without reuse of simulations (first column). Moreover, the parametric multi-expression feature (third column) allowed us to further cut down this time to a third.
+%
+We can thus advocate that, by exploiting reuse of simulations, for the considered scenario we obtained a more than 64 times faster analysis.
+%
+Clearly, the performance gains change depending on the considered scenario or properties. In fact, the more simulations are required, and the longer they take, the greater will be the advantage.
+
+\subsection{Real world maps}
 
 \alchemist{} supports real-world environments.
 %
@@ -1287,6 +1696,24 @@ The first feature offered is about the initial node displacing.
 When adding a node to the environment, in fact, it is possible not to displace the node in the exact position indicated, but in the nearest street point.
 %
 This comes in particularly handy in order to realise the network of static devices: the simulator can be fed with a grid of devices, and it automatically modifies the positions of each node in order to displace it on a street.
+
+ \begin{figure}
+  \subfigure[GPS trace]{\includegraphics[width=0.315\textwidth]{img/gps}
+   \label{img:gps-alchemist-navi}
+  }
+~
+  \subfigure[Map-based navigation]{\includegraphics[width=0.315\textwidth]{img/map}
+   \label{img:map-alchemist-navi}
+  }
+~
+  \subfigure[Mixed mode]{\includegraphics[width=0.315\textwidth]{img/mixed}
+   \label{img:mixed-alchemist-navi}
+  }
+ \caption{Three snapshots showing the different navigation modes available in \alchemist{}. In \Cref{img:gps-alchemist-navi} there is a GPS trace consisting in four points. If not specified to behave otherwise, \alchemist{} computes the average speed between two points, and moves the node along a straight line with constant speed. This, depending on the precision of the trace, may generate paths that cross over buildings. In \Cref{img:map-alchemist-navi}, the route between the start and end point is computed using the built-in navigator. This could lead the nodes towards paths different from those described by the route. In \Cref{img:mixed-alchemist-navi}, the routing subsystem is used to refine the quality of the GPS traces: \alchemist{} will move the node with constant speed between the two points, using map based routing when necessary to improve precision between two consecutive trace points.}
+ \label{img:traces-navigation}
+\end{figure}
+
+
 
 The second useful feature is the possibility to rely on the map data to compute routes, as in \Cref{img:map-alchemist-navi}.
 %
@@ -1891,7 +2318,7 @@ Finally, function \texttt{\fn{distanceToWithObstacle}} shows exclusive branch at
 %
 This is instantiated by setting when executions occur, how communication is implemented and the contents of the environment.
 %
-Two such instantiations are presented in this paper: as a simulation in the \alchemist{} framework (b) and as a daemon for coordinating management of networked services (c).}
+Two such instantiations are presented in this thesis: as a simulation in the \alchemist{} framework (b) and as a daemon for coordinating management of networked services (c).}
 \label{img:protelis-architecture}
 \end{figure}
 
