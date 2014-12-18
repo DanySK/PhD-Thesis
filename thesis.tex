@@ -2760,13 +2760,19 @@ This implementation of Protelis thus forms an important component of the toolcha
 
 \chapter{Future and ongoing work}
 
-%TODO fixme
-The \protelis{} framework continues to be actively developed:
-%
-we plan to enrich it in the future by adding higher-level abstractions
-for aggregate programming grounded on the mechanisms discussed in this
-work.
+\section{Aggregate programming}
 
+The \protelis{} framework continues to be actively developed: we plan to enrich it in the future by adding higher-level abstractions for aggregate programming grounded on the mechanisms discussed in this work.
+
+Also, we observe that the current situation is much like that of cooperative multitasking in the operating systems world, before the development of the current kernel-user distinction and pre-emptive multitasking that dominates the world now.
+%
+We think that \protelis{} could be a new architecture for decentralized pre-emptive management of distributed processes, which provides these same sort of capabilities for distributed systems.
+%
+In particular, we want to exploit the field calculus model for aggregate programming of distributed systems, extending it to handle first-class functions, which enables its alignment mechanism for pre-emptive control of the scope of a distributed computation to be used for process managament.
+%
+These mechanisms enable the construction of a prototype ``thread manager'' for pervasive and distributed systems, including the ability to preempt a process, to kill a rogue process, or to dynamically manage the scope of a process.
+%
+This point of view will be deeply analysed a paper which is an ongoing work.
 
 \section{Biochemical meta model for \alchemist{}}
 ciao
