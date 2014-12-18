@@ -649,7 +649,7 @@ Several implementations from both academia and industry exist.
  %
  In TOTA, each tuple also carries with it a diffusion rule and a maintenance rule in addition to a content. Tota inspired other works, such as the evolving tuples model \cite{evolvingtuples}, which adds to the tuples a form of context awareness, in form of possible evolution and adaptation to environmental changes.
 
- \item[\tucson{}] \cite{tucson-aamas99}
+ \item[TuCSoN] \cite{tucson-aamas99}
 
 %  \item[] \cite{}
 %  \item[] \cite{}
@@ -687,9 +687,30 @@ SAPERE abstracts a pervasive environment as a non-layered \emph{spatial substrat
 %
 SAPERE acts as a shared coordination medium embodying the basic laws of coordination.
 %
-Its core components are: 
-% TODO: use SAC12 here %
-
+Its core components are \cite{sapereecolaws-sac2012}:
+\begin{description}
+ \item[LSA] Because of the need to tolerate diversity, a cornerstone of pervasive ecosystems is that a uniform representation is required for the various software agents living within them (whether they run on smartphones, sensors, actuators, displays, or any other computational device).
+ %
+ Such a representation needs to expose any information about the agent (state, interface, goal, knowledge) that is pertinent for the ecosystem as a whole or for any subpart of it.
+ %
+ In SAPERE this description is called ``Live Semantic Annotation'' for it should continuously represent the state of its associated component (live), and it should be implicitly or explicitly connected to the context in which such information is produced, interpreted and manipulated (semantic)—possibly relying on standard technologies and techniques of the Semantic Web, like RDF \cite{manola2004primer}.
+ %
+ \item[LSA-space] To handle situatedness, the behaviour of each agent strictly depends on the local context in which it runs, that is, on the state of other agents living in the same locality (intended as network neighbourhood).
+ %
+ As such, the LSAs of each agent are reified in a distributed space (called an “LSA-space”) acting as the fabric of the ecosystem, where “context” is simply defined and represented as the set of LSAs stored in a given locality.
+ %
+ \item[LSA bonding] Additionally, and in order to make any agent act in a meaningful way with respect to the context in which it is situated, special mechanisms are needed to provide a fine-tuned control of what to each agent is visible/modifiable and what is not.
+ %
+ SAPERE tackles this issue by allowing an LSA to include bonds (i.e., references) to other LSAs in the same context.
+ %
+ It is only via a bond that an agent can inspect the state/interface of another agent and act accordingly, while modifications are allowed only to the LSAs an agent injected itself.
+ %
+ \item[Eco-laws] Because of adaptivity, while agents enact their individual behaviour by observing their context and updating their LSAs, global behaviour (i.e., global system coordination) is enacted by self-organising manipulation rules of the LSA-space, called eco-laws.
+ %
+ They can execute deletion/update/movement/re-bonding actions applied to a small set of LSAs in the same locality.
+ %
+ SAPERE structures such eco-laws as chemical-resembling reactions over LSAs—similarly to other approaches like \cite{BanP09,biochemicalTupleSpaces,VCMZ-TAAS2011}.
+\end{description}
 
 \section{Aggregate programming}
 
@@ -723,7 +744,6 @@ In short, the key idea behind aggregate programming is to provide languages and 
 A large number of very diverse aggregate programming approaches have been proposed, including abstract graph processing (e.g.,~\cite{kairos}), declarative logic (e.g.,~\cite{Meld}), map-reduce (e.g.,~\cite{dean2008mapreduce}), streaming databases (e.g.,~\cite{tinydb}), and knowledge-based ensembles (e.g.,~\cite{SCEL})---for a detailed review, see~\cite{SpatialIGI2013}.
 
 Despite the fact that all of them are based on viewing the collection of devices as an approximation of continuous space (as depicted in \Cref{img:space}), most aggregate programming approaches, however, have been too specialized for particular assumptions or applications to be able to address the complex challenges of these emerging environments.
-
 
 \subsection{Proto}
 \label{proto}
@@ -1346,7 +1366,7 @@ There is a set of applications which are better tackled by \alchemist{}.
 %
 In particular, \alchemist{} is suitable for all those simulation scenarios in which agents have relatively simple behaviour, and the notion of agent-based environment plays instead a fundamental role in organising and regulating the agents' activities \cite{BandiniE4MAS2006} by both enabling local interactions among the proactive entities \cite{HellebooghAAMAS2007} and enforcing coordination rules \cite{aose-mags5}, allowing the modeller to shift her focus from the local behaviour of the single agent to a more objective vision of the whole MAS \cite{SchumacherCEEMAS2007}. 
 %
-The idea of dealing with a strong notion of environment in multi-agent systems has been deeply developed in a series of work: other than its importance in the simulation context \cite{HellebooghAAMAS2007}, at the infrastructure level \cite{VHRSZ-JAAMAS2007} and at the methodological level \cite{aose-mags5}, there have been proposals of meta-models such as A\&A \cite{artifacts-jaamas17} and infrastructures such as {\sf TuCSoN} \cite{tucson-aamas99} and \cartago{} \cite{RPV-JAAMAS2011}.
+The idea of dealing with a strong notion of environment in multi-agent systems has been deeply developed in a series of work: other than its importance in the simulation context \cite{HellebooghAAMAS2007}, at the infrastructure level \cite{VHRSZ-JAAMAS2007} and at the methodological level \cite{aose-mags5}, there have been proposals of meta-models such as A\&A \cite{artifacts-jaamas17} and infrastructures such as \tucson{} \cite{tucson-aamas99} and \cartago{} \cite{RPV-JAAMAS2011}.
 %
 A common viewpoint of all these works is that the behaviour of those passive and reactive components structuring the environment (e.g. \emph{artifacts} in A\&A) is well defined in terms of rules expressed as declarative conditions-imply-actions fashion.
 %
