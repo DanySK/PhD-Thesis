@@ -1772,7 +1772,179 @@ In this sense, \alchemist{} automatically detects when a real-world environment 
 
 
 \section{Chemical meta-model}
+
+% TODO: description, mi sa che tocca farla a mano...
+
 \subsection{Example scenario: Morphogenesis}
+
+As example to test the power of a chemical stochastic simulator enriched a more general model, we propose a case study on morphogenesis.
+%
+Development of multicellular organisms begins with a single cell -- the fertilised egg, or zygote.
+%
+The egg cell is always asymmetric, \emph{i.e.}, the distribution of maternal proteins inside the cell is not uniform.
+%
+After fertilisation it divides mitotically to produce all the cells of the body. 
+%
+The resulting blob of cells starts the process of differentiation which is initially caused by the presence of \emph{maternal factors} located in specific areas of the organism's egg.
+%
+The ordered spatial organisation of this diversity is then caused by the interactions among cells. These can be direct or mediated by specific diffusing proteins called \emph{morphogens}. 
+%
+After that, tissues have been created, and the formation of organs begins so as to originate the final shape of the organism \cite{alberts, gilbert2006-devbio}. 
+
+The main issues of Developmental Biology, nowadays only partially solved, are:
+\begin{itemize}
+ \item which are the processes and the genetic mechanisms that control cellular (or nuclear) duplication;
+ \item which are the processes and the genetic mechanisms by which cells differentiate;
+ \item how it is possible that cellular differentiation is spatially organised.
+\end{itemize}
+
+It is clear that the macroscopic emergent results of pattern and shape formation originates from the microscopic mechanisms of intra-cellular reactions and environmental morphogen diffusion.
+%
+But how these mechanisms coordinate is still under investigation through experimental techniques and theoretical models.
+
+%%%%% Drosophila models
+A well known example of multicellular development is given by \emph{Drosophila Melanogaster}, whose spatial organisation results in the segmented pattern of gene expression shown in  \Cref{fig:drosophila}. 
+%
+To show the spatial-temporal evolution of the pattern, the organism has been object of several modelling attempts, most of which focus their investigation in gene interactions and protein diffusion mechanisms, bounding the window of analysis at a period of development that does not massively involve nuclear or cellular divisions. 
+%
+To cite few of them, in \cite{reinitz95} the change of protein concentration is modelled as an Ordinary Differential Equation depending on the process of gene regulation, diffusion over a  discretised space and decay.  Mitosis are also modelled as a synchronous  atomic process that suspends the synthesis of protein and causes a doubled number of cell nuclei.
+%
+In \cite{gursky04} it is presented a continuous mathematical model based on a set of coupled non linear reaction-diffusion Partial Differential Equations  that describe how protein concentrations change over time and space as a result of the mechanisms of protein synthesis and degradation, gene inhibition and activation, protein diffusion. They replace embryo's cellular structure with a continuum and do not model nuclear divisions. 
+%
+%Simulations are performed from cl. cyc 11 to 14.
+%
+In \cite{montagna-cs2bio10} it is described a stochastic and discrete version of  \cite{gursky04} based on a set of interacting compartments inside which chemical reactions implementing the gene regulatory network can occur. It does not count for changes in the network topology due to compartment movement and mitosis.
+%
+These models run over a simulation window that start from cleavage cycle 11 to cleavage cycle 14.
+%
+In \cite{LeccaJIB2010} the gradient formation of the Drosophila \emph{bicoid} protein, mainly caused by the morphogen diffusion, is simulated with an innovative stochastic model of reaction-diffusion systems implemented into a Gillespie-like stochastic simulation algorithm. They do not model neither gene interactions nor cellular / nuclear divisions.
+%
+
+To capture a bigger window of embryo development we built on top of \alchemist{}'s chemical meta-model a model of \emph{Drosophila} development so as to capture  both nuclear division and molecular processes such as  morphogen diffusion and gene regulatory networks.
+
+\subsubsection{Development of Drosophila Melanogaster}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.99\textwidth]{img/drosophila}
+\caption{The pair-rule gene  \emph{even-skipped} (red) together with \emph{hb} (blue) and \emph{Kr} (green) in \emph{Drosophila} embryo at the cleavage cycle 14A temporal class 8. Reconstructed image from \cite{flyex2009}. Embryo name: ba3. }
+\label{fig:drosophila}       % Give a unique label
+\end{figure}
+
+\emph{Drosophila} is one of the best known multicellular organism. 
+%
+The egg of  \emph{Drosophila} is already polarised by differently localised mRNA molecules which are called \emph{maternal effects}. 
+%
+The early nuclear divisions are synchronous and fast (about every 8 minutes): the first nine divisions generate a set of nuclei forming the \emph{syncytial blastoderm}. All the dividing nuclei share a common cytoplasm, and material can diffuse throughout the embryo. 
+%
+After other four nuclear divisions, during the fourteenth nuclear division, plasma membranes grow to enclose each nucleus, converting the syncytial blastoderm into a \emph{cellular blastoderm} consisting of about 6000 separate cells.  
+%
+After the first ten divisions the time required to complete each of the next four divisions becomes progressively longer: cycle 13 takes for instance 25 minutes. During cycle 14 cells conclude their mitosis in rather different time: some cells take 75 minutes, other 175 minutes to complete this cycle. The rate of division is then constant in the first hours of development (9.05 $min^{-1}$), then decreases until a low value (0.2 $min^{-1}$).
+%
+The transcription of RNA massively begins during cleavage cycle 14 so that the embryo enters in the mid-blastula transition.
+%
+\begin{figure}
+\centering{\includegraphics[width=0.99\textwidth]{img/drosi}}
+\caption{Hierarchy of genes establishing the anterior-posterior body plan}
+\label{fig:anterpostpattern}
+\end{figure}
+
+\noindent The studies on the genetics at the basis of the segmentation in the anterior-posterior body plan identified a hierarchy of genes that controls segment determination: maternal effects, gap genes, pair-rule genes and segment polarity genes. In \Cref{fig:anterpostpattern} an illustrative subset of this hierarchy is shown ---in the images of this paper we hereafter refer at the anterior pole as their left side, and the posterior as their right side. 
+%
+Maternal effect genes are the building blocks of the anterior-posterior pattern. The most important are \emph{bicoid} (bcd)  -- forming an anterior-to-posterior gradient -- and \emph{caudal} (cad)---forming a posterior-to anterior gradient. 
+%
+The mRNAs of such genes are placed in different regions of the egg and initiate the hierarchy of transcription, driving the expression of \emph{gap genes}, which are the first zygotic genes to be expressed. The first is \emph{hunchback} (hb), that appears early in the embryo development such that sometimes is classified among maternal genes. The basic others are \emph{Kr\"{u}ppel} (Kr), \emph{knirps} (kni) and \emph{giant} (gt).
+%
+These genes are expressed in specific and partially overlapping domains. 
+%
+Differing combinations and concentrations of the gap gene proteins then regulate the expression of downstream targets, \emph{i.e.}, the \emph{pair-rule genes}, which divide the embryo into a striped pattern of seven segments. The most important pair-rule genes are  \emph{even-skipped} (eve) and  \emph{fushi-tarazu} (ftz).
+%
+The pair-rule gene proteins activate the transcription of the \emph{segment polarity genes},  whose protein products specify 14 parasegments that are closely related to the final anatomical segments \cite{alberts}.
+
+We developed a model that reproduce the process of \emph{Drosophila} development from the fertilised egg until the pattern formation of the \emph{gap genes} during cleavage cycle 14.
+%
+The whole embryo is modelled as a big cell where nuclei grow and move over a 2D continuous environment filled with diffusing proteins.
+%
+The mechanisms we explicitly model and we reproduce with simulation are:
+\begin{itemize}
+ \item nuclear divisions;
+ \item nuclear migration;
+ \item morphogen diffusion;
+ \item gene interactions.
+\end{itemize}
+
+We model the process of nuclear divisions as a single chemical like reaction, whose precondition is given by the maximum number of other nuclei in the neighbourhood and whose product is a new nucleus. 
+%
+The new nucleus is created close to the dividing one in a casual direction and owns half of its molecular content.
+%
+The rate of nuclear division is determined according to the rate observed in the real system.
+%
+Since experimental data show a certain synchronisation among dividing cells, this phenomena has been modelled through a non-Markovian reaction, relying instead on a ``drifting'' Dirac Comb, namely on a distribution whose events happen every increasing time interval.
+
+Movement of nuclei is based on biomechanical forces of repulsion among neighbouring nuclei. They are in fact constrained to remain within the membrane-delimited area so as to filling pretty homogeneously the available space.
+%
+If two nuclei are closer than a distance given as a parameter, a new position for them is computed. The nearer two nuclei are, the stronger is the repulsion.
+
+We support diffusion from / to nuclei and inside the environment along the $x$ and $y$ axis.
+%
+For this purpose environment is discretised into a grid of locations.
+%
+Molecules move from one nucleus into a neighbour location of the environment picked up probabilistically among the whole neighbourhood, or, the other way round, from one location of the environment into a neighbouring nucleus.
+%
+Diffusion among locations of the environment follows the same law, implementing a Brownian motion.
+
+In Figure~\ref{fig:genenetwork} it is shown the network of interactions among maternal effectors and gap genes we considered. As in \cite{perkins-compbio06}, an other gap gene, \emph{tailess} (tll), also  appears as input of the network whose regulation is not clear and we do not represent in the model. 
+
+\begin{figure}
+\centering{\includegraphics[width=0.99\textwidth]{img/network}}
+\caption{Gene regulatory relationships as in the model presented in \cite{perkins-compbio06,RiveraPomar,gursky04}. The diagram is realised with BioTapestry \cite{biotapestry-2009}. The type of link is pointed out by its shape: links with arrowhead are enhancers, while the repressor links have a foot.}
+\label{fig:genenetwork}
+\end{figure}
+
+\subsubsection{Simulation in \alchemist{}}
+
+Simulations results are shown in \Cref{fig:simres}. They are evaluated observing the time evolution of the compartment number and of the gene expression pattern. 
+%
+The time evolution of cells number is compared with data we have from literature and described above.
+%
+Simulations results for gap genes expression are evaluated according to experimental data available online in the FlyEx database \cite{database-2008}\footnote{\texttt{http://urchin.spbcas.ru/flyex/} -- last visited on December 2014} and reported in \Cref{fig:expdata}. They provide only qualitative information and their evaluation is  based on the expression area of the different genes.
+
+The snapshots  in \Cref{fig:simres} show one side of the embryo along the anterior-posterior (A-P) axis where almost half of the nuclei are located. The cell number is shown in the label on top of each snapshot. The horizontal axis represents the A-P position and  is labelled as \% of embryo length.
+
+The first snapshot shows the initial condition with only one nucleus and the egg polarised by maternal effects localised in the extreme pole: \emph{bcd} on the left and \emph{cad} on the right.
+%
+During the first minutes of simulation only nuclear divisions occur so as to fill the whole maternal cell at the end of cleavage cycle 9 with around 250 nuclei (half of the total 500), as shown in the second snapshot. 
+%
+Finally in the third snapshot it is reproduced the expression pattern of the four gap genes, whose spatial organisation is compared with experimental data of \Cref{fig:expdata}. Cells are coloured  of yellow, red, blue and green if, in order, they express \emph{hb}, \emph{kni}, \emph{gt} and \emph{Kr}, and their size is proportional to the protein concentration.
+%
+Gene \emph{hb} is massively expressed in the anterior half of the embryo and a small segment appears in the extreme left: simulations correctly reproduce the main expression domain of \emph{hb} while, even if its expression is observable in the posterior pole, it does not form a clear segment.
+%
+Gene  \emph{kni} is mainly expressed between 60\% and 80\% of the embryo length, either in real embryo and in simulations,
+%
+as well as gene  \emph{Kr}, which is expressed between 40\% and 60\% of the A-P axis.
+%
+The expression of  \emph{gt} is finally observable between 10\% and 30\% and 80\% and 90\%. The qualitative results presented here are not sufficient for observing the expression in the anterior half of the embryo as soon as it totally overlaps the \emph{hb} expression, while the posterior segment clearly appears.
+%
+%Beside the anterior expression of \emph{gt}, which is still subject of investigation, the simulation correctly reproduces the real embryo pattern.
+
+
+\begin{figure}
+\centering{\includegraphics[width=0.6\textwidth]{img/simu_time0}}
+\centering{\includegraphics[width=0.6\textwidth]{img/simu_time72}}
+\centering{\includegraphics[width=0.6\textwidth]{img/simu_time240}}
+\caption{Simulation results for the four gap genes \emph{hb} (yellow), \emph{kni} (red), \emph{gt} (blue), \emph{Kr} (green) at a simulation time equivalent to the 
+eighth time step of cleavage cycle 14A}
+\label{fig:simres}
+\end{figure}
+
+\begin{figure}
+\centering{\includegraphics[width=0.99\textwidth]{img/expdata}}
+\caption{The experimental data for the expression of (from the top) \emph{hb}, \emph{kni}, \emph{gt}, \emph{Kr} at the 
+eighth time step of cleavage cycle 14A  \cite{database-2008}, \copyright Maria Samsonova and John Reinitz}
+\label{fig:expdata}
+\end{figure}
+
+
 \section{SAPERE meta-model}
 
 \chapter{Self-organisation patterns}
@@ -1784,7 +1956,15 @@ In this section, we show a crowd steering case study in which a middleware has t
 
 \subsection{Reference scenario}
 
-Consider a museum with a  set of rooms, whose floor is covered with a network of computational devices (infrastructure nodes). These devices can exchange information with each other based on proximity, sense the presence of visitors, and hold information about expositions currently active in the museum. Each room has four exits and they are connected via external corridors. Visitors wandering the museum are equipped with a hand-held device that holds the visitor's preferences. By interaction with infrastructure nodes, a visitor can be guided towards rooms with a target matching their interest, thanks to signs dynamically appearing on his smartphone or on public displays. This is done using techniques suggested in the field of spatial computing \cite{VCMZ-TAAS2011}---namely, computational gradients injected in a source and diffusing around such that each node holds the minimum distance value from the source.
+Consider a museum with a  set of rooms, whose floor is covered with a network of computational devices (infrastructure nodes).
+%
+These devices can exchange information with each other based on proximity, sense the presence of visitors, and hold information about expositions currently active in the museum.
+%
+Each room has four exits and they are connected via external corridors. Visitors wandering the museum are equipped with a hand-held device that holds the visitor's preferences.
+%
+By interaction with infrastructure nodes, a visitor can be guided towards rooms with a target matching their interest, thanks to signs dynamically appearing on his smartphone or on public displays.
+%
+This is done using techniques suggested in the field of spatial computing \cite{VCMZ-TAAS2011}---namely, computational gradients injected in a source and diffusing around such that each node holds the minimum distance value from the source.
 
 The environment is a continuous bidimensional space with walls. 
 %
@@ -2487,7 +2667,7 @@ As \Cref{img:protelis-rendezvous} shows, once the simulation starts, a chain of 
 %
 Note also that, due to the ongoing nature of the computation, if one of the device owners moves in a different direction instead, the path will automatically adjust so that it continues to recommend the best path for rendezvous.
 
-\subsection{Example: Network Service Management}
+\subsection{Network Service Management}
 
 One of the common problems in managing complex enterprise services is that there are often many dependencies between different servers and services.
 %
