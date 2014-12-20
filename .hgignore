@@ -1,0 +1,13 @@
+syntax: glob
+.*
+*.log
+*.toc
+*.blg
+*.aux
+*.bbl
+*.backup
+*.out
+*.dvi
+*.lot
+*.lof
+
