@@ -137,7 +137,7 @@ I also focus on the current status of the communication protocols, their range a
 \begin{figure}
 	\centering
 	\includegraphics[width=0.99\textwidth]{img/iphone}
-	\caption{Apple iPhone is one of the first devices without any physical keyboard, and the first smartphone to gain worldwide success. \emph{Source: Wikimedia.}}
+	\caption[Apple iPhone]{Apple iPhone is one of the first devices without any physical keyboard, and the first smartphone to gain worldwide success. \emph{Source: Wikimedia.}}
 	\label{img:iphone}
 \end{figure}
 
@@ -174,7 +174,7 @@ This might be the reason why, despite the explosive expansion of smartphones, th
 	\includegraphics[height=5cm]{img/sony-sw}
 	\includegraphics[height=5cm]{img/samsung-gg}
 	\includegraphics[height=5cm]{img/moto360}
-	\caption{Smart watches. From left to right: Sony Smartwatch \emph{(Source: Alex S.H. Lin)}, Samsung Galaxy Gear \emph{(Source: Karlis Dambrans)}, Motorola Moto 360.}
+	\caption[Smart watches]{Smart watches. From left to right: Sony Smartwatch \emph{(Source: Alex S.H. Lin)}, Samsung Galaxy Gear \emph{(Source: Karlis Dambrans)}, Motorola Moto 360.}
 	\label{img:watches}
 \end{figure}
 
@@ -189,7 +189,7 @@ At the time of writing, the main issues that slow the widespread adoption of suc
 \begin{figure}
 	\centering
 	\includegraphics[width=0.99\textwidth]{img/gglass}
-	\caption{Google Glass. In this image, it is possible to see both the camera (on the left hand side) and the semi-transparent head-mounted display. Are those devices going to be part of our everyday life? \emph{Source: Wikimedia.}}
+	\caption[Google Glass]{Google Glass. In this image, it is possible to see both the camera (on the left hand side) and the semi-transparent head-mounted display. Are those devices going to be part of our everyday life? \emph{Source: Wikimedia.}}
 	\label{img:gglass}
 \end{figure}
 
@@ -247,7 +247,7 @@ Due to the fact that they rely on the mobile phone network, they require a contr
 \begin{figure}
 	\centering
 	\includegraphics[width=0.99\textwidth]{img/charts/mobile-data-performance}
-	\caption{
+	\caption[Bandwidth of international mobile telecommunications services]{
 		Maximum download bandwidth available for mobile devices with time.
 		%
 		Each point is labelled with the specific communication technology name.
@@ -322,7 +322,7 @@ Also, it is diffused in cars, and allows user to use the car's audio system as a
 \begin{figure}
 	\centering
 	\includegraphics[width=0.99\textwidth]{img/ibeacon}
-	\caption{
+	\caption[iBeacon]{
 		A iBeacon, compared to a \EUR{2} coin.
 	}
 	\label{img:ibeacon}
@@ -357,7 +357,7 @@ This technology is probably the prelude to precise indoor localisation.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.99\textwidth]{img/nfc-tag}
-	\caption{
+	\caption[NFC tags]{
 		Two NFC tags, mounted on stickers.
 		%
 		In order to understand the size, they are placed above a Samsung Galaxy S3, a 4-inches smartphone.
@@ -534,6 +534,20 @@ A similar approach is proposed in Co-fields \cite{cofields--esawIII}, exploiting
 %
 Physical inspiration also has influenced self-assembly, for instance in \cite{guo2012} the adoption of virtual force fields is suggested in order to control the material's shape.
 
+A number of ``bottom-up'' methods implement computational fields using only the local view, including the Hood sensor network abstraction~\cite{hood}, Butera's ``paintable computing'' hardware model \cite{butera}, TOTA~\cite{mamei2009acm}, the chemical models in \cite{VCMZ-TAAS2011}, and Meld~\cite{Meld}.
+%
+The MGS language~\cite{GiavittoMGS05} takes a notable and different approach, using a method like local field computation to define and evolve the shape of the manifolds on which it executes.
+
+Hybrid automata \cite{561342} are particularly interesting for they are relying on a continuous computational space.
+%
+They are based on the idea of coupling discrete, automata-like descriptions with differential equations that describe continuous evolutions of numerical values, e.g. to consider interaction with sensors/actuators in the physical world.
+%
+Continuous Spatial Automata \cite{maclennanCSA} push the idea further, by also assuming a continuous spatial substrate over which computation can occur.
+
+More explicit models of field computations are provided by some sensor nework programming models (e.g., Abstract Regions~\cite{welsh2004regions} and Regiment~\cite{regiment}), as well
+as a number of parallel computing models, most notably StarLisp~\cite{starlisp} and systolic computing (e.g.,~\cite{SDEF,ReLaCS}), which use parallel shifting of data on a structured network.
+
+
 \subsection{(Bio)chemical-inspiration}
 
 Chemical reactions can be seen as an ensemble of myriads of simple laws that generate and regulate the evolution of extraordinarily complex molecular structures.
@@ -575,10 +589,6 @@ The pheromones act as environment markers for specific social activities, drivin
 For instance, digital pheromones \cite{pheromoncoord-aamas2002,stigmergy-e4masII} have been fruitfully exploited as the basic mechanism for coordinating the movements of robot swarms and modular robots~\cite{tota-aamas2005}, for helping people find directions in an unknown environment~\cite{MameiZ07}, and for efficiently cluster information in networks \cite{collectivesort-scico74,wordNet}.
 %
 In the area of networking, stigmergy has been exploited to realize effective routing mechanisms in dynamic networks~\cite{swarmintelligence-book1999,AC-Survey}.
-
-
-
-
 
 \section{Spatial patterns}
 
@@ -673,7 +683,7 @@ Plastic? \cite{plastic}
 \begin{figure}
 \centering
 \includegraphics[width=0.99\textwidth]{img/architecture_2.pdf}
-\caption{The SAPERE Reference Architecture.}
+\caption[SAPERE reference architecture]{The SAPERE reference architecture.}
 \label{img:sapere-architecture}
 \end{figure}
 
@@ -719,8 +729,7 @@ Its core components are \cite{sapereecolaws-sac2012}:
 \subfigure[Continuous Space]{\includegraphics[width=0.45\columnwidth]{img/space-continuous}\label{img:medium}}
 \hspace{0.01\columnwidth}
 \subfigure[Discrete Network]{\includegraphics[width=0.45\columnwidth]{img/space-discrete}\label{img:mediumnet}}
-\caption{Computational field models originate from approximation of continuous
-space (a) with discrete networks of devices (b).}
+\caption[Discrete approximation of continuous]{Computational field models originate from approximation of continuous space (a) with discrete networks of devices (b).}
 \label{img:space}
 \end{figure}
 
@@ -815,6 +824,8 @@ Some of the prior approaches on which field calculus is based provide very simil
 %
 Besides Proto, which is probably the closest to a practical programming environment and whose problems have already been described in \Cref{proto}, others, such as \cite{VPB-COORD2012}, have only minimal implementation.
 
+% TODO: quotare un po' di field calculus paper. Deve esserci la distanceTo per forza perché la cito dopo.
+
 \subsubsection{Alignment}
 
 
@@ -842,12 +853,13 @@ biological simulators (ask Sara)
 
 Specific per-use simulators, gener
 
-\chapter{Shortcomings of coordination infrastructures}
-\section{Engineering emergence}
-\section{Local to global}
-\chapter{Shortcomings of existing tools}
-\section{Specific tools: expressiveness}
-\section{General purpose tools: performance}
+% TODO: motivations.
+% \chapter{Shortcomings of coordination infrastructures}
+% \section{Engineering emergence}
+% \section{Local to global}
+% \chapter{Shortcomings of existing tools}
+% \section{Specific tools: expressiveness}
+% \section{General purpose tools: performance}
 
 \part{Contribution}
 \label{contribution}
@@ -1184,7 +1196,7 @@ This sort of model inheritance justifies our double ``meta'' level: the model de
 \begin{figure}%[H]
   \begin{center}
     \includegraphics[width=0.99\columnwidth]{img/model.pdf}
-    \caption{\alchemist{} computational model: it features a possibly continuous space embedding a linking rule and containing nodes. Each node is programmed with a set of reactions and contains a set of structured molecules.}
+    \caption[\alchemist{} computational model]{\alchemist{} computational model: it features a possibly continuous space embedding a linking rule and containing nodes. Each node is programmed with a set of reactions and contains a set of structured molecules.}
     \label{img:model}
   \end{center}
 \end{figure}
@@ -1202,7 +1214,7 @@ They also contain molecules, each one equipped with a data structure generalisin
 \begin{figure*}%[H]
   \begin{center}
     \includegraphics[width=0.99\textwidth]{img/reaction.pdf}
-    \caption{\alchemist{} model of reaction: a set of conditions on the environment that determines whether the reaction is executable, a rate equation describing how the speed of the reaction changes in response to environment modifications, a probability distribution for the event and a set of actions, which will be the neat effect of the execution of the reaction.}
+    \caption[\alchemist{} model of reaction]{\alchemist{} model of reaction: a set of conditions on the environment that determines whether the reaction is executable, a rate equation describing how the speed of the reaction changes in response to environment modifications, a probability distribution for the event and a set of actions, which will be the neat effect of the execution of the reaction.}
     \label{img:reaction}
   \end{center}
 \end{figure*}
@@ -1221,7 +1233,7 @@ It also allows to define which kind of time distribution to use to trigger react
 \begin{figure}%[H]
   \begin{center}
     \includegraphics[width=0.99\columnwidth]{img/structure.pdf}
-    \caption{\alchemist{} architecture. Elements drawn with continuous lines indicates components common for every scenario and already developed, those with dotted lines are extension-specific components which have to be developed with a specific incarnation in mind.}
+    \caption[\alchemist{} architecture]{\alchemist{} architecture. Elements drawn with continuous lines indicates components common for every scenario and already developed, those with dotted lines are extension-specific components which have to be developed with a specific incarnation in mind.}
     \label{img:arch}
   \end{center}
 \end{figure}
@@ -1570,7 +1582,7 @@ The temporal operators are analysed at the varying of the simulated time from $0
 \includegraphics[width=0.7\columnwidth]{img/people}
 \includegraphics[width=0.7\columnwidth]{img/connectivity}
 \includegraphics[width=0.7\columnwidth]{img/lsas}
-\caption{Analysis of the crowd steering scenario: (top) number of people at the POIs, (middle) average number of connections per device, (bottom) number of LSAs in the system.}
+\caption[Analysis of a crowd steering scenario with \alchemist{} and \multivesta]{Analysis of the crowd steering scenario: (top) number of people at the POIs, (middle) average number of connections per device, (bottom) number of LSAs in the system.}
 \label{img:analysisCharts}
 \end{center}
 \end{figure}
@@ -1729,11 +1741,9 @@ This comes in particularly handy in order to realise the network of static devic
   \subfigure[Mixed mode]{\includegraphics[width=0.315\textwidth]{img/mixed}
    \label{img:mixed-alchemist-navi}
   }
- \caption{Three snapshots showing the different navigation modes available in \alchemist{}. In \Cref{img:gps-alchemist-navi} there is a GPS trace consisting in four points. If not specified to behave otherwise, \alchemist{} computes the average speed between two points, and moves the node along a straight line with constant speed. This, depending on the precision of the trace, may generate paths that cross over buildings. In \Cref{img:map-alchemist-navi}, the route between the start and end point is computed using the built-in navigator. This could lead the nodes towards paths different from those described by the route. In \Cref{img:mixed-alchemist-navi}, the routing subsystem is used to refine the quality of the GPS traces: \alchemist{} will move the node with constant speed between the two points, using map based routing when necessary to improve precision between two consecutive trace points.}
+ \caption[Navigation modes in \alchemist{}]{Three snapshots showing the different navigation modes available in \alchemist{}. In \Cref{img:gps-alchemist-navi} there is a GPS trace consisting in four points. If not specified to behave otherwise, \alchemist{} computes the average speed between two points, and moves the node along a straight line with constant speed. This, depending on the precision of the trace, may generate paths that cross over buildings. In \Cref{img:map-alchemist-navi}, the route between the start and end point is computed using the built-in navigator. This could lead the nodes towards paths different from those described by the route. In \Cref{img:mixed-alchemist-navi}, the routing subsystem is used to refine the quality of the GPS traces: \alchemist{} will move the node with constant speed between the two points, using map based routing when necessary to improve precision between two consecutive trace points.}
  \label{img:traces-navigation}
 \end{figure}
-
-
 
 The second useful feature is the possibility to rely on the map data to compute routes, as in \Cref{img:map-alchemist-navi}.
 %
@@ -1827,7 +1837,7 @@ To capture a bigger window of embryo development we built on top of \alchemist{}
 \begin{figure}
 \centering
 \includegraphics[width=0.99\textwidth]{img/drosophila}
-\caption{The pair-rule gene  \emph{even-skipped} (red) together with \emph{hb} (blue) and \emph{Kr} (green) in \emph{Drosophila} embryo at the cleavage cycle 14A temporal class 8. Reconstructed image from \cite{flyex2009}. Embryo name: ba3. }
+\caption[Drosophila Melanogaster embryo at the cleavage cycle 14A temporal class 8]{The pair-rule gene  \emph{even-skipped} (red) together with \emph{hb} (blue) and \emph{Kr} (green) in \emph{Drosophila} embryo at the cleavage cycle 14A temporal class 8. Reconstructed image from \cite{flyex2009}. Embryo name: ba3. }
 \label{fig:drosophila}       % Give a unique label
 \end{figure}
 
@@ -1897,7 +1907,7 @@ In Figure~\ref{fig:genenetwork} it is shown the network of interactions among ma
 
 \begin{figure}
 \centering{\includegraphics[width=0.99\textwidth]{img/network}}
-\caption{Gene regulatory relationships as in the model presented in \cite{perkins-compbio06,RiveraPomar,gursky04}. The diagram is realised with BioTapestry \cite{biotapestry-2009}. The type of link is pointed out by its shape: links with arrowhead are enhancers, while the repressor links have a foot.}
+\caption[Gene regulatory relationships as in the model presented in \cite{perkins-compbio06,RiveraPomar,gursky04}]{Gene regulatory relationships as in the model presented in \cite{perkins-compbio06,RiveraPomar,gursky04}. The diagram is realised with BioTapestry \cite{biotapestry-2009}. The type of link is pointed out by its shape: links with arrowhead are enhancers, while the repressor links have a foot.}
 \label{fig:genenetwork}
 \end{figure}
 
@@ -1932,25 +1942,547 @@ The expression of  \emph{gt} is finally observable between 10\% and 30\% and 80\
 \centering{\includegraphics[width=0.6\textwidth]{img/simu_time0}}
 \centering{\includegraphics[width=0.6\textwidth]{img/simu_time72}}
 \centering{\includegraphics[width=0.6\textwidth]{img/simu_time240}}
-\caption{Simulation results for the four gap genes \emph{hb} (yellow), \emph{kni} (red), \emph{gt} (blue), \emph{Kr} (green) at a simulation time equivalent to the 
-eighth time step of cleavage cycle 14A}
+\caption[Simulation results for the Drosophila development]{Simulation results for the four gap genes \emph{hb} (yellow), \emph{kni} (red), \emph{gt} (blue), \emph{Kr} (green) at a simulation time equivalent to the eighth time step of cleavage cycle 14A}
 \label{fig:simres}
 \end{figure}
 
 \begin{figure}
 \centering{\includegraphics[width=0.99\textwidth]{img/expdata}}
-\caption{The experimental data for the expression of (from the top) \emph{hb}, \emph{kni}, \emph{gt}, \emph{Kr} at the 
-eighth time step of cleavage cycle 14A  \cite{database-2008}, \copyright Maria Samsonova and John Reinitz}
+\caption[Drosophila experimental data]{The experimental data for the expression of (from the top) \emph{hb}, \emph{kni}, \emph{gt}, \emph{Kr} at the eighth time step of cleavage cycle 14A  \cite{database-2008}, \copyright Maria Samsonova and John Reinitz}
 \label{fig:expdata}
 \end{figure}
 
 
 \section{SAPERE meta-model}
 
-\chapter{Self-organisation patterns}
+\chapter{Methods and patterns for self-organisation}
 SAPERE
-\section{Crowd evacuation}
-\section{Crowd steering}
+\section{A process algebra for SAPERE}
+
+In this section, we present a possible formalisation of the SAPERE concepts, in terms of a model whose evolution is specifyied by means of a process algebra.
+%
+Not only does this formalisation act as a non-ambiguous description, it is also an executable specification and can hence serve as ground for developing simulations of self-organisation mechanisms and for deriving formal proofs of behavioural properties, like self-stabilisation \cite{V-SCW2013}.
+%
+Few works attempted at a process algebraic formalisation of self-organisation \cite{VPB-COORD2012,VDB-FOCLASA-CIC2013}, developing on top of well-known works on coordination and spatial computing \cite{zavattaro2,mitproto}.
+%
+However, the one presented here is -- to the best of our knowledge -- the first process algebra of self-organising multiagent systems capturing the clear separation of agent behaviour and self-organised interactions, hence effectively expressing the behaviour of large-scale and situated pervasive computing scenarios.
+
+\subsection{Model}
+
+We now detail a possible coordination model of pervasive ecosystems.
+%
+It is important to note upfront that the presented coordination model can be instantiated in different ways, depending on the application at hand and on technological aspects: This affects the concrete structure of data, which is an issue orthogonal to the above aspects.
+%
+A similar abstraction is rather common in the description of space-based coordination models, which often represent tuples as simple atomic elements \cite{zavattaro}.
+
+\subsubsection{LSAs}
+
+LSAs have a unique, system-wide identifier (LSA-id), needed to support a notion of identity that is key both to uniquely identify the agent that injected an LSA and to properly support a bonding mechanism based on reference and not on value/copy. We refer to the content of an LSA as its \emph{description}, which includes all the information the agent wants to manifest to the ecosystem.
+%
+Several concrete approaches to the structure of an LSA description can be taken.
+%
+For the sake of exemplification, following the work in \cite{SemanticSapereIGI2012,sapereecolaws-sac2012,SemMatchingSAC2013} we  take a semantic approach based on Resource Description Framework (RDF) representation \cite{manola2004primer}, in which an LSA is a set of multi-valued properties, or equivalently, a set of triples (subject, predicate, object) of an LSA-id, the property name, and the assigned value, expressed as literals (strings) or URIs (terms qualified by universally-accessible namespaces, to which an ontological interpretation can be given \cite{ranganathan2004ontologies}).
+%
+An example LSA advertising an exhibition in a smartcity, to be diffused around, would be: 
+
+{\footnotesize \begin{Verbatim}[commandchars=\\\{\}]
+[ app:type = app:poi, app:event = app:exhibition,
+  app:artist = "caravaggio" "michelangelo", ...]
+\end{Verbatim}
+}
+
+\noindent URI \texttt{app:artist} represents a property name, assigned to the literal values \mbox{\texttt{"caravaggio"}} and \mbox{\texttt{"michelangelo"}}. Alternatively, a value can be an URI again, like \texttt{app:exhibition} that is associated with \texttt{app:event}. Namespace \texttt{app} is used here to refer to a publicly accessible ontology supporting semantic reasoning on top of those properties and values \cite{SYDPMV-SAC2013}.
+
+\subsubsection{Agent primitives}\label{s:agent}
+
+Standard tuple-based coordination models allow agents to insert, read, and remove any tuple (by primitives \texttt{out}, \texttt{rd} and \texttt{in}) without specific access control constraints---although some models explore their orthogonal adoption, like SecSpaces \cite{DBLP:journals/fuin/GorrieriLZ06} and coordination contexts \cite{J-ORV-AAECC2005,RVO-ATAI2004}.
+%
+The model we present is profoundly different, mainly due to the chemical metaphor of bonding and the manifestation/observation approach it entails, which guarantees a better modularisation and control of accesses of agent behaviour---see a deeper discussion in Section 6.
+%
+In particular, the following 4 primitives are provided:
+
+\begin{itemize}
+ \item \texttt{new(Description):Id} | This operation relates to creating a new agent manifestation in the system. It takes a description (namely, a property-value association), and correspondingly generates a new LSA and inserts it into the local LSA-space. A new identifier, associated to that LSA, is then automatically created and returned to the agent: it will be used to perform subsequent operations on the LSA. That agent will be called the \emph{owner} of the LSA.
+ 
+ \item \texttt{update(Id,Update)} | This operation relates to the (continuous) manifestation of agent state. It takes the identifier of an LSA owned by the current agent, and the specification of an update to its current description (typically, property-value re-assignments), and it updates the description of such an LSA. Note that only an LSA owner can modify it. 
+ 
+ \item \texttt{observe(Id,Query):Result} | This operation relates to the  observation of an agent's context, namely, of some LSA residing in the same space but possibly belonging to some other agent. It takes the identifier of an owned LSA $l$ and a query, and searches for an LSA bonded to $l$ that provides a valid result to the query. If one is found (nondeterministically), the query result is returned, typically in the form of a set of variable-value associations. The semantics of bonding is orthogonal to that of agent primitives: it is dictated by the structure of a specific bonding eco-law, as described in the following. %Operation \texttt{observe} fails if no proper result is found.
+ 
+ \item \texttt{remove(Id)} | Finally, this operation relates to the stopping manifestation. It takes the identifier of an owned LSA, which will then be removed from the local LSA-space.
+ 
+\end{itemize}
+
+\subsubsection{Eco-laws}\label{s:ecolaws}
+
+Without any additional mechanism, the behaviour of an agent would be isolated from those of others.
+%
+Following the ecosystem metaphor, we hence introduce a limited set of eco-laws (playing the role of ``the laws of nature''), with the role of evolving the population of tuples over time in a way that supports agent-to-agent interaction both within the same locality, and globally by means of self-organisation.
+%
+This is achieved in terms of $5$ eco-laws, two dealing with local agent-to-agent interaction by the bonding (and debonding) mechanism, and the other $3$ (diffusion, aggregation and decay) supporting the mechanisms needed to create self-organising distributed structures of LSAs \cite{FDMVA-NACO2013}.
+%
+As already mentioned, our description of eco-laws abstracts from the actual structure of LSAs and from the details of pattern matching, which we consider as orthogonal application- and infrastructure-dependent aspects.
+
+\begin{itemize}
+
+ \item \texttt{bonding}  | This is the eco-law regulating the creation of bonds. A bond is an asymmetric reference between two LSAs residing in the same space. As already described, the existence of a bond between LSA $X$ and $Y$ means that the owner of $X$ can observe the structure of $Y$ via the \texttt{observe} primitive. This eco-law makes sure that a bond between two LSAs exists as long as their description matches according to an infrastructure-specific matching function. In the typical case, a bond is created between an LSA providing a (possibly semantic) query and an LSA positively replying to the query. By denoting with ``$\rightsquigarrow Y$'' the existence of a bond to $Y$, this eco-law has the chemical-like structure\footnote{Symbol ``$+$'' is used as separator as in chemical laws.}:
+ 
+ \[X + Y \rightarrow X^{\rightsquigarrow Y} + Y\]
+ 
+ \item \texttt{debonding}  | This eco-law is dual to the previous one, and regulates destruction of a bond between $X$ and $Y$ provided the conditions for the bond are no longer satisfied, namely, when either $X$ or $Y$ are removed or changed. It has the structure:
+ 
+ \[X^{\rightsquigarrow Y} + Y \rightarrow X + Y\]
+ 
+ \item \texttt{diffusion} | The diffusion eco-law is used to create a clone of an LSA to be shipped to all neighbours of the current node. This eco-law applies to an LSA $X$ that has a particular structure (typically, given property-value associations). The LSA $X'$ accordingly created has a new identifier along with an updated value of some special properties that can keep track of the increased distance from the source (the notion of distance can be extended to consider advanced forms of context-dependency as described in \cite{SYDPMV-SAC2013}). Note that such a new LSA has no owner: it is typically used to create a distributed structure of LSAs representing the global outcome of a single LSA initially created by an agent. By denoting with notation $\overrightarrow{X'}$, an LSA $X'$ to be spread to neighbours, we can express the structure of this eco-law as:
+ 
+ \[X \rightarrow X + \overrightarrow{X'}\]
+ 
+ \item \texttt{aggregation} | As the diffusion eco-law keeps creating copies of an LSA that are shipped to neighbours, the aggregation eco-law has the goal of addressing the implied multiplicity---ensuring that a single version of an LSA coming from the same source is present in a node. In particular, this eco-law takes two compatible LSAs $X$ and $Y$ (typically, two coming from the same ``source'' LSA after an iterative diffusion process) and aggregates them into a single one $X'$ exploiting a suitable order-independent aggregation function. It has the structure:
+ 
+ \[X + Y \rightarrow X'\]
+ 
+ \item \texttt{decay} | In order to provide a temporal cleanup mechanism, useful to refresh information and the shape of spatial structures, a decay eco-law is also considered, which takes an LSA $X$ and erases it as soon as a given condition on its content holds. Denoting $\epsilon$ as the empty set of LSAs, it has the structure:
+ 
+ \[X \rightarrow \epsilon\]
+ 
+\end{itemize}
+
+\subsection{Formalisation}
+
+In this section we provide a formalisation of the proposed coordination model as informally presented in previous section. We adopt the style that has now became a standard after a series of previous works---starting from the work of Zavattaro et.al. \cite{zavattaro}, as surveyed in \cite{VO-FI2006}, and more recently including, e.g., \cite{VPB-COORD2012,DBLP:conf/coordination/TerepetaNN12,DBLP:conf/coordination/BortolussiLM13,DBLP:conf/coordination/MassinkL12,DBLP:conf/sac/LaneseBF13}.
+%
+Namely, this is presented in the form of a process algebra, in which a system state is conceived as a ``soup'' (or networked set of soups) where agents and LSAs float: subjective coordination is realised by agents performing coordination primitives amounting to interactions with the local space (producing/consuming/modifying LSAs), while objective coordination is realised by eco-laws executing as rules continuously manipulating the space on top \cite{VC-COORD2009,tucson-aamas99,DBLP:conf/coordination/RicciOD02}.
+%
+This approach has been shown to elegantly express the semantics of the various constructs in an orthogonal way, that is, one rule of operational semantics per coordination primitive (and this will indeed be the case for our formalisation as well). 
+%
+Additionally, using process algebras paves the way for advanced analysis similarly to what developed in related approaches, including mathematical proofs of behavioural properties \cite{V-SCW2013}, simulation \cite{VPMS-SAC2012,DBLP:conf/sac/NicolaLM05}, and observational equivalence \cite{DBLP:conf/sac/LaneseBF13}.
+%
+%Critically, this is the first process algebra of coordinating agents that is able to express self-organisation of large-scale situated systems.
+
+\begin{figure}[!t]{
+ \framebox[1\textwidth]{$
+\begin{array}{l}
+~\\[-10pt]
+\begin{array}{rl}
+%
+%\multicolumn{2}{l}{\hspace{-20pt}\textrm{Metavariables:}}\\
+\sSI & \textrm{Node identifier}\\
+\sId,\sIdB & \textrm{LSA identifier}\\
+\sVr & \textrm{Identifier variable}\\
+\sDe,\sDeB & \textrm{LSA description}\\
+\sDE & \textrm{Update specification}\\
+%\sLb & \textrm{Action label}\\
+%\snew & \textrm{A freshly generated identifier}\\
+\cList{v} & \textrm{A meta-variable over set of elements $\{v_1,\ldots,v_n\}$}
+\end{array}\end{array}$}} \caption{Meta-variables} \label{fig:meta}
+\end{figure}
+
+
+\subsubsection{Syntax}
+
+We let meta-variable $\sSI$ range over node (or device) identifiers, $\sId,\sIdB$ over LSA identifiers, $\sVr$ over variables to be eventually substituted by those identifiers, $\sDe,\sDeB$ over LSA descriptions, and $\sDE$ over update specifications. Given any of those meta-variables, we use the overline notation to indicate a meta-variable over sets of elements (e.g., $\cList{\sId}$ is a meta-variable over sets of LSA identifiers)---and similarly for the others. Figure \ref{fig:meta}  recalls these meta-variables in tabular form for the reader's convenience. Notation $|\cList{\sId}|$ is used to extract the number of elements in $\cList{\sId}$.
+
+The syntax of the calculus is reported in Figure \ref{fig:syntax}. A system configuration $\sCf$ is a multiset composition (by operator $|$) of spaces of the form $\cSpace{\sSp}{\sSI}$ ($\sSp$ is the content and $\sSI$ the identifier), and neighbourhood relationships $\cNeigh{\sSI}{\cList{\sSI}}$, meaning $\sSI$ has the neighbourhood $\cList{\sSI}$.
+%
+A space (content) $\sSp$ is itself a multiset composition of agents $\cAgent{\cList{\sId}}{\sAg}$ (with behaviour $\sAg$ and owning LSAs with identifiers $\cList{\sId}$), LSAs $\cLSA{\sId}{\sDe}$ (with identifier $\sId$ and a description $\sDe$), LSAs to be spread to  neighbours $\cLSA{\sStar}{\sDe}$ and bonds $\cBond{\sId}{\sIdB}$ (from $\sId$ to $\sIdB$).
+%
+Agent behaviour $\sAg$ can be of 4 kinds: $0$ is the empty agent, $\sAc \oSeq \sAg$ is the agent executing action $\sAc$ and then the continuation $\sAg$, $\sAg\oOr\sAgB$ is a try-catch construct (execute $\sAg$, and when/if a failure occurs, $\sAgB$ is executed), and $\cRecR{\sAg}{\sAgB}$ is iterative (infinite) execution of $\sAg$ preceded by execution of current iteration $\sAgB$.
+%
+Note that in the iteration construct the appendix $\sAgB$ is not present in the surface syntax: it is initially set to $0$ and will dynamically keep track of the state of current iteration.
+
+Actions correspond to the $4$ coordination primitives described in previous section: $\cNew{\sVr}{\sDE}$ creates a new LSA with description defined by specification $\sDE$, and causing substitutiion of $\sVr$ with the LSA identifier; $\cUpd{\sTr}{\sDE}$ updates the LSA with term identifier $\sTr$ by specification $\sDE$; $\cObs{\sTr}{\sDE}$ observes an LSA bond to $\sTr$ using $\sDE$ as a query; and finally $\cRem{\sTr}$ removes LSA with identifier $\sTr$. In particular note that as soon as they are executed, the latter three constructs should have term identifier $\sTr$ be bound to an actual identifier $\sId$.
+
+A congruence relation is also introduced in Figure \ref{fig:congruence}, which equates terms that have to be considered syntactically equivalent. The first two lines state that parallel composition operator is actually a multiset one; the third line defines properties of try-catch (if the left-hand side is over, the whole agent process is over) and iteration (iterating the empty process gives the empty process, and when current iteration is over we spawn a new one).
+
+\begin{figure}{
+ \framebox[1\textwidth]{$
+\begin{array}{l}
+~\\[-10pt]
+\begin{array}{@{\hspace{-0.08cm}}rcl@{\hspace{0.5cm}}r}
+%
+\sCf & \BNFp &  0 \BNFor
+		\cSpace{\sSp}{\sSI} \BNFor
+		\cNeigh{\sSI}{\cList{\sSI}} \BNFor
+		(\sCf \oPar \sCf)
+		&   {\footnotesize \mbox{Configuration}} \\[2pt]
+\sSp & \BNFp &  0 \BNFor 
+		\cAgent{\cList{\sId}}{\sAg} \BNFor
+		\cLSA{\sId}{\sDe} \BNFor
+		\cLSA{\sStar}{\sDe} \BNFor
+		\cBond{\sId}{\sIdB} \BNFor
+		(\sSp \oCPar \sSp)
+		&   {\footnotesize \mbox{Space}} \\[2pt]
+\sAg,\sAgB & \BNFp &  0 \BNFor 
+		%\sAc \BNFor
+		\sAc \oSeq \sAg \BNFor
+		\sAg\oOr\sAgB \BNFor
+		\cRecR{\sAg}{\sAgB}
+		&   {\footnotesize \mbox{Agent}} \\[2pt]
+\sAc & \BNFp &  \cNew{\sVr}{\sDE} \BNFor
+		\cUpd{\sTr}{\sDE} \BNFor
+		\cObs{\sTr}{\sDE} \BNFor
+		\cRem{\sTr}
+		& {\footnotesize \mbox{Action}} \\[2pt]
+\sTr & \BNFp &  \sId \BNFor
+		\sVr
+		& {\footnotesize \mbox{Term}} \\[2pt]
+%
+\end{array}
+\end{array}$}} \caption{Syntax} \label{fig:syntax}
+\end{figure}
+
+
+
+\begin{figure}{
+ \framebox[1\textwidth]{$
+\begin{array}{l}
+~\\[-10pt]
+\begin{array}{c}
+%
+\sCf\oPar 0 \equiv \sCf\qquad \sCf\oPar \sCf' \equiv \sCf'\oPar \sCf \qquad (\sCf\oPar \sCf')\oPar\sCf'' \equiv \sCf\oPar (\sCf'\oPar\sCf'')\\
+%
+\sSp\oCPar 0 \equiv \sSp\qquad \sSp\oCPar \sSp' \equiv \sSp'\oCPar \sSp \qquad (\sSp\oCPar \sSp')\oCPar\sSp'' \equiv \sSp\oCPar (\sSp'\oCPar\sSp'')\\
+%
+0\oOr\sAg \equiv 0 \qquad %(\sAg\oOr \sAg')\oOr\sAg'' \equiv \sAg\oOr (\sAg'\oOr\sAg'') \equiv 
+\cRecR{0}{\sAg}\equiv 0\qquad
+\cRecR{\sAg}{0}\equiv \cRecR{\sAg}{\sAg}\\
+%
+%\cSpace{\sSp}{\sSI}\oPar\cSpace{\sSp'}{\sSI}\equiv \cSpace{\sSp\oCPar\sSp'}{\sSI} 
+%\cBond{S}{S'}\oCPar\cBond{S}{S'}\equiv\cBond{S}{S'}\\
+\end{array}\end{array}$}} \caption{Congruence} \label{fig:congruence}
+\end{figure}
+
+\subsubsection{Semantics}
+
+The semantics of the calculus is parametric in the functions shown in Figure \ref{fig:func}, which are to be concretised to make the model fully executable---as we will develop in next section.
+%
+The filtering function gives semantics to updates and queries over LSA descriptions as follows.
+%
+First of all, given an update specification $\sDE$ and an LSA description $\sDe$, then $\fFilt{\sDE}{\sDe}$ gives the description obtained by applying $\sDE$ to $\sDe$---this function is assumed to be total.
+%
+Second, $\sDE$ can be seen as a query: we say it matches a description $\sDe$ with result $\theta$ (a binding of variables) if $\fFilt{\sDE\sSB}{\sDe}=\sDe$, namely, when $\sDE\sSB$ is seen as an update, it would not affect $\sDe$---intuitively, e.g., an LSA of type $a$, matches with a query asking whether its type is $X$ (and gives reply $a$), if updating the type of that LSA to $a$ leaves it unchanged.
+%
+As a mere example in this section assume $\sDE$ and $\sDe$ are both lists of single-value assignments $p = v$, and that filtering \mbox{$\fFilt{\sDE}{\sDe}$} applies all assignments of $\sDE$ to $\sDe$, such that \mbox{$\fFilt{(p=1,q=2)}{(q=3,r=4)}=(p=1,q=2,r=4)$}. Observe that update $(q=3,r=X)$, where $X$ is a variable, can be seen as a query which applied to $(q=3,r=4)$ yields $\theta=\{X/4\}$, in that \mbox{$\fFilt{(q=3,r=X)\{X/4\}}{(q=3,r=4)}=(q=3,r=4)$} as described above.
+
+The other four functions in Figure \ref{fig:func} work with LSA descriptions, and define the data-related aspects of eco-laws as described in the following.
+
+The operational semantics is defined as a transition system with judgement $\sCf\xrightarrow{}\sCf'$, meaning that system configuration $\sCf$ can move to $\sCf'$ by a transition.
+%
+The operational semantics is split in three parts: general congruence rules (Figure \ref{fig:congruence_rules}), rules defining agent behaviour (Figure \ref{fig:agent_rules}), and finally rules defining eco-laws (Figure \ref{fig:eco_laws}), described in turn.
+
+In Figure \ref{fig:congruence_rules}, rule [CGR-C] is the standard rule making congruent configurations be considered equivalent, rule [NEST] allows one to recursively enter a space, and finally rule [SHIP] defines the broadcast semantics: when an LSA-to-be-spread $\cLSA{\sStar}{\sDe}$ occurs in a space, a copy of it is sent to all neighbours (by action $\lship{\cList{\sId}}$, where $\cList{\sId}$ is a set of externally provided freshly-generated identifiers)---note that we abuse the notation as in \cite{FJ}, writing $\cList{\sId}$ for $\sId_1,\ldots,\sId_k$ and similarly for $\cList{\sSI}$.
+
+Figure \ref{fig:agent_rules} provides the rules defining the internal behaviour of spaces, affecting agent behaviour.
+%
+Rule [CGR] states congruence inside spaces similarly to what [CGR-C] does for system configurations.
+%
+Rule [TRY] handles successful operations inside a try-catch construct: simply, in that case the left-hand side of operator ``$:$'' is allowed to proceed.
+%
+Rule [CATCH] conversely handles a failure: when the left-hand side of operator ``$:$'' gets stuck (and is not empty), we simply allow the part on right (the handler) to carry on.
+%
+Rule [ITER] handles the semantics of iteration: it simply allows the appendix to carry on---when it becomes $0$ a new iteration will be spawn by the congruence relation as discussed above.
+
+The subsequent $4$ rules handle the $4$ coordination primitives of the model.
+%
+Rule [NEW] create a new LSA with fresh identifier $\sId$: such an LSA gets created with description $\fFilt{\sDE}{0}$ (namely, as specified in the argument of operation \texttt{new}), $\sId$ is added to the set of LSAs owned by the agent, and the continuation is allowed to carry on after applying substitution of $\sIdB$ to $\sVr$.
+%
+Rule [UPD] handles update operations: the LSA with identifier $\sId$ should be in the space -- let $\sDe$ be its description -- which is moved to $\fFilt{\sDE}{\sDe}$ and the agent continuation is allowed to carry on.
+%
+Rule [OBS] handles an observation operation of query $\sDE$: it looks for a bond to $\sIdB$ and accesses its description $\sDe$, it then computes via function $\textit{matcher}(\sDE,\sDe)$ a minimal substitution $\sSB$ such that $\sDe=\fFilt{\sDE\sSB}{\sDe}$, and if one exists it is applied to the continuation---if no such LSA is found instead, the agent gets stuck, and this failure could be caught as seen above.
+%
+Rule [REM] models removal of an LSA, which also causes removal from the set of identifiers of LSAs owned by the agent.
+
+Finally, Figure \ref{fig:eco_laws} defines the semantics of the $5$ eco-laws, which are parametric in functions $\fDiff$, $\fAggr$, $\fDecay$, and $\fBond$.
+%
+The first is the diffusion eco-law: which takes an LSA whose description is in the domain of $\fDiff$, and creates an LSA-to-be spread whose description is the output of $\fDiff$.
+%
+The aggregation eco-law takes two LSAs and applies function $\fAggr$ to their description: the result is stored in one of the two, while the other is removed (provided it is not an owned LSA).
+%
+The decay eco-law simply drops an LSA whose description makes predicate $\fDecay$ hold (again, provided it is not an owned LSA).
+%
+Note that the side-conditions of the aggregation and decay eco-laws prevent an LSA's removal if an agent owns it.
+%
+The bond eco-law creates a bond between two LSAs if they stay in the $\fBond$ predicate relation (and if one such bond does not yet exist).
+%
+Conversely, the debond eco-law drops any bond that the bond eco-law would not create.
+
+\subsubsection*{Example}
+
+Whereas exemplifying eco-laws will better be done in next section while discussing the case study, it is here useful to provide a simple agent program to show how the operational semantics works.
+%
+Assume the following agent process $A_0$ is, executed into an initially empty LSA-space:
+%
+\[\cNew{x}{q=2};\cRecR{\cObs{x}{e=\texttt{true}};\cUpd{x}{q=0}:\cUpd{x}{q=1}}{0}\]
+%
+By rule [NEW] a new LSA is created, assume it has id $n$, and substitution $\{n/x\}$ is hence propagated in the continuation leading to:
+%
+\[(n)\cRecR{\cObs{n}{e=\texttt{true}};\cUpd{x}{q=0}:\cUpd{n}{q=1}}{0}\oCPar\cLSA{n}{q=2}\]
+%
+Let $A$ be the specification inside iteration, because of congruence we have that current state is equivalento to:
+%
+\[(n)\cRecR{A}{\cObs{n}{e=\texttt{true}};\cUpd{x}{q=0}:\cUpd{n}{q=1}}\oCPar\cLSA{n}{q=2}\]
+%
+Now, the appendix is allowed to carry on by rule [ITER]; however since there's currently no bond from LSA $n$, observation is stuck, hence because of rule [CATCH] we actually move in one step to
+%
+\[(n)\cRecR{A}{\cUpd{n}{q=1}}\oCPar\cLSA{n}{q=2}\]
+%
+and after execution of update by rule [UPD] to \mbox{$(n)\cRecR{A}{0}\oCPar\cLSA{n}{q=1}$} which is equivalent to:
+%
+\[(n)\cRecR{A}{A}\oCPar\cLSA{n}{q=1}\]
+%
+Without bonds, observation keeps fail and the space of LSAs will not change.
+%
+If instead at some point a new LSA $\cLSA{m}{e=\texttt{true}}$ is injected in this space, and a bond to it is created by the bonding eco-law, then observation succeeds, so at some point we would move to state
+%
+\[(n)\cRecR{A}{\cUpd{x}{q=0}:\cUpd{n}{q=1}}\oCPar\cLSA{n}{q=2}\oCPar\cLSA{m}{e=\texttt{true}}\]
+%
+and then after update to:
+%
+\[(n)\cRecR{A}{A}\oCPar\cLSA{n}{q=0}\oCPar\cLSA{m}{e=\texttt{true}}\]
+
+
+\begin{figure}[!t]{
+ \framebox[1\textwidth]{$
+\begin{array}{l}
+~\\[-10pt]
+\begin{array}{rl}
+%
+\fFilt{\sDE}{\sDe}=\sDe' & \textrm{Description filtering function}\\
+\fDiff(\sDe)=\sDe' & \textrm{Diffusion function}\\
+\fAggr(\sDe,\sDeB)=\sDe' & \textrm{Aggregation function}\\
+\fDecay(\sDe) & \textrm{Decay predicate}\\
+\fBond(\sDe,\sDeB) & \textrm{Bond matching predicate}
+\end{array}\end{array}$}} \caption{Abstracted functions} \label{fig:func}
+\end{figure}
+
+
+\begin{figure}[!t]{
+ \hspace{-10pt}\framebox[1.08\textwidth]{$
+\begin{array}{l}
+~\\[-10pt]
+\begin{array}{rrcll}
+%
+\ccrule{CGR-C}{
+    \sCf_0
+    & \trn{\sLb} &
+    \sCf_1
+}{
+    \sCf'_0\equiv\sCf_0	
+    \myquad 
+    \sCf'_0
+    \trn{\sLb} 
+    \sCf'_1	
+    \myquad 
+    \sCf'_1\equiv\sCf_1
+}
+%
+\ccrule{NEST}{
+    \sCf\oPar\cSpace{\sSp}{\sSI}
+    & \trn{\sLb} &
+    \sCf\oPar\cSpace{\sSp'}{\sSI}
+}{
+    \sSp
+    \trn{\sLb}
+    \sSp'
+}
+%
+\ccrule{SHIP}{
+    \sCf\oPar\cSpace{\cLSA{\sStar}{\sDe}}{\sSI} 
+    & \trn{\lship{\cList{\sId}}} &
+    \sCf\oPar\prod_i \cSpace{\cLSA{\sId_i}{\sDe}}{\sSI_i}
+}{
+    \cNeigh{\sSI}{\cList{\sSI}}\in S\myquad |\cList{\sSI}|=|\cList{\sId}|\myquad\textit{fresh}(\cList{\sId})
+}
+%
+\end{array}\end{array}$}} \caption{Rules modelling architectural aspects} \label{fig:congruence_rules}
+\end{figure}
+
+
+
+\begin{figure}[!t]{
+ \hspace{-10pt}\framebox[1.2\textwidth]{$
+\begin{array}{c}
+~\\[-10pt]
+\begin{array}{rrcll}
+%
+\crule{CGR}{
+\sSp_0
+    & \trn{\sLb} &
+    \sSp_1
+    
+}{
+    \sSp'_0\equiv\sSp_0	
+    \myquad 
+    \sSp'_0
+    \trn{\sLb} 
+    \sSp'_1	
+    \myquad 
+    \sSp'_1\equiv\sSp_1
+}
+%
+\crule{TRY}{
+    \sSp\oCPar\cAgent{\cList{\sId}}{(\sAg\oOr\sAgB)}
+    & \trn{\sLb} & 
+    \sSp'\oCPar\cAgent{\cList{\sId}'}{(\sAg'\oOr\sAgB)}\;
+}{
+    \sSp\oCPar\cAgent{\cList{\sId}}{\sAg}\trn{\sLb}
+    \sSp'\oCPar\cAgent{\cList{\sId}'}{\sAg'}
+}
+%
+\crule{CATCH}{
+    \sSp\oCPar\cAgent{\cList{\sId}}{(\sAg\oOr\sAgB)}
+    & \trn{\lexc} &
+    \sSp\oCPar\cAgent{\cList{\sId}}{\sAgB}
+}{
+    \sSp\oCPar\cAgent{\cList{\sId}}{\sAg}\ntrn{}\myquad A\not\equiv 0
+}
+%
+%
+\crule{ITER}{
+    \sSp\oCPar\cAgent{\cList{\sId}}{\cRecR{\sAg}{\sAgB}}
+    & \trn{\sLb} &
+    \sSp'\oCPar\cAgent{\cList{\sId}'}{\cRecR{\sAg}{\sAgB'}}
+}{
+    \sSp\oCPar\cAgent{\cList{\sId}}{\sAg}\trn{\sLb}
+    \sSp'\oCPar\cAgent{\cList{\sId}'}{\sAgB'}
+
+}
+\end{array}\\[15pt]
+\begin{array}{rrcll}
+%
+~\\[-10pt]\shortincrule{NEW}{
+    \sSp\oCPar\cAgent{\cList{\sId}}{\cNew{\sVr}{\sDE}\oSeq\sAg}
+    & \trn{\lnew{\sIdB}} &
+    \sSp\oCPar\cLSA{\sIdB}{\fFilt{\sDE}{0}}
+    \oCPar
+    \cAgent{\sIdB,\cList{\sId}}{\fSubs{\sAg}{\sIdB}{\sVr}}\quad\textrm{if}~\textit{fresh}(m)
+}
+%
+\shortincrule{UPD}{
+    \sSp\oCPar\cLSA{\sId}{\sDe}
+    \oCPar
+    \cAgent{\sId,\cList{\sId}}{\cUpd{\sId}{\sDE}\oSeq\sAg}
+    & \trn{\lupd} &
+    \sSp\oCPar\cLSA{\sId}{\fFilt{\sDE}{\sDe}}
+    \oCPar
+    \cAgent{\sId,\cList{\sId}}{\sAg}
+}
+%
+\shortincrule{OBS}{
+    \sSp\oCPar\cLSA{\sIdB}{\sDe}
+    \oCPar
+    \cAgent{\sId,\cList{\sId}}{\cObs{\sId}{\sDE}\oSeq\sAg}
+    & \trn{\lobs} &
+    \sSp\oCPar\cLSA{\sIdB}{\sDe}
+    \oCPar
+    \cAgent{\sId,\cList{\sId}}{\sAg^{\textit{matcher}(\sDE,\sDe)}}
+    \quad
+    \textrm{if}~\cBond{\sId}{\sIdB}\in\sSp
+}
+%
+\shortincrule{REM}{
+    \sSp\oCPar\cLSA{\sId}{\sDe}
+    \oCPar
+    \cAgent{\sId,\cList{\sId}}{\cRem{\sId}\oSeq\sAg}
+    & \trn{\lrem} &
+    \sSp\oCPar\cAgent{\cList{\sId}}{\sAg}
+}
+\end{array}\end{array}$}} \caption{Rules modelling coordination primitives} \label{fig:agent_rules}
+\end{figure}
+
+\begin{figure}[!t]{
+ \framebox[1.05\textwidth]{$
+\begin{array}{l}
+~\\[-10pt]
+\begin{array}{rrcl@{\hspace{0.5cm}}l}
+%
+\shortincrule{DIFF}{
+    \sSp\oCPar\cLSA{\sId}{\sDe} 
+    & \trn{\ldiff} &
+    \sSp\oCPar\cLSA{\sId}{\sDe}\oCPar\cLSA{\sStar}{\fDiff(\sDe)}
+}
+%
+
+\crule{AGR}{
+    \sSp\oCPar\cLSA{\sId}{\sDe}\oCPar\cLSA{\sIdB}{\sDeB}
+    & \trn{\lagr} &
+    \sSp\oCPar\cLSA{\sId}{\fAggr(\sDe,\sDeB)}
+}{
+    \cAgent{\sIdB,\cList{\sId}}{\sAg}\notin \sSp
+}
+%
+\crule{DEC}{
+    \sSp\oCPar\cLSA{\sId}{\sDe}
+    & \trn{\ldec} &
+    \sSp
+}{{\fDecay(\sDe)}\myquad\cAgent{\sId,\cList{\sId}}{\sAg}\notin \sSp}   
+%
+\crule{BND}{
+    \sSp\oCPar\cLSA{\sId}{\sDe}\oCPar\cLSA{\sIdB}{\sDeB}
+    & \trn{\lbond} &
+    \sSp\oCPar\cLSA{\sId}{\sDe}\oCPar\cLSA{\sIdB}{\sDeB}\oCPar\cBond{\sId}{\sIdB}
+}{\fBond(\sDe,\sDeB)\myquad \cBond{\sId}{\sIdB}\notin\sSp}
+%
+\crule{DBND}{
+    \sSp\oCPar\cBond{\sId}{\sIdB}
+    & \trn{\lubond} &
+    \sSp
+}{\sSp\ntrn{}\sSp\oCPar \cBond{\sId}{\sIdB}}
+\end{array}\end{array}$}} \caption{Rules modelling eco-laws} \label{fig:eco_laws}
+\end{figure}
+
+\subsubsection{Well-formed configurations and properties}
+
+A configuration is considered well-formed if: \emph{(i)} no two LSA-spaces have the same identifier, \emph{(ii)} for each space with identifier $\sigma$ there is precisely one item $\cNeigh{\sigma}{\overline{\sigma}}$ and all elements in $\overline{\sigma}$ have a corresponding space, \emph{(iii)} no two LSAs share the same LSA identifier, \emph{(iv)} iterations do not include removal of LSAs (\texttt{rem}), and \emph{(v)} for any agent $\cAgent{\cList{\sId}}{\sAg}$ we have $\ccheck{\cList{\sId}}{\sAg}$.
+%
+The latter is a well-formedness judgment for agents, checking that variables over identifiers are properly managed and that no agent performs operations on LSAs it does not own. This judgment is inductively defined as:
+%
+\[\begin{array}{r@{\hspace{1cm}}l}
+%
+\ccheck{\cList{\sTr}}{\cNew{\sVr}{\sDE}\oSeq\sAg} & \textrm{if~~} x\notin\cList{\sTr} \myquad \ccheck{(\sVr,\cList{\sTr})}{\sAg}\\
+\ccheck{(\sTr,\cList{\sTr})}{\cUpd{\sTr}{\sDE}\oSeq\sAg} & \textrm{if~~} \ccheck{(\sTr,\cList{\sTr})}{\sAg}\\
+\ccheck{(\sTr,\cList{\sTr})}{\cObs{\sTr}{\sDE}\oSeq\sAg} & \textrm{if~~} \ccheck{(\sTr,\cList{\sTr})}{\sAg}\\
+\ccheck{(\sTr,\cList{\sTr})}{\cRem{\sTr}\oSeq\sAg} & \textrm{if~~} \ccheck{\cList{\sTr}}{\sAg}\\
+\ccheck{\cList{\sTr}}{(\sAg\oOr\sAgB)} & \textrm{if~~} \ccheck{\cList{\sTr}}{\sAg,\sAgB}\\
+\ccheck{\cList{\sTr}}{\cRecR{\sAgB}{\sAg}} & \textrm{if~~} \ccheck{\cList{\sTr}}{\sAg,\sAgB}\\
+%
+\end{array}\]
+%
+
+We now state two fundamental properties for the proposed calculus:
+%
+\begin{itemize}
+ \item \textbf{Subject reduction} | If a configuration $\sCf$ is well-formed, and $\sCf\xrightarrow{\sLb}\sCf'$, then $\sCf'$ is well-formed. This property is key to guarantee that starting from a well-formed configuration, we never reach badly structured configurations.
+
+ \item \textbf{Progress} | If a well-formed configuration $\sCf\oPar\cSpace{\cAgent{\cList{\sId}}{\sAg}}{\sSI}$ allows no transition leading to $\sCf'\oPar\cSpace{\cAgent{\cList{\sId}'}{\sAg'}}{\sSI}$ (namely, the agent is stuck), then necessarily $\sAg\equiv(\cObs{\sId}{\sDE}\oSeq\sAg')$, and in $\sSI$ there is no bond from $\sId$ to $\sIdB$ such that $\sIdB$'s description $\sDe$ satisfies $\fFilt{\sDE\sSB}{\sDe}=\sDe$. This property states that in well-formed configurations operations never fail, except for the case of an \texttt{obs} that fails and has not been caught by the try-catch construct.
+\end{itemize}
+ 
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+\section{Pattern: Channel}
+\section{Pattern: Anticipative adaptation}
+\label{anticipative-gradient}
+
+
+\section{Case Study: Crowd evacuation}
+\section{Case Study: Crowd steering}
 \label{jos-museum}
 In this section, we show a crowd steering case study in which a middleware has the goal of leading people in the desired location within a complex environment in short time, avoiding obstacles such as crowded regions and without global supervisioning. 
 
@@ -2062,7 +2594,7 @@ The reaction rates are identified by hand performing different simulations with 
     \includegraphics[width=0.3\columnwidth]{img/jos-snapshots/4-1}
     \includegraphics[width=0.3\columnwidth]{img/jos-snapshots/4-3}
     \includegraphics[width=0.3\columnwidth]{img/jos-snapshots/4-4}
-    \caption{A simulation run of the reference exposition: three snapshots of \alchemist{}'s graphic reporting module with this simulation. \label{img:museum-generalmap}}    
+    \caption[Simulation run of indoor steering in \alchemist{}]{A simulation run of the reference exposition: three snapshots of \alchemist{}'s graphic reporting module with this simulation. \label{img:museum-generalmap}}    
 \end{center}
 \end{figure}
 
@@ -2092,7 +2624,7 @@ Due to this jam the latter visitors choose a different path that is longer but l
     \includegraphics[width=0.3\columnwidth]{img/jos-snapshots/2-1}
     \includegraphics[width=0.3\columnwidth]{img/jos-snapshots/2-3}
     \includegraphics[width=0.3\columnwidth]{img/jos-snapshots/2-4}
-    \caption{A run showing the effect of crowding: dark visitors occupy a central room, making other visitors moving left to right by a longer, less crowded path \label{img:museum-generalmap2}}    
+    \caption[Effect of crowding]{A run showing the effect of crowding: dark visitors occupy a central room, making other visitors moving left to right by a longer, less crowded path \label{img:museum-generalmap2}}    
 \end{center}
 \end{figure}
 
@@ -2103,18 +2635,15 @@ For instance, in the context of the second case, \Cref{img:jos-graph} shows how 
 \begin{figure}
 \begin{center}
    \includegraphics[width=0.99\columnwidth]{img/jos-graph}
-   \vspace{-10pt}\caption{Time units of convergence time with different values of crowd parameter and different percentages of people}\label{img:jos-graph}\vspace{-10pt}
+   \vspace{-10pt}\caption[Crowd parameter]{Time units of convergence time with different values of crowd parameter and different percentages of people}\label{img:jos-graph}\vspace{-10pt}
 \end{center}
 \end{figure}
 
 
-\section{Self composition}
-\section{Semantic resource discovery}
-\section{Anticipative adaptation}
-\label{anticipative-gradient}
-
-\section{Crowd disasters prediction}
-\section{Crowd steering at the urban scale}
+\section{Case study: Self composition}
+\section{Case study: Semantic resource discovery}
+\section{Case study: Crowd disasters prediction}
+\section{Case study: Crowd steering at the urban scale}
 \label{ahpc-steering}
 In section, we focus on the problem of crowd steering at the urban scale.
 %
@@ -2201,7 +2730,7 @@ We relied on such data set to build simulations demonstrating our concepts of cr
 
 \begin{figure*}[h]
  \includegraphics[width=0.99\textwidth]{img/vienna}
-  \caption{A snapshot of the whole city of Vienna as simulated in \alchemist{}. This snapshot is taken while simulating the city at 10am, each black point corresponds to a GPS trace. The more an area is crowded, the blacker it appears in the image.}
+  \caption[Vienna simulated in \alchemist{}]{A snapshot of the whole city of Vienna as simulated in \alchemist{}. This snapshot is taken while simulating the city at 10am, each black point corresponds to a GPS trace. The more an area is crowded, the blacker it appears in the image.}
   \label{img:ahpc-vienna}
 \end{figure*}
 
@@ -2239,7 +2768,7 @@ This way, we were able to simulate a network of programmable tuple spaces.
   \subfigure[Crowd-sensitive navigation]{\includegraphics[width=0.315\textwidth]{img/vcm_cd}
    \label{img:ahpc-crowdsteering}
   }
- \caption{In these three snapshots a qualitative evaluation of the crowd-sensitive steering system benefits is offered. The requester is painted in red, while the nearest POI is in blue. In \Cref{img:ahpc-crowd}, the density of people in the area is shown (at the time at which the red node starts): a more intense black mean a more crowded area. In \Cref{img:ahpc-nocrowd} and \Cref{img:ahpc-crowdsteering} is possible to see the suggested routes of, respectively, the classic navigation and the crowd-sensitive navigation. The second suggests a longer but much less jammed path.}
+ \caption[Crowd sensitive steering in Vienna]{In these three snapshots a qualitative evaluation of the crowd-sensitive steering system benefits is offered. The requester is painted in red, while the nearest POI is in blue. In \Cref{img:ahpc-crowd}, the density of people in the area is shown (at the time at which the red node starts): a more intense black mean a more crowded area. In \Cref{img:ahpc-nocrowd} and \Cref{img:ahpc-crowdsteering} is possible to see the suggested routes of, respectively, the classic navigation and the crowd-sensitive navigation. The second suggests a longer but much less jammed path.}
  \label{img:ahpc-steering}
 \end{figure}
 
@@ -2261,7 +2790,7 @@ It is immediately clear that the suggested path in \Cref{img:ahpc-crowd} is long
 
 \begin{figure}
  \includegraphics[width=0.99\textwidth]{img/ahpc-chart}
- \caption{This chart shows how the number of users surrounding the user (within 100 meters from her) vary with the proximity to the target.
+ \caption[Urban crowd steering effectiveness]{This chart shows how the number of users surrounding the user (within 100 meters from her) vary with the proximity to the target.
 %
  With ``normalised distance'', we mean that we divided the distance the user still has to walk to reach the target by the total length of the suggested path.
  }
@@ -2289,6 +2818,12 @@ We claim that, assuming the traces to be a representative sampling of the actual
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Aggregate programming languages}
+In this chapter
+% Possibile intro: in questo capitolo si fanno tre cose: 1) si cerca di modificare un meccanismo classico (Linda) in modo adattarlo al ragionamento di programmazione aggregata. 2) Si propone una restrizione di field calculus ad operazioni safe, e si dice ovviamente che vuol dire safe in un continuum spazio-temporale. 3) Si propone una implementazione pratica, che parte dai concetti di field calculus (non da GPI perché in generale un linguaggio ti deve consentire tutto, ma ci sta di ragionare sul fatto che poi una API safe andrebbe fornita) -- nelle conclusioni
+
+%TODO: tutta la parte di GPI%
+
+%TODO: tutta la parte di Linda space-time, da vedere come un lavoro che cerca di portare la tuple based coordination verso un concetto di continuum spazio-temporale %
 
 When we introduced Field Calculus in \Cref{field-calculus}, we said that it is more a theoretical than a practical framework.
 %
@@ -2305,6 +2840,764 @@ Finally, both system development and maintainability are greatly enhanced if the
 Here is where \protelis{} comes into play: it represents our effort to bring Field Calculus to practice, satisfying the requirements stated above.
 
 %TODO: dire che ha anche una parte più teorica, relativa a codice mobile e HOF in field calculus%
+
+\section{Linda in space and time}
+
+\section{Scale independent computations in situated networks}
+
+Spatially, pervasive networks will tend to be highly variable in their density across space and time, and this represents a key problem.
+%
+For example, in a smart mobility scenario we can expect that certain areas (e.g., city centers) will host a high number of cars and a very dense deployment of traffic sensors and digital signs, while others (e.g., highways or country roads) will be very sparse.
+%
+Likewise, the density of devices is likely to vary greatly in time, both as increasing numbers of devices are deployed and as events (e.g., sporting events, festivals) cause large fluctuations in the number of people and amount of accompanying devices in particular areas.
+
+We contend that the development and maintenance of distributed systems in the face of such fluctuations will only be tractable if they make use of techniques that ensure ``by construction'' that computations are inherently resilient against such forms of variability.
+%
+Toward that end, the first contribution of this section (as an extension of the work in \cite{BVD-SCW14}), is the identification of a notion of \emph{consistency} of a space-time computation, stating that the outcome of a computation converges as the density of computing devices increases toward infinity.
+%
+This is further refined to \emph{eventual consistency}, which focuses only on the stable outcome of a computation (e.g., self-stabilizing patterns as studied in~\cite{VD-COORD2014-LNCS2014}).
+
+Second, we identify a set of sufficient conditions for this property to hold, expressed as constructs defining a general purpose spatial language~\cite{SpatialIGI2013} useful for a wide variety of applications.
+%
+The language is based on the notation of~\emph{computational field}, and it is defined as a restriction of the universal \emph{Field calculus} introduced in \Cref{field-calculus} to a subset of expressions that generate only eventually consistent fields, and features a new construct, ``gradient-following path integral'' ($\OneOp$), that generalizes a number of frequently used self-organization patterns.
+%
+We show how $\OneOp$ can be used to implement well-known self-organization patterns such as distance calculation, broadcast, and path forecasting~\cite{Montagna-MONET2012,VD-COORD2014-LNCS2014}, (which are hence also proven to be eventually consistent).
+%
+Finally, these patterns are applied in several situated network scenarios, and simulations confirm the predictions of eventual consistency.
+
+\subsection{Space-Time Computation and Discrete Approximation}
+
+\begin{figure}
+\centering
+\begin{tabular}{|cp{0.85\textwidth}|}
+\hline
+Symbol & Definition \\
+\hline
+$\closure{x}$             & Closure of a set; sequence of a token \\
+\hline % Manifolds
+$\manifold$               & A Riemannian space-time manifold \\
+$\event$                  & A point (``event'') in a manifold $\manifold$ \\
+$\infospeed$              & Bound on the speed of information propagation \\
+$\futureof{\event}$       & Time-like future: events reachable from $\event$ slower than $\infospeed$\\
+$\pastof{\event}$         & Time-like history: events that can reach $\event$ slower than $\infospeed$ \\
+%$\simultaneityof{\event}$ & Simultaneity cone: events reaching/reachable from $\event$ at speed $\infospeed$ \\
+$\device$                 & Computational device: a time-like curve in a manifold $\manifold$ \\
+$\sectionof{\manifold}$   & A space-like cross-section of a manifold $\manifold$\\
+$\discreteset$            & Discrete subset of a manifold, e.g., events in execution of an algorithm on physical devices.\\
+\hline % Computations
+$\spaceof{\datavalue}$    & Set of all possible data values \\
+$\field$                  & Field: a function $\field: \manifold \rightarrow \spaceof{\datavalue}$ assigning values to all points in the manifold $\manifold$. \\
+$\fieldsof{\spaceof{\datavalue}}$ & Space of all fields with range contained in $\spaceof{\datavalue}$ \\
+%$\envstate$               & Set of possible environment states for a computation \\
+$\environment$            & ``Evaluation environment'' input field \\
+$\computation$            & Computation: a higher-order function mapping fields to fields: $\computation: \fieldsof{\spaceof{\datavalue}} \rightarrow \fieldsof{\spaceof{\datavalue}}$ \\
+%$\evaluate{\environment}{\computation}$ & Evaluation of computation $\computation$ in environment $\environment$ \\
+\hline
+$\hoodof{\event}$         & Communication neighborhood of $\event$ \\
+$\hoodradius$             & Range within which all points are neighbors \\
+$\inforegion{\event}$     & Intersection $\hoodof{\event} \cap \closure{\pastof{\event}}$, from which information is directly available to $\event$\\
+\hline
+\end{tabular}
+\caption{Table summarizing key symbols that will be used in the following discussion}
+\label{f:symbols}
+\end{figure}
+
+This section presents a model of computation over continuous space-time, per~\cite{bealBasisSCW10,BVD-SCW14,BealUsbeck12},  and defines properties linking it with approximate implementation on a wireless network.
+%
+The continuous abstraction allows specification of a physically situated computation without consideration of the particulars of the network that will be used to implement it.
+%
+This in turn provides certain types of scalability and resilience: any computation that is {\em eventually consistent} (as defined below) produces results that are not sensitive to the precise locations of devices and can only improve (asymptotically) as the number of devices in the network increases.
+%
+In addition, this abstraction supports higher-level specification of distributed algorithms, since many are natural to describe in geometric terms, e.g., distances, regions, information flow.
+
+As many readers may be unfamiliar with prior results in this area, we begin with a review of the manifold model of space-time adapted from physics in~\cite{upp,bealBasisSCW10}, which then forms a basis for space-time computation, per~\cite{bealBasisSCW10,BVD-SCW14,BealUsbeck12}.
+%
+We then use these concepts to define {\em eventually consistent} programs and examine the utility of this definition.
+
+For additional assistance to the reader, we provide a table of the symbols (Figure~\ref{f:symbols}), and a chart of the relationship between definitions (Figure~\ref{f:definitions}).
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\columnwidth]{img/definitions}
+\caption[Continuous computation and space-time manifolds]{The definition of {\em eventually consistent} programs depends on prior work on continuous computation (blue) and space-time manifolds (red).}
+\label{f:definitions}
+\end{figure}
+
+\subsubsection{Modeling Networks as Space-Time Manifolds}
+
+Many physically situated networks perform computations that can be naturally described in terms of the physical space through which the devices comprising the network are distributed.
+%
+As observed in~\cite{upp} and~\cite{bealBasisSCW10}, such a network can be viewed as a discrete approximation of the continuous physical space and programmed accordingly.
+
+Under the continuous model developed in those papers, computation takes place on a Riemannian manifold $\manifold$ with both space and time dimensions.
+%
+A manifold is a space that is locally Euclidean, but may have more complex structure over a longer range.  Riemannian manifolds also support familiar geometric constructs like angles, lengths, curvature, integrals and derivatives.
+%
+This allows communication and mobility constraints to be embedded in manifold's geometry, measuring distance through the manifold rather than using absolute (e.g., latitude/longitude) coordinates.
+%
+For example, the walkable spaces of a building (e.g., Figure~\ref{f:manifold}) form a Riemannian manifold in which the shortest distance between locations goes through doors and hallways, rather than through the walls.
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{img/32_D5}
+\caption[MIT Stata Center floor plan]{The spaces where situated computations take place are often quite complicated, e.g. the MIT Stata Center floor plan shown above. 
+         %
+         With a manifold representation, distance and other geometric relations conform to the space, e.g., shortest paths follow hallways rather than passing through walls.}
+\label{f:manifold}
+\end{figure}
+
+Communication is modelled as a bound $\infospeed$ on the speed at which information can propagate; given this bound, concepts and terminology from physics well describe the space-time relations of a manifold~\cite{RelativityIntroduction}.
+%
+A point $\event \in \manifold$ is termed an ``event,'' denoting its interest as both a spatial and temporal location (see examples in Figure~\ref{f:spacetime}), and the manifold may be partitioned with respect to $\event$ in space and time:
+\begin{itemize}
+\item Events that information can go to or from exactly at $\infospeed$ are {\em simultaneous} with $\event$.
+\item Events that can be reached from $\event$ moving slower than $\infospeed$ are in its {\em time-like future} $\futureof{\event}$.
+\item Events whose information reach $\event$ moving slower than $\infospeed$ are in its {\em time-like history} $\pastof{\event}$.
+\item All other events, which cannot share information because it would need to move faster than $\infospeed$, have {\em space-like separation} from $\event$ and no natural order.
+\end{itemize}
+
+A {\em device} $\device$ can be any one-dimensional curve in the manifold with purely time-like relations between the points\footnote{This is analogous to the physics notion of a world-line.}.
+%
+The mathematical analysis in this section also makes the simplifying assumptions that the manifold is finite in diameter and that devices do not move\footnote{In practice, the results we develop here often apply to slowly moving devices as well.}.
+%
+Finally, a {\em spatial section} is any subspace $\sectionof{\manifold}$ whose complement is its time-like future and history, i.e., $\manifold-\sectionof{\manifold} = \futureof{\sectionof{\manifold}} \cup \pastof{\sectionof{\manifold}}$, implying all points in $\sectionof{\manifold}$ have purely space-like separation.  
+%
+Spatial sections are essentially snapshots in time, without attempting to enforce a global notion of time.
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{img/spacetime}
+\caption[Example of space-time relations on a manifold]{Example of space-time relations on a manifold representing a network of wireless devices.
+  %
+  Sensor nodes are stationary, while the phone moves along a time-like trajectory (i.e., slope less than diagonal).
+}
+\label{f:spacetime}
+\end{figure}
+
+\subsubsection{Computations on Continuous Space and Time}
+
+Typical formulations of distributed computation (e.g.,~\cite{Lynch:1996:DA:525656}) cannot be applied to space-time manifolds, as any manifold contains an uncountably infinite number of events, and thus the events of the computation cannot be ordered.
+%
+Instead, computation may be defined in terms of fields, per~\cite{bealBasisSCW10,BVD-SCW14,BealUsbeck12}:
+\begin{defn}[Continuous Computational Field]
+  A field is a function $\field: \manifold \rightarrow \spaceof{\datavalue}$ that maps every event $\event$ in a Riemannian manifold $\manifold$ to some data value in $\spaceof{\datavalue}$.
+\end{defn}
+\noindent
+Discrete computational fields (e.g., events in the execution of a distributed algorithm) may be defined likewise, except that the domain is limited to a discrete subset of events $\discreteset \subset \manifold$.\footnote{Considering a discrete execution as a manifold subspace, rather than an abstract graph, preserves its relationship with the space in which devices are embedded.}
+
+Let $\fieldsof{\spaceof{\datavalue}}$ be the space of all fields whose range is contained in ${\spaceof{\datavalue}}$.
+%
+A space-time computation $\computation$ is then a higher-order function that maps from each possible field defining an evaluation environment to a corresponding field of values:
+\begin{defn}[Space-Time Computation]
+  A computation $\computation$ is a function $\computation: \fieldsof{\spaceof{\datavalue}} \rightarrow \fieldsof{\spaceof{\datavalue}}$, where the domain of the output field is always identical to the domain of the input field.
+\end{defn}
+\noindent
+In other words, a computation takes a field as input, whose domain defines the scope over which the computation executes and whose values are all of the environmental state that can affect its outcome (e.g., sensor readings).  At every point of space and time in the execution scope, some output value is produced.
+
+The computations we are interested in are those physically realizable: those that are both approximable, meaning that the output field is bounded in its intricacy, and causal, meaning that information moves subject to the speed bound $c$.
+%
+Approximability is determined by comparing values in a continuous field to the nearest points in a corresponding discrete field:
+
+\begin{defn}[$\epsilon$-approximation]\label{def:eapprox}
+  Let $\discreteset_{\epsilon} \subset \manifold$ be a discrete set such that every event $\event \in \manifold$ is within distance $\epsilon$ of some event in $\discreteset_{\epsilon}$.
+  %
+  The $\epsilon$-approximation of field $\field: \discreteset_{\epsilon} \rightarrow \spaceof{\datavalue}$ is a field mapping every point in $\manifold$ to the value of $\field$ at the nearest point in $\discreteset_{\epsilon}$ (choosing arbitrarily for equidistant points).
+\end{defn}
+
+\begin{defn}[Field Approximation]\label{def:approx}
+  A countable sequence of $\epsilon_{i}$-approximations $\field_i$ of manifolds $\manifold_i$, with $\epsilon_{i} < \epsilon_{i-1}$ is said to approximate field $\field: \manifold \rightarrow
+  \spaceof{\datavalue}$ if both the following hold:
+  $$\lim_{i\rightarrow \infty} |(\manifold \cup \manifold_{i}) - (\manifold \cap \manifold_{i})| = 0$$
+  $$\lim_{i\rightarrow \infty} \int_{\manifold \cap \manifold_{i}} |\field-\field_{i}| = 0$$
+\end{defn}
+\noindent
+In other words, a sequence of increasingly fine discrete sets approximates a continuous field if both the manifolds and the values assigned over them by the fields tend toward identical.
+%
+A field produced by a computation is approximable if at least one such approximation sequence can be constructed.
+%
+Some notes on technicalities.
+\begin{itemize}
+ \item The reason to use a sequence of potentially different manifolds $M_i$ is because program branches can create subspaces dynamically, and these necessarily depend on the details of approximation.
+ \item It is generally necessary to evaluate the value difference using a Lebesgue integral~\cite{LebesgueIntegral}, since the more typical Riemann integral is ill-defined on many discontinuous fields.
+\end{itemize}
+
+\begin{figure}
+\centering
+\subfigure[Slower Discretization]{\includegraphics[width=0.48\columnwidth]{img/slow-discrete}}
+\subfigure[Faster Discretization]{\includegraphics[width=0.48\columnwidth]{img/fast-discrete}}
+\caption[Effective speed of information flow]{The effective speed of information flow for a discrete computation depends on the specifics of discretization relative to neighbourhood size.  For example, in discretization (a) information moves significantly slower than in discretization (b), despite the neighbourhoods being the same, leading to a smaller information availability (red line) at event $\event$ of the red device.}
+\label{f:approxspeed}
+\end{figure}
+\noindent
+The second condition for physical realizability is causality: causal computations have values that are determined only by the information available at each event.
+%
+Intuitively, information is available if it could have been relayed from event to event from its origin.  To compute this, we add the concept of a neighbourhood, defining how far information can move in one step:
+% note: union of open sets is always open
+\begin{defn}[Neighbourhood]\label{def:neighborhood}
+  Neighbourhoods are defined by a function $\neighborhoods$ mapping each $\event$ to a connected open set $\hoodof{\event} \subset \manifold$, containing at least every event within distance $\hoodradius$ of $\event$ (for some positive $\hoodradius$).
+\end{defn}
+\noindent
+Information is thus directly available to an event $\event$ in device $\device$ from the region $\directinforegion{\event}$ of events that have been in its neighbourhood in the present or past:
+%
+$$\directinforegion{\event} = \closure{\pastof{\event}} \cap \hoodof{\device-\futureof{\event}}$$
+%
+and the set of all events from which information is available is the transitive closure of direct information availability:
+%
+$$\inforegion{\event} = \directinforegion{\event} \cup \directinforegion{\directinforegion{\event}} \cup \dots$$
+%
+For continuous computations, this is precisely equal to the closure of the past (i.e., $\inforegion{\event} = \closure{\pastof{\event}}$).  For discrete computations, however, the region depends on the specifics of the discretization, because information cannot be relayed from a device except at its events.
+%
+For example, Figure~\ref{f:approxspeed} shows discrete computations with the same neighbourhood but different speeds of information flow due to differences in the position of discrete events within the neighbourhood.
+%
+The difference between $\inforegion{\event}$ and $\closure{\pastof{\event}}$ is bounded by $\epsilon$, however, and converges to zero with $\epsilon$.
+
+Causal computations are then those whose values depend only on events from which information is available:
+\begin{defn}[Causality]
+  Computation $\computation$ is causal if for every pair of evaluation environments $\environment$ and $\environment'$ with the same domain $\manifold$, it is the case that $\environment(\inforegion{\event}) = \environment'(\inforegion{\event})$ implies $\computation(\environment)(\event) = \computation(\environment')(\event)$.
+\end{defn}
+\noindent
+Some examples of causal and approximable computations:
+\begin{itemize}
+\item a computation whose value is always 3;
+\item a computation that applies the triangle inequality to measure the spatial distance to specific events designated by the environment;
+\item a gossip computation that spreads knowledge that a particular environmental condition has been sensed.
+\end{itemize}
+%
+An example of a non-causal computation is a computation that instantaneously changes from 0 to 1 in response to a sensor value at a single event.  
+%
+An example of a non-approximable computation is one that maps all rational distances from an event to $0$ if the numerator is even and $1$ is the numerator is odd.
+
+
+\subsubsection{Space-time programs}
+
+One way of specifying space-time computations is by the functional composition of a basis set of operators:
+%
+\begin{defn}[Space-Time Operator]\label{def:operator}
+A space-time operator is a function 
+$o: \fieldsof{\spaceof{\datavalue}} \times \fieldsof{\spaceof{\datavalue}}^k \rightarrow \fieldsof{\spaceof{\datavalue}}$
+taking an evaluation environment and zero or more additional fields
+as inputs and producing a field as output.
+\end{defn}
+\noindent
+This is much like the definition of a computation, except that the domains of the fields may differ.
+
+In this work, we consider only causal operators, any functional composition of which must clearly also be causal.
+%
+Some examples of causal operators:
+\begin{itemize}
+\item {\tt +} produces a scalar field whose value at each point is the sum of the input values at that point.
+\item {\tt true} outputs a field mapping the domain of the evaluation environment to the Boolean value $\ltrue$.
+\item {\tt temperature} reads a temperature sensor by extracting its value from the evaluation environment, producing a scalar field.
+\end{itemize}
+
+A {\em space-time program} is then any functional composition of operator instances to form a computation, such that the domains and ranges of the output are well-defined for all possible values of the inputs
+\footnote{Some notes on technicalities.
+	\begin{itemize}
+		\item Any well-defined composition of operators is itself an operator.
+		\item Complete programs have no inputs except the environment.  Any composition of operators that requires inputs (e.g., function definitions) may, however, be transformed into an equivalent program by ``currying'' the inputs to instead be supplied by the environment and adjoining a special ``no value'' value for events in the domain of the environment but not the input.
+	\end{itemize}
+}.
+%
+Allowing compositions to be defined as new operators by usual means such as lambda calculus, programs may be recursive as well, with an evaluation structure determined dynamically by their environment.
+%
+In~\cite{BealUsbeck12} and~\cite{BVD-SCW14}, space-time programs are formalized as dataflow graphs; here we use an equivalent syntactic formulation and consider only the restricted language developed next.
+
+For clarity in the description of programs, we will abuse terminology; in the context of a program, a ``field'' is not actually the mathematical object itself, but the input or output of an operator instance, which takes on a field value when evaluated in the context of an environment.
+
+\subsubsection{Eventually Consistent Programs}
+
+We now apply the continuous model of computation to identify distributed algorithms that are resilient to changes in the number and position of devices.
+%
+Our approach is as follows: consider any distributed algorithm for which we can identify an analogous space-time program.
+%
+If the distributed algorithm always approximates the space-time program, no matter the particular arrangements of discrete events, then it is clearly resilient to increasing numbers of devices and to small changes in device position:
+%
+\begin{defn}[Consistent Program]
+  Let $\PROGRAM$ be a space-time program, $\environment$ be an evaluation environment, and $\environment_i$ a countable sequence of $\epsilon$-approximations that approximate field $\environment$.
+  %
+  Program $\PROGRAM$ is {\em consistent} if $\PROGRAM(\environment_i)$ approximates $\PROGRAM(\environment_i)$ for every $e$ and $e_i$.
+\end{defn}
+\noindent
+As noted in the discussion of causality, however, information may move at different speeds in different discrete approximations.  This means any program with non-trivial interaction between devices will not be consistent, but that if a program eventually converges to a steady state, then it may be consistent after that point:
+\begin{defn}[Eventually Consistent Program]
+  Consider a causal program $\PROGRAM$ evaluated on environment $\environment$ with domain $\manifold$.  Program $\PROGRAM$ is {\em eventually consistent} if, for any environment $\environment$ in which there is a spatial section $\sectionof{\manifold}$ such that the values of $\environment$ do not change at any device in the time-like future $\futureof{\sectionof{\manifold}}$, there is always some spatial section $\sectionof{\manifold}'$ such that $\PROGRAM$ is consistent on the time-like future $\futureof{\sectionof{\manifold}'}$.
+\end{defn}
+\noindent
+In other words: if the inputs ever converge, then the outputs eventually converge as well, and are consistent thereafter.
+
+As defined, eventual consistency is a conservative property, saying nothing about behaviour before convergence.
+%
+For many programs, however, the constructs used to ensure eventual consistency often produce more broad resilience.
+
+\subsection{Eventually Consistent Language}
+
+In this section, we develop a language that generates only eventually consistent programs.
+%
+This language, \calculus{}, derives both its syntax and semantics from field calculus~\cite{VDB-FOCLASA-CIC2013}, but is restricted to a set of eventually consistent operators that compose to produce programs that are also guaranteed to be eventually consistent.
+
+\subsubsection{From Consistency Failures to Fragility}
+
+Consistency is a useful property because it allows us to evaluate when a computation is fragile to the circumstances of its evaluation.
+%
+Even though real networks are always finite, comparison with a continuous ideal can reveal vulnerabilities in a distributed algorithm through the manner in which it fails to be eventually consistent.
+
+Unbounded recursion, of course, can create consistency failures: infinite loops are obviously ill-defined.  There are also many ways to arrange a recursion that grows in depth with density and does not converge.
+%
+We can eliminate this by the simple but harsh method of prohibiting recursive function calls, which puts a finite bound on the number of operations that can be used in the evaluation of a program.
+
+Let us turn next to a problem related to distributed computation: interactions between devices frequently lead to scalability problems due to implicit dependence on the distribution of devices.
+%
+Consider, for example, the field calculus program:
+\begin{samepage}
+\begin{Verbatim}[samepage=true,
+                  frame=single,
+                  %baselinestretch=,
+                  commandchars=\\\{\}]
+(\km{def} \fn{non-convergent-nbr} (v)
+  (\pr{/} 1 (\pr{min-hood} (\pr{nbr-range}))))
+\end{Verbatim}
+\end{samepage}
+As devices pack more closely, the distance to the closest device approaches zero, causing the inverse to rise without bound, meaning it does not converge.  The program is thus not consistent, indicating its fragility to device distribution.
+
+Likewise, state creates problems in programs that implicitly rely on the time between events:
+\begin{samepage}
+\begin{Verbatim}[samepage=true,
+                  frame=single,
+                  %baselinestretch=,
+                  commandchars=\\\{\}]
+(\km{def} \fn{non-convergent-rep} ()
+  (\km{rep} x 0 (\pr{-} 1 x)))
+\end{Verbatim}
+\end{samepage}
+%
+This program switches values between 0 and 1 at every evaluation.
+%
+As the frequency of evaluations rises, it does not settle one or the other, but oscillates faster and faster, failing to converge.
+%
+It is thus not consistent, indicating its fragility to exactly when and how frequently state updates occur.
+
+Thus, in order to ensure resilience, we will not allow direct access to either state or neighborhood functions, and instead embed them in higher-level constructs with guaranteed convergence.
+
+Eliminating constructs that can directly give rise to consistency failures is not enough however.
+%
+Even if a program produces approximable fields, the program may not be consistent because it may not be resilient against miniscule changes in its inputs.
+%
+For example, the {\tt distance-to} program presented in \Cref{field-calculus} always produces an approximable field of shortest path distances, but is not a consistent program because
+the value of the output may be greatly affected by individual points in the {\tt source} field.
+%
+Consider, for example, a {\tt source} field where only one point is $\ltrue$: an $\epsilon$-approximation containing that point has only finite values, while one without that
+point has infinity everywhere.
+%
+Thus, it is possible to construct sequences that do not converge, because they alternate between including and not including the critical point.
+
+Are such extreme inputs reasonable sources of concern, however?
+%
+In fact, it is remarkably easy to produce fields with a set of critical values that has measure zero, i.e., being infinitely thin and therefore not guaranteed to be sampled in any approximation.
+%
+For example, a bisecting boundary computed by comparing {\tt distance-to} functions
+\begin{samepage}
+\begin{Verbatim}[samepage=true,
+                  frame=single,
+                  %baselinestretch=,
+                  commandchars=\\\{\}]
+(\km{def} \fn{bisector} (point-1 point-2)
+  (\pr{=} (\fn{distance-to} point-1) (\fn{distance-to} point-2)))
+\end{Verbatim}
+\end{samepage}
+computes a field that is $\lfalse$ except at an infinitely thin boundary of $\ltrue$ values.  Fed to a program sensitive to such sets, such as {\tt distance-to}, this can result in arbitrarily unpredictable behaviour from a distributed algorithm.
+
+This is not a special case related to {\tt distance-to}, but a deeper conflict for situated distributed algorithms, between the discrete values commonly used in algorithms (e.g., Booleans, branches, state machines) and the continuous space-time environment in which devices are embedded.
+%
+In particular, any non-trivial field with a discrete range cannot be continuous (proof in Supplementary Information), meaning that it either is itself not approximable or else contains some measure-zero boundary region that, if handled badly, can generate unpredictable behaviour (as in the bisector example).
+
+It is not practical to eliminate every program element that could either generate boundary regions or generate unpredictable behaviour due to values at a boundary.
+%
+As the bisector example shows, this cannot be done without eliminating at least one of distance measure, comparison, or branching\footnote{Equality testing can always be implemented by any Boolean-valued comparison of scalars plus Boolean branching.}, and losing any of those constructs curtails expressiveness more drastically than we are willing to accept.
+%
+Instead, the approach we present accepts that problematic boundaries will exist, and instead dynamically marks them and contains their effects.
+
+\subsubsection{\calculus}
+\label{s:calculus}
+
+Having identified ways in which consistency fails, introducing fragility to distributed algorithms, we now present a new language, \calculus{}, that restricts the syntax of field calculus and ensures that all programs it can express are eventually consistent.
+%
+We accomplish this by dynamically marking and tracking potential problems, with the following key changes to field calculus:
+\begin{itemize}
+\item A new value, $\boundary$, is adjoined to the set of data values, representing a boundary between value regions, and is passed unchanged through all functions.
+\item Comparing real numbers produces $\boundary$, rather than a Boolean, when the numbers are precisely equal.
+\item State and communication are available only through a new compound operator, $\OneOp$, which can implement a number of distance-based operations.
+\end{itemize}
+With these changes, well-written programs will ensure eventual consistency by effectively excluding a miniscule (often empty) set of devices from certain computations.
+%
+Poorly written programs (e.g., {\tt (= (sqrt 2) (sqrt 2))}) may still contaminate large areas with $\boundary$ values, but will still converge---just not to a particularly useful result.
+
+Key to this approach is the new operator $\OneOp$, a ``gradient-following path integral,'' which we define as the field calculus function:
+\begin{Verbatim}[samepage=true,
+                  frame=single,
+                  %baselinestretch=,
+                  commandchars=\\\{\}]
+(\km{def} \fn{GPI} (source initial density integrand)
+ (\km{if} (\pr{<=} density 0)
+  \(\boundary\) \il{Metric ill-defined if density non-positive}
+  (\pr{2nd} 
+   (\km{rep} distance-integral
+    (\pr{tuple} infinity initial) \il{Initial value}
+    (\pr{mux} source 
+     (\pr{tuple} 0 initial)\il{Source is distance zero, initial value}
+     (\pr{min-hood}' \il{Minimize lexicographically over non-self nbrs}
+      (\pr{+} (\km{nbr} distance-integral)
+       (\pr{*} (\pr{nbr-range}) \il{Scalar multiplication of tuple}
+        (\pr{tuple} (\pr{mean} density (\km{nbr} density))
+         (\pr{mean} integrand (\km{nbr} integrand)))))))))))
+\end{Verbatim}
+For this implementation, we use a slightly modified version of the usual field-calculus {\tt min-hood} operator, designated as {\tt min-hood}', which returns $\boundary$ if the minimal value for the first tuple element is held by more than one device.
+
+The $\OneOp$ operator thus performs two tasks simultaneously.  First, like {\tt distance-to}, $\OneOp$ computes a field of shortest-path distances to a {\tt source} region.
+%
+Here, however, distance is ``stretched'' proportional to a scalar field {\tt density} (representing e.g., crowd density slowing movements, hazards increasing danger of movement).
+%
+Furthermore, the {\tt min-hood}' operator ensures that all points in the distance field with more than one shortest path are $\boundary$.
+%
+Second, $\OneOp$ computes a path integral of the scalar field {\tt integrand} following the gradient of the distance field upward away form the source, starting at the scalar value {\tt initial} in the source region.
+%
+The function definition binds these together via a tuple and lexicographic minimization, such that the value added to the line integral at each device is taken from the neighbor on the (sole) minimal path to the source.
+
+Importantly, the $\OneOp$ operation subsumes a number of useful and frequently used computations.
+%
+For example, \texttt{distance-to} can be computed as:
+\begin{Verbatim}[ samepage=true,
+                  frame=single,
+                  %baselinestretch=,
+                  commandchars=\\\{\}]
+(\km{def} \fn{distance-to} (source)
+  (\pr{GPI} source 0 1 1))
+\end{Verbatim}
+which eliminates stretch by setting it to constant $1$ and obtains distance by integrating $1$ along each shortest path.
+
+\begin{figure}
+\centering
+\framebox[0.85\textwidth]{$
+\begin{array}{l@{\hspace{0cm}}l@{\hspace{0.1cm}}r@{\hspace{0.5cm}}}
+\lit & \BNFcce & \Boolean ~|~ \Integer ~|~ \Real \hfill \comment{Literals} \\
+\oname & \BNFcce & \cmath
+    \; \BNFmid \; \mux
+    \; \BNFmid \; \comparator \hfill \comment{local operators}\\
+ \e & \BNFcce &  \var
+    \; \BNFmid \; \lit
+    \; \BNFmid \; (\oname \; \overline{\e})
+    \; \BNFmid \; (\fname \; \overline{\e})
+    \; \BNFmid \; (\senseK \; \Integer^+)~~~~~~~~~~~~~~~~~  \hfill \comment{expression} \\ 
+    & \BNFmid & (\ifN \; \e\; \e \; \e)
+    \; \BNFmid \; (\OneOp \; \e \; \e \; \e \; \e)
+    \hfill \comment{special constructs}  \\
+     \texttt{F} & \BNFcce & (\defK \; \fname (\overline{\var}) \; \e)
+  \hfill   \comment{function}\\
+    \texttt{P} & \BNFcce & \overline{\texttt{F}}  \; \e
+  \hfill   \comment{program}     \\
+ \end{array}$}
+\caption{Syntax of \calculus{}.}
+\label{f:newcalc}
+\end{figure}
+
+The complete syntax of \calculus{}, shown in Figure~\ref{f:newcalc}, is then defined as a restriction of field calculus:
+\begin{itemize}
+\item The $\repN$ and $\nbrN$ constructs are only available indirectly via the $\OneOp$ construct as defined above.
+\item Literals are restricted to only Booleans ($\Boolean$), Integers ($\Integer$) and real numbers ($\Real$).
+\item Built-in operators are restricted to the elements $\cmath$, $\mux$, $\comparator$, and $\senseK$.
+\end{itemize}
+The available built-in operators are:
+\begin{itemize}
+\item $\cmath$ is any strictly continuous mathematical function (e.g., addition, multiplication, logarithm, sine\footnote{This also includes construction and referencing of tuples, which can be used to implement data structures, as well as higher order functions such as map and reduce.  Some simple functions are excluded, however, such as division, which is discontinuous when the denominator is zero.}), extended to have output $\boundary$ if any input is $\boundary$.  Finally, for any $m$ that can map integers to integers (e.g., addition), the output has integer type iff all inputs have integer type.
+%
+\item $\mux$ is the piecewise multiplexer function: when its first input is $\ltrue$, it returns the second input; if it is $\lfalse$, it returns the third input; if it is $\boundary$, it returns $\boundary$.
+%
+\item $\comparator$ compares two numerical inputs, returning $\ltrue$ if the first is less and $\lfalse$ if the second is less.  If they are equal, then the result depends on type: if both are integers the result is $\lfalse$; if either is a real its $\boundary$.  Finally, if either input is $\boundary$, then the result is also $\boundary$.
+%
+\item $(\senseK~k)$ returns the $k$th value in the environment state (assumed to be a tuple), where $k$ is the positive literal given as its input.
+\end{itemize}
+We can interpret the same syntax with both discrete and continuous semantics; our goal will be to show that the discrete is eventually consistent with the continuous for every well-defined program (i.e., one without syntax or semantic errors).
+
+The discrete semantics of \calculus{} is identical to that of field calculus, with one restriction (function calls may not be recursive) and one trivial modification to the semantics of $\ifN$.
+%
+In field calculus, the first input to $\ifN$, the test value, must be a Boolean.
+%
+In \calculus{}, it may also be $\boundary$, in which case, neither branch is evaluated, state is erased from both branches, and the result is $\boundary$.
+%
+This change, however, is entirely neutral with respect to the interactions of $\ifN$ with other elements of the semantics, and so does not affect any of the properties established in~\cite{VDB-FOCLASA-CIC2013}.
+
+We may also interpret \calculus{} with a continuous semantics following the model of~\cite{BealUsbeck12}.
+%
+Given an environment domain $\manifold$, literals are constant-valued fields, the built-in operators act pointwise on fields, function calls and variable references are evaluated through a substitution model, and $\ifN$ evaluates its subexpressions on environments with domains restricted to match the subspaces of its test argument.
+%
+As with the discrete semantics, we prohibit recursion.
+
+Specifying \calculus{} as this minimal set of operations makes eventual consistency tractable to prove, yet still able to implement a much more general range of operations.
+%
+For example, $\mux$ is sufficient to implement all logical operations, e.g.:
+\begin{Verbatim}[ samepage=true,
+                  frame=single,
+                  %baselinestretch=,
+                  commandchars=\\\{\}]
+(\km{def} \fn{and} (a b) (\pr{mux} a b false))
+(\km{def} \fn{or}  (a b) (\pr{mux} a true b))
+(\km{def} \fn{not} (x)   (\pr{mux} x false true))
+\end{Verbatim}
+
+\subsubsection{GPI calculus is Eventually Consistent}
+
+We can now prove that GPI calculus accomplishes the goal for which it has been designed: ensuring that any program that can be expressed using it is eventually consistent, meaning that it is resilient against the particulars of how many devices are in the network and how they are distributed in space.
+
+\begin{thm}[Eventual Consistency of \calculus{}]
+  \calculus{} programs are eventually consistent for all environments
+  $\environment$ that are continuous on $\validdomain{\environment}$.
+\end{thm}
+
+We approach this proof in three stages (see \Cref{proofs}).
+%
+First, we prove that any finite composition of operators that are eventually consistent and preserve certain continuity properties is also eventually consistent and continuity preserving.
+%
+We then show that each operator in \calculus{} is individually at least eventually consistent and continuity preserving.  
+%
+Finally, we show that all \calculus{} programs are equivalent to finite compositions of operators, which implies that all such programs are eventually consistent.
+
+Thus, if a program is evaluated in a ``well-behaved'' environment, its results are predictable and resilient to scale and positioning of devices.
+%
+Having proved this, in the next section we explore the usefulness of \calculus{} and demonstrate its consistency properties empirically in simulation.
+
+\subsection{Example Applications}
+
+Having established a calculus for eventually consistent programs, we now aim to demonstrate its expressiveness.
+%
+In this section, we present a number of self-organization patterns that can be described in terms of \calculus{}, with accompanying application scenarios in current or emerging large-scale situated networks: wireless sensor networks, ad-hoc networks created by mobile smart-devices, and urban-scale ecosystems of devices and services for crowd steering.
+%
+Simulations of these scenarios demonstrate both the potential impact of our result and confirm the consistency result and its effect in providing coordination behaviors resilient to changes in network density and scale.
+
+\subsubsection{Distance-Based Patterns}
+
+Distributed distance calculation is one of the most frequently used building blocks for self-organizing systems~\cite{FDMVA-NACO2012}.
+%
+As we have seen in the previous section, distance fields can be computed via a straightforward application of $\OneOp$.
+%
+A second example uses the field of distance estimates as a ``carrier'' to broadcast by gossiping a value from the source.  This can be defined from $\OneOp$ as:
+\begin{Verbatim}[samepage=true,
+                  frame=single,
+                  %baselinestretch=,
+                  commandchars=\\\{\}]
+(\km{def} \fn{broadcast} (source value)
+  (\pr{GPI} source value 1 0))
+\end{Verbatim}
+Here, $\OneOp$ shifts the initial {\tt value} outward by integrating $0$ along the path up the distance field, so that no matter how far away, the value is always the same.
+%
+When the source region has a single value $\datavalue$, this produces a field that stabilizes to $\datavalue$ at every device, intuitively a ``broadcast.''
+%
+In the more general case where different devices in the source have different values, the resulting field maps each device to the value of \texttt{value} in the nearest source device.
+
+Functions \texttt{distance-to} and \texttt{broadcast} can be functionally composed to create a higher-level {\tt channel} distributed structure useful for tasks such as corridor routing.
+%
+This version of channel takes two source fields \texttt{a} and \texttt{b}, and a (typically constant) numerical field \texttt{w}, and yields a boolean field holding \texttt{true} only in those devices whose distance to \texttt{a} and \texttt{b} is no more than \texttt{w} greater than the shortest path:
+%
+\begin{Verbatim}[samepage=true,
+                  frame=single,
+                  %baselinestretch=,
+                  commandchars=\\\{\}]
+(\km{def} \fn{channel} (a b w)
+  (\pr{<} (\pr{+} (\fn{distance-to} a) (\fn{distance-to} b))
+     (\pr{+} w (\fn{broadcast} a (\fn{distance-to} b)))))
+\end{Verbatim}
+The {\tt broadcast} expression sends to every device the distance from {\tt b} perceived by devices in \texttt{a}.  Composition by the built-in functions \texttt{<} and \texttt{+} does the remainder of the job.
+%
+This example emphasizes how function composition can generate a plethora of spatial structures, e.g., in the spirit of \cite{anticipativegradient-SASO12}.
+
+Another key feature of \calculus{} is the ability to modulate the behavior of algorithms by restricting their domain with construct $\ifN$.
+%
+For example, this can be used to create channels that circumvent a given area considered as an obstacle:
+%
+\begin{Verbatim}[samepage=true,
+                  frame=single,
+                  %baselinestretch=,
+                  commandchars=\\\{\}]
+(\km{def} \fn{channel-with-obstacle} (a b w obstacle)
+  (\km{if} obstacle false (\fn{channel} a b w)))
+\end{Verbatim}
+%
+Where \texttt{obstacle} is \texttt{true}, there is no channel and \texttt{false} is returned; in the remainder of the network, we compute a channel in the usual way and manifold geometry routes it around the ``missing'' space.
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{img/shots-6-channel}
+\caption[Channel pattern in a WSN]{Channel pattern deployed on a wireless sensor nework with 20,000 devices deployed at heterogeneous density.  Blue devices send data to red along the channel (green), avoiding the obstacle (yellow).}
+\label{f:wsn}
+\end{figure}
+
+As an application scenario, consider a wireless sensor network that is heterogeneous distributed in two dimensions and in which some devices much exchange a large amount of information, e.g., relaying video of an ongoing event to a mobile monitoring station.
+%
+The goal is to identify a set of devices that can perform the relay, such that:
+\begin{itemize}
+\item the information spreads to only a small fraction of devices (e.g., to save battery energy);
+ \item there is some replication along the transmission path, to reduce the probability of data loss;
+ \item if some devices do not want to collaborate to the transfer (e.g. because their battery level is low, or because they have shown faults), they should be circumvented.
+\end{itemize}
+
+The {\tt channel-with-obstacle} pattern provides one possible implementation, marking only a set of devices near the shortest path excluding non-participating devices.
+%
+A {\tt broadcast} restricted to this channel with $\ifN$ can then effectively relay the data with enough replication to prevent data loss, but with much less resource consumption than an unrestricted broadcast.
+%
+\Cref{f:wsn} shows an example of this scenario simulated in \alchemist{}~\cite{alchemist-jos2013}.
+%
+Note how the consistency of the pattern does not change significantly for different densities of devices: a change in density only affects the precision of the channel shape.
+
+\subsubsection{Path Forecasting}
+
+In the uses of the $\OneOp$ construct so far the {\tt integrand} argument has been constant at $1$ for measuring distance and $0$ for broadcast.
+%
+Most generally, however, this argument to $\OneOp$ can be used to record the context along a path, by integrating the values encountered along the way.
+
+An example of how this can be used is to forecast obstacles that may be encountered along a path, and provide warnings thereof.  
+%
+For example, if we set {\tt integrand} to an indicator field that is $1$ where there is an obstacle and $0$ where there is not, then $\OneOp$ outputs a field that holds a positive value only on those devices that are reached by crossing an obstacle:
+\begin{Verbatim}[samepage=true,
+                  frame=single,
+                  %baselinestretch=,
+                  commandchars=\\\{\}]
+(\km{def} \fn{obstacle-forecast} (source obstacle)
+  (\pr{GPI} source 0 1 obstacle)
+\end{Verbatim}
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{img/shots-5-mit}
+\caption[Indoor obstacle forecast]{Obstacle forecast pattern deployed to alert people moving through a building of obstacles (red) on their path to a destination (blue).
+%
+Distances are shown in green, and alerted areas where people must be advised of the obstacle are orange.}
+\label{f:sector}
+\end{figure}
+
+As an application scenario, consider a building occupied by a number of people, who need to navigate through it with various goals, e.g., finding a desired location, rendezvous with another person, exiting while avoiding hazards.
+%
+Some areas of the building are currently problematic and should be avoided, e.g., due to crowding or temporary barriers or dangerous hazards.
+%
+The goal is then to alert people who would normally transit across those areas while moving to their destination.
+
+The {\tt obstacle-forecast} pattern is a possible solution for this problem.  Applying it with regards to a given destination (used, ironically, as the {\tt source} argument), the alerted areas are those where {\tt obstacle-forecast} returns a value greater than zero.
+
+\Cref{f:sector} shows an example of this scenario simulated in \alchemist{} for the MIT Stata Center floorplan from \Cref{f:manifold}.
+%
+Note the complex manifold structure of the building modifies the shape of the sector pattern: the presence of walls considerably changes the distances compared to an open area.
+%
+Despire the complexity, however, the manifold geometry ensures an eventually consistent pattern.  Note also that, having alerted people to obstacles, the system could go on to provide alternate routes by running {\tt distance-to} on a space omitting the obstacles.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{img/london-rc1}
+\caption[Context-sensitive distance computation in London]{Context-sensitive distance computation deployed for navigation on a street map of London. Warmer coloured devices have a closer effective distance to the destination (black dots at bottom centre).
+%
+Dashed rectangular areas represent unfavourable (blue) and favourable (red) areas for travel.  An example path is shown (black line), originating near Charing Cross (black dot in upper left).}
+\label{f:urban}
+\end{figure}
+
+\subsubsection{Context-Sensitive Distance}
+
+The effective shortest path between a node and the source of a $\OneOp$ is not necessarily the physically shortest path induced by the standard metric.
+%
+Rather, the notion of effective distance may be influenced by other properties of the environment, either negatively (e.g., obstacles, congestion, pollution, tolls) or positively (e.g., safety, dedicated lanes, beauty).
+%
+The {\tt density} argument of $\OneOp$ allows such factors to be taken into consideration as a multiplicative ``stretching'' of the base physical distance metric.
+%
+Assuming there are penalising areas (\texttt{cons}) and favourable areas (\texttt{pros}), both expressed as scalar fields with values between 0 (least significant) and 1 (most significant), then one way to define context sensitive distance for use in navigation is:
+\begin{Verbatim}[samepage=true,
+                  frame=single,
+                  %baselinestretch=,
+                  commandchars=\\\{\}]
+(\km{def} \fn{contextual-distance} (source pros cons)
+  (\pr{GPI} source 0 (\pr{+} 1.1 (\pr{-} cons pros))))
+\end{Verbatim}
+
+% \defer{Used to be:
+% (def contextual-distance (source pros cons)
+%   (GPI source 0 (if (> pros 0) pros (/ 1 cons)) 0)
+% This is a bad combination, and I don't believe it's what was actually run, since it should make infinit in all the areas without cons.}
+
+As an application scenario, consider guiding pedestrian or vehicle traffic in a complex urban environment.  Devices are deployed along and around the streets.
+%
+Some have the ability to sense environmental parameters such as crowding, current and expected traffic, and pollution; other parameters, such as presence of events and attractions or comments on
+beauty of an area, are drawn from databases of local information, either remote or distributed and localized in the network.  
+
+From these, the devices can compute the pro and con fields for contextual distance for people navigating through the city, building a spatial structure that alters the perceived distances toward a location by taking desirability into account, so that a longer path crossing desirable areas will be favored over a somewhat shorter path crossing undesirable areas.
+
+\Cref{f:urban}, we shows an example of this scenario for the center of London, simulated in \alchemist{}.
+%
+Two areas are marked as favorable and unfavorable.
+%
+Distances are shown with respect to a destination on the South side of the Thames, showing significant asymmetries caused both by the shape of the city and the marked areas acting as an attractor and repulsor of pedestrians, respectively.
+%
+In this scenario both a complex environment and a non-physical distance metric are used, and still provide eventually consistent results.
+
+\subsubsection{Confirmation of Results in Simulation}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/tetc-graphs/wsn-approx-nosmooth}
+	\includegraphics[width=\textwidth]{img/tetc-graphs/wsn-time}
+	\caption{Wireless Sensor Network}
+	\label{f:tests-wsn}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/tetc-graphs/mit-approx-nosmooth}
+	\includegraphics[width=\textwidth]{img/tetc-graphs/mit-time}
+	\caption{Building Alert}
+	\label{f:tests-mit}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/tetc-graphs/l-approx-nosmooth}
+	\includegraphics[width=\textwidth]{img/tetc-graphs/l-time}
+	\caption{Urban Traffic Steering}
+	\label{f:tests-urban}
+\end{figure}
+% \subfigure[Building Alert]{
+% \begin{minipage}[c][0.49\textwidth][t]{0.30\textwidth}
+% \includegraphics[width=\textwidth]{img/tetc-graphs/mit-approx-nosmooth}
+% \includegraphics[width=\textwidth]{img/tetc-graphs/mit-time}
+% \end{minipage}
+% }
+% \subfigure[Urban Traffic Steering]{
+% \begin{minipage}[c][6.5cm][t]{0.30\textwidth}
+% \includegraphics[width=\textwidth]{img/tetc-graphs/l-approx-nosmooth}
+% \includegraphics[width=\textwidth]{img/tetc-graphs/l-time}
+% \end{minipage}
+% }
+% \caption{Simulations of the three application scenarios confirm the analytical results for \calculus{}, showing convergence with respect to both time and number of devices.}
+\label{f:tests}
+
+As a confirmation of our results for \calculus{} and its application to the described scenarios, we have simulated each scenario on a wide range of densities of devices using \alchemist{}.
+%
+Based on previous analysis, we expect that for each scenario, the values yielded by devices will converge to a stable set of values that no longer change.
+%
+Furthermore, as the number of devices increases, the values converged to will themselves converge as the network of devices more closely approximates a continuous space.
+
+Conditions for the scenario simulations are as follows.
+\begin{itemize}
+ \item Each scenario is run with five logarithmically scaled densities, ten runs per condition: the outdoor scenarios with 100 to 10,000 devices, the indoor scenario with 100 to 1000 devices.
+ \item Devices are distributed randomly through the portion of the space not blocked by environmental obstacles.
+ \item Communication range is set to 15\% of width for the lowest density and reduced proportional to the square root of density, to ensure a consistent expected number of neighbours.
+ %
+ Devices are connected with a unit disc rule, with permissive line-of-sight blocking by obstacles.
+ %
+ In particular, two devices are connected if they are within distance $r_1$ and there is some position within a small distance $r_2 \propto r_1$ of each device in which no object blocks line-of-sight.
+ \item Devices execute independently following a Poisson distribution, with frequency 1 Hertz for the lowest density; to compensate for shorter hops, frequency rises inversely proportional to communication range.
+\end{itemize}
+
+Results are summarized in \Cref{f:tests-wsn}, \Cref{f:tests-mit}, and \Cref{f:tests-urban}, with sample snapshots shown in \Cref{f:wsn}, \Cref{f:sector}, and \Cref{f:urban}.  For each set of simulations, we measure the mean and standard deviation of a key application property with respect to both density and time.
+%
+The properties measured are:
+\begin{itemize}
+ \item wireless sensor network: fraction of devices in channel;  
+ \item building alert: percentage of devices receiving the alert;
+ \item urban traffic steering: average compensated distance value.
+\end{itemize}
+\noindent
+As predicted from our analytical results, these values converge with respect to both time and number of devices, confirming our predictions.
 
 \section{Higher order functions in field calculus}
 \subsection{Impact on alignment}
@@ -2504,7 +3797,7 @@ It does so by a field \texttt{\vb{d}} initially \texttt{Infinity} everywhere, an
 Finally, function \texttt{\fn{distanceToWithObstacle}} shows exclusive branch at work; \texttt{\fn{distanceTo}(\vb{source})} is computed in the sub-region where there is no obstacle, which causes the computation of distances to implicitly circumvent such obstacles.
 
 
-\section{Architecture of \protelis{}}
+\subsection{Architecture}
 \label{protelis-architecture}
 \begin{figure}
 \centering
@@ -2514,7 +3807,7 @@ Finally, function \texttt{\fn{distanceToWithObstacle}} shows exclusive branch at
 \includegraphics[width=0.5\textwidth]{img/simulated}\label{img:protelis-simulated}}
 \subfigure[Network Service Management]{
 \includegraphics[width=0.6\textwidth]{img/embedded.pdf}\label{img:protelis-embedded}}
-\caption{In the abstract Protelis architecture (a), an interpreter executes a pre-parsed Protelis program at regular intervals, communicating with other devices and drawing contextual information from a store of environment variables.
+\caption[Abstract \protelis{} architecture]{In the abstract \protelis{} architecture (a), an interpreter executes a pre-parsed Protelis program at regular intervals, communicating with other devices and drawing contextual information from a store of environment variables.
 %
 This is instantiated by setting when executions occur, how communication is implemented and the contents of the environment.
 %
@@ -2557,14 +3850,7 @@ This daemon monitors the service, injecting information about its status and kno
 %
 Examples using each of these implementations are shown in \Cref{protelis-applications}.
 
-\section{Application examples}
-\label{protelis-applications}
-
-To demonstrate how these features combine to offer simple programming of complex distributed algorithms across a potentially broad range of applications domains, we now present two example applications.
-%
-The first aims at a pervasive computing scenario and is executed in simulation using Alchemist~\cite{alchemist-jos2013}, the second aims at enterprise network management and is executed on a collection of EmuLab~\cite{EmuLab} servers.
-
-\subsection{Rendezvous at a Mass Event}
+\subsection{Application example: Rendezvous at a Mass Event}
 \label{protelis-rendezvous}
 
 \begin{figure}
@@ -2587,33 +3873,13 @@ The first aims at a pervasive computing scenario and is executed in simulation u
 \includegraphics[width=0.48\textwidth]{img/sac15-snapshots/london6}
 \label{img:protelis-rendezvous-end}}
 % 
-\caption{Example of computing a rendezvous route for two people in a crowded urban
-environment.}
+\caption[Rendezvous route for two people in a crowded urban environment]{Example of computing a rendezvous route for two people in a crowded urban environment.}
 \label{img:protelis-rendezvous}
 \end{figure}
 
-A common problem in large public events is to rendezvous with other companions
-attending the same large public event. At mass events, access to external
-cloud-based services may be difficult or impossible, and pre-arranged rendezvous
-points may be inaccessible or inconveniently distant.
-Simple peer-to-peer geometric calculations across the network, however, can
-readily compute a route that will allow two people to rendezvous:
-% \km{def} \fn{broadcast}(\vb{source},\vb{value}) \{
-%   \km{let} \vb{d} \km{=} \fn{distanceTo}(\vb{source});
-%   \fc{rep}(\vb{v} <- \vb{value}) \{ \fc{minHood}([\fc{nbr}(\vb{d}),\fc{nbr}(\vb{v})]).get(1) \}
-% \}
-% \il{Broadcast a value up a distance gradient}
-% \km{def} \fn{broadcast}(\vb{source}, \vb{value}) \{
-%   \km{let} \vb{d} \km{=} \fn{distanceTo}(\vb{source});
-%   \km{let} \vb{lowest} \km{=} \fc{minHood}(\fc{nbr}(\vb{d}));
-%   \fc{rep}(\vb{v} <- \vb{value}) \{
-%      \fc{mux} (\vb{source}) \{
-%        \vb{value}
-%      \} \fc{else} \{
-%        \fc{minHood}(\fc{mux}(\fc{nbr}(\vb{d})==\vb{lowest})\{ \fc{nbr(v)} \}\fc{else}\{ Infinity \}) 
-%      \}
-%   \}
-% \}
+A common problem in large public events is to rendezvous with other companions attending the same large public event. At mass events, access to external cloud-based services may be difficult or impossible, and pre-arranged rendezvous points may be inaccessible or inconveniently distant.
+%
+Simple peer-to-peer geometric calculations across the network, however, can readily compute a route that will allow two people to rendezvous:
 \begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}]
 \il{Follow the gradient of a potential field down from a source}
 \km{def} \fn{descend}(\vb{source},\vb{potential}) \{
@@ -2667,7 +3933,7 @@ As \Cref{img:protelis-rendezvous} shows, once the simulation starts, a chain of 
 %
 Note also that, due to the ongoing nature of the computation, if one of the device owners moves in a different direction instead, the path will automatically adjust so that it continues to recommend the best path for rendezvous.
 
-\subsection{Network Service Management}
+\subsection{Application example: Network Service Management}
 
 One of the common problems in managing complex enterprise services is that there are often many dependencies between different servers and services.
 %
@@ -2683,10 +3949,7 @@ This type of service management can be automated by attaching a daemon that watc
 \includegraphics[width=0.8\textwidth]{img/managementScenario}\label{f:restartScenario}}
 \subfigure[Example of Coordinated Restart Execution]{
 \includegraphics[width=0.8\textwidth]{img/management}\label{f:restartExecution}}
-\caption{(a) An example scenario of an enterprise network for a small
-manufacturing and supply company. (b) Example of execution on a network of 8
-EmuLab~\cite{EmuLab} machines: the supplies database has crashed (red), and so
-all dependent services have shut themselves down (blue), while other services
+\caption[Enterprise network for a small manufacturing and supply company]{(a) An example scenario of an enterprise network for a small manufacturing and supply company. (b) Example of execution on a network of 8 EmuLab~\cite{EmuLab} machines: the supplies database has crashed (red), and so all dependent services have shut themselves down (blue), while other services
 continue to run normally (green).}
 \label{f:restart}
 \end{figure}
@@ -2746,6 +4009,13 @@ In this screenshot, the supplies database has crashed, causing many of the other
 
 %TODO: fixme
 
+\subsection{Scale independent computation in situated networks}
+We have developed the first practical distributed language which provides guarantees that all distributed algorithms expressed in this language are resilient against changes in the number and distribution of devices in a network.
+%
+This is an important step towards a more general framework for supporting open ecosystems of pervasive wireless devices, which need to provide safe and resilient services despite running a shifting set of interacting services from many unrelated software suppliers.
+%
+If it is possible to ensure that the only programs that can be expressed are those that interact well together, then it will greatly reduce the cost of providing reliable services in such environments.
+
 \subsection{Higher Order Functions in Field Calculus}
 
 \subsection{\protelis{}}
@@ -2762,6 +4032,18 @@ This implementation of Protelis thus forms an important component of the toolcha
 
 \section{Aggregate programming}
 
+\subsection{Scale independent computation in situated networks}
+We want to generalise the results of our scale independent computations: the theoretical framework of this paper treats only the case of stationary devices; in pervasive systems, many devices are mobile, and in practice the mechanisms used by \calculus{} appear to perform quite well on mobile devices, so it will be important to extend the theoretical framework
+to handle mobile devices as well.
+%
+One notable concern is that mobile devices must treat questions of Galilean vs. Einsteinian relativity \cite{RelativityIntroduction}, which we deferred for now.
+
+Similarly, the theory currently only handles eventual approximation and behavior at the limit of high density networks, but these properties are most useful because in practice they tend to be indicators that an algorithm also behaves well in lower density networks and before it has finished converging.  It should be possible to identify stronger properties that demarcate good performance at lower densities as well.
+
+$\OneOp$ is a powerful operator, but it only covers a few of the commonly used ``building block'' resilient distributed algorithms; another area for future extension is thus to broaden the scope of distributed applications for which resilience guarantees can be provided by extension of \calculus{} to cover additional ``building block'' algorithms.
+
+\subsection{\protelis{}}
+
 The \protelis{} framework continues to be actively developed: we plan to enrich it in the future by adding higher-level abstractions for aggregate programming grounded on the mechanisms discussed in this work.
 
 Also, we observe that the current situation is much like that of cooperative multitasking in the operating systems world, before the development of the current kernel-user distinction and pre-emptive multitasking that dominates the world now.
@@ -2773,6 +4055,10 @@ In particular, we want to exploit the field calculus model for aggregate program
 These mechanisms enable the construction of a prototype ``thread manager'' for pervasive and distributed systems, including the ability to preempt a process, to kill a rogue process, or to dynamically manage the scope of a process.
 %
 This point of view will be deeply analysed a paper which is an ongoing work.
+
+It will also be important to consider how static analysis, testing, and model-checking techniques can be incorporated to extend the capabilities, especially for ensuring that semantic faults in programs can be eliminated before runtime.
+
+%TODO Si propone una implementazione pratica, che parte dai concetti di field calculus (non da GPI perché in generale un linguaggio ti deve consentire tutto, ma ci sta di ragionare sul fatto che poi una API safe andrebbe fornita)
 
 \section{Biochemical meta model for \alchemist{}}
 ciao
@@ -2790,7 +4076,199 @@ ciao
 \bibliographystyle{alpha}
 %===============================================================================
 
-%\listoffigures
-%\listoftables
+\listoffigures
+\listoftables
+
+\begin{appendices}
+\chapter{Proofs of Theorems}
+\label{proofs}
+
+\section{Discontinuity of Discrete-Valued Fields}
+
+\begin{thm}
+  Any field $\field$ with a discrete range and at least one event $\event$ with a neighbor $\event'$ such that $\field(\event) \neq
+  \field(\event')$ cannot be continuous.
+\end{thm}
+ Consider the neighborhood $\hoodof{\event}$; by assumption, the set $\field(\hoodof{\event})$ is finite and discrete, thus all of its subsets are open. 
+ %
+ If $\field$ is continuous, then both preimages $\field^{-1}(\field(\event))$ and $\field^{-1}(\field(\hoodof{\event}) - \field(\event))$ are open.
+ %
+ Their subsets intersecting with $\hoodof{\event}$ must also be open, and form a partition of $\hoodof{\event}$.  Since $\hoodof{\event}$ is a connected subset of a manifold $M$, however, the complement of an open set is closed and not open.
+ %
+ This can only be true if one of the two sets is empty, but since there is a neighbor $\event'$ mapping to a different value than $\event$, we have a contradiction and $\field$ cannot be continuous.
+
+%(def boundary-points (non-open-set)
+%  (and non-open-set (= (distance-to (not non-open-set)) 0)))
+
+\section{Consistency of \calculus{}}
+\label{app:consistency}
+
+We prove consistency of \calculus{} in three stages: 
+%
+First, we prove that any finite composition of eventually consistent and continuity preserving operators is also eventually consistent and continuity preserving.
+%
+We then show that each operator in \calculus{} is individually at least eventually consistent and continuity preserving.  
+%
+Finally, we show that all \calculus{} programs are finite compositions of operators, which implies that all such programs are eventually consistent.
+
+We begin by showing that eventual consistency and eventual continuity are preserved through composition:
+
+\begin{lem}\label{thm:compose}
+  Consider a set of operators that are eventually consistent and where, when there is a spatial section $\sectionof{\manifold}$ such that environment $\environment$ and inputs $f_i$ are continuous on $\validdomain{\environment} \cap \futureof{\sectionof{\manifold}}$ and  $\validdomain{\field_i} \cap \futureof{\sectionof{\manifold}}$, then there must be a spatial section $\sectionof{\manifold}$ such that the output $f_o$ is continuous on $\validdomain{\field_o} \cap \futureof{\sectionof{\manifold}}$
+  %
+  Any finite composition of instances of such operators has the same properties.
+\end{lem}
+  Consider a well-defined program comprised of a finite sequence of operator instances, such that the outputs of some operator instances are inputs for others.  Because the sequence is finite and the program is well-defined, it must be the case that the operators instances can be ordered, such that the $i$th operator instance depends only on the environment and the output fields of prior operators in the sequence.
+
+  For the $i$th operator instance in this sequence, it is possible to construct an equivalent program comprising only that operator instance, an environment $\environment_i$ containing its inputs, and $\senseK$ operator instances mapping the environment values to its inputs.
+  %
+  As noted in Lemma~\ref{thm:sense}, the $\senseK$ operators trivially satisfy the consistency and continuity conditions, so the $i$th operator instance has its input conditions satisfied.
+  %
+  Thus, by the assumption about operator properties, we also have that this miniature program is eventually consistent and that the continuity properties hold as well.
+
+  This output can then be added to the environment for the $i+1$ operator instance, ensuring that if the preconditions are satisfied for the $i$th operator instance, they will be satisfied for the $i+1$st operator instance as well.
+  %
+  Thus, for any finite composition of operators, the eventual consistency and continuity property stated above holds for the composition if it holds for all of the individual operators\footnote{Note that if the program were not guaranteed finite evaluation, then this result would not hold: the eventual consistency of the $i$th instance evaluated would still hold, but no $i$ would be high enough to cover the entire sequence.}.
+
+We now move on to proving that each of the operators in \calculus{} provides sufficient consistency and continuity, beginning with the trivial case of literals:
+\begin{lem}\label{thm:lit}
+  Literals $\lit$ are consistent and have a continuous output. 
+\end{lem}
+  Trivially true, since the output field of a literal $\lit$ is equal to $\lit$ at every point in its domain.
+
+\begin{lem}\label{thm:math}
+  Any built-in operators $\cmath$ is consistent and has output $\field_o$ continuous on $\validdomain{\field_o}$ if its inputs $\field_i$ are approximable and continuous on $\validdomain{\field_i}$.
+\end{lem}
+  The output of any $\cmath$ operator at any event $\event$ is affected only by the values of its inputs at $\event$.  $\cmath$ is also continuous by definition, and (by the semantics of field calculus) requires all inputs to have the same domain.
+  %
+  Thus, since the composition of continuous functions is continuous, when each input $\field_i$ is continuous on $\validdomain{\field_i}$, it must be the case that the output $\field_o$ is continuous on $\bigcap_i \validdomain{\field_i}$.
+  %
+  The complementary space, $\bigcup_i \field_i^{-1}(\boundary)$ covers only points where at least one input has value $\boundary$, and thus by the definition of $\cmath$, $\field_o$ maps all events in this space to $\boundary$.
+
+  Only consistency remains to be shown.  All $\epsilon$-approximation sequences must approximate $f_o$ on subspace $\validdomain{\field_o}$ because it is continuous on this space.
+  %
+  The complementary space $\bigcup_i \field_i^{-1}(\boundary)$ must also always be approximated because it holds the constant value $\boundary$ on a finite union of subspaces.
+
+\begin{lem}\label{thm:mux}
+  Built-in operator $\mux$ is consistent and has output $\field_o$ continuous on $\validdomain{\field_o}$ if its inputs $\field_i$ are approximable and continuous on $\validdomain{\field_i}$.
+\end{lem}
+  If $\mux$ is continuous on its first input $\validdomain{\field_1}$, then the preimages of $\field_1^{-1}(\ltrue)$ and $\field_1^{-1}(\lfalse)$ must both be open.  The output is then defined piecewise as:
+  %
+  $$\field_o(\event) = \begin{cases}
+    \field_2(\event) & \event \in field_1^{-1}(\ltrue)) \\
+    \field_3(\event) & \event \in field_1^{-1}(\lfalse)) \\
+    \boundary & \event \in field_1^{-1}(\boundary)) \\
+  \end{cases}$$ 
+
+  Since $\field_2$ and $\field_3$ are continuous on their non-$\boundary$ events, that must also hold for the output field on the open subspaces selected by the preimages of $\ltrue$ and $\lfalse$.
+  %
+  Likewise, any $\epsilon$-approximation sequence that approximates both $\field_2$ and $\field_3$ must also approximate the output field on those subspaces, because the values on each subspace are identical to one of the two inputs that is being approximated.
+  
+  Finally, the space of events mapping to $\boundary$ in the output field must always be approximated as well because it holds the constant value $\boundary$ on a subspace constructed by finite intersection and union of subspaces.
+
+\begin{lem}\label{thm:comparator}
+  Built-in operator $\comparator$ is consistent and has output $\field_o$ continuous on $\validdomain{\field_o}$ if its inputs $\field_i$ are approximable and continuous on $\validdomain{\field_i}$.
+\end{lem}
+  The $\comparator$ operator only outputs three values, $\ltrue$, $\lfalse$, and $\boundary$, so this theorem will be satisfied if the preimages of both $\ltrue$ and $\lfalse$ are open.
+  
+  We must consider two conditions: real number comparison and integer comparison.  For each, we will describe the case only of events that $\field_o$ maps to $\ltrue$; the $\lfalse$ case follows by symmetry.
+  
+  For real number comparison, consider an event $\event$ mapping to $\ltrue$.  This means that in the input fields, $\field_2(\event) - \field_1(\event) = \epsilon > 0$.
+  %
+  Because the inputs are continuous at $\event$, There must then be some $\delta$, such that the open set of all events $\event'$ within $\delta$ of $\event$ also have difference $\field_2(\event') - \field_1(\event') > 0$, meaning they also map to true.
+  %
+  Any union of open sets is open, so $field_o^{-1}(\ltrue)$ must be open.
+  
+  Integer comparison works the same way, except that the radius $\delta$ open sets around $\event$ are guaranteed to have inputs being equal to $\field_1{\event}$ and $\field_2{\event}$.  Thus, it is also possible in the $\lfalse$ case for the two input values to be equal and still produce an open preimage.
+
+\begin{lem}\label{thm:sense}
+  Built-in operator $\senseK$ is consistent and has output $\field_o$ continuous on $\validdomain{\field_o}$ if its environment is approximable and continuous on $\validdomain{\environment}$
+\end{lem}
+  The environment is assumed to be a field mapping to a tuple of values at each point, and $\senseK$ outputs a field created by indexing into said tuples by a literal integer.
+  %
+  A field of tuples cannot be continuous unless each of its elements is also continuous.  The output is then a copy of one of those elements, and so must be continuous on the same range.
+
+\begin{lem}\label{thm:if}
+  Branch operator $\ifN$ is consistent and has output $\field_o$ continuous on $\validdomain{\field_o}$ if its environment $\environment$ and inputs $\field_i$ are approximable and continuous on $\validdomain{\environment}$ and $\validdomain{\field_i}$ respectively.
+\end{lem}
+  The $\ifN$ operator is identical to $\mux$ except that its branch expressions are evaluated with respect to the subspaces $\field_1^{-1}(\ltrue)$ and $\field_1^{-1}(\lfalse)$ respectively (i.e., the domain of the evaluation environment is reduced).
+  %
+  Since these are open subspaces of the environment's domain $M$, the approximability and continuity properties of $\environment$ are not affected by the domain reduction.
+  %
+  Thus, if the branch expressions would have conformed with the preconditions for $M$ they will also conform with the preconditions for the branch subspaces.
+  %
+  The output field is then assembled piecewise identically to $\mux$, and is approximable and continuous on $\validdomain{\field_o}$ by the same reasoning.
+
+\begin{lem}\label{thm:fun}
+  Function call operator $\fname$ is eventually consistent and has some spatial section $\sectionof{\manifold}$ such that output $\field_o$ is continuous on $\validdomain{\field_o}$ if its environment $\environment$ and inputs $\field_i$ are approximable and continuous on $\validdomain{\environment}$ and $\validdomain{\field_i}$ respectively.
+\end{lem}
+  Consider a function definition $\fname$; either $\fname$ contains other function calls or it does not.
+  %
+  If it does not, then evaluating $\fname$ is equivalent to evaluating a composition of operators satisfying Lemma~\ref{thm:compose} (adjoining the function arguments to the environment and substituting $\senseK$ functions for variable references).
+  %
+  Thus the desired consistency and continuity properties hold.
+  
+  If $\fname$ does contain function calls, then the properties hold if they hold for all of the function calls within $\fname$ (meaning that once again Lemma~\ref{thm:compose} can apply).
+  %
+  Since \calculus{} does not allow recursion, it must be the case that these dependencies between function definitions can be arranged in a finite directed acyclic graph.
+  %
+  The nodes of such a graph may then be ordered, such that each subsequent node only depends on nodes before it in the order.
+  %
+  Since the set is finite, there must be at least one node that has no dependencies and thus forms a base case for induction showing that the properties hold for all function calls.
+
+\begin{lem}\label{thm:GPI}
+  Operator $\OneOp$ is eventually consistent and has output $\field_o$ continuous on $\validdomain{\field_o}$ in the future of some spatial section $\sectionof{\manifold}$ if its environment $\environment$ and inputs $\field_i$ are approximable and continuous in the future of some spatial section $\sectionof{\manifold}$ on $\validdomain{\environment}$ and $\validdomain{\field_i}$ respectively.
+\end{lem}
+  Following the semantics of field calculus to interpret the $\OneOp$ algorithm given in Section~3 of the main text, the first element of the tuple computed in the {\tt rep} statement implements a computation of distance via the triangle inequality ({\tt nbr-range} is a metric, and a metric multiplied by a continuous positive scalar function is still a metric).
+
+  Thus, if there is a spatial section $\sectionof{\manifold}$ such that the values of all of the inputs do not change at any device on $\futureof{\sectionof{\manifold}}$, then since we assume that manifolds have finite diameter, it must be the case that all the distance estimates (first values of the {\tt distance-integral} tuple) eventually converge to a continuous field of distance estimates.
+  %
+  The values of the integral are co-computed with the values of the distance estimates, so they too will stop changing once the inputs have stopped changing.
+  %
+  Thus it must be possible to choose a spatial section of $\sectionof{\manifold}$ on which values of {\tt distance-integral} do not change at any device.
+
+  Note also that due to the use of {\tt min-hood}' in computing the triangle inequality, any point in the field of distances with more than one shortest path leasding to it will be replaced by a $\boundary$.
+  %
+  This eliminates only a set of measure zero: because the distance function is continuous, its gradient cannot be discontinuous on a space of more than measure zero.
+  %
+  The set eliminated is, however, precisely the set of points for which the gradient of the distance field is not continuous.
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=3in]{img/holes.pdf}
+    \caption[Discontinuous field path integral created by $\OneOp$]{The field of path integral values created by $\OneOp$ can be discontinuous at points reached by two different shortest paths, as in this example where the left path around the hole goes through a region where the integrand is much higher than on the right path, resulting in discontinuity between a value of 10 from the left and 1 from the right.}
+    \label{f:integralfail}
+  \end{figure}
+  
+  This is important because this is also the set of points on which the integral calculated in the second element of the {\tt distance-integral} tuple might not be continuous.
+  %
+  Consider, for example, the case shown in Figure~\ref{f:integralfail}, in which a hole causes there to be two very different shortest paths to a point.
+  %
+  The integrals computed along such paths may be very different indeed, necessarily creating a discontinuity in the value of the integral and hence the output of $\OneOp$.
+  %
+  This type of problem can also come from other sources besides topological complexity: similar patterns (and failures) can be caused by $\ifN$ statements, distortions in the distance measure, or the shape of the source---anything that can cause a discontinuity in the gradient.
+
+  Since {\tt min-hood}' ensures that such points are $\boundary$, however, they are eliminated from the region on which we must establish continuity.
+  %
+  If we instead consider any $\event$ with precisely one shortest path to the {\tt source} region, then because both integrand and the gradient of the computed distance field are continuous on this path, it must be the case that for any given $\epsilon$, there must be a $\delta$ such that the open set of events within distance $\delta$ have integral values that are less than $\delta$ different, and thus the field of integrals output by $\OneOp$ is continuous on $\validdomain{\field_o} \cap \futureof{\sectionof{\manifold}}$.
+  %
+  Because it is continuous on this space, it must also be approximable; the complementary space of $\boundary$ values must also be approximable, as it is a union of the $\boundary$ values of the inputs (which must be approximable) plus the measure zero set of $\boundary$ events added from computation of the distance function.
+
+\begin{thm}
+  \calculus{} programs are eventually consistent for all environments $\environment$ that are continuous on $\validdomain{\environment}$.
+\end{thm}
+  By Lemmas~\ref{thm:lit} through~\ref{thm:GPI}, we know that every operator in \calculus{} has the property that if its inputs $\field_i$ and environment $\environment$ are continuous on
+  $\validdomain{\field_i}$ and $\validdomain{\environment}$ respectively, then it is eventually consistent (all consistent programs are of course also eventually consistent).
+  %
+  We further know that, when there is a spatial section $\sectionof{\manifold}$ such that inputs are approximated on $\futureof{\sectionof{\manifold}}$, there must also be some spatial section $\sectionof{\manifold}$ such that the output is approximated on $\futureof{\sectionof{\manifold}}$ and continuous on $\futureof{\sectionof{\manifold}} \cap \validdomain{\field_o}$ (note that operators continuous $\validdomain{\field_o}$ are also continuous on open subsets thereof, e.g., $\futureof{\sectionof{\manifold}}$).
+
+  We now consider a program as a finite sequence of operator instances.
+  %
+  Because recursion is prohibited, it must be the case that the number of operators evaluated in the evaluation of a \calculus{} program must be finite for any given $\epsilon$-approximation.
+  %
+  Since $\ifN$ is the only method of branching evaluations, it must thus be the case that in any approximation sequence there is some $i$, after which no $\epsilon_{j>i}$-approximation evaluates an operator instance that is not also evaluated in some prior $\epsilon$-approximation, considering any instance in which an operator instance is not evaluated to be an evaluation with null domain.  
+  
+  Given the assumed base case of an environment continuous on $\validdomain{\environment}$, we thus satisfy the conditions of Lemma~\ref{thm:compose} and have that the program must be eventually consistent.
+\end{appendices}
 
 \end{document}
