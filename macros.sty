@@ -47,7 +47,6 @@
 \usepackage{wrapfig}
 \usepackage{eurosym}
 \usepackage{stfloats}
-\usepackage{alltt}
 \usepackage[toc,page]{appendix}
 \usepackage{url}
 \usepackage{amsthm}
@@ -71,7 +70,8 @@
 
 %THEOREMS%
 \newtheorem{thm}{Theorem}
-\newtheorem{defn}{Definition}
+\newtheorem{thrdefn}{Definition}
+\newtheorem{property}{Property}
 \newtheorem{lem}[thm]{Lemma}
 
 
@@ -105,12 +105,53 @@
 \newcommand{\tuple}[2]{#1\langle #2\rangle}
 \newcommand{\tupled}[2]{#1[#2]^{\Rightarrow}}
 \newcommand{\actrate}[2]{#1^{#2}}
-\newcommand{\leave}{{}}
+% \newcommand{\leave}{{}}
 \newcommand{\near}[3]{#1\!\stackrel{#3}{\rightsquigarrow}\!#2 }
-\newcommand{\scope}[2]{\llbracket #1 \rrbracket_{#2}}
+% \newcommand{\scope}[2]{\llbracket #1 \rrbracket_{#2}}
 \newcommand{\law}[1]{[#1]}
 \newcommand{\firing}[3]{#1^\rightsquigarrow(#2,#3)}
 \newcommand{\shfiring}[1]{#1^\rightsquigarrow}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LINDA IN SPACE-TIME %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\codefont}{\small}
+% \newcommand{\leave}{\rightsquigarrow}
+% \newcommand{\near}[3]{#1\!\stackrel{#3}{\rightsquigarrow}\!#2 }
+%\newcommand{\scope}[3]{\llbracket #1 \rrbracket_{#2}^{#3}}
+\newcommand{\scope}[3]{[ #1 ]_{#2}^{#3}}
+\newcommand{\defn}[2]{#1 \texttt{~is~} #2}
+% \newcommand{\defnarr}[2]{\mathit{def} #1 & := & #2}
+\newcommand{\nextSTL}[1]{\textit{next}~#1}
+\newcommand{\neigh}[1]{\textit{neigh}~#1}
+\newcommand{\finally}[1]{\textit{finally}~#1}
+\newcommand{\opr}[1]{\Box #1}
+\newcommand{\callSTL}[1]{#1}
+\newcommand{\out}[1]{\textit{out}~#1}
+\newcommand{\rdp}[1]{\textit{rd}~#1}
+\newcommand{\inp}[1]{\textit{in}~#1}
+\newcommand{\evalSTL}[1]{\textit{eval}~#1}
+%\newcommand{\mesg}[3]{[ \triangleright #1 ]_{#2}^{#3}}
+\newcommand{\mesg}[2]{#1 \triangleright #2}
+\newcommand{\labnew}[3]{#3#1?#2}
+\newcommand{\labsilent}[1]{\cdot}
+\newcommand{\labmesg}[2]{#1!#2}
+\newcommand{\ov}[1]{\overline{#1}}
+\newcommand{\subs}[2]{mgs(#1,#2)}
+\newcommand{\vorn}[0]{\omega}
+\newcommand{\vdel}[0]{\delta}
+\newcommand{\vthis}[0]{\tau}
+\newcommand{\coordsys}[2]{#1\langle #2\rangle}
+\newcommand{\coordtran}[1]{\xhookrightarrow{#1}}
+\newcommand{\compute}[1]{#1^\epsilon}
+\newcommand{\cruleSTL}[3]{(\textrm{#1}) & \begin{array}{c} #2 \\ \hline #3 \end{array} \\[13pt]}
+\newcommand{\ctworules}[6]{
+(\textrm{#1}) & \begin{array}{@{\hspace{10pt}}c@{\hspace{30pt}}c@{\hspace{10pt}}c}
+\begin{array}{c} #2 \\ \hline #3 \end{array} & (\textrm{#4}) & 
+\begin{array}{c} #5 \\ \hline #6 \end{array} 
+\end{array}
+\\[8pt]}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FIELD CALCULUS AND PROTELIS %
@@ -129,9 +170,8 @@
 \newcommand{\e}{\texttt{e}}
 \newcommand{\s}{\texttt{s}}
 \newcommand{\defK}{\texttt{def}}
-%\newcommand{\defn}[2]{\mathit{def} #1 := #2}
 \newcommand{\defnarr}[2]{\mathit{def} #1 & := & #2}
-\newcommand{\call}[1]{call\, #1}
+% \newcommand{\call}[1]{call\, #1}
 \newcommand{\tap}[1]{#1}
 \newcommand{\localc}{\texttt{local}}
 \newcommand{\neighborhood}{\texttt{neighborhood}}
@@ -238,11 +278,9 @@
 %%%%%%%%%
 \newcommand{\BNFp}{{\bf ::=}}
 \newcommand{\BNFor}{\;\bigr\rvert\;}
-
 \newcommand{\sSp}[0]{S}
 \newcommand{\sId}[0]{n}
 \newcommand{\sIdB}[0]{m}
-%\newcommand{\sIdC}[0]{z}
 \newcommand{\sVr}[0]{x}
 \newcommand{\sTr}[0]{t}
 \newcommand{\sAg}[0]{A}
@@ -256,7 +294,6 @@
 \newcommand{\sStar}[0]{\star\!}
 \newcommand{\sSB}[0]{\theta}
 \newcommand{\snew}[0]{\textsc{fr}}
-
 \newcommand{\cLSA}[2]{#1\langle #2\rangle}
 \newcommand{\cAgent}[2]{(#1)#2}
 \newcommand{\cList}[1]{\overline{#1}}
@@ -268,7 +305,6 @@
 \newcommand{\cSpace}[2]{[#1]_{#2}}
 \newcommand{\cBond}[2]{#1\!\rightsquigarrow \! #2}
 \newcommand{\cNeigh}[2]{\textit{neigh}(#1,#2)}
-
 \newcommand{\cRec}[1]{\texttt{iterate\{$#1$\}}}
 \newcommand{\cRecR}[2]{\texttt{iterate${}^{#2}$\{$#1$\}}}
 \newcommand{\cOr}[2]{#1:#2}
@@ -277,36 +313,27 @@
 \newcommand{\cUpd}[2]{#1\texttt{.upd}(#2)}
 \newcommand{\cObs}[2]{#1\texttt{.obs}(#2)}
 \newcommand{\cRem}[1]{#1\texttt{.rem()}}
-
 \newcommand{\fRen}[1]{\textit{rename}(#1)}
 \newcommand{\fFresh}[1]{\textit{fresh}(#1)}
 \newcommand{\fNeigh}[1]{\textit{neighbours}(#1)}
 \newcommand{\sFilt}[0]{\rhd}
 \newcommand{\fFilt}[2]{#1\sFilt #2}
 \newcommand{\fSubs}[3]{#1^{\{#2/#3\}}}
-
 \newcommand{\fDiff}[0]{\delta}
 \newcommand{\fAggr}[0]{\alpha}
 \newcommand{\fDecay}[0]{\epsilon}
 \newcommand{\fBond}[0]{\mu}
-
 \newcommand{\sLb}[0]{l}
-%\newcommand{\trn}[1]{\xlongrightarrow{#1}}
 \newcommand{\trn}[1]{\rightarrow}
 \newcommand{\ntrn}[1]{\not\rightarrow}
-%\newcommand{\crule}[3]{[\textrm{#1}] & #2 & \textrm{if}~ #3\\}
-%\newcommand{\incrule}[2]{[\textrm{#1}] & \multicolumn{2}{l}{~~#2} \\}
-%\newcommand{\shortincrule}[2]{[\textrm{#1}] & #2 & \\}
 \newcommand{\crule}[3]{\texttt{[#1]} & #2 & \textrm{if}~ #3\\}
 \newcommand{\incrule}[2]{\multicolumn{2}{l}{~~#2} \\}
 \newcommand{\shortincrule}[2]{\texttt{[#1]} & #2 & \\}
 \newcommand{\acrule}[3]{[\textrm{#1}] & \multicolumn{2}{l}{#2 \hfill ~~\textrm{if}~ #3}\\}
 \newcommand{\alcrule}[5]{[\textrm{#1}] & #2 & \trn{#3} & #4 & \textrm{if}~ #5\\}
 \newcommand{\alincrule}[4]{[\textrm{#1}] & #2 & \trn{#3} & #4 & \\}
-
 \newcommand{\myquad}{,\;}
 \newcommand{\ccrule}[3]{[\texttt{#1}] & #2 & \textrm{if}~ #3\\}
-
 \newcommand{\sPr}{\texttt{p}}
 \newcommand{\sVl}{\texttt{v}}
 \newcommand{\sWl}{\texttt{w}}
@@ -314,7 +341,6 @@
 \newcommand{\sAsgPlus}{\texttt{+=}}
 \newcommand{\sAsgMinus}{\texttt{-=}}
 \newcommand{\sAsgReset}{\texttt{reset}}
-
 \newcommand{\lship}[1]{\texttt{ship}(#1)}
 \newcommand{\lexc}{\texttt{fail}}
 \newcommand{\lok}{\texttt{ok}}
@@ -329,8 +355,8 @@
 \newcommand{\lubond}{\texttt{debond}}
 \newcommand{\lempty}{\texttt{empty}}
 \newcommand{\eval}[1]{\texttt{eval(#1)}}
-
 \newcommand{\f}[1]{#1}
 \newcommand{\ttt}[1]{\footnotesize{\texttt{#1}}}
-
 \newcommand{\ccheck}[2]{#1\vdash #2}
+
+
