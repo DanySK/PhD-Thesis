@@ -155,7 +155,7 @@ I also focus on the current status of the communication protocols, their range a
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.99\textwidth]{img/iphone}
+	\includegraphics[width=\textwidth]{img/iphone}
 	\caption[Apple iPhone]{Apple iPhone is one of the first devices without any physical keyboard, and the first smartphone to gain worldwide success. \emph{Source: Wikimedia.}}
 	\label{img:iphone}
 \end{figure}
@@ -207,7 +207,7 @@ At the time of writing, the main issues that slow the widespread adoption of suc
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.99\textwidth]{img/gglass}
+	\includegraphics[width=0.7\textwidth]{img/gglass}
 	\caption[Google Glass]{Google Glass. In this image, it is possible to see both the camera (on the left hand side) and the semi-transparent head-mounted display. Are those devices going to be part of our everyday life? \emph{Source: Wikimedia.}}
 	\label{img:gglass}
 \end{figure}
@@ -720,14 +720,13 @@ Plastic? \cite{plastic}
 \cartago{}? \cite{RPV-JAAMAS2011}
 
 \subsection{SAPERE}
+SAPERE\footnote{The model was developed as part of an EU-funded research project. See \url{http://www.sapere-project.eu/}.} \cite{sapere-procedia7} is a nature-inspired coordination model and framework to support the design and development of composite pervasive service systems.
 \begin{figure}
 \centering
-\includegraphics[width=0.99\textwidth]{img/architecture_2.pdf}
+\includegraphics[width=0.8\textwidth]{img/architecture_2.pdf}
 \caption[SAPERE reference architecture]{The SAPERE reference architecture.}
 \label{img:sapere-architecture}
 \end{figure}
-
-SAPERE\footnote{The model was developed as part of an EU-funded research project. See \url{http://www.sapere-project.eu/}.} \cite{sapere-procedia7} is a nature-inspired coordination model and framework to support the design and development of composite pervasive service systems.
 %
 Its reference architecture and coordination model synthesize from existing nature-inspired approaches, such as \cite{biochemicalTupleSpaces, frameworkSelfOrg, VCMZ-TAAS2011, wordNet}, and is based on an assumption of spatial, local interactions (to be realized via a network of distributed tuple spaces), which is in line with all nature-inspired approaches.
 %
@@ -1270,7 +1269,7 @@ It also allows to define which kind of time distribution to use to trigger react
 \label{subsec:architecture}
 \begin{figure}%[H]
   \begin{center}
-    \includegraphics[width=0.99\columnwidth]{img/structure.pdf}
+    \includegraphics[width=0.7\columnwidth]{img/structure.pdf}
     \caption[\alchemist{} architecture]{\alchemist{} architecture. Elements drawn with continuous lines indicates components common for every scenario and already developed, those with dotted lines are extension-specific components which have to be developed with a specific incarnation in mind.}
     \label{img:arch}
   \end{center}
@@ -1768,15 +1767,16 @@ When adding a node to the environment, in fact, it is possible not to displace t
 This comes in particularly handy in order to realise the network of static devices: the simulator can be fed with a grid of devices, and it automatically modifies the positions of each node in order to displace it on a street.
 
  \begin{figure}
-  \subfigure[GPS trace]{\includegraphics[width=0.315\textwidth]{img/gps}
+ \centering
+  \subfigure[GPS trace]{\includegraphics[width=0.31\textwidth]{img/gps}
    \label{img:gps-alchemist-navi}
   }
 ~
-  \subfigure[Map-based navigation]{\includegraphics[width=0.315\textwidth]{img/map}
+  \subfigure[Map-based navigation]{\includegraphics[width=0.31\textwidth]{img/map}
    \label{img:map-alchemist-navi}
   }
 ~
-  \subfigure[Mixed mode]{\includegraphics[width=0.315\textwidth]{img/mixed}
+  \subfigure[Mixed mode]{\includegraphics[width=0.31\textwidth]{img/mixed}
    \label{img:mixed-alchemist-navi}
   }
  \caption[Navigation modes in \alchemist{}]{Three snapshots showing the different navigation modes available in \alchemist{}. In \Cref{img:gps-alchemist-navi} there is a GPS trace consisting in four points. If not specified to behave otherwise, \alchemist{} computes the average speed between two points, and moves the node along a straight line with constant speed. This, depending on the precision of the trace, may generate paths that cross over buildings. In \Cref{img:map-alchemist-navi}, the route between the start and end point is computed using the built-in navigator. This could lead the nodes towards paths different from those described by the route. In \Cref{img:mixed-alchemist-navi}, the routing subsystem is used to refine the quality of the GPS traces: \alchemist{} will move the node with constant speed between the two points, using map based routing when necessary to improve precision between two consecutive trace points.}
