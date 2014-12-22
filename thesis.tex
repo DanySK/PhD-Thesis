@@ -50,17 +50,30 @@
 % \correlatorec{Mirko Viroli}
 \coordinatore{Alessandro Vanelli Coralli}
 \dedica{
-\emph{\mbox{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}Lorem ipsum dolor sit amet. \\
-%
-\mbox{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}consectetur adipiscing elit.\\
-%
-\mbox{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}Sed fringilla quis mauris id sagittis everything.}\\ \\ \\ \\
+\begin{flushright}
+\textit{Considerate la vostra semenza:\\
+fatti non foste a viver come bruti,\\
+ma per seguir virtute e canoscenza.}
+\end{flushright}
+
 \noindent \emph{\textbf{Acknowledgements}}\\ \\
-Curabitur commodo dictum risus laoreet tincidunt. Sed dapibus nec ex sit amet consequat. Quisque cursus est sit amet lectus tempor, nec egestas sapien rutrum. Sed dapibus consequat egestas. Quisque blandit, tellus et molestie interdum, augue est molestie lorem, tristique congue metus massa sed eros. Vivamus fermentum erat a faucibus porta. Praesent sit amet risus leo. Integer venenatis lectus sed euismod euismod. Ut pulvinar fermentum sagittis. Aliquam maximus nisl velit, ac varius tellus dignissim in. Fusce nibh dolor, blandit vel nisl non, vehicula tincidunt lorem. Suspendisse fringilla magna ac justo fermentum, nec accumsan odio sollicitudin. Maecenas consectetur, nulla sit amet ultricies pretium, metus sapien posuere turpis, in lobortis tellus turpis ac ipsum. Aliquam sollicitudin augue a aliquam volutpat. Mauris bibendum nunc id est ullamcorper, nec feugiat elit dapibus.\\
+
+Most of the material that got integrated as a single work in this thesis has been written in publications of which I am co-author.
 %
-Duis tincidunt maximus justo, id convallis mauris mattis congue. Maecenas ullamcorper laoreet lacinia. Praesent luctus dictum metus, sed ultrices dui. Fusce fringilla eu est sit amet porta. Aliquam ornare eleifend congue. Aliquam orci urna, accumsan nec metus a, tincidunt pulvinar augue. Nunc eu vulputate lectus. Morbi placerat varius purus at scelerisque. Mauris malesuada ut massa non porta. Quisque ac efficitur odio. Aliquam scelerisque dapibus felis in ullamcorper. Pellentesque ullamcorper massa quis nibh suscipit elementum. Suspendisse tincidunt, sem non porta consectetur, arcu mauris mollis mi, ut commodo libero diam ut risus.
-}
-\data{March 2015}
+I am thankful to those great researchers I have collaborated with, for their suggestions, their guidance and their help.
+%
+I'd like to thank first Mirko Viroli, who supervised me for the past three years and tried to make me a scientist.
+%
+Sara Montagna, which shares the APICe laboratory with me, also deserves a special mention.
+%
+I want to thank the work packages leaders of SAPERE, a European project that kickstarted me in the world of research: Franco Zambonelli, Giovanna di Marzo, Simon Dobson, Marco Mamei, Alois Ferscha (that also supervised me for three months in Linz) and Andrea Omicini.
+%
+A special thank to Jacob ``Jake'' Beal, that supervised (and also hosted) me during my last three months in the United States.
+%
+Finally, I desire to thank these other great researchers and professionals I have collaborated with: Bernhard Anzengruber, Jose-Luis Fernandez Marquez, Stefano Mariani, Ronaldo Menezes, Jussi Nieminen, Matteo Risoldi, Stefano Sebastio, Graeme Stevenson, Andrea Vandin, Sascia Virruso, Juan ``Erica'' Ye.}
+
+\data{\today}
+
 \signature{\emph{Danilo Pianini}}
 
               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -78,6 +91,7 @@ Duis tincidunt maximus justo, id convallis mauris mattis congue. Maecenas ullamc
 \frontmatter
 \maketitle
 \pagestyle{plain}
+
 \tableofcontents
 
 \chapter*{\centering Abstract}
@@ -105,7 +119,12 @@ In this work, I lay the foundations of my contribution by first analysing the st
 %
 I then motivate my work, by describing the main issues of pre-existing tools and practices and identifying the improvements that would benefit the design of such complex software ecosystems.
 %
-My contribution is described in \Cref{contribution}, and can be divided in three main branches: i) a novel simulation tool for pervasive ecosystems, ii) introduction of novel and improvements over existing self-organisation patterns, iii) the creation of a new language and interpreter based on ``field calculus'' and its integration with the previously mentioned simulator.
+My contribution can be divided in three main branches:
+\begin{enumerate}
+ \item a novel simulation tool-chain for pervasive ecosystems;
+ \item introduction of novel and improvements over existing self-organisation patterns;
+ \item creation of a new language and interpreter based on ``field calculus'' and its integration with the previously mentioned tool
+\end{enumerate}
 %
 Finally, I draw conclusions and future works.
 
@@ -128,7 +147,7 @@ Laptops boosted the process, offering user a personal and mobile device.
 
 The pervasive revolution, however took place when the phones became ``smart'', and with the subsequent improvements in the communication technologies.
 %
-In this chapter, I try to briefly walk the path of success of personal mobile devices, describing also the probable newcomer, namely the wearable devices.
+In this\levelText{} I try to briefly walk the path of success of personal mobile devices, describing also the probable newcomer, namely the wearable devices.
 %
 I also focus on the current status of the communication protocols, their range and usage, and I try to foresee which world are we going to build if the current trend continues.
 
@@ -229,7 +248,7 @@ In later years, many communication means arose.
 %
 They largely differ in terms of range, protocols, and availability.
 %
-In this section, I try to resume the most diffused technologies available on today's devices, but the reader is warned: keep in mind that such technologies are evolving very quickly, and the scenario is incredibly fluid.
+In this\levelText{}I try to resume the most diffused technologies available on today's devices, but the reader is warned: keep in mind that such technologies are evolving very quickly, and the scenario is incredibly fluid.
 
 \subsection{International Mobile Telecommunications}
 \label{International Mobile Telecommunications}
@@ -485,7 +504,7 @@ The most consistent contribution of this thesis is devoted to the research of ge
 
 In \Cref{pervasive-devices} we took a look to the world of pervasive devices, also describing their communication means and hypothesising the near future development.
 %
-In this chapter, we focus on the software, and in particular on the challenges of engineering the development of software that will run on an ensemble of pervasive devices.
+In this\levelText{}we focus on the software, and in particular on the challenges of engineering the development of software that will run on an ensemble of pervasive devices.
 %
 We first discuss the issue of coordination and self-organisation: how do we make all those possibly devices collaborate together in order to achieve a global goal, without a centralised decision-maker?
 %
@@ -861,25 +880,23 @@ Specific per-use simulators, gener
 % \section{Specific tools: expressiveness}
 % \section{General purpose tools: performance}
 
-\part{Contribution}
-\label{contribution}
-\chapter{An integrated toolchain for pervasive ecosystems}
+\part{An integrated toolchain for pervasive ecosystems}
 
-We discussed in \Cref{engineering-and-tools} the importance of simulation in the engineering process of designing pervasive ecosystems.
-%
-In this chapter, we will discuss one of my contribution to this research branch, namely the development of an integrated tool named \alchemist{}, which has been inspired by chemical oriented simulators.
-%
-We first talk about chemical inspiration, and how existing chemical-oriented stochastic simulation algorithms (SSAs) can be extended towards higher flexibility, up to the point that they become suitable to simulate potentially complex environments, still retaining their high performance.
-%
-To do so, our first effort will be to take an efficient SSA implementation and convert it to a general-purpose discrete event simulator (DES).
-%
-We then devise a meta-meta-model, complex and flexible enough to support the definition of middleware-specific meta-models.
-%
-Finally, some meta-models are presented.
+% We discussed in \Cref{engineering-and-tools} the importance of simulation in the engineering process of designing pervasive ecosystems.
+% %
+% In this\levelText{} we will discuss one of my contribution to this research branch, namely the development of an integrated tool named \alchemist{}, which has been inspired by chemical oriented simulators.
+% %
+% We first talk about chemical inspiration, and how existing chemical-oriented stochastic simulation algorithms (SSAs) can be extended towards higher flexibility, up to the point that they become suitable to simulate potentially complex environments, still retaining their high performance.
+% %
+% To do so, our first effort will be to take an efficient SSA implementation and convert it to a general-purpose discrete event simulator (DES).
+% %
+% We then devise a meta-meta-model, complex and flexible enough to support the definition of middleware-specific meta-models.
+% %
+% Finally, some meta-models are presented.
 %TODO: expand
 %
 
-\section{Chemical-inspired engine}
+\chapter{Chemical-inspired engine}
 \label{chemical-engine}
 In the following, we present a discrete event simulation engine derived from the popular and successful Gillespie's stochastic simulation algorithm \cite{gillespie1977}, and in particular from its notable and more efficient extensions developed by Gibson-Bruck \cite{gibson2000} and by Slepoy \cite{slepoy2008}.   
 %
@@ -890,7 +907,7 @@ With significative extensions, it was recently used to model artificial systems 
 Moreover, its optimised extensions \cite{gibson2000,slepoy2008} are very efficient, thus allowing really fast simulation runs.
 
 %-------------------------------------------------------------------------------
-\subsection{Gillespie's SSA as an event-driven algorithm}
+\section{Gillespie's SSA as an event-driven algorithm}
 %-------------------------------------------------------------------------------
 First of all, we summarise the idea that the Gillespie's SSA is grounded on:
 %
@@ -918,7 +935,7 @@ Every algorithm follows four main steps:
 Such algorithm is event-driven in that it executes only one reaction/event at a time: it changes the state of the system and consequently the event list \emph{i.e.}. which other reactions/events can be executed from there.
 
 %-------------------------------------------------------------------------------
-\subsection{Gillespie's optimised versions}
+\section{Gillespie's optimised versions}
 %-------------------------------------------------------------------------------
 This algorithm has been improved in various works in literature, particularly notable is the work in \cite{gibson2000} and \cite{slepoy2008}.
 %
@@ -955,7 +972,7 @@ This way, the next reaction to execute is always the root node of the tree, and 
 However, once the reaction has been executed, all the dependent reactions must be updated and re-sorted in the tree. In the worst case, this takes logarithmic time with respect to the number of reactions.
 
 %-------------------------------------------------------------------------------
-\subsection{From SSA to full fledged DES}
+\section{From SSA to full fledged DES}
 %-------------------------------------------------------------------------------
 
 Both the Gisbon-Bruck's and Slepoy's schedulers are granted to correctly simulate a Poisson process.
@@ -1009,7 +1026,7 @@ Mobility makes everything even harder, since it may lead to the creation and dis
 %
 Summarising, supporting dynamic environments with multiple mobile compartments require the dependency graph to become a dynamic data structure, which cannot be pre-computed at the simulation initialisation and kept static.
 
-\subsubsection{Dynamic Dependency Graph}
+\subsection{Dynamic Dependency Graph}
 
 There are multiple ways to conceive such dynamic data structure.
 %
@@ -1045,7 +1062,7 @@ Adding a new reaction implies to verify its dependencies against every reaction 
 Removing a reaction \texttt{r} requires to delete all dependencies in which \texttt{r} is involved both as influencing and influenced.
 Moreover, in case of a change of system topology, a dependency check among reactions belonging to nodes with modified neighbourhood is needed. It can be performed by scanning them, calculating the dependencies with the reactions belonging to new neighbours and deleting those with nodes which are no longer in the neighbourhood.
 
-\subsubsection{Dynamic Indexed Priority Queue}
+\subsection{Dynamic Indexed Priority Queue}
 
 An issue that arises with addition and removal of nodes from the simulation is the possible unbalancing of the scheduling queue, that in the original work is realised as a binary tree of reactions, whose main property is that each node stores a reaction whose putative time of occurrence is lower than each of its sons.
 
@@ -1116,7 +1133,7 @@ Our idea is, for each node, to keep track of the number of descendant per branch
 
 Using the two procedures described above, the topology of the whole tree is constrained to remain balanced despite the dynamic addition and removal of reactions.
 
-\section{Meta-meta model}
+\chapter{Meta-meta model}
 \label{meta-meta-model}
 The complexity of the systems we want to design is achieved by the following set of common key properties:
 \begin{itemize}
@@ -1226,7 +1243,7 @@ It allows, for example, to model reactions which are faster if a node has many n
 It also allows to define which kind of time distribution to use to trigger reactions: this enables us to model and simulate systems based on Continuous Time Markov Chains (CTMCs), to add triggers, or also to rely just on classical discrete time ``ticks''.
 
 
-\section{Architecture}
+\chapter{Architecture}
 %TODO: architettura da rifare
 
 \label{subsec:architecture}
@@ -1246,7 +1263,7 @@ It is important to note that there is no restriction about the kind of data stru
 
 %TODO: scrivere una ncarnazione e poi magari anche scrivere una simulazione.
 
-\subsection{Writing a simulation}
+\section{Writing a simulation}
 
 %SISTEMARE%
 
@@ -1266,7 +1283,7 @@ It is up to the extensor to write a translation module from its personalised lan
 %
 Of course, it is also possible to code the simulation behaviour  directly with Java, although this way exposes the user to many more low level details.
 
-\subsection{Implementation details}
+\section{Implementation details}
 %TODO%
 The framework was developed from scratch using Java. Being performance a critical issue for simulators, we compared some common languages in order to evaluate their performance level.
 %
@@ -1281,7 +1298,7 @@ In particular, it offers a fast and reliable random number generation algorithm,
 % TODO! %
 \alchemist{} is still actively developed and currently consists of about 200 classes for about 20'000 lines of code. Though still in beta version, it is released with GPL license as open source \footnote{\mbox{\url{http://alchemist.apice.unibo.it}}.}.
 
-\section{Performance}
+\chapter{Performance}
 \begin{figure}[t]
     \includegraphics[width=0.999999\columnwidth]{img/jos-graph01}
     \caption{Chart showing the performance scaling of \alchemist{}}
@@ -1330,9 +1347,9 @@ Since the concept of neighbourhood was part of the computational model, it was p
 %
 This is probably the component which gives the highest impact in this case, since most interactions occur among an agent and its neighbourhood.
 
-\section{Collocation in literature}
+\chapter{Collocation in literature}
 
-\subsection{\alchemist{} as a DES}
+\section{\alchemist{} as a DES}
 
 \alchemist{} is a discrete event simulator (DES), since it combines a continuous time base with the description of system dynamics by distinguished state changes \cite{Zeigler2000}.
 %
@@ -1358,7 +1375,7 @@ This path, explored for example by \cite{MallavarapuInterface2008}, can provide 
 %
 This is not the case for many scenarios even in system biology (see, for example, \cite{Cowan2000, UhrmacherWSC2005}), not to mention scenarios like pervasive computing where reaction rates do not change continuously, and where the effect on an even small number of agents can be key to a given system evolution.
 
-\subsection{\alchemist{} as a MABS}
+\section{\alchemist{} as a MABS}
 
 Even though chemical-inspired, the meta-meta-model described in \Cref{meta-meta-model} holds evident relationships with multi-agent-based simulation (MABS) approaches.
 
@@ -1372,7 +1389,7 @@ This means that an higher level language allows the user to create and tune its 
 
 \alchemist{} is meant to provide a set of meta-models, possibly each with its own domain specific language, still maintaining the possibility to extend or re-implement certain abstractions using the general purpose Java language (defining a new ``incarnation'', namely a new meta-model).
 
-\subsubsection{Advantages}
+\subsection{Advantages}
 
 There is a set of applications which are better tackled by \alchemist{}.
 %
@@ -1384,7 +1401,7 @@ A common viewpoint of all these works is that the behaviour of those passive and
 %
 Accordingly, \alchemist{} is particularly useful either in computing systems following the chemical inspiration \cite{VCMZ-TAAS2011,VZ-INS2010,sapere-procedia7}, or for agent-oriented systems where the role of the environment is key, up to be a very dynamic part of the whole system---where network nodes (or, in biological terms, compartments) can move, new nodes can be spawn or be removed from the system, and links can appear or break at runtime as happen e.g. in pervasive computing scenarios \cite{sapere-procedia7}.
 
-\subsubsection{Limitations}
+\subsection{Limitations}
 
 Inevitably, as an attempt to build a hybrid between agent-based simulators and (bio)chemical simulators, some trade-offs had to be accepted, which ultimately makes \alchemist{} less suited for certain classes of applications.
 %
@@ -1396,13 +1413,13 @@ In fact, since it is allowed to program different nodes with different reactions
 %
 Although possible in principle, performing this task too frequently is likely breaking the \alchemist{} abstraction, making the programmer losing the nice declarative approach that chemistry endorses, and possibly hampering the optimisation techniques that motivated \alchemist{}.
 
-\section{Meta-model agnostic features}
+\chapter{Meta-model agnostic features}
 
-This section analyses the main features of \alchemist{} that can be exploited regardless the specific ``incarnation''.
+This\levelText{}analyses the main features of \alchemist{} that can be exploited regardless the specific ``incarnation''.
 %
 They add a great value to the tool, since they can be used immediately after the creation of a novel meta-model, with no need to specifically write any new code besides some minimal glue.
 
-\subsection{Distributed statistical analysis}
+\section{Distributed statistical analysis}
 
 As we have seen in \Cref{engineering-and-tools}, simulation represents a key step in the engineering of pervasive systems.
 %
@@ -1415,7 +1432,7 @@ Being a simulation basically a sampling over an enormous probability space, obvi
 
 Moreover, there is frequently a lack of decoupling between the model specification and the definition of the system's properties of interest: they are often embedded in the model, and their values are obtained via logging operations performed during the simulation process.
 
-This section presents a tool meant to face these challenges, obtained chaining \alchemist{}, with \multivesta{}\footnote{\url{http://code.google.com/p/multivesta/}} \cite{multivesta}, a recently proposed lightweight tool extending \vesta{}~\cite{Sen:2005} and \pvesta{}~\cite{AlTurkiM11} which allows to enrich existing discrete event simulators with automated and distributed statistical analysis capabilities.
+This\levelText{}presents a tool meant to face these challenges, obtained chaining \alchemist{}, with \multivesta{}\footnote{\url{http://code.google.com/p/multivesta/}} \cite{multivesta}, a recently proposed lightweight tool extending \vesta{}~\cite{Sen:2005} and \pvesta{}~\cite{AlTurkiM11} which allows to enrich existing discrete event simulators with automated and distributed statistical analysis capabilities.
 %
 The result is thus a statistical analysis tool tailored to chemical-inspired pervasive systems.
 %
@@ -1431,7 +1448,7 @@ The benefits obtained by chaining the simulator with \multivesta{} are:
 %
 As described in~\cite{multivesta}, the tool offers a clean interface to integrate existing discrete event simulators, enriching them with a property specification language, and with efficient distributed statistical analysis capabilities.
 
-\subsubsection{\multivesta{} and \multiquatex{}}
+\subsection{\multivesta{} and \multiquatex{}}
 
 \multivesta{} performs a statistical (Monte Carlo based) evaluation of \multiquatex{} expressions, allowing to query about expected values of observations performed on simulations of probabilistic models. 
 %
@@ -1465,7 +1482,7 @@ After having obtained a sample for every \texttt{eval} clause from a simulation,
 Note that each \texttt{eval} clause may require a different number of simulations to reach the required CI. Once the CI of an \texttt{eval} clause has been reached, such \texttt{eval} clause is ignored in eventual further simulations performed for other \texttt{eval} clauses. 
 
 
-\subsubsection{Integrating \multivesta{} and \alchemist{}}
+\subsection{Integrating \multivesta{} and \alchemist{}}
 
 In order to chain the tools, some steps, have been tackled once and for all, while others are model-specific.
 %
@@ -1539,9 +1556,9 @@ Clearly, each \alchemist{} model will have its own observations of interest.
 
 Depending on the model at hand, it may be necessary to refine the model-independent observations exposed by \texttt{AlchemistState} with a set of model-specific ones. This can be done by simply instantiating the \texttt{IStateEvaluator} interface provided by \multivesta, constituted by one method only.
 
-\subsubsection{Example}
+\subsection{Example}
 
-This section discusses the analysis performed on a crowd steering scenario, similar to the one which will be presented in detail in \Cref{jos-museum}.
+This\levelText{}discusses the analysis performed on a crowd steering scenario, similar to the one which will be presented in detail in \Cref{jos-museum}.
 %
 In such scenario, two group of people are inside an indoor environment, and are steered towards two point of interest (POI) such that their ideal trajectory intersect, creating a crowd.
 %
@@ -1624,7 +1641,7 @@ The system reaches a substantial stability after a couple of seconds.
 %
 From that point on, the number of LSAs has very little variations: the system has no ``memory leak'', in the sense that it does not keep on producing new LSAs without properly removing old data. 
 
-\subsubsection{Performance Assessment}
+\subsection{Performance Assessment}
 All the experiments of the previous section have been run on a machine equipped with four Intel\textregistered{} Xeon\textregistered{} E7540 and 64GB of RAM, running Linux 2.6.32 and Java 1.7.0\_04-b20 64bit.
 
 In order to measure the performance scaling of the tool, we ran our analysis multiple times varying the number of \multivesta{} servers deployed.
@@ -1709,7 +1726,7 @@ We can thus advocate that, by exploiting reuse of simulations, for the considere
 %
 Clearly, the performance gains change depending on the considered scenario or properties. In fact, the more simulations are required, and the longer they take, the greater will be the advantage.
 
-\subsection{Real world maps}
+\section{Real world maps}
 
 \alchemist{} supports real-world environments.
 %
@@ -1781,11 +1798,11 @@ In this sense, \alchemist{} automatically detects when a real-world environment 
 
 
 
-\section{Chemical meta-model}
+\chapter{Chemical meta-model}
 
 % TODO: description, mi sa che tocca farla a mano...
 
-\subsection{Example scenario: Morphogenesis}
+\section{Example scenario: Morphogenesis}
 
 As example to test the power of a chemical stochastic simulator enriched a more general model, we propose a case study on morphogenesis.
 %
@@ -1832,7 +1849,7 @@ In \cite{LeccaJIB2010} the gradient formation of the Drosophila \emph{bicoid} pr
 
 To capture a bigger window of embryo development we built on top of \alchemist{}'s chemical meta-model a model of \emph{Drosophila} development so as to capture  both nuclear division and molecular processes such as  morphogen diffusion and gene regulatory networks.
 
-\subsubsection{Development of Drosophila Melanogaster}
+\subsection{Development of Drosophila Melanogaster}
 
 \begin{figure}
 \centering
@@ -1911,7 +1928,7 @@ In \Cref{fig:genenetwork} it is shown the network of interactions among maternal
 \label{fig:genenetwork}
 \end{figure}
 
-\subsubsection{Simulation in \alchemist{}}
+\subsection{Simulation in \alchemist{}}
 
 Simulations results are shown in \Cref{fig:simres}. They are evaluated observing the time evolution of the compartment number and of the gene expression pattern. 
 %
@@ -1953,13 +1970,13 @@ The expression of  \emph{gt} is finally observable between 10\% and 30\% and 80\
 \end{figure}
 
 
-\section{SAPERE meta-model}
+\chapter{SAPERE meta-model}
 
-\chapter{Methods and patterns for self-organisation}
+\part{Methods and patterns for self-organisation}
 
-\section{A process algebra for SAPERE}
+\chapter{A process algebra for SAPERE}
 \label{sapere-process-algebra}
-In this section, we present a possible formalisation of the SAPERE concepts, in terms of a model whose evolution is specifyied by means of a process algebra.
+In this\levelText{}we present a possible formalisation of the SAPERE concepts, in terms of a model whose evolution is specifyied by means of a process algebra.
 %
 Not only does this formalisation act as a non-ambiguous description, it is also an executable specification and can hence serve as ground for developing simulations of self-organisation mechanisms and for deriving formal proofs of behavioural properties, like self-stabilisation \cite{V-SCW2013}.
 %
@@ -1967,7 +1984,7 @@ Few works attempted at a process algebraic formalisation of self-organisation \c
 %
 However, the one presented here is -- to the best of our knowledge -- the first process algebra of self-organising multiagent systems capturing the clear separation of agent behaviour and self-organised interactions, hence effectively expressing the behaviour of large-scale and situated pervasive computing scenarios.
 
-\subsection{Model}
+\section{Model}
 
 We now detail a possible coordination model of pervasive ecosystems.
 %
@@ -1975,7 +1992,7 @@ It is important to note upfront that the presented coordination model can be ins
 %
 A similar abstraction is rather common in the description of space-based coordination models, which often represent tuples as simple atomic elements \cite{zavattaro}.
 
-\subsubsection{LSAs}
+\subsection{LSAs}
 
 LSAs have a unique, system-wide identifier (LSA-id), needed to support a notion of identity that is key both to uniquely identify the agent that injected an LSA and to properly support a bonding mechanism based on reference and not on value/copy. We refer to the content of an LSA as its \emph{description}, which includes all the information the agent wants to manifest to the ecosystem.
 %
@@ -1993,7 +2010,7 @@ An example LSA advertising an exhibition in a smartcity, to be diffused around, 
 
 \noindent URI \texttt{app:artist} represents a property name, assigned to the literal values \mbox{\texttt{"caravaggio"}} and \mbox{\texttt{"michelangelo"}}. Alternatively, a value can be an URI again, like \texttt{app:exhibition} that is associated with \texttt{app:event}. Namespace \texttt{app} is used here to refer to a publicly accessible ontology supporting semantic reasoning on top of those properties and values \cite{SemMatchingSAC2013}.
 
-\subsubsection{Agent primitives}\label{s:agent}
+\subsection{Agent primitives}\label{s:agent}
 
 Standard tuple-based coordination models allow agents to insert, read, and remove any tuple (by primitives \texttt{out}, \texttt{rd} and \texttt{in}) without specific access control constraints---although some models explore their orthogonal adoption, like SecSpaces \cite{GorrieriLZ06} and coordination contexts \cite{J-ORV-AAECC2005,RVO-ATAI2004}.
 %
@@ -2012,7 +2029,7 @@ In particular, the following 4 primitives are provided:
  
 \end{itemize}
 
-\subsubsection{Eco-laws}\label{s:ecolaws}
+\subsection{Eco-laws}\label{s:ecolaws}
 
 Without any additional mechanism, the behaviour of an agent would be isolated from those of others.
 %
@@ -2046,9 +2063,9 @@ As already mentioned, our description of eco-laws abstracts from the actual stru
  
 \end{itemize}
 
-\subsection{Formalisation}
+\section{Formalisation}
 
-In this section we provide a formalisation of the proposed coordination model as informally presented in previous section. We adopt the style that has now became a standard after a series of previous works---starting from the work of Zavattaro et.al. \cite{zavattaro}, as surveyed in \cite{VO-FI2006}, and more recently including, e.g., \cite{VPB-COORD2012,TerepetaNN12,BortolussiLM13,MassinkL12,LaneseBF13}.
+In this\levelText{}we provide a formalisation of the proposed coordination model as informally presented in previous section. We adopt the style that has now became a standard after a series of previous works---starting from the work of Zavattaro et.al. \cite{zavattaro}, as surveyed in \cite{VO-FI2006}, and more recently including, e.g., \cite{VPB-COORD2012,TerepetaNN12,BortolussiLM13,MassinkL12,LaneseBF13}.
 %
 Namely, this is presented in the form of a process algebra, in which a system state is conceived as a ``soup'' (or networked set of soups) where agents and LSAs float: subjective coordination is realised by agents performing coordination primitives amounting to interactions with the local space (producing/consuming/modifying LSAs), while objective coordination is realised by eco-laws executing as rules continuously manipulating the space on top \cite{biochemicalTupleSpaces,tucson-aamas99,RicciOD02}.
 %
@@ -2077,7 +2094,7 @@ Additionally, using process algebras paves the way for advanced analysis similar
 \end{figure}
 
 
-\subsubsection{Syntax}
+\subsection{Syntax}
 
 We let meta-variable $\sSI$ range over node (or device) identifiers, $\sId,\sIdB$ over LSA identifiers, $\sVr$ over variables to be eventually substituted by those identifiers, $\sDe,\sDeB$ over LSA descriptions, and $\sDE$ over update specifications. Given any of those meta-variables, we use the overline notation to indicate a meta-variable over sets of elements (e.g., $\cList{\sId}$ is a meta-variable over sets of LSA identifiers)---and similarly for the others. \Cref{fig:meta}  recalls these meta-variables in tabular form for the reader's convenience. Notation $|\cList{\sId}|$ is used to extract the number of elements in $\cList{\sId}$.
 
@@ -2157,7 +2174,7 @@ A congruence relation is also introduced in \Cref{fig:congruence}, which equates
 \end{array}\end{array}$}} \caption{Congruence table of a SAPERE algebra} \label{fig:congruence}
 \end{figure}
 
-\subsubsection{Semantics}
+\subsection{Semantics}
 
 
 \begin{figure}{
@@ -2358,7 +2375,7 @@ First of all, given an update specification $\sDE$ and an LSA description $\sDe$
 %
 Second, $\sDE$ can be seen as a query: we say it matches a description $\sDe$ with result $\theta$ (a binding of variables) if $\fFilt{\sDE\sSB}{\sDe}=\sDe$, namely, when $\sDE\sSB$ is seen as an update, it would not affect $\sDe$---intuitively, e.g., an LSA of type $a$, matches with a query asking whether its type is $X$ (and gives reply $a$), if updating the type of that LSA to $a$ leaves it unchanged.
 %
-As a mere example in this section assume $\sDE$ and $\sDe$ are both lists of single-value assignments $p = v$, and that filtering \mbox{$\fFilt{\sDE}{\sDe}$} applies all assignments of $\sDE$ to $\sDe$, such that \mbox{$\fFilt{(p=1,q=2)}{(q=3,r=4)}=(p=1,q=2,r=4)$}. Observe that update $(q=3,r=X)$, where $X$ is a variable, can be seen as a query which applied to $(q=3,r=4)$ yields $\theta=\{X/4\}$, in that \mbox{$\fFilt{(q=3,r=X)\{X/4\}}{(q=3,r=4)}=(q=3,r=4)$} as described above.
+As a mere example in this\levelText{}assume $\sDE$ and $\sDe$ are both lists of single-value assignments $p = v$, and that filtering \mbox{$\fFilt{\sDE}{\sDe}$} applies all assignments of $\sDE$ to $\sDe$, such that \mbox{$\fFilt{(p=1,q=2)}{(q=3,r=4)}=(p=1,q=2,r=4)$}. Observe that update $(q=3,r=X)$, where $X$ is a variable, can be seen as a query which applied to $(q=3,r=4)$ yields $\theta=\{X/4\}$, in that \mbox{$\fFilt{(q=3,r=X)\{X/4\}}{(q=3,r=4)}=(q=3,r=4)$} as described above.
 
 The other four functions in \Cref{fig:func} work with LSA descriptions, and define the data-related aspects of eco-laws as described in the following.
 
@@ -2402,7 +2419,7 @@ The bond eco-law creates a bond between two LSAs if they stay in the $\fBond$ pr
 %
 Conversely, the debond eco-law drops any bond that the bond eco-law would not create.
 
-\subsubsection{Example}
+\subsection{Example}
 
 Whereas exemplifying eco-laws will better be done in next section while discussing the case study, it is here useful to provide a simple agent program to show how the operational semantics works.
 %
@@ -2438,7 +2455,7 @@ and then after update to:
 
 
 
-\subsubsection{Well-formed configurations and properties}
+\subsection{Well-formed configurations and properties}
 
 A configuration is considered well-formed if:
 \begin{enumerate}
@@ -2471,7 +2488,7 @@ We now state two fundamental properties for the proposed calculus:
  \item \textbf{Progress} | If a well-formed configuration $\sCf\oPar\cSpace{\cAgent{\cList{\sId}}{\sAg}}{\sSI}$ allows no transition leading to $\sCf'\oPar\cSpace{\cAgent{\cList{\sId}'}{\sAg'}}{\sSI}$ (namely, the agent is stuck), then necessarily $\sAg\equiv(\cObs{\sId}{\sDE}\oSeq\sAg')$, and in $\sSI$ there is no bond from $\sId$ to $\sIdB$ such that $\sIdB$'s description $\sDe$ satisfies $\fFilt{\sDE\sSB}{\sDe}=\sDe$. This property states that in well-formed configurations operations never fail, except for the case of an \texttt{obs} that fails and has not been caught by the try-catch construct.
 \end{itemize}
 
-\section{Pattern: Channel}
+\chapter{Pattern: Channel}
 
 We now present an example application of the coordination model proposed in \Cref{sapere-process-algebra}, specifically targeted at emphasising its ability to tackle a number of interesting issues:
 \begin{enumerate}
@@ -2480,7 +2497,7 @@ We now present an example application of the coordination model proposed in \Cre
  \item support openness by an RDF-oriented instantiation of LSAs.
 \end{enumerate}
 
-\subsection{A semantic-oriented instantiation}
+\section{A semantic-oriented instantiation}
 
 We give an RDF-oriented concrete definition of data representation, which can be useful in a large number of pervasive computing applications, including the example to come---a rigorous mapping to RDF and SPARQL can be given along the lines of \cite{SemanticSapereIGI2012}.
 %
@@ -2578,7 +2595,7 @@ will bond to an LSA with description
 The above examples illustrate a convention we shall use in the following: URIs with namespace \texttt{eco} are those describing properties and values whose semantics is associated to the eco-laws engine, those with \texttt{fun} refer to a library of underlying functions, and those with \texttt{app} are relative to the application domain ontology.
 
 
-\subsection{Realising the gradient}\label{s:grad}
+\section{Realising the gradient}\label{s:grad}
 
 \begin{figure}
 {\footnotesize \begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}]
@@ -2660,7 +2677,7 @@ The gradient structure created by this process enjoys self-stabilisation as defi
 \end{figure}
 
 
-\subsection{From gradient to distributed channel}
+\section{From gradient to distributed channel}
 \begin{figure}
 {\footnotesize \begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}]
 % ChannelSource: initiates the channel propagation
@@ -2731,7 +2748,7 @@ Finally, a \emph{steering service} agent has the goal of reifying a sign towards
 %
 The LSA it produces and maintains is representative of the direction of the sign to be shown on pervasive displays, and is intended to be observed by a display agent.
 
-\subsection{Simulation in \alchemist{}}
+\section{Simulation in \alchemist{}}
 
 \begin{figure}
 \begin{center}{\includegraphics[width=\textwidth]{img/london-channel}}\end{center}
@@ -2808,16 +2825,16 @@ On the other hand, with obstacles added instead, values more slowly grow to the 
 This happens because of the issue of slow ``raising values'' pointed out in \cite{crf}.
 
 
-\section{Pattern: Anticipative adaptation}
+\chapter{Pattern: Anticipative adaptation}
 \label{anticipative-gradient}
 
 
-\section{Case Study: Crowd evacuation}
-\section{Case Study: Crowd steering}
+\chapter{Case Study: Crowd evacuation}
+\chapter{Case Study: Crowd steering}
 \label{jos-museum}
-In this section, we show a crowd steering case study in which a middleware has the goal of leading people in the desired location within a complex environment in short time, avoiding obstacles such as crowded regions and without global supervisioning. 
+In this\levelText{}we show a crowd steering case study in which a middleware has the goal of leading people in the desired location within a complex environment in short time, avoiding obstacles such as crowded regions and without global supervisioning. 
 
-\subsection{Reference scenario}
+\section{Reference scenario}
 
 Consider a museum with a  set of rooms, whose floor is covered with a network of computational devices (infrastructure nodes).
 %
@@ -2833,7 +2850,7 @@ The environment is a continuous bidimensional space with walls.
 %
 Smartphones (or public displays) are agents dynamically linked with the nearest infrastructure node -- the neighbours are the sensors inside a certain radius $r$, parameter of the model -- from which they can retrieve data in order to suggest visitors where to go. Visitors are agents which follow the advices of their hand-held device (or public displays). It is defined a minimum possible distance between them, so as to model the physical limit and the fact that two visitors can't be in the same place at the same time. Visitors can move of fixed size steps inside the environment. If an obstacle is on their path, their movement is shortened to the allowed position nearest to the desired place.
 
-\subsection{Steering strategy}
+\section{Steering strategy}
 
 All the information exchanged is in form of annotations, simply modelled as tuples $\lsa{v_1,\ldots,v_n}$ (ordered sequence) of typed values, which could be for example numbers, strings, structured types, or function names.
 %
@@ -2918,7 +2935,7 @@ For the crowding annotation, we may assume that sensors are calibrated so as to 
 %
 The reaction rates are identified by hand performing different simulations with different parameters. The results reported are obtained with $r_{init} = 1$ and $r_{diff} = 50$. The other laws show no rate because it is assumed to be infinite (as-soon-as-possible semantics).
 
-\subsection{Simulation in \alchemist{}}
+\section{Simulation in \alchemist{}}
 
 \begin{figure}
 \begin{center}
@@ -2971,10 +2988,417 @@ For instance, in the context of the second case, \Cref{img:jos-graph} shows how 
 \end{figure}
 
 
-\section{Case study: Self composition}
-\section{Case study: Semantic resource discovery}
-\section{Case study: Crowd disasters prediction}
-\section{Case study: Crowd steering at the urban scale}
+\chapter{Case study: Self composition}
+
+Services are one of the main actors in pervasive and ubiquitous computing. 
+%
+Composing services is a big issue in these contexts, providing new applications or high level services.
+%
+Self-composition is even more challenging.
+
+In literature some surveys and possible solutions have been proposed, but only few of them give concrete proposals for the design, implementation and evaluation of service composition.
+%
+Moreover the composition of services is solved in a centralised way, solution which hardly deal with the large-scale distributed property of pervasive systems, or the composition is specified by the application developers, preventing the system to use new services that appear at runtime.
+
+In this\levelText{}we frame/situate the problem of self-composition in the framework of pervasive ecosystems, defining what a service is and what composing services means. 
+%
+We then propose an approach to perform self-composition of services and demonstrate our ideas showing how gradients can be composed with other services. 
+%
+In particular our discussion focuses on the composition of gradient with services providing local levels of crowd, at the purpose of avoiding path crossing overcrowded areas.
+%
+This example is modelled in terms of LSAs and eco-laws, that are the basic components of a pervasive ecosystem \cite{sapereecolaws-sac2012}, and preliminary simulations, aimed at validating the approach, are run on top of \alchemist{}.
+
+\section{Self-Composition approaches}
+A software service represents a functionality that can be provided on demand in order to create higher level software artefacts, such as applications or higher level services.
+%
+The notion of service allows applications to be easily developed and to adapt by changing the different services, which the application is composed by, at run-time. 
+%
+Self-composition of services involves the automatic discovery of new services by composing available ones, the selection of services, the plan to execute them (i.e. services execution order), and the adaptation of the composed service when new requirements appear or a service disappears from the system.
+
+\subsubsection{Service Composition in SOA}
+The static character of traditional composition approaches such as orchestration and choreography has been recently challenged by so-called dynamic service composition approaches, involving semantic relations \cite{terBeek:06:ASSCFISFM}, and/or AI planning techniques to generate process automatically based on the specification of a problem \cite{wu2007automatic}. 
+%
+Their basic goal is to analyse a description of the services to compose and compute a composition satisfying structural/behaviour/ontological compliance of the result of composition as can be deduced from information about the composites.
+%
+One of the main challenges of these approaches is their limited scalability and the strong requirements they pose on the detail of service description.
+
+\subsubsection{Evolutionary techniques}
+Evolutionary approaches such as those based on Genetics Algorithms (GA) have been proposed as well for service composition, such as in \cite{Canfora2005}, motivated by the need of determining the services participating in a composition that satisfies certain QoS constraints, which is known to be a NP-Hard problem.
+%
+More generally, evolutionary approaches have been used in the field of autonomic computing to establish the set of norms, policies or rules that drive the system to the desired emergent behaviour \cite{Norman2010}.
+%
+We observe that this approach has a potential for service composition: in the same way as the genetic programming determine the proper execution of functions and their parameters, it could be used to find which services, their order of execution and the parameters that its service should receive. 
+
+\subsubsection{Competition-based approaches}
+In order to tackle the potentially high number of different compositions that can arise in an open system, in \cite{Viroli:11:SOACCPS} a mechanism of \emph{coordination reactions} for networked tuple spaces is proposed, showing how it can be applied to support competition and composition in a fully distributed setting---services opportunistically compose in those regions of the network where this results in a more competitive service.
+%
+While all compositions can possibly take place, thanks to a positive/negative feedback only successful ones are meant to ``survive'' in the system, the others fading until becoming never actually selected.
+%
+This is achieved by matching services with requests through a self-regulating dynamics inspired by prey-predator model of population dynamics \cite{Berryman:1992}, and by diffusing service tuples using a computational-field approach similar to the one presented in \cite{tota-aamas2005,proto}.
+
+
+
+\section{A comprehensive approach for pervasive ecosystems}
+
+As previously emphasised, the issue of service composition is becoming wider and wider, and is now encompassing new research areas.
+%
+Among them -- pervasive computing, autonomic computing, robotics -- we here focus on pervasive computing, and in particular, on the framework of pervasive ecosystems \cite{ecosystems-jpcc7}.
+%
+There, we understand and design a very large and dense pervasive computing system as a sort of substrate in which humans, institutions, software systems and devices, inject services of various kinds without an a-priori knowledge of the structure and behaviour of those already available and those that will be injected later.
+%
+Such services diffuse in the network, and are situated and context-aware in the sense that they contextualise to (i.e., they will affect and be affected by) the situation in each \emph{niche} of it.
+%
+In turn, while in standard SOA a service is a centralised point of functionality, interacting with its clients by stateful protocols of message-passing actions, a service is here a more generalised concept: it is any activity, triggered by the intention of some localised software agent, that flows in the system updating the spatial and temporal configuration of other services, and generating a set of events ultimately perceived by the other agents in the system.
+%
+Examples of such services include: the materialisation of data produced by all sensors available around, routing services able to interconnect devices based on their physic	al, logical or social proximity, local/global advertisers of the availability of some content, situation recommenders capturing relevant information about a context, and so on.
+%
+Typical application scenarios include pervasive display ecosystems, augmented social reality, and traffic control---the reader is deferred to \cite{ecosystems-jpcc7} for a more deeper description of them.
+
+\section{The self-composition issue in pervasive service ecosystems}
+
+Pervasive ecosystems naturally call for a radical shift in the way software is designed and developed. The concept of ``software system'' loses its standard meaning of a monolitically designed/implemented/deployed artefact.
+%
+It is rather a mash-up of services, and the development of a ``new software system'' simply translates into the development of additional services to be immersed in a scenario of existing ones, with the goal of composing with them and evolving their functionalities, thus making software live in a sort of ``eternal beta'' state \cite{Kazman2009}.
+
+The natural questions we have to answer in order to support this vision are hence: what can make services compose if they were not explicitly designed to do so?
+%
+How can we decide ``whether'' and ``how'' two or more services should compose?
+%
+How can such decisions be continuously reconsidered depending on the actual (spatial/temporal context) in which the composition is deployed?
+%
+Can we make multi-level composition seemingly work as well?
+
+We refer to this problem as the self-composition problem for service ecosystems, where by ``self-'' we mean that the underlying middleware makes sure that services tend to compose in order to form meaningful new services, in a way that users of the ecosystems simply perceive only atomic and composite services that are actually useful in practice.
+
+We argue that this vision cannot be fulfilled by the above-mentioned approaches taken in isolation, but instead require them to work altogether.
+%
+Advanced (semantic) matching of services is key to decide whether two services deployed by third parties can be composed together.
+%
+Evolutionary approaches seem the only solution to the problem of finely tuning the parameters used in the composition, preselecting, for instance, a subset of more promising compositions. 
+%
+And finally, competition of different compositions based on their actual exploitation appears instead as the only viable approach to measure the quality of a composition, hence promoting successful ones.
+%
+On the other hand, understanding how they can work together in a comprehensive framework is very difficult, and generally depends on the specific platform and service model one adopts.
+
+\begin{figure}[t]
+\begin{center}
+	\includegraphics[width=\textwidth]{img/sc-basic-mech.pdf}
+\end{center}
+\caption{Self-organising patterns and their relationships}
+\label{fig:patterns} 
+\end{figure}
+
+
+\subsection{Self-Composition with Gradient service}
+\label{sec:gradcomp}
+To ground our discussion of requirements and possible solutions, we here outline a paradigmatic example of composition in service ecosystems.
+%
+We consider a crowd steering scenario, based on the idea of guiding people towards locations hosting events of interest in a complex and dynamic environment (using semantic matching with people's interests) without any supervision, namely, in a self-organised way.
+%
+In particular, we consider a museum with a set of rooms connected by corridors, whose floor is covered with a network of computational devices (called sensor nodes).
+%
+These devices exchange information with each other based on proximity, have sensors of various kinds, and hold information as LSAs (e.g., about exhibits currently active in the museum).
+%
+Visitors exploring the museum are equipped with a smartphone device that holds their preferences. By interaction with sensor nodes, a visitor can be guided towards rooms with a target matching his/her interest, thanks to signs dynamically appearing on the smartphone or on public displays. 
+%
+This system is based on a gradient service, a key brick of self-organisation mechanisms (see \Cref{fig:patterns}) that is typically designed to provide optimal paths to roam a distributed system even in the context of very articulated environments (a building with rooms and corridors, or a traffic scenario) and by dynamically adapting (namely, self-healing) to unpredicted situations such as sudden road interruption \cite{FDMVA-NACO2012,biocore}.
+%
+Gradient starts from a source LSA located at an exhibition and spreads clones of it to all the nodes of the network by eco-laws of spreading and aggregation, basic building patterns as shown in \Cref{fig:patterns}.
+%
+In turn, as the gradient is stabilised, in each node the minimum distance value is kept, so that the shortest path to the source is automatically (and dynamically) defined \cite{mass2011}.
+%
+In this way, a person willing to reach a point of interest simply ``binds'' to a gradient LSA, and public/private displays show signs to guide her to the source.
+
+However, other services exist in the system, such as those provided by the many sensors available around.
+%
+Among them we have the crowd detection service, enacted by the injection in each node on the floor of a crowd LSA reporting the crowd level sensed there ($0$ is no crowd, $1$ is maximum crowd).
+%
+An other service is the one that, given visitor preferences and profile, defines a set of other possible points (exhibitions, toilets, refresh points) the user can found interesting or useful.
+%
+This service can be an external agent that is able to process visitor information, for instance defining related exhibitions, so as to provide, in the form of an LSA, a list of best points the user can pass by.
+%
+Then we can have sensors for temperature, sensors for pollution, accelerometers etc. 
+%
+More generally, being a pervasive system an open system, new services may appear in the system, and autonomously be composed with existing ones, without a predefined schema.
+%
+Only those compositions that create useful services will then survive.
+%
+To exemplify the idea, in the following we describe two self-composition problem we envisioned.
+
+\subsubsection{Crowd composition}
+This self-composition problem focuses on making the gradient service automatically compose to the crowd detection service so that the estimated distance to the source gets ``penalised'' in  case of a high crowd value, which implies that the path computed towards a point of interest intrinsically takes into account situations of crowded areas dynamically emerging in the environment, properly circumventing them.
+%
+In particular what we expect to the middleware to automatically do is: decide to compose the gradient with crowd sensing instead of with other (irrelevant sensors), and optimally tune how much crowd information should affect the computation of optimal path.
+
+\subsubsection{Ad-hoc path composition}
+If the gradient service is tagged with the point of interests crossed, it can be composed with the list of  ``best points'' defined for each user, so that, in case of intersection, such gradient gets ``reinforced" for instance diminishing its value, which then implies that the direction it comes from has more chance to be chosen, and paths which cross points interesting or useful for the user are likely to be followed. 
+%
+In particular what we expect to the middleware to automatically do is: decide to compose the gradient with the LSA representing the ``best points", and optimally tune to which extent information on preferences should affect the computation of optimal path. 
+
+\subsection{A prototype solution}
+Starting from a number of services available in those nodes where sources of gradient services are located -- all reified by an LSA that can be injected in different parts of the system but via chemotaxis reach gradient sources -- the solution we propose is based on the following mechanisms:
+
+\subsubsection{Composition}
+Based on one or more ``composition recommender'' agents available in source nodes, all the available compositions are computed using techniques of advanced matching of interface/behaviour/ontology. These are ranked -- according for instance to feedbacks  from the users on the composite service, as discussed later --  and the description of a limited number of them is reified in the space in the form of a set of LSAs. 
+%
+In the example of crowd steering proposed above, these compositions should result in a set of LSAs representing the source of different gradients, each one created composing the basic gradient with one or more services. We assume that the composition actuated, \emph{i.e.} which services are composed and which parameters are used in the composition, is stored into a property of the gradient LSA, so that the same composition can be performed in all the locations of the system.
+
+\subsubsection{Contextualisation}
+From the source, composite gradients and the basic one, are diffused. In each location they are contextualised with the local value of those services they are composed by. 
+%
+Contextualisations involving gradients normally result in a modification of the local value of distance according to a function $\delta$ specified in the service or defined by the composition agent. 
+%
+If services are not locally available, contextualisation does not happen and the distance value does not change. 
+%
+For instance, contextualise gradient  with the crowd level perceived in each location at the purpose of discouraging paths crossing crowded areas. It means that distance should be increased and function $\delta$  looks like $\delta = k * c$ where $k$ is a function parameter (see later how to define its values), and $c$ is the local crowd level. 
+
+\subsubsection{Choice}
+The resulting effect is that the gradient service is available in the system in different forms (the basic one and the composite ones), and users, once entering in the system, can probabilistically choose among them, grounding such decision mainly on the distance and satisfaction values.
+%
+They will then follow the same composition for the whole path.
+
+\subsubsection{Feedback}
+Each gradient owns a property called ``satisfaction'', representing the feedback of users on the quality of the service itself.
+%
+It can for instance evaluate the length of the path, the interest  and so on: the higher the value is, the higher is the user satisfaction. 
+%
+People, once they reach the source, should then provide their feedbacks in the form of  LSAs with predefined properties ---such as length, comfort, beauty, interest.
+%
+Marks, for each property, might be defined in a predefined range. 
+%
+From there one agent can then be in charge to compute the satisfaction value as a function of all the marks given -- for instance, the average.
+%
+The LSA of the correspondent gradient source is then modified by adding to the previous value of the satisfaction property the last computed.
+%
+This updated value is then spread  in the whole system autonomously as a result of gradient diffusion.
+ 
+\subsubsection{Evaporation}
+The satisfaction value can also be interpreted as the relevance value of the Evaporation pattern \cite{FDMVA-NACO2012}.
+%
+This parameter gets decreased until fading if not augmented by user positive feedbacks. Once it is equal to zero the composite service can be removed. This mechanism ensures that no satisfactory compositions are decayed.
+
+\subsubsection{Evolution}
+If parameters are to be chosen for the composition -- for instance parameter $k$ in $\delta = k * c$, representing how much the crowd level has to influence the distance value of the field --, they can be tuned by agents implementing evolutionary techniques.
+%
+They are in charge to define the  new population of parameters according to the fitness function that can be computed from the satisfaction value of the gradient itself.
+
+\noindent The emergent idea is that, after a transition period, system makes available only those services that better fit user preferences. For instance, for those users interested in quickly reach the sources, only those gradients that ensure the lowest arrival time should survive.
+
+
+\section{A formal model for gradients self-compositions}
+To describe how self-composition of gradients can be built in the SAPERE framework, we first introduce the implementation schema for gradients which we shall rely upon to formalise the self-composition task in the specific example of crowd service exploitation.
+
+\subsection{The gradient service}
+Our strategy for modelling gradient's features: 
+\begin{enumerate}
+ \item a continuous broadcast of information in each node as in \cite{flexiblegradients}, with latter information always overwriting previous one;
+ \item propagation of estimated distance, computed by summing the contributions given by property \texttt{mid:distance} in neighbour annotation;
+ \item propagation with no horizon (it is easy to impose a distance bound to the propagation of information);
+ \item after been sent to a neighbour, an annotation is subject to a contextualisation phase (in which e.g. aggregations are executed) before being spread again.
+\end{enumerate}
+
+\begin{figure}\vspace{10pt}
+{\footnotesize \begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}, label={\small \bf Transition Rules for Gradients}]
+# [PUMP] An annotation of type source continuously injects the initial
+# gradient annotation
+\textbf{?SOURCE} sos:type sos:source; sos:aggr_prop ?P; sos:step ?T;
+     sos:r_diff ?R; sos:r_ctx ?RC
+--?R--> 
+\textbf{?SOURCE} sos:step =(?T+1) +
+\textbf{?GRAD}(?GRAD clones ?SOURCE) sos:type -sos:source sos:diff
+     sos:aggr; sos:dist "0"; sos:orientation "here"
+
+# [DIFF] A gradient annotation is cloned in a neighbour, with distance
+# increased and updated orientation
+\textbf{?GRAD} sos:type sos:diff; sos:dist ?D; sos:r_diff ?R +
+\textbf{?NEIGH} mid:type mid:#neigh; mid:remote ?L; mid:orientation ?O;
+     mid:distance ?D2
+--?R-->
+\textbf{?GRAD} + \textbf{?NEIGH} +
+\textbf{?GRAD1}(?GRAD1 clones ?GRAD)  sos:type -sos:diff sos:ctx;
+     sos:dist=(?D+?D2); sos:orientation =?O; mid:#loc ?L
+
+# [CTX] A contextualising annotation is transformed back into an annotation
+# to be diffused
+\textbf{?GRAD} sos:type sos:ctx; sos:r_ctx ?RC
+--?RC->
+\textbf{?GRAD} sos:type sos:-ctx sos:diff;
+
+# [YOUNGEST] Of two annotations to be aggregated based on property ?P, the
+# one with newest information is kept
+\textbf{?ANN1} sos:type sos:aggr; sos:aggr_prop ?P; ?P =[?C]; sos:step ?T +
+\textbf{?ANN2} sos:type sos:aggr; sos:aggr_prop ?P2; ?P2 =[?C]; sos:step ?T2(?T2<?T)
+--->
+\textbf{?ANN1}
+
+# [SHORTEST] Of two annotations to be aggregated based on property ?P,
+# the one with shortest distance from source is  kept
+\textbf{?ANN1} sos:type sos:aggr; sos:aggr_prop ?P; ?P =[?C]; sos:dist ?D1;
+     sos:step ?T  +
+\textbf{?ANN2} sos:type sos:aggr; sos:aggr_prop ?P2; ?P2 =[?C];
+     sos:dist ?D2(?D2>=?D1); sos:step ?T
+--->
+\textbf{?ANN1}
+
+[DECAY] An annotation decays
+\textbf{?GRA} sos:type sos:diff; sos:r_dec ?RD
+--?RD->
+
+\end{Verbatim}
+}
+\vspace{-10pt}\caption{Rules for gradients}\label{laws:gradient}
+\end{figure}
+
+Such rules are reported in \Cref{laws:gradient} and are described in turn.
+%
+Note that they refer to namespace \texttt{mid} for URIs related to middleware activities, and to \texttt{sos} for those concerning self-organisation aspects.
+
+Rule [PUMP] is a transformation rule which takes a source annotation and creates a new annotation with distance set to $0$, used to start the spreading process.
+%
+The source annotation should feature property \texttt{sos:type} assigned to value \texttt{sos:source} (we shall say the annotation is of type \texttt{source} for brevity), and it should also have some value assigned to properties \texttt{sos:aggr\_prop} (the name of the property holding the value used to aggregate other annotations as described below), \texttt{sos:step} (an incremental value used to refresh information), \texttt{sos:r\_diff} (diffusion rate) and \texttt{sos:r\_ctx} (contextualisation rate).
+%
+This rules fires at diffusion rate \texttt{?R}: according to CTMC semantics, this means that as soon as a matching set of reactant annotations is found, actual application of the rule is delayed of a time $t$ randomly drawn according to a negative exponential distribution of probability with average value $1/\texttt{?R}$---namely, it is fired at frequency \texttt{?R}.
+%
+The effect of firing this rule is twofold: it increases the value of property \texttt{sos:step} of the source annotation, and creates (by cloning the source) a new annotation \texttt{?GRAD} of type \texttt{sos:diff} and \texttt{sos:aggr} (original type \texttt{sos:source} is removed), and declaring distance $0$ and orientation \texttt{here} with respect to the source---these properties will be update as the annotation is spread around.
+%
+Note that the right-hand side of a rule mentions only changes in annotations, without any need of repeating information provided in the left-hand side which has not changed: this allows a simpler structuring of rules with respect to more syntactic approaches like the one in \cite{mass2011}.
+
+Rule [DIFF] is used to diffuse a cloned version \texttt{?GRAD1} of a gradient annotation \texttt{?GRAD} in one neighbour.
+%
+The gradient annotation should be of type \texttt{diff}, declare distance \texttt{?D} from the source and have diffusion rate \texttt{?R}.
+%
+This rule has as further reactant a neighbour annotation, from which information about a neighbour \texttt{?L} with orientation \texttt{?O} and distance \texttt{?D2} can be extracted.
+%
+This rule leaves the reactants unchanged, but creates a clone of \texttt{?GRAD} with type \texttt{ctx} instead of \texttt{diff}, to be relocated at \texttt{?L} and indicating orientation (with respect to originating location) \texttt{?O} and distance \texttt{?D+?D2}.
+%
+Note that continuous application of this rule at rate \texttt{?R} makes copies of the gradient annotation to be created and diffused in all neighbours.
+
+An annotation is relocated with type \texttt{ctx}, which forbids further application of rule [DIFF].
+%
+This is because we first need to aggregate all incoming annotations before a new diffusion is scheduled.
+%
+To do so, rule [CTX] defers change of type from \texttt{ctx} to \texttt{diff}, which happens at rate \texttt{?RC} (contextualisation rate).
+
+One form of aggregation is due to rule [YOUNGEST], used to refresh gradients with new information.
+%
+It takes two annotations such that the values associated to the aggregation property \texttt{?P} are the same, and retains the one with bigger \texttt{sos:step}.
+%
+The idea is that \texttt{sos:aggr\_prop} holds the name of a property \texttt{?P} which is expected to contain some value(s) that should be identical in two annotations for them to be aggregated.
+%
+For instance, it could be the unique id of a gradient source, so that we do not aggregate annotations coming from difference sources---but more involved situations can be programmed as exemplified in next section.
+
+Rule [SHORTEST] is similar: it takes two annotations with same step (hence coming from the same gradient annotation as generated by rule [PUMP]), and retains the one with shortest distance only if, again, they have same content of aggregation property.
+
+Finally, rule [DECAY] is used to remove an annotation at a given decay rate \texttt{?RD}. This is useful as a cleanup mechanism in the case a gradient source is removed from the system---though it plays no crucial role in this paper and will be neglected in next discussions.
+
+For the above rules to properly work we need to synthesise a well-structured source annotation, featuring all required properties and proper values for rates---namely, diffusion rate is to be chosen to keep the system sufficiently reactive to changes without bloating the system with undesired messages, and contextualisation rate should be significantly higher than diffusion rate (at least one order of magnitude).
+%
+For instance we could use the following source annotation:
+
+{\begin{verbatim}
+:id314 mid:#loc :loc117;  sos:type sos:source; 
+       sos:step "0";      sos:sourceid "341AB2"
+       sos:aggr_prop sos:sourceid; 
+       sos:r_diff "10";   sos:r_ctx "100"
+\end{verbatim}}
+
+
+
+\subsection{Rules for Gradient Composition}
+
+\begin{figure*}[t!]\vspace{10pt}
+{\footnotesize \begin{Verbatim}[frame=single, commandchars=\\\{\}, label={\small \bf Eco-laws for gradient contextualisation}]
+# [COMPOSITION] The gradient source is composed with the crowd service
+\textbf{?SOURCE} sos:type sos:source; scm:satisfaction ?S +
+\textbf{?CROWD} scm:type crowd; crowd:level ?CL 
+---> 
+\textbf{?SOURCE} +
+\textbf{?CSOURCE}(?CSOURCE clones ?SOURCE) scm:property sos:dist;
+     scm:parameters scm:crowd_op  ?CF;  scm:crowd_op  ?CF*?CL
+
+# [CONTEXTUALISATION] If sensors perceive crowd, the gradient distance is
+# augmented
+\textbf{?GRAD} sos:type sos ctx; sos:dist ?D;  scm:property sos:dist; 
+     scm:parameters scm:crowd_op scm:crowd_factor; scm:crowd_factor ?CF;
+     scm:crowd_op  ?CF*?CL +
+\textbf{?CROWD} scm:type crowd;  crowd:level ?CL 
+--->
+\textbf{?CROWD} + \textbf{?GRAD}  sos:type -sos:ctx sos:diff; sos:dist =(?D+?CF*?CL)
+
+# [FEEDBACK] Feedbacks are used to update the satisfaction values
+\textbf{?FEEDBACK} scm:parameters scm:crowd_op; scm:feedback  scm:velocity;
+scm:velocity ?V +
+\textbf{?GRAD} scm:satisfaction ?S; scm:parameters scm:crowd_op 
+--->
+\textbf{?GRAD} scm:satisfaction =(?S+?V)
+
+# [EVAPORATION] The gradient satisfaction value gets decreased
+\textbf{?GRAD} scm:satisfaction ?S; scm:factor_ev ?FE; scm:r_ev ?RE
+--?RE->
+\textbf{?GRAD} scm:satisfaction =(?FE*?S)
+
+# [DECAY] If the gradient satisfaction value becomes zero that composition
+# is removed
+\textbf{?GRAD} scm:satisfaction "0"; 
+--->
+
+\end{Verbatim}
+}
+\vspace{-10pt}\caption{Additional rules for anticipative gradients.}\label{laws:crowd}
+\end{figure*}
+
+%
+Rule [COMPOSITION] in \Cref{laws:crowd}, is in charge of creating the source of the composite gradient. The new source owns the same set of properties of the basic one, as soon as it refers to the same PoI, but it also defines which properties are to be modified as an effect of the composition  -- \texttt{sos:dist} --, and which are composition parameters -- \texttt{scm:parameters} -- , \emph{i.e.}  function -- \texttt{scm:crowd\_op} -- to be used for modifying the distance value, and coefficient ---\texttt{scm:crowd\_factor}. In this preliminary example we adopt a simple linear function of the crowd level perceived by sensors in each location. It increases the distance of those paths crossing crowded area, if the coefficient has an opportune value.
+%
+Rule [CONTEXTUALISATION]  applies the composition specified in \texttt{scm:parameters}, in each location of the system.
+%
+Rule [FEEDBACK] is used to modify the satisfaction value of gradient, taking into account the velocity of the path chosen. It can be computed by the system itself, or provided by the user. The value of \texttt{scm:satisfaction} gets increased by \texttt{scm:velocity} value.
+
+Rules [EVAPORATION] and [DECAY] are finally used to evaporate the \texttt{scm:satisfaction} value according to an evaporation factor \texttt{scm:factor\_ev ?FE} in the range of [0,1] and to remove the gradient composition in case of a \texttt{scm:satisfaction} value equal to zero, or negative, ensuring that only those compositions that compute fast paths will survive.
+
+
+%{\small \begin{verbatim}
+%% Source of a gradient
+%:id224 mid:#loc :loc117;
+%   sos:type sos:source;  aa:type aa:target; 
+%   sos:aggr_prop aa:tag; aa:tag "341AB2"; 
+%   sos:sourceid "341AB2";                
+%   sos:step "0";         sos:r_diff "10"; 
+%   sos:r_ctx "100";      sos:r_dec "1"
+
+%% Source of a wave
+%:id357 mid:#loc :loc131;
+%   sos:type sos:source;  aa:type aa:wave; 
+%   aa:event "157FFE3";   sos:aggr_prop aa:event; 
+%   aa:start "150";       aa:end "250";
+%   sos:step "0";         sos:r_diff "10"; 
+%   sos:r_ctx "100";      sos:r_dec "1"
+%\end{verbatim}}
+
+
+\section{Towards simulation of gradient self-compositions}
+
+We checked the correctness of the proposed self-composition solution by simulation, conducted using \alchemist{}.
+
+Results presented show early experiments on gradient composition with crowd level, where people dynamically enter in the system and begin to move towards the target ascending one of the different compositions available. Movement velocity is constant in the system, except for crowded areas, where it decreases according to the crowd level perceived: higher crowd, slower velocity.
+%
+In these early experiments, parameter $k$ in function $\delta$ is not computed dynamically through an evolutionary algorithm but composition agents define a set of possible values. A new composition corresponds at each value.
+%
+Users chose one gradients randomly but considering also the associated satisfaction value  that measures the velocity of the best path each gradient proposes. This feedback is computed by each user once reached the target, given the length of the path and the distance walked.
+
+The goal is to observe that, satisfaction values, initially the same for each composition, dynamically change according to feedbacks from the users, and only best compositions survive. In \Cref{fig:scsimu} such process is shown for different values of parameter $k$: the system reaches a stable state with $k=0.5$ ensuring the faster path while the other compositions decay.
+
+\begin{figure}
+	\begin{center}
+ 		\includegraphics[width=\textwidth]{img/sc-simu.pdf}
+\end{center}
+\caption{Satisfaction values for different compositions changing over time.}
+\label{fig:scsimu} 
+\end{figure}
+
+\chapter{Case study: Semantic resource discovery}
+\chapter{Case study: Crowd disasters prediction}
+\chapter{Case study: Crowd steering at the urban scale}
 \label{ahpc-steering}
 In section, we focus on the problem of crowd steering at the urban scale.
 %
@@ -2986,7 +3410,7 @@ Crowds of people vary with time, and consequently we need a system able to dynam
 %
 As per our line of research, we obviously want the computation to happen in a completely distributed fashion, with no centralised computing system involved.
 
-\subsection{Devices and physical configuration}
+\section{Devices and physical configuration}
 
 We suppose users to be equipped with smart devices, also able to communicate with other devices within a certain range with a wireless technology, and must be able to be aware of their current position.
 
@@ -3011,7 +3435,7 @@ The last assumption we make is that devices are able to estimate the time needed
 %
 This last assumption is again perfectly acceptable considering the current technology, where smart devices are always connected to the Internet and can access public navigation services.
 
-\subsection{Distributed crowd steering}
+\section{Distributed crowd steering}
 
 Given the structure described above and the mobile smart devices able to communicate with the static nodes, we now outline a possible software solution.
 %
@@ -3051,7 +3475,7 @@ A further refinement of these steering mechanisms involve the ability to react t
 %
 The patterns required to do so have already been presented in \Cref{anticipative-gradient}, and the interested reader can deepen reading \cite{anticipativegradient-SASO12}.
 
-\subsection{Simulation in \alchemist{}}
+\section{Simulation in \alchemist{}}
 \label{ahpc-simulation}
 We decided to focus on the case of mass urban sports events, and in particular on the Vienna City Marathon 2013, an event that every year involves about 40.000 actives and 300.000 spectators.
 %
@@ -3148,8 +3572,8 @@ We claim that, assuming the traces to be a representative sampling of the actual
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Aggregate programming languages}
-In this chapter
+\part{Aggregate programming languages}
+% In this chapter
 % Possibile intro: in questo capitolo si fanno tre cose: 1) si cerca di modificare un meccanismo classico (Linda) in modo adattarlo al ragionamento di programmazione aggregata. 2) Si propone una restrizione di field calculus ad operazioni safe, e si dice ovviamente che vuol dire safe in un continuum spazio-temporale. 3) Si propone una implementazione pratica, che parte dai concetti di field calculus (non da GPI perché in generale un linguaggio ti deve consentire tutto, ma ci sta di ragionare sul fatto che poi una API safe andrebbe fornita) -- nelle conclusioni
 
 %TODO: convergenza fra tuple e spatiale computing
@@ -3158,23 +3582,23 @@ In this chapter
 
 %TODO: tutta la parte di Linda space-time, da vedere come un lavoro che cerca di portare la tuple based coordination verso un concetto di continuum spazio-temporale %
 
-When we introduced Field Calculus in \Cref{field-calculus}, we said that it is more a theoretical than a practical framework.
-%
-Building on the foundation of field calculus, the subsequent step is to provide a framework that can be practically leveraged to express a collection of higher-level ``building block'' algorithms, each a simple and generalized basis element of an ``algebra'' of programs with desirable resilience properties (e.g., the operators presented in~\cite{BV-FOCAS2014}).
-%
-On top of this, higher-level library APIs can be built, enabling simple and transparent construction of robust distributed systems.
-
-Any practical implementation of field calculus must embed a field calculus interpreter within an architecture that handles the pragmatics of communication, execution, and interfacing with hardware, operating system, and other software.
-%
-At the same time, it is important that this system be readily portable across both simulation environments and real networked devices.
-%
-Finally, both system development and maintainability are greatly enhanced if the exact same code is used for execution in all contexts.
-
-Here is where \protelis{} comes into play: it represents our effort to bring Field Calculus to practice, satisfying the requirements stated above.
+% When we introduced Field Calculus in \Cref{field-calculus}, we said that it is more a theoretical than a practical framework.
+% %
+% Building on the foundation of field calculus, the subsequent step is to provide a framework that can be practically leveraged to express a collection of higher-level ``building block'' algorithms, each a simple and generalized basis element of an ``algebra'' of programs with desirable resilience properties (e.g., the operators presented in~\cite{BV-FOCAS2014}).
+% %
+% On top of this, higher-level library APIs can be built, enabling simple and transparent construction of robust distributed systems.
+% 
+% Any practical implementation of field calculus must embed a field calculus interpreter within an architecture that handles the pragmatics of communication, execution, and interfacing with hardware, operating system, and other software.
+% %
+% At the same time, it is important that this system be readily portable across both simulation environments and real networked devices.
+% %
+% Finally, both system development and maintainability are greatly enhanced if the exact same code is used for execution in all contexts.
+% 
+% Here is where \protelis{} comes into play: it represents our effort to bring Field Calculus to practice, satisfying the requirements stated above.
 
 %TODO: dire che ha anche una parte più teorica, relativa a codice mobile e HOF in field calculus%
 
-\section{Convergence between tuple based coordination and aggregate programming}
+\chapter{Tuple based aggregate programming}
 
 A common viewpoint in developing coordination models on top of Linda~\cite{linda-toplas7} is that tuples are a mechanism to reify and exchange events/data/knowledge that are important to system coordination, and to synchronise the activities of coordinated components in a parallel and/or distributed system.
 %
@@ -3193,9 +3617,9 @@ Such activities are expressed in terms of a process-algebra like language, compo
  \item accessing space-time contextual information to link the configuration of tuples with the actual physical space.
 \end{enumerate}
 
-\subsection{Linda in space-time}
+\section{Linda in space-time}
 
-\subsubsection{Basic model}
+\subsection{Basic model}
 
 Our coordination infrastructure runs on a (possibly very dense and mobile) set of situated computational devices, e.g., located in specific points (i.e. nodes) of the physical environment. 
 %
@@ -3223,7 +3647,7 @@ We only assume that it is long enough for executing steps (2-3-4) above.
 %
 This particular computational model for a tuple space has many similarities with the platform assumptions of the Proto language \cite{proto,spatialcomputing-sac11}.
 
-\subsubsection{The coordination language}
+\subsection{The coordination language}
 
 A key role in the proposed coordination model is played by the concept of space-time activities.
 %
@@ -3286,7 +3710,7 @@ We may also omit the denotation of a ``:'' branch when it leads to the execution
 \noindent
 in place of the third example above.
 
-\subsubsection{Definitions}
+\subsection{Definitions}
 
 When desired, one can equip the specification of an activity with \emph{definitions} (which can possibly be recursive), in the style of agent definition in $\pi$-calculus.
 %
@@ -3329,7 +3753,7 @@ in r(1,2,3)?out r(1,2,3):out r(1,2,3)
 \end{verbatim}\end{quote}
 }
 
-\subsubsection{Time}
+\subsection{Time}
 
 The language provided so far is still point-wise in space and time.
 %
@@ -3361,7 +3785,7 @@ outt(T,X) is (in-out(T); eval X<=0
 %
 Concerning the use of \texttt{\$delay}, we then observe that -- in the spirit of a Proto-style space-time computing model -- as the average duration of computation rounds tends to zero, activity \texttt{rep} tends to define a continuous update of tuple \texttt{time(T,X)} as time \texttt{X} passes, and similarly, \texttt{outt(T,X)} tends to remove tuple \texttt{T} precisely as time \texttt{X} passed.
 
-\subsubsection{Space}
+\subsection{Space}
 
 To situate activities in space we introduce construct \texttt{neigh}.
 %
@@ -3394,7 +3818,7 @@ For instance, one can define a process \texttt{gosst} that adds temporal aspects
 %
 In the sense of spatial computing interpretation~\cite{proto}, the definition of \texttt{gosst(T,R,TO)} would be the definition of a geometric space-time activity called ``sphere of tuple \texttt{T} with radius \texttt{R} and timeout \texttt{TO}''---useful to limit the spatial and temporal extent of some advertised information.
 
-\subsubsection{Finally}
+\subsection{Finally}
 
 We conclude by introducing a construct named \texttt{finally}, used to simplify the task of structuring the activities executed at a given round.
 %
@@ -3416,11 +3840,11 @@ Only when all such messages have been processed in a round (and there are typica
 %
 The result of their execution is that only one tuple \texttt{T} will remain in the tuple space.  The \texttt{finally} construct can thus, e.g., serve a similar aggregation and simplification role to the *\texttt{-hood} constructs in Proto.
 
-\subsection{Core Calculus}
+\section{Core Calculus}
 
-In this section we introduce a formalisation of the proposed framework similar in spirit to those of \cite{zavattaro,klaim,biochemicalTupleSpaces}, namely, by a core calculus taking the shape of a process algebra.
+In this\levelText{}we introduce a formalisation of the proposed framework similar in spirit to those of \cite{zavattaro,klaim,biochemicalTupleSpaces}, namely, by a core calculus taking the shape of a process algebra.
 
-\subsubsection{Syntax}
+\subsection{Syntax}
 
 Let meta-variable $\sigma$ range over tuple space (or node) identifiers, $x$ over logic variables, $\tau$ over real numbers used to model continuous time, and $f$ over function names (each with a given arity, and used either in infix of prefix notation)---as usual we refer to functions with arity 0 as constants.
 %
@@ -3533,7 +3957,7 @@ Second line states that scheduling operators can be lifted out of action prefix 
 %
 Last line states that when a \texttt{finally} and \texttt{next} actions are in parallel composition, the latter can enter the former: this will in fact leave scheduling policy for $Q$ unchanged.
 
-\subsubsection{Operational Semantics}
+\subsection{Operational Semantics}
 
 We define operational semantics by transitions $C\xrightarrow{\lambda}C'$, where labels $\lambda$ can have the syntax described in \Cref{f:gra} (a).
 %
@@ -3583,9 +4007,9 @@ In the former two cases (namely, unless we change computation round), $\tau_0=\t
 $C\otimes\scope{S}{\sigma}{\tau,\tau'}\stackrel{\labsilent{\sigma}}{\nrightarrow}$ and $C\otimes\scope{S}{\sigma}{\tau,\tau'}\stackrel{\labmesg{\sigma}{P}}{\nrightarrow}$ iff $S\equiv(T\opar\nextSTL{P})$. In that case, we have $C\otimes\scope{S}{\sigma}{\tau,\tau'}\xrightarrow{\labnew{\tau_0}{0}{\sigma}}C'\otimes\scope{S'}{\sigma}{\tau_0,\tau}$ for any $\tau_0>\tau$.
 \end{property}
 
-\subsection{Case studies}
+\section{Case studies}
 
-\subsubsection{Adaptive Crowd Steering}
+\subsection{Adaptive Crowd Steering}
 
 As a first example we study a specification able to support the case study presented in \cite{sapereecolaws-sac2012,mass2011}, with the goal of showing how $\sigma\tau$-Linda can provide support to easily define complex, distributed and adaptive data structures, and how they can be used in practice in a pervasive computing scenario.
 
@@ -3662,7 +4086,7 @@ Note that not only every visitor reached the POI, but they all bypassed the crow
 %
 Further simulations we do not describe here for the sake of space show that the above properties hold for a large set of situations, including presence of crowds in different locations and dynamic formation and movement of such crowds during simulation\footnote{The interested reader can download an example clip at: {\url{http://apice.unibo.it/xwiki/bin/download/Publications/Coord2012/museum-small.avi}}}.
 
-\subsubsection{Linda in a mobile ad-hoc environment}
+\subsection{Linda in a mobile ad-hoc environment}
 
 As a second case study we show a possible extension for Linda standard primitives taking into account both time and spatiality.
 %
@@ -3735,7 +4159,7 @@ Given these two basic bricks, the \texttt{stout} and \texttt{stin} primitives wo
 
 These new primitives allow agents to publish/retrieve information flexibly tuning the space-time horizons, relying on lower-level gradients (and routing paths) which adapt to the mobility of the network \cite{flexiblegradients}.
 
-\section{Scale independent computations in situated networks}
+\chapter{Scale independent computations}
 
 Spatially, pervasive networks will tend to be highly variable in their density across space and time, and this represents a key problem.
 %
@@ -3745,7 +4169,7 @@ Likewise, the density of devices is likely to vary greatly in time, both as incr
 
 We contend that the development and maintenance of distributed systems in the face of such fluctuations will only be tractable if they make use of techniques that ensure ``by construction'' that computations are inherently resilient against such forms of variability.
 %
-Toward that end, the first contribution of this section (as an extension of the work in \cite{BVD-SCW14}), is the identification of a notion of \emph{consistency} of a space-time computation, stating that the outcome of a computation converges as the density of computing devices increases toward infinity.
+Toward that end, the first contribution of this\levelText{}(as an extension of the work in \cite{BVD-SCW14}), is the identification of a notion of \emph{consistency} of a space-time computation, stating that the outcome of a computation converges as the density of computing devices increases toward infinity.
 %
 This is further refined to \emph{eventual consistency}, which focuses only on the stable outcome of a computation (e.g., self-stabilizing patterns as studied in~\cite{VD-COORD2014-LNCS2014}).
 
@@ -3757,7 +4181,7 @@ We show how $\OneOp$ can be used to implement well-known self-organization patte
 %
 Finally, these patterns are applied in several situated network scenarios, and simulations confirm the predictions of eventual consistency.
 
-\subsection{Space-Time Computation and Discrete Approximation}
+\section{Space-Time Computation and Discrete Approximation}
 
 \begin{figure}
 \centering
@@ -3794,7 +4218,7 @@ $\inforegion{\event}$     & Intersection $\hoodof{\event} \cap \closure{\pastof{
 \label{f:symbols}
 \end{figure}
 
-This section presents a model of computation over continuous space-time, per~\cite{bealBasisSCW10,BVD-SCW14,BealUsbeck12},  and defines properties linking it with approximate implementation on a wireless network.
+This\levelText{}presents a model of computation over continuous space-time, per~\cite{bealBasisSCW10,BVD-SCW14,BealUsbeck12},  and defines properties linking it with approximate implementation on a wireless network.
 %
 The continuous abstraction allows specification of a physically situated computation without consideration of the particulars of the network that will be used to implement it.
 %
@@ -3815,7 +4239,7 @@ For additional assistance to the reader, we provide a table of the symbols (\Cre
 \label{f:definitions}
 \end{figure}
 
-\subsubsection{Modelling Networks as Space-Time Manifolds}
+\subsection{Modelling Networks as Space-Time Manifolds}
 
 Many physically situated networks perform computations that can be naturally described in terms of the physical space through which the devices comprising the network are distributed.
 %
@@ -3850,7 +4274,7 @@ A point $\event \in \manifold$ is termed an ``event,'' denoting its interest as 
 
 A {\em device} $\device$ can be any one-dimensional curve in the manifold with purely time-like relations between the points\footnote{This is analogous to the physics notion of a world-line.}.
 %
-The mathematical analysis in this section also makes the simplifying assumptions that the manifold is finite in diameter and that devices do not move\footnote{In practice, the results we develop here often apply to slowly moving devices as well.}.
+The mathematical analysis in this\levelText{}also makes the simplifying assumptions that the manifold is finite in diameter and that devices do not move\footnote{In practice, the results we develop here often apply to slowly moving devices as well.}.
 %
 Finally, a {\em spatial section} is any subspace $\sectionof{\manifold}$ whose complement is its time-like future and history, i.e., $\manifold-\sectionof{\manifold} = \futureof{\sectionof{\manifold}} \cup \pastof{\sectionof{\manifold}}$, implying all points in $\sectionof{\manifold}$ have purely space-like separation.  
 %
@@ -3866,7 +4290,7 @@ Spatial sections are essentially snapshots in time, without attempting to enforc
 \label{f:spacetime}
 \end{figure}
 
-\subsubsection{Computations on Continuous Space and Time}
+\subsection{Computations on Continuous Space and Time}
 
 Typical formulations of distributed computation (e.g.,~\cite{Lynch:1996:DA:525656}) cannot be applied to space-time manifolds, as any manifold contains an uncountably infinite number of events, and thus the events of the computation cannot be ordered.
 %
@@ -3960,7 +4384,7 @@ An example of a non-causal computation is a computation that instantaneously cha
 An example of a non-approximable computation is one that maps all rational distances from an event to $0$ if the numerator is even and $1$ is the numerator is odd.
 
 
-\subsubsection{Space-time programs}
+\subsection{Space-time programs}
 
 One way of specifying space-time computations is by the functional composition of a basis set of operators:
 %
@@ -3996,7 +4420,7 @@ In~\cite{BealUsbeck12} and~\cite{BVD-SCW14}, space-time programs are formalized 
 
 For clarity in the description of programs, we will abuse terminology; in the context of a program, a ``field'' is not actually the mathematical object itself, but the input or output of an operator instance, which takes on a field value when evaluated in the context of an environment.
 
-\subsubsection{Eventually Consistent Programs}
+\subsection{Eventually Consistent Programs}
 
 We now apply the continuous model of computation to identify distributed algorithms that are resilient to changes in the number and position of devices.
 %
@@ -4021,13 +4445,13 @@ As defined, eventual consistency is a conservative property, saying nothing abou
 %
 For many programs, however, the constructs used to ensure eventual consistency often produce more broad resilience.
 
-\subsection{Eventually Consistent Language}
+\section{Eventually Consistent Language}
 
-In this section, we develop a language that generates only eventually consistent programs.
+In this\levelText{}we develop a language that generates only eventually consistent programs.
 %
 This language, \calculus{}, derives both its syntax and semantics from field calculus~\cite{VDB-FOCLASA-CIC2013}, but is restricted to a set of eventually consistent operators that compose to produce programs that are also guaranteed to be eventually consistent.
 
-\subsubsection{From Consistency Failures to Fragility}
+\subsection{From Consistency Failures to Fragility}
 
 Consistency is a useful property because it allows us to evaluate when a computation is fragile to the circumstances of its evaluation.
 %
@@ -4108,7 +4532,7 @@ As the bisector example shows, this cannot be done without eliminating at least 
 %
 Instead, the approach we present accepts that problematic boundaries will exist, and instead dynamically marks them and contains their effects.
 
-\subsubsection{\calculus}
+\subsection{\calculus}
 \label{s:calculus}
 
 Having identified ways in which consistency fails, introducing fragility to distributed algorithms, we now present a new language, \calculus{}, that restricts the syntax of field calculus and ensures that all programs it can express are eventually consistent.
@@ -4235,7 +4659,7 @@ For example, $\mux$ is sufficient to implement all logical operations, e.g.:
 (\km{def} \fn{not} (x)   (\pr{mux} x false true))
 \end{Verbatim}
 
-\subsubsection{GPI calculus is Eventually Consistent}
+\subsection{GPI calculus is Eventually Consistent}
 
 We can now prove that GPI calculus accomplishes the goal for which it has been designed: ensuring that any program that can be expressed using it is eventually consistent, meaning that it is resilient against the particulars of how many devices are in the network and how they are distributed in space.
 
@@ -4256,15 +4680,15 @@ Thus, if a program is evaluated in a ``well-behaved'' environment, its results a
 %
 Having proved this, in the next section we explore the usefulness of \calculus{} and demonstrate its consistency properties empirically in simulation.
 
-\subsection{Example Applications}
+\section{Example Applications}
 
 Having established a calculus for eventually consistent programs, we now aim to demonstrate its expressiveness.
 %
-In this section, we present a number of self-organization patterns that can be described in terms of \calculus{}, with accompanying application scenarios in current or emerging large-scale situated networks: wireless sensor networks, ad-hoc networks created by mobile smart-devices, and urban-scale ecosystems of devices and services for crowd steering.
+In this\levelText{}we present a number of self-organization patterns that can be described in terms of \calculus{}, with accompanying application scenarios in current or emerging large-scale situated networks: wireless sensor networks, ad-hoc networks created by mobile smart-devices, and urban-scale ecosystems of devices and services for crowd steering.
 %
 Simulations of these scenarios demonstrate both the potential impact of our result and confirm the consistency result and its effect in providing coordination behaviors resilient to changes in network density and scale.
 
-\subsubsection{Distance-Based Patterns}
+\subsection{Distance-Based Patterns}
 
 Distributed distance calculation is one of the most frequently used building blocks for self-organizing systems~\cite{FDMVA-NACO2012}.
 %
@@ -4338,7 +4762,7 @@ A {\tt broadcast} restricted to this channel with $\ifN$ can then effectively re
 %
 Note how the consistency of the pattern does not change significantly for different densities of devices: a change in density only affects the precision of the channel shape.
 
-\subsubsection{Path Forecasting}
+\subsection{Path Forecasting}
 
 In the uses of the $\OneOp$ construct so far the {\tt integrand} argument has been constant at $1$ for measuring distance and $0$ for broadcast.
 %
@@ -4387,7 +4811,7 @@ Dashed rectangular areas represent unfavourable (blue) and favourable (red) area
 \label{f:urban}
 \end{figure}
 
-\subsubsection{Context-Sensitive Distance}
+\subsection{Context-Sensitive Distance}
 
 The effective shortest path between a node and the source of a $\OneOp$ is not necessarily the physically shortest path induced by the standard metric.
 %
@@ -4424,7 +4848,7 @@ Distances are shown with respect to a destination on the South side of the Thame
 %
 In this scenario both a complex environment and a non-physical distance metric are used, and still provide eventually consistent results.
 
-\subsubsection{Confirmation of Results in Simulation}
+\subsection{Confirmation of Results in Simulation}
 
 \begin{figure}
 	\centering
@@ -4491,10 +4915,10 @@ The properties measured are:
 \noindent
 As predicted from our analytical results, these values converge with respect to both time and number of devices, confirming our predictions.
 
-\section{Higher order functions in field calculus}
-\subsection{Impact on alignment}
+\chapter{Higher order functions in field calculus}
+\section{Impact on alignment}
 
-\section{\protelis{}: practical aggregate programming}
+\chapter{\protelis{}: practical aggregate programming}
 \label{protelis-language}
 We have designed the \protelis{} language as an implementation of the field calculus \cite{VDB-FOCLASA-CIC2013} closely related to Proto~\cite{proto}.
 %
@@ -4509,7 +4933,7 @@ On the other hand, it turns the field calculus into a modern specification langu
 
 Protelis is freely available and open source, and can be downloaded as part of the \alchemist{} distribution.
 
-\subsection{Syntax}
+\section{Syntax}
 
 We present the \protelis{} language in terms of its abstract syntax, provided in \Cref{img:protelis-syntax} as a means to guide the discussion of the language's features.
 %
@@ -4565,7 +4989,7 @@ Overbar notation $\overline{y}$ generally means a comma-separated list $y_1,\ldo
 \end{figure}
 
 
-\subsection{Ordinary Language Features}
+\section{Ordinary Language Features}
 
 One of the distinctive elements of \protelis{} when compared to other aggregate programming languages (particularly Proto), is the adoption of a familiar C- or Java-like syntax, which can significantly reduce barriers to adoption.
 %
@@ -4631,7 +5055,7 @@ The alias is created automatically as the bare method name for single imports or
 %
 % For this reason, Protelis does not yet offer any neighborhood summary operations applicable to either Java or Protelis functions.
 
-\subsection{Special Field Calculus Operators}
+\section{Special Field Calculus Operators}
 \label{protelis-special-operators}
 The remaining constructs of Protelis are the special operations specific to field calculus, dealing with the movement of information across space and time:
 \begin{itemize}
@@ -4689,7 +5113,7 @@ It does so by a field \texttt{\vb{d}} initially \texttt{Infinity} everywhere, an
 Finally, function \texttt{\fn{distanceToWithObstacle}} shows exclusive branch at work; \texttt{\fn{distanceTo}(\vb{source})} is computed in the sub-region where there is no obstacle, which causes the computation of distances to implicitly circumvent such obstacles.
 
 
-\subsection{Architecture}
+\section{Architecture}
 \label{protelis-architecture}
 \begin{figure}
 \centering
@@ -4742,7 +5166,7 @@ This daemon monitors the service, injecting information about its status and kno
 %
 Examples using each of these implementations are shown in \Cref{protelis-rendezvous} and \Cref{protelis-network-service}.
 
-\subsection{Application example: Rendezvous at a Mass Event}
+\section{Application example: Rendezvous at a Mass Event}
 \label{protelis-rendezvous}
 
 \begin{figure}
@@ -4825,7 +5249,7 @@ As \Cref{img:protelis-rendezvous} shows, once the simulation starts, a chain of 
 %
 Note also that, due to the ongoing nature of the computation, if one of the device owners moves in a different direction instead, the path will automatically adjust so that it continues to recommend the best path for rendezvous.
 
-\subsection{Application example: Network Service Management}
+\section{Application example: Network Service Management}
 \label{protelis-network-service}
 
 One of the common problems in managing complex enterprise services is that there are often many dependencies between different servers and services.
