@@ -611,16 +611,27 @@ In the area of networking, stigmergy has been exploited to realize effective rou
 
 \section{Spatial patterns}
 
-%TODO: what is a pattern
-Vedere se c'è qualcosa di utile in NACO \cite{FDMVA-NACO2012} o in \cite{GVO-CEEMAS2007}, o in \cite{ecosystems-jpcc7} o in \cite{BabaogluPatterns}
+\begin{figure}
+\begin{center}
+	\includegraphics[width=\textwidth]{img/sc-basic-mech.pdf}
+\end{center}
+\caption{Self-organising patterns and their relationships}
+\label{fig:patterns} 
+\end{figure}
 
-\subsection{Gossip}
-
-%TODO% what is gossip
+Several recent works (\cite{FDMVA-NACO2012,GVO-CEEMAS2007,Mam06,Wolf2007}) have focussed on the issue of making self-organisation mechanisms systematically applicable, by proposing descriptions of those mechanisms under the form of catalogues of software design patterns~\cite{Gamma1995}.
+%
+Recent studies on self-organisation identified existing and new patterns to design computing applications featuring desirable properties of adaptation and robustness to unpredicted changes in the environment, such as human interaction, network mobility and faults, events in the physical environment.
+%
+As a reference, we consider the work in \cite{FDMVA-NACO2012}, in which a catalogue of patterns for self-organisation is introduced.
+%
+Following a series of work in self-organising coordination \cite{VCMZ-TAAS2011,sapereecolaws-sac2012}, such a catalogue uses a paradigm of chemical-like transformation rules (manipulating information items residing in the network nodes) to specify pattern behaviour and pattern combination.
+%
+This catalogue is organised in layers (see \Cref{fig:patterns}): low-level patterns achieve basic self-organisation mechanisms (Spreading, Aggregation and Evaporation), middle-level patterns are used to spatially organise information (gradient), and high-level patterns exploit such information to achieve individual or social goals in a multi-agent system (quorum sensing, chemotaxis, morphogenesis).
 
 \subsection{Gradient}
 \label{gradient}
-A simple though paramount data structure that can be built upon this paradigm and that is a building block of many of the more advanced patterns is the spatial gradient, which assigns to each node a value $\varGamma$ depending on its position in time and space and on its context \cite{mamei2009acm,crf,VCMZ-TAAS2011}.
+A simple though paramount data structure that is a building block of many of the more advanced patterns is the spatial gradient, which assigns to each node a value $\varGamma$ depending on its position in time and space and on its context \cite{mamei2009acm,crf,VCMZ-TAAS2011}.
 %
 This structure originates in one or more devices called sources.
 %
@@ -635,13 +646,23 @@ For instance, if $ \forall n \colon f(n)=\varGamma_{n}+1$, where $\varGamma_{n}$
 If $f(n) = \varGamma_{n} +d(n)$ where $d(n)$ measures the actual distance from the device towards $n$, then the value of the gradient will approximate the distance from the nearest source.
 %
 Finally, along with the local value, a gradient can carry more information, e.g. some strings, the position of $n$, or numeric values.
+%
+In this case, the gradient is a ``gradcast'', namely a mean to transmit an keep an information up-to date in both space and time.
+%
+This can be understood as a computational field \cite{SpatialIGI2013,mamei2009acm,VCMZ-TAAS2011}, namely, a distributed data structure mapping each node of the network (or of a subpart of the network) to some (possibly structured) value.
 
-% TODO problems with gradient
+Interestingly, the Gradient pattern can be designed to automatically self-heal to changes in the topology and to movement of the source \cite{flexiblegradients}.
+%
+% TODO problems with gradient salita lenta
 \cite{crf}
 
-\subsection{Gradcast}
+\subsection{Chemotaxis}
 
-\subsection{Voronoi partition}
+As a main example of upper-level pattern exploiting gradient, chemotaxis is about making a mobile agent (or some information) descending a gradient data structure so as to reach the source from any node the Gradient structure has reached.
+%
+This is achieved by making the agent continuously reading the estimated distance value as reported in the gradient annotations stored in its neighbourhood, and then moving towards the node exposing minimum distance -- the source is eventually reached by construction.
+%
+This pattern finds applications in long distance communications, or in physical items retrieval in situated applications such as those of pervasive computing.
 
 \section{Tuple-based coordination}
 
@@ -2827,6 +2848,239 @@ This happens because of the issue of slow ``raising values'' pointed out in \cit
 
 \chapter{Pattern: Anticipative adaptation}
 \label{anticipative-gradient}
+We note that -- to the best of our knowledge -- existing techniques studied for Gradients (see e.g. \cite{flexiblegradients,VCMZ-TAAS2011,sapereecolaws-sac2012}) tackle only present-awareness, that is, they adapt to events only at the time they occur.
+%
+In this\levelText{}, we are instead concerned with how Gradients can be equipped with \emph{anticipative adaptation}, namely, how they can take advantage of the local availability of information about future events, once this has been provided by some component in charge of situation recognition \cite{YeDM12}.
+%
+Our idea is to use such a knowledge in advance to stretch and deviate certain parts of a Gradient structure so as to promote alternative paths that could be longer, but guarantee to eventually circumvent any forbidden area so as to reach the target in shortest time.
+%
+Following the self-organisation approach, this will be realised in an emergent way, relying only on local interactions and without any supervision.
+%
+Example scenarios where this mechanism can be useful include traffic management, to tackle pre-scheduled road constructions, availability of historical formation about traffic jams in certain areas of a city, known timing of opening bridges or railroad crossing, and so on.
+%
+It can also be used in crowd steering applications based on signs appearing in public displays \cite{sapereecolaws-sac2012}: e.g., in a large exhibition centre the scheduling of popular and typically crowded exhibitions can be considered with the goal of anticipating and preventing the formation of crowds.
+
+\section{Anticipative Gradient}
+
+We conceive a new self-organisation mechanisms built upon the above Gradient pattern to tackle anticipative adaptation, namely, ensuring that the retrieval of the gradient source proactively reacts to available information about future events, namely, impossibility of transiting across a given area---e.g. modelling interruptions of roads in traffic control applications.
+%
+In this\levelText{}we first motivate and analyse the problem, then elaborate a solution based on a combination of mechanisms related to the gradient pattern, and finally check the general correctness of the result by some simulation.
+
+\subsection{Motivations and problem analysis}
+
+A basic application of the Gradient pattern is to steer a requester from its current location to the Gradient's source location---namely, what is called Chemotaxis pattern in \cite{FDMVA-NACO2012}.
+%
+Such a requester (which we here generally refer to as an agent) can either be a mobile software agent roaming a network to find proper information, a person guided in a complex environment by signs dynamically appearing in its smartphone \cite{mass2011}, a car which is given traffic control suggestions through its navigation system, or an information item directed to the target of a communication \cite{VCMZ-TAAS2011}.
+%
+It is quite standard to make the Gradient field adapt to contingencies as soon as they appear: for instance, interruption of a road can reflect into a change of the network topology, leading to the automatic recalculation of the Gradient structure to identify a new path towards the target of interest.
+%
+Following that line, in \cite{sapereecolaws-sac2012} it was studied how dynamically-formed crowded areas can be perceived as areas to be circumvented by other people roaming the environment.
+
+We address the design of a different mechanism which, to the best of our knowledge, has never been considered so far: how Gradient-based self-organisation mechanisms can be extended to deal with the case in which in some node(s) there is knowledge about an event that will occur there in the future and prevent/modify the ability of an agent to transit across the node.
+%
+Taking advantage of such information, one could think of a strategy to spread this information around such that -- in an emergent way -- the Gradient can somewhat deviate to anticipate the effect of the future event, possibly promoting a path that could be longer but guarantee to circumvent the forbidden-area eventually reaching the target in shortest time.
+%
+There are several example applications for one such mechanism, tackling the availability of information about future road constructions, statistic formation of traffic jams in certain areas of a city, timing of opening bridges or railroad crossing, scheduling of popular and typically crowded exhibitions in a museum, and so on.
+
+We aim at designing a solution that is not tight to a specific application context, but has the same level of generality of the Gradient pattern.
+%
+As such we assume -- in continuity with the basic hypothesis used for the Gradient pattern -- that the environment is densely covered with computational nodes hosting annotations and forming a topology reflecting the structure of the environment (and hence its ability of being roamed by agents).
+%
+We also assume that in each node estimated ``distance'' to all neighbours is available: such a distance should measure the expected average time needed for an agent to move from one location to another---here we will rely on general ``time units'' without any correspondence with a physical time.
+%
+The underlying middleware is in charge of keeping this information lively updated, such that formation of crowded areas are automatically reflected into a higher distance of the link between two nodes, thus making a path including such a link less appealing---accordingly, we will not consider crowd information further in this paper.
+%
+We hence refer to \emph{agent-speed} as the non-uniform ratio between physical distance and estimated transiting time at each location.
+
+In some node of the network there could be some (future-aware) situation recognition component \cite{YeDM12} in charge of intercepting a future event, namely, what happens and when.
+%
+In this paper we shall focus on events concerning impossibility of transiting across the node, expected in the period of time in the future in between $Ts$ and $Te$ ($Ts<Te$) time units from current time.
+%
+Our basic strategy, detailed below, is to make information about such (possibly multiple and overlapping) events spread around, and suitably combine with a Gradient created to reach a target of interest.
+%
+The result of such a combination, what we call an Anticipative Gradient, will be used by agents to navigate towards the target of interest along optimal, dynamically computed paths taking in consideration those future events.
+%
+According to the self-organisation style, such mechanisms will be based only on local interactions, and will be carried on without any global supervision.
+
+\subsection{Spatial structures}
+
+\subsubsection{Horizon Wave}
+
+A first component in our strategy is the advertisement of a future event (FE). We call FE area the set of nodes that will host such an event.
+%
+Advertisement of the FE needs not require full-space and -time propagation, but -- at a given time -- it should reach only the set of nodes that might be concerned by the FE, namely, those from which an agent moving towards the FE area would actually reach it when the FE actually occurs.
+%
+In a sense, the set of points in space and time that should be advertised resembles the notion of event horizon in physics, though it is here located in the past and propagates at the agent-speed.
+%
+This is why we refer to this pattern as Horizon Wave (or Wave for short).
+
+We consider for simplicity a uniform and continuous 2D environment, allowing us to better grasp the behaviour of the proposed mechanisms.
+%
+There, a Wave defines a (circular) crown-like region of space that, as time passes, shrinks into the FE area at the agent-speed, until completely disappearing as shown in \Cref{fig:wave}.
+%
+Agents outside this spatio-temporal data structure needs not be concerned about the FE.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=\textwidth]{img/wave}
+\end{center}
+\caption[Horizon Wave pattern]{Horizon Wave pattern, with its shrinking dynamics in evidence.}
+\label{fig:wave} 
+\end{figure}
+
+This spatial structure can be obtained on top of the Gradient pattern as follows.
+%
+We let the FE area be source of a Gradient, and any of its annotations (as diffused by the spreading process) carry information about $Ts$ and $Te$.
+%
+A node of the network is then inside the Wave if $Ts\leq D \leq Te$, where $D$ is the node's distance from the FE area as reified by the Gradient annotation available locally.
+
+
+\subsubsection{Gradient Shadow}
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=\textwidth]{img/shadow}
+\end{center}
+\caption{Shadow spatial structure with overlapping Future Events}
+\label{fig:shadow} 
+\end{figure}
+
+In order to understand whether an agent should actually care about circumventing the location of an FE, it is also important to consider its direction and target.
+%
+Let's focus on the Gradient generated by a target $p$ that an agent is directed to.
+%
+We should properly tag the portion of such a Gradient from which an agent, while steered towards $p$, would eventually transit across an FE area.
+%
+Such a portion is here called Gradient Shadow (or simply Shadow), for it recalls the shadow that the FE area would cause if it were an opaque object and the gradient source would be a source of light.
+%
+\Cref{fig:shadow} emphasises that the Gradient we create out of a target of interest should be able to possibly tag different, overlapping Shadows, reflecting the existence of many FEs around.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{img/warning-rettangolare}
+\end{center}
+\caption{Warning spatial structure as intersection of Wave and Shadow}
+\label{fig:warning} 
+\end{figure}
+
+The main strategy to create this spatial structure amounts to let Gradient propagation track, with a proper tag in the annotation, when it crosses an FE area: by successive propagation the tag will be reified across the whole Shadow.
+%
+Most specifically, this is achieved by a new chemical-like rule, matching two annotations located in the same node: the gradient annotation spread from a target $p$ and the annotation of a FE $e$.
+%
+The effect of the rule is to update the former annotation, adding $e$ to the list of ``tags'' it should carry.
+%
+Additionally, we update the aggregation law such that only Gradient annotations having the same list of tags will be aggregated.
+%
+In the case of a single FE $e$, hence, in each node we will possibly have both the annotation tagged by $e$ and the one with empty list of tags, which respectively carry information about a route that crosses an FE and one that circumvents it.
+%
+In the case of multiple FEs, all combinations will be automatically generated.
+
+Hence, the Shadow structure created from target $p$ due to FE $e$ is defined as the set of nodes whose distance to $p$ along a path crossing $e$'s area is smaller than the one circumventing it, namely, nodes having an annotation tagged with $e$ carrying a smaller distance value that any annotation that is not tagged by $e$.
+
+Again, while targeting a given point of interest, only agents located in a FE's Shadow should be concerned about the FE, since outside that area an agent would by construction be steered to the target without crossing the FE area.
+%
+Note that differently from the Horizon Wave pattern, a Gradient Shadow is mostly a static structure, immutable over time: of course, it can still be subject to automatic changes due to mobility of the topology, relocation of gradient source, or interception of new future events.
+
+\subsubsection{Future Event Warning}
+
+Now that these two basic bricks have been defined, it is easy to identify their intersection as the portion of space -- which we call Future Event Warning (or simply Warning) -- in which the Gradient has to be deviated to anticipate the FE.
+%
+More generally, given a target of interest $p$, and a set $e_1,..,e_n$ of FEs, let the Global Wave be the union of the Waves of all $e_i$, then the Warning area is simply obtained by the intersection between $p$'s Shadows as created by $e_1,..,e_n$ and the Global Wave.
+%
+In our computational framework this area is formed by the nodes featuring the gradient annotation of a target $p$ tagged by an FE $e$ (Shadow), as well as the gradient annotation of FE $e$ whose distance is in between $Ts$ and $Te$ (Wave).
+
+An example of such a structure for a single event is shown in \Cref{fig:warning}.
+%
+Considering only one event $e$, this area has the shape of a crown sector, it is located on the opposite side of $e$ with respect to the gradient source, and it moves towards $e$ until vanishing.
+
+
+\subsubsection{Anticipative Gradient}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=\textwidth]{img/anticipatory_field}
+\end{center}
+\caption{Anticipative Gradient pattern (and ``waiting distance'' $T'$).}
+\label{fig:aa} 
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{img/matrix}
+\end{center}
+\caption[Anticipative Gradient]{An Anticipative Gradient case: (Left) estimated distance normalised by the maximum value; (Right) time-to-destination improvement factor and steering direction.}
+\label{fig:2d} 
+\end{figure}
+
+
+We now define the most important self-organisation pattern emerging from the combination of the above ones, namely, what we call the Anticipative Gradient.
+%
+Starting again from a target $p$, and a set of future events $e_1,..,e_n$, this is identical to a standard Gradient outside the Warning area, since there agents can be steered to $p$ without any special management.
+%
+Inside the Warning area of an FE $e_i$ instead, distance and orientation values in each node should reflect the optimal path among the two following alternative: the one crossing $e_i$ and the one circumventing it.
+
+An additional caveat is how we can compute the actual time-to-destination (i.e., distance) of a node $n$ in the Warning area along a path crossing an FE $e$---since using that path will make the agent experience the obstacle in the future.
+%
+A possibility for an agent would be to wait in $n$ until it is outside the Warning area and then move towards $e$ and then to $p$. 
+%
+Alternatively, it could immediately move from $n$ towards $e$, and be stuck there until the Wave is over---it can be shown that the strategy of circumventing the FE area instead of staying stuck is never winning over the one finding a path circumventing $e$ since the beginning.
+%
+In any strategy, the time-to-destination is the one obtained without considering $e$ ($T$), plus a \emph{waiting distance} ($T'$) measuring the distance of $n$ to the outside margin of the Wave (namely, the waiting time the agent would be forced to)---see \Cref{fig:aa}.
+%
+Note that in the case $n$ is simultaneously inside many different Warning areas, the distance value should be increased by the waiting distance computed for each of them.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{img/processed}
+\end{center}
+\caption[Anticipative Gradient performance]{Mean time-to-destination factor (and standard deviation) in the Warning area, measured with different widths of Horizon Wave (normalised to grid size).}
+\label{fig:sims}
+\end{figure}
+
+\Cref{fig:aa} also qualitatively depicts what are expected directions in a Warning area.
+%
+On the one hand, near the end of the Wave and in central position there is relatively little advantage in trying to circumvent the future event location, for the strategy of moving towards the FE anyway is winning. Hence, the orientation is towards the FE. In that region, we expect a rather uniform time-to-destination.
+%
+On the other hand, at the beginning of the wave and in lateral positions of the Warning area the steering service will likely redirect an agent laterally outside the Warning zone to bypass the FE area.
+
+More precisely, the Anticipative Gradient can be created out of two additional laws working as follows.
+%
+The first law simply takes the Gradient annotation generated from a target, and clones it into a unique new annotation for the Anticipative Gradient: at this stage the two annotations will report the same distance $D$ from the source.
+%
+The second law matches the annotation $a$ of an Anticipative Gradient as created above with the annotation $w$ of the Wave of an FE $e$: its result is that $e$ is removed from the list of tags in $a$, and $a$'s distance is increased by $e$'s waiting distance as discussed above, computed as $T_e-D$. 
+%
+Note such a law would iteratively fire to match $a$ with the waves of all active (overlapping) FEs, until $a$'s list of tags is emptied.
+
+The neat result is that the Antipative Gradient is identical to the standard Gradient outside Warning areas, it instead selectively reports augmented distances in Warning areas, such that following the route towards nodes with minimum distance to the target always guarantee to efficiently avoid obstacles appearing in the future.
+
+
+\subsection{Simulations}
+
+We checked the basic correctness of the proposed self-organisation pattern by simulation, conducted using \alchemist{}.
+
+\Cref{fig:2d} (left) shows a pictorial representation of how the Anticipative Gradient looks like in a simulation of a 2D grid of 60x30 nodes, with a white-coloured rectangular-like FE. \Cref{fig:2d} (right) shows what would be the right direction proposed at that time in each node. The analysis of these data confirms the expected qualitative results, in analogy with \Cref{fig:aa}. Namely, in the Warning area there is a whole triangle-like sector in which the estimated distance is higher (lighter colour) and constant---due to the waiting-time an agent has to experience. There, the proposed direction does not circumvent the FE. Instead, in the upper and lower border of the Warning area the Anticipative Gradient would tend to steer an agent away from the FE.
+%
+\Cref{fig:2d} (right) also shows what is the relative improvement an agent would experience when starting from the different locations of the network thanks to the anticipation of the future event. It ranges from a 50\% in nodes near the left border of the Warning area to a 0\% in nodes outside the Warning area.
+
+\Cref{fig:sims} shows what is the average (with standard deviation) improvement for nodes in the Warning area depending on the width of the Wave. Clearly, there is a greater improvement in using the Anticipative Gradient pattern in those cases where the future event lasts longer, namely, with higher width ($Te-Ts$) of the Wave.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \chapter{Case Study: Crowd evacuation}
@@ -3079,15 +3333,6 @@ Evolutionary approaches seem the only solution to the problem of finely tuning t
 And finally, competition of different compositions based on their actual exploitation appears instead as the only viable approach to measure the quality of a composition, hence promoting successful ones.
 %
 On the other hand, understanding how they can work together in a comprehensive framework is very difficult, and generally depends on the specific platform and service model one adopts.
-
-\begin{figure}[t]
-\begin{center}
-	\includegraphics[width=\textwidth]{img/sc-basic-mech.pdf}
-\end{center}
-\caption{Self-organising patterns and their relationships}
-\label{fig:patterns} 
-\end{figure}
-
 
 \subsection{Self-Composition with Gradient service}
 \label{sec:gradcomp}
@@ -4078,7 +4323,7 @@ Values between $1$ and $1.5$ have been established as good ones after running se
 \caption[Simulation of crowd sensitive gradient in $\sigma{}\tau{}$-Linda]{Simulation snapshots: the coloured visitors reach its POI avoiding crowd}
 \label{img:linda-simulations}\vspace{-10pt}
 \end{figure}
-We implemented and ran simulations using Alchemist simulator \cite{mass2011}, assuming that computation rounds are fired at the same rate for all nodes, and modelling such a rate following the Continuous-Time Markov Chain model.
+We implemented and ran simulations using \alchemist{} simulator \cite{mass2011}, assuming that computation rounds are fired at the same rate for all nodes, and modelling such a rate following the Continuous-Time Markov Chain model.
 %
 Four screenshots of a simulation run are provided in \Cref{img:linda-simulations}, in which we built an environment of fifteen rooms with an underlying grid-like network of infrastructure nodes, an initial configuration with two groups of people, and a POI of interest for the first group which is reachable by a path crossing a crowded area. 
 %
@@ -5218,7 +5463,7 @@ Simple peer-to-peer geometric calculations across the network, however, can read
 
 \Cref{img:protelis-rendezvous} shows an example of running this rendezvous process in a simulated city center.
 %
-We chose London as a simulation environment, using Alchemist's capability for importing OpenStreetMap data.
+We chose London as a simulation environment, using \alchemist{}'s capability for importing OpenStreetMap data.
 %
 We displaced 1000 devices randomly across the city streets (represented by pale blue dots), with a communication range of 475 meters (this range chosen to ensure no network segmentation).
 %
