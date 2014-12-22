@@ -1,10 +1,8 @@
 
 \usepackage[dvips]{graphicx}
-\usepackage{graphics}
 \usepackage[normalem]{ulem}
 \usepackage[utf8]{inputenc}
 \usepackage[italian,british]{babel}
-\usepackage{float}
 \usepackage{algorithm,algorithmic}
 \usepackage[cmex10]{amsmath}
 \usepackage{amsfonts,amssymb,wasysym}
@@ -23,7 +21,6 @@
 \usepackage{type1cm}        % activate if the above 3 fonts are
 \usepackage{makeidx}         % allows index generation
 \usepackage{multicol}        % used for the two-column index
-\usepackage[bottom]{footmisc}% places footnotes at page bottom
 \usepackage{times}
 \usepackage{subfigure}
 \usepackage{stmaryrd,mathtools}
@@ -53,6 +50,13 @@
 \theoremstyle{plain}
 %MUST BE LOADED LAST%
 \usepackage{cleveref}
+
+%%%%%%%%%%%%
+%% UNUSED %%
+% \usepackage[bottom]{footmisc}% places footnotes at page bottom
+% \usepackage{float}
+% \usepackage{graphics}
+%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PROBLEMATIC PACKAGES %%
@@ -359,4 +363,22 @@
 \newcommand{\ttt}[1]{\footnotesize{\texttt{#1}}}
 \newcommand{\ccheck}[2]{#1\vdash #2}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GET CURRENT POSITION IN TEXT %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcount\Level
+\let\Part=\part\def\part{\global\Level=0\Part}
+\let\Chapter=\chapter\def\chapter{\global\Level=1\Chapter}
+\let\Section=\section\def\section{\global\Level=2\Section}
+\let\Subsection=\subsection\def\subsection{\global\Level=3\Subsection}
+\let\Subsubsection=\subsubsection\def\subsubsection{\global\Level=4\Subsubsection}
+
+\def\levelText{
+\ifcase\the\Level part
+\or chapter
+\or section
+\or section
+\or section
+\else work \fi}
 
