@@ -2656,7 +2656,7 @@ The gradient structure created by this process enjoys self-stabilisation as defi
 
 \begin{figure}
 \centering\includegraphics[width=\textwidth]{img/channel}
-\caption{Construction of a distributed channel, based on distance between the two ends $S$ and $D$ ($r$), width ($w$), distance from $S$ ($s$) and distance from $D$ ($d$).}\label{f:preview}
+\caption[Distributed channel]{Construction of a distributed channel, based on distance between the two ends $S$ and $D$ ($r$), width ($w$), distance from $S$ ($s$) and distance from $D$ ($d$).}\label{f:preview}
 \end{figure}
 
 
@@ -3152,6 +3152,8 @@ We claim that, assuming the traces to be a representative sampling of the actual
 In this chapter
 % Possibile intro: in questo capitolo si fanno tre cose: 1) si cerca di modificare un meccanismo classico (Linda) in modo adattarlo al ragionamento di programmazione aggregata. 2) Si propone una restrizione di field calculus ad operazioni safe, e si dice ovviamente che vuol dire safe in un continuum spazio-temporale. 3) Si propone una implementazione pratica, che parte dai concetti di field calculus (non da GPI perché in generale un linguaggio ti deve consentire tutto, ma ci sta di ragionare sul fatto che poi una API safe andrebbe fornita) -- nelle conclusioni
 
+%TODO: convergenza fra tuple e spatiale computing
+
 %TODO: tutta la parte di GPI%
 
 %TODO: tutta la parte di Linda space-time, da vedere come un lavoro che cerca di portare la tuple based coordination verso un concetto di continuum spazio-temporale %
@@ -3172,7 +3174,566 @@ Here is where \protelis{} comes into play: it represents our effort to bring Fie
 
 %TODO: dire che ha anche una parte più teorica, relativa a codice mobile e HOF in field calculus%
 
-\section{Linda in space and time}
+\section{Convergence between tuple based coordination and aggregate programming}
+
+A common viewpoint in developing coordination models on top of Linda~\cite{linda-toplas7} is that tuples are a mechanism to reify and exchange events/data/knowledge that are important to system coordination, and to synchronise the activities of coordinated components in a parallel and/or distributed system.
+%
+A tuple is, however, a very point-wise abstraction, and applications often need to express relationships articulated across the physical environment through which the computational system is distributed.
+%
+There is thus a need for coordination models and languages that raise the level of abstraction from the single tuple to a spatial structure of tuples, without forgetting the possibility that such a structure, as well as being distributed, may also be highly dynamic and mobile.
+
+Based on the works such as \cite{VCMZ-TAAS2011,mamei2009acm,klaim,GeoLinda}, and on an existing trend of studies of concurrency ``in space'' \cite{ambients,CardelliG10,SpatialComputing,proto}, we introduce a new coordination model and language aiming at further bridging the gap between coordination and the continuum ideas of spatial computing.
+%
+In our model, we make situated agents interact by injecting into the coordination substrate so-called \emph{space-time activities}, namely, processes that manipulate the space-time configuration of tuples in the network.
+%
+Such activities are expressed in terms of a process-algebra like language, composing atomic coordination primitives in the style of Linda with additional Proto-derived constructs that deal with spatial and temporal aspects:
+\begin{enumerate}
+ \item spreading of an activity in a node's neighbourhood depending on its relative orientation;
+ \item scheduling an activity at the next computation round of a node;
+ \item accessing space-time contextual information to link the configuration of tuples with the actual physical space.
+\end{enumerate}
+
+\subsection{Linda in space-time}
+
+\subsubsection{Basic model}
+
+Our coordination infrastructure runs on a (possibly very dense and mobile) set of situated computational devices, e.g., located in specific points (i.e. nodes) of the physical environment. 
+%
+Each node hosts software agents (the coordinated components) and a tuple space, and has ability of interaction with nodes in the neighbourhood---where proximity can be seen as a physical or virtual property.
+%
+Differently from Linda, in which agents interact by atomic actions (inserting, removing and reading tuples in the local tuple space), in $\sigma\tau$-Linda, agents interact by injecting \emph{space-time activities} (activities for short).
+%
+These activities are processes composing atomic Linda-like actions with additional constructs allowing the activity to diffuse in space (i.e. to other nodes) and in time (i.e. to be delayed).
+%
+The net effect of an activity is hence to evolve the population of tuples in the network, thereby affecting the distributed structures of tuples that agents use to for global coordination.
+
+In our model, each node undergoes the following \emph{computation round}:
+\begin{enumerate}
+ \item it sleeps, remaining frozen;
+ \item it wakes up, gathers all incoming activities (contained in messages received either from neighbour nodes or from local agents) and executes them;
+ \item it executes the continuation of the activity executed in previous computation round;
+ \item it spreads asynchronous messages to neighbourhood;
+ \item it schedules an activity continuation for next round;
+ \item then it sleeps again, returning to the beginning of the cycle.
+\end{enumerate}
+%
+The duration of the computation round is dictated by the underlying infrastructure, and could possibly change over time or from device to device (as in~\cite{ProtoTime}).
+%
+We only assume that it is long enough for executing steps (2-3-4) above.
+%
+This particular computational model for a tuple space has many similarities with the platform assumptions of the Proto language \cite{proto,spatialcomputing-sac11}.
+
+\subsubsection{The coordination language}
+
+A key role in the proposed coordination model is played by the concept of space-time activities.
+%
+We here incrementally describe their features by presenting a surface language for their specification.
+
+\subsubsection*{Primitive actions}
+
+We being with three basic Linda actions for manipulating the tuple space: ``\texttt{out $tuple$}'', ``\texttt{in $tuple$}'', ``\texttt{rd $tuple$}''. 
+%
+These respectively insert, remove and read a tuple from the local tuple space.
+%
+A tuple is a ground first-order term in our model---similarly to \cite{tucson-aamas99}.
+%
+Read and removal specify a template (a term with variables, denoted as literals starting with an upper-case letter) that should be syntactically matched with the retrieved tuple. 
+%
+Read and removal are predicative: they are non-blocking and yield a negative result if no matching tuple is found. 
+%
+To these, we add a fourth primitive, ``\texttt{eval $pred$}'', which evaluates the predicate expression $pred$.
+
+When such actions are defined for an activity injected by an agent, and are executed in the tuple space where the agent is situated in, then a notification result is shipped to the agent---although, following the spirit of \cite{zavattaro}, we shall not discuss internal aspects of agent interactions in this paper.
+
+\subsubsection*{Protocols}
+
+Primitive actions can be sequentially composed in a protocol-like manner.
+%
+Other standard operators of parallel composition and choice could be orthogonally added, but are not discussed in this paper for brevity.
+%
+Additionally, \texttt{in}, \texttt{rd} and \texttt{eval} define branches leading to two different continuations, one for positive and one for negative outcome of the predicative action.
+%
+Three examples of activities are:
+
+{\codefont\begin{quote} 
+\begin{verbatim}
+out t(1,2,3); out t(a,1+2,b)
+in r(X,2,3) ? out r(X,2,3) : out r(0,2,3)
+(in r(X,2,3) ? (eval X=1 ? out r(X,2,3) : 0) : 0); out ok
+\end{verbatim}\end{quote}
+}
+
+\noindent The first expression inserts tuple \texttt{t(1,2,3)} and then \texttt{t(a,3,b)}.
+%
+Note that tuples are evaluated before being used in actions: evaluation amounts to computing the result of (mathematical) expressions used in a tuple's arguments.
+
+The second expression removes any tuple matching \texttt{r(X,2,3)} (variable \texttt{X} is bound to the value of first argument, and this substitution propagates through the remainder of the activity).
+%
+If it succeeds (\texttt{?} branch) the tuple is inserted back, otherwise (\texttt{:} branch) a new tuple \texttt{r(0,2,3)} is inserted.
+
+The third example attempts to remove any tuple matching \texttt{r(X,2,3)}.
+%
+If it succeeds and $\texttt{X}=\texttt{1}$ then it inserts it back, otherwise it does nothing (\texttt{0}).
+%
+Independently of the outcome of such a removal, tuple \texttt{ok} is then inserted.
+%
+We may also omit the denotation of a ``:'' branch when it leads to the execution of empty process \texttt{0}, writing e.g.
+{\begin{quote}
+\begin{verbatim}
+(in r(X,2,3) ? eval X=1 ? out r(X,2,3)); out ok
+\end{verbatim}\end{quote}
+}
+\noindent
+in place of the third example above.
+
+\subsubsection{Definitions}
+
+When desired, one can equip the specification of an activity with \emph{definitions} (which can possibly be recursive), in the style of agent definition in $\pi$-calculus.
+%
+These have the form ``\texttt{$N$($x_1$,...,$x_n$) is $\mathit{activity}$}'', which define $\mathit{activity}$ as having name $N$ and arguments  $x_1$,$\ldots$,$x_n$.
+%
+For instance, after declaration
+%
+{\begin{quote}
+\begin{verbatim}
+in-out(T) is (in T; out T)
+\end{verbatim}\end{quote}
+}
+\noindent we have for instance that activity
+{\begin{quote}
+\begin{verbatim}
+in-out(r(1,2,3))
+\end{verbatim}\end{quote}
+}
+\noindent
+behaves just like 
+{\begin{quote}
+\begin{verbatim}
+in r(1,2,3); out r(1,2,3)
+\end{verbatim}\end{quote}
+}
+\noindent
+namely, the tuple is added if it is not already there.
+%
+Note that since no branches are used for the removal operation, this in turn is equivalent to
+{\begin{quote}
+\begin{verbatim}
+(in r(1,2,3)?0:0); out r(1,2,3)
+\end{verbatim}\end{quote}
+}
+\noindent
+or, similarly, to 
+{\begin{quote}
+\begin{verbatim}
+in r(1,2,3)?out r(1,2,3):out r(1,2,3)
+\end{verbatim}\end{quote}
+}
+
+\subsubsection{Time}
+
+The language provided so far is still point-wise in space and time.
+%
+We now expand it, beginning by adding construct \texttt{next} to situate activities in time.
+%
+Executing action ``\texttt{next} $P$'' (where $P$ is the protocol -- also called process -- defining an activity), amounts to scheduling $P$ for execution at the next computation round of the current node.
+%
+Special variable \texttt{\$delay} can be used in $P$ and evaluates to the amount of time passed in between the current computation round and the previous one. Similarly, variable \texttt{\$this} can be used to denote the identifier of the node on which it is evaluated.
+%
+Useful examples of definitions (along with a brief descriptions of them) are then the following ones:
+{
+\begin{verbatim}
+% When a tuple matching T is found,
+% it is removed and replaced with T2
+chg(T,T2) is (in T ? out T2 : next chg(T,T2))
+
+% Inserts a tuple time(T,X), updated as time X passes
+rep(T) 	is (out time(T,0); next rep2(T))
+rep2(T) is (in time(T,Y); out time(T,Y+$delay); next rep2(T))
+
+% Inserts tuple T that is removed after X time units elapse
+outt(T,X) is (in-out(T); eval X<=0
+                         ? in T
+                         : next outt(T,X-$delay))
+\end{verbatim}
+}
+
+\noindent Note that by the use of \texttt{next} in conjunction with a recursive definition, \texttt{chg} actually declares an activity with a duration in time, which will be stopped only when a tuple matching \texttt{T} is eventually found.
+%
+Concerning the use of \texttt{\$delay}, we then observe that -- in the spirit of a Proto-style space-time computing model -- as the average duration of computation rounds tends to zero, activity \texttt{rep} tends to define a continuous update of tuple \texttt{time(T,X)} as time \texttt{X} passes, and similarly, \texttt{outt(T,X)} tends to remove tuple \texttt{T} precisely as time \texttt{X} passed.
+
+\subsubsection{Space}
+
+To situate activities in space we introduce construct \texttt{neigh}.
+%
+Executing action ``\texttt{neigh} $P$'' amounts to sending a broadcast message containing $P$ to all neighbours, which will then execute $P$ at their next computation round.
+%
+Special variable \texttt{\$distance} is also introduced, which evaluates to the estimated distance between the node that sent the message and the one that received it.
+%
+Similarly, variable \texttt{\$orientation} can be used to denote the relative direction from the receiver to the sender (e.g., as a vector of coordinates \cite{CardelliG10}).
+%
+Some examples are as follows:
+
+{\begin{verbatim}
+% Broadcasts tuple T in the neighbourhood
+bcast(T) is (neigh out T)
+
+% Broadcasts tuple T in the neighbourood but only within range R 
+bcastr(T,R) is (neigh (eval $distance<R ? out T))
+
+% Gossips tuple T in the whole network within range R
+goss(T,R) is (eval R>=0 ? (in-out(T); neigh goss(T,R-$distance)))
+\end{verbatim}}
+
+\noindent Of particular interest is the last definition, which spreads one copy of \texttt{T} to all the nodes whose hop-by-hop distance from the source is smaller than \texttt{R}.
+%
+As in the case of time, as devices become increasingly dense, and their distance tends to zero, the set of devices holding tuple \texttt{T} will actually form a continuous sphere with radius \texttt{R} around the origin of \texttt{goss}.
+
+Note that it is an easy exercise to define processes dealing with both space and time.
+%
+For instance, one can define a process \texttt{gosst} that adds temporal aspects to the \texttt{goss} example, such as to make the sphere of tuples created by \texttt{goss} all disappear following a timeout.
+%
+In the sense of spatial computing interpretation~\cite{proto}, the definition of \texttt{gosst(T,R,TO)} would be the definition of a geometric space-time activity called ``sphere of tuple \texttt{T} with radius \texttt{R} and timeout \texttt{TO}''---useful to limit the spatial and temporal extent of some advertised information.
+
+\subsubsection{Finally}
+
+We conclude by introducing a construct named \texttt{finally}, used to simplify the task of structuring the activities executed at a given round.
+%
+Executing action ``\texttt{finally} $P$'' makes activity $P$ executed in the current round, but only when all the others actually completed.
+%
+A typical use of this construct is to start an aggregation activity for incoming messages only when all of them have been processed, as in the following equivalent specification of gossiping:
+{
+\begin{verbatim}
+gossf(T,R) is (eval R>=0 ? (out T; neigh gossf(T,R-$distance); 
+                            finally clean(T)))
+% Cleans multiple copies of T, leaving just one of them
+clean(T) is (in T ? (in-out(T); clean(T)))
+\end{verbatim}
+}
+
+\noindent Messages spread by gossiping cause the receiver to execute the \texttt{gossf} activity, which inserts tuple \texttt{T}, further spreads messages, and finally schedules the \texttt{clean(T)} process for a later time.
+%
+Only when all such messages have been processed in a round (and there are typically more than one) will the set of all \texttt{clean} activities be executed.
+%
+The result of their execution is that only one tuple \texttt{T} will remain in the tuple space.  The \texttt{finally} construct can thus, e.g., serve a similar aggregation and simplification role to the *\texttt{-hood} constructs in Proto.
+
+\subsection{Core Calculus}
+
+In this section we introduce a formalisation of the proposed framework similar in spirit to those of \cite{zavattaro,klaim,biochemicalTupleSpaces}, namely, by a core calculus taking the shape of a process algebra.
+
+\subsubsection{Syntax}
+
+Let meta-variable $\sigma$ range over tuple space (or node) identifiers, $x$ over logic variables, $\tau$ over real numbers used to model continuous time, and $f$ over function names (each with a given arity, and used either in infix of prefix notation)---as usual we refer to functions with arity 0 as constants.
+%
+Meta-variable $t$ ranges over terms built applying functions to variables, numbers, identifiers, and constants, and will be written in typetext font.
+%
+For simplicity, we shorten special variable \texttt{\$orientation} to $\vorn$, and neglect \texttt{\$distance} since it can be ``compiled away'' to term $\textit{length}(\vorn)$ where $\textit{length}$ is a function.
+%
+We let $\epsilon$ range over evaluations (functions) for terms, write $\compute{t}$ for application of $\epsilon$ to term $t$, and denote $\epsilon(\sigma,\tau)$ the evaluation that (other than computing mathematical functions) maps \texttt{\$this} to $\sigma$ and \texttt{\$delay} to $\tau$.
+%
+For instance, we have $\texttt{a(\$this,1+\$delay)}^{\epsilon(\texttt{id23},\texttt{5.1})}=\texttt{a(id23,6.1)}$.
+%
+A substitution $\theta$ of variables $x_1,\ldots,x_n$ to terms $t_1,\ldots,t_n$ is expressed by notation $\{t_1/x_1,\ldots,t_n/x_n\}$, and is applied to a term $t$ by syntax $t\theta$, e.g., $a(x,1)\{x/2\}$ means $a(2,1)$.
+%
+We write $\subs{t}{t'}$ for the most general substitution $\theta$ such that $t'\theta=t$---such a notation makes no sense (as in partial functions) if $\subs{t}{t'}=\perp$, i.e., when $t$ is not an instance of $t'$.
+
+\begin{figure}
+{\scriptsize
+\framebox[\textwidth]{$\begin{array}{rcll}
+        t & ::= & x \bnfs \sigma \bnfs \tau \bnfs f \bnfs f(t_1,\ldots,t_n) & \textrm{Terms}\\
+	P,Q,R & ::= & 0 \bnfs \alpha.P  \bnfs \pi?P:Q \bnfs \callSTL{D(t_1,\ldots,t_n)}\qquad & \textrm{Process}\\
+	\alpha & ::= & \out{t} \bnfs \opr{P} & \textrm{Action}\\
+	\opr{} & ::= & \nextSTL{} \bnfs \neigh{} \bnfs \finally{} & \textrm{Scheduling operator}\\ 
+        \pi & ::= & \rdp{t} \bnfs \inp{t} \bnfs \evalSTL{t} & \textrm{Predicative action}\\
+	T & ::= & 0 \bnfs t \bnfs (T\opar T) & \textrm{Tuple set}\\
+        S & ::= & 0 \bnfs T \bnfs P \bnfs (S\opar S) & \textrm{Space}\\
+	L & ::= & 0 \bnfs \near{\sigma}{\sigma}{t} \bnfs (L\opar L) & \textrm{Topology}\\
+        C,D & ::= & 0 \bnfs \scope{S}{\sigma}{\tau,\tau'} \bnfs \mesg{P}{\sigma} \bnfs L \bnfs (C\otimes C) & \textrm{Configuration}\\
+        \lambda & ::= & \labsilent{\sigma} \bnfs \labmesg{\sigma}{P} \bnfs \labnew{\tau}{P}{\sigma} \bnfs \mesg{P}{\sigma}\bnfs L:L & \textrm{Labels}
+\end{array}$}\\[-1pt] \framebox[\textwidth]{$\begin{array}{c}
+	\textrm{``$\opar$'' and ``$\otimes$'' are commutative, associative, and absorb $0$}\\
+	(\opr{P}).Q \equiv Q\opar\opr{P}\qquad \opr{(P\opar Q)} \equiv (\opr{P})\opar(\opr{Q})\qquad \opr{0}\equiv 0\\
+	\finally{P}\opar\nextSTL{Q} \equiv \finally{(P\opar \nextSTL{Q})}\\
+	%0;P\equiv P \qquad (\alpha.P);Q \equiv \alpha.(P;Q) \qquad (\pi?P:Q);R \equiv \pi?(P;R):(Q;R) \qquad (P;Q);R \equiv P(Q;R)\\
+  \end{array}$}\\[-1pt] 
+%
+\framebox[\textwidth]{$\begin{array}{l@{\hspace{3pt}}c}
+\cruleSTL{STR}{
+  C\equiv C' \qquad C'\xrightarrow{\lambda}D' \qquad D'\equiv D
+}{
+ C\xrightarrow{\lambda}D
+}
+\cruleSTL{SND}{
+  C\xrightarrow{\labmesg{\sigma}{P}}C'
+}{
+ (\near{\sigma}{\sigma'}{t})\otimes C \xrightarrow{\labmesg{\sigma}{P}} C'\otimes (\mesg{P\{t/\vorn\}}{\sigma'})\otimes (\near{\sigma}{\sigma'}{t})
+}
+\cruleSTL{BRO}{
+  (\near{\sigma}{\sigma'}{t})\notin C\qquad P\not\equiv 0
+}{
+ \scope{S|\neigh{P}}{\sigma}{\tau,\tau'}\otimes C \xrightarrow{\labmesg{\sigma}{P}} C \otimes \scope{S}{\sigma}{\tau,\tau'}
+}
+\cruleSTL{REC}{
+  C\xrightarrow{\labnew{\tau}{P|Q}{\sigma}}C'
+}{
+ (\mesg{P}{\sigma}) \otimes C \xrightarrow{\labnew{\tau}{Q}{\sigma}} C'
+}
+\cruleSTL{NEW}{
+  \mesg{P}{\sigma}\notin C\qquad \tau_2>\tau_1
+}{
+ \scope{T|\nextSTL{Q}}{\sigma}{\tau_1,\tau_0}\otimes C \xrightarrow{\labnew{\tau_2}{P}{\sigma}} C\otimes \scope{T|P|\finally{Q}}{\sigma}{\tau_2\!,\tau_1}
+}
+\cruleSTL{FIN}{
+  -
+}{
+ \scope{T|\finally{P}}{\sigma}{\tau,\tau'}\otimes C \xrightarrow{\labsilent{\sigma}} C\otimes \scope{T|P}{\sigma}{\tau,\tau'}
+}
+\cruleSTL{RUN}{
+  \coordsys{S}{P} \coordtran{\epsilon(\sigma,\tau-\tau')} \coordsys{S'}{P'}
+}{
+ \scope{S|P}{\sigma}{\tau,\tau'}\otimes C \xrightarrow{\labsilent{\sigma}} C\otimes \scope{S'|P'}{\sigma}{\tau,\tau'}
+}
+\ctworules{MOV}{-}{L \otimes C \xrightarrow{L:L'} C \otimes L'}{AGN}{-}{C \xrightarrow{\mesg{P}{\sigma}} C \otimes (\mesg{P}{\sigma})}
+  \end{array}$}\\[-1pt]
+\framebox[\textwidth]{$\begin{array}{l@{\hspace{3pt}}rcl@{\hspace{10pt}}l}
+\textrm{(OUT)} & \coordsys{S}{\out{t}.P} & \coordtran{\epsilon} & \coordsys{(S\opar \compute{t})}{P} \\
+%
+\textrm{(IN1)} & \coordsys{(S\opar t')}{\inp{t}?P:Q} & \coordtran{\epsilon} & \coordsys{S}{P\theta} &\textrm{if~~} \theta=\subs{t'}{\compute{t}}\\
+%
+\textrm{(IN2)} & \coordsys{S}{\inp{t}?P:Q} & \coordtran{\epsilon} & \coordsys{S}{Q} &\textrm{if~~} \nexists t'\in S \textrm{~and~}\subs{t'}{t}\neq \perp\\
+%
+\textrm{(RD1)} & \coordsys{(S\opar t')}{\rdp{t}?P:Q} & \coordtran{\epsilon} & \coordsys{(S\opar t')}{P\theta} &\textrm{if~~} \theta=\subs{t'}{\compute{t}}\\
+%
+\textrm{(RD2)} & \coordsys{S}{\rdp{t}?P:Q} & \coordtran{\epsilon} & \coordsys{S}{Q} &\textrm{if~~} \nexists t'\in S \textrm{~and~} \subs{t'}{t}\neq \perp\\
+%
+\textrm{(EV1)} & \coordsys{S}{\evalSTL{t}?P:Q} & \coordtran{\epsilon} & \coordsys{S}{P} &\textrm{if~~} \compute{t}=\texttt{true}\\
+%
+\textrm{(EV2)} & \coordsys{S}{\evalSTL{t}?P:Q} & \coordtran{\epsilon} & \coordsys{S}{Q} &\textrm{if~~} \compute{t}\neq\texttt{true}\\
+%
+\textrm{(D)} & \coordsys{S}{\callSTL{D(t_1,\ldots,t_n)}} & \coordtran{\epsilon} & \coordsys{S}{P\{\compute{t_1}/x_1,\ldots,\compute{t_n}/x_n\}} &\textrm{if~~} \defn{D(x_1,\ldots,x_n)}{P}
+  \end{array}$}
+}
+\caption[Grammar, Congruence and semantics of $\sigma{}\tau{}$-Linda]{(a) Grammar, (b) Congruence, (c) Global semantics and (d) Local semantics}\label{f:gra}
+\end{figure}
+
+Given these premises, the core syntax of the model is expressed by the grammar in \Cref{f:gra} (a). $P$ defines the syntax of a process (or activity): it includes empty process $0$, action prefix, predicative actions with branches, and call of a definition.
+%
+Note we skipped from this syntax the composition operator ``$;$'', which can be basically compiled away once we have action prefix ``$.$'' and branching ``$?:$''---by straightforward equivalences like $0;P\equiv P$, $(\pi?P:Q);R \equiv \pi?(P;R):(Q;R)$ and $(\alpha.P);R \equiv \alpha.(P;R)$.
+%
+A space $S$ is a composition, by operator ``$\opar$'', of processes and tuple sets.
+%
+The topology of a network is modelled by a composition $L$ of connections of kind $\near{\sigma}{\sigma'}{t}$, representing proximity of node $\sigma'$ to $\sigma$ with orientation vector $t$---e.g., expressed as term \texttt{coord(x,y,z)} or the like.
+%
+Finally, a system configuration $C$ is a composition, by operator $\otimes$, of nodes $\scope{S}{\sigma}{\tau,\tau'}$ (with id $\sigma$, space $S$, current round at time $\tau$ and previous one at $\tau'$), topology $L$, and messages $\mesg{P}{\sigma}$ (with content $P$ and recipient $\sigma$).
+
+\Cref{f:gra} (b) introduces a congruence relation ``$\equiv$'', stating when two configurations are to be considered syntactically equal, and hence can be used one in place of the other.
+%
+First line introduces standard multiset-like properties of operators ``$\opar$'' and ``$\otimes$''.
+%
+Second line states that scheduling operators can be lifted out of action prefix placed in parallel with the continuation, and can also distribute in parallel processes.
+%
+Last line states that when a \texttt{finally} and \texttt{next} actions are in parallel composition, the latter can enter the former: this will in fact leave scheduling policy for $Q$ unchanged.
+
+\subsubsection{Operational Semantics}
+
+We define operational semantics by transitions $C\xrightarrow{\lambda}C'$, where labels $\lambda$ can have the syntax described in \Cref{f:gra} (a).
+%
+Label ``$\labsilent{\sigma}$'' means a silent action internal to a node $\sigma$; ``$\labmesg{\sigma}{P}$'' means device $\sigma$ is broadcasting a message with content $P$; ``$\labnew{\tau}{P}{\sigma}$'' means device $\sigma$ starts a new computation round at (its local) time $\tau$ and still needs to gather messages with content $P$ (at the top level it will take the form $\labnew{\tau}{0}{\sigma}$); ``$\mesg{P}{\sigma}$'' means an agent is injecting process $P$ in the tuple space $\sigma$; and ``$L:L'$'' means (sub)topology $L$ changes to $L'$ to reflect some mobility or failure in the system.
+%
+Semantic rules are shown in \Cref{f:gra} (c).
+
+Rule (STR) defines classical structural congruence.
+%
+Rules (BRO) and (SND) recursively handle broadcasting (mostly in line with \cite{wsnpa}), namely, create messages for all neighbours as soon as a process $P$ is scheduled for broadcasting.
+%
+Rule (SND) recursively selects a neighbour $\sigma'$ at orientation $t$, and creates a message for it in which orientation variable $\vorn$ is substituted with $t$.
+%
+Rule (BRO) is the fixpoint: when all neighbours have been handled, scheduling action $\neigh{P}$ is removed. Note we do not send empty messages.
+
+Similarly, rules (REC) and (NEW) recursively handle the reception of all messages when a new computation round starts.
+%
+Rule (NEW) states that, given node $\sigma$ in which $Q$ is the process to execute at the next round, when a new round starts at time $\tau_2$ and with overall incoming messages $P$, then the new process to start with is ``$P|\finally Q$'', since we prescribe messages to be handled before $Q$ as already described in previous section.
+%
+Also note that this rule updates round times $\tau_1,\tau_0$ to $\tau_2,\tau_1$,  and that it activates only when all incoming messages have been actually handled.
+%
+Rule (REC) recursively gathers all incoming messages: it takes one with content $P$ and proceeds recursively adding $P$ to the set $Q$ of messages considered so far.
+
+Rule (FIN) handles semantics of $\finally{P}$ construct, by simply stating that when this is the only activity in a node, we can simply execute $P$---note all ``finally-scheduled'' processes can be gathered together (along with ``next-scheduled'' ones) because of congruence. 
+%
+Rule (RUN) handles one-step execution of a process, by simply deferring the task to transition relation $\coordtran{\epsilon}$, defined in \Cref{f:gra} (d)---its rules are quite straightforward, as they correspond to the standard semantics of Linda primitives in their predicative version \cite{zavattaro}.
+%
+Note that $\coordtran{\epsilon}$ takes the evaluation function to use, initialised in rule (RUN) with the proper value of \texttt{\$this} and \texttt{\$delay}.
+%
+Finally, rule (MOV) addresses topological changes due to mobility or failures, and rule (AGN) models the injection of a process by an agent in the local node.
+
+We conclude stating isolation and progress properties. 
+%
+First property allows one to reason about the execution of an activity into a node without considering its environment.
+%
+Namely, we have that nodes get affected by the external environment only at the time a new computation round starts (because of reception of messages), otherwise they proceed in isolation possibly just spawning new messages.
+
+\begin{property}
+If $C\otimes\scope{S}{\sigma}{\tau_0,\tau'_0}\xrightarrow{\lambda}C'\otimes \scope{S'}{\sigma}{\tau,\tau'}$ with $S\not\equiv S'$ then $\lambda$ is either $\labsilent{\sigma}$, $\labmesg{\sigma}{P}$, or $\labnew{\tau}{P}{\sigma}$.
+%
+In the former two cases (namely, unless we change computation round), $\tau_0=\tau$, $\tau'_0=\tau'$, and $C'\equiv C\otimes C_m$ (where $C_m$ is either $0$ or a broadcast), and moreover, for each $D$ we have also 
+\mbox{$D\otimes\scope{S}{\sigma}{\tau_0,\tau'_0}\xrightarrow{\lambda}D\otimes \scope{S'}{\sigma}{\tau_0,\tau'_0}\otimes C_m$}, i.e., computation is independent of the environment.
+\end{property}
+\noindent The progress property states instead that when a computation round is completed it is necessarily composed of a \texttt{next} scheduling: at that point (NEW) can surely fire for that node, starting a new computation round. This ensures that our computations never get stuck.
+
+\begin{property}
+$C\otimes\scope{S}{\sigma}{\tau,\tau'}\stackrel{\labsilent{\sigma}}{\nrightarrow}$ and $C\otimes\scope{S}{\sigma}{\tau,\tau'}\stackrel{\labmesg{\sigma}{P}}{\nrightarrow}$ iff $S\equiv(T\opar\nextSTL{P})$. In that case, we have $C\otimes\scope{S}{\sigma}{\tau,\tau'}\xrightarrow{\labnew{\tau_0}{0}{\sigma}}C'\otimes\scope{S'}{\sigma}{\tau_0,\tau}$ for any $\tau_0>\tau$.
+\end{property}
+
+\subsection{Case studies}
+
+\subsubsection{Adaptive Crowd Steering}
+
+As a first example we study a specification able to support the case study presented in \cite{sapereecolaws-sac2012,mass2011}, with the goal of showing how $\sigma\tau$-Linda can provide support to easily define complex, distributed and adaptive data structures, and how they can be used in practice in a pervasive computing scenario.
+
+\begin{figure}
+{\begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}, label={\small \bf Crowd-aware gradient}]
+% creating a gradient spreading tuple T
+source(T) is (in-out(source(T)); grad(T,0,$this))
+
+% gradient process for tuple T, at distance D,
+% coming from node S
+grad(T,D,S) is grad(T,D,S,$this)
+grad(T,D,S,This) is (
+  rd source(T)
+    ? in-out(pre(T,0))
+    : in pre(T,N) ? (eval N<D 
+      ? out pre(T,N)
+      : (in target(T,M); out target(T,S); out pre(T,D)))
+); finally (in pre(T,N)
+  ? (in field(T,M);
+    (rd crowd(C)
+      ? out field(T,N-1.2*C)
+      : out field(T,N));
+        rd field(T,V);
+        neigh grad(T,V+$distance,This))) 
+\end{Verbatim}
+}
+\vspace{-15pt}\caption[Context sensitive gradient in $\sigma{}\tau{}-Linda$]{Definitions for the crowd-aware computational gradient. At each site, if this is the source we consolidate \texttt{pre(T,0)}. Otherwise, we replace the \texttt{pre} tuple if a smaller distance \texttt{D} is found, and \texttt{target} tuple is inserted as well. Finally, we take the remaining \texttt{pre} tuple, and apply the \texttt{crowd} factor: the resulting distance \texttt{N} goes into the \texttt{field} tuple.}
+\label{img:linda-gradient}
+\end{figure}
+
+Our reference environment is a bidimensional continuous space made of various rooms connected by strict corridors. 
+%
+Inside rooms and corridors, a dense grid of computational devices (nodes) is set up. 
+%
+Each node hosts its own tuple space, receives coordination activities (programmed using our spatial language) by software agents running in it, interacts with nodes in its proximity, and has a sensor locally injecting a tuple \texttt{crowd(CrowdLevel)} where \texttt{CrowdLevel} is an estimation of the number of people sensed around.
+%
+People want to reach a point of interest (POI) by the fastest path, and receives directions suggested by their handheld device and/or by public displays on the walls.
+%
+It is worth noting that the fastest path does not correspond to the shortest: if everybody followed the same way, in fact, corridors would become crowded.
+%
+We want the system to be able, relying only on local interactions, to avoid crowded paths, dynamically adapting to any emerging and unforeseen situation.
+%
+However, we will not implement algorithms to predict future situations, but rather make information about a crowded area spread around such that it becomes a less attractive transiting place to reach a POI.
+
+Our strategy is to build a computational gradient injected by an agent located in the POI.
+%
+A computational gradient holds in any node the estimated distance to the source by the shortest path \cite{proto}, computed by further spreading and then aggregating at the destination the local estimation of distance. This distributed data structure must take into account also the crowding level, increasing estimated distance where a crowd is forming, and thus deflecting people towards longer but less crowded paths.
+%
+This strategy can be encoded as in \Cref{img:linda-gradient}, where the goal is achieved by maintaining a tuple \texttt{target(Poi,Id)} containing the \texttt{Id} of the neighbour node where to steer people to following a certain \texttt{Poi}.
+%
+The crowding level influences the local field generation, and is weighted using a constant $K_{crowd}=1.2$.
+%
+Values between $1$ and $1.5$ have been established as good ones after running several simulations: more generally, the higher $K_{crowd}$, the more sensitive is path computation to the presence of crowd.
+
+\begin{figure}[t]
+\centering
+\begin{tabular}{| l | r |}
+\hline
+\includegraphics[width=0.47\textwidth]{img/coordination-shot/1.png} &
+\includegraphics[width=0.47\textwidth]{img/coordination-shot/2.png} \\
+\hline
+\includegraphics[width=0.47\textwidth]{img/coordination-shot/3.png} &
+\includegraphics[width=0.47\textwidth]{img/coordination-shot/4.png} \\
+\hline
+\end{tabular}
+\caption[Simulation of crowd sensitive gradient in $\sigma{}\tau{}$-Linda]{Simulation snapshots: the coloured visitors reach its POI avoiding crowd}
+\label{img:linda-simulations}\vspace{-10pt}
+\end{figure}
+We implemented and ran simulations using Alchemist simulator \cite{mass2011}, assuming that computation rounds are fired at the same rate for all nodes, and modelling such a rate following the Continuous-Time Markov Chain model.
+%
+Four screenshots of a simulation run are provided in \Cref{img:linda-simulations}, in which we built an environment of fifteen rooms with an underlying grid-like network of infrastructure nodes, an initial configuration with two groups of people, and a POI of interest for the first group which is reachable by a path crossing a crowded area. 
+%
+Note that not only every visitor reached the POI, but they all bypassed the crowded room (even if it is part of the shortest path, the large amount of people inside makes the whole area rather disadvantageous to walk); additionally, the visitors group is subject to ``self-crowding'', in that when a group is following a path it  forms crowded areas itself (e.g. near doors), hence people behind the group tend to follow different paths.
+%
+Further simulations we do not describe here for the sake of space show that the above properties hold for a large set of situations, including presence of crowds in different locations and dynamic formation and movement of such crowds during simulation\footnote{The interested reader can download an example clip at: {\url{http://apice.unibo.it/xwiki/bin/download/Publications/Coord2012/museum-small.avi}}}.
+
+\subsubsection{Linda in a mobile ad-hoc environment}
+
+As a second case study we show a possible extension for Linda standard primitives taking into account both time and spatiality.
+%
+In particular, our aim is to show how would it be possible in a mobile ad-hoc environment to specify, along with an operation over a tuple, a spatial and temporal horizon of validity: only retrieval operations whose horizon embraces the respective target tuple will actually succeed.
+%
+We will show an implementation for the spatio-temporal \texttt{out} (\texttt{stout}) and the spatio-temporal \texttt{in} (\texttt{stin}) primitives---the easier case of \texttt{strd} being a simple variant of \texttt{stin}.
+
+\begin{figure}
+{\begin{Verbatim}[frame=single, commandchars=\\\{\}, label={\small \bf Wave-form: a space-time gradient}]
+wave(T,Range,Ttl) is wawe(T,Range,0,$this,$this,Ttl, 0)
+wave(T,Range,D,Source,Ttl,Age) is
+  wave(T,Range,D,Source,$this,Ttl,Age)
+wave(T, Range, D, Dest, This, Ttl, Age) is (
+  eval (Age>Ttl or D>Range)
+    ? (in pre(T,D); in field(T,N))              % disappearing
+    : rd source(T)
+      ? (in-out(pre(T,0))      % default behaviour in a source
+      : in pre(T,N) ? (eval N<D    % choosing minimum distance
+        ? out pre(T,N)
+        : ( in target(T,_);
+          out target(T,Dest); 
+          out pre(T,D))))
+); finally (in pre(T,N)? (              % consolidating target
+  in field(T,M);
+  out field(T,N);
+  rd target(T, Dest);
+  next wave(T,Range,D,Dest,This,Ttl,$delay);
+  eval Age = 0 ?
+    neigh wave(T,Range,N+$distance,This,Ttl,0)))
+\end{Verbatim}
+\begin{Verbatim}[frame=single, commandchars=\\\{\}, label={\small \bf Tuple retrieval}]
+hermes(Op, T, This) is
+  eval This = $this
+    ? (eval Op = in ? ( in T
+        ? (rd target(op_in(T), Dest);
+          neigh hermes(in_back, T, Dest))
+        : (rd target(op_out(T), Dest);
+          neigh hermes(in, T, Dest))))
+    : (eval Op = in_back ? (in in_request(T)
+      ? out(T)
+      : (rd target(op_in(T), Dest);
+      neigh hermes(in_back, T, Dest))))
+\end{Verbatim}
+\begin{Verbatim}[frame=single, commandchars=\\\{\}, label={\small \bf Space-time Linda operations}]
+stout(T,Range,Ttl) is out(T);
+  wave(op_out(T), Range, Ttl)
+
+stin(T, Range, Ttl) is out in_request(T); 
+  wave(op_in(T), Range, Ttl);
+  hermes(in, T, $this)
+\end{Verbatim}
+}
+\vspace{-15pt}\caption{Definitions of $\sigma{}\tau{}$Linda operations.}
+\label{img:case2}\vspace{-10pt}
+\end{figure}
+
+The key idea is to make primitive Linda actions actually generate waveform-like space-time data structures, with limited extent in space and dissolving as a timeout expires.
+%
+Those structures will be responsible to determine the pertinence in space and time of each operation.
+%
+An example of such a structure is realised by the code shown in \Cref{img:case2} (top).
+%
+A \texttt{wave} works similarly to the gradient in \Cref{img:linda-gradient}, maintaining a \texttt{target} tuple reifying the shortest past through a similar specification.
+%
+A main difference -- other than the obvious absence of any crowd management -- is the evaluation of the age and distance, which makes the wave disappear whenever and wherever the horizon is reached.
+
+When a \texttt{stin} operation requiring retrieval of a tuple template \texttt{T} is triggered, it will spawn a messenger activity called \texttt{hermes} (with \texttt{Op} set to \texttt{in}) which will propagate to a matching tuple \texttt{T'} following the corresponding \texttt{wave} it generated. As soon as the tuple is found, a new \texttt{hermes} (with \texttt{Op} set to \texttt{in\_back}) is spawned which will follow the \texttt{stin} gradient back. This behaviour can be coded as shown in \Cref{img:case2} (middle). 
+
+Given these two basic bricks, the \texttt{stout} and \texttt{stin} primitives would be encoded as in \Cref{img:case2} (bottom). For each, a tuple template, a spatial range and a validity time must be specified. \texttt{stout} implementation is concise, because it just needs to manifest itself trough a \texttt{wave} and make the tuple available; \texttt{stin}, instead, needs also to spawn a \texttt{hermes}, whose goal is to retrieve a tuple and move it to the tuple space where the operation was spawned.
+
+These new primitives allow agents to publish/retrieve information flexibly tuning the space-time horizons, relying on lower-level gradients (and routing paths) which adapt to the mobility of the network \cite{flexiblegradients}.
 
 \section{Scale independent computations in situated networks}
 
@@ -3254,7 +3815,7 @@ For additional assistance to the reader, we provide a table of the symbols (\Cre
 \label{f:definitions}
 \end{figure}
 
-\subsubsection{Modeling Networks as Space-Time Manifolds}
+\subsubsection{Modelling Networks as Space-Time Manifolds}
 
 Many physically situated networks perform computations that can be naturally described in terms of the physical space through which the devices comprising the network are distributed.
 %
@@ -3310,18 +3871,18 @@ Spatial sections are essentially snapshots in time, without attempting to enforc
 Typical formulations of distributed computation (e.g.,~\cite{Lynch:1996:DA:525656}) cannot be applied to space-time manifolds, as any manifold contains an uncountably infinite number of events, and thus the events of the computation cannot be ordered.
 %
 Instead, computation may be defined in terms of fields, per~\cite{bealBasisSCW10,BVD-SCW14,BealUsbeck12}:
-\begin{defn}[Continuous Computational Field]
+\begin{thrdefn}[Continuous Computational Field]
   A field is a function $\field: \manifold \rightarrow \spaceof{\datavalue}$ that maps every event $\event$ in a Riemannian manifold $\manifold$ to some data value in $\spaceof{\datavalue}$.
-\end{defn}
+\end{thrdefn}
 \noindent
 Discrete computational fields (e.g., events in the execution of a distributed algorithm) may be defined likewise, except that the domain is limited to a discrete subset of events $\discreteset \subset \manifold$.\footnote{Considering a discrete execution as a manifold subspace, rather than an abstract graph, preserves its relationship with the space in which devices are embedded.}
 
 Let $\fieldsof{\spaceof{\datavalue}}$ be the space of all fields whose range is contained in ${\spaceof{\datavalue}}$.
 %
 A space-time computation $\computation$ is then a higher-order function that maps from each possible field defining an evaluation environment to a corresponding field of values:
-\begin{defn}[Space-Time Computation]
+\begin{thrdefn}[Space-Time Computation]
   A computation $\computation$ is a function $\computation: \fieldsof{\spaceof{\datavalue}} \rightarrow \fieldsof{\spaceof{\datavalue}}$, where the domain of the output field is always identical to the domain of the input field.
-\end{defn}
+\end{thrdefn}
 \noindent
 In other words, a computation takes a field as input, whose domain defines the scope over which the computation executes and whose values are all of the environmental state that can affect its outcome (e.g., sensor readings).  At every point of space and time in the execution scope, some output value is produced.
 
@@ -3329,18 +3890,18 @@ The computations we are interested in are those physically realizable: those tha
 %
 Approximability is determined by comparing values in a continuous field to the nearest points in a corresponding discrete field:
 
-\begin{defn}[$\epsilon$-approximation]\label{def:eapprox}
+\begin{thrdefn}[$\epsilon$-approximation]\label{def:eapprox}
   Let $\discreteset_{\epsilon} \subset \manifold$ be a discrete set such that every event $\event \in \manifold$ is within distance $\epsilon$ of some event in $\discreteset_{\epsilon}$.
   %
   The $\epsilon$-approximation of field $\field: \discreteset_{\epsilon} \rightarrow \spaceof{\datavalue}$ is a field mapping every point in $\manifold$ to the value of $\field$ at the nearest point in $\discreteset_{\epsilon}$ (choosing arbitrarily for equidistant points).
-\end{defn}
+\end{thrdefn}
 
-\begin{defn}[Field Approximation]\label{def:approx}
+\begin{thrdefn}[Field Approximation]\label{def:approx}
   A countable sequence of $\epsilon_{i}$-approximations $\field_i$ of manifolds $\manifold_i$, with $\epsilon_{i} < \epsilon_{i-1}$ is said to approximate field $\field: \manifold \rightarrow
   \spaceof{\datavalue}$ if both the following hold:
   $$\lim_{i\rightarrow \infty} |(\manifold \cup \manifold_{i}) - (\manifold \cap \manifold_{i})| = 0$$
   $$\lim_{i\rightarrow \infty} \int_{\manifold \cap \manifold_{i}} |\field-\field_{i}| = 0$$
-\end{defn}
+\end{thrdefn}
 \noindent
 In other words, a sequence of increasingly fine discrete sets approximates a continuous field if both the manifolds and the values assigned over them by the fields tend toward identical.
 %
@@ -3364,9 +3925,9 @@ The second condition for physical realizability is causality: causal computation
 %
 Intuitively, information is available if it could have been relayed from event to event from its origin.  To compute this, we add the concept of a neighbourhood, defining how far information can move in one step:
 % note: union of open sets is always open
-\begin{defn}[Neighbourhood]\label{def:neighborhood}
+\begin{thrdefn}[Neighbourhood]\label{def:neighborhood}
   Neighbourhoods are defined by a function $\neighborhoods$ mapping each $\event$ to a connected open set $\hoodof{\event} \subset \manifold$, containing at least every event within distance $\hoodradius$ of $\event$ (for some positive $\hoodradius$).
-\end{defn}
+\end{thrdefn}
 \noindent
 Information is thus directly available to an event $\event$ in device $\device$ from the region $\directinforegion{\event}$ of events that have been in its neighbourhood in the present or past:
 %
@@ -3383,9 +3944,9 @@ For example, \Cref{f:approxspeed} shows discrete computations with the same neig
 The difference between $\inforegion{\event}$ and $\closure{\pastof{\event}}$ is bounded by $\epsilon$, however, and converges to zero with $\epsilon$.
 
 Causal computations are then those whose values depend only on events from which information is available:
-\begin{defn}[Causality]
+\begin{thrdefn}[Causality]
   Computation $\computation$ is causal if for every pair of evaluation environments $\environment$ and $\environment'$ with the same domain $\manifold$, it is the case that $\environment(\inforegion{\event}) = \environment'(\inforegion{\event})$ implies $\computation(\environment)(\event) = \computation(\environment')(\event)$.
-\end{defn}
+\end{thrdefn}
 \noindent
 Some examples of causal and approximable computations:
 \begin{itemize}
@@ -3403,12 +3964,12 @@ An example of a non-approximable computation is one that maps all rational dista
 
 One way of specifying space-time computations is by the functional composition of a basis set of operators:
 %
-\begin{defn}[Space-Time Operator]\label{def:operator}
+\begin{thrdefn}[Space-Time Operator]\label{def:operator}
 A space-time operator is a function 
 $o: \fieldsof{\spaceof{\datavalue}} \times \fieldsof{\spaceof{\datavalue}}^k \rightarrow \fieldsof{\spaceof{\datavalue}}$
 taking an evaluation environment and zero or more additional fields
 as inputs and producing a field as output.
-\end{defn}
+\end{thrdefn}
 \noindent
 This is much like the definition of a computation, except that the domains of the fields may differ.
 
@@ -3443,16 +4004,16 @@ Our approach is as follows: consider any distributed algorithm for which we can 
 %
 If the distributed algorithm always approximates the space-time program, no matter the particular arrangements of discrete events, then it is clearly resilient to increasing numbers of devices and to small changes in device position:
 %
-\begin{defn}[Consistent Program]
+\begin{thrdefn}[Consistent Program]
   Let $\PROGRAM$ be a space-time program, $\environment$ be an evaluation environment, and $\environment_i$ a countable sequence of $\epsilon$-approximations that approximate field $\environment$.
   %
   Program $\PROGRAM$ is {\em consistent} if $\PROGRAM(\environment_i)$ approximates $\PROGRAM(\environment_i)$ for every $e$ and $e_i$.
-\end{defn}
+\end{thrdefn}
 \noindent
 As noted in the discussion of causality, however, information may move at different speeds in different discrete approximations.  This means any program with non-trivial interaction between devices will not be consistent, but that if a program eventually converges to a steady state, then it may be consistent after that point:
-\begin{defn}[Eventually Consistent Program]
+\begin{thrdefn}[Eventually Consistent Program]
   Consider a causal program $\PROGRAM$ evaluated on environment $\environment$ with domain $\manifold$.  Program $\PROGRAM$ is {\em eventually consistent} if, for any environment $\environment$ in which there is a spatial section $\sectionof{\manifold}$ such that the values of $\environment$ do not change at any device in the time-like future $\futureof{\sectionof{\manifold}}$, there is always some spatial section $\sectionof{\manifold}'$ such that $\PROGRAM$ is consistent on the time-like future $\futureof{\sectionof{\manifold}'}$.
-\end{defn}
+\end{thrdefn}
 \noindent
 In other words: if the inputs ever converge, then the outputs eventually converge as well, and are consistent thereafter.
 
@@ -3999,7 +4560,7 @@ Overbar notation $\overline{y}$ generally means a comma-separated list $y_1,\ldo
       \comment{Neighborhood values}  \\
  \end{array}
  $}
-\caption{\protelis{} abstract syntax, colored to emphasize definition and application (red), functions (blue), variables (green), and special field calculus operators (purple).}
+\caption[Abstract syntax of \protelis{}]{\protelis{} abstract syntax, colored to emphasize definition and application (red), functions (blue), variables (green), and special field calculus operators (purple).}
 \label{img:protelis-syntax}
 \end{figure}
 
@@ -4179,7 +4740,7 @@ Here, each Protelis device lives on a separate server in an enterprise network, 
 %
 This daemon monitors the service, injecting information about its status and known dependencies into the environment and maintaining a neighborhood by opening parallel communication links to the corresponding daemons on any other servers that the monitored service communicates with.
 %
-Examples using each of these implementations are shown in \Cref{protelis-applications}.
+Examples using each of these implementations are shown in \Cref{protelis-rendezvous} and \Cref{protelis-network-service}.
 
 \subsection{Application example: Rendezvous at a Mass Event}
 \label{protelis-rendezvous}
@@ -4265,6 +4826,7 @@ As \Cref{img:protelis-rendezvous} shows, once the simulation starts, a chain of 
 Note also that, due to the ongoing nature of the computation, if one of the device owners moves in a different direction instead, the path will automatically adjust so that it continues to recommend the best path for rendezvous.
 
 \subsection{Application example: Network Service Management}
+\label{protelis-network-service}
 
 One of the common problems in managing complex enterprise services is that there are often many dependencies between different servers and services.
 %
