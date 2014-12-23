@@ -851,7 +851,7 @@ Moreover, it can have its space-time extent modulated and controlled by restrict
 \begin{figure}
 \centering
 \includegraphics[width=0.99\textwidth]{img/aggregate-tower}
-\caption{Layered approach for development of spatially-distributed systems via aggregate programming.}
+\caption[Layered approach]{Layered approach for development of spatially-distributed systems via aggregate programming.}
 \label{img:researchprogram}
 \end{figure}
 
@@ -3286,7 +3286,7 @@ This specification  can be used to feed the SAPERE infrastructure and be simulat
   \begin{center}
   \includegraphics[width=.9\columnwidth]{img/gradient}
   \end{center}
-  \caption{Gradients for the snaphots in \Cref{fig:generalmap}. Concentration is the gradient value normalised to its maximum value.}
+  \caption[Gradients in crowd evacuation]{Gradients for the snaphots in \Cref{fig:generalmap}. Concentration is the gradient value normalised to its maximum value.}
   \label{fig:field}
 \end{figure}
 
@@ -4272,42 +4272,526 @@ Our reference environment is the same as previous case, but we added $100$ resou
 %
 Both charts show that, even if the environment has no specific clusters, there is a significant gain in the quality of replies.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \chapter{Case study: Crowd disasters prediction}
+
+%===================================================================================
+\section{Human Crowd Density and Safety}
+\label{sec:human-density-safety}
+%===================================================================================
+
+This year, more than 60 people died during the ``New Year's Eve stampede'' in Abidjan\footnote{\url{http://www.bbc.co.uk/news/world-africa-20885814}}.
+%
+During the Love Parade on July 24, 2010 in Duisburg, 21 people died and more than 500 were injured in a crowd disaster \cite{helbing2012}.
+%
+Similarly at Hillsborough stadium on April 15, 1989, 96 people died and 400 were injured \cite{Nicholson1995}.
+%
+Many more such sobering statistics exist, explaining why disciplines such as crowd density estimation and human movement flow analysis have received much attention over the years.
+%
+While human movements generally depend on the environment and the current context -- such as the type of event -- it was shown that disasters occurred in many different venues at different circumstances and could have been avoided through better management and planning \cite{fruin1993}.
+%
+Towards this end, crowd density metrics that indicate the danger for individuals in a crowd have been established \cite{helbing2012,fruin1993}:
+\begin{itemize}
+ \item density of people in a defined area, with safe levels approximated as 2-3 persons per meter;
+ \item flow of persons per meter, safe below 82 persons per meter and minute;
+ \item pressure exerted on each person, tolerable up to 1500 N.
+\end{itemize}
+%
+Thus, measuring crowd densities and predicting their development can offer valuable information about the current and future overall event safety and help to avoid catastrophes.
+
+Previous work on this topic has been conducted in the field of pedestrian crowd dynamics \cite{Helbing2005,Burstedde2001,Antonini2006} and similarly in the field of evacuation scenarios \cite{helbing2009,klingsch2010,zia2011}.
+%
+The purpose of many of these works has been to further our understanding of these dangerous phenomena in order to pre-emptively react to them.
+%
+Generally the approach of choice has been to use simulations and draw conclusions from their outcome, whereby simulations have been based on models of reality that were constructed by abstracting data from real-world events.
+%
+Our contribution uses a similar approach, in that we use time series analysis and other approaches to predict the crowd density at future points based on observed crowd densities from the past.
+%
+Our approach is based on a dataset -- comprised of the spatial properties of event spectators -- that was created by a collaborative crowd-sourcing/participatory sensing approach using mobile devices of spectators (similar to e.\,g., \cite{wirz2012}; see \cite{Burke2006} for more information on participatory sensing).
+%
+It has been argued that a linear correlation between user density -- meaning the observed density of spectator's mobile devices -- and crowd density exists \cite{wirz2013}.
+%
+Due to this linear relation a prediction of user density can be assumed to be correlated to actual crowd density.
+%
+Thus for the purpose of this work we do not distinguish between them.
+%
+However all presented results related to user density and should be viewed in this light.
+%
+We state our research hypotheses as follows:
+
+\begin{description}
+\item[\textbf{Research Hypotheses:}]
+\item[\textbf{(H1):}] Data on crowd movements that was observed during actual mass events can be used to develop prediction mechanisms for crowd densities.
+\item[\textbf{(H2):}] Such trained prediction mechanisms can forecast the density of crowds with acceptable precision in a defined time frame.
+\end{description}
+
+Previous works to predict crowd density exists, however most use different approaches than the one presented in this paper.
+%
+\cite{hsu2011,ma2004} use light-based/visual approaches that can only cover areas that were previously equipped with cameras.
+%
+\cite{Nakatsuka2008} use wireless signal strength indicators (RSSI) to estimate the number of devices in an area.
+%
+However the mentioned approach was only validated in a small-scale experiment.
+%
+Perhaps most similar to our work is the research conducted in e.\,g., \cite{wirz2013,weppner2013}.
+%
+The authors also use collaboratively crowd-sourced datasets of users' spatial properties to predict crowd densities at a given time and location.
+%
+Our work deviates in that it uses a different forecasting approach to predict crowd density.
+
+%===================================================================================
+\section{Approximating Human Density - A Data Collection Approach}
+\label{sec:an-approach}
+%===================================================================================
+
+In order to investigate patterns of crowd movement and resulting crowd densities we performed a large--scale experiment during an urban sports event in the city of Vienna.
+%
+Our goal was to observe and track movements and neighbourhoods of spectators in the event area.
+%
+We developed an event app for Android and iOS that was active on the event day and sent spatial data of willing users to a database.
+%
+The App was active only on the event day between 7 o'clock and 18 o'clock and was used by 6698 people (android: 5192, iOS: 1506) of which roughly 5230 agreed to participate in our study.
+
+%-----------------------------------------------------------------------------------
+\subsection{Data}
+\label{subsec:data}
+%-----------------------------------------------------------------------------------
+
+In order to collect spatial data from as many persons as possible it is important to choose sensor technologies that are commonly used.
+%
+We decided to employ GPS sensors, which are widely distributed in mobile platforms and can be easily used to log the position of devices with fair accuracy.
+%
+The inherent restriction is that GPS cannot be easily used in indoor environments.
+%
+In order to detect additional devices in the users surroundings, we further used proximity-based sensor technologies to capture the user's neighbourhoods.
+%
+Bluetooth, NFC, RFID and WiFi have been used in the past -- see for example \cite{Makela2007} -- however all technologies suffer from various drawbacks such as short interaction range, limited availability or sparse scan points.
+%
+Since we did not actually transmit information but simply performed presence detection, we decided on using Bluetooth which is very widely used and can detect other Bluetooth devices in a fitting distance with acceptable speed and accuracy.
+%
+We collected GPS locations in an interval of 1 minute and scanned for Bluetooth devices in an interval of 2 minutes.
+%
+To improve the quality of the collected movement traces we applied filtering mechanisms to the GPS data thereby removing unrealistic, short or problematic traces.
+%
+The resulting GPS dataset contains 1503 user traces collected over 11 hours with a sampling rate of one minute.
+%
+On average, each trace contains 128 samples with a duration of 265 minutes whereby the median of the interval between samples is 1 minute.
+%
+The Bluetooth data was collected by 3352 active users that detected 38816 unique ids and generated 1092694 proximity relations overall.
+%
+In \cite{Su2006} the authors substantiate that assuming bidirectional communication links between moving Bluetooth devices in urban environments is feasible.
+
+%-----------------------------------------------------------------------------------
+\subsection{Similar spatial data-based models}
+\label{subsec:similar-models}
+%-----------------------------------------------------------------------------------
+
+Many similar datasets for spatial data have been collected in previous works.
+%
+A rather accurate dataset of position traces that represents the movement of taxis in an urban environment was presented in \cite{jetcheva2003}.
+%
+Roughly 500 cars in the city of San Francisco were tracked in a time frame of 30 days.
+%
+Samples were created in 10 second intervals.
+%
+In \cite{lee2009}, the authors investigated the properties of human walk patterns.
+%
+To this end 8-32 users were tracked in diverse locations such as universities, cities or amusement parks.
+%
+Locations were collected once every 10 seconds.
+%
+The durations of the collected traces ranged from a few hours to an entire week.
+%
+A location-based dataset featuring more users was created by Microsoft Research and described in \cite{zheng2008}.
+%
+128 Chinese volunteers were observed for more than five years with samples being taken every 1-5 seconds or 5-10 meters.
+%
+Scientific works that presents datasets of Bluetooth relations -- collected by commercially available, non-customized sensors -- have been published for almost 10 years.
+%
+One of the first was presented in \cite{eagle2005} using the ``Serendipity'' framework.
+%
+100 students were using this software for 9 months -- mostly on a university campus -- and detected 2798 unique Bluetooth devices.
+%
+In \cite{Su2006}, the authors describe a ``war-driving''-based approach to capture the Bluetooth-landscape of Toronto.
+%
+To this end, 5 devices were used in 3 different locations in the city, with the result of identifying 296 unique devices.
+%
+\cite{Pietilainen2012} presents a Bluetooth dataset that was collected in the frame of the SIGCOMM 2009 conference.
+%
+76 active devices were used in a 2 day period identifying close to 16000 unique ids.
+%
+The sampling rate for the acquisition of this data was 2 minutes.
+%
+Another dataset that describes the Bluetooth landscape of an urban environment was presented in \cite{Natarajan2007}.
+%
+3 static and 9 mobile devices discovered over 10,673 unique devices and recorded over 362,599 unidirectional relations in a 4 month period.
+%
+Compared to the mentioned related datasets the contribution of the presented data lies in the very large number of users that move with common purpose in the same environment at the same time.
+
+%-----------------------------------------------------------------------------------
+\subsection{Observed crowd densities}
+\label{subsec:observed-densities}
+%-----------------------------------------------------------------------------------
+
+For the purposes of this research, we created a unified density map of the event area using all the collected GPS and Bluetooth data.
+%
+We combined the Bluetooth and GPS information using the knowledge that every time a device detected a Bluetooth neighbourhood, the detected device was physically close -- which we defined as within a circular area of 30 meters based on standard Bluetooth radio transmission ranges -- to the source device.
+%
+Based on this assumption we placed the detected Bluetooth devices at approximate locations around the source device.
+%
+We further segmented the event area into squares of 100x100 meters and computed the user densities for all of these segments.
+%
+This was achieved by aggregating all GPS and Bluetooth information for 2 minute time intervals, computing approximate locations for all unique identifiers in this interval, and counting the number of devices located in each segment.
+%
+We aggregated data into 2 minute intervals because of the sampling interval of the Bluetooth sensors.
+%
+The imprecision that was introduced by the approximation of the devices' locations (about 30m) is somewhat mitigated by the comparably coarser segmentation of the city (100m).
+%
+Figure \ref{fig:segments} visualizes the described segmentation and computed densities for three time intervals in the morning, midday and evening of the event day.
+
+\begin{figure}
+	\subfigure[]{
+		\setlength\fboxsep{0pt}
+		\setlength\fboxrule{0.5pt}
+		\setlength\fboxsep{0pt}
+		\fbox{\includegraphics[width=0.28\columnwidth]{img/segments_1}
+		\label{fig:seg1}}
+		
+	}
+	\subfigure[]{
+		\setlength\fboxsep{0pt}
+		\setlength\fboxrule{0.5pt}
+		\setlength\fboxsep{0pt}
+		\fbox{\includegraphics[width=0.28\columnwidth]{img/segments_2}
+		\label{fig:seg2}}
+	}
+	\subfigure[]{
+		\setlength\fboxsep{0pt}
+		\setlength\fboxrule{0.5pt}
+		\setlength\fboxsep{0pt}
+		\fbox{\includegraphics[width=0.30\columnwidth]{img/segments_3}
+		\label{fig:seg3}}
+	}
+	\caption[Segmentation and crowd densities]{Segmentation and crowd densities for (a) the morning, (b) midday and (c) the evening of the event day. In this visualization segment densities above 150 spectators per segment were clipped to 150. All values were subsequently divided by 150 and mapped to gray scale.}
+	\label{fig:segments}
+\end{figure}
+
+In the most crowded area of the event -- the city center -- we measured peak densities of 397 persons per segment (i.\,e., 10000 square meters).
+%
+All computed densities were generated using roughly 38000 unique devices (see \Cref{subsec:data}), however not all devices were active during the entire day.
+%
+Based on estimations of the number of event spectators provided by the organizers around 300000 people observed the event.
+%
+As such we project roughly 0.31 persons per square meter in the city center during the time intervals in which most of these people were located in the same area.
+
+%===================================================================================
+\section{Towards the prediction of crowd densities}
+\label{sec:predicting}
+%===================================================================================
+
+Tools that are able to predict crowd densities for a given environment and context -- such as an urban sports event -- give emergency forces and organizers a visual means to detect and further preemptively avoid dangerous situations that could lead to catastrophes \cite{Johansson2012} such as the ones mentioned in the introduction of this paper.
+%
+Towards this end we built a system that predicts the density of crowds in the near future based on observed movement patterns from the past.
+%
+We approach this problem both by attempting to model the development of individual segment densities directly as well as by predicting the movements of people between segments using graph theory and network flow analysis.
+
+%-----------------------------------------------------------------------------------
+\subsection{A human crowd density flow network}
+\label{subsec:human-density-flow-network}
+%-----------------------------------------------------------------------------------
+
+We build the graph of the city by interpreting segments as vertices and connecting them with two unidirectional edges between neighbouring segments thus creating a checkboard-like network structure.
+%
+We abstract the movements of people in such a way that they can only travel along the created edges.
+%
+In order to determine the flow of people between segments during the event, we computed the difference of the segments' densities between consecutive time steps and used the resulting ``$\delta$-densities'' as starting values for the traditional minimum-cost flow/transportation problem \cite{Monge1781}.
+%
+Segments with positive $\delta$-densities were hereby treated as flow sources, those with 0 $\delta$-density as transport nodes and segments with negative $\delta$-densities as sinks.
+%
+All edges between vertices had unlimited capacity and cost 1 associated with them.
+%
+However due to the nature of the data used to generate this flow network (mobile devices that were turned on or off at random), the resulting flow network cannot be guaranteed to be balanced.
+%
+As such we created a dummy node that provided/consumed the difference in source/sink flow.
+%
+The dummy node was connected via network edges to all segments, however to not corrupt the results, all flows over these edges were associated with a cost of 100000 (i.\,e., so high that such flows are only computed once all normal sources/sinks have been satisfied).
+%
+\Cref{fig:flows} visualizes the computed network flows for three time intervals in the morning, midday and evening of the event day -- captured at similar times as in \Cref{fig:segments}.
+%
+We computed these flows using an established algorithm -- described in \cite{berkelaar2004} -- to solve linear programming challenges such as the minimum-cost flow problem.
+
+\begin{figure}
+	\subfigure[]{
+		\setlength\fboxsep{0pt}
+		\setlength\fboxrule{0.5pt}
+		\setlength\fboxsep{0pt}
+		\fbox{\includegraphics[width=0.28\columnwidth]{img/flows_1}
+		\label{fig:flow1}}
+	}
+	\subfigure[]{
+		\setlength\fboxsep{0pt}
+		\setlength\fboxrule{0.5pt}
+		\setlength\fboxsep{0pt}
+		\fbox{\includegraphics[width=0.28\columnwidth]{img/flows_2}
+		\label{fig:flow2}}
+	}
+	\subfigure[]{
+		\setlength\fboxsep{0pt}
+		\setlength\fboxrule{0.5pt}
+		\setlength\fboxsep{0pt}
+		\fbox{\includegraphics[width=0.3\columnwidth]{img/flows_3}
+		\label{fig:flow3}}
+	}
+	\caption[Visualization of the flows between segments]{Visualization of the flows between segments for (a) the morning, (b) midday and (c) the evening of the event day. In this visualization flows above 8 were clipped to 8. All values were subsequently divided by 8 and mapped to grayscale.}
+	\label{fig:flows}
+\end{figure}
+
+As such we created a time series of segment density distributions in 2 minute time intervals -- from here on referenced as $d_{0,2}, d_{2,4}, ...$ -- and a sequence of flow networks that model how these distributions convey into one another -- referenced as $f_{0,2}, f_{2,4}, ...$ --, whereby $f_{0,2}$ describes the flow that runs between $d_{0,2}$ and $d_{2,4}$.
+
+%-----------------------------------------------------------------------------------
+\subsection{Prediction Approaches}
+\label{subsec:predicting-human-crowd-densities}
+%-----------------------------------------------------------------------------------
+
+In order to forecast the development of human densities in the entire tessellated event area we attempted to predict both the flow of humans between individual segments based on their $\delta$-densities as well as the segment densities directly.
+%
+To this end we conducted experiments using various classification methods.
+%
+Our attempts use the collected and previously presented dataset for training.
+%
+The created models were used to predict densities for various time intervals.
+%
+Performance evaluation is performed in relation to the other approaches as well as in relation to the actual measured densities during the event day.
+
+%-----------------------------------------------------------------------------------
+\subsubsection{A first exploratory approach:}
+\label{subsubsec:naive-exploratory-approach}
+
+To create a baseline comparison using a simple prediction method and in order to investigate the forecasting possibilities using the given dataset, we first conducted experiments using an exploratory forecasting approach.
+%
+For this purpose we assume that flows between segments are only influenced by the densities of the source and destination segment.
+%
+Our goal is to compute a prediction function that takes these two densities as input and returns the most likely flow between these segments.
+%
+To this end we parse the computed values of all arcs of all the generated flow networks and combine them with the associated densities of the source and destination segments for each arc.
+%
+More precisely, each density pair $(d_{source}, d_{destination})$ taken from $d_{x,x+2}$ is mapped to the respective flow taken from $f_{x,x+2}$.
+%
+If such a mapping already exists, we add the new reading to the list of previously observed flow values.
+%
+Further we compute the mean over the entire list of flow values and use it as the predicted flow for the respective density pair in the future.
+%
+Subsequently we cluster the generated function in order to generate mappings for values that were not part of the training data.
+%
+We do so by computing the nearest density pair for which we have observed a flow value -- using the root mean squared distance metric -- and attributing the observed flow to the new density pair.
+%
+Figure \ref{fig:flow_func} visualizes the clustered flow prediction function for density pairs plotting the source density along the y-axis, the destination density along the x-axis and the resulting flow mapped to gray scale.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{img/flow_func}
+    \caption[Flow prediction function]{A flow prediction function, mapping pairs of segment densities to the expected flow between them. We plot the density of the source segment along the y-axis, the density of the destination segment along the x-axis and map the flow between them to grayscale in the range of 0 to 120.}
+    \label{fig:flow_func}
+\end{figure}
+
+We can subsequently use this static function to forecast the development of an arbitrary density distribution over multiple time steps.
+%
+The results of such an analysis are given in \Cref{subsec:results}.
+
+%-----------------------------------------------------------------------------------
+\subsubsection{Time series forecasting:}
+\label{subsubsec:time-series-forecasting}
+
+A deeper analysis on the dataset has been performed by means of time series forecasting.
+%
+We divided our dataset in multiple smaller datasets, each one considering the data of a single segment and its context.
+%
+For each single segment, in fact, we can include different contents:
+\begin{enumerate}
+ \item density of the single segment, and nothing else;
+ \item density of the segment and densities of the surrounding segments;
+ \item density of the segment, densities of the surrounding segments and flows on the edges connecting them, as previously estimated in \Cref{subsec:human-density-flow-network}.
+\end{enumerate}
+%
+Moreover, the density of the segments can be measured in two different ways:
+\begin{enumerate}
+ \item using the actual absolute density value;
+ \item using the $\delta$-density value as described in \Cref{subsec:human-density-flow-network};
+\end{enumerate}
+%
+Consequently, we obtained six different data sets, summarized in \Cref{tab:datasets}.
+\begin{table}
+\begin{center}
+\begin{tabular}{r | c | c }
+ & \textbf{Actual density} & \textbf{$\delta$-density} \\
+\hline
+\hline
+\textbf{Single Segment} & SA & SD \\
+\hline
+\textbf{Segment and surroundings} & NA & ND \\
+\hline
+\textbf{Segment, surroundings and flows} & FA & FD \\
+\hline
+\hline
+\end{tabular}
+\caption[Summary of the datasets]{Summary of the datasets used for performing time series forecasting. Each combination is assigned a short name, that will be used from now on.}
+\label{tab:datasets}
+\end{center}
+\end{table}
+%
+This data partitioning is meant to answer the following questions.
+\begin{enumerate}
+ \item Can a forecaster built upon the information of a single segment provide reliable forecasts, or is the information about its surroundings necessary?
+ \item How useful is the flow estimation performed in \Cref{subsec:human-density-flow-network}? Can it really help in building efficient forecasters?
+ \item Which measure is more suitable for training a forecaster, the actual density value or the $\delta$-density?
+\end{enumerate}
+
+In order to perform time series forecasting, we relied on the tools provided by the well-known WEKA software \cite{hall2009}.
+%
+Since version 3.7.3, in fact, such software offers the possibility to perform time series forecasting by means of a dedicated plug-in, that also embeds tools whose goal is to measure how good the forecaster can perform.
+%
+In this case, no other data set but the one already presented could be used as test set.
+%
+Consequently, we performed an evaluation of the forecasters using the training data, namely, once the forecaster has been trained, it is then applied to make a forecast at each point in time by stepping through the data.
+%
+These predictions are collected by the evaluator provided by WEKA, and are compared to the actual data in order to estimate the error that would have been obtained if such a forecaster had been used.
+%
+We identified three different learning algorithms suitable for our purpose and already available in the tool.
+\begin{itemize}
+ \item Linear regression. According to the WEKA documentation, this strategy uses Aikake criterion \cite{aikake1974} for model selection, and is able to deal with weighted instances.
+ \item Gaussian processes \cite{mackay1998}, which has been proven to be flexible and practical to work with in machine learning \cite{rasmussen2004}.
+ \item Support Vector Machines \cite{cortes1995}. WEKA provides a built in utility which implements the sequential minimal optimization algorithm \cite{smola2004, keerthi2001} for training a support vector regression.
+\end{itemize}
+%
+Considering the datasets introduced above, we recap all the combinations of datasets and algorithms in \Cref{tab:algorithms}.
+%
+\begin{table}[!htb]
+\begin{center}
+\begin{tabular}{r | c | c | c | c | c | c }
+ & \textbf{SA} & \textbf{FA} & \textbf{NA}  & \textbf{SD} & \textbf{FD} & \textbf{ND} \\
+\hline
+\hline
+\textbf{Linear Regression} & SA-l & FA-l & NA-l & SD-l & FD-l & ND-l \\
+\hline
+\textbf{Gaussian Processes} & SA-g & FA-g & NA-g & SD-g & FD-g & ND-g \\
+\hline
+\textbf{Support Vector Machines} & SA-s & FA-s & NA-s & SD-s & FD-s & ND-s \\
+\hline
+\hline
+\end{tabular}
+\caption[Combinations of algorithms and datasets]{Summary of all the combinations of algorithms and datasets used to perform time series forecasting}
+\label{tab:algorithms}
+\end{center}
+\end{table}
+
+%-----------------------------------------------------------------------------------
+\subsection{Results}
+\label{subsec:results}
+%-----------------------------------------------------------------------------------
+\subsubsection{Measures}
+\label{subsubsec:measures}
+In order to investigate the precision and usefulness of the approaches described in \Cref{subsec:predicting-human-crowd-densities} we computed and evaluated their respective prediction errors.
+%
+For the purpose of this contribution, in which we compare the predictive capabilities of multiple approaches using only a single time series, we use the RMSD (root-mean-squared deviation) metric for comparisons.
+%
+This gives the inherent benefit that the results are on the same scale as the original time series.
+%
+More precisely, for a predicted density distribution $fd_{x,x+2}$ and the actual, observed density distribution $d_{x,x+2}$ we compute the prediction error as $$E = \sqrt{ \sum_{i=1}^{n} (fd_{x,x+2}(i) - d_{x,x+2}(i))^2 \over n }$$ where $n$ equals the number of segments. 
+
+\subsubsection{Time series forecasting results}
+\label{subsubsec:timeseries}
+\begin{figure}
+	\parbox{0.5\columnwidth}{\includegraphics[width=0.49\columnwidth]{img/algorithms-sa}}
+	\parbox{0.5\columnwidth}{\includegraphics[width=0.49\columnwidth]{img/algorithms-sd}}
+	\parbox{0.5\columnwidth}{\includegraphics[width=0.49\columnwidth]{img/algorithms-na}}
+	\parbox{0.5\columnwidth}{\includegraphics[width=0.49\columnwidth]{img/algorithms-nd}}
+	\parbox{0.5\columnwidth}{\includegraphics[width=0.49\columnwidth]{img/algorithms-fa}}
+	\parbox{0.5\columnwidth}{\includegraphics[width=0.49\columnwidth]{img/algorithms-fd}}
+\caption{Performance of the three algorithms with all the available datasets}
+\label{img:algorithms}
+\end{figure}
+%
+Initially, we compared all the time series forecasting algorithms.
+%
+\Cref{img:algorithms} provides a good insight, by showing in six separated charts the error produced by all the combinations listed in \Cref{tab:algorithms}.
+%
+It is immediately clear that the support vector machines is the most promising approach.
+%
+In fact, it obtains the best results with all the datasets, except with SD and FD, where the gaussian processes algorithm performs better.
+%
+Due to the non-linear nature of the dataset, the linear regression algorithm is consistently performing worst. It seems clear that without data transformation it is inadequate when it comes to forecasting the evolution of this complex scenario.
+%
+The last interesting fact is that all those algorithms tend to perform acceptably well for a few time steps, then their performance suddenly diverges making them completely unreliable.
+
+\begin{figure}
+\parbox{0.5\columnwidth}{\includegraphics[width=0.49\columnwidth]{img/flow-a}}
+\parbox{0.5\columnwidth}{\includegraphics[width=0.49\columnwidth]{img/flow-d}}
+\caption[Utility of neighbouring segments data]{Impact of the data about neighbouring segments and flows on the performance of the support vector machines algorithm}
+\label{img:flows}
+\end{figure}
+%
+We decided to focus on the support vector machines algorithm in the following analysis, since it has been proven to be the most promising one.
+%
+We want to understand how useful is the information about the neighbourhood of a segment, and which is the positive impact, if any, of the information about the flow esteem we extracted in \Cref{subsec:human-density-flow-network}.
+%
+\Cref{img:flows} shows how the information about the segment itself is not descriptive enough, and when used alone to train the forecaster the predictions are significant only for the immediate future.
+%
+The accuracy improves a lot when the the values of the neighbourhood are also considered in the prediction.
+%
+Adding the information about the flows, instead, produced some unexpected results: it does not improve the behavior in case of analysis using the absolute density, while it worsens the forecaster performance when the $\delta$-density is used.
+%
+This suggests that estimating the people flow by means of solving a minimum cost flow problem could be an oversimplification, and together with the fact that such data increases the number of inputs for the regression function, may lead to consistent errors.
+
+The comparison between absolute density and $\delta$-density shows different behavior depending on the data set: with the single node, the forecaster trained with the absolute values seems to perform slightly worse, but this measure is more stable when the forecast window is wider; with informations about estimated flows and neighbourhood, the result is curiously exactly the opposite.
+%
+Without the flow information, the $\delta$-density performs better.
+%
+Our hypothesis is that this is due to the fact that $\delta$-density implicitly carries information about the flows when neighbouring nodes are considered.
+%
+Consequently, it does not benefit from the additional information carried by the our flow estimates.
+
+\subsubsection{Comparison of various approaches}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\columnwidth]{img/1step}
+    \caption{Accuracy of various approaches for a forecasting depth of a single step.}
+    \label{fig:pred_1}
+\end{figure}
+
+\Cref{fig:pred_1} compares the prediction accuracy for a forecasting depth of a single step.
+%
+The analysis was performed for the entire collected time series, forecasting the next distribution (i.\,e., the crowd density in 2 minutes) and comparing the result to the actual crowd density at that time.
+%
+The figure compares our approaches to a simple baseline algorithm that always predicts the previous density distribution and to the performance of Brown's simple exponential smoothing algorithm \cite{brown2004}.
+%
+Flow prediction function (FPF), exponential smoothing and baseline perform very similarly, while the ND-s forecaster is able to obtain better results, in particular at midday when the people movement is more intense.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\columnwidth]{img/error}
+    \caption[Errors of forecasters]{Comparison of flow prediction function and support vector machines forecaster for various forecast lengths at different time of the day}
+    \label{fig:error}
+\end{figure}
+%
+We run the flow prediction function and the forecaster based on support vector machines at the three different times of the day presented in \Cref{fig:segments}.
+%
+We chose to predict up to twenty time steps, and results in \Cref{fig:error} make clear that the support vector machines algorithm works better for predictions in a short time window, then it completely diverges.
+%
+On the other hand, the flow prediction function is very stable, but is affected by a bigger error when performing short-term forecast.
+
+Due to the fact that the approaches described in \Cref{subsubsec:time-series-forecasting} were trained and evaluated on the same dataset, their results are likely affected by training bias.
+%
+This is a double edged sword: on the one hand these approaches provides good results for future instances of the given urban sports event and similar occurrences, on the other hand if applied to significantly different case studies they may produce less reliable results.
+
+\subsubsection{Algorithms performance}
+We measured the time required to train the forecasters, in order to understand how much computational power would be needed in order to continuously prime them with real time data.
+
+On our test bed\footnote{Intel Core i7 2670QM @ 2.2GHz, 8GB RAM, Sabayon Linux 13.04, Oracle JDK 7u25} the training time for the ND-s was of about two minutes and thirty seconds, thus allowing for a near real time usage.
+%
+However, the training phase is much longer for datasets in which the flow information is considered.
+%
+The flow prediction function is faster and perfectly suitable for real time prediction: the training phase only takes around ten seconds.
+
 \chapter{Case study: Crowd steering at the urban scale}
 \label{ahpc-steering}
 In section, we focus on the problem of crowd steering at the urban scale.
@@ -5119,8 +5603,8 @@ $\environment$            & ``Evaluation environment'' input field \\
 $\computation$            & Computation: a higher-order function mapping fields to fields: $\computation: \fieldsof{\spaceof{\datavalue}} \rightarrow \fieldsof{\spaceof{\datavalue}}$ \\
 %$\evaluate{\environment}{\computation}$ & Evaluation of computation $\computation$ in environment $\environment$ \\
 \hline
-$\hoodof{\event}$         & Communication neighborhood of $\event$ \\
-$\hoodradius$             & Range within which all points are neighbors \\
+$\hoodof{\event}$         & Communication neighbourhood of $\event$ \\
+$\hoodradius$             & Range within which all points are neighbours \\
 $\inforegion{\event}$     & Intersection $\hoodof{\event} \cap \closure{\pastof{\event}}$, from which information is directly available to $\event$\\
 \hline
 \end{tabular}
@@ -5259,7 +5743,7 @@ The second condition for physical realizability is causality: causal computation
 %
 Intuitively, information is available if it could have been relayed from event to event from its origin.  To compute this, we add the concept of a neighbourhood, defining how far information can move in one step:
 % note: union of open sets is always open
-\begin{thrdefn}[Neighbourhood]\label{def:neighborhood}
+\begin{thrdefn}[Neighbourhood]\label{def:neighbourhood}
   Neighbourhoods are defined by a function $\neighborhoods$ mapping each $\event$ to a connected open set $\hoodof{\event} \subset \manifold$, containing at least every event within distance $\hoodradius$ of $\event$ (for some positive $\hoodradius$).
 \end{thrdefn}
 \noindent
@@ -5402,7 +5886,7 @@ As the frequency of evaluations rises, it does not settle one or the other, but 
 %
 It is thus not consistent, indicating its fragility to exactly when and how frequently state updates occur.
 
-Thus, in order to ensure resilience, we will not allow direct access to either state or neighborhood functions, and instead embed them in higher-level constructs with guaranteed convergence.
+Thus, in order to ensure resilience, we will not allow direct access to either state or neighbourhood functions, and instead embed them in higher-level constructs with guaranteed convergence.
 
 Eliminating constructs that can directly give rise to consistency failures is not enough however.
 %
@@ -5486,7 +5970,7 @@ Furthermore, the {\tt min-hood}' operator ensures that all points in the distanc
 %
 Second, $\OneOp$ computes a path integral of the scalar field {\tt integrand} following the gradient of the distance field upward away form the source, starting at the scalar value {\tt initial} in the source region.
 %
-The function definition binds these together via a tuple and lexicographic minimization, such that the value added to the line integral at each device is taken from the neighbor on the (sole) minimal path to the source.
+The function definition binds these together via a tuple and lexicographic minimization, such that the value added to the line integral at each device is taken from the neighbour on the (sole) minimal path to the source.
 
 Importantly, the $\OneOp$ operation subsumes a number of useful and frequently used computations.
 %
@@ -5891,7 +6375,7 @@ Overbar notation $\overline{y}$ generally means a comma-separated list $y_1,\ldo
     & \BNFmid & \!\! \muxK{\e}{\bodyK{\overline{\s};}}{\bodyK{\overline{\s}';}}
       \comment{Inclusive branch}  \\
     & \BNFmid & \!\! \nbrK{\bodyK{\overline{\s};}}
-      \comment{Neighborhood values}  \\
+      \comment{Neighbourhood values}  \\
  \end{array}
  $}
 \caption[Abstract syntax of \protelis{}]{\protelis{} abstract syntax, colored to emphasize definition and application (red), functions (blue), variables (green), and special field calculus operators (purple).}
@@ -5963,7 +6447,7 @@ The alias is created automatically as the bare method name for single imports or
 %
 % Critically, however, there are important questions about how to manage aggregate/local relations for distributed first-class functions~\cite{beal2009dynamically}, which are not yet addressed by field calculus.
 %
-% For this reason, Protelis does not yet offer any neighborhood summary operations applicable to either Java or Protelis functions.
+% For this reason, Protelis does not yet offer any neighbourhood summary operations applicable to either Java or Protelis functions.
 
 \section{Special Field Calculus Operators}
 \label{protelis-special-operators}
@@ -5971,7 +6455,7 @@ The remaining constructs of Protelis are the special operations specific to fiel
 \begin{itemize}
 	\item Construct $\repK{\vb{\var}}{\we}{\bodyK{\overline{\s};}}$ defines a locally-visible variable $\vb{\var}$ initialized with $\we$ and updated at each computation round with the result of executing body $\bodyK{\overline{\s};}$: it provides a means to define a field evolving over time according to the update policy specified by $\bodyK{\overline{\s};}$.
 %
-	\item Construct $\nbrK{\bodyK{\overline{\s};}}$ executed in a device gathers a map (actually, a field) from all neighbors (including the device itself) to their latest value from computing $\overline{\s}$. A special set of built-in ``hood'' functions can then be used to summarize such maps back to ordinary expressions.
+	\item Construct $\nbrK{\bodyK{\overline{\s};}}$ executed in a device gathers a map (actually, a field) from all neighbours (including the device itself) to their latest value from computing $\overline{\s}$. A special set of built-in ``hood'' functions can then be used to summarize such maps back to ordinary expressions.
 	%
 	For example, {\tt minHood} finds the minimum value in the map.
 %
@@ -6014,11 +6498,11 @@ The following code shows some example uses of these constructs:
 
 Function \texttt{\fn{count}} yields an evolving field, counting how many computation rounds have been executed in each device.
 %
-Function \texttt{\fn{maxh}} yields a field mapping each device the maximum value of \texttt{\vb{field}} across its neighborhood---note a \nbrK{} construct should always be eventually wrapped inside a ``hood'' function.
+Function \texttt{\fn{maxh}} yields a field mapping each device the maximum value of \texttt{\vb{field}} across its neighbourhood---note a \nbrK{} construct should always be eventually wrapped inside a ``hood'' function.
 %
 Function \texttt{\fn{distanceTo}} nests \nbrK{} inside \texttt{\fc{rep}} to create a chain of interactions across many hops in the network, computing minimum distance from any device to the nearest ``source device'' (i.e., where \texttt{\vb{source}} holds \texttt{true}).
 %
-It does so by a field \texttt{\vb{d}} initially \texttt{Infinity} everywhere, and evolving as follows: \texttt{\vb{d}} is set to $0$ on sources by \texttt{\fc{mux}}, and elsewhere takes the minimum across neighbors of the values obtained by adding to \texttt{\vb{d}} the estimated distance to the current device---a triangle inequality relaxation computing a distance field also often termed \emph{gradient} \cite{original-gradient,crf,VCMZ-TAAS2011}.
+It does so by a field \texttt{\vb{d}} initially \texttt{Infinity} everywhere, and evolving as follows: \texttt{\vb{d}} is set to $0$ on sources by \texttt{\fc{mux}}, and elsewhere takes the minimum across neighbours of the values obtained by adding to \texttt{\vb{d}} the estimated distance to the current device---a triangle inequality relaxation computing a distance field also often termed \emph{gradient} \cite{original-gradient,crf,VCMZ-TAAS2011}.
 %
 Finally, function \texttt{\fn{distanceToWithObstacle}} shows exclusive branch at work; \texttt{\fn{distanceTo}(\vb{source})} is computed in the sub-region where there is no obstacle, which causes the computation of distances to implicitly circumvent such obstacles.
 
@@ -6072,7 +6556,7 @@ The \alchemist{} event-driven simulation engine then handles execution schedulin
 %
 Here, each Protelis device lives on a separate server in an enterprise network, and is tethered to the networked service it is intended to manage by a service manager daemon.
 %
-This daemon monitors the service, injecting information about its status and known dependencies into the environment and maintaining a neighborhood by opening parallel communication links to the corresponding daemons on any other servers that the monitored service communicates with.
+This daemon monitors the service, injecting information about its status and known dependencies into the environment and maintaining a neighbourhood by opening parallel communication links to the corresponding daemons on any other servers that the monitored service communicates with.
 %
 Examples using each of these implementations are shown in \Cref{protelis-rendezvous} and \Cref{protelis-network-service}.
 
@@ -6149,9 +6633,9 @@ The first half of the algorithm has already been described, and relies on \textt
 %
 This function, given a device and a potential field, builds a path of devices connecting the former with the source of the latter.
 %
-The strategy is to mark the device we want to connect to the potential field's source as part of the path, and then, in every device, compute which of the neighbors is closest to the destination.
+The strategy is to mark the device we want to connect to the potential field's source as part of the path, and then, in every device, compute which of the neighbours is closest to the destination.
 %
-Given this information, a device is in the path if one of the neighbors is in the path already and has marked this device as the closest of its neighbors towards the destination.
+Given this information, a device is in the path if one of the neighbours is in the path already and has marked this device as the closest of its neighbours towards the destination.
 %
 Note how the whole algorithm can be elegantly compressed into just a few lines of code, and how there is no need to explicitly declare any communication protocol for exchanging the required information, thanks to the repeated use of the $\nbrK$ operator.
 
@@ -6189,7 +6673,7 @@ The services were emulated as simple query-response networking programs in Java 
 
 Each service was wrapped with an embedded Protelis execution engine, which was interfaced with the services by a small piece of monitoring glue code that inserted environment variables containing an identifier for the {\tt serviceID} running on that server, a tuple of identifiers for {\tt dependencies}, and the current {\tt managedServiceStatus} of {\tt stop}, {\tt starting}, {\tt run}, {\tt stopping}, or {\tt hung}.
 %
-The glue code also provides {\tt stopService} and {\tt startService} methods to send signals to the service, tracks interactions between the services in order to maintain the set of neighbors for Protelis, and allows an external monitoring application to attach and receive status reports.
+The glue code also provides {\tt stopService} and {\tt startService} methods to send signals to the service, tracks interactions between the services in order to maintain the set of neighbours for Protelis, and allows an external monitoring application to attach and receive status reports.
 
 Dependency-directed coordination of service starting and stopping was then implemented as follows:
 %
@@ -6219,7 +6703,7 @@ Dependency-directed coordination of service starting and stopping was then imple
   \}
 \}
 \end{Verbatim}
-In this program, each device shares information about its service ID and status with its neighbors, enabling them to track which dependencies are currently down or missing.
+In this program, each device shares information about its service ID and status with its neighbours, enabling them to track which dependencies are currently down or missing.
 %
 When there is a problem with dependencies, the device invokes {\tt stopProcess} to shut its service down, when dependencies are good, it brings it up again with {\tt startProcess}, and when it is hung it waits for a human to sort out the problem.
 
@@ -6323,16 +6807,16 @@ ciao
 \section{Discontinuity of Discrete-Valued Fields}
 
 \begin{thm}
-  Any field $\field$ with a discrete range and at least one event $\event$ with a neighbor $\event'$ such that $\field(\event) \neq
+  Any field $\field$ with a discrete range and at least one event $\event$ with a neighbour $\event'$ such that $\field(\event) \neq
   \field(\event')$ cannot be continuous.
 \end{thm}
- Consider the neighborhood $\hoodof{\event}$; by assumption, the set $\field(\hoodof{\event})$ is finite and discrete, thus all of its subsets are open. 
+ Consider the neighbourhood $\hoodof{\event}$; by assumption, the set $\field(\hoodof{\event})$ is finite and discrete, thus all of its subsets are open. 
  %
  If $\field$ is continuous, then both preimages $\field^{-1}(\field(\event))$ and $\field^{-1}(\field(\hoodof{\event}) - \field(\event))$ are open.
  %
  Their subsets intersecting with $\hoodof{\event}$ must also be open, and form a partition of $\hoodof{\event}$.  Since $\hoodof{\event}$ is a connected subset of a manifold $M$, however, the complement of an open set is closed and not open.
  %
- This can only be true if one of the two sets is empty, but since there is a neighbor $\event'$ mapping to a different value than $\event$, we have a contradiction and $\field$ cannot be continuous.
+ This can only be true if one of the two sets is empty, but since there is a neighbour $\event'$ mapping to a different value than $\event$, we have a contradiction and $\field$ cannot be continuous.
 
 %(def boundary-points (non-open-set)
 %  (and non-open-set (= (distance-to (not non-open-set)) 0)))
