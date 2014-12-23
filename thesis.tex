@@ -1897,7 +1897,7 @@ The transcription of RNA massively begins during cleavage cycle 14 so that the e
 \label{fig:anterpostpattern}
 \end{figure}
 
-\noindent The studies on the genetics at the basis of the segmentation in the anterior-posterior body plan identified a hierarchy of genes that controls segment determination: maternal effects, gap genes, pair-rule genes and segment polarity genes. In \Cref{fig:anterpostpattern} an illustrative subset of this hierarchy is shown ---in the images of this paper we hereafter refer at the anterior pole as their left side, and the posterior as their right side. 
+\noindent The studies on the genetics at the basis of the segmentation in the anterior-posterior body plan identified a hierarchy of genes that controls segment determination: maternal effects, gap genes, pair-rule genes and segment polarity genes. In \Cref{fig:anterpostpattern} an illustrative subset of this hierarchy is shown ---in the images of this chapter we hereafter refer at the anterior pole as their left side, and the posterior as their right side. 
 %
 Maternal effect genes are the building blocks of the anterior-posterior pattern. The most important are \emph{bicoid} (bcd)  -- forming an anterior-to-posterior gradient -- and \emph{caudal} (cad)---forming a posterior-to anterior gradient. 
 %
@@ -2888,13 +2888,13 @@ As such we assume -- in continuity with the basic hypothesis used for the Gradie
 %
 We also assume that in each node estimated ``distance'' to all neighbours is available: such a distance should measure the expected average time needed for an agent to move from one location to another---here we will rely on general ``time units'' without any correspondence with a physical time.
 %
-The underlying middleware is in charge of keeping this information lively updated, such that formation of crowded areas are automatically reflected into a higher distance of the link between two nodes, thus making a path including such a link less appealing---accordingly, we will not consider crowd information further in this paper.
+The underlying middleware is in charge of keeping this information lively updated, such that formation of crowded areas are automatically reflected into a higher distance of the link between two nodes, thus making a path including such a link less appealing---accordingly, we will not consider crowd information further.
 %
 We hence refer to \emph{agent-speed} as the non-uniform ratio between physical distance and estimated transiting time at each location.
 
 In some node of the network there could be some (future-aware) situation recognition component \cite{YeDM12} in charge of intercepting a future event, namely, what happens and when.
 %
-In this paper we shall focus on events concerning impossibility of transiting across the node, expected in the period of time in the future in between $Ts$ and $Te$ ($Ts<Te$) time units from current time.
+We shall focus on events concerning impossibility of transiting across the node, expected in the period of time in the future in between $Ts$ and $Te$ ($Ts<Te$) time units from current time.
 %
 Our basic strategy, detailed below, is to make information about such (possibly multiple and overlapping) events spread around, and suitably combine with a Gradient created to reach a target of interest.
 %
@@ -3063,27 +3063,298 @@ We checked the basic correctness of the proposed self-organisation pattern by si
 
 \Cref{fig:sims} shows what is the average (with standard deviation) improvement for nodes in the Warning area depending on the width of the Wave. Clearly, there is a greater improvement in using the Anticipative Gradient pattern in those cases where the future event lasts longer, namely, with higher width ($Te-Ts$) of the Wave.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \chapter{Case Study: Crowd evacuation}
+
+\begin{figure}
+    \includegraphics[width=\columnwidth]{img/run}
+    \caption[Reference exposition for crowd evacuation]{A simulation run of the reference exposition: three snapshots\label{fig:generalmap}}    
+\end{figure}
+
+
+\section{A crowd evacuation application}
+
+A public exposition is taking place in a museum composed of rooms, corridors, and exit doors. \Cref{fig:generalmap} shows the layout of the exposition.
+%
+The surface of the exposition is covered by sensors, arranged in a grid, able to sense fire, detect the presence of people, interact with other sensors in their proximity as well as with PDAs that visitors carry with them. 
+
+When a fire breaks out, PDAs (by interaction with sensors) must show the direction towards an exit, along a safe path. The system has to be resilient to changes or unpredicted situations, in particular the safe path must consider: \emph{(i - distance)}: it should tend to lead to the nearest exit; \emph{(ii - fire)}: it should tend to stay away from fire; and \emph{(iii - crowd)}: it should tend to avoid overcrowded paths.
+%
+These factors  influence PDAs by means of the following LSAs:
+
+\begin{itemize}
+\item{The exit gradient:} each node contains an LSA with a numeric value indicating the distance from the nearest exit. These LSAs form a gradient field covering the whole expo.
+%
+Over an exit, the gradient value is 0, and it increments with distance  from the exit. When there are several exits or several paths towards an exit, the lowest distance value is kept for a node.
+
+\item{The fire gradient}: each node also contains an LSA indicating its distance from nearest fire. The LSA's value is 0 at the fire's location and increases with distance.
+%
+It reaches a maximum value at a safe distance from a fire.
+
+\item{The crowding gradient:} sensors in the expo surface detect the presence of people and adjust the value in a local LSA indicating the crowding level of the location.
+%
+As with exit and fire, this LSA is diffused around, and its value increases with the distance from the crowded region.
+
+\item{The attractiveness information:} finally, each node contains an LSA indicating how desirable it is as a position in an escape route.
+%
+Its value is based on the values of the previous three, and is used to choose which direction displays should point to.
+
+\end{itemize}
+
+\subsection{Types of LSAs in the system}
+
+There are three forms of LSAs used in this scenario:
+%
+{\small \[\begin{array}{l}
+\lsa{\mathtt{source}, type, max, ann},\;
+\lsa{\mathtt{grad}, type, value, max, ann},\;
+\lsa{\mathtt{info}, type, value, tstamp}
+\end{array}\]}%
+%
+\noindent A \textbf{source} LSA is used for gradient sources: $type$ indicates the type of gradient (\texttt{fire}, \texttt{exit}, and so on); $max$ is the gradient's maximum value; and $ann$ is the annealing factor---its purpose will be described later, along with eco-laws. 
+%
+A \textbf{gradient} LSA is used for individual values in a gradient: $value$ indicates the individual value; and the other parameters are like in the source LSAs.
+%
+Finally, an \textbf{info} LSA is used for local values (e.g., not part of a gradient)---parameters are like in the source and gradient LSAs. The $tstamp$ reflects the time of creation of the LSA.
+
+\subsection{Building the fire, exit and crowding gradients}
+
+The sources of the gradients are injected by sensors at appropriate locations, with the values 
+$\lsa{\mathtt{source}, \mathtt{exit}, \mathtt{Me}, \mathtt{Ae}}$ and
+$\lsa{\mathtt{source}, \mathtt{fire}, \mathtt{Mf}, \mathtt{Af}}$.
+%
+For the crowding information, we may assume that sensors are calibrated so as to locally inject an LSA indicating the level of crowding. The actual threshold in number of people will mainly depend on the sensor arrangement, and should be seen as a configuration issue. The crowding LSA will look like $\lsa{\mathtt{source}, \mathtt{crowd}, \mathtt{Mc}, \mathtt{Ac}}$ and is periodically updated by the sensor.
+
+As sources are established, gradients are built by the following set of eco-laws, applying to exit, fire and crowding gradients by parameterising the $type$ in the LSAs.
+%
+First, we define eco-law \ref{law:src} that, given a source, initiates its gradient:
+
+\begin{equation}\label{law:src}
+\lsa{\mathtt{source}, T, M, A} \xmapsto{R_{init}} \lsa{\mathtt{source}, T, M, A}, \lsa{\mathtt{grad}, T, \mathtt{0}, M, A}
+\end{equation}
+
+\noindent When a node contains a gradient LSA, it spreads it to a neighbouring node with an increased value, according to eco-law \ref{law:spread}:
+\begin{equation}\label{law:spread}
+\lsa{\mathtt{grad}, T, V, M, A} \xmapsto{R_{s}}  \lsa{\mathtt{grad}, T, V, M, A}, \rem\lsa{\mathtt{grad}, T, \mathtt{min(}V\mathit{+}\#D, M\mathtt{)}, M, A}
+\end{equation}
+
+\noindent Due to use of the $\#D$ system variable, each node will carry a \texttt{grad} LSA indicating the topological distance from the source. When the spread values reach the maximum vale $M$, the gradient becomes a plateau. 
+%
+Also note that the iterative application of this eco-law causes continuous diffusion of the LSA to all neighbouring nodes. 
+
+The spreading eco-law above  may produce duplicate values in locations (due to multiple sources, multiple paths to a source, or even diffusion of multiple LSAs over time).
+%
+Thus,  eco-law \ref{law:min}  retains only the minimum distance:
+
+\begin{equation}\label{law:min}
+\lsa{\mathtt{grad}, T, V, M, A}, \lsa{\mathtt{grad}, T, W, M, A} \rightarrow \lsa{\mathtt{grad}, T, \texttt{min}(V,W), M, A}
+\end{equation}
+%
+\noindent Finally, we have to address the dynamism of the scenario where people move, fires extinguish, exits may be blocked, crowds form and dissolve.
+%
+If a gradient source vanishes, the diffused values should increase (e.g., the distance to exit increases if the nearest exit is no longer available).
+%
+However, with the above eco-laws this does not happen because eco-law \ref{law:min} always retaining the minimum value.
+%
+This is the purpose of the annealing parameter in the gradient LSAs: it defines the rate of  eco-law \ref{law:annealing}, which continuously tends to level up gradient values, encouraging the replacement of old values by more current ones:
+
+\begin{equation}\label{law:annealing}
+\lsa{\mathtt{grad}, T, V, M, A} \xmapsto{R_{ann}(A)} \lsa{\mathtt{grad}, T, V\mathit{+}1, M, A}
+\end{equation}
+%
+\noindent The $R_{ann}$ rate is directly proportional to $A$. When a fire is put out, for example, this eco-law will gradually raise the fire gradient to the point where it reaches the maximum, indicating no fire.
+%
+Annealing may introduce a burden on the system, therefore high annealing values should only be used for gradients that have to change often or quickly.
+
+\subsection{Ranking escape paths: the attractiveness field}
+
+Based on exit distance, fire distance and crowding, a location can be ranked as more or less ``attractive'' to be part of an escape path.
+%
+This is done via an \emph{attractiveness} value automatically attached to each node by eco-law \ref{law:attr}:
+%
+\begin{equation}\label{law:attr}
+\begin{array}{l}
+\lsa{\mathtt{grad}, \mathtt{exit}, E, \mathit{Me}, \mathit{Ae}}, \lsa{\mathtt{grad}, \mathtt{fire}, F, \mathit{Mf}, \mathit{Af}}, \lsa{\mathtt{info}, \mathtt{crowd}, \mathit{CR}, \mathit{TS}} \xmapsto{R_{att}} \\
+\lsa{\mathtt{grad}, \mathtt{exit}, E, \mathit{Me}, \mathit{Ae}}, \lsa{\mathtt{grad}, \mathtt{fire}, F, \mathit{Mf}, \mathit{Af}}, \lsa{\mathtt{info}, \mathtt{crowd}, \mathit{CR}, \mathit{TS}}, \\
+ \lsa{\mathtt{info}, \mathtt{attr}, (\mathit{Me}-E) / (1+(\mathit{Mf}-F)+k\times(\mathit{Mc}-C)), \#T}
+ \end{array}
+\end{equation}
+
+\noindent Coefficient $k$ (tuned by simulation) is used to weight the effect on crowding on attractiveness.
+%
+As gradients evolve, older attractiveness LSAs are replaced with newer ones ($T$ is assumed positive):
+%
+{\small \begin{equation}
+\lsa{\mathtt{info}, \mathtt{attr}, A, \mathit{TS}}, \lsa{\mathtt{info}, \mathtt{attr}, \mathit{A2}, \mathit{TS}\mathit{+}T} \rightarrow \lsa{\mathtt{info}, \mathtt{attr}, \mathit{A2}, \mathit{TS}\mathit{+}T}
+\end{equation}}
+
+\subsection{Choosing a direction}
+
+Each location  contains by default an LSA of the form $\lsa{\mathtt{info}, \mathtt{escape}, L, \mathit{TS}}$, where $L$ is  the direction to be suggested by the PDA.
+%
+In principle, the neighbour with the highest attractiveness should be chosen, but a more resilient solution is to tie the markovian rate of eco-laws to the attractiveness of neighbours, so that the highest probability is to point the best neighbour, with a possibility to point a less-than-optimal (but still attractive) neighbour:\vspace{-15pt}
+
+\begin{equation}\label{law:escape}\begin{array}{l}
+\lsa{\mathtt{info}, \mathtt{escape}, L}, \lsa{\mathtt{info}, \mathtt{attr}, A, TS}, 
+    \rem\lsa{\mathtt{info}, \mathtt{attr}, A\mathit{+}\Delta, TS2} \xmapsto{R_{disp}(\Delta)} \\
+ \lsa{\mathtt{info}, \mathtt{escape}, \#O},
+ \lsa{\mathtt{info}, \mathtt{attr}, A, TS},  \rem\lsa{\mathtt{info}, \mathtt{attr}, A+\Delta, TS2}
+ \end{array}
+\end{equation}
+%
+\noindent 
+The rate is proportional to the difference in attractiveness between the node and its neighbour ($\Delta$). The higher the $\Delta$, the higher the rate. Note that $\Delta$ is a positive value, hence  $A+\Delta$ implies that eco-law \ref{law:escape} only considers neighbours with a higher attractiveness, i.e., the PDA will not point \emph{away} from the exit.
+
+\subsection{Resilient behaviour}
+The proposed architecture is intrinsically able to dynamically adapt to unexpected events (like node failures, network isolation, exits suddenly unavailable, crowd formation, and so on) while maintaining its functionality.
+%
+We will now discuss a few examples of possible problems and explain how the system reacts to them.
+
+\subsubsection{Single-node failure}
+
+Most behaviour in this architecture is based on nodes being able to apply eco-laws and host LSAs.
+%
+Failure of a node clearly impacts this behaviour in some measure. A failing node (i.e., disappearing from the system) results in a physical location where no information for the displays is available, and where gradient information is not received or transmitted. 
+
+If the failing node is a generic one (i.e, no fire or exits at that node) and its disappearance does not cause network isolation, the impact is somewhat limited.
+%
+Gradients will still be transmitted \emph{around} the broken node, although values will change.
+%
+Displays traversing a failing node will not update their direction; however, they will also never guide people towards a failing node, because it does not have an attractiveness value; they will rather steer people around the failing node.
+%
+This means that functionality is preserved with decreased efficiency (i.e., longer paths).
+
+If the failing node is a node containing a fire, the consequences are more severe: the fire will not be detected.
+%
+PDAs will still never point the failing node on fire directly, but they will let people pass near it. One might argue that people will still see the fire; however, from the point of view of system behaviour, safety is reduced.
+%
+On the other hand, it can be  assumed that a serious fire would be detected by more sensors, and that  all of them failing at the same time is unlikely.
+
+If the failing node is an exit node, functionality gets a major hit, because the whole system will lack a fundamental information for display functioning (the exit gradient).
+%
+If other exits are available, the system will still guide people towards them (again preserving functionality with reduced efficiency).
+%
+However, if the failing node ``hides'' the only available exit, the system completely fails to provide useful information.
+%
+This situation can be tackled by redundant source nodes near each exit.
+
+\subsubsection{Network isolation}
+
+When a group of failing nodes is the only connection between two parts of the network, this causes network isolation.
+%
+There are a few sub-scenarios to consider.
+%
+If the isolated section does not include exits, we find another limitation: the evacuation mechanism cannot work inside that section, as it is lacking fundamental information.
+%
+If the section does however contain exits, it will act as an autonomous system in itself.
+%
+Efficiency may be reduced but functionality will still be preserved, with an important caveat: this section of the network will ignore fires and alarms occurring in the rest of the network.
+%
+This may or may not be an acceptable limitation depending on the scenario.
+%
+For fires, it could probably be unacceptable.
+%
+In a general way, however, we would consider that an isolated part of the network behaving as an autonomous system is an acceptable fallback.
+%
+Again, redundancy is desirable for those nodes of the network that can cause isolation.
+
+\subsubsection{Exit unavailability}
+
+If an exit is suddenly unavailable in the expo, for instance it is broken and hence it does not open, a sensor could detect this and drop the source LSA.
+%
+Because of the annealing mechanism, this causes the gradient value in each node to converge to the situation corresponding to the unavailability of that door; namely, a new path toward another exit emerges and affects the behaviour of all PDAs---people would simply go back to another exit as expected.
+
+\subsubsection{Crowd formation}
+
+While people follow their PDAs towards the nearest exit, it is possible that a jam forms in front of certain doors or corridors: this is one of the most perilous, unexpectable situations to appear in crowd evacuation.
+%
+The application we set up is meant to emergently tackle these situations by means of the crowding gradient.
+
+Assume two available corridors exist towards some exit, and from a given room people can choose to walk through any of them towards the exit.
+%
+If one becomes unavailable because a jam is forming the crowding gradient would emerge, reducing attractiveness along that corridor.
+%
+Accordingly, it is expected that people behind the crowded area start walking back and head for the other corridor, and people in the room start choosing systematically the path free from crowd, even if they do not ``see'' the problem from the room.
+
+
+\section{Simulation in \alchemist{}}
+
+The proposed system is specified by a limited set of eco-laws, equipped with CTMC semantics.
+%
+This specification  can be used to feed the SAPERE infrastructure and be simulated in order to check the model dynamics in advance.
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=.9\columnwidth]{img/gradient}
+  \end{center}
+  \caption{Gradients for the snaphots in \Cref{fig:generalmap}. Concentration is the gradient value normalised to its maximum value.}
+  \label{fig:field}
+\end{figure}
+
+\subsection{Simulation setting}
+
+We here present simulations conducted over an exposition structured as shown in \Cref{fig:generalmap}, where three snapshots of a simulation run are reported: all the people in the room start moving towards one of the two exists (located at the ends of the corridor) because of the fire in the top-right corner of the room.
+%
+Note in third snapshot that a person is walking in the middle of the corridor, for she was suggested to go to a farther exit because of the corridor jam at the bottom-right.
+
+Rooms and corridors are covered by a grid of locations hosting sensors, one per meter in the room, one per two meters in the corridor: such locations are the infrastructure nodes where LSAs are reified.
+%
+The maximum values for the gradients are set to: $\mathtt{Me} = 30$,  $\mathtt{Mf}=3$,  $\mathtt{Mc}= 20$.  
+%
+The PDA of each person is modelled as a mobile node, able to perceive the attractiveness gradient in the nearest sensor location: accordingly, the person moves in the suggested direction.
+
+\Cref{fig:field} shows the gradients of exit, fire, crowding and attractiveness (one per column) corresponding to the simulation steps  of \Cref{fig:generalmap} (one step per row). At $t=0$, gradients are level; with time, the gradient self-modify---it is easy to see the exits, fire and crowds in the respective gradients. 
+%
+The crowding gradient in the third column  changes dynamically during simulation according to the movement of people.
+%
+The last column shows the attractiveness gradient, computed from the other three gradients. Note how the second snapshot shows an attractiveness ``hole'' in the middle of the room  and in the corridor due to crowding.
+
+\subsection{Tuning parameters}
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=\columnwidth]{img/allcropped}
+  \end{center}
+  \caption{Results of parameter analysis}
+  \label{fig:results}
+\end{figure}
+
+We chose to tune by simulation two parameters of the model: $k$ (used in the eco-law computing attractiveness), and a multiplication factor $p$ we applied to the crowding gradient to control its slope---namely, how far crowding should be perceived.
+%
+Different simulations have been performed in order to find the set of parameters that minimises the time of exit of all the people in the room: the range of variation of $k$ is [0.1, 1] with a step of 0.1, while the range for $p$ is [0, 20] with step of 0.5. 
+%
+The smaller is $k$, the lower is the impact of the crowding in the computation of attractiveness, so that we expect the crowds not be avoided and the exit time to grow.
+%
+The bigger is $p$, the higher is the crowding gradient slope, until it becomes a local information that PDAs can perceive only very close to it. 
+%
+Experiments have been done with 50, 100 and 225 persons in the room and with a fire in the corner of the room or in the middle, so as to experimentally observe the impact of parameters in the evacuation outcome of different scenarios.
+%
+For each couple of parameters, 10 simulations have been run, considering average value and standard deviation of the resulting time.
+
+In \Cref{fig:results} we show the results we obtained from the analysis of the parameters. 
+%
+Only dynamics for $k<0.5$ are shown, because the time of exit is much higher elsewhere, and also because standard deviation becomes much higher since the system is much more chaotic.
+
+The graphs show that with $k=0$ (i.e., if the crowding gradient does \emph{not} influence attractiveness) the performance of the system slows down as the number of persons increases, and the likelihood of forming of crowds grows. This result highlights the impact of considering crowds in resilience with respect to jams.
+%
+For $k = 0.1$ we obtained the best performance for the system for both  simulated fire positions. Results finally showed that the parameter $p$ does not seem to have relevant impact on the average exit time in this particular expo.
+
+\subsection{Resilience to node failures}
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=\columnwidth]{img/resilience}
+  \end{center}
+  \caption{Resilience to temporary node failures}
+  \label{fig:resilience}
+\end{figure}
+
+Among the many simulations analysing resilience aspects, we focused on the case in which all nodes experience temporary failures, i.e., they  work correctly only for a percentage of time.
+%
+We expect the system to still be safe, i.e., be able to drive people out of the room in reasonable time, in spite of the changes in gradient values around the broken nodes. 
+%
+The results of simulation with 50, 100 and 225 persons are shown in \Cref{fig:resilience}: the time to exit does not significantly increase even in the case of nodes failing 30\%-40\% of the time, and people are still able to eventually reach the exit even with 80\% of node downtime.
+
+
 \chapter{Case Study: Crowd steering}
 \label{jos-museum}
 In this\levelText{}we show a crowd steering case study in which a middleware has the goal of leading people in the desired location within a complex environment in short time, avoiding obstacles such as crowded regions and without global supervisioning. 
@@ -3535,7 +3806,7 @@ For instance, it could be the unique id of a gradient source, so that we do not 
 
 Rule [SHORTEST] is similar: it takes two annotations with same step (hence coming from the same gradient annotation as generated by rule [PUMP]), and retains the one with shortest distance only if, again, they have same content of aggregation property.
 
-Finally, rule [DECAY] is used to remove an annotation at a given decay rate \texttt{?RD}. This is useful as a cleanup mechanism in the case a gradient source is removed from the system---though it plays no crucial role in this paper and will be neglected in next discussions.
+Finally, rule [DECAY] is used to remove an annotation at a given decay rate \texttt{?RD}. This is useful as a cleanup mechanism in the case a gradient source is removed from the system---though it plays no crucial role in and will be neglected in next discussions.
 
 For the above rules to properly work we need to synthesise a well-structured source annotation, featuring all required properties and proper values for rates---namely, diffusion rate is to be chosen to keep the system sufficiently reactive to changes without bloating the system with undesired messages, and contextualisation rate should be significantly higher than diffusion rate (at least one order of magnitude).
 %
@@ -4306,13 +4577,13 @@ Read and removal are predicative: they are non-blocking and yield a negative res
 %
 To these, we add a fourth primitive, ``\texttt{eval $pred$}'', which evaluates the predicate expression $pred$.
 
-When such actions are defined for an activity injected by an agent, and are executed in the tuple space where the agent is situated in, then a notification result is shipped to the agent---although, following the spirit of \cite{zavattaro}, we shall not discuss internal aspects of agent interactions in this paper.
+When such actions are defined for an activity injected by an agent, and are executed in the tuple space where the agent is situated in, then a notification result is shipped to the agent---although, following the spirit of \cite{zavattaro}, we shall not discuss internal aspects of agent interactions in this thesis.
 
 \subsubsection*{Protocols}
 
 Primitive actions can be sequentially composed in a protocol-like manner.
 %
-Other standard operators of parallel composition and choice could be orthogonally added, but are not discussed in this paper for brevity.
+Other standard operators of parallel composition and choice could be orthogonally added, but are not discussed in this thesis for brevity.
 %
 Additionally, \texttt{in}, \texttt{rd} and \texttt{eval} define branches leading to two different continuations, one for positive and one for negative outcome of the predicative action.
 %
@@ -5999,7 +6270,7 @@ This implementation of Protelis thus forms an important component of the toolcha
 \section{Aggregate programming}
 
 \subsection{Scale independent computation in situated networks}
-We want to generalise the results of our scale independent computations: the theoretical framework of this paper treats only the case of stationary devices; in pervasive systems, many devices are mobile, and in practice the mechanisms used by \calculus{} appear to perform quite well on mobile devices, so it will be important to extend the theoretical framework
+We want to generalise the results of our scale independent computations: the theoretical framework of this thesis treats only the case of stationary devices; in pervasive systems, many devices are mobile, and in practice the mechanisms used by \calculus{} appear to perform quite well on mobile devices, so it will be important to extend the theoretical framework
 to handle mobile devices as well.
 %
 One notable concern is that mobile devices must treat questions of Galilean vs. Einsteinian relativity \cite{RelativityIntroduction}, which we deferred for now.
