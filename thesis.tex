@@ -691,7 +691,7 @@ Several implementations from both academia and industry exist.
 
  \item[Molecules of knowledge] \cite{mariani2013molecules}
 
- \item[SwarmLinda] \cite{swarmlinda}
+ \item[SwarmLinda] \cite{swarmlinda} is a middleware that exploits the idea of the collective intelligence, displayed by swarms of ants, for guiding agents in charge of tuple storage and efficient tuple retrieval. Tuples are handled as sort of pheromones or items that ants (agents) relocate in order to improve overall efficiency.
 
  \item[T Spaces] \cite{tspaces-ibmsj37}
 
@@ -3443,7 +3443,8 @@ Our strategy for modelling gradient's features:
 \end{enumerate}
 
 \begin{figure}\vspace{10pt}
-{\footnotesize \begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}, label={\small \bf Transition Rules for Gradients}]
+{\footnotesize
+\begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}, label={\small \bf Transition Rules for Gradients}]
 # [PUMP] An annotation of type source continuously injects the initial
 # gradient annotation
 \textbf{?SOURCE} sos:type sos:source; sos:aggr_prop ?P; sos:step ?T;
@@ -3601,26 +3602,6 @@ Rule [FEEDBACK] is used to modify the satisfaction value of gradient, taking int
 
 Rules [EVAPORATION] and [DECAY] are finally used to evaporate the \texttt{scm:satisfaction} value according to an evaporation factor \texttt{scm:factor\_ev ?FE} in the range of [0,1] and to remove the gradient composition in case of a \texttt{scm:satisfaction} value equal to zero, or negative, ensuring that only those compositions that compute fast paths will survive.
 
-
-%{\small \begin{verbatim}
-%% Source of a gradient
-%:id224 mid:#loc :loc117;
-%   sos:type sos:source;  aa:type aa:target; 
-%   sos:aggr_prop aa:tag; aa:tag "341AB2"; 
-%   sos:sourceid "341AB2";                
-%   sos:step "0";         sos:r_diff "10"; 
-%   sos:r_ctx "100";      sos:r_dec "1"
-
-%% Source of a wave
-%:id357 mid:#loc :loc131;
-%   sos:type sos:source;  aa:type aa:wave; 
-%   aa:event "157FFE3";   sos:aggr_prop aa:event; 
-%   aa:start "150";       aa:end "250";
-%   sos:step "0";         sos:r_diff "10"; 
-%   sos:r_ctx "100";      sos:r_dec "1"
-%\end{verbatim}}
-
-
 \section{Towards simulation of gradient self-compositions}
 
 We checked the correctness of the proposed self-composition solution by simulation, conducted using \alchemist{}.
@@ -3642,6 +3623,419 @@ The goal is to observe that, satisfaction values, initially the same for each co
 \end{figure}
 
 \chapter{Case study: Semantic resource discovery}
+
+Supporting expressive resource discovery atop this unstructured, highly-dynamic substrate presents a challenge, with the combination of semantic reasoning, context-awareness and self-organisation techniques offering intriguing possibilities: semantic matching provides a flexible framework for quantitatively assessing the suitability of resources to a given request; context-awareness may account for application quality of service concerns that are important, but orthogonal to the matching process, and self-organisation techniques provide a means of adapting to changing environmental conditions---the arrival and removal or resources, the mobility of interacting agents, and the ever evolving network topology.
+
+To illustrate the utility of this approach, we consider a smartphone application for an exhibition centre (for example, Tokyo's Makuhari Messe, which contains eleven exhibition halls and has a footprint of $210,000m^2$), which offers routing information and exhibit suggestions based on a user's profiled interests. These techniques support the development of exploration strategies to:
+\begin{itemize}
+ \item select the exhibit most suited to the user's interests;
+ \item select preferential exhibits while accounting for factors such as their distance from the user's position or crowdedness along the route;
+ \item route the user to an exhibition hall containing many exhibits of interest, but not necessarily the most interesting if it is considered spatially isolated;
+ \item use a combination of the above strategies, for example, to guide the user to a particular exhibition hall and then route them to the exhibits inside the hall in order of interest or least crowded.
+\end{itemize}
+
+\section{Semantic Matching in SAPERE}
+\label{sec:semantic_matching}
+\begin{table}
+\centering
+%\begin{small}
+\begin{tabular}{| c || p{6cm} | c | c |}\hline
+\textbf{Match Degree}        &\textbf{Description}	&\textbf{DL Notation}  &\textbf{Similarity (R, A)} \\\hline
+\emph{Exact}	&The request and advertisement are equivalent concepts.	&$R \equiv A$	&1		\\\hline
+\emph{Subsume}	&The request expresses a more general concept than the advertisement.	&$A \sqsubseteq R$	&1		\\\hline
+\emph{Plugin}	&The request expresses a more specific concept than the advertisement.	&$R \sqsubseteq A$	&$\frac{|S(A)|}{|S(R)|}$		\\\hline
+\emph{Intersection}	&The intersection of the request and advertisement is satisfiable.	&$\neg (R \sqcap A \sqsubseteq \perp)$	&$\frac{|S(A)\sqcap S(R)|}{|S(R)|}$		\\\hline
+\emph{Disjoint}	&The request cannot be satisfied by the advertisement.	&$R \sqcap A \sqsubseteq \perp$	&0		\\\hline
+\end{tabular}
+%\end{small}
+\caption[Match-degrees and their semantic scores]{Match-degrees and their semantic scores, defined using the similarity metric proposed by Skoutas et al.~\cite{skoutas2007raking}. $S(X)$ denotes the set of super-concepts of concept $X$ in its defining ontology.}
+\vspace{-10pt}
+\label{tab:match_degrees}
+\end{table}
+
+\subsection{Semantic Matching}
+A matchmaking process takes a request and a set of resource descriptions as input, and outputs the set of resources that satisfy the request.
+%
+Many matchmakers adopt simple syntactic schemes; for example, named interfaces or predefined categories~\cite{waldo2000jini}, or sets of attribute-value pairs to which string and numeric comparisons can be applied~\cite{guttman1999service}.
+%
+Such approaches are limited by an inability to compare semantically equivalent but syntactically different concepts or handle approximation.
+%
+To illustrate, consider the concept hierarchy depicted in \Cref{fig:concept_hierarchy}, based on the Vehicle Sales Ontology\footnote{\url{http://www.heppnetz.de/ontologies/vso/ns}}.
+%
+Here, the concepts  \texttt{Automobile} and \texttt{Car} may be considered as equivalent terms, or \texttt{TwoDoorCar} as an approximate match to a \texttt{FourDoorCar}.
+%
+Semantic analysis supports the incorporation of such matches where they would otherwise be discounted.
+
+A semantic matching process has three parts: a model for describing requests and resources, a scheme for measuring the semantic similarity of concepts, and an algorithm for evaluating the match.
+
+\subsubsection{Modelling Resources and Requests}
+A request expresses the intersection of a number of properties, each named concept or existential restriction belonging to a resource. Using Description Logics (DL) notation~\cite{baader2003description}, the following describes a request for two door, electric cars manufactured after 2009, and three advertisements for candidate vehicles to be matched against this request. 
+
+\begin{samepage}
+\noindent {
+$R$: $TwoDoorCar$ $\sqcap$ $ \exists modelDate \geq 2009 $ $\sqcap$ $\exists fuelType=Electric$\\
+$A1$: $Automobile$ $\sqcap$ $ modelDate=2009$ $\sqcap$ $ fuelType=Hybrid$\\
+$A2$: $TwoDoorCar$ $\sqcap$ $ modelDate=2011$ $\sqcap$ $ fuelType=Petrol$\\
+$A3$: $Van$ $\sqcap$ $ modelDate=2011$ $\sqcap$ $ fuelType=Electric$\\
+$A4$: $Bicycle$ $\sqcap$ $ modelDate=2007$
+}
+\end{samepage}
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{img/concept_hierarchy}
+
+\caption[Partial illustration of concepts in the Vehicle Sales Ontology]{A partial illustration of concepts in the Vehicle Sales Ontology, an equivalence relation from one term to another concept hierarchy, and a snippet from a fuel type ontology.} 
+\label{fig:concept_hierarchy}
+\end{figure}
+
+None of the four advertisements fully satisfies the request: there is insufficient information to determine if $A1$ is a $TwoDoorCar$; $A2$ differs in the requested fuel type; although electric, $A3$ is a Van; and $A4$ satisfies no request aspects.
+%
+However, by inspection we can see that some of the advertisements more closely relate to the request than the others.
+%
+We say that an advertisement is \emph{compatible} with a request if the intersection of their descriptions is satisfiable.
+
+\subsubsection{Quantifying Semantic Similarity}
+\label{ref:quantifying}
+\cite{paolucci2002semantic} and \cite{li2003software} introduce ordered degrees of matching to categorise the semantic compatibility between a request ($R$) and an advertisement ($A$), of which there are five: \emph{exact}, \emph{plugin}, \emph{subsume}, \emph{intersection}, and \emph{disjoint}.
+%
+\cite{bandara2008semantic} extends this model with scoring mechanisms to support differentiation of matches falling within the same category.
+%
+Descriptions of the match-degrees and formulas for scoring taxonomically related concepts are shown in \Cref{tab:match_degrees}.
+
+Applying this mechanism to the concept hierarchy in \Cref{fig:concept_hierarchy} allows us to quantify the similarity between terms in our earlier example.
+%
+For example, the degree of similarity between $Automobile$ and $TwoDoorCar$ is $0.75$ (plugin), the degree of similarity between $TwoDoorCar$ and $Van$ is $0.5$ (intersection), and the degree of similarity between $Hybrid$ and $Electric$ is $1$ (subsumption).
+
+\subsubsection{Executing the Semantic Match}
+\label{sec:match_algorithm}
+A semantic matching algorithm conflates all the terms in a request and resource description and may be realised in many ways.
+
+A possible implementation of a \texttt{MATCH} algorithm takes two variables $R$ and $A$ as input, which correspond to the request and advertisement or some sub-set of their terms respectively.
+%
+The function first checks if $R$ subsumes $A$; if so, the algorithm terminates with a similarity score of 1.
+%
+If $R$ and $A$ refer to atomic named concepts or literals, the similarity score is calculated by a call to the \texttt{SIMILARITY} function, which resolves the comparison to a score depending on how the concepts are related.
+%
+If not, $R$ and $A$ are composites consisting of named concepts or existential restrictions.
+%
+This case is handled by recursively decomposing $R$ into its constituent parts, $R_{1..n}$, and averaging the maximum score for each $R_i$, when compared with corresponding parts of $A$, that is, $A_{1..m}$.
+%
+Applying this algorithm to the above example yields the scores: $A1$=$.92$, $A2$=$.83$, $A3$=$.83$, and $A4$=$.08$.
+
+\section{Distributed Resource Discovery}
+\label{sec:operational_framework}
+We now clarify how standard self-organisation patterns can be augmented with semantic reasoning so as to support a decentralised approach to resource discovery in pervasive computing applications.
+
+\subsection{Self-organisation Patterns}
+This section briefly reviews those patters that form our interaction building blocks.
+
+\subsubsection{Spreading}
+The Spreading pattern progressively sends information over the system from one node to its neighbourhood, iteratively, so as to make it available globally by using only local interactions.
+%
+In our framework it is supported by the following eco-law:
+%
+\begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}, label={\small \bf Spreading}]
+?A :val ?V; :diff ?F; :loc ?L
+--> 
+?A + ?B :#clones ?A; :val =?W; :loc ="*"; :prev = ?L
+?BIND (:exec2(?F,?V) AS ?W)
+\end{Verbatim}
+
+\subsubsection{Aggregation}
+The Aggregation pattern reduces the amount of information in the system, typically by summarising data disseminated by agents over time, e.g., by spreading.
+%
+It is supported by:
+%
+\begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}, label={\small \bf Aggregation}]
+?A :src ?S; :aggr ?F; :val ?V + ?B :src ?S; :val ?W 
+--> 
+?A :val =?Z :
+?BIND (:exec3(?F,?V,?W) AS ?Z)
+\end{Verbatim}
+
+\subsubsection{Decay}
+The Decay pattern incrementally ages information in the system.
+%
+A monotonically decreasing function is applied to a numeric decay value over time, with the information removed upon the counter reaching zero.
+%
+Decay-based Aggregation supports the overwriting of old information from a data source with the more recent.
+%
+Decay is supported by the following eco-laws:
+%
+\begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}, label={\small \bf Decay}]
+?A :decay ?D :dfunc ?F;
+--> 
+?A :decay ?N;
+?BIND (:exec4(?F,?D) AS ?N)
+
+?A :decay 0;
+--> 
+\end{Verbatim}
+
+\subsubsection{Gradient}
+The Gradient pattern is a composition of the Spreading and Aggregation patterns, where information about the sender distance and direction is propagated across an extent of the network.
+%
+An LSA can become source of a gradient by specifying initial distance $0$, a diffusion function incrementing the distance value, and an aggregation function retaining the less traveled LSA among competing gradient LSAs from the same source \cite{sapereecolaws-sac2012}.
+%
+The Decay pattern supports \emph{dynamic} gradients by discarding old information as a gradient source moves within the network.
+
+\subsubsection{Chemotaxis}
+The Chemotaxis pattern provides a mechanism to route information towards the source of a gradient via the shortest accessible path.
+%
+In our framework, movement of LSAs towards a gradient source is achieved by diffusing in the direction indicated by property \texttt{:prev} as created by the Spreading eco-law.
+
+\subsection{Self-organising, Context- and Semantics-aware Resource Discovery}
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{img/newprocess}
+\caption[Resource discovery interactions]{Resource discovery interactions: (A) a request gradient is spread, and (B) replies ascend the gradient and aggregate.} 
+\label{fig:distributed_interaction}
+\end{figure}
+
+Building upon the above concepts, we now introduce the key steps in our approach to self-organising, context- and semantics-aware resource discovery, which are illustrated in \Cref{fig:distributed_interaction}.
+
+\subsubsection{Establish the resource request}
+An application searching for a resource publishes a \texttt{request} gradient LSA carrying information about the source $R$ of the request: spreading and aggregation eco-laws will iteratively fire in random establishing a gradient data structure, with horizon $H$ (hop distance counter), and  in which each LSA has a pointer to the node in which it was created, which is also the node indicating direction to the source following shortest path.
+
+\subsubsection{Resolve matches and publish reply}
+Where a gradient LSA containing a request is co-located with an annotation describing a resource (or service) $S$, we apply semantic matching, as described in \Cref{sec:semantic_matching} to resolve their compatibility to a match-degree.
+%
+This is realised by a matching eco-law that creates a \texttt{reply} LSA pointing towards the request and the service, and with the value $MD$ representing the match-degree (greater than $0$). 
+
+\subsubsection{Route match information to the requestor}
+The reply LSA is created such that it diffuses by copying towards the request source; namely, the chemotaxis pattern is applied to deliver a remote representation of the resource annotation matched to the request source. This is continually applied to maintain a live link between the two points in the network: the request site and service site.
+%
+This ends after the request gradient expires, for example, after the request is explicitly removed.
+%
+This allows the process to update and self-heal under conditions where:
+\begin{itemize}
+ \item an intermediate node used for routing fails;
+ \item a compatible resource appears within the gradient;
+ \item the requestor or resources are mobile within the network.
+\end{itemize}
+
+\subsubsection{Augmenting matches with application context}
+As the reply LSA is routed, aggregation may be employed to modify, either positively or negatively, the reported match-degree, using information external to the reply.
+%
+This is achieved by applying an aggregation function to any LSA directed towards a request source that accounts for contextual factors (\emph{any information that can be used to characterise the situation of entities that are considered relevant to the interaction}~\cite{dey2001conceptual}) specified by the application; and with such information readily available for consumption through its expression in an LSA.
+%
+For example, $\lsa{S_0, 0.9, 0.75}$ (resource, original-match-degree, match-degree) might represent a reply LSA that has been updated to account for the distance an LSA has travelled, or the presence of physically crowded regions along the response path. 
+
+\subsubsection{Aggregate results en route by competition}
+Where a request is matched to multiple, distributed resources, the algorithm returns the most suitable to the requestor.
+%
+For example, in the case where there are two co-located response annotations of the form $\lsa{S_0, 0.9, 0.75}$ and $\lsa{S_1, 0.8, 0.8}$ (resource, original-match-degree, match-degree), the latter will be propagated while the former will be dropped.
+%
+Combining this with the previous mechanism provides a contextual-semantic approach whereby a resource may be retained that, although it has worse match-degree when considered in isolation, better accounts for a requestor's contextual requirements.
+
+\subsubsection{Aggregate results en route by collaboration}
+An alternative to the above approach is to augment the standard semantic-matching process by making a resource more, or less, attractive depending on some contextual relation to similarly matched resources.
+%
+For instance, in applications where resources represent physical points of interest (POIs), we may consider a small region of the space that includes many POIs more favourable than another region containing the POI with highest match-degree. 
+%
+This is achieved by an aggregation function that ``joins'' two replies instead of selecting one of them. For example, response annotations of the form $\lsa{S_0, 1 , 0.9}$ and $\lsa{S_1, 2, 0.75}$ (resource, distance, match-degree), can be subject to joining as they represent spatially close services.
+%
+Hence, they are aggregated into a single annotation $\lsa{S_0+S_1, 1.5 , 0.85}$, in which distance and match-degree summarise the original ones.
+%
+As before, application specified contextual factors may readily be accounted for.
+
+\subsubsection{Receipt of replies}
+The requestor will eventually receive aggregated replies, providing information about (summary) distance, (summary) match-degree, resource provider (or resources provider), and direction to reach the service.
+%
+Such information can then be used, for example, to steer the requestor agent towards a selected resource or selected resources, as developed in \cite{sapereecolaws-sac2012}.
+
+\subsubsection{Dynamic self-healing}
+The evolution of ecosystem states over time is supported by the Decay pattern, which is employed to periodically remove older information while newer information is concurrently refreshed.
+%
+The periodic update of request gradients and reassertion of responses accounts for the requestor moving closer to or further away from resources, for resources disappearing or arriving, and for the corresponding impact these changes have on the aggregation applied to the match degree results in transit. 
+
+
+\begin{figure}
+{\scriptsize 
+\begin{Verbatim}[frame=single, commandchars=\\\{\}, label={\small \bf Resource discovery with match-degree and spatial information}]
+% [MATCH] When a request and service match, a reply LSA is generated to be diffused towards
+% requestor
+?REQ :type :request; :content ?R; :source ?SRC + ?SER :type :service; :content ?S
+--?Rate-->
+?REQ + ?SER +
+?REP :#clones ?REQ; :type = :reply; :service ?SER; :content ?S; :original_match_degree ?MD;
+     :match_degree ?MD; :ctxed "false"; sos:direction ?SRC; sos:switcher :ctxed;
+     sos:type sos:ascend
+BIND(:semanticMatchDegree(?R, ?S) AS ?MD)
+FILTER(?MD > 0)
+BIND(:replyRate() AS ?Rate)
+
+%[CTX] A reply contextualises, and is accordingly propagated one-step
+?REP :type : reply; :ctxed "false"; :ctxprop ?P; :ctxtype ?T; :ctxfun ?F; ?P ?V
+?CTX :type ?T; ?P ?V2
+--?Rate-->
+?REP :ctxed = "true"; ?P = ?W +
+?CTX
+BIND (:exec(?F,?V,?V2) AS ?W)
+BIND(:diffRate() AS ?Rate)
+
+% [AGGREGATE-COOP] Joins information from two replies belonging to the same service cluser
+?A1 :type :reply; :ctxed "true"; :request ?R; :service ?S1; :ctxprop ?P; ?P ?V1;
+     :match_degree ?MD1; :coop_pred ?CP; :coop_md ?CM; coop_ctx ?CC +
+?A2 :type :reply; :ctxed "true"; :request ?R; :service ?S2; :ctxprop ?P; ?P ?V2;
+     :match_degree ?MD2
+--->
+?A1 :service ?S; ?P = ?V; :match_degree = ?MD
+FILTER(:exec(?CP,?V1,?V2)) .                    % The two services should "cooperate"
+BIND (:exec(?CC,?V1,?V2) AS ?V) .               % Let V be the aggregated contextualisation
+BIND (:exec(?CM,?MD1,?MD2) AS ?MD) .            % Let MD be the aggregated match-degree
+BIND (:union(?S1,?S2) AS ?S) .                  % Let S the aggregated service description
+
+% [AGGREGATE-CHOOSE] Selects between two replies originating within different service clusters
+?A1 :type :reply; :ctxed "true"; :request ?R; :service ?S1; :ctxprop ?P; ?P ?V1;
+     :match_degree ?MD1; :comp_pred ?CP; :coop_sel ?CS +
+?A2 :type :reply; :ctxed "true"; :request ?R; :service ?S2; :ctxprop ?P; ?P ?V2;
+     :match_degree ?MD2
+-->
+?A :service ?S1; ?P ?V; :match_degree ?MD1
+FILTER(:exec(?CP,?V1,?V2)) .                    % The two services should "compete"
+FILTER(:exec(?CS,?V1,?MD1,?V2,?MD2)) .          % Service A1 has a stronger match-context pair
+\end{Verbatim}
+}
+\caption{Eco-laws for handling request-reply match, and for distributed aggregation.}
+\label{fig:laws}
+\end{figure}
+
+\section{Eco-laws to support matching}
+\label{sec:ecolaws}
+In this section we present eco-laws that support the contextual-semantic management of resource discovery, describing their behaviour and the functions they encapsulate. For the sake of space we will not provide the general-purpose eco-laws supporting the spreading, aggregation, gradient, and chemotaxis self-organisation patterns, for they are discussed elsewhere \cite{sapereecolaws-sac2012}.
+%
+We instead focus on the four eco-laws that incorporate the key strategies described in previous section, namely, the generation of replies along with a match-degree, their contextualisation at each node they transit across, and the competition-/collaboration-based aggregation as they are routed towards the requestor.
+%
+They are presented in \Cref{fig:laws}, and described in turn.
+%
+These eco-laws make use of a default (omitted) name-space corresponding to the ontology of resource discovery, the \texttt{sos} namespace incorporating the concepts relating to self-organisation patterns, and the \texttt{sapere} namespace incorporating all the general concepts of pervasive service ecosystems.
+
+Eco-law \texttt{[MATCH]} creates the reply.
+%
+It takes a request LSA \texttt{REQ} and a service LSA \texttt{SER} located in the same node, and creates the reply LSA \texttt{REP} such that: it clones \texttt{REQ}, has type \texttt{:reply}, points (via so-called bonds) to the service LSAs (\texttt{?SER}) and stores its content (\texttt{?S}), it is also of type \texttt{sos:ascend} relative to the gradient generated by \texttt{SRC}, and finally specifies properties \texttt{:ctxed} as flag to state whether contextualisation already took place.
+%
+It also describes the match-degree \texttt{?MD}, computed by function \texttt{:semantic MatchDegree} over service content \texttt{?S} and request content \texttt{?R}, implemented by the algorithm shown in Section II---only match degrees greater than $0$ are realised as a reply.
+%
+Note that this eco-law is reapplied over time so as to continuously support the chemotaxis pattern as already mentioned, as such, external function (constant) \texttt{:replyRate} is used to extract the application rate \texttt{?R}.
+
+Eco-law \texttt{[CTX]} ensures a reply LSA \texttt{?REP} is properly contextualised before being diffused one step.
+%
+It seeks another LSA of type \texttt{?T} having property \texttt{?P} assigned to a value \texttt{?V2}, and accordingly changes \texttt{?REP} by switching the value of \texttt{:ctxed} flag and updating \texttt{?P} to the result of applying function \texttt{?F} to \texttt{?V2} and previous value \texttt{?V}.
+%
+Switching such a flag causes the diffusion eco-law to move this LSA to a neighbour in the direction that ascends the request gradient, and to switch the flag back to false---so that eco-law \texttt{[CTX]} can be applied again.
+%
+Before diffusion takes place, however, aggregations should occur according to the following eco-laws.
+
+Eco-law \texttt{[AGGREGATE-COOP]} joins two reply LSAs perceived as belonging to a unique cluster of services (e.g., related points of interest).
+%
+It takes two reply LSAs for the same requestor \texttt{?R}, whose contextualisation values make them be perceived as ``near'' by requestor-specified predicate \texttt{:cooperate}, and creates a new reply LSA (overwriting one of the two originals) in which the service indication is obtained by joining \texttt{?S1} and \texttt{?S2} by external function \texttt{:join}, contextualisation value \texttt{?V} is computed by function \texttt{?CC}, and match-degree is computed by function \texttt{?CM}.
+
+The implementation of such functions strictly depends on the kind of contextualisation an application requires.
+%
+In our simulations in the next section we shall use an estimated physical distance as a contextual property, and as such we consider the following function (to be compared with other approaches in the next activities of this research): \texttt{:coop\_pred} simply checking that ``distances'' from the two resource are below a given threshold; \texttt{:coop\_ctx} the weighted mean of the two distances based on match-degree, namely, $(\texttt{?V1}*\texttt{?MD1}+\texttt{?V2}*\texttt{?MD2})/(\texttt{?MD1}+\texttt{?MD2})$; and \texttt{coop\_md} implements a t-conorm (a function to perform a ``fuzzy union''~\cite{Bobillo2011758}), and in particular the so-called product logic t-conorm $\texttt{?MD1}+\texttt{?MD2}-\texttt{?MD1}*\texttt{?MD2}$.
+%
+Finally, \texttt{:join} simply appends the two arguments yielding the list of all service identifiers.
+
+Eco-law \texttt{[AGGREGATE-CHOOSE]} selects one from two reply LSAs whenever they are perceived as belonging to different clusters of services.
+%
+Similarly to the previous law, it takes two reply LSAs for the same requestor \texttt{?R}, whose contextualisation values are such that they are not perceived as ``near'' by external function \texttt{?CP}, and selects the one with the stronger semantic-spatial situation (discarding the other). This is computed by function \texttt{?CS}.
+%
+In our reference case study: \texttt{:comp\_pred} is exactly the opposite of \texttt{:coop\_pred}, while \texttt{:comp\_sel} checks whether  $(\texttt{?MD1}*k/(\texttt{?V1}+k))\geq(\texttt{?MD2}*k/(\texttt{?V2}+k))$ for some fixed parameter $k$. This compares the two match-degrees, but penalises the one having greater distance (e.g., when $V=k$ the actual match-degree is halved).
+
+\section{Evaluation of Approach in \alchemist{}}
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{img/memory}
+\caption{Number of reply LSAs depending on the number of matching resources.} 
+\label{fig:srd-sim1}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{img/distance}
+\caption{Average distance travelled over fault probability} 
+\label{fig:srd-sim2}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{img/cluster50}
+\caption{(Average match-distance value over fault probability.} 
+\label{fig:srd-sim3}
+\end{figure}
+
+
+
+The simulated scenario aims to provide early validation of the model and functions (matching and aggregation operators) proposed in \Cref{sec:ecolaws} to select the best service among those matching a request, and investigate the performance gain due to the use of our distributed aggregation techniques.
+
+As a first step, we measured the overhead advantages due to the use of a distributed form of aggregation, both in space and in bandwidth, which we estimate by considering the number of reply LSAs that stabilise in the distributed set of node as a request is issued.
+%
+We simulated a bi-dimensional environment populated with an infrastructural grid of 11x11 nodes in a rectangular structure.
+%
+A request is initially injected from a boundary position.
+%
+In each simulation we randomly placed $N$ (ranging from $1$ to $100$) resources in the environment, each with a match degree randomly chosen between $0$ and $1$.
+%
+The request generates a gradient, and all resources eventually send a trail of LSAs back towards the requestor.
+%
+We compared the case in which no aggregation of such replies is performed, with the case in which as soon as two reply LSAs are co-located they compete such that only one of them is retained: it can hence be easily expected that a smaller number of LSAs will ultimately be diffused around.
+%
+Note that the results of this simulation are independent of the aggregation behaviour.
+%
+Results are reported in \Cref{fig:srd-sim1}, each showing an average value out of $50$ runs.
+%
+They show that while the overhead in a standard approach clearly grows linearly with the number of matching resources, distributed aggregation makes the number of involved LSAs grow much slowly, generally $2/3$ less for the particular case we considered---of course, different topologies can lead to different levels of improvement.
+
+%
+As a second example we show the advantage of using a cooperative approach during aggregation, which makes clusters of resources be preferable with respect to isolated resources.
+%
+The reason why this is considered useful is that frequently (for example, think of a general shopping scenario), the first matching resource reached is not the right one to pick: a new resource might be discovered from there---depending on the application scenario, this may happen if the resource is no longer available, or the application user is not satisfied despite the match and wants to quickly find a nearby alternative.
+%
+In that case a new request has to be issued: if the user already reached a cluster of matching resources, then it will more likely find another match nearby.
+%
+To simulate the advantages of this behaviour we define a \emph{fault probability} $p$ that, as one resource is selected from the requestor in a node $n$, another one needs to be searched because of dissatisfaction.
+%
+Our reference environment is the same as previous case, but we added $100$ resources on one side of the rectangular area, to simulate a non-homogeneous displacement of resources that can take advantage of our management of clustering.
+
+\Cref{fig:srd-sim2} and \Cref{fig:srd-sim3} report results, each considering a different value of $p$: the former measures average distance travelled (considering that many resources are generally to be reached), the latter measures the overall result quality, which is computed by the same formula $k*M/(D+k)$ we used to compare competing replies, that is, promoting resources which both are good matches and are near to the requestor.
+%
+Both charts show that, even if the environment has no specific clusters, there is a significant gain in the quality of replies.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Case study: Crowd disasters prediction}
 \chapter{Case study: Crowd steering at the urban scale}
 \label{ahpc-steering}
@@ -5572,6 +5966,10 @@ In this screenshot, the supplies database has crashed, causing many of the other
 \subsection{A process algebra for SAPERE}
 
 The key contribution of a process algebra to provide a unequivocal description of the components of the infrastructure, and also serves as an executable specification from which can be derived proofs of behavioural properties, like self-stabilisation of the self-organising spatial structures that are useful in the context of pervasive computing systems (along the lines of \cite{V-SCW2013}).
+
+\subsection{Resource discovery}
+To the best of our knowledge our approach is the first to use the semantic match-degree as a means of shaping the communications between network nodes, and to incorporate extrinsic contextual features into the discovery process in such a way that resource selection emerges as an active property of the bio-inspired communication process, as contrasted to \emph{post hoc} analysis and filtering.
+
 
 \section{Aggregate programming languages}
 
