@@ -23,7 +23,8 @@
 \usepackage{multicol}        % used for the two-column index
 \usepackage{times}
 \usepackage{subfigure}
-\usepackage{stmaryrd,mathtools}
+\usepackage{stmaryrd}
+\usepackage{mathtools}
 \usepackage[noend]{distribalgo}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{multirow}
@@ -34,7 +35,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{microtype}
-\usepackage[arrow,matrix,frame,curve,cmtip]{xy}%\CompileMatrices
+% \usepackage[arrow,matrix,frame,curve,cmtip]{xy}%\CompileMatrices
 \usepackage{soul}
 \usepackage{rotating}
 \usepackage{epstopdf}
@@ -47,6 +48,19 @@
 \usepackage[toc,page]{appendix}
 \usepackage{url}
 \usepackage{amsthm}
+
+% \usepackage{tabularx}
+% \usepackage{booktabs}
+% \usepackage{color}
+% \usepackage{float}
+% \usepackage{datetime}
+% \usepackage{latexsym}
+% \usepackage{amstext}
+% \usepackage{mathpartir}
+% \usepackage{enumitem}
+% \usepackage{todonotes}
+
+
 
 \theoremstyle{plain}
 %MUST BE LOADED LAST%
@@ -211,6 +225,168 @@
 \newcommand{\ifK}[3]{\texttt{\fc{if}}(#1)#2\,\texttt{\fc{else}}\,#3}
 \newcommand{\muxK}[3]{\texttt{\fc{mux}}(#1)#2\,\texttt{\fc{else}}\,#3}
 \newcommand{\nbrK}[1]{\texttt{\fc{nbr}}#1}
+\newcommand{\lvalue}{\texttt{l}}
+\newcommand{\xname}{\texttt{x}}
+\newcommand{\yname}{\texttt{y}}
+\newcommand{\pe}{\texttt{p}} % pure expression
+\newcommand{\fvalue}{\phi}
+
+
+\newcommand{\wildcard}{{\cdots}} %%% non intresting syntact element
+%\newcommand{\option}[1]{{{#1}_\mathit{opt}}} %%% optional syntact element
+\newcommand{\option}[1]{\mathring{#1}} %%% optional
+\newcommand{\evaluatedPlace}{{\place_\mathit{top}}} %%% optional syntact element
+%%%\newcommand{\re}{\textit{r}} %%% runtime expression
+\newcommand{\re}{\textit{a}} %%% runtime expression
+\newcommand{\rv}{\textit{v}} %%% runtime value
+\newcommand{\lre}{\textit{e}} %%% labeled runtime expression
+\newcommand{\olre}{\option{\lre}} %%% optional labeled runtime expression
+%%%\newcommand{\orv}{\textit{w}}  %%% optional runtime value
+\newcommand{\orv}{\option{\rv}}  %%% optional runtime value
+\newcommand{\ob}{\textit{b}}  %%% optional body
+\newcommand{\Env}{\Gamma}
+\newcommand{\emptyEnv}{\bullet}
+\newcommand{\Trees}{\Theta}
+\newcommand{\emptyTrees}{\bullet}
+\newcommand{\labelled}[2]{#1\!\!\cdot\!\!{#2}}
+\newcommand{\labelledsmall}[2]{#1\cdot{#2}}
+\newcommand{\labelledC}[2]{#1^{#2}}
+\newcommand{\labelledCsmall}[2]{#1^{#2}}
+
+\newcommand{\he}{h} %%%  local value or runtime expression
+\newcommand{\ohe}{\option{\he}} %%% optional local value or runtime expression
+\newcommand{\ue}{\textit{u}} %%% unevaluated runtime expression
+\newcommand{\uhe}{\option{\ue}} %%% optional unevaluated runtime expression
+
+\newcommand{\unfoldK}{\texttt{unfold}}
+
+\newcommand{\newopsem}[5]{#1;#2;#3\vdash #4\rightarrow #5}
+\newcommand{\opsem}[4]{#1;#2\vdash #3\rightarrow #4}
+\newcommand{\opsemmany}[4]{#1;#2\vdash #3\rightarrow^* #4}
+\newcommand{\opsemNF}[3]{#1;#2\vdash #3\not\rightarrow}
+
+\newcommand{\self}{\texttt{self}}
+
+%%% Alignment contexts
+
+\newcommand{\actx}{\mathbb{A}}
+\newcommand{\matches}{::}
+
+%%% Contexts
+
+\newcommand{\ctxapp}[2]{#1[#2]}
+\newcommand{\ctxappfull}[3]{\ctxapp{#1}{#2}\langle #3\rangle}
+\newcommand{\ctx}{\mathbb{C}}
+\newcommand{\ctxr}{\mathbb{R}}
+\newcommand{\ctxf}{\mathbb{N}}
+\newcommand{\ctxc}{\mathbb{C}}
+\newcommand{\ctxrt}{\mathbb{RT}}
+\newcommand{\ctxt}{\mathbb{T}}
+\newcommand{\ctxre}{\mathbb{RE}}
+\newcommand{\ctxe}{\mathbb{E}}
+\newcommand{\hole}{[]}
+\newcommand{\place}{\langle\rangle}
+\newcommand{\placefilled}[1]{\langle #1\rangle}
+\newcommand{\inversectx}[2]{\spi{#1}(#2)}
+\newcommand{\spi}[1]{\pi_{#1}}
+\newcommand{\erase}[1]{|#1|}
+
+\newcommand{\transition}[3]{
+  \begin{array}{l@{\;}c}
+    \stackrel{~}{{\tiny \textrm{[#1]}}} & #2 \\ \hline
+    \multicolumn{2}{c}{#3}
+  \end{array}
+}
+\newcommand{\transitiontwoprec}[4]{
+  \begin{array}{l@{\qquad}c}
+    & #2\\
+    {\tiny \textrm{[#1]}} & #3 \\ \hline
+    \multicolumn{2}{c}{#4}
+  \end{array}
+}
+\newcommand{\nulltransition}[2]{
+  \transition{#1}{}{#2}
+}
+
+\newcommand{\smallerskiptransition}{\\[-4pt]}
+\newcommand{\smallskiptransition}{\\[0pt]}
+\newcommand{\skipreduction}{\\}
+\newcommand{\skiptransition}{\\[10pt]}
+\newcommand{\bigskiptransition}{\\[15pt]}
+
+\newcommand{\sta}{\textit{s}}
+\newcommand{\stat}[4]{\langle#1,#2,#3,#4\rangle}
+\newcommand{\topStat}[3]{\langle#1,#2,#3\rangle}
+\newcommand{\tstat}[5]{#1\!::\!\langle #2,#3,#4,#5\rangle}
+\newcommand{\msg}[2]{\{#1\rhd #2\}}
+\newcommand{\fullmsg}[3]{#1:#2\rhd #3}
+\newcommand{\sys}{\textit{N}}
+% \newcommand{\opar}{\;||\;}
+\newcommand{\opard}{\oplus}
+\newcommand{\lab}{\lambda}
+\newcommand{\labtau}[1]{#1:\tau}
+\newcommand{\labstart}[2]{#1\uparrow #2}
+\newcommand{\labstop}[3]{#1\downarrow(#3) #2}
+\newcommand{\upd}[2]{#1[#2]}
+\newcommand{\replace}[2]{#2\rhd #1}
+\newcommand{\proj}[2]{{#1}|_{#2}}
+\newcommand{\topo}{\varSigma}
+\newcommand{\envmap}[2]{\{#1\mapsto #2\}}
+
+\newcommand{\fromMsg}[2]{\mathit{from}(#1,#2)}
+\newcommand{\toMsg}[2]{\mathit{to}(#1,#2)}
+
+\newcommand{\initNAME}{\textit{init}}
+\newcommand{\init}[1]{\initNAME(#1)}
+\newcommand{\ruleNameSize}[1]{{\scriptsize #1}}
+
+\newcommand{\asuper}{\texttt{s}}
+\newcommand{\avalue}{\texttt{v}}
+\newcommand{\bvalue}{\textit{b}}
+\newcommand{\obvalue}{\option{\bvalue}}
+% \newcommand{\lvalue}{\texttt{l}}
+\newcommand{\olvalue}{\option{\lvalue}}
+\newcommand{\nvalue}{\texttt{n}}
+\newcommand{\tvalue}{\texttt{t}}
+\newcommand{\hvalue}{\texttt{h}}
+\newcommand{\nolabel}{\_}
+\newcommand{\fdom}[1]{\textit{dom}(#1)}
+\newcommand{\oexec}{\epsilon}
+
+\newcommand{\brvalue}{\textit{b}}
+\newcommand{\obrvalue}{\option{\brvalue}}
+\newcommand{\lrvalue}{\textit{l}}
+\newcommand{\olrvalue}{\option{\lrvalue}}
+
+\newcommand{\tvalueExt}[1]{(\lvalue_1,\ldots,\lvalue_{#1})}
+\newcommand{\fvalueExt}[2]{\{#1\mapsto #2\}}
+\newcommand{\fvalueOne}[2]{\{#1\mapsto #2\}}
+\newcommand{\fvalueWrap}[1]{\{#1\}}
+\newcommand{\fvaluewrapped}[2]{#1\mapsto #2}
+\newcommand{\fvalues}[2]{#1\mapsto #2}
+%\newcommand{\memslot}[2]{\{#1:=#2\}}
+\newcommand{\memslot}[2]{#1:=#2}
+\newcommand{\treeslot}[2]{#1\mapsto #2}
+\newcommand{\emptyL}{\bullet}
+
+\newcommand{\avalueSet}{\mathcal{V}}
+\newcommand{\lvalueSet}{\mathcal{L}}
+\newcommand{\nvalueSet}{\mathcal{N}}
+\newcommand{\tvalueSet}{\mathcal{T}}
+\newcommand{\hvalueSet}{\mathcal{H}}
+\newcommand{\fvalueSet}{\Phi}
+% Keywords
+\newcommand{\tname}{\texttt{t}}
+\newcommand{\domofNAME}{\textbf{dom}}
+\newcommand{\domof}[1]{\domofNAME(#1)}
+\newcommand{\nameInitRte}{\textit{init}}
+\newcommand{\initRte}[1]{\nameInitRte(#1)}
+
+\newcommand{\fcltrue}{\textit{t}}
+\newcommand{\fclfalse}{\textit{f}}
+
+
+
 
 %%%%%%%
 % GPI %
