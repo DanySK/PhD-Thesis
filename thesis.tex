@@ -653,8 +653,21 @@ This can be understood as a computational field \cite{SpatialIGI2013,mamei2009ac
 
 Interestingly, the Gradient pattern can be designed to automatically self-heal to changes in the topology and to movement of the source \cite{flexiblegradients}.
 %
-% TODO problems with gradient salita lenta
-\cite{crf}
+An interesting issue with such gradients is framed in \cite{crf}, and concerns the asymmetry between how quickly the distributed data structure reacts to changes if they are rising or decreasing the value.
+%
+Since the proposed implementation chooses the minimum gradient value from neighbours, it is very quick in detecting and self-healing in case the gradient value should decrease: as soon as a new neighbour discovers a better route towards source, the node updates and gets the correct value.
+%
+In case the optimal path is broken, instead, at each ``computational round'' the value rises depending on the distance between a node and the current optimal neighbour.
+%
+This problem, known as ``rising values problem'', gets worse with the density of the network\footnote{If the density is higher and the number of neighbours is constant, then necessarily there is a smaller distance between nodes. Since the gradient uses distance between nodes to compute its value, this is detrimental to performance.}.
+%
+A solution for this problem is given in \cite{crf}.
+%
+In this thesis we will often use the most classic implementation of gradient, and consequently we will run across the rising value problem.
+%
+The effect of this problem, and its relationship with devices density, are very evident in the experiments of \Cref{simulation-channel}.
+%
+The curious reader may peek that part to realise of how impacting the effect is.
 
 \subsection{Chemotaxis}
 
@@ -1438,46 +1451,32 @@ Despite the efforts of addressing specific aspects of self-adaptability and open
 %
 The hardest challenge is due to the fact that most of the complexity of such systems does not come from the individual behaviours, but rather from interaction \cite{Wegner,interactionbook,interaction-interbook}.
 
+The emergence of such behaviour poses a major issue: if we focus on the single interacting part of the whole system, we encounter a local-to-global problem.
+%
+No methodology yet successfully solved the task of describing the behaviour of the aggregate and compile it to the program that each device should run, although a very promising research line is the one of aggregate programming \cite{proto,VDB-FOCLASA-CIC2013}.
+%
+One of the problems under investigation is the possibility of defining high level constructs based on well known building blocks.
+%
+This thesis will outline some novel work in this direction in \Cref{scale-independent-computations} and \Cref{protelis-language}.
+
+
+\subsection{Simulation}
 
 Multiple methodologies have been proposed to tackle complex pervasive systems \cite{MCOV-SCP2011,BabulakIJOE2008,BandiniJASSS2009,josMacalN10,sapere-procedia7}, and they always include \emph{simulation} as a key step  to realise what-if analysis prior to actual development, to both assess the general validity of the designed mechanisms and to fine tune system parameters.
-% TODO: need of simulation %
-There are many kinds of simulation tools available: they either provide programming/specification languages devoted to ease construction of the simulation process, especially targeting computing and social simulation (e.g. as in the case of multi-agent based simulation \cite{BandiniJASSS2009,SchumacherCEEMAS2007,vizzari-massimulationbook09,repast,sklar2007al}), or they stick to quite foundational computing languages to better tackle performance, mostly used in biology-oriented applications \cite{Priami1995,murata1989,UhrmacherWSC2005,EwaldJOS2007}.
 %
-None of the existing tools, however, aims at bridging the gap between these approaches, trying to extend the basic computing model of chemical reactions -- still retaining its high performance -- toward ease applicability to complex situated computational systems.
+There are many kinds of simulation tools available: they either provide programming/specification languages devoted to ease construction of the simulation process, especially targeting computing and social simulation (e.g. as in the case of multi-agent based simulation \cite{luke2005simulation,BandiniJASSS2009,SchumacherCEEMAS2007,vizzari-massimulationbook09,repast,sklar2007al}), or they stick to quite foundational computing languages to better tackle performance, mostly used in biology-oriented applications \cite{Priami1995,murata1989,UhrmacherWSC2005,EwaldJOS2007}.
 
+None of the existing tools, however, aims at bridging the gap between these approaches, trying to extend a basic computing model -- still retaining high performance -- toward ease applicability to complex situated computational systems.
+%
+In this thesis, a novel toolchain for engineering pervasive systems will be presented in \Cref{alchemist-part}.
+%
+The idea behind this tool is to rely on the basic model of chemical reactions, whose stochastic simulators are known for their high performance, and try to extend the existing algorithms in literature up to the point that richer models can be supported.
+%
+The tool also includes a probabilistic model checker, which can be leveraged to estimate with the desired precision the value of model properties that would be otherwise hard to evaluate.
 
-
-\subsection{General purpose frameworks}
-MASON \cite{luke2005simulation}, Repast \cite{repast}, NetLogo \cite{sklar2007al} and Swarm
-\subsection{Specific simulators}
-network simulators (the one, ns2)
-biological simulators (ask Sara)
-
-Specific per-use simulators, gener
-
-% TODO: motivations.
-% \chapter{Shortcomings of coordination infrastructures}
-% \section{Engineering emergence}
-% \section{Local to global}
-% \chapter{Shortcomings of existing tools}
-% \section{Specific tools: expressiveness}
-% \section{General purpose tools: performance}
 
 \part{An integrated toolchain for pervasive ecosystems}
-
-% We discussed in \Cref{engineering-and-tools} the importance of simulation in the engineering process of designing pervasive ecosystems.
-% %
-% In this\levelText{} we will discuss one of my contribution to this research branch, namely the development of an integrated tool named \alchemist{}, which has been inspired by chemical oriented simulators.
-% %
-% We first talk about chemical inspiration, and how existing chemical-oriented stochastic simulation algorithms (SSAs) can be extended towards higher flexibility, up to the point that they become suitable to simulate potentially complex environments, still retaining their high performance.
-% %
-% To do so, our first effort will be to take an efficient SSA implementation and convert it to a general-purpose discrete event simulator (DES).
-% %
-% We then devise a meta-meta-model, complex and flexible enough to support the definition of middleware-specific meta-models.
-% %
-% Finally, some meta-models are presented.
-%TODO: expand
-%
+\label{alchemist-part}
 
 \chapter{Chemical-inspired engine}
 \label{chemical-engine}
@@ -3333,6 +3332,7 @@ Finally, a \emph{steering service} agent has the goal of reifying a sign towards
 The LSA it produces and maintains is representative of the direction of the sign to be shown on pervasive displays, and is intended to be observed by a display agent.
 
 \section{Simulation in \alchemist{}}
+\label{simulation-channel}
 
 \begin{figure}
 \begin{center}{\includegraphics[width=\textwidth]{img/london-channel}}\end{center}
@@ -5530,31 +5530,6 @@ We claim that, assuming the traces to be a representative sampling of the actual
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \part{Aggregate programming languages}
-% In this chapter
-% Possibile intro: in questo capitolo si fanno tre cose: 1) si cerca di modificare un meccanismo classico (Linda) in modo adattarlo al ragionamento di programmazione aggregata. 2) Si propone una restrizione di field calculus ad operazioni safe, e si dice ovviamente che vuol dire safe in un continuum spazio-temporale. 3) Si propone una implementazione pratica, che parte dai concetti di field calculus (non da GPI perché in generale un linguaggio ti deve consentire tutto, ma ci sta di ragionare sul fatto che poi una API safe andrebbe fornita) -- nelle conclusioni
-
-%TODO: convergenza fra tuple e spatiale computing
-
-%TODO: tutta la parte di GPI%
-
-%TODO: tutta la parte di Linda space-time, da vedere come un lavoro che cerca di portare la tuple based coordination verso un concetto di continuum spazio-temporale %
-
-% When we introduced Field Calculus in \Cref{field-calculus}, we said that it is more a theoretical than a practical framework.
-% %
-% Building on the foundation of field calculus, the subsequent step is to provide a framework that can be practically leveraged to express a collection of higher-level ``building block'' algorithms, each a simple and generalized basis element of an ``algebra'' of programs with desirable resilience properties (e.g., the operators presented in~\cite{BV-FOCAS2014}).
-% %
-% On top of this, higher-level library APIs can be built, enabling simple and transparent construction of robust distributed systems.
-% 
-% Any practical implementation of field calculus must embed a field calculus interpreter within an architecture that handles the pragmatics of communication, execution, and interfacing with hardware, operating system, and other software.
-% %
-% At the same time, it is important that this system be readily portable across both simulation environments and real networked devices.
-% %
-% Finally, both system development and maintainability are greatly enhanced if the exact same code is used for execution in all contexts.
-% 
-% Here is where \protelis{} comes into play: it represents our effort to bring Field Calculus to practice, satisfying the requirements stated above.
-
-%TODO: dire che ha anche una parte più teorica, relativa a codice mobile e HOF in field calculus%
-
 \chapter{Tuple based aggregate programming}
 
 A common viewpoint in developing coordination models on top of Linda~\cite{linda-toplas7} is that tuples are a mechanism to reify and exchange events/data/knowledge that are important to system coordination, and to synchronise the activities of coordinated components in a parallel and/or distributed system.
@@ -6117,6 +6092,7 @@ Given these two basic bricks, the \texttt{stout} and \texttt{stin} primitives wo
 These new primitives allow agents to publish/retrieve information flexibly tuning the space-time horizons, relying on lower-level gradients (and routing paths) which adapt to the mobility of the network \cite{flexiblegradients}.
 
 \chapter{Scale independent computations}
+\label{scale-independent-computations}
 
 Spatially, pervasive networks will tend to be highly variable in their density across space and time, and this represents a key problem.
 %
@@ -7291,7 +7267,33 @@ To the best of our knowledge our approach is the first to use the semantic match
 
 \section{Aggregate programming languages}
 
-%TODO: fixme
+% In this chapter
+% Possibile intro: in questo capitolo si fanno tre cose: 1) si cerca di modificare un meccanismo classico (Linda) in modo adattarlo al ragionamento di programmazione aggregata. 2) Si propone una restrizione di field calculus ad operazioni safe, e si dice ovviamente che vuol dire safe in un continuum spazio-temporale. 3) Si propone una implementazione pratica, che parte dai concetti di field calculus (non da GPI perché in generale un linguaggio ti deve consentire tutto, ma ci sta di ragionare sul fatto che poi una API safe andrebbe fornita) -- nelle conclusioni
+
+%TODO: convergenza fra tuple e spatiale computing
+
+%TODO: tutta la parte di GPI%
+
+%TODO: tutta la parte di Linda space-time, da vedere come un lavoro che cerca di portare la tuple based coordination verso un concetto di continuum spazio-temporale %
+
+%TODO: spostare tutti questi todo nelle conclusioni
+
+% When we introduced Field Calculus in \Cref{field-calculus}, we said that it is more a theoretical than a practical framework.
+% %
+% Building on the foundation of field calculus, the subsequent step is to provide a framework that can be practically leveraged to express a collection of higher-level ``building block'' algorithms, each a simple and generalized basis element of an ``algebra'' of programs with desirable resilience properties (e.g., the operators presented in~\cite{BV-FOCAS2014}).
+% %
+% On top of this, higher-level library APIs can be built, enabling simple and transparent construction of robust distributed systems.
+% 
+% Any practical implementation of field calculus must embed a field calculus interpreter within an architecture that handles the pragmatics of communication, execution, and interfacing with hardware, operating system, and other software.
+% %
+% At the same time, it is important that this system be readily portable across both simulation environments and real networked devices.
+% %
+% Finally, both system development and maintainability are greatly enhanced if the exact same code is used for execution in all contexts.
+% 
+% Here is where \protelis{} comes into play: it represents our effort to bring Field Calculus to practice, satisfying the requirements stated above.
+
+%TODO: dire che ha anche una parte più teorica, relativa a codice mobile e HOF in field calculus%
+
 
 \subsection{Scale independent computation in situated networks}
 We have developed the first practical distributed language which provides guarantees that all distributed algorithms expressed in this language are resilient against changes in the number and distribution of devices in a network.
@@ -7311,6 +7313,8 @@ This enables Protelis programs to draw on the full breadth of available Java API
 %
 This implementation of Protelis thus forms an important component of the toolchain necessary for practical application of aggregate programming principles and methods to address real-world problems.
 %
+
+
 
 \chapter{Future and ongoing work}
 
@@ -7343,6 +7347,8 @@ This point of view will be deeply analysed a paper which is an ongoing work.
 It will also be important to consider how static analysis, testing, and model-checking techniques can be incorporated to extend the capabilities, especially for ensuring that semantic faults in programs can be eliminated before runtime.
 
 %TODO Si propone una implementazione pratica, che parte dai concetti di field calculus (non da GPI perché in generale un linguaggio ti deve consentire tutto, ma ci sta di ragionare sul fatto che poi una API safe andrebbe fornita)
+
+
 
 \section{Biochemical meta model for \alchemist{}}
 ciao
