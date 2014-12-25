@@ -1838,22 +1838,26 @@ It also allows to define which kind of time distribution to use to trigger react
 \end{figure}
 
 The whole framework has been designed to be fully modular and extensible.
+%
 The whole engine or parts of it can be re-implemented without touching anything in the model, and on the other hand the model can be extended and modified without affecting the engine.
+%
+The only requirement is that the outermost model APIs remain unchanged.
 
-It is important to note that there is no restriction about the kind of data structure representing the concentration, which can in fact be used to model structured information: by defining a new kind of structure for the concentration, it is possible to incarnate the simulator for different specific uses. For example, by assessing that the concentration is an integer number, representing the number of molecules currently present in a node, \alchemist{} becomes a stochastic simulator for chemistry. A more complex example can be the definition of concentration as a tuple set, and the definition of molecule as tuple template. If we adopt this vision, \alchemist{} can be a simulator for a network of tuple spaces. Each time a new definition of concentration and molecule is made, a new ``incarnation'' of \alchemist{} is automatically defined. For each incarnation, a set of specific actions, conditions, reactions and nodes can be defined, and all the entities already defined for a more generic concentration type can be reused.
-
-
-%TODO: scrivere una ncarnazione e poi magari anche scrivere una simulazione.
-
-\section{Writing a simulation}
-
-%SISTEMARE%
-
-In order to write a simulation, the user must have, or implement herself, an incarnation of \alchemist{}, as described in \Cref{subsec:architecture}.
+It is important to note that there is no restriction about the kind of data structure representing the concentration, which can in fact be used to model structured information: by defining a new kind of structure for the concentration, it is possible to incarnate the simulator for different specific uses.
+%
+For example, by assessing that the concentration is an integer number, representing the number of molecules currently present in a node, \alchemist{} returns to its original nature: a stochastic simulator for chemistry, with addition of mobile compartments and possibly structured environments.
+%
+A more complex example can be the definition of concentration as a tuple set, and the definition of molecule as tuple template.
+%
+If we adopt this vision, \alchemist{} can be a simulator for a network of tuple spaces.
+%
+Each time a new definition of concentration and molecule is made, a new ``incarnation'' of \alchemist{} is automatically defined. For each incarnation, a set of specific actions, conditions, reactions and nodes can be defined, and all the entities already defined for a more generic concentration type can be reused.
+%
+An incarnation, namely a meta-model instance of the meta-meta model of \alchemist{} is required for the modeller to be able to write a simulation.
 
 As shown in \Cref{img:arch}, the simulations are written in a specific XML language containing a complete description of environment and reactions.
 %
-This code is interpreted in order to produce an instance of an environment: once it is created, no further interpretation is needed in order to run the simulation.
+This code is interpreted in order to produce an actual instance of an environment: once it is created, no further interpretation is needed in order to run the simulation.
 %
 This XML code is not meant to be directly exploited by users: the XML format itself is not exactly human friendly, and XML file is often considerably big (a few megabytes are considered to be normal)
 %
@@ -1861,24 +1865,27 @@ However, it is a very standard way of describing environments in a machine-frien
 %
 The idea behind this choice is that \alchemist{} is flexible enough to be used in various contexts, each one requiring a personalised language and a different instantiation of the meta-model.
 %
-It is up to the extensor to write a translation module from its personalised language to the \alchemist{} XML.
+It is up to the extensor to write a translation module from a personalised domain specific language to the \alchemist{} XML.
 %
-Of course, it is also possible to code the simulation behaviour  directly with Java, although this way exposes the user to many more low level details.
+Of course, it is also possible to code the simulation behaviour directly with Java, although this way exposes the user to many more low level details and it is consequently strongly discouraged.
 
 \section{Implementation details}
-%TODO%
+
 The framework was developed from scratch using Java. Being performance a critical issue for simulators, we compared some common languages in order to evaluate their performance level.
 %
 Surprisingly, Java performance are at same level of compiled languages such as C/C++ \cite{bull2003, oancea2011}.
 %
 The Java language was consequently chosen because of the excellent trade off between performance, easy portability and maintainability of the code, and the high-level support for concurrent programming at the language level. 
 %
-The COLT Java library\footnote{\url{http://acs.lbl.gov/software/colt/}} provided us the mathematical functions we needed.
+Along with the very common Apache Commons Mathematics Library\footnote{http://commons.apache.org/proper/commons-math/}, we relied on the COLT Java library\footnote{\url{http://acs.lbl.gov/software/colt/}} provided us the mathematical functions we needed.
 %
 In particular, it offers a fast and reliable random number generation algorithm, the so called Mersenne Twister \cite{matsumoto1998}.
+%
+\alchemist{} also depends on GNU Trove\footnote{\url{http://trove.starlight-systems.com/}}, which provides high speed collections with very low memory impact.
 
-% TODO! %
-\alchemist{} is still actively developed and currently consists of about 200 classes for about 20'000 lines of code. Though still in beta version, it is released with GPL license as open source \footnote{\mbox{\url{http://alchemist.apice.unibo.it}}.}.
+\alchemist{} is still actively developed, and we expect to soon release a stable distribution with three built-in incarnations, along with three domain specific languages.
+%
+Though still under development, it is freely available\footnote{\url{http://alchemist.apice.unibo.it}}, released under the terms of GNU General Public License 3.0\footnote{http://www.gnu.org/copyleft/gpl.html} with linking exception.
 
 \chapter{Performance}
 \begin{figure}[t]
@@ -2383,12 +2390,18 @@ In this sense, \alchemist{} automatically detects when a real-world environment 
 
 \chapter{Chemical meta-model}
 
-% TODO: description, mi sa che tocca farla a mano...
+The chemical incarnation of \alchemist{} was the first and simpler incarnation developed.
+%
+As the reader may expect, it defines a molecule as a token, and its concentration as a numeric value.
+%
+This way, \alchemist{} comes back to its ancestral chemical nature, though retaining some of its advanced features, namely the ability of dealing with multiple, mobile compartments situated in a possibly complex environments whose number varies with time.
+%
+Such abilities are not particularly interesting in a purely chemical environment, but can be key to model more complex phenomena, such as precise intracellular models or multi-cellular models, where locality and mobility become relevant.
+
+In this chapter, we will present an application of this meta model that demonstrates the potential of this tool even outside the core applications for which it was designed.
 
 \section{Example scenario: Morphogenesis}
 
-As example to test the power of a chemical stochastic simulator enriched a more general model, we propose a case study on morphogenesis.
-%
 Development of multicellular organisms begins with a single cell -- the fertilised egg, or zygote.
 %
 The egg cell is always asymmetric, \emph{i.e.}, the distribution of maternal proteins inside the cell is not uniform.
