@@ -730,6 +730,7 @@ Several implementations from both academia and industry exist.
 \end{description}
 
 \subsection{SAPERE}
+\label{sapere}
 SAPERE\footnote{The model was developed as part of an EU-funded research project. See \url{http://www.sapere-project.eu/}.} \cite{sapere-procedia7} is a nature-inspired coordination model and framework to support the design and development of composite pervasive service systems.
 \begin{figure}
 \centering
@@ -2316,7 +2317,7 @@ We can thus advocate that, by exploiting reuse of simulations, for the considere
 Clearly, the performance gains change depending on the considered scenario or properties. In fact, the more simulations are required, and the longer they take, the greater will be the advantage.
 
 \section{Real world maps}
-
+\label{real-world-maps}
 \alchemist{} supports real-world environments.
 %
 The base functionality lies in the possibility to load maps and simulate within them.
@@ -2568,8 +2569,98 @@ The expression of  \emph{gt} is finally observable between 10\% and 30\% and 80\
 
 \chapter{SAPERE meta-model}
 
-\part{Methods and patterns for self-organisation}
+In the previous chapter we have described the simplest incarnation of \alchemist{}, that basically brings the model back to its chemical origins.
+%
+In this\levelText{}we will instead focus on a more complex incarnation, meant to provide support for the abstractions on which SAPERE (see \Cref{sapere}) relies upon.
+%
+This chapter will present no usage example, and the reason is that most of the experiments executed in \Cref{contribution-pattern} are run on \alchemist{}, and rely on this incarnation.
 
+\section{Molecules and concentrations}
+\label{alchemist-molecule-concentration}
+
+In the SAPERE meta-model, a molecule is a LSA template, namely it can contain both variables and ground terms.
+%
+Concentration, instead, is the collection of instanced LSAs matching some template.
+
+To better understand this concept, a parallel with the previously presented chemical incarnation may be of use.
+%
+In a multi-compartment chemical model each compartment contains some collection of chemical species, and given any of them it is possible to compute its concentration, which is the number of molecules of such chemical in the compartment.
+%
+It is also possible to know the concentration of a chemical which is not present inside such compartment: the concentration would be zero.
+%
+Similarly, in a multi-node SAPERE model, each node contains some collection of instanced (without unbound variables) LSAs.
+%
+For each possible LSA, regardless the fact that it contains variables, we can compute the ``concentration'' of the template in the node: it is the collection of ground LSAs stored inside such node and matching the template.
+%
+It is also possible to compute the concentration of a template that have no matches inside some node: the concentration would be an empty collection.
+
+\section{Reactions and eco-laws}
+
+The mapping in \Cref{alchemist-molecule-concentration} allows the meta-meta model to be instanced in such a way that it describes a network of tuple spaces.
+%
+Still, we do not have programmability, while in the SAPERE way the space is programmed with so called ``eco-laws''.
+
+Programmability is obtained by properly instancing reactions, actions and conditions of the meta-meta model.
+%
+For what concerns conditions, the most simple is ``is an LSA matching some template present in at least one copy inside this node?''.
+%
+This suffices for most scenarios, but we also provide a ``is an LSA matching some template present in at least one copy inside this neighborhood?''.
+%
+More elaborated conditions would be obviously possible, but most of them, at least for the studies that have been carried on to date, are actually completely generic and do not require to be specified inside the incarnation.
+%
+For instance, ``am I connected to at least some number of devices?'' is totally generic.
+
+Actions are considerably more complicated.
+%
+The basic ones are rather simple: inject a new LSA locally, send an LSA to a neighbour, send an LSA to all neighbours.
+%
+Actions, in the SAPERE incarnation, bust have access to the bindings performed by conditions in order to instance their templates before operating on them.
+%
+Many more actions are conceivable: as example, if we wanted to implement chemotaxis, we need the ID of the node holding the highest gradient value to be used as destination for our LSA diffusion.
+%
+The quickest and cleanest way to do so is to write a new action.
+%
+The specific case of chemotaxis is already solved by a dedicated action, but many more may be required by other applications.
+
+The concept or reaction, along with time distribution, already works just fine.
+%
+There are only two relevant additions: the reaction must be able to read the possible variable substitutions from its conditions to pass them to its action, and it must change the way it computes its speed.
+%
+In fact, since the reaction is responsible for providing a speed parameter to the time distribution, in case multiple matches are possible it must consider itself as a ``super-reaction'' and pass as parameter the sum of the parameters computed for each possible substitution.
+%
+Once the reaction should execute, it must choose the substitution to be passed to its actions probabilistically according to the specific ``speed'' of each single match.
+
+\subsubsection{Optimised gradient}
+
+The gradient pattern is of paramount importance, being the foundation of many other patterns.
+%
+For this reason, \alchemist{}'s SAPERE incarnation provides a facility, in form of dedicated reaction, that implements gradient in an efficient way, working around all the machinery in place for the other conditions and actions and with solid optimisations.
+
+\section{SAPERE domain specific language}
+
+The SAPERE meta model is quite mature, since it was by far the most widely used and heavily developed incarnation in \alchemist{}.
+%
+As a consequence, it also includes its own domain specific language, built relying on Xtext\footnote{\url{http://www.eclipse.org/Xtext/}}.
+
+Such language allow the modeller to specify multiple elements, and for each of them it allows to load personalised extensions of the basic interfaces, by explicitly stating which Java class should be instanced, and which parameters should be used to detect and use its constructor.
+\begin{description}
+ \item[Environment] -- By default, a plain, unlimited bidimensional space is loaded. More complex environments, such as the one described in \Cref{real-world-maps} can be easily loaded by specifying them explicitly.
+ \item[Linking Rule] -- There is no default, the modeller must explicitly say which rule should be responsible to connect nodes. Since the most frequent rule is ``connect to everybody within some communication range'', a teaspoon of syntactic sugar is provided for quickly specifying just the range.
+ \item[Concentration] -- By default, a factory of collections of LSAs is used. In no cases there was need to use a personalised value.
+ \item[Position] -- By default, bidimensional continuous positions with euclidean distance measures are used. Also, bidimensional discrete positions with Manhattan distance are provided. Particularly useful in case of in-maps experiments are positions that use latitude and longitude as coordinates, and compute distances keeping in mind the fact the the Earth is an oblate spheroid. In case a three-dimensional environment gets developed, it will need its corresponding position format to be specified.
+ \item[Random seed] -- Allow to select a precise simulation to be run. Very useful for debugging models. By default, instructs the simulator to generate a random simulation ad each run.
+ \item[Time] -- Normally, time is represented by a double. In some scenarios, if time is very long but very fine granularity is needed, double values may suffer precision loss. This option is meant to circumvent the problem, provided that the modeller has her own implementation of the Time interface.
+ \item[LSAs] -- Syntactic sugar that allows the modeller to bind frequently used LSA templates to variables, in order to shorten and ease the rest of the model code
+ \item[Programs] -- Groups of reactions
+ \item[Reactions] -- Reactions are specified using a compact syntax if the default type is used. In such a case, they are just a list of conditions, a time distribution and a list of actions. A reaction can't be empty: it must have at least one condition or one action.
+ \item[Conditions and Actions] -- Can be specified inside reactions. If just an LSA is written, then the default ``match an LSA''/``create an LSA'' conditions/actions are used. Unary operators can be prefixed to specify that the condition/action should work on neighbourhood rather than on local node. The reactions have a chemical-like semantics: if a reactant is written on the left hand side but not on the right hand side, an action that removes it will be created.
+ \item[Time distribution] -- By default, a ``as soon as possible'' scheduling policy is assumed. If only a number or an equation is specified, such number is used to initialise an exponential distribution (it is its $\lambda{}$ value).
+ \item [Group of nodes] -- Nodes can be specified one by one with their position or in groups. In the latter case, the modeller can choose if she wants the node of the group to occupy a rectangle or a circle. Once the shape is chosen, it is possible to specify how randomly the nodes should be displaced inside: they can be displaced in any level between perfect regularity to total randomness by acting on a parameter. For each group, it is possible to specify the content of the nodes (the LSAs that will be present when the model is loaded) and their program. Contents can be injected selectively, by specifying a spatial constrain: only nodes whose position respect such constrain will get the content injected.
+ \item[Scenario number] -- Controls the positioning of nodes, it is a sort of seed for the scenario: since the position of nodes in groups can be randomised, there is need to be able to reproduce the exact same scenario, e.g. for debugging. 
+\end{description}
+
+\part{Methods and patterns for self-organisation}
+\label{contribution-pattern}
 \chapter{A process algebra for SAPERE}
 \label{sapere-process-algebra}
 In this\levelText{}we present a possible formalisation of the SAPERE concepts, in terms of a model whose evolution is specifyied by means of a process algebra.
@@ -3348,25 +3439,25 @@ The LSA it produces and maintains is representative of the direction of the sign
 \label{simulation-channel}
 
 \begin{figure}
-\begin{center}{\includegraphics[width=\textwidth]{img/london-channel}}\end{center}
+\begin{center}{\includegraphics[width=0.8\textwidth]{img/london-channel}}\end{center}
 \caption[Channel deployed in London]{The distributed channels deployed in a smartcity (London) for pedestrian steering. Red nodes represent devices inside the channel area, while black nodes correspond to ``obstacle'' areas.}
 \label{f:london}
 \end{figure}
 
 \begin{figure}
-\begin{center}{\includegraphics[width=\textwidth]{img/quality}}\end{center}
+\begin{center}{\includegraphics[width=0.8\textwidth]{img/quality}}\end{center}
 \caption[Devices correctly building the channel]{Percentage of devices correctly showing channel information over time, using topologies with different densities.}
 \label{f:london2}
 \end{figure}
 
 \begin{figure}
-\begin{center}{\includegraphics[width=\textwidth]{img/addobstacle}}\end{center}
+\begin{center}{\includegraphics[width=0.8\textwidth]{img/addobstacle}}\end{center}
 \caption[Devices correctly building the channel, with a new obstacle]{Percentage of devices correctly showing channel information in the presence of addition of an obstacle.}
 \label{f:london3}
 \end{figure}
 
 \begin{figure}
-\begin{center}{\includegraphics[width=\textwidth]{img/removeobstacle}}\end{center}
+\begin{center}{\includegraphics[width=0.8\textwidth]{img/removeobstacle}}\end{center}
 \caption[Devices correctly building the channel, removing an existing obstacle]{Percentage of devices correctly showing channel information in the presence of removal of an obstacle.}
 \label{f:london4}
 \end{figure}
@@ -7264,76 +7355,94 @@ When there is a problem with dependencies, the device invokes {\tt stopProcess} 
 In this screenshot, the supplies database has crashed, causing many of the other services to gracefully shut themselves down.  As soon as the supplies database is restarted, however, the rest of the services automatically bring themselves up in dependency order.
 
 \part{Conclusion}
-\chapter{Results achieved}
+\chapter{Results achieved and future works}
+
+This\levelText{}summarises the most notable contributions of this thesis.
 
 \section{Integrated toolchain for pervasive ecosystems}
 
+The first relevant novelty is the introduction of a toolchain for pervasive ecosystems, built from scratch taking inspiration from stochastic simulators, first of its kind to the best of our knowledge.
+
+This platform exposes a generic meta-meta model and supports a variety of concrete incarnations at the same time, making it possible to rely on such architecture for a plethora of different usages.
+%
+As demonstration of flexibility, we have shown a variety of examples relying on the SAPERE incarnation, one example that uses the chemical incarnation and, finally, two examples that run \protelis{} programs inside the platform.
+%
+The environments and applications varied greatly, ranging from the simulation of a morphogenesis process to crowd steering in a city, relying on existing GPS traces and realistic navigation system.
+
+\alchemist{} itself can be classified a discrete event simulator, and its model suits well a certain category of agent based model.
+%
+The engine was conceived with performance in mind, and it demonstrated its qualities when compared to similar ABMs, such as Repast Symphony.
+
+The toolchain also comprises a distributed statistical model checker (\multivesta{}), which allows the engineer to evaluate properties of models with the desired confidence and approximation, also speeding up the process by re-use and distribution of computation.
+
 \section{Methods and patterns for self organisation}
 
-\subsection{A process algebra for SAPERE}
+We contributed in a range of advances in the area of patterns for self-organisation.
 
-The key contribution of a process algebra to provide a unequivocal description of the components of the infrastructure, and also serves as an executable specification from which can be derived proofs of behavioural properties, like self-stabilisation of the self-organising spatial structures that are useful in the context of pervasive computing systems (along the lines of \cite{V-SCW2013}).
+One of the most important contributions is a process algebra for SAPERE. The key contribution of a process algebra to provide a unequivocal description of the components of the infrastructure, and also serves as an executable specification from which can be derived proofs of behavioural properties, like self-stabilisation of the self-organising spatial structures that are useful in the context of pervasive computing systems (along the lines of \cite{V-SCW2013}).
 
-\subsection{Resource discovery}
-To the best of our knowledge our approach is the first to use the semantic match-degree as a means of shaping the communications between network nodes, and to incorporate extrinsic contextual features into the discovery process in such a way that resource selection emerges as an active property of the bio-inspired communication process, as contrasted to \emph{post hoc} analysis and filtering.
+We devised and studied some spatial patterns: the Channel, that marks devices along the path connecting a source and a destination, and the Anticipative Gradient.
+%
+The latter represents a contribution towards the anticipative adaptation: if information about future events is available, it can be exploited in a totally distributed manner to improve the overall system performance.
+%
+Also, we studied a urban sport mass event dataset in order to understand which methodologies may be suitable to obtain such data.
 
+We often focussed on the problem of crowd steering and evacuation: besides the importance for safety and efficiency, this problems turns out to be rather complex to face, presenting continuously moving participants whose actions in space-time must impact the outcome of the steering system.
+%
+We faced the problem at a different grain, from indoor evacuation to urban-level crowd steering.
+
+We developed, relying on the SAPERE metaphors, a resource discovery system.
+%
+To the best of our knowledge, it is the first approach using the semantic match-degree as a mean of shaping the communications between network nodes, and incorporating extrinsic contextual features into the discovery process in such a way that resource selection emerges as an active property of the bio-inspired communication process, as contrasted to \emph{post hoc} analysis and filtering.
+
+Finally, we started experimenting on self-composition of services, trying to embed evolutionary algorithms in pervasive system in order to let the fittest combination of services ``survive''.
 
 \section{Aggregate programming languages}
 
-% In this chapter
-% Possibile intro: in questo capitolo si fanno tre cose: 1) si cerca di modificare un meccanismo classico (Linda) in modo adattarlo al ragionamento di programmazione aggregata. 2) Si propone una restrizione di field calculus ad operazioni safe, e si dice ovviamente che vuol dire safe in un continuum spazio-temporale. 3) Si propone una implementazione pratica, che parte dai concetti di field calculus (non da GPI perché in generale un linguaggio ti deve consentire tutto, ma ci sta di ragionare sul fatto che poi una API safe andrebbe fornita) -- nelle conclusioni
+This thesis contributed to the advancements in aggregate programming in three ways:
+\begin{enumerate}
+ \item A novel tuple based coordination medium is devised, that closes the gap between Linda-inspired coordination and space-time programming;
+ \item A first study on scale-independent computations in space and time is provided, building upon Field Calculus a new operator demonstrably eventually consistent;
+ \item The implementation of a practical version of Field Calculus, enriched with higher order functions: \protelis{}.
+\end{enumerate}
 
-%TODO: convergenza fra tuple e spatiale computing
-
-%TODO: tutta la parte di GPI%
-
-%TODO: tutta la parte di Linda space-time, da vedere come un lavoro che cerca di portare la tuple based coordination verso un concetto di continuum spazio-temporale %
-
-%TODO: spostare tutti questi todo nelle conclusioni
-
-% When we introduced Field Calculus in \Cref{field-calculus}, we said that it is more a theoretical than a practical framework.
-% %
-% Building on the foundation of field calculus, the subsequent step is to provide a framework that can be practically leveraged to express a collection of higher-level ``building block'' algorithms, each a simple and generalized basis element of an ``algebra'' of programs with desirable resilience properties (e.g., the operators presented in~\cite{BV-FOCAS2014}).
-% %
-% On top of this, higher-level library APIs can be built, enabling simple and transparent construction of robust distributed systems.
-% 
-% Any practical implementation of field calculus must embed a field calculus interpreter within an architecture that handles the pragmatics of communication, execution, and interfacing with hardware, operating system, and other software.
-% %
-% At the same time, it is important that this system be readily portable across both simulation environments and real networked devices.
-% %
-% Finally, both system development and maintainability are greatly enhanced if the exact same code is used for execution in all contexts.
-% 
-% Here is where \protelis{} comes into play: it represents our effort to bring Field Calculus to practice, satisfying the requirements stated above.
-
-%TODO: dire che ha anche una parte più teorica, relativa a codice mobile e HOF in field calculus%
-
-
-\subsection{Scale independent computation in situated networks}
 We have developed the first practical distributed language which provides guarantees that all distributed algorithms expressed in this language are resilient against changes in the number and distribution of devices in a network.
 %
 This is an important step towards a more general framework for supporting open ecosystems of pervasive wireless devices, which need to provide safe and resilient services despite running a shifting set of interacting services from many unrelated software suppliers.
 %
 If it is possible to ensure that the only programs that can be expressed are those that interact well together, then it will greatly reduce the cost of providing reliable services in such environments.
 
-\subsection{Higher Order Functions in Field Calculus}
-
-\subsection{\protelis{}}
-Protelis ensures universality and coherence between aggregate specification and local execution by building atop the field calculus introduced in \cite{VDB-FOCLASA-CIC2013}.
+When we introduced Field Calculus in \Cref{field-calculus}, we said that it is more a theoretical than a practical framework.
 %
-At the same time, accessibility, portability, and ease of integration are ensured by embedding Protelis within Java.
+Building on the foundation of field calculus, the subsequent step is to provide a framework that can be practically leveraged to express a collection of higher-level ``building block'' algorithms, each a simple and generalized basis element of an ``algebra'' of programs with desirable resilience properties (e.g., the operators presented in~\cite{BV-FOCAS2014}).
 %
-This enables Protelis programs to draw on the full breadth of available Java APIs and to readily integrate with a wide range of devices and applications, as illustrated by our examples of pervasive computing simulation and networked service management.
+On top of this, higher-level library APIs can be built, enabling simple and transparent construction of robust distributed systems.
 %
-This implementation of Protelis thus forms an important component of the toolchain necessary for practical application of aggregate programming principles and methods to address real-world problems.
+Any practical implementation of field calculus must embed a field calculus interpreter within an architecture that handles the pragmatics of communication, execution, and interfacing with hardware, operating system, and other software.
 %
+At the same time, it is important that this system be readily portable across both simulation environments and real networked devices.
+%
+Finally, both system development and maintainability are greatly enhanced if the exact same code is used for execution in all contexts.
+%
+Here is where \protelis{} comes into play: it represents our effort to bring Field Calculus to practice, satisfying the requirements stated above.
+%
+\protelis{} was designed upon Field Calculus and not on GPI-calculus.
+%
+The reason is that we wanted to provide a language whose underlying mechanisms may allow for any kind of program to be written, and not just ``well behaving'' ones.
 
+\protelis{} ensures universality and coherence between aggregate specification and local execution by building atop the field calculus introduced in \cite{VDB-FOCLASA-CIC2013}.
+%
+At the same time, accessibility, portability, and ease of integration are ensured by embedding \protelis{} within Java.
+%
+This enables \protelis{} programs to draw on the full breadth of available Java APIs and to readily integrate with a wide range of devices and applications, as illustrated by our examples of pervasive computing simulation and networked service management.
+%
+This implementation of \protelis{} thus forms an important component of the toolchain necessary for practical application of aggregate programming principles and methods to address real-world problems.
 
+\section{Future and ongoing work}
 
-\chapter{Future and ongoing work}
+%TODO biochemistry
+%TODO sviluppo di alchemist
 
-\section{Aggregate programming}
-
-\subsection{Scale independent computation in situated networks}
 We want to generalise the results of our scale independent computations: the theoretical framework of this thesis treats only the case of stationary devices; in pervasive systems, many devices are mobile, and in practice the mechanisms used by \calculus{} appear to perform quite well on mobile devices, so it will be important to extend the theoretical framework
 to handle mobile devices as well.
 %
@@ -7343,10 +7452,8 @@ Similarly, the theory currently only handles eventual approximation and behavior
 
 $\OneOp$ is a powerful operator, but it only covers a few of the commonly used ``building block'' resilient distributed algorithms; another area for future extension is thus to broaden the scope of distributed applications for which resilience guarantees can be provided by extension of \calculus{} to cover additional ``building block'' algorithms.
 
-\subsection{\protelis{}}
-
 The \protelis{} framework continues to be actively developed: we plan to enrich it in the future by adding higher-level abstractions for aggregate programming grounded on the mechanisms discussed in this work.
-
+%
 Also, we observe that the current situation is much like that of cooperative multitasking in the operating systems world, before the development of the current kernel-user distinction and pre-emptive multitasking that dominates the world now.
 %
 We think that \protelis{} could be a new architecture for decentralized pre-emptive management of distributed processes, which provides these same sort of capabilities for distributed systems.
@@ -7360,18 +7467,6 @@ This point of view will be deeply analysed a paper which is an ongoing work.
 It will also be important to consider how static analysis, testing, and model-checking techniques can be incorporated to extend the capabilities, especially for ensuring that semantic faults in programs can be eliminated before runtime.
 
 %TODO Si propone una implementazione pratica, che parte dai concetti di field calculus (non da GPI perché in generale un linguaggio ti deve consentire tutto, ma ci sta di ragionare sul fatto che poi una API safe andrebbe fornita)
-
-
-
-\section{Biochemical meta model for \alchemist{}}
-ciao
-
-%\appendix
-%\input{appendix-a.tex}
-%\input{appendix-b.tex}
-%\input{appendix-c.tex}
-
-%\input{publication.tex}
 
 %===============================================================================
 \small\protect\newpage\addcontentsline{toc}{chapter}{Bibliography}
