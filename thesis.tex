@@ -136,7 +136,7 @@ Finally, I draw conclusions and future works.
 
 \part{Background and Motivation}
 \label{background}
-\chapter{Pervasive computing}
+\chapter{Pervasive computing technologies}
 \label{pervasive-devices}
 
 It is no mystery that, with the huge progresses of miniaturisation, computational-capable devices are populating the world.
@@ -147,7 +147,7 @@ Laptops boosted the process, offering user a personal and mobile device.
 
 The pervasive revolution, however took place when the phones became ``smart'', and with the subsequent improvements in the communication technologies.
 %
-In this\levelText{} I try to briefly walk the path of success of personal mobile devices, describing also the probable newcomer, namely the wearable devices.
+In this\levelText{} I try to briefly walk the path of success of personal mobile devices, describing also the probable newcomer, namely wearable devices.
 %
 I also focus on the current status of the communication protocols, their range and usage, and I try to foresee which world are we going to build if the current trend continues.
 
@@ -433,7 +433,7 @@ In few decades, we will probably witness the diffusion on computation on everyda
 %
 In such a scenario, the device density will be much higher if compared to the current, up to the point that the aggregation of devices participating the system could be seen as a ``pervasive continuum'' \cite{sapere-procedia7}.
 %
-This continuum is studied under a number of names, including pervasive computing, smart cities, and the Internet of Things, in order to provide a wealth of services in an un-intrusive manner \cite{ker2014,Conti12,zam12,Harnie12}.
+This continuum is studied under a number of names, including pervasive computing, smart cities, and the Internet of Things; in all cases with the goal of providing a wealth of services in an un-intrusive manner \cite{ker2014,Conti12,zam12,Harnie12}.
 
 One of the possible strategies is to connect every single device to the Internet, aggregate its information in a remote server, do the necessary computation, then send back eventual results where they are needed.
 %
@@ -473,7 +473,7 @@ One notable example is Firechat \footnote{\url{https://opengarden.com/firechat}}
 %
 Similarly to what was done during Arab springs in 2011 \cite{arab-spring}, protesters relied on Internet services to organise and coordinate themselves.
 %
-The Chinese government policy on internet is not exactly a bright example of openness and neutrality \cite{china-censorship}, and services such as Facebook adn Twitter, widely exploited during Arab springs, were already effectively blocked in the land.
+The Chinese government policy on Internet is not exactly a bright example of openness and neutrality \cite{china-censorship}, and services such as Facebook adn Twitter, widely exploited during Arab springs, were already effectively blocked in the land.
 %
 In short time, other social network were closed (such as Instagram), in order to cut protesters' communication means.
 %
@@ -982,7 +982,7 @@ Operator \texttt{mux}, used to combine the two, is a purely functional multiplex
 %
 The field returned by {\tt distance-to} is a \emph{gradient}.
 
-The last definition exemplifies the use of construct \ifK{}. It creates two different spatial domains: one where the obstacle is present (field {\tt obstacle} holds positive boolean value) and one where is not. In the former an infinity constant field is computed; in the latter we spread the {\tt distance-to} field.
+The last definition exemplifies the use of construct \texttt{\ifN}. It creates two different spatial domains: one where the obstacle is present (field {\tt obstacle} holds positive boolean value) and one where is not. In the former an infinity constant field is computed; in the latter we spread the {\tt distance-to} field.
 %
 As a result, distance estimation as provided by {\tt distance-to} automatically takes into account the need of circumventing obstacle areas, since information does not cross the two domains due to the semantics of \texttt{\nbrN}.
 
@@ -992,7 +992,7 @@ The computational field calculus formalisation is set forth in \Cref{fig:calculu
 %
 For a complete description of the symbols and their meaning, the interested reader should refer to \cite{VDB-FOCLASA-CIC2013}.
 
-The most important point for the discussion of this thesis is the compactness of such core semantics: it can be summarised in a single page of rules, while several pages would be required to host the complete semantics of Proto, the language from which Field Calculus is derived.
+The most important point for the discussion of this thesis is the compactness of such core semantics: it can be summarised in a single page of rules, while several pages would be required to host the complete semantics of Proto \cite{spatialcomputing-sac11,spatialcomputing-scp78}, the language from which Field Calculus is derived.
 %
 The number of pages required to host a formal semantics is clearly a rule of thumb, but gives also the less experienced reader some idea on how intricate is Proto with respect to Field Calculus.
 %
@@ -5681,7 +5681,7 @@ The duration of the computation round is dictated by the underlying infrastructu
 %
 We only assume that it is long enough for executing steps (2-3-4) above.
 %
-This particular computational model for a tuple space has many similarities with the platform assumptions of the Proto language \cite{proto,spatialcomputing-sac11}.
+This particular computational model for a tuple space has many similarities with the platform assumptions of the Proto language \cite{proto,spatialcomputing-sac11,spatialcomputing-scp78}.
 
 \subsection{The coordination language}
 
