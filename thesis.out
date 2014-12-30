@@ -1,0 +1,177 @@
+\BOOKMARK [0][-]{chapter*.2}{Abstract}{}% 1
+\BOOKMARK [-1][-]{part.1}{I Background and Motivation}{}% 2
+\BOOKMARK [0][-]{chapter.1}{Pervasive computing technologies}{part.1}% 3
+\BOOKMARK [1][-]{section.1.1}{Smart, portable devices}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.2}{Communication technologies}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.2.1}{International Mobile Telecommunications}{section.1.2}% 6
+\BOOKMARK [2][-]{subsection.1.2.2}{WiFi}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.3}{Bluetooth and Bluetooth LE}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.4}{NFC}{section.1.2}% 9
+\BOOKMARK [1][-]{section.1.3}{Towards a P2P pervasive continuum?}{chapter.1}% 10
+\BOOKMARK [0][-]{chapter.2}{Self-organisation}{part.1}% 11
+\BOOKMARK [1][-]{section.2.1}{Software ecosystems}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.2}{Nature inspiration}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.1}{Physical-inspiration}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.2}{\(Bio\)chemical-inspiration}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.3}{Stigmergy}{section.2.2}% 16
+\BOOKMARK [1][-]{section.2.3}{Spatial patterns}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.3.1}{Gradient}{section.2.3}% 18
+\BOOKMARK [2][-]{subsection.2.3.2}{Chemotaxis}{section.2.3}% 19
+\BOOKMARK [1][-]{section.2.4}{Tuple-based coordination}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.4.1}{SAPERE}{section.2.4}% 21
+\BOOKMARK [1][-]{section.2.5}{Aggregate programming}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.5.1}{Proto}{section.2.5}% 23
+\BOOKMARK [2][-]{subsection.2.5.2}{Field Calculus}{section.2.5}% 24
+\BOOKMARK [1][-]{section.2.6}{Engineering and tools}{chapter.2}% 25
+\BOOKMARK [2][-]{subsection.2.6.1}{Simulation}{section.2.6}% 26
+\BOOKMARK [-1][-]{part.2}{II An integrated toolchain for pervasive ecosystems}{}% 27
+\BOOKMARK [0][-]{chapter.3}{Chemical-inspired engine}{part.2}% 28
+\BOOKMARK [1][-]{section.3.1}{Gillespie's SSA as an event-driven algorithm}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.2}{Gillespie's optimised versions}{chapter.3}% 30
+\BOOKMARK [1][-]{section.3.3}{From SSA to full fledged DES}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.1}{Dynamic Dependency Graph}{section.3.3}% 32
+\BOOKMARK [2][-]{subsection.3.3.2}{Dynamic Indexed Priority Queue}{section.3.3}% 33
+\BOOKMARK [0][-]{chapter.4}{Meta-meta model}{part.2}% 34
+\BOOKMARK [0][-]{chapter.5}{Architecture}{part.2}% 35
+\BOOKMARK [1][-]{section.5.1}{Implementation details}{chapter.5}% 36
+\BOOKMARK [0][-]{chapter.6}{Performance}{part.2}% 37
+\BOOKMARK [0][-]{chapter.7}{Collocation in literature}{part.2}% 38
+\BOOKMARK [1][-]{section.7.1}{Alchemist as a DES}{chapter.7}% 39
+\BOOKMARK [1][-]{section.7.2}{Alchemist as a MABS}{chapter.7}% 40
+\BOOKMARK [2][-]{subsection.7.2.1}{Advantages}{section.7.2}% 41
+\BOOKMARK [2][-]{subsection.7.2.2}{Limitations}{section.7.2}% 42
+\BOOKMARK [0][-]{chapter.8}{Meta-model agnostic features}{part.2}% 43
+\BOOKMARK [1][-]{section.8.1}{Distributed statistical analysis}{chapter.8}% 44
+\BOOKMARK [2][-]{subsection.8.1.1}{MultiVeStA and MultiQuaTEx}{section.8.1}% 45
+\BOOKMARK [2][-]{subsection.8.1.2}{Integrating MultiVeStA and Alchemist}{section.8.1}% 46
+\BOOKMARK [2][-]{subsection.8.1.3}{Example}{section.8.1}% 47
+\BOOKMARK [2][-]{subsection.8.1.4}{Performance Assessment}{section.8.1}% 48
+\BOOKMARK [1][-]{section.8.2}{Real world maps}{chapter.8}% 49
+\BOOKMARK [0][-]{chapter.9}{Chemical meta-model}{part.2}% 50
+\BOOKMARK [1][-]{section.9.1}{Example scenario: Morphogenesis}{chapter.9}% 51
+\BOOKMARK [2][-]{subsection.9.1.1}{Development of Drosophila Melanogaster}{section.9.1}% 52
+\BOOKMARK [2][-]{subsection.9.1.2}{Simulation in Alchemist}{section.9.1}% 53
+\BOOKMARK [0][-]{chapter.10}{SAPERE meta-model}{part.2}% 54
+\BOOKMARK [1][-]{section.10.1}{Molecules and concentrations}{chapter.10}% 55
+\BOOKMARK [1][-]{section.10.2}{Reactions and eco-laws}{chapter.10}% 56
+\BOOKMARK [1][-]{section.10.3}{SAPERE domain specific language}{chapter.10}% 57
+\BOOKMARK [-1][-]{part.3}{III Methods and patterns for self-organisation}{}% 58
+\BOOKMARK [0][-]{chapter.11}{A process algebra for SAPERE}{part.3}% 59
+\BOOKMARK [1][-]{section.11.1}{Model}{chapter.11}% 60
+\BOOKMARK [2][-]{subsection.11.1.1}{LSAs}{section.11.1}% 61
+\BOOKMARK [2][-]{subsection.11.1.2}{Agent primitives}{section.11.1}% 62
+\BOOKMARK [2][-]{subsection.11.1.3}{Eco-laws}{section.11.1}% 63
+\BOOKMARK [1][-]{section.11.2}{Formalisation}{chapter.11}% 64
+\BOOKMARK [2][-]{subsection.11.2.1}{Syntax}{section.11.2}% 65
+\BOOKMARK [2][-]{subsection.11.2.2}{Semantics}{section.11.2}% 66
+\BOOKMARK [2][-]{subsection.11.2.3}{Example}{section.11.2}% 67
+\BOOKMARK [2][-]{subsection.11.2.4}{Well-formed configurations and properties}{section.11.2}% 68
+\BOOKMARK [0][-]{chapter.12}{Pattern: Channel}{part.3}% 69
+\BOOKMARK [1][-]{section.12.1}{A semantic-oriented instantiation}{chapter.12}% 70
+\BOOKMARK [1][-]{section.12.2}{Realising the gradient}{chapter.12}% 71
+\BOOKMARK [1][-]{section.12.3}{From gradient to distributed channel}{chapter.12}% 72
+\BOOKMARK [1][-]{section.12.4}{Simulation in Alchemist}{chapter.12}% 73
+\BOOKMARK [0][-]{chapter.13}{Pattern: Anticipative adaptation}{part.3}% 74
+\BOOKMARK [1][-]{section.13.1}{Anticipative Gradient}{chapter.13}% 75
+\BOOKMARK [2][-]{subsection.13.1.1}{Motivations and problem analysis}{section.13.1}% 76
+\BOOKMARK [2][-]{subsection.13.1.2}{Spatial structures}{section.13.1}% 77
+\BOOKMARK [2][-]{subsection.13.1.3}{Simulations}{section.13.1}% 78
+\BOOKMARK [0][-]{chapter.14}{Case Study: Crowd evacuation}{part.3}% 79
+\BOOKMARK [1][-]{section.14.1}{A crowd evacuation application}{chapter.14}% 80
+\BOOKMARK [2][-]{subsection.14.1.1}{Types of LSAs in the system}{section.14.1}% 81
+\BOOKMARK [2][-]{subsection.14.1.2}{Building the fire, exit and crowding gradients}{section.14.1}% 82
+\BOOKMARK [2][-]{subsection.14.1.3}{Ranking escape paths: the attractiveness field}{section.14.1}% 83
+\BOOKMARK [2][-]{subsection.14.1.4}{Choosing a direction}{section.14.1}% 84
+\BOOKMARK [2][-]{subsection.14.1.5}{Resilient behaviour}{section.14.1}% 85
+\BOOKMARK [1][-]{section.14.2}{Simulation in Alchemist}{chapter.14}% 86
+\BOOKMARK [2][-]{subsection.14.2.1}{Simulation setting}{section.14.2}% 87
+\BOOKMARK [2][-]{subsection.14.2.2}{Tuning parameters}{section.14.2}% 88
+\BOOKMARK [2][-]{subsection.14.2.3}{Resilience to node failures}{section.14.2}% 89
+\BOOKMARK [0][-]{chapter.15}{Case Study: Crowd steering}{part.3}% 90
+\BOOKMARK [1][-]{section.15.1}{Reference scenario}{chapter.15}% 91
+\BOOKMARK [1][-]{section.15.2}{Steering strategy}{chapter.15}% 92
+\BOOKMARK [1][-]{section.15.3}{Simulation in Alchemist}{chapter.15}% 93
+\BOOKMARK [0][-]{chapter.16}{Case study: Self composition}{part.3}% 94
+\BOOKMARK [1][-]{section.16.1}{Self-Composition approaches}{chapter.16}% 95
+\BOOKMARK [1][-]{section.16.2}{A comprehensive approach for pervasive ecosystems}{chapter.16}% 96
+\BOOKMARK [1][-]{section.16.3}{The self-composition issue in pervasive service ecosystems}{chapter.16}% 97
+\BOOKMARK [2][-]{subsection.16.3.1}{Self-Composition with Gradient service}{section.16.3}% 98
+\BOOKMARK [2][-]{subsection.16.3.2}{A prototype solution}{section.16.3}% 99
+\BOOKMARK [1][-]{section.16.4}{A formal model for gradients self-compositions}{chapter.16}% 100
+\BOOKMARK [2][-]{subsection.16.4.1}{The gradient service}{section.16.4}% 101
+\BOOKMARK [2][-]{subsection.16.4.2}{Rules for Gradient Composition}{section.16.4}% 102
+\BOOKMARK [1][-]{section.16.5}{Towards simulation of gradient self-compositions}{chapter.16}% 103
+\BOOKMARK [0][-]{chapter.17}{Case study: Semantic resource discovery}{part.3}% 104
+\BOOKMARK [1][-]{section.17.1}{Semantic Matching in SAPERE}{chapter.17}% 105
+\BOOKMARK [2][-]{subsection.17.1.1}{Semantic Matching}{section.17.1}% 106
+\BOOKMARK [1][-]{section.17.2}{Distributed Resource Discovery}{chapter.17}% 107
+\BOOKMARK [2][-]{subsection.17.2.1}{Self-organisation Patterns}{section.17.2}% 108
+\BOOKMARK [2][-]{subsection.17.2.2}{Self-organising, Context- and Semantics-aware Resource Discovery}{section.17.2}% 109
+\BOOKMARK [1][-]{section.17.3}{Eco-laws to support matching}{chapter.17}% 110
+\BOOKMARK [1][-]{section.17.4}{Evaluation of Approach in Alchemist}{chapter.17}% 111
+\BOOKMARK [0][-]{chapter.18}{Case study: Crowd disasters prediction}{part.3}% 112
+\BOOKMARK [1][-]{section.18.1}{Human Crowd Density and Safety}{chapter.18}% 113
+\BOOKMARK [1][-]{section.18.2}{Approximating Human Density - A Data Collection Approach}{chapter.18}% 114
+\BOOKMARK [2][-]{subsection.18.2.1}{Data}{section.18.2}% 115
+\BOOKMARK [2][-]{subsection.18.2.2}{Similar spatial data-based models}{section.18.2}% 116
+\BOOKMARK [2][-]{subsection.18.2.3}{Observed crowd densities}{section.18.2}% 117
+\BOOKMARK [1][-]{section.18.3}{Towards the prediction of crowd densities}{chapter.18}% 118
+\BOOKMARK [2][-]{subsection.18.3.1}{A human crowd density flow network}{section.18.3}% 119
+\BOOKMARK [2][-]{subsection.18.3.2}{Prediction Approaches}{section.18.3}% 120
+\BOOKMARK [2][-]{subsection.18.3.3}{Results}{section.18.3}% 121
+\BOOKMARK [0][-]{chapter.19}{Case study: Crowd steering at the urban scale}{part.3}% 122
+\BOOKMARK [1][-]{section.19.1}{Devices and physical configuration}{chapter.19}% 123
+\BOOKMARK [1][-]{section.19.2}{Distributed crowd steering}{chapter.19}% 124
+\BOOKMARK [1][-]{section.19.3}{Simulation in Alchemist}{chapter.19}% 125
+\BOOKMARK [-1][-]{part.4}{IV Aggregate programming languages}{}% 126
+\BOOKMARK [0][-]{chapter.20}{Tuple based aggregate programming}{part.4}% 127
+\BOOKMARK [1][-]{section.20.1}{Linda in space-time}{chapter.20}% 128
+\BOOKMARK [2][-]{subsection.20.1.1}{Basic model}{section.20.1}% 129
+\BOOKMARK [2][-]{subsection.20.1.2}{The coordination language}{section.20.1}% 130
+\BOOKMARK [2][-]{subsection.20.1.3}{Definitions}{section.20.1}% 131
+\BOOKMARK [2][-]{subsection.20.1.4}{Time}{section.20.1}% 132
+\BOOKMARK [2][-]{subsection.20.1.5}{Space}{section.20.1}% 133
+\BOOKMARK [2][-]{subsection.20.1.6}{Finally}{section.20.1}% 134
+\BOOKMARK [1][-]{section.20.2}{Core Calculus}{chapter.20}% 135
+\BOOKMARK [2][-]{subsection.20.2.1}{Syntax}{section.20.2}% 136
+\BOOKMARK [2][-]{subsection.20.2.2}{Operational Semantics}{section.20.2}% 137
+\BOOKMARK [1][-]{section.20.3}{Case studies}{chapter.20}% 138
+\BOOKMARK [2][-]{subsection.20.3.1}{Adaptive Crowd Steering}{section.20.3}% 139
+\BOOKMARK [2][-]{subsection.20.3.2}{Linda in a mobile ad-hoc environment}{section.20.3}% 140
+\BOOKMARK [0][-]{chapter.21}{Scale independent computations}{part.4}% 141
+\BOOKMARK [1][-]{section.21.1}{Space-Time Computation and Discrete Approximation}{chapter.21}% 142
+\BOOKMARK [2][-]{subsection.21.1.1}{Modelling Networks as Space-Time Manifolds}{section.21.1}% 143
+\BOOKMARK [2][-]{subsection.21.1.2}{Computations on Continuous Space and Time}{section.21.1}% 144
+\BOOKMARK [2][-]{subsection.21.1.3}{Space-time programs}{section.21.1}% 145
+\BOOKMARK [2][-]{subsection.21.1.4}{Eventually Consistent Programs}{section.21.1}% 146
+\BOOKMARK [1][-]{section.21.2}{Eventually Consistent Language}{chapter.21}% 147
+\BOOKMARK [2][-]{subsection.21.2.1}{From Consistency Failures to Fragility}{section.21.2}% 148
+\BOOKMARK [2][-]{subsection.21.2.2}{GPI-calculus}{section.21.2}% 149
+\BOOKMARK [2][-]{subsection.21.2.3}{GPI calculus is Eventually Consistent}{section.21.2}% 150
+\BOOKMARK [1][-]{section.21.3}{Example Applications}{chapter.21}% 151
+\BOOKMARK [2][-]{subsection.21.3.1}{Distance-Based Patterns}{section.21.3}% 152
+\BOOKMARK [2][-]{subsection.21.3.2}{Path Forecasting}{section.21.3}% 153
+\BOOKMARK [2][-]{subsection.21.3.3}{Context-Sensitive Distance}{section.21.3}% 154
+\BOOKMARK [2][-]{subsection.21.3.4}{Confirmation of Results in Simulation}{section.21.3}% 155
+\BOOKMARK [0][-]{chapter.22}{Protelis: practical aggregate programming}{part.4}% 156
+\BOOKMARK [1][-]{section.22.1}{Syntax}{chapter.22}% 157
+\BOOKMARK [1][-]{section.22.2}{Ordinary Language Features}{chapter.22}% 158
+\BOOKMARK [1][-]{section.22.3}{Special Field Calculus Operators}{chapter.22}% 159
+\BOOKMARK [1][-]{section.22.4}{Architecture}{chapter.22}% 160
+\BOOKMARK [1][-]{section.22.5}{Application example: Rendezvous at a Mass Event}{chapter.22}% 161
+\BOOKMARK [1][-]{section.22.6}{Application example: Network Service Management}{chapter.22}% 162
+\BOOKMARK [-1][-]{part.5}{V Conclusion}{}% 163
+\BOOKMARK [0][-]{chapter.23}{Results achieved and future works}{part.5}% 164
+\BOOKMARK [1][-]{section.23.1}{Integrated toolchain for pervasive ecosystems}{chapter.23}% 165
+\BOOKMARK [1][-]{section.23.2}{Methods and patterns for self organisation}{chapter.23}% 166
+\BOOKMARK [1][-]{section.23.3}{Aggregate programming languages}{chapter.23}% 167
+\BOOKMARK [1][-]{section.23.4}{Future and ongoing work}{chapter.23}% 168
+\BOOKMARK [2][-]{subsection.23.4.1}{Stabilisation of the toolchain}{section.23.4}% 169
+\BOOKMARK [2][-]{subsection.23.4.2}{Biochemical incarnation}{section.23.4}% 170
+\BOOKMARK [2][-]{subsection.23.4.3}{Scale independent computation}{section.23.4}% 171
+\BOOKMARK [2][-]{subsection.23.4.4}{Distributed operating systems with Protelis}{section.23.4}% 172
+\BOOKMARK [0][-]{subsection.23.4.4}{Bibliography}{part.5}% 173
+\BOOKMARK [0][-]{section*.151}{Appendices}{part.5}% 174
+\BOOKMARK [0][-]{Appendix.1.A}{Proofs of Theorems}{part.5}% 175
+\BOOKMARK [1][-]{section.1.A.1}{Discontinuity of Discrete-Valued Fields}{Appendix.1.A}% 176
+\BOOKMARK [1][-]{section.1.A.2}{Consistency of GPI-calculus}{Appendix.1.A}% 177

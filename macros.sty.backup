@@ -1,0 +1,431 @@
+
+\usepackage[dvips]{graphicx}
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[italian,british]{babel}
+\usepackage{algorithm,algorithmic}
+\usepackage[cmex10]{amsmath}
+\usepackage{amsfonts,amssymb,wasysym}
+\usepackage{epsfig}
+\usepackage{deistesi}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{xspace}
+\usepackage[colorlinks=false]{hyperref}
+\usepackage[avantgarde]{quotchap}
+\renewcommand\chapterheadstartvskip{\vspace*{-5\baselineskip}}
+\renewcommand\sectfont{\sffamily\bfseries}
+\usepackage{mathptmx}       % selects Times Roman as basic font
+\usepackage{helvet}         % selects Helvetica as sans-serif font
+\usepackage{courier}        % selects Courier as typewriter font
+\usepackage{type1cm}        % activate if the above 3 fonts are
+\usepackage{makeidx}         % allows index generation
+\usepackage{multicol}        % used for the two-column index
+\usepackage{times}
+\usepackage{subfigure}
+\usepackage{stmaryrd,mathtools}
+\usepackage[noend]{distribalgo}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{alltt}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{microtype}
+\usepackage[arrow,matrix,frame,curve,cmtip]{xy}%\CompileMatrices
+\usepackage{soul}
+\usepackage{rotating}
+\usepackage{epstopdf}
+\usepackage{array}
+\usepackage{mdwtab}
+\usepackage{eqparbox}
+\usepackage{wrapfig}
+\usepackage{eurosym}
+\usepackage{stfloats}
+\usepackage[toc,page]{appendix}
+\usepackage{url}
+\usepackage{amsthm}
+\theoremstyle{plain}
+%MUST BE LOADED LAST%
+\usepackage{cleveref}
+
+%%%%%%%%%%%%
+%% UNUSED %%
+% \usepackage[bottom]{footmisc}% places footnotes at page bottom
+% \usepackage{float}
+% \usepackage{graphics}
+%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PROBLEMATIC PACKAGES %%
+% \usepackage{cite}
+% \usepackage{theorem}
+% \usepackage{mdwmath}
+% \usepackage{fixltx2e}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PROBLEMATIC CONFIGURATIONS %%
+% \newtheorem{cor}[thm]{Corollary}
+% \theoremstyle{definition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%THEOREMS%
+\newtheorem{thm}{Theorem}
+\newtheorem{thrdefn}{Definition}
+\newtheorem{property}{Property}
+\newtheorem{lem}[thm]{Lemma}
+
+
+\newcommand{\maude}[0] {\textsc{Maude}}
+\newcommand{\klaim}[0] {\textsc{Klaim}}
+\newcommand{\pklaim}[0] {p\textsc{Klaim}}
+\newcommand{\stocklaim}[0] {\textsc{Sto$c$Klaim}}
+\newcommand{\pepa}[0] {{PEPA}}
+\newcommand{\spim}[0] {\textsf{SPiM}}
+\newcommand{\picalculus}[0] {$\pi$-Calculus}
+\newcommand{\respect}{{\sf{{R}e{S}pec{T}}}}
+\newcommand{\soda}{{\sf{{SODA}}}}
+\newcommand{\tota}{{\sf{TOTA}}}
+\newcommand{\luce}{{\sf{{L}u{C}e}}}
+\newcommand{\tucson}{{\sf{{T}u{CS}o{N}}}}
+\newcommand{\tuprolog}{{\sf{tu}Prolog}}
+\newcommand{\cartago}{{\sf CArtAgO}}
+\newcommand{\jade}{{\sf JADE}}
+\newcommand{\aea}{{A\&A}}
+\newcommand{\linda}[0] {\textsc{Linda}}
+\newcommand{\swarmlinda}[0]{SwarmLinda}
+\newcommand{\bluetooth}{Bluetooth\textregistered{}}
+\newcommand{\btle}{\bluetooth{} Low Energy}
+
+%%%%%%%%%%%%%%%%%
+% SAPERE TUPLES %
+%%%%%%%%%%%%%%%%%
+\newcommand{\bnfs}[0]{\;|\;}
+\newcommand{\opar}[0]{\;|\;}
+\newcommand{\sq}[0]{\oplus}
+\newcommand{\tuple}[2]{#1\langle #2\rangle}
+\newcommand{\tupled}[2]{#1[#2]^{\Rightarrow}}
+\newcommand{\actrate}[2]{#1^{#2}}
+% \newcommand{\leave}{{}}
+\newcommand{\near}[3]{#1\!\stackrel{#3}{\rightsquigarrow}\!#2 }
+% \newcommand{\scope}[2]{\llbracket #1 \rrbracket_{#2}}
+\newcommand{\law}[1]{[#1]}
+\newcommand{\firing}[3]{#1^\rightsquigarrow(#2,#3)}
+\newcommand{\shfiring}[1]{#1^\rightsquigarrow}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LINDA IN SPACE-TIME %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\codefont}{\small}
+% \newcommand{\leave}{\rightsquigarrow}
+% \newcommand{\near}[3]{#1\!\stackrel{#3}{\rightsquigarrow}\!#2 }
+%\newcommand{\scope}[3]{\llbracket #1 \rrbracket_{#2}^{#3}}
+\newcommand{\scope}[3]{[ #1 ]_{#2}^{#3}}
+\newcommand{\defn}[2]{#1 \texttt{~is~} #2}
+% \newcommand{\defnarr}[2]{\mathit{def} #1 & := & #2}
+\newcommand{\nextSTL}[1]{\textit{next}~#1}
+\newcommand{\neigh}[1]{\textit{neigh}~#1}
+\newcommand{\finally}[1]{\textit{finally}~#1}
+\newcommand{\opr}[1]{\Box #1}
+\newcommand{\callSTL}[1]{#1}
+\newcommand{\out}[1]{\textit{out}~#1}
+\newcommand{\rdp}[1]{\textit{rd}~#1}
+\newcommand{\inp}[1]{\textit{in}~#1}
+\newcommand{\evalSTL}[1]{\textit{eval}~#1}
+%\newcommand{\mesg}[3]{[ \triangleright #1 ]_{#2}^{#3}}
+\newcommand{\mesg}[2]{#1 \triangleright #2}
+\newcommand{\labnew}[3]{#3#1?#2}
+\newcommand{\labsilent}[1]{\cdot}
+\newcommand{\labmesg}[2]{#1!#2}
+\newcommand{\ov}[1]{\overline{#1}}
+\newcommand{\subs}[2]{mgs(#1,#2)}
+\newcommand{\vorn}[0]{\omega}
+\newcommand{\vdel}[0]{\delta}
+\newcommand{\vthis}[0]{\tau}
+\newcommand{\coordsys}[2]{#1\langle #2\rangle}
+\newcommand{\coordtran}[1]{\xhookrightarrow{#1}}
+\newcommand{\compute}[1]{#1^\epsilon}
+\newcommand{\cruleSTL}[3]{(\textrm{#1}) & \begin{array}{c} #2 \\ \hline #3 \end{array} \\[13pt]}
+\newcommand{\ctworules}[6]{
+(\textrm{#1}) & \begin{array}{@{\hspace{10pt}}c@{\hspace{30pt}}c@{\hspace{10pt}}c}
+\begin{array}{c} #2 \\ \hline #3 \end{array} & (\textrm{#4}) & 
+\begin{array}{c} #5 \\ \hline #6 \end{array} 
+\end{array}
+\\[8pt]}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIELD CALCULUS AND PROTELIS %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\comment}[1]{\hfill\footnotesize{\textcolor{gray}{\text{;; {#1}}}}}
+\newcommand{\BNFcce}{{\bf ::=}}
+\newcommand{\BNFmid}{\;\bigr\rvert\;}
+\newcommand{\oname}{\texttt{b}}
+\newcommand{\fname}{\texttt{f}}
+\newcommand{\lit}{\texttt{l}}
+\newcommand{\var}{\texttt{x}}
+\newcommand{\expr}{\texttt{e}}
+\newcommand{\we}{\texttt{w}} % variable or (local) value
+\newcommand{\PROGRAM}{\texttt{P}}
+\newcommand{\FCFUNCTION}{\texttt{F}}
+\newcommand{\e}{\texttt{e}}
+\newcommand{\s}{\texttt{s}}
+\newcommand{\defK}{\texttt{def}}
+\newcommand{\defnarr}[2]{\mathit{def} #1 & := & #2}
+% \newcommand{\call}[1]{call\, #1}
+\newcommand{\tap}[1]{#1}
+\newcommand{\localc}{\texttt{local}}
+\newcommand{\neighborhood}{\texttt{neighborhood}}
+\newcommand{\globalc}{\texttt{global}}
+\newcommand{\lsa}[1]{\langle #1\rangle}
+\newcommand{\rem}[1]{+#1}
+\newcommand{\protelis}{{Protelis}}
+\newcommand{\il}[1]{{\it \textcolor{gray}{// #1}}} % inline comment
+\newcommand{\km}[1]{\textcolor{purple}{#1}} % key mechanism primitives
+\newcommand{\ex}[1]{\textcolor{blue}{#1}} % external imported Java values
+\newcommand{\fc}[1]{\textcolor{Orchid}{#1}} % field calculus calls
+\newcommand{\fn}[1]{\textcolor{blue}{#1}} % building block / function calls
+\newcommand{\vb}[1]{\textcolor{OliveGreen}{#1}} % variables
+\newcommand{\str}[1]{\textcolor{darkgray}{#1}} % strings
+\newcommand{\illisp}[1]{{\it \textcolor{gray}{;; #1}}} % inline comment
+\newcommand{\pr}[1]{\fc{#1}} % primitives
+\newcommand{\bral}{\textrm{{\tt {\char '173}}}\,}
+\newcommand{\brar}{\textrm{{\tt {\char '175}}}}
+\newcommand{\asgK}{~\texttt{=}~}
+\newcommand{\letK}{\texttt{let}~}
+\newcommand{\tupK}[1]{\texttt{[}#1\texttt{]}}
+\newcommand{\lambdaK}[2]{\texttt{(}#1\texttt{)->}#2}
+\newcommand{\bodyK}[1]{\bral\! #1\!\brar}
+\newcommand{\dotK}{\texttt{.}}
+\newcommand{\applyK}{\texttt{apply}}
+\newcommand{\mname}{\ex{\texttt{m}}}
+\newcommand{\aname}{\ex{\texttt{\#a}}}
+\newcommand{\repN}{\texttt{\fc{rep}}}
+\newcommand{\nbrN}{\texttt{\fc{nbr}}}
+\newcommand{\ifN}{\texttt{\fc{if}}}
+\newcommand{\repK}[3]{\texttt{\fc{rep}(#1<-#2)}#3}
+\newcommand{\ifK}[3]{\texttt{\fc{if}}(#1)#2\,\texttt{\fc{else}}\,#3}
+\newcommand{\muxK}[3]{\texttt{\fc{mux}}(#1)#2\,\texttt{\fc{else}}\,#3}
+\newcommand{\nbrK}[1]{\texttt{\fc{nbr}}#1}
+
+%%%%%%%
+% GPI %
+%%%%%%%
+\newcommand{\senseK}{\texttt{sense}}
+\newcommand{\Boolean}{\spaceof{B}}
+\newcommand{\Integer}{\spaceof{Z}}
+\newcommand{\Real}{\spaceof{R}}
+\newcommand{\local}{\texttt{o}}
+\newcommand{\comparator}{\texttt{<}}
+\newcommand{\cmath}{\texttt{m}}
+\newcommand{\mux}{\texttt{mux}}
+\newcommand{\OneOp}{\texttt{GPI}} % gradient-path-integral
+\newcommand{\boundary}{\mathcal{B}}
+\newcommand{\calculus}{GPI-calculus{}}
+\newcommand{\validdomain}[1]{#1^{-1}(\spaceof{\datavalue}-\boundary)}
+\newcommand{\ltrue}{\textit{true}}
+\newcommand{\lfalse}{\textit{false}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (P/Multi)Vesta integration %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\multivesta}[0]{\textsc{MultiVeStA}}
+\newcommand{\vesta}{\textsc{VeStA}}
+\newcommand{\pvesta}{\textsc{PVeStA}}
+\newcommand{\newstate}{\textsc{NewState}}
+\newcommand{\quatex}{\textsc{QuaTEx}}
+\newcommand{\multiquatex}{\textsc{MultiQuaTEx}}
+\newcommand{\myAnd}{and}
+\newcommand{\alchemist}[0]{\textsc{Alchemist}}
+\newcommand{\la}[0]{\textlangle\xspace}  % set up short-form macros
+\newcommand{\ra}[0]{\textrangle\xspace}
+\newcommand{\lsanc}[1]{\texttt{{\la{#1}\ra}}}
+\newcommand{\ecolawrp}[2]{\begin{center}\lsanc{#1} $\Rightarrow$ \lsanc{#2}\end{center}}
+
+%%%%%%%%%%%%%%%%%%%%
+% THEOREMS FOR GPI %
+%%%%%%%%%%%%%%%%%%%%
+\newcommand{\spaceof}[1]{\mathbb{\expandafter\MakeUppercase{#1}}}
+% Manifolds:
+\newcommand{\manifold}{M}
+\newcommand{\event}{m}
+\newcommand{\infospeed}{c}
+\newcommand{\futureof}[1]{T^+({#1})}
+\newcommand{\pastof}[1]{T^-({#1})}
+%\newcommand{\simultaneityof}[1]{T^0({#1})}
+\newcommand{\device}{d}
+\newcommand{\sectionof}[1]{S_{#1}}
+% Computations:
+\newcommand{\datavalue}{v}
+\newcommand{\field}{f}
+\newcommand{\fieldsof}[1]{\spaceof{\field}_{#1}}
+\newcommand{\computation}{C}
+%\newcommand{\envstate}{E}
+\newcommand{\environment}{e}
+%\newcommand{\evaluate}[2]{\mathcal{E}_{#1}({#2})}
+% Approximation:
+\newcommand{\discreteset}{D}
+% \epsilon, \discreteset_\epsilon
+\newcommand{\neighborhoods}{\mathcal{N}}
+\newcommand{\hoodof}[1]{\neighborhoods(#1)}
+\newcommand{\hoodradius}{r}
+\newcommand{\closure}[1]{\overline{#1}}
+\newcommand{\directinforegion}[1]{I(#1)}
+\newcommand{\inforegion}[1]{I^\infty(#1)}
+
+
+%%%%%%%%%
+%% SCP %%
+%%%%%%%%%
+\newcommand{\BNFp}{{\bf ::=}}
+\newcommand{\BNFor}{\;\bigr\rvert\;}
+\newcommand{\sSp}[0]{S}
+\newcommand{\sId}[0]{n}
+\newcommand{\sIdB}[0]{m}
+\newcommand{\sVr}[0]{x}
+\newcommand{\sTr}[0]{t}
+\newcommand{\sAg}[0]{A}
+\newcommand{\sAgB}[0]{B}
+\newcommand{\sDe}[0]{d}
+\newcommand{\sDeB}[0]{e}
+\newcommand{\sCf}[0]{C}
+\newcommand{\sSI}[0]{\sigma}
+\newcommand{\sAc}[0]{a}
+\newcommand{\sDE}[0]{\Delta}
+\newcommand{\sStar}[0]{\star\!}
+\newcommand{\sSB}[0]{\theta}
+\newcommand{\snew}[0]{\textsc{fr}}
+\newcommand{\cLSA}[2]{#1\langle #2\rangle}
+\newcommand{\cAgent}[2]{(#1)#2}
+\newcommand{\cList}[1]{\overline{#1}}
+\newcommand{\oCPar}[0]{\;|\;}
+\newcommand{\oPar}[0]{\;|\;}
+\newcommand{\oSeq}[0]{;}
+\newcommand{\oPlus}[0]{\,\texttt{or}\,}
+\newcommand{\oOr}[0]{:}
+\newcommand{\cSpace}[2]{[#1]_{#2}}
+\newcommand{\cBond}[2]{#1\!\rightsquigarrow \! #2}
+\newcommand{\cNeigh}[2]{\textit{neigh}(#1,#2)}
+\newcommand{\cRec}[1]{\texttt{iterate\{$#1$\}}}
+\newcommand{\cRecR}[2]{\texttt{iterate${}^{#2}$\{$#1$\}}}
+\newcommand{\cOr}[2]{#1:#2}
+\newcommand{\cBre}[0]{\texttt{break}}
+\newcommand{\cNew}[2]{#1\texttt{:=new}(#2)}
+\newcommand{\cUpd}[2]{#1\texttt{.upd}(#2)}
+\newcommand{\cObs}[2]{#1\texttt{.obs}(#2)}
+\newcommand{\cRem}[1]{#1\texttt{.rem()}}
+\newcommand{\fRen}[1]{\textit{rename}(#1)}
+\newcommand{\fFresh}[1]{\textit{fresh}(#1)}
+\newcommand{\fNeigh}[1]{\textit{neighbours}(#1)}
+\newcommand{\sFilt}[0]{\rhd}
+\newcommand{\fFilt}[2]{#1\sFilt #2}
+\newcommand{\fSubs}[3]{#1^{\{#2/#3\}}}
+\newcommand{\fDiff}[0]{\delta}
+\newcommand{\fAggr}[0]{\alpha}
+\newcommand{\fDecay}[0]{\epsilon}
+\newcommand{\fBond}[0]{\mu}
+\newcommand{\sLb}[0]{l}
+\newcommand{\trn}[1]{\rightarrow}
+\newcommand{\ntrn}[1]{\not\rightarrow}
+\newcommand{\crule}[3]{\texttt{[#1]} & #2 & \textrm{if}~ #3\\}
+\newcommand{\incrule}[2]{\multicolumn{2}{l}{~~#2} \\}
+\newcommand{\shortincrule}[2]{\texttt{[#1]} & #2 & \\}
+\newcommand{\acrule}[3]{[\textrm{#1}] & \multicolumn{2}{l}{#2 \hfill ~~\textrm{if}~ #3}\\}
+\newcommand{\alcrule}[5]{[\textrm{#1}] & #2 & \trn{#3} & #4 & \textrm{if}~ #5\\}
+\newcommand{\alincrule}[4]{[\textrm{#1}] & #2 & \trn{#3} & #4 & \\}
+\newcommand{\myquad}{,\;}
+\newcommand{\ccrule}[3]{[\texttt{#1}] & #2 & \textrm{if}~ #3\\}
+\newcommand{\sPr}{\texttt{p}}
+\newcommand{\sVl}{\texttt{v}}
+\newcommand{\sWl}{\texttt{w}}
+\newcommand{\sAsg}{\texttt{=}}
+\newcommand{\sAsgPlus}{\texttt{+=}}
+\newcommand{\sAsgMinus}{\texttt{-=}}
+\newcommand{\sAsgReset}{\texttt{reset}}
+\newcommand{\lship}[1]{\texttt{ship}(#1)}
+\newcommand{\lexc}{\texttt{fail}}
+\newcommand{\lok}{\texttt{ok}}
+\newcommand{\lnew}[1]{\texttt{new}(#1)}
+\newcommand{\lupd}{\texttt{upd}}
+\newcommand{\lobs}{\texttt{obs}}
+\newcommand{\lrem}{\texttt{rem}}
+\newcommand{\ldiff}{\texttt{diff}}
+\newcommand{\lagr}{\texttt{agr}}
+\newcommand{\ldec}{\texttt{dec}}
+\newcommand{\lbond}{\texttt{bond}}
+\newcommand{\lubond}{\texttt{debond}}
+\newcommand{\lempty}{\texttt{empty}}
+\newcommand{\eval}[1]{\texttt{eval(#1)}}
+\newcommand{\f}[1]{#1}
+\newcommand{\ttt}[1]{\footnotesize{\texttt{#1}}}
+\newcommand{\ccheck}[2]{#1\vdash #2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GET CURRENT POSITION IN TEXT %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcount\Level
+\let\Part=\part\def\part{\global\Level=0\Part}
+\let\Chapter=\chapter\def\chapter{\global\Level=1\Chapter}
+\let\Section=\section\def\section{\global\Level=2\Section}
+\let\Subsection=\subsection\def\subsection{\global\Level=3\Subsection}
+\let\Subsubsection=\subsubsection\def\subsubsection{\global\Level=4\Subsubsection}
+
+\def\levelText{
+\ifcase\the\Level part
+\or chapter
+\or section
+\or section
+\or section
+\else work \fi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ANTICIPATIVE GRADIENT %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\plocation}{\texttt{\#location}}
+\newcommand{\hasany}{\texttt{has}}
+\newcommand{\hasnot}{\texttt{hasnot}}
+\newcommand{\hasone}{\texttt{=}}
+\newcommand{\assign}{\texttt{:=}}
+\newcommand{\extends}[1]{\texttt{extends~#1}}
+\newcommand{\clones}[1]{\texttt{clones~#1}}
+\newcommand{\annvar}[2]{\{#1:#2\}}
+
+\renewcommand{\ttdefault}{txtt}
+\newcommand{\ssum}{+}
+\newcommand{\strn}[1]{--#1-->}
+\newcommand{\strninf}{--->}
+\newcommand{\spatt}[2]{#1:[#2]}
+\newcommand{\spattid}[1]{#1}
+\newcommand{\sseq}{;}
+\newcommand{\sclones}[1]{clones #1}
+\newcommand{\sextends}[1]{extends #1}
+\newcommand{\shasall}{=*}
+\newcommand{\shasany}{~\texttt{has}~}
+\newcommand{\shasnot}{~\texttt{has-not}~}
+\newcommand{\shasone}{\texttt{=}}
+\newcommand{\sis}{\texttt{=}}
+\newcommand{\svar}[1]{#1}
+\newcommand{\sid}[2]{?(#1[#2])}
+\newcommand{\svardesc}[1]{#1}
+\newcommand{\sannvar}[2]{?\{#1:#2\}}
+\newcommand{\slist}[1]{(#1)}
+\newcommand{\sdesc}[1]{[#1]}
+\newcommand{\sliteral}[1]{"#1"}
+\newcommand{\sprop}[1]{\sliteral{#1}}
+\newcommand{\erase}[1]{|#1|}
+\newcommand{\pattern}[2]{#1[#2]}
+\newcommand{\shfiring}[1]{#1^\rightsquigarrow}
+
+\newcommand{\tap}[1]{#1}
+\newcommand{\local}{\texttt{local}}
+\newcommand{\neighborhood}{\texttt{neighborhood}}
+\newcommand{\globalc}{\texttt{global}}
+\newcommand{\lsa}[1]{\langle #1\rangle}
+\newcommand{\alchemist}[0]{{\tap{\textsc{Alchemist}}}}
+\newcommand{\rem}[1]{+#1}
+
+

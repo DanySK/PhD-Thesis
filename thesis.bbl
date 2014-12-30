@@ -1,0 +1,1691 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{FMDMSM{\etalchar{+}}12}
+
+\bibitem[AAC{\etalchar{+}}00]{amorphous}
+Harold Abelson, Don Allen, Daniel Coore, Chris Hanson, George Homsy, Thomas~F.
+  Knight, Jr., Radhika Nagpal, Erik Rauch, Gerald~Jay Sussman, and Ron Weiss.
+\newblock Amorphous computing.
+\newblock {\em Communications of the ACM}, 43:74--82, 2000.
+
+\bibitem[AARC{\etalchar{+}}12]{spectrum-crunch}
+Seyedreza Abdollahi, Hamed Al-Raweshidy, Erik Calvo, Luis Manuel~Dahlman, Klaus
+  David, Marian Codreanu, Panagiotis Demestichas, Markus Dillinger, Miguel
+  Egido, Markus Gruber, Stefan Kaiser, Matti Latva-aho, Peter Merz, Xavier
+  Mestre, Emmanouil Panaousis, Stephan Pfletschinger, Mahdi Pirmoradian,
+  Christos Politis, Bernhard Raaf, Frank Schaich, Christoph Schmelz, Rahim
+  Tafazolli, Antti T\"{o}lli, Nikola Vucic, and Rudolf Winkelmann.
+\newblock {Spectrum Crunch}.
+\newblock Technical report, Net!Works European Technology Platform, 06 2012.
+
+\bibitem[ABW06]{Antonini2006}
+Gianluca Antonini, Michel Bierlaire, and Mats Weber.
+\newblock Discrete choice models of pedestrian walking behavior.
+\newblock {\em Transportation Research Part B: Methodological}, 40(8):667 --
+  687, 2006.
+
+\bibitem[AGS11]{mesh-network-telephony}
+Michael Adeyeye and Paul Gardner-Stephen.
+\newblock The village telco project: a reliable and practical wireless mesh
+  telephony infrastructure.
+\newblock {\em EURASIP J. Wireless Comm. and Networking}, 2011:78, 2011.
+
+\bibitem[AJL{\etalchar{+}}02]{alberts}
+Bruce Alberts, Alexander Johnson, Julian Lewis, Martin Raff, Keith Roberts, and
+  Peter Walter.
+\newblock {\em Molecular Biology of the Cell}.
+\newblock Garland Science Textbooks. Garland Science, {F}ourth edition, June
+  2002.
+
+\bibitem[Aka74]{aikake1974}
+H.~Akaike.
+\newblock A new look at the statistical model identification.
+\newblock {\em Automatic Control, IEEE Transactions on}, 19(6):716--723, 1974.
+
+\bibitem[AM11]{AlTurkiM11}
+Musab AlTurki and Jos{\'e} Meseguer.
+\newblock Pvesta: A parallel statistical model checking and quantitative
+  analysis tool.
+\newblock In {\em CALCO}, 2011.
+
+\bibitem[AMS06]{AghaMS06}
+Gul~A. Agha, Jos{\'e} Meseguer, and Koushik Sen.
+\newblock {PMaude}: Rewrite-based specification language for probabilistic
+  object systems.
+\newblock In Antonio Cerone and Herbert Wiklicky, editors, {\em QAPL 2005},
+  volume 153(2) of {\em ENTCS}, pages 213--239. Elsevier, 2006.
+
+\bibitem[Apa13]{nfc-diffusion-europe}
+Tatjana Apanasevic.
+\newblock Factors influencing the slow rate of penetration of {NFC} mobile
+  payment in western europe.
+\newblock In {\em 12th International Conference on Mobile Business, {ICMB}
+  2013, Berlin, Germany, 10-13 June 2013}, page~8, 2013.
+
+\bibitem[APNF13]{socinfo2013}
+Bernhard Anzengruber, Danilo Pianini, Jussi Nieminen, and Alois Ferscha.
+\newblock Predicting social density in mass events to prevent crowd disasters.
+\newblock In Adam Jatowt, Ee-Peng Lim, Ying Ding, Asako Miura, Taro Tezuka,
+  Gaël Dias, Katsumi Tanaka, Andrew~J. Flanagin, and Bing~Tian Dai, editors,
+  {\em SocInfo}, volume 8238 of {\em Lecture Notes in Computer Science}, pages
+  206--215. Springer, 2013.
+
+\bibitem[ARGL{\etalchar{+}}07]{Meld}
+Michael~P. Ashley-Rollman, Seth~Copen Goldstein, Peter Lee, Todd~C. Mowry, and
+  Padmanabhan Pillai.
+\newblock Meld: A declarative approach to programming ensembles.
+\newblock In {\em IEEE International Conference on Intelligent Robots and
+  Systems (IROS '07)}, pages 2794--2800, 2007.
+
+\bibitem[ASS{\etalchar{+}}11]{5g}
+Henrik Abramowicz, Ernst-Dieter Schmidt, Lars~Christoph Schmelz, Cornel Pampu,
+  Cornelia Kappler, Mirko Schramm, Konstantinous Pentikousis, Dongming Zhou,
+  Savo Glisic, Juan Palacios, Josep Mangues, Panagiotis Demestichas, Ralf
+  Toenjes, Tipu~Arvind Ramrekha, Grant Millar, Christos Politis, Sergi
+  Figuerola, Dimitra Simeonidou, Alex Galis, and Rahim Tafazolli.
+\newblock {Future Networks and Management }.
+\newblock Technical report, Net!Works European Technology Platform, 06 2011.
+
+\bibitem[BB06]{proto}
+Jacob Beal and Jonathan Bachrach.
+\newblock Infrastructure for engineered emergence on sensor/actuator networks.
+\newblock {\em IEEE Intelligent Systems}, 21(2):10--19, 2006.
+
+\bibitem[BB07]{protokernel}
+Jonathan Bachrach and Jacob Beal.
+\newblock Building spatial computers.
+\newblock Technical Report MIT-CSAIL-TR-2007-017, MIT, March 2007.
+
+\bibitem[BBF07]{ProtoTime}
+Jonathan Bachrach, Jacob Beal, and Takeshi Fujiwara.
+\newblock Continuous space-time semantics allow adaptive program execution.
+\newblock In {\em IEEE SASO 2007}, pages 315--319, New York, July 2007. IEEE.
+
+\bibitem[BBG06]{terBeek:06:ASSCFISFM}
+Maurice Beek, Antonio Bucchiarone, and Stefania Gnesi.
+\newblock A survey on service composition approaches: From industrial standards
+  to formal methods.
+\newblock In {\em Technical Report 2006TR-15, Istituto}, pages 15--20. IEEE CS
+  Press, 2006.
+
+\bibitem[BBL{\etalchar{+}}11]{spatialeventgillespie}
+Kevin Burrage, PamelaM. Burrage, Andr{\'e} Leier, Tatiana Marquez-Lago, and
+  Jr~Nicolau, DanV.
+\newblock Stochastic simulation for spatial modelling of dynamic processes in a
+  living cell.
+\newblock In Heinz Koeppl, Gianluca Setti, Mario di~Bernardo, and Douglas
+  Densmore, editors, {\em Design and Analysis of Biomolecular Circuits}, pages
+  43--62. Springer New York, 2011.
+
+\bibitem[BBVT08]{crf}
+Jacob Beal, Jonathan Bachrach, Daniel Vickery, and Mark Tobenkin.
+\newblock Fast self-healing gradients.
+\newblock In {\em Proceedings of ACM SAC 2008}, pages 1969--1975, 2008.
+
+\bibitem[BCD{\etalchar{+}}06]{BabaogluPatterns}
+{\"O}zalp Babaoglu, Geoffrey Canright, Andreas Deutsch, Gianni Di~Caro,
+  Frederick Ducatelle, Luca~Maria Gambardella, Niloy Ganguly, M{\'a}rk
+  Jelasity, Roberto Montemanni, Alberto Montresor, and Tore Urnes.
+\newblock Design patterns from biology for distributed computing.
+\newblock {\em TAAS}, 1(1):26--66, 2006.
+
+\bibitem[BCM{\etalchar{+}}03]{baader2003description}
+F.~Baader, D.~Calvanese, D.~L. McGuinness, D.~Nardi, and P.~F. Patel-Schneider,
+  editors.
+\newblock {\em The Description Logic Handbook: Theory, Implementation, and
+  Applications}.
+\newblock Cambridge University Press, New York, NY, USA, 2003.
+
+\bibitem[BDT99]{swarmintelligence-book1999}
+Eric Bonabeau, Marco Dorigo, and Guy Theraulaz.
+\newblock {\em Swarm Intelligence: From Natural to Artificial Systems}.
+\newblock Oxford University Press, 1999.
+
+\bibitem[BDU{\etalchar{+}}13]{SpatialIGI2013}
+Jacob Beal, Stefan Dulman, Kyle Usbeck, Mirko Viroli, and Nikolaus Correll.
+\newblock Organizing the aggregate: Languages for spatial computing.
+\newblock In Marjan Mernik, editor, {\em Formal and Practical Aspects of
+  Domain-Specific Languages: Recent Developments}, chapter~16, pages 436--501.
+  IGI Global, 2013.
+\newblock A longer version available at: {\tt http://arxiv.org/abs/1202.5509}.
+
+\bibitem[Bea05]{upp}
+Jacob Beal.
+\newblock Programming an amorphous computational medium.
+\newblock In Jean-Pierre Banatre, Pascal Fradet, Jean-Louis Giavitto, and
+  Olivier Michel, editors, {\em Unconventional Programming Paradigms}, volume
+  3566 of {\em Lecture Notes in Computer Science}, pages 121--136. Springer
+  Berlin Heidelberg, 2005.
+
+\bibitem[Bea09]{flexiblegradients}
+Jacob Beal.
+\newblock Flexible self-healing gradients.
+\newblock In {\em Proceedings of the 2009 ACM Symposium on Applied Computing
+  (SAC)}, pages 1197--1201. ACM, 2009.
+
+\bibitem[Bea10]{bealBasisSCW10}
+Jacob Beal.
+\newblock A basis set of operators for space-time computations.
+\newblock In {\em Spatial Computing Workshop}, 2010.
+\newblock Available at: {\tt http://www.spatial-computing.org/scw10/}.
+
+\bibitem[BEH{\etalchar{+}}06]{Burke2006}
+J.~Burke, D.~Estrin, M.~Hansen, A.~Parker, N.~Ramanathan, S.~Reddy, and M.~B.
+  Srivastava.
+\newblock Participatory sensing.
+\newblock In {\em In: Workshop on World-Sensor-Web (WSW'06): Mobile Device
+  Centric Sensor Networks and Applications}, pages 117--134, 2006.
+
+\bibitem[BEN{\etalchar{+}}04]{berkelaar2004}
+Michel Berkelaar, Kjell Eikland, Peter Notebaert, et~al.
+\newblock lpsolve: Open source (mixed-integer) linear programming system.
+\newblock {\em Eindhoven U. of Technology}, 2004.
+
+\bibitem[Ber92a]{cham-tcs96}
+G{\'e}rard Berry.
+\newblock The chemical abstract machine.
+\newblock {\em Theoretical Computer Science}, 96(1):217--248, April 1992.
+
+\bibitem[Ber92b]{Berryman:1992}
+Alan~A. Berryman.
+\newblock The origins and evolution of predator-prey theory.
+\newblock {\em Ecology}, 73(5):1530--1535, October 1992.
+
+\bibitem[BFLM01]{gamma-lncs2235}
+Jean-Pierre Ban{\^a}tre, Pascal Fradet, and Daniel Le~M{\'e}tayer.
+\newblock Gamma and the chemical reaction model: Fifteen years after.
+\newblock In Cristian~S. Calude, Gheorghe P{\u a}un, Grzegorz Rozenberg, and
+  Arto Salomaa, editors, {\em Multiset Processing. Mathematical, Computer
+  Science, and Molecular Computing Points of View}, volume 2235 of {\em LNCS},
+  pages 17--44. Springer, 2001.
+
+\bibitem[BGZ97]{zavattaro}
+Nadia Busi, Roberto Gorrieri, and Gianluigi Zavattaro.
+\newblock On the turing equivalence of linda coordination primitives.
+\newblock {\em Electr. Notes Theor. Comput. Sci.}, 7:75, 1997.
+
+\bibitem[BGZ98]{zavattaro2}
+Nadia Busi, Roberto Gorrieri, and Gianluigi Zavattaro.
+\newblock A process algebraic view of linda coordination primitives.
+\newblock {\em Theor. Comput. Sci.}, 192(2):167--199, 1998.
+
+\bibitem[BKSZ01]{Burstedde2001}
+C~Burstedde, K~Klauck, A~Schadschneider, and J~Zittartz.
+\newblock Simulation of pedestrian dynamics using a two-dimensional cellular
+  automaton.
+\newblock {\em Physica A: Statistical Mechanics and its Applications},
+  295(3–4):507 -- 525, 2001.
+
+\bibitem[BLM90]{gamma-scico15}
+Jean-Pierre Ban{\^a}tre and Daniel Le~M{\'e}tayer.
+\newblock The {GAMMA} model and its discipline of programming.
+\newblock {\em Science of Computer Programming}, 15(1):55--77, November 1990.
+
+\bibitem[BLM13]{BortolussiLM13}
+Luca Bortolussi, Diego Latella, and Mieke Massink.
+\newblock Stochastic process algebra and stability analysis of collective
+  systems.
+\newblock In {\em COORDINATION}, volume 7890 of {\em Lecture Notes in Computer
+  Science}, pages 1--15. Springer, 2013.
+
+\bibitem[BMM02]{anthill}
+\"{O}zalp Babaoglu, Hein Meling, and Alberto Montresor.
+\newblock Anthill: A framework for the development of agent-based peer-to-peer
+  systems.
+\newblock In {\em Proceedings of the 22 Nd International Conference on
+  Distributed Computing Systems (ICDCS'02)}, ICDCS '02, pages 15--, Washington,
+  DC, USA, 2002. IEEE Computer Society.
+
+\bibitem[BMP{\etalchar{+}}11]{Bis11}
+Chatschik Bisdikian, Bernhard Mitschang, Dino Pedreschi, Vincent~S. Tseng, and
+  Claudio Bettini.
+\newblock Challenges for mobile data management in the era of cloud and social
+  computing.
+\newblock In {\em 12th IEEE International Conference on Mobile Data
+  Management}, page~6, 2011.
+
+\bibitem[BMS11]{SpatialComputing}
+Jacob Beal, Olivier Michel, and Ulrik~Pagh Schultz.
+\newblock Spatial computing: Distributed systems that take advantage of our
+  geometric world.
+\newblock {\em ACM Transactions on Autonomous and Adaptive Systems},
+  6:11:1--11:3, June 2011.
+
+\bibitem[BMV09a]{BandiniJASSS2009}
+Stefania Bandini, Sara Manzoni, and Giuseppe Vizzari.
+\newblock Agent based modeling and simulation: An informatics perspective.
+\newblock {\em Journal of Artificial Societies and Social Simulation}, 12:4,
+  2009.
+
+\bibitem[BMV09b]{vizzari-massimulationbook09}
+Stefania Bandini, Sara Manzoni, and Giuseppe Vizzari.
+\newblock {Crowd Behavior Modeling: From Cellular Automata to Multi-Agent
+  Systems}.
+\newblock In Adelinde~M. Uhrmacher and Danny Weyns, editors, {\em Multi-Agent
+  Systems: Simulation and Applications}, Computational Analysis, Synthesis, and
+  Design of Dynamic Systems, chapter~13, pages 389--418. CRC Press, June 2009.
+
+\bibitem[Bon99]{stigmergy-artificiallife5}
+Eric Bonabeau.
+\newblock Editor's introduction: Stigmergy.
+\newblock {\em Artificial Life}, 5(2):95--96, Spring 1999.
+
+\bibitem[BP09]{BanP09}
+Jean-Pierre Ban{\^a}tre and Thierry Priol.
+\newblock Chemical programming of future service-oriented architectures.
+\newblock {\em JSW}, 4(7):738--746, 2009.
+
+\bibitem[BPd{\etalchar{+}}08]{bandara2008semantic}
+A.~Bandara, T.~Payne, D.~{de Roure}, N.~Gibbins, and T.~Lewis.
+\newblock Semantic resource matching for pervasive environments: The approach
+  and its evaluation.
+\newblock Technical report, University of Southampton, 2008.
+
+\bibitem[Bro04]{brown2004}
+R.G. Brown.
+\newblock {\em Smoothing, Forecasting and Prediction of Discrete Time Series}.
+\newblock Dover Phoenix Editions. Dover Publications, 2004.
+
+\bibitem[BS11]{Bobillo2011758}
+F.~Bobillo and U.~Straccia.
+\newblock {Reasoning with the finitely many-valued \L ukasiewicz fuzzy
+  Description Logic}.
+\newblock {\em Information Sciences}, 181(4):758 -- 778, 2011.
+
+\bibitem[BSB{\etalchar{+}}03]{bull2003}
+J.~Mark Bull, L.~A. Smith, C.~Ball, L.~Pottage, and R.~Freeman.
+\newblock Benchmarking java against c and fortran for scientific applications.
+\newblock {\em Concurrency and Computation: Practice and Experience},
+  15(3-5):417--430, 2003.
+
+\bibitem[BUB13]{BealUsbeck12}
+Jacob Beal, Kyle Usbeck, and Brett Benyo.
+\newblock On the evaluation of space-time functions.
+\newblock {\em The Computer Journal}, 56(12):1500--1517, 2013.
+\newblock doi: 10.1093/comjnl/bxs099.
+
+\bibitem[But02]{butera}
+William Butera.
+\newblock {\em Programming a Paintable Computer}.
+\newblock PhD thesis, MIT, Cambridge, MA, USA, 2002.
+
+\bibitem[BV07]{BandiniE4MAS2006}
+Stefania Bandini and Giuseppe Vizzari.
+\newblock Regulation function of the environment in agent-based simulation.
+\newblock In {\em Proceedings of the 3rd international conference on
+  Environments for multi-agent systems III}, E4MAS'06, pages 157--169, Berlin,
+  Heidelberg, 2007. Springer-Verlag.
+
+\bibitem[BV14]{BV-FOCAS2014}
+Jake Beal and Mirko Viroli.
+\newblock Building blocks for aggregate programming of self-organising
+  applications.
+\newblock In {\em 2nd FoCAS Workshop on Fundamentals of Collective Systems},
+  pages 1--6. IEEE CS, to appear, 2014.
+
+\bibitem[BVD14]{BVD-SCW14}
+Jacob Beal, Mirko Viroli, and Ferruccio Damiani.
+\newblock Towards a unified model of spatial computing.
+\newblock In {\em 7th Spatial Computing Workshop (SCW 2014)}, AAMAS 2014,
+  Paris, France, May 2014.
+
+\bibitem[BW08]{BabulakIJOE2008}
+Eduard Babulak and Ming Wang.
+\newblock Discrete event simulation: State of the art.
+\newblock {\em iJOE}, 4(2):60--63, 2008.
+
+\bibitem[CDB{\etalchar{+}}12]{Conti12}
+Marco Conti, Sajal~K. Das, Chatschik Bisdikian, Mohan Kumar, Lionel~M. Ni,
+  Andrea Passarella, George Roussos, Gerhard Tr{\"o}ster, Gene Tsudik, and
+  Franco Zambonelli.
+\newblock Looking ahead in pervasive computing: Challenges and opportunities in
+  the era of cyber-physical convergence.
+\newblock {\em Pervasive and Mobile Computing}, 8(1):2--21, 2012.
+
+\bibitem[CDPEV05]{Canfora2005}
+Gerardo Canfora, Massimiliano Di~Penta, Raffaele Esposito, and Maria~Luisa
+  Villani.
+\newblock An approach for qos-aware service composition based on genetic
+  algorithms.
+\newblock In {\em Proceedings of the 2005 conference on Genetic and
+  evolutionary computation}, GECCO '05, pages 1069--1075, New York, NY, USA,
+  2005. ACM.
+
+\bibitem[CG00]{ambients}
+Luca Cardelli and Andrew~D. Gordon.
+\newblock Mobile ambients.
+\newblock {\em Theoretical Computer Science}, 240(1):177--213, June 2000.
+
+\bibitem[CG09]{CiocchettaH09}
+Federica Ciocchetta and Maria~Luisa Guerriero.
+\newblock Modelling biological compartments in bio-pepa.
+\newblock {\em Electr. Notes Theor. Comput. Sci.}, 227:77--95, 2009.
+
+\bibitem[CG10]{CardelliG10}
+Luca Cardelli and Philippa Gardner.
+\newblock Processes in space.
+\newblock In {\em Programs, Proofs, Processes, 6th Conference on Computability
+  in Europe, CiE 2010}, volume 6158 of {\em Lecture Notes in Computer Science},
+  pages 78--87. Springer, 2010.
+
+\bibitem[Chu32]{LambdaCalculus}
+Alonzo Church.
+\newblock A set of postulates for the foundation of logic.
+\newblock {\em Annals of mathematics}, 33(2):346--366, 1932.
+
+\bibitem[CLMZ03]{Cabri03}
+Giacomo Cabri, Letizia Leonardi, Marco Mamei, and Franco Zambonelli.
+\newblock Location-dependent services for mobile users.
+\newblock {\em {IEEE} Transactions on Systems, Man, and Cybernetics, Part {A}},
+  33(6):667--681, 2003.
+
+\bibitem[CLZ00]{mars}
+Giacomo Cabri, Letizia Leonardi, and Franco Zambonelli.
+\newblock {MARS}: A programmable coordination architecture for mobile agents.
+\newblock {\em IEEE Internet Computing}, 4(4):26--35, 2000.
+
+\bibitem[Cow00]{Cowan2000}
+Richard Cowan.
+\newblock Stochastic models for dna replication.
+\newblock In {\em In Handbook of Statistics}. Elsevier, 2000.
+
+\bibitem[CV95]{cortes1995}
+Corinna Cortes and Vladimir Vapnik.
+\newblock Support-vector networks.
+\newblock {\em Machine Learning}, 20(3):273--297, 1995.
+
+\bibitem[CVG09]{collectivesort-scico74}
+Matteo Casadei, Mirko Viroli, and Luca Gardelli.
+\newblock On the collective sort problem for distributed tuple spaces.
+\newblock {\em Science of Computer Programming}, 74(9):702--722, 2009.
+
+\bibitem[DAS01]{dey2001conceptual}
+A.~K. Dey, G.~D. Abowd, and D.~Salber.
+\newblock A conceptual framework and a toolkit for supporting the rapid
+  prototyping of context-aware applications.
+\newblock {\em Human Computer Interaction}, 16(2):97--166, December 2001.
+
+\bibitem[DDF{\etalchar{+}}06]{AC-Survey}
+Simon Dobson, Spyros Denazis, Antonio Fern\'andez, Dominique Ga\"iti, Erol
+  Gelenbe, Fabio Massacci, Paddy Nixon, Fabrice Saffre, Nikita Schmidt, and
+  Franco Zambonelli.
+\newblock A survey of autonomic communications.
+\newblock {\em ACM Transactions on Autonomous and Adaptive Systems},
+  1(2):223--259, December 2006.
+
+\bibitem[DG08]{dean2008mapreduce}
+Jeffrey Dean and Sanjay Ghemawat.
+\newblock {MapReduce}: simplified data processing on large clusters.
+\newblock {\em Communications of the ACM}, 51(1):107--113, 2008.
+
+\bibitem[DLM05]{DeNicolaLM05}
+Rocco {De Nicola}, Diego Latella, and Mieke Massink.
+\newblock Formal modeling and quantitative analysis of klaim-based mobile
+  systems.
+\newblock In {\em SAC}, pages 428--435. ACM, 2005.
+
+\bibitem[DS04]{dorigo-aco2004}
+Marco Dorigo and Thomas St{\"u}tzle.
+\newblock {\em Ant Colony Optimization}.
+\newblock MIT Press, Cambridge, MA, July 2004.
+
+\bibitem[DWH07]{Wolf2007}
+T.~De~Wolf and T.~Holvoet.
+\newblock Design patterns for decentralised coordination in self-organising
+  emergent systems.
+\newblock {\em Engineering Self-Organising Systems}, 4335:28--49, February
+  2007.
+
+\bibitem[EAWS12]{eze2012autonomic}
+Thaddeus Eze, Richard Anthony, Chris Walshaw, and Alan Soper.
+\newblock Autonomic computing in the first decade: trends and direction.
+\newblock In {\em ICAS 2012, The Eighth International Conference on Autonomic
+  and Autonomous Systems}, pages 80--85, 2012.
+
+\bibitem[EB10]{eysholdt2010xtext}
+Moritz Eysholdt and Heiko Behrens.
+\newblock Xtext: implement your language faster than the quick and dirty way.
+\newblock In {\em OOPSLA}, pages 307--309. ACM, 2010.
+
+\bibitem[EC89]{SDEF}
+Bradley~R. Engstrom and Peter~R. Cappello.
+\newblock The sdef programming system.
+\newblock {\em Journal of Parallel and Distributed Computing}, 7(2):201 -- 231,
+  1989.
+
+\bibitem[EMRU07]{EwaldJOS2007}
+Roland Ewald, Carsten Maus, Arndt Rolfs, and Adelinde~M. Uhrmacher.
+\newblock Discrete event modeling and simulation in systems biology.
+\newblock {\em Journal of Simulation}, 1(2):81--96, 2007.
+
+\bibitem[EP05]{eagle2005}
+N.~Eagle and A.~Pentland.
+\newblock Social serendipity: mobilizing social software.
+\newblock {\em Pervasive Computing, IEEE}, 4(2):28--34, 2005.
+
+\bibitem[FHA99]{javaspaces1999}
+Eric Freeman, Susanne Hupfer, and Ken Arnold.
+\newblock {\em {J}ava{S}paces {P}rinciples, {P}atterns, and {P}ractice:
+  {P}rinciples, {P}atterns and {P}ractices}.
+\newblock {T}he {J}ini {T}echnology {S}eries. Addison-Wesley Longman, June
+  1999.
+
+\bibitem[FMDMSM{\etalchar{+}}12]{FDMVA-NACO2012}
+Jose~Luis Fernandez-Marquez, Giovanna Di~Marzo~Serugendo, Sara Montagna, Mirko
+  Viroli, and Josep~Lluis Arcos.
+\newblock Description and composition of bio-inspired design patterns: a
+  complete overview.
+\newblock {\em Natural Computing}, May 2012.
+\newblock Online First.
+
+\bibitem[FMSM12]{biocore}
+Jose~Luis Fernandez-Marquez, Giovanna Di~Marzo Serugendo, and Sara Montagna.
+\newblock Bio-core: Bio-inspired self-organising mechanisms core.
+\newblock In Emma Hart, Jon Timmis, Paul Mitchell, Takadash Nakamo, Foad
+  Dabiri, Ozgur Akan, Paolo Bellavista, Jiannong Cao, Falko Dressler, Domenico
+  Ferrari, Mario Gerla, Hisashi Kobayashi, Sergio Palazzo, Sartaj Sahni,
+  Xuemin~(Sherman) Shen, Mircea Stan, Jia Xiaohua, Albert Zomaya, and Geoffrey
+  Coulson, editors, {\em Bio-Inspired Models of Networks, Information, and
+  Computing Systems}, volume 103 of {\em Lecture Notes of the Institute for
+  Computer Sciences, Social Informatics and Telecommunications Engineering},
+  pages 59--72. Springer Berlin Heidelberg, 2012.
+
+\bibitem[Fru93]{fruin1993}
+J.J Fruin.
+\newblock The causes and prevention of crowd disasters.
+\newblock {\em R. A. Smith and J. F. Dickie, eds, Engineering for Crowd
+  Safety}, pages 99--108, 1993.
+
+\bibitem[FSS10]{frei}
+Regina Frei, Giovanna Di~Marzo Serugendo, and Traian-Florin Serbanuta.
+\newblock Ambient intelligence in self-organising assembly systems using the
+  chemical reaction model.
+\newblock {\em Journal of Ambient Intelligence and Humanized Computing},
+  1(3):163--184, 2010.
+
+\bibitem[GB00]{gibson2000}
+Michael~A. Gibson and Jehoshua Bruck.
+\newblock Efficient exact stochastic simulation of chemical systems with many
+  species and many channels.
+\newblock {\em J. Phys. Chem. A}, 104:1876--1889, 2000.
+
+\bibitem[Gel85]{linda-toplas7}
+David Gelernter.
+\newblock Generative communication in {L}inda.
+\newblock {\em ACM Transactions on Programming Languages and Systems},
+  7(1):80--112, January 1985.
+
+\bibitem[GGG05]{kairos}
+Ramakrishna Gummadi, Omprakash Gnawali, and Ramesh Govindan.
+\newblock Macro-programming wireless sensor networks using kairos.
+\newblock In {\em Distributed Computing in Sensor Systems (DCOSS)}, pages
+  126--140, 2005.
+
+\bibitem[GHJV95]{Gamma1995}
+E.~Gamma, R.~Helm, R.~Johnson, and J.~Vlissides.
+\newblock {\em Design Patterns: Elements of reusable Object-Oriented Software}.
+\newblock Addison-Wesley, Reading, Mass., 1995.
+
+\bibitem[Gil77]{gillespie1977}
+Daniel~T. Gillespie.
+\newblock {Exact stochastic simulation of coupled crfreactions}.
+\newblock {\em The Journal of Physical Chemistry}, 81(25):2340--2361, December
+  1977.
+
+\bibitem[Gil06]{gilbert2006-devbio}
+Scott~F. Gilbert.
+\newblock {\em Developmental Biology, Eighth Edition}.
+\newblock Sinauer Associates Inc., {E}ighth edition, March 2006.
+
+\bibitem[GJK{\etalchar{+}}04]{gursky04}
+Vitaly~V. Gursky, Johannes Jaeger, Konstantin~N. Kozlov, John Reinitz, and
+  Alexander~M. Samsonov.
+\newblock Pattern formation and nuclear divisions are uncoupled in drosophila
+  segmentation: comparison of spatially discrete and continuous models.
+\newblock {\em Physica D: Nonlinear Phenomena}, 197(3-4):286--302, October
+  2004.
+
+\bibitem[GJM12]{guo2012}
+Hongliang Guo, Yaochu Jin, and Yan Meng.
+\newblock A morphogenetic framework for self-organized multirobot pattern
+  formation and boundary coverage.
+\newblock {\em ACM Transactions on Autonomous and Adaptive Systems}, 7(1):15,
+  2012.
+
+\bibitem[GLZ06]{GorrieriLZ06}
+Roberto Gorrieri, Roberto Lucchi, and Gianluigi Zavattaro.
+\newblock Supporting secure coordination in secspaces.
+\newblock {\em Fundam. Inform.}, 73(4):479--506, 2006.
+
+\bibitem[GMCS05]{GiavittoMGS05}
+Jean-Louis Giavitto, Olivier Michel, Julien Cohen, and Antoine Spicher.
+\newblock Computations in space and space in computations.
+\newblock In Jean-Pierre Banâtre, Pascal Fradet, Jean-Louis Giavitto, and
+  Olivier Michel, editors, {\em Unconventional Programming Paradigms}, volume
+  3566 of {\em Lecture Notes in Computer Science}, pages 137--152. Springer
+  Berlin Heidelberg, 2005.
+
+\bibitem[GPO13]{agents-ieeecn6}
+Maria Ganzha, Marcin Paprzycki, and Andrea Omicini.
+\newblock Software agents: Twenty years and counting.
+\newblock {\em Computing Now}, 6(11), November 2013.
+
+\bibitem[GPOS13]{btssoc-jos7}
+Pedro~Pablo Gonz{\'a}lez~P{\'e}rez, Andrea Omicini, and Marco Sbaraglia.
+\newblock A biochemically-inspired coordination-based model for simulating
+  intracellular signalling pathways.
+\newblock {\em Journal of Simulation}, 7(3):216--226, August 2013.
+\newblock Special Issue: Agent-based Modeling and Simulation.
+
+\bibitem[GPVD99]{guttman1999service}
+E.~Guttman, C.~Perkins, J.~Veizades, and M.~Day.
+\newblock {Service Location Protocol, Version 2. RFC 2608}, 1999.
+
+\bibitem[Gra59]{stigmergy-grasse59}
+Pierre-Paul Grass\'e.
+\newblock La reconstruction du nid et les coordinations interindividuelles chez
+  {B}ellicositermes natalensis et {C}ubitermes sp. la th\'eorie de la
+  stigmergie: Essai d'interpr\'etation du comportement des termites
+  constructeurs.
+\newblock {\em Insectes Sociaux}, 6(1):41--80, March 1959.
+
+\bibitem[GSP11]{serval-mesh}
+Paul Gardner-Stephen and Swapna Palaniswamy.
+\newblock Serval mesh software-wifi multi model management.
+\newblock In {\em Proceedings of the 1st International Conference on Wireless
+  Technologies for Humanitarian Relief}, ACWR '11, pages 71--77, New York, NY,
+  USA, 2011. ACM.
+
+\bibitem[GSW06]{interactionbook}
+Dina~Q. Goldin, Scott~A. Smolka, and Peter Wegner, editors.
+\newblock {\em Interactive Computation: The New Paradigm}.
+\newblock Springer, September 2006.
+
+\bibitem[GVO07]{GVO-CEEMAS2007}
+Luca Gardelli, Mirko Viroli, and Andrea Omicini.
+\newblock Design patterns for self-organising systems.
+\newblock In Hans-Dieter Burkhard, Rineke Verbrugge, and L{\'a}szl{\'o}~Zsolt
+  Varga, editors, {\em Multi-Agent Systems and Applications {V}}, volume 4696
+  of {\em LNAI}, pages 123--132. Springer, September 2007.
+\newblock 5th International Central and Eastern European Conference on
+  Multi-Agent Systems (CEEMAS'07), Leipzig, Germany, 25--27~September~2007,
+  Proceedings.
+
+\bibitem[HAES09]{cpe}
+M.~Shamim Hossain, Atif Alamri, and Abdulmotaleb El~Saddik.
+\newblock A biologically inspired framework for multimedia service management
+  in a ubiquitous environment.
+\newblock {\em Concurrency and Computation: Practice and Experience},
+  21(11):1450--1466, 2009.
+
+\bibitem[Har87]{Harel1987}
+David Harel.
+\newblock Statecharts: A visual formalism for complex systems.
+\newblock {\em Sci. Comput. Program.}, 8(3):231--274, June 1987.
+
+\bibitem[HBJW05]{Helbing2005}
+Dirk Helbing, Lubos Buzna, Anders Johansson, and Torsten Werner.
+\newblock Self-organized pedestrian crowd dynamics: Experiments, simulations,
+  and design solutions.
+\newblock {\em Transportation Science}, 39(1):1--24, 2005.
+
+\bibitem[HDBDM12]{Harnie12}
+Dries Harnie, Theo D'Hondt, Elisa~Gonzalez Boix, and Wolfgang De~Meuter.
+\newblock Programming urban-area applications.
+\newblock In {\em Proceedings of the 27th Annual ACM Symposium on Applied
+  Computing}, pages 1516--1521. ACM, 2012.
+
+\bibitem[HDF{\etalchar{+}}11]{arab-spring}
+Philip~N. Howard, Aiden Duffy, Deen Freelon, Muzammil Hussain, Will Mari, and
+  Marwa Mazaid.
+\newblock Opening closed regimes: What was the role of social media during the
+  arab spring?
+\newblock 2011.
+
+\bibitem[Hen96]{561342}
+T.A. Henzinger.
+\newblock The theory of hybrid automata.
+\newblock In {\em Logic in Computer Science, 1996. LICS '96. Proceedings.,
+  Eleventh Annual IEEE Symposium on}, pages 278--292, Jul 1996.
+
+\bibitem[HFH{\etalchar{+}}09]{hall2009}
+Mark Hall, Eibe Frank, Geoffrey Holmes, Bernhard Pfahringer, Peter Reutemann,
+  and Ian~H. Witten.
+\newblock The weka data mining software: an update.
+\newblock {\em SIGKDD Explor. Newsl.}, 11(1):10--18, November 2009.
+
+\bibitem[HJ09]{helbing2009}
+D.~Helbing and A.~Johansson.
+\newblock {\em Pedestrian, crowd, and evacuation dynamics.}, volume~16, pages
+  6476--6495.
+\newblock Springer, New York, 2009.
+
+\bibitem[HLT11]{hsu2011}
+Wei-Lieh Hsu, Kun-Fong Lin, and Chang-Lung Tsai.
+\newblock Crowd density estimation based on frequency analysis.
+\newblock In {\em Intelligent Information Hiding and Multimedia Signal
+  Processing (IIH-MSP), 2011 Seventh International Conference on}, pages
+  348--351, 2011.
+
+\bibitem[HM12]{helbing2012}
+Dirk Helbing and Pratik Mukerji.
+\newblock Crowd disasters as systemic failures: analysis of the love parade
+  disaster.
+\newblock {\em EPJ Data Science}, 1(1):7, 2012.
+
+\bibitem[HQL{\etalchar{+}}11]{hu2011cloudreview}
+Fei Hu, Meikang Qiu, Jiayin Li, Travis Grant, Drew Taylor, Seth McCaleb, Lee
+  Butler, and Richard Hamner.
+\newblock A review on cloud computing: Design challenges in architecture and
+  security.
+\newblock {\em CIT. Journal of Computing and Information Technology},
+  19(1):25--55, 2011.
+
+\bibitem[HSG{\etalchar{+}}06]{Hoops15122006}
+Stefan Hoops, Sven Sahle, Ralph Gauges, Christine Lee, J\"{o}rgen Pahle,
+  Natalia Simus, Mudita Singhal, Liang Xu, Pedro Mendes, and Ursula Kummer.
+\newblock Copasi -- a complex pathway simulator.
+\newblock {\em Bioinformatics}, 22(24):3067--3074, 2006.
+
+\bibitem[HVUM07]{HellebooghAAMAS2007}
+Alexander Helleboogh, Giuseppe Vizzari, Adelinde Uhrmacher, and Fabien Michel.
+\newblock Modeling dynamic environments in multi-agent simulation.
+\newblock {\em Autonomous Agents and Multi-Agent Systems}, 14(1):87--116,
+  February 2007.
+
+\bibitem[HW08]{osm}
+Mordechai~(Muki) Haklay and Patrick Weber.
+\newblock Openstreetmap: User-generated street maps.
+\newblock {\em IEEE Pervasive Computing}, 7(4):12--18, October 2008.
+
+\bibitem[IPW01]{FJ}
+Atsushi Igarashi, Benjamin~C. Pierce, and Philip Wadler.
+\newblock Featherweight java: A minimal core calculus for {Java} and {GJ}.
+\newblock {\em ACM Transactions on Programming Languages and Systems}, 23(3),
+  2001.
+
+\bibitem[Jaz05]{softwareevolution-iwpse2005}
+Mehdi Jazayeri.
+\newblock Species evolve, individuals age.
+\newblock In Motoshi Saeki, Gerardo Canfora, and Shuichiro Yamamoto, editors,
+  {\em 8th International Workshop on Principles of Software Evolution (IWPSE
+  2005)}, pages 3--9, Lisbon, Portugal, 5--6~September 2005.
+
+\bibitem[JBH{\etalchar{+}}12]{Johansson2012}
+Anders Johansson, Michael Batty, Konrad Hayashi, Osama~Al Bar, David Marcozzi,
+  and Ziad~A Memish.
+\newblock Crowd and environmental management during mass gatherings.
+\newblock {\em The Lancet Infectious Diseases}, 12(2):150 -- 156, 2012.
+
+\bibitem[JHP{\etalchar{+}}03]{jetcheva2003}
+J.G. Jetcheva, Y.-C. Hu, S.~PalChaudhuri, A.K. Saha, and D.B. Johnson.
+\newblock Design and evaluation of a metropolitan area multitier wireless ad
+  hoc network architecture.
+\newblock In {\em Proceedings of the 5th IEEE Workshop on Mobile Computing
+  Systems and Applications}, pages 32--43, Monterey, CA, USA, October 2003.
+
+\bibitem[KC09]{Kazman2009}
+Rick Kazman and Hong-Mei Chen.
+\newblock The metropolis model a new logic for development of crowdsourced
+  systems.
+\newblock {\em Commun. ACM}, 52:76--84, July 2009.
+
+\bibitem[Kes60]{LebesgueIntegral}
+H~Kestelman.
+\newblock {\em Modern Theories of Integration}, chapter "Lebesgue Integral of a
+  Non-Negative Function" and "Lebesgue Integrals of Functions Which Are
+  Sometimes Negative." (Chapter 5-6), pages 113--160.
+\newblock Dover, New York, 2nd. rev. ed. edition, 1960.
+
+\bibitem[Kie02]{Kierzek01032002}
+Andrzej~M. Kierzek.
+\newblock Stocks: Stochastic kinetic simulations of biochemical systems with
+  gillespie algorithm.
+\newblock {\em Bioinformatics}, 18(3):470--481, 2002.
+
+\bibitem[KR08]{facets}
+Lila Kari and Grzegorz Rozenberg.
+\newblock The many facets of natural computing.
+\newblock {\em Communications of the ACM}, 51:72--83, 2008.
+
+\bibitem[KRS10]{klingsch2010}
+W.W.F. Klingsch, C.~Rogsch, and A.~Schadschneider.
+\newblock {\em Pedestrian and Evacuation Dynamics 2008}.
+\newblock Springer Berlin Heidelberg, 2010.
+
+\bibitem[KSBM01]{keerthi2001}
+S.~S. Keerthi, S.~K. Shevade, C.~Bhattacharyya, and K.~R.~K. Murthy.
+\newblock Improvements to platt's smo algorithm for svm classifier design.
+\newblock {\em Neural Comput.}, 13(3):637--649, March 2001.
+
+\bibitem[LBF13]{LaneseBF13}
+Ivan Lanese, Luca Bedogni, and Marco~Di Felice.
+\newblock Internet of things: a process calculus approach.
+\newblock In {\em SAC}, pages 1339--1346. ACM, 2013.
+
+\bibitem[LCRP{\etalchar{+}}05]{luke2005simulation}
+Sean Luke, Claudio Cioffi-Revilla, Liviu Panait, Keith Sullivan, and
+  Gabriel~Catalin Balan.
+\newblock Mason: A multiagent simulation environment.
+\newblock {\em Simulation}, 81(7):517--527, 2005.
+
+\bibitem[LDB09]{biotapestry-2009}
+William~J.R. Longabaugh, Eric~H. Davidson, and Hamid Bolouri.
+\newblock Visualization, documentation, analysis, and communication of
+  large-scale gene regulatory networks.
+\newblock {\em Biochimica et Biophysica Acta (BBA) - Gene Regulatory
+  Mechanisms}, 1789(4):363--374, 2009.
+
+\bibitem[LH03]{li2003software}
+L.~Li and I.~Horrocks.
+\newblock A software framework for matchmaking based on {Semantic Web}
+  technology.
+\newblock In {\em Proceedings of the 12th international conference on World
+  Wide Web}, pages 331--339, New York, NY, USA, 2003.
+
+\bibitem[LHK{\etalchar{+}}09]{lee2009}
+Kyunghan Lee, Seongik Hong, Seong~Joon Kim, Injong Rhee, and Song Chong.
+\newblock Slaw: A mobility model for human walks.
+\newblock In {\em Proceedings of the 28th Annual Joint Conference of the IEEE
+  Computer and Communications Societies (INFOCOM)}, Rio de Janeiro, Brazil,
+  April 2009. IEEE.
+
+\bibitem[LIDP10]{LeccaJIB2010}
+Paola Lecca, Adaoha E.~C. Ihekwaba, Lorenzo Dematt{\'e}, and Corrado Priami.
+\newblock Stochastic simulation of the spatio-temporal dynamics of
+  reaction-diffusion systems: the case for the bicoid gradient.
+\newblock {\em J. Integrative Bioinformatics}, 7(1), 2010.
+
+\bibitem[LK87]{original-gradient}
+Frank C.~H. Lin and Robert~M. Keller.
+\newblock The gradient model load balancing method.
+\newblock {\em IEEE Trans. Softw. Eng.}, 13(1):32--38, 1987.
+
+\bibitem[LMG{\etalchar{+}}09]{lee}
+Uichin Lee, Eugenio Magistretti, Mario Gerla, Paolo Bellavista, Pietro Li\'{o},
+  and Kang-Won Lee.
+\newblock Bio-inspired multi-agent data harvesting in a proactive urban
+  monitoring environment.
+\newblock {\em Ad Hoc Networks}, 7:725--741, 2009.
+
+\bibitem[LMMD88]{starlisp}
+C.~Lasser, J.P. Massar, J.~Miney, and L.~Dayton.
+\newblock {\em Starlisp Reference Manual}.
+\newblock Thinking Machines Corporation, 1988.
+
+\bibitem[LPF12]{Social12}
+P.~Lukowicz, S.~Pentland, and A.~Ferscha.
+\newblock From context awareness to socially aware computing.
+\newblock {\em IEEE Pervasive Computing}, 11(1):32 --41, 2012.
+
+\bibitem[LT06]{nic-cacm49}
+Jiming Liu and Kwok~Ching Tsui.
+\newblock Toward nature-inspired computing.
+\newblock {\em Communications of the ACM}, 49(10):59--64, October 2006.
+
+\bibitem[Lyn96]{Lynch:1996:DA:525656}
+Nancy~A. Lynch.
+\newblock {\em Distributed Algorithms}.
+\newblock Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 1996.
+
+\bibitem[Mac90]{maclennanCSA}
+Bruce MacLennan.
+\newblock Continuous spatial automata.
+\newblock Technical Report Department of Computer Science Technical Report
+  CS-90-121, University of Tennessee, Knoxville, November 1990.
+
+\bibitem[Mac98]{mackay1998}
+David~J.C. Mackay.
+\newblock Introduction to gaussian processes, 1998.
+
+\bibitem[Mac08]{china-censorship}
+Rebecca MacKinnon.
+\newblock Flatter world and thicker walls? blogs, censorship and civic
+  discourse in china.
+\newblock {\em Public Choice}, 134(1-2):31--46, 2008.
+
+\bibitem[MBGH07]{Makela2007}
+Kaj M\"{a}kel\"{a}, Sara Belt, Dan Greenblatt, and Jonna H\"{a}kkil\"{a}.
+\newblock Mobile interaction with visual and rfid tags: a field study on user
+  perceptions.
+\newblock In {\em Proceedings of the SIGCHI Conference on Human Factors in
+  Computing Systems}, CHI '07, pages 991--994, New York, NY, USA, 2007. ACM.
+
+\bibitem[MCOV11]{MCOV-SCP2011}
+Ambra Molesini, Matteo Casadei, Andrea Omicini, and Mirko Viroli.
+\newblock Simulation in agent-oriented software engineering: The {{\sf SODA}}
+  case study.
+\newblock {\em Science of Computer Programming}, August 2011.
+\newblock Special Issue on Agent-oriented Design methods and Programming
+  Techniques for Distributed Computing in Dynamic and Complex Environments.
+
+\bibitem[MFHH05]{tinydb}
+S.~Madden, M.~Franklin, J.~Hellerstein, and W.~Hong.
+\newblock Tinydb: An acqusitional query processing system for sensor networks.
+\newblock In {\em ACM TODS}, 2005.
+
+\bibitem[Mil99]{PiCalculus}
+Robin Milner.
+\newblock {\em Communicating and Mobile Systems: The Pi-Calculus}.
+\newblock Cambridge University Press, 1999.
+
+\bibitem[ML12]{MassinkL12}
+Mieke Massink and Diego Latella.
+\newblock Fluid analysis of foraging ants.
+\newblock In {\em COORDINATION}, volume 7274 of {\em Lecture Notes in Computer
+  Science}, pages 152--165. Springer, 2012.
+
+\bibitem[MLHT04]{ma2004}
+R.~Ma, Liyuan Li, Weimin Huang, and Qi~Tian.
+\newblock On pixel count based crowd density estimation for visual
+  surveillance.
+\newblock In {\em Cybernetics and Intelligent Systems, 2004 IEEE Conference
+  on}, volume~1, pages 170--173 vol.1, 2004.
+
+\bibitem[MM04]{manola2004primer}
+Frank Manola and Eric Miller.
+\newblock {RDF} primer.
+\newblock {W3C} recommendation, World Wide Web Consortium, February 2004.
+
+\bibitem[MMTL13]{Monti13}
+Massimo Monti, Thomas Meyer, Christian~F. Tschudin, and Marco Luise.
+\newblock Stability and sensitivity analysis of traffic-shaping algorithms
+  inspired by chemical engineering.
+\newblock {\em IEEE Journal on Selected Areas in Communications},
+  31(6):1105--1114, 2013.
+
+\bibitem[MMTZ06]{Mam06}
+M.~Mamei, R.~Menezes, R.~Tolksdorf, and F.~Zambonelli.
+\newblock Case studies for self-organization in computer science.
+\newblock {\em Journal of Systems Architecture}, 52:443--460, 2006.
+
+\bibitem[MN98]{matsumoto1998}
+Makoto Matsumoto and Takuji Nishimura.
+\newblock Mersenne twister: A 623-dimensionally equidistributed uniform
+  pseudo-random number generator.
+\newblock {\em ACM Trans. Model. Comput. Simul.}, 8(1):3--30, 1998.
+
+\bibitem[MN10]{josMacalN10}
+Charles~M. Macal and Michael~J. North.
+\newblock Tutorial on agent-based modelling and simulation.
+\newblock {\em Journal of Simulation}, 4(3):151--162, 2010.
+
+\bibitem[MO13]{mariani2013molecules}
+Stefano Mariani and Andrea Omicini.
+\newblock Molecules of knowledge: Self-organisation in knowledge-intensive
+  environments.
+\newblock {\em Intelligent Distributed Computing VI}, pages 17--22, 2013.
+
+\bibitem[Mon81]{Monge1781}
+Gaspard Monge.
+\newblock Memoire sur la theorie des delais et des remblais.
+\newblock {\em Histoire de l’Academie Royale des Sciences de Paris, avec les
+  Memoires de Mathematique et de Physique pour la meme annee}, pages 666--704,
+  1781.
+
+\bibitem[MOV09]{aose-mags5}
+Ambra Molesini, Andrea Omicini, and Mirko Viroli.
+\newblock Environment in {A}gent-{O}riented {S}oftware {E}ngineering
+  methodologies.
+\newblock {\em Multiagent and Grid Systems}, 5(1):37--57, 2009.
+\newblock Special Issue ``Engineering Environments in Multi-Agent Systems''.
+
+\bibitem[MPR06]{murphy2006lime}
+Amy~L. Murphy, Gian~Pietro Picco, and Gruia-Catalin Roman.
+\newblock Lime: A model and middleware supporting mobility of hosts and agents.
+\newblock {\em ACM Trans. on Software Engineering and Methodology},
+  15(3):279--328, 2006.
+
+\bibitem[MPV12]{anticipativegradient-SASO12}
+Sara Montagna, Danilo Pianini, and Mirko Viroli.
+\newblock Gradient-based self-organisation patterns of anticipative adaptation.
+\newblock In {\em Proceedings of 6th IEEE International Conference on
+  Self-Adaptive and Self-Organizing Systems (SASO 2012)}, pages 169--174,
+  September 2012.
+
+\bibitem[MT03]{adaptivenesslinda-esoaI}
+Ronaldo Menezes and Robert Tolksdorf.
+\newblock Adaptiveness in {L}inda-based coordination models.
+\newblock In Giovanna Di~Marzo~Serugendo, Anthony Karageorgos, Omer~F. Rana,
+  and Franco Zambonelli, editors, {\em Engineering Self-Organising Systems.
+  Nature-Inspired Approaches to Software Engineering}, volume 2977, pages
+  212--232. Springer, 2003.
+
+\bibitem[MTUG09]{MallavarapuInterface2008}
+Aneil Mallavarapu, Matthew Thomson, Benjamin Ullian, and Jeremy Gunawardena.
+\newblock Programming with models: modularity and abstraction provide powerful
+  capabilities for systems biology.
+\newblock {\em Journal of the Royal Society, Interface / the Royal Society},
+  6(32):257--270, March 2009.
+
+\bibitem[Mur89]{murata1989}
+T.~Murata.
+\newblock Petri nets: Properties, analysis and applications.
+\newblock {\em Proceedings of the IEEE}, 77(4):541--580, April 1989.
+
+\bibitem[MV10]{montagna-cs2bio10}
+Sara Montagna and Mirko Viroli.
+\newblock A framework for modelling and simulating networks of cells.
+\newblock {\em Electronic Notes in Theoretical Computer Science}, 268:115--129,
+  December 2010.
+\newblock Proceedings of the 1st International Workshop on Interactions between
+  Computer Science and Biology (CS2Bio'10).
+
+\bibitem[MVFM{\etalchar{+}}13]{Montagna-MONET2012}
+Sara Montagna, Mirko Viroli, Jose~Luis Fernandez-Marquez, Giovanna
+  Di~Marzo~Serugendo, and Franco Zambonelli.
+\newblock Injecting self-organisation into pervasive service ecosystems.
+\newblock {\em Mobile Networks and Applications}, 18(3):398--412, 2013.
+
+\bibitem[MYT07]{Meyer07}
+Thomas Meyer, Lidia Yamamoto, and Christian~F. Tschudin.
+\newblock An artificial chemistry for networking.
+\newblock In {\em First Workshop on Bio-Inspired Design of Networks, BIOWIRE
+  2007, Cambridge, UK}, pages 45--57, 2007.
+
+\bibitem[MZ05]{tota-aamas2005}
+Marco Mamei and Franco Zambonelli.
+\newblock Programming stigmergic coordination with the {TOTA} middleware.
+\newblock In {\em 4th International Joint Conference on Autonomous Agents and
+  Multiagent Systems (AAMAS 2005)}, pages 415--422, New York, NY, USA, 2005.
+  ACM.
+
+\bibitem[MZ06a]{fieldbasedcoordination-mamei06}
+Marco Mamei and Franco Zambonelli.
+\newblock {\em Field-Based Coordination for Pervasive Multiagent Systems.
+  Models, Technologies, and Applications}.
+\newblock Springer Series in Agent Technology. Springer, March 2006.
+
+\bibitem[MZ06b]{tota2}
+Marco Mamei and Franco Zambonelli.
+\newblock Self-maintained distributed tuples for field-based coordination in
+  dynamic networks.
+\newblock {\em Concurrency and Computation: Practice and Experience},
+  18(4):427--443, 2006.
+
+\bibitem[MZ07]{MameiZ07}
+Marco Mamei and Franco Zambonelli.
+\newblock Pervasive pheromone-based interaction with {RFID} tags.
+\newblock {\em TAAS}, 2(2), 2007.
+
+\bibitem[MZ09]{mamei2009acm}
+Marco Mamei and Franco Zambonelli.
+\newblock Programming pervasive and mobile computing applications: The tota
+  approach.
+\newblock {\em ACM Trans. Softw. Eng. Methodol.}, 18(4):1--56, 2009.
+
+\bibitem[MZL03]{cofields--esawIII}
+Marco Mamei, Franco Zambonelli, and Letizia Leonardi.
+\newblock Co-fields: Towards a unifying approach to the engineering of swarm
+  intelligent systems.
+\newblock In Paolo Petta, Robert Tolksdorf, and Franco Zambonelli, editors,
+  {\em Engineering Societies in the Agents World III}, volume 2577 of {\em
+  LNCS}, pages 68--81. Springer, April 2003.
+\newblock 3rd International Workshop (ESAW 2002), Madrid, Spain,
+  16--17~September~2002. Revised Papers.
+
+\bibitem[Nag01]{nagpalphd}
+Radhika Nagpal.
+\newblock {\em Programmable Self-Assembly: Constructing Global Shape using
+  Biologically-inspired Local Interactions and Origami Mathematics}.
+\newblock PhD thesis, MIT, Cambridge, MA, USA, 2001.
+
+\bibitem[NFP98]{klaim}
+Rocco~De Nicola, Gian~Luigi Ferrari, and Rosario Pugliese.
+\newblock Klaim: A kernel language for agents interaction and mobility.
+\newblock {\em IEEE Trans. Software Eng.}, 24(5):315--330, 1998.
+
+\bibitem[NHCV07]{repast}
+Michael~J. North, Tom~R. Howe, Nicholson~T. Collier, and Jerry~R. Vos.
+\newblock A declarative model assembly infrastructure for verification and
+  validation.
+\newblock In Shingo Takahashi, David Sallach, and Juliette Rouchier, editors,
+  {\em Advancing Social Simulation: The First World Congress}, pages 129--140.
+  Springer Japan, 2007.
+
+\bibitem[NIK08]{Nakatsuka2008}
+M.~Nakatsuka, H.~Iwatani, and J.~Katto.
+\newblock A study on passive crowd density estimation using wireless sensors.
+\newblock In {\em 4th International Conference on Mobile Computing and
+  Ubiquitous Networking (ICMU), Tokyo, Japan}, 2008.
+
+\bibitem[NLPT14]{SCEL}
+Rocco~De Nicola, Michele Loreti, Rosario Pugliese, and Francesco Tiezzi.
+\newblock A formal approach to autonomic systems programming: The scel
+  language.
+\newblock {\em ACM Trans. Auton. Adapt. Syst.}, 9(2):7:1--7:29, July 2014.
+
+\bibitem[NMS07]{Natarajan2007}
+Anirudh Natarajan, Mehul Motani, and Vikram Srinivasan.
+\newblock Understanding urban interactions from bluetooth phone contact traces.
+\newblock In Steve Uhlig, Konstantina Papagiannaki, and Olivier Bonaventure,
+  editors, {\em Passive and Active Network Measurement}, volume 4427 of {\em
+  Lecture Notes in Computer Science}, pages 115--124. Springer Berlin
+  Heidelberg, 2007.
+
+\bibitem[NR95]{Nicholson1995}
+C.E. Nicholson and B.~Roebuck.
+\newblock The investigation of the hillsborough disaster by the health and
+  safety executive.
+\newblock {\em Safety Science}, 18(4):249 -- 259, 1995.
+
+\bibitem[NW04]{regiment}
+Ryan Newton and Matt Welsh.
+\newblock Region streams: Functional macroprogramming for sensor networks.
+\newblock In {\em First International Workshop on Data Management for Sensor
+  Networks (DMSN)}, pages 78--87, August 2004.
+
+\bibitem[NZ01]{javaspaces}
+Michael~S. Noble and Stoyanka Zlateva.
+\newblock Scientific computation with javaspaces.
+\newblock In {\em Proceedings of the 9th International Conference on
+  High-Performance Computing and Networking}, pages 657--666. Springer-Verlag,
+  2001.
+
+\bibitem[OC13]{interactioncomplexity-iccci2013}
+Andrea Omicini and Pierluigi Contucci.
+\newblock Complexity and interaction: Blurring borders between physical,
+  computational, and social systems. {P}reliminary notes.
+\newblock In Costin B{\u a}dic{\u a}, Ngoc~Thanh Nguyen, and Marius Brezovan,
+  editors, {\em Computational Collective Intelligence. Technologies and
+  Applications}, volume 8083 of {\em Lecture Notes in Computer Science}, pages
+  1--10. Springer Berlin Heidelberg, 2013.
+\newblock 5th International Conference (ICCCI 2013). Craiova, Romania,
+  11--13~September~2013, Proceedings. Invited Paper.
+
+\bibitem[OP07]{nfc2007}
+Jan Ondrus and Yves Pigneur.
+\newblock An assessment of nfc for future mobile payment systems.
+\newblock In {\em Proceedings of the International Conference on the Management
+  of Mobile Business}, ICMB '07, pages 43--, Washington, DC, USA, 2007. IEEE
+  Computer Society.
+
+\bibitem[ORAI11]{oancea2011}
+Bogdan Oancea, Ion~Gh. Rosca, Tudorel Andrei, and Andreea~Iluzia Iacob.
+\newblock Evaluating java performance for linear algebra numerical
+  computations.
+\newblock {\em Procedia CS}, 3:474--478, 2011.
+
+\bibitem[ORV05]{J-ORV-AAECC2005}
+Andrea Omicini, Alessandro Ricci, and Mirko Viroli.
+\newblock An algebraic approach for modelling organisation, roles and contexts
+  in {MAS}.
+\newblock {\em Applicable Algebra in Engineering, Communication and Computing},
+  16(2-3):151--178, August 2005.
+
+\bibitem[ORV06]{interaction-interbook}
+Andrea Omicini, Alessandro Ricci, and Mirko Viroli.
+\newblock The multidisciplinary patterns of interaction from sciences to
+  {C}omputer {S}cience.
+\newblock In {\em Interactive Computation: The New Paradigm}, pages 395--414.
+  Springer, September 2006.
+
+\bibitem[ORV08]{artifacts-jaamas17}
+Andrea Omicini, Alessandro Ricci, and Mirko Viroli.
+\newblock Artifacts in the {A\&A} meta-model for multi-agent systems.
+\newblock {\em Autonomous Agents and Multi-Agent Systems}, 17(3):432--456,
+  December 2008.
+\newblock Special Issue on Foundations, Advanced Topics and Industrial
+  Perspectives of Multi-Agent Systems.
+
+\bibitem[OZ99]{tucson-aamas99}
+Andrea Omicini and Franco Zambonelli.
+\newblock Coordination for {I}nternet application development.
+\newblock {\em Autonomous Agents and Multi-Agent Systems}, 2(3):251--269,
+  September 1999.
+
+\bibitem[Par06]{stigmergy-e4masII}
+H.~Van~Dyke Parunak.
+\newblock A survey of environments and mechanisms for human-human stigmergy.
+\newblock In Danny Weyns, H.~Van~Dyke Parunak, and Fabien Michel, editors, {\em
+  Environments for Multi-Agent Systems II}, volume 3830 of {\em LNCS}, pages
+  163--186. Springer, 2006.
+
+\bibitem[PBS02]{pheromoncoord-aamas2002}
+H.~Van~Dyke Parunak, Sven Brueckner, and John Sauter.
+\newblock Digital pheromone mechanisms for coordination of unmanned vehicles.
+\newblock In Cristiano Castelfranchi and W.~Lewis Johnson, editors, {\em 1st
+  International Joint Conference on Autonomous Agents and Multiagent systems},
+  volume~1, pages 449--450, New York, NY, USA, 15--19July 2002. ACM.
+
+\bibitem[PCBB07]{GeoLinda}
+Julien Pauty, Paul Couderc, Michel Banatre, and Yolande Berbers.
+\newblock Geo-linda: a geometry aware distributed tuple space.
+\newblock In {\em IEEE 21st International Conference on Advanced Networking and
+  Applications (AINA '07)}, pages 370--377, May 2007.
+
+\bibitem[PD12]{Pietilainen2012}
+Anna-Kaisa Pietil\"{a}inen and Christophe Diot.
+\newblock Dissemination in opportunistic social networks: the role of temporal
+  communities.
+\newblock In {\em Proceedings of the thirteenth ACM international symposium on
+  Mobile Ad Hoc Networking and Computing}, MobiHoc '12, pages 165--174, New
+  York, NY, USA, 2012. ACM.
+
+\bibitem[PH14]{nfc-diffusion-reasons}
+T.-T.T. Pham and J.C. Ho.
+\newblock What are the core drivers in consumer adoption of nfc-based mobile
+  payments?: A proposed research framework.
+\newblock In {\em Management of Engineering Technology (PICMET), 2014 Portland
+  International Conference on}, pages 3041--3049, July 2014.
+
+\bibitem[PJRG06]{perkins-compbio06}
+Theodore~J Perkins, Johannes Jaeger, John Reinitz, and Leon Glass.
+\newblock Reverse engineering the gap gene network of \emph{Drosophila
+  Melanogaster}.
+\newblock {\em PLoS Computational Biology}, 2(5):e51, 05 2006.
+
+\bibitem[PKPS02]{paolucci2002semantic}
+M.~Paolucci, T.~Kawamura, T.~R. Payne, and K.~P. Sycara.
+\newblock Semantic matching of web services capabilities.
+\newblock In {\em Proceedings of the First International Semantic Web
+  Conference on The Semantic Web}, ISWC '02, pages 333--347, London, UK, 2002.
+  Springer.
+
+\bibitem[PMV11]{mass2011}
+Danilo Pianini, Sara Montagna, and Mirko Viroli.
+\newblock A chemical inspired simulation framework for pervasive services
+  ecosystems.
+\newblock In {\em Proceedings of the Federated Conference on Computer Science
+  and Information Systems}, pages 667--674. IEEE Computer Society Press, 2011.
+
+\bibitem[PMV13]{alchemist-jos2013}
+Danilo Pianini, Sara Montagna, and Mirko Viroli.
+\newblock Chemical-oriented simulation of computational systems with
+  {A}lchemist.
+\newblock {\em Journal of Simulation}, 2013.
+
+\bibitem[Pol89]{Pollacia89}
+Lissa~F. Pollacia.
+\newblock A survey of discrete event simulation and state-of-the-art discrete
+  event languages.
+\newblock {\em SIGSIM Simul. Dig.}, 20(3):8--25, September 1989.
+
+\bibitem[PPSR09]{flyex2009}
+Andrei Pisarev, Ekaterina Poustelnikova, Maria Samsonova, and John Reinitz.
+\newblock Flyex, the quantitative atlas on segmentation gene expression at
+  cellular resolution.
+\newblock {\em Nucleic Acids Research}, 37(Database-Issue):560--566, 2009.
+
+\bibitem[Pri95]{Priami1995}
+Corrado Priami.
+\newblock Stochastic pi-calculus.
+\newblock {\em Comput. J.}, 38(7):578--589, 1995.
+
+\bibitem[PRSS01]{Priami:2001}
+Corrado Priami, Aviv Regev, Ehud Shapiro, and William Silverman.
+\newblock Application of a stochastic name-passing calculus to representation
+  and simulation of molecular processes.
+\newblock {\em Information Processing Letters}, 80:25--31, October 2001.
+
+\bibitem[PVM{\etalchar{+}}10]{wordNet}
+Danilo Pianini, Sascia Virruso, Ronaldo Menezes, Andrea Omicini, and Mirko
+  Viroli.
+\newblock Self organization in coordination systems using a wordnet-based
+  ontology.
+\newblock In {\em SASO}, pages 114--123, 2010.
+
+\bibitem[Ras04]{rasmussen2004}
+CarlEdward Rasmussen.
+\newblock Gaussian processes in machine learning.
+\newblock In Olivier Bousquet, Ulrike Luxburg, and Gunnar Rätsch, editors,
+  {\em Advanced Lectures on Machine Learning}, volume 3176 of {\em Lecture
+  Notes in Computer Science}, pages 63--71. Springer Berlin Heidelberg, 2004.
+
+\bibitem[RCD01]{coordbook2001--ch04}
+Davide Rossi, Giacomo Cabri, and Enrico Denti.
+\newblock Tuple-based technologies for coordination.
+\newblock In Andrea Omicini, Franco Zambonelli, Matthias Klusch, and Robert
+  Tolksdorf, editors, {\em Coordination of Internet Agents: Models,
+  Technologies, and Applications}, chapter~4, pages 83--109. Springer-Verlag,
+  March 2001.
+
+\bibitem[RCKZ13]{Ray13}
+Vaskar Raychoudhury, Jiannong Cao, Mohan Kumar, and Daqiang Zhang.
+\newblock Middleware for pervasive computing: A survey.
+\newblock {\em Pervasive and Mobile Computing}, 9(2):177 -- 200, 2013.
+
+\bibitem[RL93]{ReLaCS}
+F~Raimbault and D~Lavenier.
+\newblock Relacs for systolic programming.
+\newblock In {\em Int'l Conf. on Application-Specific Array Processors}, pages
+  132--135, October 1993.
+
+\bibitem[RMCM04]{ranganathan2004ontologies}
+Anand Ranganathan, Robert~E. McGrath, Roy~H. Campbell, and M.~Dennis Mickunas.
+\newblock Use of ontologies in a pervasive computing environment.
+\newblock {\em Knowledge Engineering Review}, 18(3):209--220, 2004.
+
+\bibitem[ROD02]{RicciOD02}
+Alessandro Ricci, Andrea Omicini, and Enrico Denti.
+\newblock Objective vs. subjective coordination in agent-based systems: A case
+  study.
+\newblock In Farhad Arbab and Carolyn~L. Talcott, editors, {\em COORDINATION},
+  volume 2315 of {\em Lecture Notes in Computer Science}, pages 291--299.
+  Springer, 2002.
+
+\bibitem[RPJ96]{RiveraPomar}
+Rolando Rivera-Pomar and Herbert Jackle.
+\newblock From gradients to stripes in drosophila embryogenesis: filling in the
+  gaps.
+\newblock {\em Trends in Genetics}, 12(11):478 -- 483, 1996.
+
+\bibitem[RPV11]{RPV-JAAMAS2011}
+Alessandro Ricci, Michele Piunti, and Mirko Viroli.
+\newblock Environment programming in multi-agent systems -- an artifact-based
+  perspective.
+\newblock {\em Autonomous Agents and Multi-Agent Systems}, 23(2):158--192,
+  September 2011.
+
+\bibitem[RS95]{reinitz95}
+John Reinitz and David~H. Sharp.
+\newblock {Mechanism of eve stripe formation}.
+\newblock {\em Mechanisms of Development}, 49(1-2):133--158, January 1995.
+
+\bibitem[RVO04]{RVO-ATAI2004}
+Alessandro Ricci, Mirko Viroli, and Andrea Omicini.
+\newblock Agent coordination context: From theory to practice.
+\newblock In Robert Trappl, editor, {\em Cybernetics and Systems 2004},
+  volume~2, pages 618--623, Vienna, Austria, 2004. Austrian Society for
+  Cybernetic Studies.
+\newblock 17th European Meeting on Cybernetics and Systems Research (EMCSR
+  2004), Vienna, Austria, 13--16 April 2004. Proceedings.
+
+\bibitem[SCM{\etalchar{+}}06]{Su2006}
+Jing Su, Kelvin K.~W. Chan, Andrew~G. Miklas, Kenneth Po, Ali Akhavan, Stefan
+  Saroiu, Eyal de~Lara, and Ashvin Goel.
+\newblock A preliminary investigation of worm infections in a bluetooth
+  environment.
+\newblock In {\em Proceedings of the 4th ACM workshop on Recurring malcode},
+  WORM '06, pages 9--16, New York, NY, USA, 2006. ACM.
+
+\bibitem[SGJ07]{SchumacherCEEMAS2007}
+Michael Schumacher, Laurent Grangier, and Radu Jurca.
+\newblock Governing environments for agent-based traffic simulations.
+\newblock In {\em Proceedings of the 5th international Central and Eastern
+  European conference on Multi-Agent Systems and Applications V}, CEEMAS '07,
+  pages 163--172, Berlin, Heidelberg, 2007. Springer-Verlag.
+
+\bibitem[Sha04]{nic-ieeeis19}
+Nigel Shadbolt.
+\newblock From the {E}ditor in {C}hief: {N}ature-{I}nspired {C}omputing.
+\newblock {\em IEEE Intelligent Systems}, 19(1):2--3, January--February 2004.
+
+\bibitem[SJ07]{evolvingtuples}
+Drew Stovall and Christine Julien.
+\newblock Resource discovery with evolving tuples.
+\newblock In {\em International Workshop on Engineering of Software Services
+  for Pervasive Environments: In Conjunction with the 6th ESEC/FSE Joint
+  Meeting}, ESSPE '07, pages 1--10, New York, NY, USA, 2007. ACM.
+
+\bibitem[SKK{\etalchar{+}}08]{database-2008}
+Svetlana Surkova, David Kosman, Konstantin Kozlov, Manu, Ekaterina Myasnikova,
+  Anastasia~A. Samsonova, Alexander Spirov, Carlos~E. Vanario-Alonso, Maria
+  Samsonova, and John Reinitz.
+\newblock Characterization of the {D}rosophila segment determination morphome.
+\newblock {\em Developmental Biology}, 313(2):844 -- 862, 2008.
+
+\bibitem[Skl07]{sklar2007al}
+Elizabeth Sklar.
+\newblock Netlogo, a multi-agent simulation environment.
+\newblock {\em Artificial Life}, 13(3):303--311, 2007.
+
+\bibitem[SMA05]{Sen:2005}
+Koushik Sen, Viswanathan M., and Gul Agha.
+\newblock Vesta: A statistical model-checker and analyzer for probabilistic
+  systems.
+\newblock In {\em Quantitative Evaluation of Systems, 2005.}, pages 251--252,
+  2005.
+
+\bibitem[SRAA10]{Norman2010}
+Norman Salazar, Juan~A. Rodriguez-Aguilar, and Josep~L. Arcos.
+\newblock Robust coordination in large convention spaces.
+\newblock {\em AI Communications}, 23(4):357--372, 2010.
+
+\bibitem[SRM{\etalchar{+}}13]{PSC13}
+Daniel Schuster, Alberto Rosi, Marco Mamei, Thomas Springer, Markus Endler, and
+  Franco Zambonelli.
+\newblock Pervasive social context: Taxonomy and survey.
+\newblock {\em ACM Transactions on Intelligent Systems and Technology}, 4(3),
+  2013.
+
+\bibitem[SRS10]{wsnpa}
+Anu Singh, C.~R. Ramakrishnan, and Scott~A. Smolka.
+\newblock A process calculus for mobile ad hoc networks.
+\newblock {\em Sci. Comput. Program.}, 75(6):440--469, 2010.
+
+\bibitem[SS04]{smola2004}
+Alex~J. Smola and Bernhard Sch\"{o}lkopf.
+\newblock A tutorial on support vector regression.
+\newblock {\em Statistics and Computing}, 14(3):199--222, August 2004.
+
+\bibitem[SSS07]{skoutas2007raking}
+D.~Skoutas, A.~Simitsis, and T.~K. Sellis.
+\newblock A ranking mechanism for {Semantic Web} service discovery.
+\newblock In {\em IEEE SCW}, pages 41--48, 2007.
+
+\bibitem[STP08]{slepoy2008}
+Alexander Slepoy, Aidan~P. Thompson, and Steven~J. Plimpton.
+\newblock A constant-time kinetic monte carlo algorithm for simulation of large
+  biochemical reaction networks.
+\newblock {\em The Journal of Chemical Physics}, 128(20):205101, 2008.
+
+\bibitem[SV13]{multivesta}
+Stefano Sebastio and Andrea Vandin.
+\newblock {MultiVeStA}: Statistical model checking for discrete event
+  simulators.
+\newblock In {\em {VALUETOOLS}}, 2013.
+
+\bibitem[SYD{\etalchar{+}}13]{SemMatchingSAC2013}
+Graeme Stevenson, Juan Ye, Simon Dobson, Danilo Pianini, Sara Montagna, and
+  Mirko Viroli.
+\newblock Combining self-organisation, context-awareness and semantic
+  reasoning: the case of resource discovery in opportunistic networks.
+\newblock In Sung~Y. Shin and José~Carlos Maldonado, editors, {\em SAC}, pages
+  1369--1376, Coimbra, Portugal, 18--22~March 2013. ACM.
+
+\bibitem[TB99]{stigmergyhistory-artificiallife5}
+Guy Theraulaz and Eric Bonabeau.
+\newblock A brief history of stigmergy.
+\newblock {\em Artificial Life}, 5(2):97--116, Spring 1999.
+
+\bibitem[TM03]{swarmlinda}
+Robert Tolksdorf and Ronaldo Menezes.
+\newblock Using swarm intelligence in linda systems.
+\newblock In Andrea Omicini, Paolo Petta, and Jeremy Pitt, editors, {\em ESAW},
+  volume 3071 of {\em Lecture Notes in Computer Science}, pages 49--65.
+  Springer, 2003.
+
+\bibitem[TNN12]{TerepetaNN12}
+Michal Terepeta, Hanne~Riis Nielson, and Flemming Nielson.
+\newblock Recursive advice for coordination.
+\newblock In {\em Coordination Models and Languages - 14th International
+  Conference, COORDINATION 2012, Stockholm, Sweden, June 14-15, 2012.
+  Proceedings}, volume 7274 of {\em Lecture Notes in Computer Science}, pages
+  137--151. Springer, 2012.
+
+\bibitem[TOCH14]{nfc-diffusion-asia}
+Garry Wei-Han Tan, Keng-Boon Ooi, Siong-Choy Chong, and Teck-Soon Hew.
+\newblock Nfc mobile credit card: The next frontier of mobile payment?
+\newblock {\em Telemat. Inf.}, 31(2):292--307, May 2014.
+
+\bibitem[TW92]{RelativityIntroduction}
+Edwin~F. Taylor and John~Archibald Wheeler.
+\newblock {\em Spacetime Physics: Introduction to Special Relativity}.
+\newblock W. H. Freeman \& Company, 2nd ed. edition, 1992.
+
+\bibitem[UP05]{UhrmacherWSC2005}
+Adelinde~M. Uhrmacher and Corrado Priami.
+\newblock Discrete event systems specification in systems biology - a
+  discussion of stochastic pi calculus and devs.
+\newblock In {\em Proceedings of the 37th conference on Winter simulation}, WSC
+  '05, pages 317--326. Winter Simulation Conference, 2005.
+
+\bibitem[VB08]{versari08}
+Cristian Versari and Nadia Busi.
+\newblock Efficient stochastic simulation of biological systems with multiple
+  variable volumes.
+\newblock {\em Electronic Notes in Theoretical Computer Science},
+  194(3):165--180, 2008.
+
+\bibitem[VBC11]{spatialcomputing-sac11}
+Mirko Viroli, Jake Beal, and Matteo Casadei.
+\newblock Core operational semantics of {P}roto.
+\newblock In {\em 26th Annual ACM Symposium on Applied Computing (SAC 2011)},
+  Tunghai University, TaiChung, Taiwan, 21--25~March 2011. ACM.
+
+\bibitem[VC09]{biochemicalTupleSpaces}
+Mirko Viroli and Matteo Casadei.
+\newblock Biochemical tuple spaces for self-organising coordination.
+\newblock In John Field and Vasco~Thudichum Vasconcelos, editors, {\em
+  COORDINATION}, volume 5521 of {\em Lecture Notes in Computer Science}, pages
+  143--162. Springer, 2009.
+
+\bibitem[VCMZ11]{VCMZ-TAAS2011}
+Mirko Viroli, Matteo Casadei, Sara Montagna, and Franco Zambonelli.
+\newblock Spatial coordination of pervasive services through chemical-inspired
+  tuple spaces.
+\newblock {\em ACM Transactions on Autonomous and Adaptive Systems}, 6(2):14:1
+  -- 14:24, June 2011.
+
+\bibitem[VCNO10]{chemcoord-soarbook}
+Mirko Viroli, Matteo Casadei, Elena Nardini, and Andrea Omicini.
+\newblock Towards a chemical-inspired infrastructure for self-* pervasive
+  applications.
+\newblock In Danny Weyns, Sam Malek, Rog{\'e}rio de~Lemos, and Jesper
+  Andersson, editors, {\em Self-Organizing Architectures}, volume 6090 of {\em
+  LNCS}, chapter~8, pages 152--176. Springer, July 2010.
+\newblock 1st International Workshop on Self-Organizing Architectures (SOAR
+  2009), Cambridge, UK, 14-17~September~2009, Revised Selected and Invited
+  Papers.
+
+\bibitem[VCO09]{frameworkSelfOrg}
+Mirko Viroli, Matteo Casadei, and Andrea Omicini.
+\newblock A framework for modelling and implementing self-organising
+  coordination.
+\newblock In Sung~Y. Shin and Sascha Ossowski, editors, {\em SAC}, pages
+  1353--1360. ACM, 2009.
+
+\bibitem[VD14]{VD-COORD2014-LNCS2014}
+Mirko Viroli and Ferruccio Damiani.
+\newblock A calculus of self-stabilising computational fields.
+\newblock In eva K{\"u}hn and Rosario Pugliese, editors, {\em 16th Conference
+  on Coordination Languages and Models (Coordination 2014)}, volume 8459 of
+  {\em LNCS}, pages 163--178. Springer-Verlag, June 2014.
+\newblock Proceedings of the 16th Conference on Coordination Models and
+  Languages (Coordination 2014), Berlin (Germany), 3-5 June.
+
+\bibitem[VDB13]{VDB-FOCLASA-CIC2013}
+Mirko Viroli, Ferruccio Damiani, and Jacob Beal.
+\newblock A calculus of computational fields.
+\newblock In Carlos Canal and Massimo Villari, editors, {\em Advances in
+  Service-Oriented and Cloud Computing}, volume 393 of {\em Communications in
+  Computer and Information Science}, pages 114--128. Springer Berlin
+  Heidelberg, 2013.
+
+\bibitem[VHR{\etalchar{+}}07]{VHRSZ-JAAMAS2007}
+Mirko Viroli, Tom Holvoet, Alessandro Ricci, Kurt Schelfthout, and Franco
+  Zambonelli.
+\newblock Infrastructures for the environment of multiagent systems.
+\newblock {\em Autonomous Agents and Multi-Agent Systems}, 14(1):49--60, July
+  2007.
+
+\bibitem[Vir11]{Viroli:11:SOACCPS}
+Mirko Viroli.
+\newblock A self-organising approach to competition and composition of
+  pervasive services.
+\newblock Technical Report SAPERE TR.WP2.2011.4, 2011.
+
+\bibitem[Vir13]{V-SCW2013}
+Mirko Viroli.
+\newblock Engineering confluent computational fields: from functions to rewrite
+  rules.
+\newblock In {\em Spatial Computing Workshop (SCW 2013)}, AAMAS 2013, Saint
+  Paul, Minnesota, USA, May 2013.
+
+\bibitem[VO06]{VO-FI2006}
+Mirko Viroli and Andrea Omicini.
+\newblock Coordination as a service.
+\newblock {\em Fundamenta Informaticae}, 73(4):507--534, 2006.
+
+\bibitem[VPB12]{VPB-COORD2012}
+Mirko Viroli, Danilo Pianini, and Jacob Beal.
+\newblock Linda in space-time: an adaptive coordination model for mobile ad-hoc
+  environments.
+\newblock In Marjan Sirjani, editor, {\em Coordination Languages and Models},
+  volume 7274 of {\em LNCS}, pages 212--229. Springer-Verlag, June 2012.
+\newblock Proceedings of the 14th Conference of Coordination Models and
+  Languages (Coordination 2012), Stockholm (Sweden), 14-15 June.
+
+\bibitem[VPMS12]{sapereecolaws-sac2012}
+Mirko Viroli, Danilo Pianini, Sara Montagna, and Graeme Stevenson.
+\newblock Pervasive ecosystems: a coordination model based on semantic
+  chemistry.
+\newblock In Sascha Ossowski, Paola Lecca, Chih-Cheng Hung, and Jiman Hong,
+  editors, {\em 27th Annual ACM Symposium on Applied Computing (SAC 2012)},
+  Riva del Garda, TN, Italy, 26--30~March 2012. ACM.
+
+\bibitem[VZ10]{VZ-INS2010}
+Mirko Viroli and Franco Zambonelli.
+\newblock A biochemical approach to adaptive service ecosystems.
+\newblock {\em Information Sciences}, 180(10):1876--1892, May 2010.
+
+\bibitem[VZSD12]{SemanticSapereIGI2012}
+Mirko Viroli, Franco Zambonelli, Graeme Stevenson, and Simon Dobson.
+\newblock From soa to pervasive service ecosystems: an approach based on
+  semantic web technologies.
+\newblock In Javier Cubo and Guadalupe Ortiz, editors, {\em Adaptive Web
+  Services for Modular and Reusable Software Development: Tactics and
+  Solution}, chapter~8, pages 207--237. IGI Global, 2012.
+
+\bibitem[Wal00]{waldo2000jini}
+J.~Waldo.
+\newblock {\em The Jini Specifications}.
+\newblock Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 2nd
+  edition, 2000.
+
+\bibitem[WBH06]{WeynsAAMAS2006}
+Danny Weyns, Nelis Bouck{\'e}, and Tom Holvoet.
+\newblock Gradient field-based task assignment in an agv transportation system.
+\newblock In {\em Proceedings of the fifth international joint conference on
+  Autonomous agents and multiagent systems}, AAMAS '06, pages 842--849, New
+  York, NY, USA, 2006. ACM.
+
+\bibitem[WBYI08]{werfel}
+Justin Werfel, Yaneer Bar-Yam, and Donald Ingber.
+\newblock Bioinspired environmental coordination in spatial computing systems.
+\newblock In {\em 1st International SASO Workshop on Spatial Computing}, pages
+  338--343, Washington, DC, USA, 2008. IEEE Computer Society.
+
+\bibitem[Weg97]{Wegner}
+Peter Wegner.
+\newblock Why interaction is more powerful than algorithms.
+\newblock {\em Commun. ACM}, 40(5):80--91, May 1997.
+
+\bibitem[WFR{\etalchar{+}}12]{wirz2012}
+Martin Wirz, Tobias Franke, Daniel Roggen, Eve Mitleton-Kelly, Paul Lukowicz,
+  and Gerhard Troster.
+\newblock Inferring crowd conditions from pedestrians' location traces for
+  real-time crowd monitoring during city-scale mass gatherings.
+\newblock {\em 2012 IEEE 21st International Workshop on Enabling Technologies:
+  Infrastructure for Collaborative Enterprises}, 0:367--372, 2012.
+
+\bibitem[WFR{\etalchar{+}}13]{wirz2013}
+Martin Wirz, Tobias Franke, Daniel Roggen, Eve Mitleton-Kelly, Paul Lukowicz,
+  and Gerhard Tröster.
+\newblock Probing crowd density through smartphones in city-scale mass
+  gatherings.
+\newblock {\em EPJ Data Science}, pages 1--24, 2013.
+
+\bibitem[WL13]{weppner2013}
+Jens Weppner and Paul Lukowicz.
+\newblock Bluetooth based collaborative crowd density estimation with mobile
+  phones.
+\newblock In {\em IEEE International Conference on Pervasive Computing and
+  Communications (PerCom)}, volume~18, page~22, 2013.
+
+\bibitem[WLS{\etalchar{+}}02]{EmuLab}
+Brian White, Jay Lepreau, Leigh Stoller, Robert Ricci, Shashi Guruprasad, Mac
+  Newbold, Mike Hibler, Chad Barb, and Abhijeet Joglekar.
+\newblock An integrated experimental environment for distributed systems and
+  networks.
+\newblock pages 255--270, Boston, MA, December 2002.
+
+\bibitem[WM04]{welsh2004regions}
+Matt Welsh and Geoff Mainland.
+\newblock Programming sensor networks using abstract regions.
+\newblock In {\em Proceedings of the First USENIX/ACM Symposium on Networked
+  Systems Design and Implementation (NSDI '04)}, March 2004.
+
+\bibitem[WMLF98]{tspaces-ibmsj37}
+Peter Wyckoff, Stephen~W. McLaughry, Tobin~J. Lehman, and Daniel~A. Ford.
+\newblock {T}~{S}paces.
+\newblock {\em IBM Systems Journal}, 37(3):454--474, 1998.
+
+\bibitem[WRG{\etalchar{+}}07]{wu2007automatic}
+Z.~Wu, A.~Ranabahu, K.~Gomadam, A.P. Sheth, and J.A. Miller.
+\newblock Automatic composition of semantic web services using process and data
+  mediation.
+\newblock In {\em Proc. of the 9th Intl. Conf. on Enterprise Information
+  Systems}, pages 453--461, 2007.
+
+\bibitem[WSBC04]{hood}
+Kamin Whitehouse, Cory Sharp, Eric Brewer, and David Culler.
+\newblock Hood: a neighborhood abstraction for sensor networks.
+\newblock In {\em Proceedings of the 2nd international conference on Mobile
+  systems, applications, and services}. ACM Press, 2004.
+
+\bibitem[Yam07]{yamins}
+Daniel Yamins.
+\newblock {\em A Theory of Local-to-Global Algorithms for One-Dimensional
+  Spatial Multi-Agent Systems}.
+\newblock PhD thesis, Harvard, Cambridge, MA, USA, December 2007.
+
+\bibitem[YDM12]{YeDM12}
+Juan Ye, Simon Dobson, and Susan McKeever.
+\newblock Situation identification techniques in pervasive computing: A review.
+\newblock {\em Pervasive and Mobile Computing}, 8(1):36--66, 2012.
+
+\bibitem[Zam12]{zam12}
+Franco Zambonelli.
+\newblock Toward sociotechnical urban superorganisms.
+\newblock {\em IEEE Computer}, 47(8), 2012.
+
+\bibitem[ZCF{\etalchar{+}}11]{sapere-procedia7}
+Franco Zambonelli, Gabriella Castelli, Laura Ferrari, Marco Mamei, Alberto
+  Rosi, Giovanna Di~Marzo, Matteo Risoldi, Akla-Esso Tchao, Simon Dobson,
+  Graeme Stevenson, Yuan Ye, Elena Nardini, Andrea Omicini, Sara Montagna,
+  Mirko Viroli, Alois Ferscha, Sascha Maschek, and Bernhard Wally.
+\newblock Self-aware pervasive service ecosystems.
+\newblock {\em Procedia Computer Science}, 7:197--199, December 2011.
+\newblock Proceedings of the 2nd European Future Technologies Conference and
+  Exhibition 2011 (FET 11).
+
+\bibitem[Zei76]{Zeigler2000}
+Bernard~P. Zeigler.
+\newblock {\em Theory of Modeling and Simulation}.
+\newblock John Wiley, 1976.
+
+\bibitem[Zei84]{zeigler1984}
+B.~Zeigler.
+\newblock {\em Multifaceted modelling and Discrete Event Simulation}.
+\newblock Academic Press, 1984.
+
+\bibitem[ZLC{\etalchar{+}}08]{zheng2008}
+Yu~Zheng, Quannan Li, Yukun Chen, Xing Xie, and Wei-Ying Ma.
+\newblock Understanding mobility based on gps data.
+\newblock In {\em In Proceedings of ACM conference on Ubiquitous Computing
+  (UbiComp 2008)}, pages 312--321, Seoul, Korea, 2008. ACM Press.
+
+\bibitem[ZO04]{ZamO04}
+Franco Zambonelli and Andrea Omicini.
+\newblock Challenges and research directions in agent-oriented software
+  engineering.
+\newblock {\em Autonomous Agents and Multi-Agent Systems}, 9(3):253--283, 2004.
+
+\bibitem[ZOA{\etalchar{+}}14]{ker2014}
+Franco Zambonelli, Andrea Omicini, Bernhard Anzengruber, Gabriella Castelli,
+  Francesco~L. DeAngelis, Giovanna Di~Marzo~Serugendo, Simon Dobson, Jose~Luis
+  Fernandez-Marquez, Alois Ferscha, Marco Mamei, Stefano Mariani, Ambra
+  Molesini, Sara Montagna, Jussi Nieminen, Danilo Pianini, Matteo Risoldi,
+  Alberto Rosi, Graeme Stevenson, Mirko Viroli, and Juan Ye.
+\newblock Developing pervasive multi-agent systems with nature-inspired
+  coordination.
+\newblock {\em Pervasive and Mobile Computing}, 2014.
+\newblock Special Issue on ``10 years of Pervasive Computing'' in honor of
+  Chatschik Bisdikian.
+
+\bibitem[ZRFS11]{zia2011}
+Kashif Zia, Andreas Riener, Alois Ferscha, and Alexei Sharpanskykh.
+\newblock Evacuation simulation based on cognitive decision making model in a
+  socio-technical system.
+\newblock {\em Distributed Simulation and Real Time Applications, IEEE/ACM
+  International Symposium on}, 0:98--107, 2011.
+
+\bibitem[ZV11]{ecosystems-jpcc7}
+Franco Zambonelli and Mirko Viroli.
+\newblock A survey on nature-inspired metaphors for pervasive service
+  ecosystems.
+\newblock {\em International Journal of Pervasive Computing and
+  Communications}, 7(3):186--204, 2011.
+
+\end{thebibliography}

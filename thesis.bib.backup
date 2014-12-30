@@ -1,0 +1,3123 @@
+ 
+@techreport{spectrum-crunch,
+     title = {{Spectrum Crunch}},
+     author = {Abdollahi, Seyedreza and Al-Raweshidy, Hamed  and Calvo, Luis Manuel Dahlman, Erik  and David, Klaus and Codreanu, Marian and Demestichas, Panagiotis and Dillinger, Markus and Egido, Miguel and Gruber, Markus and Kaiser, Stefan and Latva-aho, Matti and Merz, Peter and Mestre, Xavier and Panaousis, Emmanouil and Pfletschinger, Stephan and Pirmoradian, Mahdi and Politis, Christos and Raaf, Bernhard and Schaich, Frank and Schmelz, Christoph and Tafazolli, Rahim and T\"{o}lli, Antti and Vucic, Nikola and Winkelmann, Rudolf},
+     group = {Net!Works European Technology Platform },
+     year = {2012},
+     institution = {Net!Works European Technology Platform},
+     month = {06},
+     Date-Added = {2012-06-07},
+}
+
+@techreport{5g,
+     title = {{Future Networks and Management }},
+     author = {
+Abramowicz, Henrik and Schmidt, Ernst-Dieter and Schmelz, Lars Christoph and Pampu, Cornel and Kappler, Cornelia and Schramm, Mirko and Pentikousis, Konstantinous and Zhou, Dongming and Glisic, Savo and Palacios, Juan and Mangues, Josep and Demestichas, Panagiotis and Toenjes, Ralf and Ramrekha, Tipu Arvind and Millar, Grant and Politis, Christos and Figuerola, Sergi and Simeonidou, Dimitra and Galis, Alex and Tafazolli,Rahim },
+     group = {Net!Works European Technology Platform },
+     year = {2011},
+     institution = {Net!Works European Technology Platform},
+     month = {06},
+     Date-Added = {2011-06-09},
+}
+
+@inproceedings{serval-mesh,
+ author = {Gardner-Stephen, Paul and Palaniswamy, Swapna},
+ title = {Serval Mesh software-WiFi Multi Model Management},
+ booktitle = {Proceedings of the 1st International Conference on Wireless Technologies for Humanitarian Relief},
+ series = {ACWR '11},
+ year = {2011},
+ isbn = {978-1-4503-1011-6},
+ location = {Amritapuri, Kollam, Kerala, India},
+ pages = {71--77},
+ numpages = {7},
+ url = {http://doi.acm.org/10.1145/2185216.2185245},
+ doi = {10.1145/2185216.2185245},
+ acmid = {2185245},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {802.11, MANET, SSID, WiFi, access point, ad-hoc, client mode, implementation, mesh potato, monitor mode, serval mesh},
+}
+
+@article{mesh-network-telephony,
+  added-at = {2013-04-29T00:00:00.000+0200},
+  author = {Adeyeye, Michael and Gardner-Stephen, Paul},
+  biburl = {http://www.bibsonomy.org/bibtex/24b63c75f56156768929db9cfffffea7e/dblp},
+  ee = {http://dx.doi.org/10.1186/1687-1499-2011-78},
+  interhash = {4b4ded3d840446ff55726f22f729a204},
+  intrahash = {4b63c75f56156768929db9cfffffea7e},
+  journal = {EURASIP J. Wireless Comm. and Networking},
+  keywords = {dblp},
+  pages = 78,
+  timestamp = {2013-04-29T00:00:00.000+0200},
+  title = {The Village Telco project: a reliable and practical wireless mesh telephony infrastructure.},
+  url = {http://dblp.uni-trier.de/db/journals/ejwcn/ejwcn2011.html#AdeyeyeG11},
+  volume = 2011,
+  year = 2011
+}
+
+@inproceedings{nfc2007,
+ author = {Ondrus, Jan and Pigneur, Yves},
+ title = {An Assessment of NFC for Future Mobile Payment Systems},
+ booktitle = {Proceedings of the International Conference on the Management of Mobile Business},
+ series = {ICMB '07},
+ year = {2007},
+ isbn = {0-7695-2803-1},
+ pages = {43--},
+ url = {http://dx.doi.org/10.1109/ICMB.2007.9},
+ doi = {10.1109/ICMB.2007.9},
+ acmid = {1271212},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+}
+
+@article{nfc-diffusion-asia,
+ author = {Tan, Garry Wei-Han and Ooi, Keng-Boon and Chong, Siong-Choy and Hew, Teck-Soon},
+ title = {NFC Mobile Credit Card: The Next Frontier of Mobile Payment?},
+ journal = {Telemat. Inf.},
+ issue_date = {May, 2014},
+ volume = {31},
+ number = {2},
+ month = may,
+ year = {2014},
+ issn = {0736-5853},
+ pages = {292--307},
+ numpages = {16},
+ url = {http://dx.doi.org/10.1016/j.tele.2013.06.002},
+ doi = {10.1016/j.tele.2013.06.002},
+ acmid = {2563911},
+ publisher = {Pergamon Press, Inc.},
+ address = {Tarrytown, NY, USA},
+ keywords = {Malaysia, Mobile credit card, Near Field Communication, Technology Acceptance Model},
+}
+
+@inproceedings{nfc-diffusion-europe,
+  author    = {Tatjana Apanasevic},
+  title     = {Factors Influencing the Slow Rate of Penetration of {NFC} Mobile Payment
+               in Western Europe},
+  booktitle = {12th International Conference on Mobile Business, {ICMB} 2013, Berlin,
+               Germany, 10-13 June 2013},
+  pages     = {8},
+  year      = {2013},
+  url       = {http://aisel.aisnet.org/icmb2013/8},
+  timestamp = {Tue, 08 Apr 2014 17:32:09 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/icmb/Apanasevic13},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@INPROCEEDINGS{nfc-diffusion-reasons, 
+author={Pham, T.-T.T. and Ho, J.C.}, 
+booktitle={Management of Engineering Technology (PICMET), 2014 Portland International Conference on}, 
+title={What are the core drivers in consumer adoption of NFC-based mobile payments?: A proposed research framework}, 
+year={2014}, 
+month={July}, 
+pages={3041-3049}, 
+keywords={financial data processing;mobile computing;near-field communication;smart phones;NFC based mobile payments;Taiwanese consumers;bank decision makers;business strategies;card issuers;consumer acceptance;consumer adoption;core drivers;digital wallets;innovative companies;marketing campaigns;mobile network operators;mobile payments;mobile payments ecosystem;mobile technologies;near field communication;offer value added services;payment processing institutions;payment solutions;personal innovativeness;personal related factors;product related factors;smartphones;trust based factors;Business;Credit cards;Mobile communication;Mobile computing;Smart phones;Technological innovation}
+}
+
+@article{china-censorship,
+year={2008},
+issn={0048-5829},
+journal={Public Choice},
+volume={134},
+number={1-2},
+doi={10.1007/s11127-007-9199-0},
+title={Flatter world and thicker walls? Blogs, censorship and civic discourse in China},
+url={http://dx.doi.org/10.1007/s11127-007-9199-0},
+publisher={Springer US},
+keywords={China; Internet; Democracy; Blogs},
+author={MacKinnon, Rebecca},
+pages={31-46},
+language={English}
+}
+
+@article{arab-spring,
+author = {Philip N. Howard and Aiden Duffy and Deen Freelon and Muzammil Hussain and Will Mari and Marwa Mazaid},
+title = {Opening Closed Regimes: What Was the Role of Social Media During the Arab Spring?},
+journal = {},
+year = {2011},
+volume = {},
+number = {},
+pages = {},
+note = {},
+keywords = {arab spring},
+isbn = {},
+url = {http://pitpi.org/index.php/2011/09/11/opening-closed-regimes-what-was-the-role-of-social-media-during-the-arab-spring/},
+annote = {Imported from http://ictlogy.net/bibliography/reports/projects.php?idp=2170}
+}
+
+@ARTICLE{BandiniJASSS2009,
+title = {Agent Based Modeling and Simulation: An Informatics Perspective},
+author = {Bandini, Stefania and Manzoni, Sara and Vizzari, Giuseppe},
+year = {2009},
+journal = {Journal of Artificial Societies and Social Simulation},
+volume = {12},
+pages = {4},
+abstract = {The term computer simulation is related to the usage of a computational model in order to improve the understanding of a system's behavior and/or to evaluate strategies for its operation, in explanatory or predictive schemes. There are cases in which practical or ethical reasons make it impossible to realize direct observations: in these cases, the possibility of realizing 'in-machina' experiments may represent the only way to study, analyze and evaluate models of those realities. Different situations and systems are characterized by the presence of autonomous entities whose local behaviors (actions and interactions) determine the evolution of the overall system; agent-based models are particularly suited to support the definition of models of such systems, but also to support the design and implementation of simulators. Agent-Based models and Multi-Agent Systems (MAS) have been adopted to simulate very different kinds of complex systems, from the simulation of socio-economic systems to the elaboration of scenarios for logistics optimization, from biological systems to urban planning. This paper discusses the specific aspects of this approach to modeling and simulation from the perspective of Informatics, describing the typical elements of an agent-based simulation model and the relevant research.},
+keywords = {Multi-Agent Systems; Agent-Based Modeling and Simulation},
+url = {http://EconPapers.repec.org/RePEc:jas:jasssj:2009-69-1}
+}
+
+@article{MCOV-SCP2011,
+	Author = {Molesini, Ambra and Casadei, Matteo and Omicini, Andrea and Viroli, Mirko},
+	Doi = {10.1016/j.scico.2011.09.007},
+	Editor = {Cabri, Giacomo and Ganzha, Maria},
+	Issn = {0167-6423},
+	Journal = {Science of Computer Programming},
+	Keywords = {Agent-Oriented Software Engineering, Methodologies, Simulation, MAS Environment, SODA},
+	Month = aug,
+	Note = {Special Issue on Agent-oriented Design methods and Programming Techniques for Distributed Computing in Dynamic and Complex Environments},
+	Publisher = {Elsevier Science B.V.},
+	Title = {Simulation in Agent-Oriented Software Engineering: The {{\sf SODA}} Case Study},
+	Url = {http://www.sciencedirect.com/science/article/pii/S0167642311001778},
+	Year = 2011}
+
+@article{BabulakIJOE2008,
+  author    = {Eduard Babulak and
+               Ming Wang},
+  title     = {Discrete Event Simulation: State of the Art},
+  journal   = {iJOE},
+  volume    = {4},
+  number    = {2},
+  year      = {2008},
+  pages     = {60-63},
+  ee        = {http://online-journals.org/index.php/i-joe/article/view/451},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+	
+@article{josMacalN10,
+  author    = {Charles M. Macal and
+               Michael J. North},
+  title     = {Tutorial on agent-based modelling and simulation},
+  journal   = {Journal of Simulation},
+  volume    = {4},
+  number    = {3},
+  year      = {2010},
+  pages     = {151-162},
+  ee        = {http://dx.doi.org/10.1057/jos.2010.3},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{SchumacherCEEMAS2007,
+ author = {Schumacher, Michael and Grangier, Laurent and Jurca, Radu},
+ title = {Governing Environments for Agent-Based Traffic Simulations},
+ booktitle = {Proceedings of the 5th international Central and Eastern European conference on Multi-Agent Systems and Applications V},
+ series = {CEEMAS '07},
+ year = {2007},
+ isbn = {978-3-540-75253-0},
+ location = {Leipzig, Germany},
+ pages = {163--172},
+ numpages = {10},
+ url = {http://dx.doi.org/10.1007/978-3-540-75254-7_17},
+ doi = {10.1007/978-3-540-75254-7_17},
+ acmid = {1421627},
+ publisher = {Springer-Verlag},
+ address = {Berlin, Heidelberg},
+} 
+
+@incollection{vizzari-massimulationbook09,
+	Author = {Bandini, Stefania and Manzoni, Sara and Vizzari, Giuseppe},
+	Booktitle = {Multi-Agent Systems: Simulation and Applications},
+	Chapter = 13,
+	Editor = {Uhrmacher, Adelinde M. and Weyns, Danny},
+	Isbn = {978-1-4200-7023-1},
+	Isbn-10 = {1-4200-7023-1},
+	Month = jun,
+	Pages = {389--418},
+	Publisher = {CRC Press},
+	Series = {Computational Analysis, Synthesis, and Design of Dynamic Systems},
+	Title = {{Crowd Behavior Modeling: From Cellular Automata to Multi-Agent Systems}},
+	Url = {http://crcpress.com/product/isbn/9781420070231},
+	Year = 2009}
+
+@incollection {repast,
+   author = {North, Michael J. and Howe, Tom R. and Collier, Nicholson T. and Vos, Jerry R.},
+   affiliation = {Argonne National Laboratory Argonne IL USA},
+   title = {A Declarative Model Assembly Infrastructure for Verification and Validation},
+   booktitle = {Advancing Social Simulation: The First World Congress},
+   editor = {Takahashi, Shingo and Sallach, David and Rouchier, Juliette},
+   publisher = {Springer Japan},
+   keyword = {Computer Science},
+   pages = {129-140},
+   year = {2007}
+}
+
+@article{sklar2007al,
+  author    = {Elizabeth Sklar},
+  title     = {NetLogo, a Multi-agent Simulation Environment},
+  journal   = {Artificial Life},
+  volume    = {13},
+  number    = {3},
+  year      = {2007},
+  pages     = {303-311},
+  ee        = {http://dx.doi.org/10.1162/artl.2007.13.3.303},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{Priami1995,
+  author    = {Corrado Priami},
+  title     = {Stochastic pi-Calculus},
+  journal   = {Comput. J.},
+  volume    = {38},
+  number    = {7},
+  year      = {1995},
+  pages     = {578-589},
+  ee        = {http://dx.doi.org/10.1093/comjnl/38.7.578},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{murata1989,
+    abstract = {Starts with a brief review of the history and the application
+areas considered in the literature. The author then proceeds with
+introductory modeling examples, behavioral and structural properties,
+three methods of analysis, subclasses of Petri nets and their analysis.
+In particular, one section is devoted to marked graphs, the concurrent
+system model most amenable to analysis. Introductory discussions on
+stochastic nets with their application to performance modeling, and on
+high-level nets with their application to logic programming, are
+provided. Also included are recent results on reachability criteria.
+Suggestions are provided for further reading on many subject areas of
+Petri nets},
+    author = {Murata, T.},
+    booktitle = {Proceedings of the IEEE},
+    citeulike-article-id = {784724},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1109/5.24143},
+    citeulike-linkout-1 = {http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=24143},
+    day = {06},
+    doi = {10.1109/5.24143},
+    issn = {00189219},
+    journal = {Proceedings of the IEEE},
+    keywords = {concurrency, petri-nets},
+    month = apr,
+    number = {4},
+    pages = {541--580},
+    posted-at = {2007-05-03 17:28:29},
+    priority = {2},
+    title = {Petri nets: Properties, analysis and applications},
+    url = {http://dx.doi.org/10.1109/5.24143},
+    volume = {77},
+    year = {1989}
+}
+
+@inproceedings{UhrmacherWSC2005,
+ author = {Uhrmacher, Adelinde M. and Priami, Corrado},
+ title = {Discrete event systems specification in systems biology - a discussion of stochastic pi calculus and DEVS},
+ booktitle = {Proceedings of the 37th conference on Winter simulation},
+ series = {WSC '05},
+ year = {2005},
+ isbn = {0-7803-9519-0},
+ location = {Orlando, Florida},
+ pages = {317--326},
+ numpages = {10},
+ url = {http://dl.acm.org/citation.cfm?id=1162708.1162767},
+ acmid = {1162767},
+ publisher = {Winter Simulation Conference},
+} 
+
+@article{EwaldJOS2007,
+    abstract = {With Systems Biology, a promising new application area for modeling and simulation emerges. Today's biologists are facing huge amounts of data delivered at different levels of detail by a multitude of advanced experimentation techniques. The Systems Biology approach copes with this information by cycling through phases of forming hypothesis, constructing models, experimenting with or analyzing these models, and validating the findings by wet-lab experiments. A crucial point is therefore the way in which the knowledge about a system is formalized, i.e., how a biological system is described as this constrains the perception of the system as well as scope of possible answers the model might provide. In this article, we compare different discrete-event modeling formalisms (Petri Nets, Stochastic Pi-Calculus , StateCharts, and Devs) regarding their applicability to a cell biological system of current research interest, the Wnt signaling pathway. We then introduce the popular Gillespie algorithm, which is the foundation of many discrete-event simulators for molecular-biological systems, and elaborate on some interesting extensions.},
+    author = {Ewald, Roland and Maus, Carsten and Rolfs, Arndt and Uhrmacher, Adelinde M.},
+    citeulike-article-id = {1453524},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1057/palgrave.jos.4250018},
+    journal = {Journal of Simulation},
+    keywords = {devs, modeling, petri-nets, process-algebra, simulation, systems-biology, wnt},
+    number = {2},
+    pages = {81--96},
+    posted-at = {2007-07-13 09:31:54},
+    priority = {0},
+    title = {Discrete Event Modeling and Simulation in Systems Biology},
+    url = {http://dx.doi.org/10.1057/palgrave.jos.4250018},
+    volume = {1},
+    year = {2007}
+}
+
+@article{gillespie1977,
+    abstract = {{doi: 10.1021/j100540a008}},
+    author = {Gillespie, Daniel T.},
+    citeulike-article-id = {3878676},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1021/j100540a008},
+    citeulike-linkout-1 = {http://pubs.acs.org/doi/abs/10.1021/j100540a008},
+    day = {1},
+    doi = {10.1021/j100540a008},
+    journal = {The Journal of Physical Chemistry},
+    keywords = {chemical\_kinetics, numerical\_simulation, stochastic\_process},
+    month = {December},
+    number = {25},
+    pages = {2340--2361},
+    posted-at = {2009-05-15 07:00:28},
+    priority = {2},
+    title = {{Exact stochastic simulation of coupled crfreactions}},
+    url = {http://dx.doi.org/10.1021/j100540a008},
+    volume = {81},
+    year = {1977}
+}
+
+@article{slepoy2008,
+  author = {Alexander Slepoy and Aidan P. Thompson and Steven J. Plimpton},
+  interhash = {3b642d3e7e17ca5f2a331b837de75cc2},
+  intrahash = {6fce07dad4602005b241343a11117327},
+  journal = {The Journal of Chemical Physics},
+  number = 20,
+  pages = 205101,
+  publisher = {AIP},
+  title = {A constant-time kinetic Monte Carlo algorithm for simulation of large biochemical reaction networks},
+  url = {http://link.aip.org/link/?JCP/128/205101/1},
+  volume = 128,
+  year = 2008,
+  keywords = {Monte_Carlo_methods biochemistry reaction_kinetics_theory},
+  collaboration = {},
+  added-at = {2009-02-11T21:59:08.000+0100},
+  description = {A constant-time kinetic Monte Carlo algorithm for simulation of large biochemical reaction networks},
+  numpages = {8},
+  biburl = {http://www.bibsonomy.org/bibtex/26fce07dad4602005b241343a11117327/sidney},
+  eid = {205101},
+  doi = {10.1063/1.2919546},
+  abstract = {The time evolution of species concentrations in biochemical reaction networks is often modeled using the stochastic simulation algorithm (SSA) [Gillespie, J. Phys. Chem. 81, 2340 (1977)]. The computational cost of the original SSA scaled linearly with the number of reactions in the network. Gibson and Bruck developed a logarithmic scaling version of the SSA which uses a priority queue or binary tree for more efficient reaction selection [Gibson and Bruck, J. Phys. Chem. A 104, 1876 (2000)]. More generally, this problem is one of dynamic discrete random variate generation which finds many uses in kinetic Monte Carlo and discrete event simulation. We present here a constant-time algorithm, whose cost is independent of the number of reactions, enabled by a slightly more complex underlying data structure. While applicable to kinetic Monte Carlo simulations in general, we describe the algorithm in the context of biochemical simulations and demonstrate its competitive performance on small- and medium-size networks, as well as its superior constant-time performance on very large networks, which are becoming necessary to represent the increasing complexity of biochemical data for pathways that mediate cell function.}
+}
+
+@ARTICLE{gibson2000,
+    author = {Michael A. Gibson and Jehoshua Bruck},
+    title = {Efficient exact stochastic simulation of chemical systems with many species and many channels},
+    journal = {J. Phys. Chem. A},
+    year = {2000},
+    volume = {104},
+    pages = {1876--1889}
+}
+
+@article{ecosystems-jpcc7,
+	Author = {Zambonelli, Franco and Viroli, Mirko},
+	Doi = {10.1108/17427371111172997},
+	Issn = {1742-7371},
+	Journal = {International Journal of Pervasive Computing and Communications},
+	Keywords = {Context-aware computing, Ecosystems, Metaphors, Middleware, Nature-inspired approaches, Pervasive computing, Self-organization},
+	Number = 3,
+	Pages = {186--204},
+	Publisher = {Emerald},
+	Title = {A Survey on Nature-inspired Metaphors for Pervasive Service Ecosystems},
+	Url = {http://www.emeraldinsight.com/journals.htm?issn=1742-7371&volume=7&issue=3},
+	Url-Pdf = {http://www.emeraldinsight.com/journals.htm?issn=1742-7371&volume=7&issue=3&articleid=1949170&show=pdf},
+	Volume = 7,
+	Year = 2011}
+
+@article{VCMZ-TAAS2011,
+	url-pdf = {http://portal.acm.org/ft_gateway.cfm?id=1968517&ftid=991523&dwn=1&CFID=31487229&CFTOKEN=42827646},
+	doi-acm = {http://doi.acm.org/10.1145/1968513.1968517},
+	issn = {1556-4665},
+	doi-url = {http://doi.acm.org/10.1145/1968513.1968517},
+	publisher = {ACM},
+	journal = {ACM Transactions on Autonomous and Adaptive Systems},
+	author = {Viroli, Mirko and Casadei, Matteo and Montagna, Sara and Zambonelli, Franco},
+	title = {Spatial Coordination of Pervasive Services through Chemical-inspired Tuple Spaces},
+	year = 2011,
+	abstract = {To support and engineer the spatial coordination of distributed pervasive services, we propose a chemical-inspired model, which extends tuple spaces with the ability of evolving tuples mimicking chemical systems, that is, in terms of reaction and diffusion rules that apply to tuples modulo semantic match. The suitability of this model is studied by considering a self-adaptive display infrastructure providing people nearby with several visualization services (advertisements, news, personal and social content). The key result of this article is that general-purpose chemical reactions inspired by population dynamics can be used in pervasive applications to enact spatial computing patterns of competition and gradient-based interaction.},
+	keywords = {Chemical-inspired computation, tuple spaces},
+	status = {Published},
+	pages = {14:1 -- 14:24},
+	number = 2,
+	venue = {TAAS},
+	url = {http://doi.acm.org/10.1145/1968513.1968517},
+	address = {New York, NY, USA},
+	volume = 6,
+	month = {June},
+	doi = {10.1145/1968513.1968517}}
+	
+@article{VZ-INS2010,
+
+        issn = {0020-0255},
+        year = 2010,
+        doi-url = {http://dx.doi.org/10.1016/j.ins.2009.11.021},
+        publisher = {Elsevier},
+        journal = {Information Sciences},
+        author = {Viroli, Mirko AND Zambonelli,  Franco},
+        title = {A biochemical approach to adaptive service ecosystems },
+        abstract = {Emerging network scenarios call for innovative open service frameworks to ensure capability of self-adaptability and long-lasting evolvability. In this paper, we assess the need for such innovative service frameworks, and discuss how their engineering should get inspiration from natural ecosystems, i.e., by modelling services as autonomous individuals in an ecosystem of other services and data sources. We introduce a reference conceptual architecture with the goal of clarifying the concepts expressed and framing the several possible nature-inspired metaphors that could be adopted to realise the idea. On this basis, we go into details about one of such possible approaches, in which the rules governing the ecosystem are inspired by biochemical mechanisms. A case study is also introduced to exemplify the potentials of the presented biochemical approach and to experiment with some representative biochemistry-inspired patterns of adaptive service organisation and evolution.
+},
+        keywords = {Pervasive Computing, Self-organisation, Biochemical computing},
+        status = {Available online since Novermber 26th, 2009},
+        pages = {1876--1892},
+        volume = {180},
+        number = {10},
+	month = {May},
+        venue = {---},
+        doi = {10.1016/j.ins.2009.11.021    }}
+
+@article{sapere-procedia7,
+	Author = {Zambonelli, Franco and Castelli, Gabriella and Ferrari, Laura and Mamei, Marco and Rosi, Alberto and Di Marzo, Giovanna and Risoldi, Matteo and Tchao, Akla-Esso and Dobson, Simon and Stevenson, Graeme and Ye, Yuan and Nardini, Elena and Omicini, Andrea and Montagna, Sara and Viroli, Mirko and Ferscha, Alois and Maschek, Sascha and Wally, Bernhard},
+	Doi = {10.1016/j.procs.2011.09.006},
+	Editor = {Giacobino, Elisabeth and Pfeifer, Rolf},
+	Issn = {1877-0509},
+	Journal = {Procedia Computer Science},
+	Keywords = {Self-awareness in Autonomic Systems; Pervasive Computing Service; Nature-inspired Computing},
+	Month = dec,
+	Note = {Proceedings of the 2nd European Future Technologies Conference and Exhibition 2011 (FET 11)},
+	Pages = {197--199},
+	Publisher = {Elsevier Science B.V.},
+	Title = {Self-aware Pervasive Service Ecosystems},
+	Url = {http://www.sciencedirect.com/science/article/pii/S1877050911005667},
+	Volume = 7,
+	Year = 2011}
+
+@article{alves2006,
+    abstract = {The number of software packages for kinetic modeling of biochemical networks continues to grow. Although most packages share a common core of functionality, the specific capabilities and user interfaces of different packages mean that choosing the best package for a given task is not trivial. We compare 12 software packages with respect to their functionality, reliability, efficiency, user-friendliness and compatibility. Although most programs performed reliably in all numerical tasks tested, {SBML} compatibility and the set-up of multicompartmentalization are problematic in many packages. For simple models, {GEPASI} seems the best choice for non-expert users. For large-scale models, environments such as {Jarnac/JDesigner} are preferable, because they allow modular implementation of models. Virtual Cell is the most versatile program and provides the simplest and clearest functionality for setting up multicompartmentalization.},
+    author = {Rui Alves and Fernando Antunes and Armindo Salvador},
+    citeulike-article-id = {692384},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1038/nbt0606-667},
+    citeulike-linkout-1 = {http://dx.doi.org/10.1038/nbt0606-667},
+    citeulike-linkout-2 = {http://view.ncbi.nlm.nih.gov/pubmed/16763599},
+    citeulike-linkout-3 = {http://www.hubmed.org/display.cgi?uids=16763599},
+    day = {01},
+    doi = {10.1038/nbt0606-667},
+    issn = {1087-0156},
+    journal = {Nature Biotechnology},
+    keywords = {sysbio, tools},
+    month = jun,
+    number = {6},
+    pages = {667--672},
+    posted-at = {2006-06-11 13:19:02},
+    priority = {0},
+    publisher = {Nature Publishing Group},
+    title = {Tools for kinetic modeling of biochemical networks},
+    url = {http://dx.doi.org/10.1038/nbt0606-667},
+    volume = {24},
+    year = {2006}
+}
+
+@article{LeccaJIB2010,
+  author    = {Paola Lecca and
+               Adaoha E. C. Ihekwaba and
+               Lorenzo Dematt{\'e} and
+               Corrado Priami},
+  title     = {Stochastic simulation of the spatio-temporal dynamics of
+               reaction-diffusion systems: the case for the bicoid gradient},
+  journal   = {J. Integrative Bioinformatics},
+  volume    = {7},
+  number    = {1},
+  year      = {2010},
+  ee        = {http://dx.doi.org/10.2390/biecoll-jib-2010-150},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{bull2003,
+  author    = {J. Mark Bull and
+               L. A. Smith and
+               C. Ball and
+               L. Pottage and
+               R. Freeman},
+  title     = {Benchmarking Java against C and Fortran for scientific applications},
+  journal   = {Concurrency and Computation: Practice and Experience},
+  volume    = {15},
+  number    = {3-5},
+  year      = {2003},
+  pages     = {417-430},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{oancea2011,
+  author    = {Bogdan Oancea and
+               Ion Gh. Rosca and
+               Tudorel Andrei and
+               Andreea Iluzia Iacob},
+  title     = {Evaluating Java performance for linear algebra numerical
+               computations},
+  journal   = {Procedia CS},
+  volume    = {3},
+  year      = {2011},
+  pages     = {474-478},
+  ee        = {http://dx.doi.org/10.1016/j.procs.2010.12.080},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{matsumoto1998,
+  author    = {Makoto Matsumoto and
+               Takuji Nishimura},
+  title     = {Mersenne Twister: A 623-Dimensionally Equidistributed Uniform
+               Pseudo-Random Number Generator},
+  journal   = {ACM Trans. Model. Comput. Simul.},
+  volume    = {8},
+  number    = {1},
+  year      = {1998},
+  pages     = {3-30},
+  ee        = {http://doi.acm.org/10.1145/272991.272995},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{Priami:2001,
+	Address = {Amsterdam, The Netherlands, The Netherlands},
+	Author = {Priami, Corrado and Regev, Aviv and Shapiro, Ehud and Silverman, William},
+	Issn = {0020-0190},
+	Issue = {1},
+	Journal = {Information Processing Letters},
+	Month = {October},
+	Numpages = {7},
+	Pages = {25--31},
+	Publisher = {Elsevier North-Holland, Inc.},
+	Title = {Application of a stochastic name-passing calculus to representation and simulation of molecular processes},
+	Volume = {80},
+	Year = {2001}}
+
+@article{Kierzek01032002,
+	Author = {Kierzek, Andrzej M.},
+	Doi = {10.1093/bioinformatics/18.3.470},
+	Eprint = {http://bioinformatics.oxfordjournals.org/content/18/3/470.full.pdf+html},
+	Journal = {Bioinformatics},
+	Number = {3},
+	Pages = {470-481},
+	Title = {STOCKS: STOChastic Kinetic Simulations of biochemical systems with Gillespie algorithm},
+	Url = {http://bioinformatics.oxfordjournals.org/content/18/3/470.abstract},
+	Volume = {18},
+	Year = {2002},
+	Bdsk-Url-1 = {http://bioinformatics.oxfordjournals.org/content/18/3/470.abstract},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1093/bioinformatics/18.3.470}}
+
+@article{CiocchettaH09,
+	Author = {Ciocchetta, Federica and Guerriero, Maria Luisa},
+	Bibsource = {dblp computer science bibliography, http://dblp.org},
+	Biburl = {http://dblp.uni-trier.de/rec/bib/journals/entcs/CiocchettaG09},
+	Doi = {10.1016/j.entcs.2008.12.105},
+	Journal = {Electr. Notes Theor. Comput. Sci.},
+	Pages = {77--95},
+	Timestamp = {Wed, 12 Nov 2014 11:45:44 +0100},
+	Title = {Modelling Biological Compartments in Bio-PEPA},
+	Url = {http://dx.doi.org/10.1016/j.entcs.2008.12.105},
+	Volume = {227},
+	Year = {2009},
+	Bdsk-Url-1 = {http://dx.doi.org/10.1016/j.entcs.2008.12.105}}
+
+@article{versari08,
+	Address = {Amsterdam, The Netherlands, The Netherlands},
+	Author = {Versari, Cristian and Busi, Nadia},
+	Date-Modified = {2009-03-21 16:41:29 +0100},
+	Doi = {http://dx.doi.org/10.1016/j.entcs.2007.12.012},
+	Issn = {1571-0661},
+	Journal = {Electronic Notes in Theoretical Computer Science},
+	Number = {3},
+	Pages = {165--180},
+	Publisher = {Elsevier Science Publishers B. V.},
+	Title = {Efficient Stochastic Simulation of Biological Systems with Multiple Variable Volumes},
+	Volume = {194},
+	Year = {2008}}
+
+@article{montagna-cs2bio10,
+       Author = {Montagna, Sara and Viroli, Mirko},
+       Title = {A Framework for Modelling and Simulating Networks of Cells},
+       Journal = {Electronic Notes in Theoretical Computer Science},
+       Volume = {268},
+       Pages = {115--129},
+       Month = dec,
+       Note = {Proceedings of the 1st International Workshop on Interactions between Computer Science and Biology (CS2Bio'10)},
+       Issn = {1571-0661},
+       Doi = {10.1016/j.entcs.2010.12.009},
+       Publisher = {Elsevier Science B.V.},
+       Keyword = {Formal methods, Multi-level model, Developmental biology},
+       Year = 2010}
+       
+@article{btssoc-jos7,
+	Author = {Gonz{\'a}lez P{\'e}rez, Pedro Pablo and Omicini, Andrea and Sbaraglia, Marco},
+	Doi = {10.1057/jos.2012.28},
+	Editor = {Fortino, Giancarlo and North, Michael J.},
+	Issn = {1747-7778},
+	Issn-Online = {1747-7786},
+	Journal = {Journal of Simulation},
+	Keywords = {Simulation; Intracellular signalling pathways; Computational biology; Self-organising coordination; Tuple-based models.},
+	Month = aug,
+	Note = {Special Issue: Agent-based Modeling and Simulation},
+	Number = 3,
+	Pages = {216--226},
+	Publisher = {Palgrave Macmillan},
+	Scopusid = {2-s2.0-84880868530},
+	Title = {A Biochemically-inspired Coordination-based Model for Simulating Intracellular Signalling Pathways},
+	Url = {http://www.palgrave-journals.com/jos/journal/v7/n3/full/jos201228a.html},
+	Url-Pdf = {http://www.palgrave-journals.com/jos/journal/v7/n3/pdf/jos201228a.pdf},
+	Volume = 7,
+	Wosid = {000322750000007},
+	Year = 2013,
+	Bdsk-Url-1 = {http://www.palgrave-journals.com/jos/journal/v7/n3/full/jos201228a.html},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1057/jos.2012.28},
+	Bdsk-Url-3 = {http://www.palgrave-journals.com/jos/journal/v7/n3/pdf/jos201228a.pdf}}
+
+@article{Hoops15122006,
+author = {Hoops, Stefan and Sahle, Sven and Gauges, Ralph and Lee, Christine and Pahle, J\"{o}rgen and Simus, Natalia and Singhal, Mudita and Xu, Liang and Mendes, Pedro and Kummer, Ursula}, 
+title = {COPASI -- a COmplex PAthway SImulator},
+volume = {22}, 
+number = {24}, 
+pages = {3067-3074}, 
+year = {2006}, 
+doi = {10.1093/bioinformatics/btl485}, 
+abstract ={Motivation: Simulation and modeling is becoming a standard approach to understand complex biochemical processes. Therefore, there is a big need for software tools that allow access to diverse simulation and modeling methods as well as support for the usage of these methods.Results: Here, we present COPASI, a platform-independent and user-friendly biochemical simulator that offers several unique features. We discuss numerical issues with these features; in particular, the criteria to switch between stochastic and deterministic simulation methods, hybrid deterministicÐstochastic methods, and the importance of random number generator numerical resolution in stochastic simulation.Availability: The complete software is available in binary (executable) for MS Windows, OS X, Linux (Intel) and Sun Solaris (SPARC), as well as the full source code under an open source license from http://www.copasi.org.Contact:mendes@vbi.vt.edu}, 
+URL = {http://bioinformatics.oxfordjournals.org/content/22/24/3067.abstract}, 
+eprint = {http://bioinformatics.oxfordjournals.org/content/22/24/3067.full.pdf+html}, 
+journal = {Bioinformatics} 
+}
+
+@article{Montagna-MONET2012,
+	Author = {Montagna, Sara and Viroli, Mirko and Fernandez-Marquez, Jose Luis and Di Marzo Serugendo, Giovanna and Zambonelli, Franco},
+	Doi = {10.1007/s11036-012-0411-1},
+	Iissn = {1383-469X},
+	Issn = {1572-8153},
+	Journal = {Mobile Networks and Applications},
+	Keywords = {Pervasive Computing, Self-organisation, Chemical-inspired computing},
+	Number = {3},
+	Pages = {398-412},
+	Publisher = {Springer Netherlands},
+	Status = {Published},
+	Title = {Injecting Self-organisation into Pervasive Service Ecosystems},
+	Url = {http://www.springerlink.com/content/x3j4776323717w7h/},
+	Volume = {18},
+	Year = {2013},
+	Bdsk-Url-1 = {http://www.springerlink.com/content/x3j4776323717w7h/},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1007/s11036-012-0411-1}}
+
+
+@incollection{spatialeventgillespie,
+	Author = {Burrage, Kevin and Burrage, PamelaM. and Leier, Andr{\'e} and Marquez-Lago, Tatiana and Nicolau, DanV., Jr},
+	Booktitle = {Design and Analysis of Biomolecular Circuits},
+	Doi = {10.1007/978-1-4419-6766-4_2},
+	Editor = {Koeppl, Heinz and Setti, Gianluca and di Bernardo, Mario and Densmore, Douglas},
+	Isbn = {978-1-4419-6765-7},
+	Keywords = {Plasma membrane; Chemical kinetics; Gene regulation; Stochastic simulation algorithm; Multiscale stochastic modelling; Diffusion; Delayed reactions; Stochastic simulators},
+	Language = {English},
+	Pages = {43-62},
+	Publisher = {Springer New York},
+	Title = {Stochastic Simulation for Spatial Modelling of Dynamic Processes in a Living Cell},
+	Url = {http://dx.doi.org/10.1007/978-1-4419-6766-4_2},
+	Year = {2011},
+	Bdsk-Url-1 = {http://dx.doi.org/10.1007/978-1-4419-6766-4_2}}
+
+@article{mamei2009acm,
+ author = {Mamei, Marco and Zambonelli, Franco},
+ title = {Programming pervasive and mobile computing applications: The TOTA approach},
+ journal = {ACM Trans. Softw. Eng. Methodol.},
+ volume = {18},
+ number = {4},
+ year = {2009},
+ issn = {1049-331X},
+ pages = {1--56},
+ doi = {http://doi.acm.org/10.1145/1538942.1538945},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+ 
+ @article{murphy2006lime,
+  author    = {Amy L. Murphy and
+               Gian Pietro Picco and
+               Gruia-Catalin Roman},
+  title     = {LIME: A  model and middleware supporting mobility
+               of hosts and agents},
+  journal   = {ACM Trans. on Software Engineering and Methodology},
+  volume    = {15},
+  number    = {3},
+  year      = {2006},
+  pages     = {279-328},
+ }
+
+@inproceedings{plastic,
+ author = {Autili, Marco and Benedetto, Paolo and Inverardi, Paola},
+ title = {Context-Aware Adaptive Services: The PLASTIC Approach},
+ booktitle = {FASE '09 Proceedings},
+ year = {2009},
+ pages = {124--139},
+ location = {York, UK},
+ publisher = {Springer-Verlag},
+ address = {Berlin, Heidelberg},
+ }
+
+  @inproceedings{selfman,
+title={Self-management for Large-scale Distributed Systems: an Overview of the SELFMAN Project},
+author={Peter Van Roy and Seif Haridi and Alexander Reinefeld and Jean-Bernard Stefany and Roland Yap and Thierry Coupaye},
+booktitle={Formal Methods for Components and Objects, LNCS No. 5382},
+year={2008},
+pages={153-178},
+ publisher = {Springer Verlag},
+}
+
+@book{Zeigler2000,
+  added-at = {2002-01-03T00:00:00.000+0100},
+  author = {Zeigler, Bernard P.},
+  biburl = {http://www.bibsonomy.org/bibtex/2e4bd93a99562d80e2de7994921ee8079/dblp},
+  date = {2002-01-03},
+  description = {dblp},
+  interhash = {79865aff9720d3031eef618085f21a60},
+  intrahash = {e4bd93a99562d80e2de7994921ee8079},
+  keywords = {dblp},
+  publisher = {John Wiley},
+  timestamp = {2002-01-03T00:00:00.000+0100},
+  title = {Theory of Modeling and Simulation},
+  year = 1976
+}
+
+@article{Pollacia89,
+ author = {Pollacia, Lissa F.},
+ title = {A survey of discrete event simulation and state-of-the-art discrete event languages},
+ journal = {SIGSIM Simul. Dig.},
+ issue_date = {Fall 1989},
+ volume = {20},
+ number = {3},
+ month = sep,
+ year = {1989},
+ issn = {0163-6103},
+ pages = {8--25},
+ numpages = {18},
+ url = {http://doi.acm.org/10.1145/84222.84225},
+ doi = {10.1145/84222.84225},
+ acmid = {84225},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@book{zeigler1984,
+    author = {Zeigler, B.},
+    citeulike-article-id = {2787301},
+    keywords = {not\_in\_thesis},
+    posted-at = {2008-05-12 08:41:50},
+    priority = {0},
+    publisher = {Academic Press},
+    title = {Multifaceted modelling and Discrete Event Simulation},
+    year = {1984}
+}
+
+@article{Harel1987,
+ author = {Harel, David},
+ title = {Statecharts:  A visual formalism for complex systems},
+ journal = {Sci. Comput. Program.},
+ issue_date = {June 1, 1987},
+ volume = {8},
+ number = {3},
+ month = jun,
+ year = {1987},
+ issn = {0167-6423},
+ pages = {231--274},
+ numpages = {44},
+ url = {http://dx.doi.org/10.1016/0167-6423(87)90035-9},
+ doi = {10.1016/0167-6423(87)90035-9},
+ acmid = {34886},
+ publisher = {Elsevier North-Holland, Inc.},
+ address = {Amsterdam, The Netherlands, The Netherlands},
+} 
+
+@article{MallavarapuInterface2008,
+    abstract = {Mathematical models are increasingly used to understand how phenotypes emerge from systems of molecular interactions. However, their current construction as monolithic sets of equations presents a fundamental barrier to progress. Overcoming this requires modularity, enabling sub-systems to be specified independently and combined incrementally, and abstraction, enabling generic properties of biological processes to be specified independently of specific instances. These, in turn, require models to be represented as programs rather than as datatypes. Programmable modularity and abstraction enables libraries of modules to be created, which can be instantiated and reused repeatedly in different contexts with different components. We have developed a computational infrastructure that accomplishes this. We show here why such capabilities are needed, what is required to implement them and what can be accomplished with them that could not be done previously.},
+    author = {Mallavarapu, Aneil and Thomson, Matthew and Ullian, Benjamin and Gunawardena, Jeremy},
+    citeulike-article-id = {4362468},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1098/rsif.2008.0205},
+    citeulike-linkout-1 = {http://rsif.royalsocietypublishing.org/content/6/32/257.abstract},
+    citeulike-linkout-2 = {http://rsif.royalsocietypublishing.org/content/6/32/257.full.pdf},
+    citeulike-linkout-3 = {http://view.ncbi.nlm.nih.gov/pubmed/18647734},
+    citeulike-linkout-4 = {http://www.hubmed.org/display.cgi?uids=18647734},
+    day = {6},
+    doi = {10.1098/rsif.2008.0205},
+    issn = {1742-5689},
+    journal = {Journal of the Royal Society, Interface / the Royal Society},
+    keywords = {modelling, systems\_biology},
+    month = mar,
+    number = {32},
+    pages = {257--270},
+    pmid = {18647734},
+    posted-at = {2009-11-30 15:50:32},
+    priority = {4},
+    title = {Programming with models: modularity and abstraction provide powerful capabilities for systems biology.},
+    url = {http://dx.doi.org/10.1098/rsif.2008.0205},
+    volume = {6},
+    year = {2009}
+}
+
+@INPROCEEDINGS{Cowan2000,
+    author = {Richard Cowan},
+    title = {Stochastic models for DNA replication},
+    booktitle = {In Handbook of Statistics},
+    year = {2000},
+    publisher = {Elsevier}
+}
+
+@inproceedings{WeynsAAMAS2006,
+ author = {Weyns, Danny and Bouck{\'e}, Nelis and Holvoet, Tom},
+ title = {Gradient field-based task assignment in an AGV transportation system},
+ booktitle = {Proceedings of the fifth international joint conference on Autonomous agents and multiagent systems},
+ series = {AAMAS '06},
+ year = {2006},
+ isbn = {1-59593-303-4},
+ location = {Hakodate, Japan},
+ pages = {842--849},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/1160633.1160785},
+ doi = {10.1145/1160633.1160785},
+ acmid = {1160785},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@inproceedings{BandiniE4MAS2006,
+ author = {Bandini, Stefania and Vizzari, Giuseppe},
+ title = {Regulation function of the environment in agent-based simulation},
+ booktitle = {Proceedings of the 3rd international conference on Environments for multi-agent systems III},
+ series = {E4MAS'06},
+ year = {2007},
+ isbn = {978-3-540-71102-5},
+ location = {Hakodate, Japan},
+ pages = {157--169},
+ numpages = {13},
+ url = {http://dl.acm.org/citation.cfm?id=1759343.1759354},
+ acmid = {1759354},
+ publisher = {Springer-Verlag},
+ address = {Berlin, Heidelberg},
+}
+
+@article{HellebooghAAMAS2007,
+    abstract = {Real environments in which agents operate are inherently dynamic—the environment changes beyond the agents' control. We advocate that, for multi-agent simulation, this dynamism must be modeled explicitly as part of the simulated environment, preferably using concepts and constructs that relate to the real world. In this paper, we describe such concepts and constructs, and we provide a formal framework to unambiguously specify their relations and meaning. We apply the formal framework to model a dynamic {RoboCup} Soccer environment and elaborate on how the framework poses new challenges for exploring the modeling of environments in multi-agent simulation.},
+    author = {Helleboogh, Alexander and Vizzari, Giuseppe and Uhrmacher, Adelinde and Michel, Fabien},
+    citeulike-article-id = {1022842},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1007/s10458-006-0014-y},
+    citeulike-linkout-1 = {http://www.ingentaconnect.com/content/klu/agnt/2007/00000014/00000001/00000014},
+    citeulike-linkout-2 = {http://www.springerlink.com/content/f17gq312307v8264},
+    day = {1},
+    doi = {10.1007/s10458-006-0014-y},
+    issn = {1387-2532},
+    journal = {Autonomous Agents and Multi-Agent Systems},
+    keywords = {simulation-and-modeling},
+    month = feb,
+    number = {1},
+    pages = {87--116},
+    posted-at = {2010-11-02 17:40:37},
+    priority = {2},
+    publisher = {Springer Netherlands},
+    title = {Modeling dynamic environments in multi-agent simulation},
+    url = {http://dx.doi.org/10.1007/s10458-006-0014-y},
+    volume = {14},
+    year = {2007}
+}
+
+@article{aose-mags5,
+	Author = {Molesini, Ambra and Omicini, Andrea and Viroli, Mirko},
+	Doi = {10.3233/MGS-2009-0118},
+	Editor = {Weyns, Danny and Omicini, Andrea},
+	Issn = {1574-1702},
+	Issn-Online = {1875-9076},
+	Journal = {Multiagent and Grid Systems},
+	Note = {Special Issue ``Engineering Environments in Multi-Agent Systems''},
+	Number = 1,
+	Pages = {37--57},
+	Publisher = {IOS Press},
+	Title = {Environment in {A}gent-{O}riented {S}oftware {E}ngineering Methodologies},
+	Url = {http://iospress.metapress.com/content/q38j30vw612rg5g8/},
+	Volume = 5,
+	Year = 2009}
+
+@article{VHRSZ-JAAMAS2007,
+         Author = {Viroli, Mirko AND Holvoet, Tom AND Ricci, Alessandro AND Schelfthout, Kurt AND Zambonelli, Franco},
+        Doi = {10.1007/s10458-006-9001-6},
+        Doi-Url = {http://doi.dx.org/10.1007/s10458-006-9001-6},
+        Editor = {Weyns, Danny and Parunak, H. Van Dyke},
+        Issn = {1387-2532},
+        Journal = {Autonomous Agents and Multi-Agent Systems},
+        Month = jul,
+        _Note = {Special Issue: Environment for Multi-Agent Systems},
+        Publisher = {Springer Netherlands},
+        Title = {Infrastructures for the environment of multiagent systems},
+        Volume = 14,
+        Number = 1,
+        pages = {49--60},
+        Year = 2007}
+
+@article{artifacts-jaamas17,
+	Author = {Omicini, Andrea and Ricci, Alessandro and Viroli, Mirko},
+	Doi = {10.1007/s10458-008-9053-x},
+	Editor = {Omicini, Andrea and McBurney, Peter},
+	Issn = {1387-2532},
+	Issn-Online = {1573-7454},
+	Journal = {Autonomous Agents and Multi-Agent Systems},
+	Month = dec,
+	Note = {Special Issue on Foundations, Advanced Topics and Industrial Perspectives of Multi-Agent Systems},
+	Number = 3,
+	Pages = {432--456},
+	Publisher = {Springer},
+	Title = {Artifacts in the {A\&A} Meta-Model for Multi-Agent Systems},
+	Url = {http://www.springerlink.com/content/l2051h377k2plk07/},
+	Volume = 17,
+	Year = 2008}
+
+@article{tucson-aamas99,
+        Author = {Omicini, Andrea and Zambonelli, Franco},
+        Date-Added = {2009-01-16 17:49:14 +0100},
+        Date-Modified = {2009-01-16 17:51:10 +0100},
+        Doi = {10.1023/A:1010060322135},
+        Editor = {Tolksdorf, Robert and Ciancarini, Paolo},
+        Issn = {1387-2532},
+        Journal = {Autonomous Agents and Multi-Agent Systems},
+        Month = sep,
+        _Note = {Special Issue: Coordination Mechanisms for Web Agents},
+        Number = 3,
+        Pages = {251--269},
+        Publisher = {Springer Netherlands},
+        Title = {Coordination for {I}nternet Application Development},
+        Volume = 2,
+        Year = 1999,
+}
+
+@article{RPV-JAAMAS2011,
+	Author = {Ricci, Alessandro and Piunti, Michele and Viroli, Mirko},
+	Doi = {10.1007/s10458-010-9140-7},
+	Editor = {Bordini, Rafael H. and Dastani, Mehdi and Dix, J{\"u}rgen and El Fallah Seghrouchni, Amal},
+	Issn = {1387-2532},
+	Issn-Online = {1573-7454},
+	Journal = {Autonomous Agents and Multi-Agent Systems},
+	Month = sep,
+	_Note = {Special Issue: Multi-Agent Programming},
+	Number = 2,
+	Pages = {158--192},
+	Title = {Environment Programming in Multi-Agent Systems -- An Artifact-Based Perspective},
+	Url = {http://www.springerlink.com/content/b323338888286147/},
+	Volume = 23,
+	Year = 2011}
+
+@article{luke2005simulation,
+  author    = {Luke, Sean and
+               Cioffi-Revilla, Claudio and
+               Panait, Liviu and
+               Sullivan, Keith and
+               Balan, Gabriel Catalin},
+  title     = {MASON: A Multiagent Simulation Environment},
+  journal   = {Simulation},
+  volume    = {81},
+  number    = {7},
+  year      = {2005},
+  pages     = {517--527}
+}
+
+
+@inproceedings{eze2012autonomic,
+  title={Autonomic computing in the first Decade: trends and direction},
+  author={Eze, Thaddeus and Anthony, Richard and Walshaw, Chris and Soper, Alan},
+  booktitle={ICAS 2012, The Eighth International Conference on Autonomic and Autonomous Systems},
+  pages={80--85},
+  year={2012}
+}
+
+@article{hu2011cloudreview,
+  title={A Review on cloud computing: Design challenges in Architecture and Security},
+  author={Hu, Fei and Qiu, Meikang and Li, Jiayin and Grant, Travis and Taylor, Drew and McCaleb, Seth and Butler, Lee and Hamner, Richard},
+  journal={CIT. Journal of Computing and Information Technology},
+  volume={19},
+  number={1},
+  pages={25--55},
+  year={2011},
+  publisher={SRCE-Sveu{\v{c}}ili{\v{s}}ni ra{\v{c}}unski centar}
+}
+
+@inproceedings{kairos,
+  author    = {Gummadi, Ramakrishna and
+               Gnawali, Omprakash and
+               Govindan, Ramesh},
+  title     = {Macro-programming Wireless Sensor Networks Using Kairos.},
+  booktitle = {Distributed Computing in Sensor Systems (DCOSS)},
+  year      = {2005},
+  pages     = {126-140}
+}
+
+@inproceedings{Meld,
+  title = {Meld: A Declarative Approach to Programming Ensembles},
+  author = {Ashley-Rollman, Michael P. and Goldstein, Seth Copen and Lee, Peter and Mowry, Todd C. and Pillai, Padmanabhan},
+  booktitle = {IEEE International Conference on Intelligent Robots and Systems (IROS '07)},
+  pages = {2794--2800},
+  year = 2007
+}
+
+@article{dean2008mapreduce,
+  title={{MapReduce}: simplified data processing on large clusters},
+  author={Dean, Jeffrey and Ghemawat, Sanjay},
+  journal={Communications of the ACM},
+  volume={51},
+  number={1},
+  pages={107--113},
+  year={2008},
+  publisher={ACM}
+}
+
+@inproceedings{tinydb,
+  author = {Madden, S. and Franklin, M. and Hellerstein, J. and Hong, W.},
+  title = {TinyDB: An Acqusitional Query Processing System for Sensor Networks},
+  booktitle = {ACM TODS},
+  year = {2005}
+}
+
+@article{SCEL,
+ author = {Nicola, Rocco De and Loreti, Michele and Pugliese, Rosario and Tiezzi, Francesco},
+ title = {A Formal Approach to Autonomic Systems Programming: The SCEL Language},
+ journal = {ACM Trans. Auton. Adapt. Syst.},
+ issue_date = {July 2014},
+ volume = {9},
+ number = {2},
+ month = jul,
+ year = {2014},
+ issn = {1556-4665},
+ pages = {7:1--7:29},
+ articleno = {7},
+ numpages = {29},
+ url = {http://doi.acm.org/10.1145/2619998},
+ doi = {10.1145/2619998},
+ acmid = {2619998},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Autonomic computing, formal methods, programming languages},
+}
+
+@incollection{SpatialIGI2013,
+	booktitle = {Formal and Practical Aspects of Domain-Specific Languages: Recent Developments},
+	publisher = {IGI Global },
+   author    = {Beal, Jacob and
+               Dulman, Stefan and
+               Usbeck, Kyle and
+               Viroli, Mirko and
+               Correll, Nikolaus},
+	title = {Organizing the Aggregate: Languages for Spatial Computing},
+	chapter = 16,
+	isbn = {978-1-4666-2092-6},
+	year = 2013,
+	pages = {436--501},
+	editor = {Marjan Mernik},
+	note = {A longer version available at: {\tt http://arxiv.org/abs/1202.5509}},
+	doi = {10.4018/978-1-4666-2092-6.ch016}}
+
+@article{proto,
+ author    = {Beal, Jacob and
+              Bachrach, Jonathan},
+ title     = {Infrastructure for Engineered Emergence on Sensor/Actuator
+              Networks},
+ journal   = {IEEE Intelligent Systems},
+ volume    = {21},
+ number    = {2},
+ year      = {2006},
+ pages     = {10-19},
+}
+
+@inproceedings{regiment,
+  author = {Newton, Ryan and Welsh, Matt},
+  title = {Region Streams: Functional Macroprogramming for Sensor Networks},
+  booktitle = {First International Workshop on Data Management for Sensor Networks (DMSN)},
+  location = {Toronto, Canada},
+  pages = {78--87},
+  month = aug,
+  year = {2004}
+}
+
+@article{tota2,
+  author    = {Mamei, Marco and
+               Zambonelli, Franco},
+  title     = {Self-maintained distributed tuples for field-based coordination
+               in dynamic networks},
+  journal   = {Concurrency and Computation: Practice and Experience},
+  volume    = {18},
+  number    = {4},
+  year      = {2006},
+  pages     = {427-443},
+  ee        = {http://dx.doi.org/10.1002/cpe.947},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@PhdThesis{nagpalphd,
+  author =       {Nagpal, Radhika},
+  title =        {Programmable Self-Assembly: Constructing Global Shape using Biologically-inspired Local Interactions and Origami Mathematics},
+  school =  {MIT},
+  address = {Cambridge, MA, USA},
+  year =         {2001},
+  key =          {AITR-2001-008}
+}
+
+@PhdThesis{yamins,
+  author = {Yamins, Daniel},
+  title = {A Theory of Local-to-Global Algorithms for One-Dimensional Spatial Multi-Agent Systems},
+  school = {Harvard},
+  address = {Cambridge, MA, USA},
+  month = {December}, 
+  year = 2007
+}
+
+@incollection{VDB-FOCLASA-CIC2013,
+year={2013},
+isbn={978-3-642-45363-2},
+booktitle={Advances in Service-Oriented and Cloud Computing},
+volume={393},
+series={Communications in Computer and Information Science},
+editor={Canal, Carlos and Villari, Massimo},
+doi={10.1007/978-3-642-45364-9\_11},
+title={A Calculus of Computational Fields},
+url={http://dx.doi.org/10.1007/978-3-642-45364-9\_11},
+publisher={Springer Berlin Heidelberg},
+author={Viroli, Mirko and Damiani, Ferruccio and Beal, Jacob},
+pages={114-128}
+}
+
+@InProceedings{BVD-SCW14,
+  author = 	 {Jacob Beal and Mirko Viroli and Ferruccio Damiani},
+  title = 	 {Towards a Unified Model of Spatial Computing},
+  address = {AAMAS 2014, Paris, France},
+  booktitle = {7th Spatial Computing Workshop (SCW 2014)},
+  year = 	 {2014},
+  month = 	 {May}
+}
+
+@inproceedings{BV-FOCAS2014,
+	Author = {Beal, Jake and Viroli, Mirko},
+	Booktitle = {2nd FoCAS Workshop on Fundamentals of Collective Systems},
+	Pages = {1-6},
+	Publisher = {IEEE CS, to appear},
+	Title = {Building blocks for aggregate programming of self-organising applications},
+	Year = 2014
+}
+
+@article{LambdaCalculus,
+  title={A set of postulates for the foundation of logic},
+  author={Church, Alonzo},
+  journal={Annals of mathematics},
+  volume={33},
+  number={2},
+  pages={346--366},
+  year={1932}
+}
+
+@Book{PiCalculus,
+  author  = {Milner, Robin},
+  title = {Communicating and Mobile Systems: The Pi-Calculus},
+  publisher = {Cambridge University Press},
+  location = {Cambridge},
+  year = 1999
+}
+
+@Article{FJ,
+  author =       {Igarashi, Atsushi and Pierce, Benjamin C. and Wadler, Philip},
+  title =        {Featherweight Java: A Minimal Core Calculus for {Java} and {GJ}},
+  journal =      {ACM Transactions on Programming Languages and Systems},
+  year =         2001,
+  volume =       {23},
+  number = 3,
+  _pages =        {396--450}
+}
+
+@inproceedings{VPB-COORD2012,
+	author = {Viroli, Mirko and Pianini, Danilo and Beal, Jacob},
+	title = {Linda in space-time: an adaptive coordination model for mobile ad-hoc environments},
+   booktitle = {Coordination Languages and Models},
+   editor = {Sirjani, Marjan},
+   volume =    7274,
+   series =    {LNCS},
+   year =      2012,
+   month =     jun,
+   publisher = {Springer-Verlag},
+   pages =     {212--229},
+   note = {Proceedings of the 14th Conference of Coordination Models and Languages (Coordination 2012), Stockholm (Sweden), 14-15 June},
+   issn =      {0302-9743},
+   doi={10.1007/978-3-642-30829-1_15}
+}
+
+@techreport{protokernel,
+  title = {Building Spatial Computers},
+  author = {Bachrach, Jonathan and Beal, Jacob},
+  institution = {MIT},
+  number = {MIT-CSAIL-TR-2007-017},
+  month = {March},
+  year = {2007}
+}
+
+@inproceedings{eysholdt2010xtext,
+  title={Xtext: implement your language faster than the quick and dirty way},
+  author={Eysholdt, Moritz and Behrens, Heiko},
+  booktitle={OOPSLA},
+  booktitle={Proceedings of the ACM international conference companion on Object oriented programming systems languages and applications companion},
+  pages={307--309},
+  year={2010},
+  organization={ACM}
+}
+
+@article{alchemist-jos2013,
+	Author = {Pianini, Danilo and Montagna, Sara and Viroli, Mirko},
+	Doi = {10.1057/jos.2012.27},
+	Issn = {1747-7778},
+	Issn-Online = {1747-7786},
+	Journal = {Journal of Simulation},
+	Keywords = {Stochastic simulation, chemical-oriented computing, pervasive service ecosystems},
+	Publisher = {Palgrave McMillan},
+	Title = {Chemical-oriented Simulation of Computational Systems with {A}lchemist},
+	Url = {http://www.palgrave-journals.com/jos/journal/vaop/full/jos201227a.html},
+	Url-Pdf = {http://www.palgrave-journals.com/jos/journal/vaop/pdf/jos201227a.pdf},
+	Year = 2013}}
+
+@InProceedings{VD-COORD2014-LNCS2014,
+	author = {Viroli, Mirko and Ferruccio Damiani},
+	title = {A Calculus of Self-stabilising Computational Fields},
+   booktitle = {16th Conference on Coordination Languages and Models (Coordination 2014)},
+   editor = {eva K{\"u}hn and Rosario Pugliese},
+   volume =    8459,
+   series =    {LNCS},
+   year =      2014,
+   month =     jun,
+   publisher = {Springer-Verlag},
+   pages =     {163--178},
+	note = {Proceedings of the 16th Conference on Coordination Models and Languages (Coordination 2014), Berlin (Germany), 3-5 June},
+   issn =      {0302-9743},
+   doi={10.1007/978-3-662-43376-8\_11}
+}
+
+@PhdThesis{butera,
+   author = {Butera, William},
+   title = {Programming a Paintable Computer},
+   school = {MIT},
+   address = {Cambridge, MA, USA},
+   year = {2002}
+}
+
+@article{original-gradient,
+ author = {Lin, Frank C.  H. and Keller, Robert M.},
+ title = {The Gradient Model Load Balancing Method},
+ journal = {IEEE Trans. Softw. Eng.},
+ volume = {13},
+ number = {1},
+ year = {1987},
+ issn = {0098-5589},
+ pages = {32--38},
+ doi = {http://dx.doi.org/10.1109/TSE.1987.232563},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+ }
+
+@inproceedings{crf,
+  author    = {Beal, Jacob and
+               Bachrach, Jonathan and
+               Vickery, Daniel and
+               Tobenkin, Mark},
+  title     = {Fast self-healing gradients},
+  pages     = {1969-1975},
+  _editor    = {Roger L. Wainwright and
+               Hisham Haddad},
+  booktitle     = {Proceedings of ACM SAC 2008},
+  @publisher = {ACM},
+  year      = {2008},
+  isbn      = {978-1-59593-753-7},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@InProceedings{EmuLab,
+	Author = {White, Brian and Lepreau, Jay and Stoller, Leigh and Ricci, Robert and Guruprasad, Shashi and Newbold, Mac and Hibler, Mike and Barb, Chad and Joglekar, Abhijeet},
+	Title={An Integrated Experimental Environment
+		 for Distributed Systems and Networks},
+	booktitle = OSDI02,
+	organization = USENIXASSOC,
+	address = {Boston, MA},
+	month  = dec,
+	year   = 2002,
+	pages  = "255--270"
+}
+
+@article{osm,
+ author = {Haklay, Mordechai (Muki) and Weber, Patrick},
+ title = {OpenStreetMap: User-Generated Street Maps},
+ journal = {IEEE Pervasive Computing},
+ issue_date = {October 2008},
+ volume = {7},
+ number = {4},
+ month = oct,
+ year = {2008},
+ issn = {1536-1268},
+ pages = {12--18},
+ numpages = {7},
+ url = {http://dx.doi.org/10.1109/MPRV.2008.80},
+ doi = {10.1109/MPRV.2008.80},
+ acmid = {1477249},
+ publisher = {IEEE Educational Activities Department},
+ address = {Piscataway, NJ, USA},
+ keywords = {Spatial databases and GIS, Spatial databases and GIS, user-generated content, collaborative computing, computer-supported cooperative work, collaborative computing, computer-supported cooperative work, user-generated content},
+} 
+
+@inproceedings{SemMatchingSAC2013,
+  added-at = {2013-05-03T00:00:00.000+0200},
+   Address = {Coimbra, Portugal},
+  author = {Stevenson, Graeme and Ye, Juan and Dobson, Simon and Pianini, Danilo and Montagna, Sara and Viroli, Mirko},
+  biburl = {http://www.bibsonomy.org/bibtex/2613dab41c555c320e56d33a2e3d4bbed/dblp},
+  booktitle = {SAC},
+  editor = {Shin, Sung Y. and Maldonado, José Carlos},
+  ee = {http://doi.acm.org/10.1145/2480362.2480619},
+  interhash = {5a2917f1b1aa679519d2ed462bbcdb27},
+  intrahash = {613dab41c555c320e56d33a2e3d4bbed},
+  isbn = {978-1-4503-1656-9},
+  keywords = {dblp},
+  Month = {18--22~} # mar,
+  pages = {1369-1376},
+  publisher = {ACM},
+  timestamp = {2013-05-03T00:00:00.000+0200},
+  title = {Combining self-organisation, context-awareness and semantic reasoning: the case of resource discovery in opportunistic networks.},
+  url = {http://dblp.uni-trier.de/db/conf/sac/sac2013.html#StevensonYDPMV13},
+  year = 2013
+}
+
+@inproceedings{anticipativegradient-SASO12,
+	location = {Lyon, France},
+	booktitle = {Proceedings of 6th IEEE International Conference on Self-Adaptive and Self-Organizing Systems (SASO 2012)},
+	author = {Montagna, Sara and Pianini, Danilo and Viroli, Mirko},
+	title = {Gradient-based Self-organisation Patterns of Anticipative Adaptation},
+	year = 2012,
+	keywords = {Anticipative adaptation, Pervasive service ecosystem, Gradient pattern},
+	venue = {SASO},
+	month = {September},
+        isbn = {978-0-7695-4851-7},
+        doi = {10.1109/SASO.2012.25},
+        ee = {http://doi.ieeecomputersociety.org/10.1109/SASO.2012.25},
+        pages = {169--174}
+}
+
+@inproceedings{socinfo2013,
+  added-at = {2013-11-20T00:00:00.000+0100},
+  author = {Anzengruber, Bernhard and Pianini, Danilo and Nieminen, Jussi and Ferscha, Alois},
+  biburl = {http://www.bibsonomy.org/bibtex/2845c2785c0e54626803bd0581698c568/dblp},
+  booktitle = {SocInfo},
+  editor = {Jatowt, Adam and Lim, Ee-Peng and Ding, Ying and Miura, Asako and Tezuka, Taro and Dias, Gaël and Tanaka, Katsumi and Flanagin, Andrew J. and Dai, Bing Tian},
+  ee = {http://dx.doi.org/10.1007/978-3-319-03260-3_18},
+  interhash = {85881e57156ecd6a86b4a779fc055fae},
+  intrahash = {845c2785c0e54626803bd0581698c568},
+  isbn = {978-3-319-03259-7},
+  keywords = {dblp},
+  pages = {206-215},
+  publisher = {Springer},
+  series = {Lecture Notes in Computer Science},
+  timestamp = {2013-11-20T00:00:00.000+0100},
+  title = {Predicting Social Density in Mass Events to Prevent Crowd Disasters.},
+  url = {http://dblp.uni-trier.de/db/conf/socinfo/socinfo2013.html#AnzengruberPNF13},
+  volume = 8238,
+  year = 2013
+}
+
+@inproceedings{swarmlinda,
+  added-at = {2011-07-07T00:00:00.000+0200},
+  author = {Tolksdorf, Robert and Menezes, Ronaldo},
+  biburl = {http://www.bibsonomy.org/bibtex/29b2c86796258b9fb13b7199ce4666e50/dblp},
+  booktitle = {ESAW},
+  editor = {Omicini, Andrea and Petta, Paolo and Pitt, Jeremy},
+  ee = {http://dx.doi.org/10.1007/978-3-540-25946-6_3},
+  interhash = {73b19abb34c29379171bb9b72c7c0207},
+  intrahash = {9b2c86796258b9fb13b7199ce4666e50},
+  isbn = {3-540-22231-6},
+  keywords = {dblp},
+  pages = {49-65},
+  publisher = {Springer},
+  series = {Lecture Notes in Computer Science},
+  timestamp = {2011-07-07T00:00:00.000+0200},
+  title = {Using Swarm Intelligence in Linda Systems.},
+  url = {http://dblp.uni-trier.de/db/conf/esaw/esaw2003.html#TolksdorfM03},
+  volume = 3071,
+  year = 2003
+}
+
+@inproceedings{anthill,
+ author = {Babaoglu, \"{O}zalp and Meling, Hein and Montresor, Alberto},
+ title = {Anthill: A Framework for the Development of Agent-Based Peer-to-Peer Systems},
+ booktitle = {Proceedings of the 22 Nd International Conference on Distributed Computing Systems (ICDCS'02)},
+ series = {ICDCS '02},
+ year = {2002},
+ isbn = {0-7695-1585-1},
+ pages = {15--},
+ url = {http://dl.acm.org/citation.cfm?id=850928.851860},
+ acmid = {851860},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+} 
+
+@inproceedings{evolvingtuples,
+ author = {Stovall, Drew and Julien, Christine},
+ title = {Resource Discovery with Evolving Tuples},
+ booktitle = {International Workshop on Engineering of Software Services for Pervasive Environments: In Conjunction with the 6th ESEC/FSE Joint Meeting},
+ series = {ESSPE '07},
+ year = {2007},
+ isbn = {978-1-59593-798-8},
+ location = {Dubrovnik, Croatia},
+ pages = {1--10},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/1294904.1294905},
+ doi = {10.1145/1294904.1294905},
+ acmid = {1294905},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {evolving tuples, pervasive computing, resource discovery, tuples},
+} 
+
+@inproceedings{biochemicalTupleSpaces,
+  added-at = {2009-06-15T00:00:00.000+0200},
+  author = {Viroli, Mirko and Casadei, Matteo},
+  biburl = {http://www.bibsonomy.org/bibtex/29516f4d1824189307463b3db2e314f62/dblp},
+  booktitle = {COORDINATION},
+  date = {2009-06-15},
+  description = {dblp},
+  editor = {Field, John and Vasconcelos, Vasco Thudichum},
+  ee = {http://dx.doi.org/10.1007/978-3-642-02053-7_8},
+  interhash = {bb3552d2dd58f1a01a0a5d153ade2c4a},
+  intrahash = {9516f4d1824189307463b3db2e314f62},
+  isbn = {978-3-642-02052-0},
+  keywords = {dblp},
+  pages = {143-162},
+  publisher = {Springer},
+  series = {Lecture Notes in Computer Science},
+  timestamp = {2009-06-15T00:00:00.000+0200},
+  title = {Biochemical Tuple Spaces for Self-organising Coordination.},
+  url = {http://dblp.uni-trier.de/db/conf/coordination/coordination2009.html#ViroliC09},
+  volume = 5521,
+  year = 2009
+}
+
+@inproceedings{frameworkSelfOrg,
+  added-at = {2009-04-17T00:00:00.000+0200},
+  author = {Viroli, Mirko and Casadei, Matteo and Omicini, Andrea},
+  biburl = {http://www.bibsonomy.org/bibtex/201fe5f15ab9c39312da4d51a2bd60b60/dblp},
+  booktitle = {SAC},
+  date = {2009-04-17},
+  description = {dblp},
+  editor = {Shin, Sung Y. and Ossowski, Sascha},
+  ee = {http://doi.acm.org/10.1145/1529282.1529585},
+  interhash = {b8b89136bd6d7a1c175835ee769ca463},
+  intrahash = {01fe5f15ab9c39312da4d51a2bd60b60},
+  isbn = {978-1-60558-166-8},
+  keywords = {dblp},
+  pages = {1353-1360},
+  publisher = {ACM},
+  timestamp = {2009-04-17T00:00:00.000+0200},
+  title = {A framework for modelling and implementing self-organising coordination.},
+  url = {http://dblp.uni-trier.de/db/conf/sac/sac2009.html#ViroliCO09},
+  year = 2009
+}
+
+@inproceedings{wordNet,
+  author    = {Danilo Pianini and
+               Sascia Virruso and
+               Ronaldo Menezes and
+               Andrea Omicini and
+               Mirko Viroli},
+  title     = {Self Organization in Coordination Systems Using a WordNet-Based
+               Ontology},
+  booktitle = {SASO},
+  year      = {2010},
+  pages     = {114-123},
+  ee        = {http://dx.doi.org/10.1109/SASO.2010.35},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{FDMVA-NACO2012,
+	publisher = {Springer},
+	journal = {Natural Computing},
+	author = {Fernandez-Marquez, Jose Luis and Di Marzo Serugendo,  Giovanna and Montagna, Sara and Viroli, Mirko and Arcos, Josep Lluis },
+	title = {Description and composition of bio-inspired design patterns: a complete overview},
+	year = 2012,
+	note = {Online First},
+	keywords = {Self-organising systems,  Bio-inspired mechanisms, Design patterns},
+	status = {Published},
+	venue = {--},
+	month = {May},
+	doi = {10.1007/s11047-012-9324-y}}
+
+@incollection{GVO-CEEMAS2007,
+       Author = {Gardelli, Luca and Viroli, Mirko and Omicini, Andrea},
+       Booktitle = {Multi-Agent Systems and Applications {V}},
+       Editor = {Burkhard, Hans-Dieter and Verbrugge, Rineke and Varga, L{\'a}szl{\'o} Zsolt},
+       Month = sep,
+       Note = {5th International Central and Eastern European Conference on Multi-Agent Systems (CEEMAS'07), Leipzig, Germany, 25--27~} # sep # {~2007, Proceedings},
+       Pages = {123--132},
+       Publisher = {Springer},
+       Series = {LNAI},
+       Title = {Design Patterns for Self-Organising Systems},
+       Volume = 4696,
+       Year = 2007}
+
+@article{BabaogluPatterns,
+  author    = {Babaoglu, {\"O}zalp and
+               Canright, Geoffrey and
+               Deutsch, Andreas and
+               Di Caro, Gianni and
+               Ducatelle, Frederick and
+               Gambardella, Luca Maria and
+               Ganguly, Niloy and
+               Jelasity, M{\'a}rk and
+               Montemanni, Roberto and
+               Montresor, Alberto and
+               Urnes, Tore},
+  title     = {Design patterns from biology for distributed computing},
+  journal   = {TAAS},
+  volume    = {1},
+  number    = {1},
+  year      = {2006},
+  pages     = {26-66},
+  ee        = {http://doi.acm.org/10.1145/1152934.1152937},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@Article{ mariani2013molecules,
+	title = "Molecules of Knowledge: Self-organisation in Knowledge-Intensive Environments",
+	author = "Mariani, Stefano and Omicini, Andrea",
+	journal = "Intelligent Distributed Computing VI",
+	pages = "17--22",
+	year = "2013",
+	publisher = "Springer Berlin/Heidelberg"
+}
+
+@InProceedings{ Sen:2005,
+	author = "Sen, Koushik and Viswanathan M. and Agha, Gul",
+	booktitle = "Quantitative Evaluation of Systems, 2005.",
+	title = "VESTA: A statistical model-checker and analyzer for probabilistic systems",
+	year = "2005",
+	pages = "251--252",
+	keywords = "formal verification, probabilistic logic, software tools, statistical analysis, analysis tool VESTA, probabilistic system, statistical analysis, statistical evaluation, statistical model-checker, Algorithm design and analysis, Computational modeling, Computer science, Database languages, Discrete event simulation, Independent component analysis, Logic testing, Probabilistic logic, Statistical analysis, Stochastic processes",
+	doi = "10.1109/QEST.2005.42"
+}
+
+@InProceedings{AlTurkiM11,
+	author = "AlTurki, Musab and Meseguer, Jos{\'e}",
+	title = "PVeStA: A Parallel Statistical Model Checking and Quantitative Analysis Tool",
+	booktitle = "CALCO",
+	year = "2011",
+	bibsource = "DBLP, http://dblp.uni-trier.de",
+	ee = "http://dx.doi.org/10.1007/978-3-642-22944-2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_28"
+}
+
+@InProceedings{ AghaMS06,
+	author = "Agha, Gul A. and Meseguer, Jos{\'e} and Sen, Koushik",
+	title = "{PMaude}: Rewrite-based Specification Language for Probabilistic Object Systems",
+	editor = "Antonio Cerone and Herbert Wiklicky",
+	series = "ENTCS",
+	volume = "153(2)",
+	year = "2006",
+	pages = "213--239",
+	publisher = "Elsevier",
+	booktitle = "QAPL 2005"
+}
+
+@InProceedings{ multivesta,
+	title = "{MultiVeStA}: Statistical Model Checking for Discrete Event Simulators",
+	booktitle = "{VALUETOOLS}",
+	author = "Sebastio, Stefano and Vandin, Andrea",
+	year = "2013"
+}
+
+@article{ker2014,
+	Author = {Zambonelli, Franco and Omicini, Andrea and Anzengruber, Bernhard and Castelli, Gabriella and DeAngelis, Francesco L. and Di Marzo Serugendo, Giovanna and Dobson, Simon and Fernandez-Marquez, Jose Luis and Ferscha, Alois and Mamei, Marco and Mariani, Stefano and Molesini, Ambra and Montagna, Sara and Nieminen, Jussi and Pianini, Danilo and Risoldi, Matteo and Rosi, Alberto and Stevenson, Graeme and Viroli, Mirko and Ye, Juan},
+	Doi = {10.1016/j.pmcj.2014.12.002},
+	Issn = {1574-1192},
+	Journal = {Pervasive and Mobile Computing},
+	Keywords = {pervasive computing; multi-agent systems; self-organization},
+	Note = {Special Issue on ``10 years of Pervasive Computing'' in honor of Chatschik Bisdikian},
+	ScopusId = {},
+	Title = {Developing Pervasive Multi-Agent Systems with Nature-Inspired Coordination},
+	Url = {http://www.sciencedirect.com/science/article/pii/S1574119214001904},
+	Year = 2014}
+
+@article{Conti12,
+	Author = {Conti, Marco and Das, Sajal K. and Bisdikian, Chatschik and Kumar, Mohan and Ni, Lionel M. and Passarella, Andrea and Roussos, George and Tr{\"o}ster, Gerhard and Tsudik, Gene and Zambonelli, Franco},
+	Bibsource = {DBLP, http://dblp.uni-trier.de},
+	Ee = {http://dx._doi.org/10.1016/j.pmcj.2011.10.001},
+	Journal = {Pervasive and Mobile Computing},
+	Number = {1},
+	Pages = {2-21},
+	Title = {Looking ahead in pervasive computing: Challenges and opportunities in the era of cyber-physical convergence},
+	Volume = {8},
+	Year = {2012},
+	Bdsk-Url-1 = {http://dx._doi.org/10.1016/j.pmcj.2011.10.001}}
+
+@article{Zam12,
+	Author = {Zambonelli, Franco},
+	Date-Added = {2013-03-06 10:30:35 +0000},
+	Date-Modified = {2013-03-06 10:30:35 +0000},
+	Journal = {IEEE Computer},
+	Number = 8,
+	Title = {Toward Sociotechnical Urban Superorganisms},
+	Volume = 47,
+	Year = 2012}
+
+@inproceedings{Harnie12,
+	Author = {Harnie, Dries and D'Hondt, Theo and Boix, Elisa Gonzalez and De Meuter, Wolfgang},
+	Booktitle = {Proceedings of the 27th Annual ACM Symposium on Applied Computing},
+	Date-Added = {2013-03-06 10:30:16 +0000},
+	Date-Modified = {2013-03-06 10:30:16 +0000},
+	Location = {Trento, Italy},
+	Numpages = {6},
+	Pages = {1516--1521},
+	Publisher = {ACM},
+	Title = {Programming urban-area applications},
+	Year = {2012}}
+
+@inproceedings{Bis11,
+	Author = {Bisdikian, Chatschik and Mitschang, Bernhard and Pedreschi, Dino and Tseng, Vincent S. and Bettini, Claudio},
+	Booktitle = {12th IEEE International Conference on Mobile Data Management},
+	Pages = {6},
+	Title = {Challenges for Mobile Data Management in the Era of Cloud and Social Computing},
+	Year = {2011}}
+
+@article{Social12,
+	Author = {Lukowicz, P. and Pentland, S. and Ferscha, A.},
+	Journal = {IEEE Pervasive Computing},
+	Keywords = {context awareness;large-scale ensembles;networked subsystems;next-generation opportunistic recognition configurations;smartphones;socially aware computing;smart phones;ubiquitous computing;},
+	Number = {1},
+	Pages = {32 -41},
+	Title = {From Context Awareness to Socially Aware Computing},
+	Volume = {11},
+	Year = {2012}}
+
+@article{PSC13,
+	Author = {Schuster, Daniel and Rosi, Alberto and Mamei, Marco and Springer, Thomas and Endler, Markus and Zambonelli, Franco},
+	Journal = {ACM Transactions on Intelligent Systems and Technology},
+	Number = {3},
+	Title = {Pervasive Social Context: Taxonomy and Survey},
+	Volume = {4},
+	Year = {2013}}
+
+@article{Cabri03,
+  author    = {Cabri, Giacomo and
+               Leonardi, Letizia and
+               Mamei, Marco and
+               Zambonelli, Franco},
+  title     = {Location-dependent services for mobile users},
+  journal   = {{IEEE} Transactions on Systems, Man, and Cybernetics, Part {A}},
+  year      = {2003},
+  volume    = {33},
+  number    = {6},
+  pages     = {667--681},
+}
+
+@article{Ray13,
+	Author = {Raychoudhury, Vaskar and Cao, Jiannong and Kumar, Mohan and Zhang, Daqiang},
+	Journal = {Pervasive and Mobile Computing},
+	Number = {2},
+	Pages = {177 - 200},
+	Title = {Middleware for pervasive computing: A survey},
+	Volume = {9},
+	Year = {2013}}
+
+@article{agents-ieeecn6,
+	_Url = {http://www.computer.org/portal/web/computingnow/archive/november2013},
+	Author = {Ganzha, Maria and Paprzycki, Marcin and Omicini, Andrea},
+	Bdsk-_Url-1 = {http://www.computer.org/portal/web/computingnow/archive/november2013},
+	Date-Added = {2014-01-24 10:57:22 +0000},
+	Date-Modified = {2014-01-24 10:57:22 +0000},
+	Journal = {Computing Now},
+	Month = nov,
+	Number = 11,
+	Publisher = {IEEE Computer Society},
+	Title = {Software Agents: Twenty Years and Counting},
+	Volume = 6,
+	Year = 2013}
+
+@article{Mam06,
+	Author = {Mamei, M. and Menezes, R. and Tolksdorf, R. and Zambonelli, F.},
+	Journal = {Journal of Systems Architecture},
+	Pages = {443--460},
+	Title = {Case studies for self-organization in computer science},
+	Volume = 52,
+	Year = 2006}
+
+@article{ZamO04,
+	Author = {Zambonelli, Franco and Omicini, Andrea},
+	Bdsk-_Url-1 = {http://dx._doi.org/10.1023/B:AGNT.0000038028.66672.1e},
+	Bibsource = {DBLP, http://dblp.uni-trier.de},
+	Ee = {http://dx._doi.org/10.1023/B:AGNT.0000038028.66672.1e},
+	Journal = {Autonomous Agents and Multi-Agent Systems},
+	Number = {3},
+	Pages = {253-283},
+	Title = {Challenges and Research Directions in Agent-Oriented Software Engineering},
+	Volume = {9},
+	Year = {2004},
+	Bdsk-Url-1 = {http://dx._doi.org/10.1023/B:AGNT.0000038028.66672.1e}}
+
+@inproceedings{softwareevolution-iwpse2005,
+	_Isbn = {0-7695-2349-8},
+	_Issn = {1550-4077},
+	_Url = {http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=1572301},
+	Address = {Lisbon, Portugal},
+	Author = {Jazayeri, Mehdi},
+	Bdsk-_Url-1 = {http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=1572301},
+	Booktitle = {8th International Workshop on Principles of Software Evolution (IWPSE 2005)},
+	Date-Added = {2014-01-26 20:56:02 +0000},
+	Date-Modified = {2014-01-26 21:29:12 +0000},
+	Editor = {Saeki, Motoshi and Canfora, Gerardo and Yamamoto, Shuichiro},
+	Month = {5--6~} # sep,
+	Pages = {3--9},
+	Title = {Species Evolve, Individuals Age},
+	Year = 2005}
+
+@article{Wegner,
+	_Issn = {0001-0782},
+	Acmid = {253801},
+	Address = {New York, NY, USA},
+	Author = {Wegner, Peter},
+	Issue_Date = {May 1997},
+	Journal = {Commun. ACM},
+	Month = may,
+	Number = {5},
+	Numpages = {12},
+	Pages = {80--91},
+	Publisher = {ACM},
+	Title = {Why Interaction is More Powerful Than Algorithms},
+	Volume = {40},
+	Year = {1997}}
+
+@article{facets,
+	Author = {Kari, Lila and Rozenberg, Grzegorz},
+	Issue = {10},
+	Journal = {Communications of the ACM},
+	Pages = {72--83},
+	Title = {The many facets of natural computing},
+	Volume = {51},
+	Xxx_Month = {October},
+	Year = {2008}}
+
+@book{interactionbook,
+	__Url = {http://www.springerlink.com/content/g3h215/},
+	Booktitle = {Interactive Computation: The New Paradigm},
+	Editor = {Goldin, Dina Q. and Smolka, Scott A. and Wegner, Peter},
+	Month = sep,
+	Publisher = {Springer},
+	Title = {Interactive Computation: The New Paradigm},
+	Year = 2006}
+
+@incollection{interaction-interbook,
+	__Url = {http://www.springerlink.com/content/h8p826m8u1687245/},
+	_Doi = {10.1007/3-540-34874-3\_15},
+	Author = {Omicini, Andrea and Ricci, Alessandro and Viroli, Mirko},
+	Bdsk-_Url-1 = {http://dx._doi.org/10.1007/3-540-34874-3%5C_15},
+	Booktitle = {Interactive Computation: The New Paradigm},
+	Date-Added = {2014-01-27 11:05:44 +0000},
+	Date-Modified = {2014-01-27 11:07:03 +0000},
+	Month = sep,
+	Pages = {395--414},
+	Publisher = {Springer},
+	Title = {The Multidisciplinary Patterns of Interaction from Sciences to {C}omputer {S}cience},
+	Year = 2006}
+
+@inproceedings{adaptivenesslinda-esoaI,
+	_Isbn = {3-540-21201-9},
+	_Issn = {0302-9743},
+	Author = {Menezes, Ronaldo and Tolksdorf, Robert},
+	Booktitle = {Engineering Self-Organising Systems. Nature-Inspired Approaches to Software Engineering},
+	Editor = {Di Marzo Serugendo, Giovanna and Karageorgos, Anthony and Rana, Omer F. and Zambonelli, Franco},
+	Pages = {212--232},
+	Publisher = {Springer},
+	Title = {Adaptiveness in {L}inda-Based Coordination Models},
+	Volume = 2977,
+	Year = 2003}
+
+@incollection{coordbook2001--ch04,
+	Author = {Rossi, Davide and Cabri, Giacomo and Denti, Enrico},
+	Chapter = 4,
+	Crossref = {coordbook2001},
+	Pages = {83--109},
+	Title = {Tuple-based Technologies for Coordination}}
+
+@book{coordbook2001,
+	_Doi = {10.1007/978-3-662-04401-8},
+	_Isbn = {3-540-41613-7},
+	Bdsk-_Url-1 = {http://dx._doi.org/10.1007/978-3-662-04401-8},
+	Booktitle = {Coordination of Internet Agents: Models, Technologies, and Applications},
+	Date-Added = {2014-01-27 11:31:21 +0000},
+	Date-Modified = {2014-01-27 11:32:04 +0000},
+	Editor = {Omicini, Andrea and Zambonelli, Franco and Klusch, Matthias and Tolksdorf, Robert},
+	Month = mar,
+	Pages = {XXVII--523},
+	Publisher = {Springer-Verlag},
+	Title = {Coordination of Internet Agents: Models, Technologies, and Applications},
+	Year = 2001}
+
+@article{linda-toplas7,
+	__Url = {http://portal.acm.org/citation.cfm?id=2433},
+	_Doi = {10.1145/2363.2433},
+	Author = {Gelernter, David},
+	Bdsk-_Url-1 = {http://dx._doi.org/10.1145/2363.2433},
+	Date-Added = {2014-01-27 11:10:38 +0000},
+	Date-Modified = {2014-01-27 11:11:09 +0000},
+	Journal = {ACM Transactions on Programming Languages and Systems},
+	Month = jan,
+	Number = 1,
+	Pages = {80--112},
+	Title = {Generative Communication in {L}inda},
+	Volume = 7,
+	Year = 1985}
+
+@article{tspaces-ibmsj37,
+	Author = {Wyckoff, Peter and McLaughry, Stephen W. and Lehman, Tobin J. and Ford, Daniel A.},
+	Journal = {IBM Systems Journal},
+	Number = 3,
+	Pages = {454--474},
+	Publisher = {IBM},
+	Title = {{T}~{S}paces},
+	Volume = 37,
+	Year = 1998}
+
+@book{javaspaces1999,
+	Author = {Freeman, Eric and Hupfer, Susanne and Arnold, Ken},
+	Booktitle = {{J}ava{S}paces {P}rinciples, {P}atterns, and {P}ractice: {P}rinciples, {P}atterns and {P}ractices},
+	Month = jun,
+	Publisher = {Addison-Wesley Longman},
+	Series = {{T}he {J}ini {T}echnology {S}eries},
+	Title = {{J}ava{S}paces {P}rinciples, {P}atterns, and {P}ractice: {P}rinciples, {P}atterns and {P}ractices},
+	Year = 1999}
+
+
+@inproceedings{javaspaces,
+	_Isbn = {3-540-42293-5},
+	_Url = {http://dl.acm.org/citation.cfm?id=645565.658749},
+	Acmid = {658749},
+	Author = {Noble, Michael S. and Zlateva, Stoyanka},
+	Bdsk-_Url-1 = {http://dl.acm.org/citation.cfm?id=645565.658749},
+	Booktitle = {Proceedings of the 9th International Conference on High-Performance Computing and Networking},
+	Date-Modified = {2012-10-09 11:14:07 +0000},
+	Numpages = {10},
+	Pages = {657--666},
+	Publisher = {Springer-Verlag},
+	Title = {Scientific Computation with JavaSpaces},
+	Year = {2001}}
+
+@article{nic-ieeeis19,
+	_Doi = {10.1109/MIS.2004.1265875},
+	_Issn = {1541-1672},
+	_Url = {http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=1265875},
+	Author = {Shadbolt, Nigel},
+	Bdsk-_Url-1 = {http://dx._doi.org/10.1109/MIS.2004.1265875},
+	Date-Added = {2014-01-27 11:00:02 +0000},
+	Date-Modified = {2014-01-27 11:00:02 +0000},
+	Journal = {IEEE Intelligent Systems},
+	Month = jan # {--} # feb,
+	Number = 1,
+	Pages = {2--3},
+	Title = {From the {E}ditor in {C}hief: {N}ature-{I}nspired {C}omputing},
+	Volume = 19,
+	Year = 2004,
+	Abstract = {Increased understanding of biological systems will lead to breakthroughs in computing and artificial intelligence.}}
+
+@article{nic-cacm49,
+	_Doi = {10.1145/1164394.1164395},
+	_Issn = {0001-0782},
+	_Url = {http://dl.acm.org/citation.cfm?_doid=1164395},
+	Author = {Liu, Jiming and Tsui, Kwok Ching},
+	Bdsk-_Url-1 = {http://dl.acm.org/citation.cfm?_doid=1164395},
+	Bdsk-_Url-2 = {http://dx._doi.org/10.1145/1164394.1164395},
+	Date-Added = {2014-01-27 11:00:02 +0000},
+	Date-Modified = {2014-01-27 11:00:02 +0000},
+	Journal = {Communications of the ACM},
+	Month = oct,
+	Number = 10,
+	Pages = {59--64},
+	Title = {Toward Nature-Inspired Computing},
+	Volume = 49,
+	Year = 2006}
+
+@book{fieldbasedcoordination-mamei06,
+	Author = {Mamei, Marco and Zambonelli, Franco},
+	Bdsk-_Url-1 = {http://www.springerlink.com/content/j51v18/},
+	Bdsk-_Url-2 = {http://dx._doi.org/10.1007/3-540-27969-5},
+	Month = mar,
+	Pages = {XII-241},
+	Publisher = {Springer},
+	Series = {Springer Series in Agent Technology},
+	Title = {Field-Based Coordination for Pervasive Multiagent Systems. Models, Technologies, and Applications},
+	Year = 2006}
+
+@incollection{cofields--esawIII,
+	__Url = {http://www.springerlink.com/content/7l3y3y2my50p2wwf/},
+	Author = {Mamei, Marco and Zambonelli, Franco and Leonardi, Letizia},
+	Bdsk-_Url-1 = {http://www.springerlink.com/content/7l3y3y2my50p2wwf/},
+	Bdsk-_Url-2 = {http://dx._doi.org/10.1007/3-540-39173-8_6},
+	Crossref = {esawIII},
+	Pages = {68--81},
+	Title = {Co-fields: Towards a Unifying Approach to the Engineering of Swarm Intelligent Systems}}
+
+@proceedings{esawIII,
+	__Url = {http://www.springerlink.com/content/978-3-540-14009-2/},
+	Bdsk-_Url-1 = {http://www.springerlink.com/content/wkl47f5ffc8964me/},
+	Bdsk-_Url-2 = {http://dx._doi.org/10.1007/3-540-39173-8_2},
+	Booktitle = {Engineering Societies in the Agents World III},
+	Editor = {Petta, Paolo and Tolksdorf, Robert and Zambonelli, Franco},
+	Month = apr,
+	Note = {3rd International Workshop (ESAW 2002), Madrid, Spain, 16--17~} # sep # {~2002. Revised Papers},
+	Publisher = {Springer},
+	Series = {LNCS},
+	Title = {Engineering Societies in the Agents World III},
+	Volume = 2577,
+	Year = 2003}
+
+@article{guo2012,
+  title={A morphogenetic framework for self-organized multirobot pattern formation and boundary coverage},
+  author={Guo, Hongliang and Jin, Yaochu and Meng, Yan},
+  journal={ACM Transactions on Autonomous and Adaptive Systems},
+  volume={7},
+  number={1},
+  pages={15},
+  year={2012},
+  publisher={ACM}
+}
+
+@article{gamma-scico15,
+	_Doi = {10.1016/0167-6423(90)90044-E},
+	_Issn = {0167-6423},
+	_Url = {http://www.sciencedirect.com/science/article/pii/016764239090044E},
+	Author = {Ban{\^a}tre, Jean-Pierre and Le M{\'e}tayer, Daniel},
+	Bdsk-_Url-1 = {http://dx._doi.org/10.1016/0167-6423(90)90044-E},
+	Date-Added = {2014-01-27 10:57:25 +0000},
+	Date-Modified = {2014-01-27 10:57:25 +0000},
+	Journal = {Science of Computer Programming},
+	Month = nov,
+	Number = 1,
+	Pages = {55--77},
+	Title = {The {GAMMA} Model and its Discipline of Programming},
+	Volume = 15,
+	Year = 1990}
+
+@incollection{gamma-lncs2235,
+	__Url = {http://www.springerlink.com/content/8u923a5j46vy48hp/},
+	_Doi = {10.1007/3-540-45523-X\_2},
+	Author = {Ban{\^a}tre, Jean-Pierre and Fradet, Pascal and Le M{\'e}tayer, Daniel},
+	Bdsk-_Url-1 = {http://www.springerlink.com/content/8u923a5j46vy48hp/},
+	Bdsk-_Url-2 = {http://dx._doi.org/10.1007/3-540-45523-X_2},
+	Booktitle = {Multiset Processing. Mathematical, Computer Science, and Molecular Computing Points of View},
+	Date-Added = {2014-01-27 10:57:25 +0000},
+	Date-Modified = {2014-02-02 22:02:42 +0000},
+	Editor = {Calude, Cristian S. and P{\u a}un, Gheorghe and Rozenberg, Grzegorz and Salomaa, Arto},
+	Pages = {17--44},
+	Publisher = {Springer},
+	Series = {LNCS},
+	Title = {Gamma and the Chemical Reaction Model: Fifteen Years After},
+	Volume = 2235,
+	Year = 2001}
+
+@article{cham-tcs96,
+	_Doi = {10.1016/0304-3975(92)90185-I},
+	Author = {Berry, G{\'e}rard},
+	Bdsk-_Url-1 = {http://dx._doi.org/10.1016/0304-3975(92)90185-I},
+	Date-Added = {2014-01-27 10:57:34 +0000},
+	Date-Modified = {2014-01-27 10:57:34 +0000},
+	Journal = {Theoretical Computer Science},
+	Month = apr,
+	Number = 1,
+	Pages = {217--248},
+	Publisher = {Elsevier Science B.V.},
+	Title = {The Chemical Abstract Machine},
+	Volume = 96,
+	Year = 1992}
+
+@article{frei,
+	Author = {Frei, Regina and Serugendo, Giovanna Di Marzo and Serbanuta, Traian-Florin},
+	Journal = {Journal of Ambient Intelligence and Humanized Computing},
+	Number = {3},
+	Pages = {163-184},
+	Title = {Ambient intelligence in self-organising assembly systems using the chemical reaction model},
+	Volume = {1},
+	Year = {2010}}
+
+@inproceedings{Meyer07,
+  author    = {Thomas Meyer and
+               Lidia Yamamoto and
+               Christian F. Tschudin},
+  title     = {An Artificial Chemistry for Networking},
+  booktitle = {First Workshop on Bio-Inspired Design of Networks, BIOWIRE 2007, Cambridge, UK},
+  year      = {2007},
+  pages     = {45-57},
+}
+
+@article{Monti13,
+  author    = {Massimo Monti and
+               Thomas Meyer and
+               Christian F. Tschudin and
+               Marco Luise},
+  title     = {Stability and Sensitivity Analysis of Traffic-Shaping Algorithms
+               Inspired by Chemical Engineering},
+  journal   = {IEEE Journal on Selected Areas in Communications},
+  volume    = {31},
+  number    = {6},
+  year      = {2013},
+  pages     = {1105-1114},
+  ee        = {http://dx.doi.org/10.1109/JSAC.2013.130612},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{BanP09,
+  author    = {Jean-Pierre Ban{\^a}tre and
+               Thierry Priol},
+  title     = {Chemical Programming of Future Service-oriented Architectures},
+  journal   = {JSW},
+  volume    = {4},
+  number    = {7},
+  year      = {2009},
+  pages     = {738-746},
+  ee        = {http://dx.doi.org/10.4304/jsw.4.7.738-746},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article {cpe,
+author = {Hossain, M. Shamim and Alamri, Atif and El Saddik, Abdulmotaleb},
+title = {A biologically inspired framework for multimedia service management in a ubiquitous environment},
+journal = {Concurrency and Computation: Practice and Experience},
+volume = {21},
+number = {11},
+pages = {1450--1466},
+year = {2009},
+}
+
+@incollection{chemcoord-soarbook,
+	_Isbn = {978-3-642-14411-0},
+	_Issn = {0302-9743},
+	_Issn-Online = {1611-3349},
+	Author = {Viroli, Mirko and Casadei, Matteo and Nardini, Elena and Omicini, Andrea},
+	Booktitle = {Self-Organizing Architectures},
+	Chapter = 8,
+	Editor = {Weyns, Danny and Malek, Sam and de Lemos, Rog{\'e}rio and Andersson, Jesper},
+	Month = jul,
+	Note = {1st International Workshop on Self-Organizing Architectures (SOAR 2009), Cambridge, UK, 14-17~} # sep # {~2009, Revised Selected and Invited Papers},
+	Pages = {152--176},
+	Publisher = {Springer},
+	Series = {LNCS},
+	Title = {Towards a Chemical-Inspired Infrastructure for Self-* Pervasive Applications},
+	Volume = 6090,
+	Year = 2010}
+
+@inproceedings{werfel,
+	Address = {Washington, DC, USA},
+	Author = {Werfel, Justin and Bar-Yam, Yaneer and Ingber, Donald},
+	Booktitle = {1st International SASO Workshop on Spatial Computing},
+	Numpages = {6},
+	Pages = {338--343},
+	Publisher = {IEEE Computer Society},
+	Title = {Bioinspired Environmental Coordination in Spatial Computing Systems},
+	Year = {2008}}
+
+@article{lee,
+	Address = {Amsterdam, The Netherlands, The Netherlands},
+	Author = {Lee, Uichin and Magistretti, Eugenio and Gerla, Mario and Bellavista, Paolo and Li\'{o}, Pietro and Lee, Kang-Won},
+	Issue = {4},
+	Journal = {Ad Hoc Networks},
+	Pages = {725--741},
+	Title = {Bio-inspired multi-agent data harvesting in a proactive urban monitoring environment},
+	Volume = {7},
+	Xxx_Month = {June},
+	Xxx_Publisher = {Elsevier Science Publishers B. V.},
+	Year = {2009}}
+
+@article{amorphous,
+	Author = {Abelson, Harold and Allen, Don and Coore, Daniel and Hanson, Chris and Homsy, George and Knight, Jr., Thomas F. and Nagpal, Radhika and Rauch, Erik and Sussman, Gerald Jay and Weiss, Ron},
+	Issue = {5},
+	Journal = {Communications of the ACM},
+	Numpages = {9},
+	Pages = {74--82},
+	Title = {Amorphous computing},
+	Volume = {43},
+	Xxx_Month = {May},
+	Year = {2000}}
+
+@article{stigmergyhistory-artificiallife5,
+	_Doi = {10.1162/106454699568700},
+	_Isbn = {1064-5462},
+	_Url = {http://www.mitpressjournals.org/_doi/abs/10.1162/106454699568700},
+	Author = {Theraulaz, Guy and Bonabeau, Eric},
+	Bdsk-_Url-1 = {http://dx._doi.org/10.1162/106454699568700},
+	Booktitle = {Artificial Life},
+	Date-Added = {2014-01-27 10:59:20 +0000},
+	Date-Modified = {2014-01-27 10:59:20 +0000},
+	Journal = {Artificial Life},
+	Month = {Spring},
+	Number = 2,
+	Pages = {97--116},
+	Publisher = {MIT Press},
+	Title = {A Brief History of Stigmergy},
+	Volume = 5,
+	Year = 1999,
+	Annote = {_doi: 10.1162/106454699568700}}
+
+@article{stigmergy-artificiallife5,
+	_Doi = {10.1162/106454699568692},
+	_Isbn = {1064-5462},
+	_Url = {http://www.mitpressjournals.org/_doi/abs/10.1162/106454699568692},
+	Author = {Bonabeau, Eric},
+	Bdsk-_Url-1 = {http://dx._doi.org/10.1162/106454699568692},
+	Booktitle = {Artificial Life},
+	Date-Added = {2014-01-27 10:59:20 +0000},
+	Date-Modified = {2014-01-27 10:59:20 +0000},
+	Journal = {Artificial Life},
+	Month = {Spring},
+	Number = 2,
+	Pages = {95--96},
+	Publisher = {MIT Press},
+	Title = {Editor's Introduction: Stigmergy},
+	Volume = 5,
+	Year = 1999,
+	Annote = {_doi: 10.1162/106454699568692}}
+
+@article{stigmergy-grasse59,
+	__Url = {http://www.springerlink.com/content/7855803040371473/},
+	Author = {Grass\'e, Pierre-Paul},
+	Bdsk-_Url-1 = {http://www.springerlink.com/content/7855803040371473/},
+	Bdsk-_Url-2 = {http://dx._doi.org/10.1007/BF02223791},
+	Journal = {Insectes Sociaux},
+	Month = mar,
+	Number = 1,
+	Pages = {41--80},
+	Publisher = {Birkh{\"a}user Basel},
+	Title = {La reconstruction du nid et les coordinations interindividuelles chez {B}ellicositermes natalensis et {C}ubitermes sp. la th\'eorie de la stigmergie: Essai d'interpr\'etation du comportement des termites constructeurs},
+	Volume = 6,
+	Year = 1959}
+
+@book{dorigo-aco2004,
+	Address = {Cambridge, MA},
+	Author = {Dorigo, Marco and St{\"u}tzle, Thomas},
+	Month = jul,
+	Publisher = {MIT Press},
+	Title = {Ant Colony Optimization},
+	Year = 2004}
+
+@article{collectivesort-scico74,
+	Author = {Casadei, Matteo and Viroli, Mirko and Gardelli, Luca},
+	Booktitle = {Special Issue on the 5th International Workshop on Foundations of Coordination Languages and Architectures (FOCLASA '06)},
+	Doi = {10.1016/j.scico.2008.09.018},
+	Editor = {Pimentel, Ernesto and Jacquet, Jean-Marie},
+	Issn = {0167-6423},
+	Journal = {Science of Computer Programming},
+	Keywords = {Self-Organising Systems, Tuple Spaces, Stochastic Simulations, Collective Sort},
+	Number = 9,
+	Pages = {702--722},
+	Publisher = {Elsevier Science B. V.},
+	Title = {On the Collective Sort Problem for Distributed Tuple Spaces},
+	Url = {http://www.sciencedirect.com/science/article/pii/S0167642309000318},
+	Volume = 74,
+	Year = 2009}
+
+@inproceedings{pheromoncoord-aamas2002,
+	__Url = {http://dl.acm.org/citation.cfm?_doid=544741.544843},
+	_Doi = {10.1145/544741.544843},
+	_Isbn = {1-58113-480-0},
+	Acmid = {544843},
+	Address = {New York, NY, USA},
+	Author = {Parunak, H. Van Dyke and Brueckner, Sven and Sauter, John},
+	Bdsk-_Url-1 = {http://dl.acm.org/citation.cfm?_doid=544741.544843},
+	Bdsk-_Url-2 = {http://dx._doi.org/10.1145/544741.544843},
+	Booktitle = {1st International Joint Conference on Autonomous Agents and Multiagent systems},
+	Date-Added = {2014-01-27 10:59:20 +0000},
+	Date-Modified = {2014-01-27 10:59:20 +0000},
+	Editor = {Castelfranchi, Cristiano and Johnson, W. Lewis},
+	Keywords = {biomimetics, fine-grained agents, pheromones, stigmergy},
+	Location = {Bologna, Italy},
+	Month = {15--19} # jul,
+	Pages = {449--450},
+	Publisher = {ACM},
+	Title = {Digital Pheromone Mechanisms for Coordination of Unmanned Vehicles},
+	Volume = 1,
+	Year = 2002}
+
+@incollection{stigmergy-e4masII,
+	__Url = {http://www.springerlink.com/content/2538k675375g4337/},
+	_Doi = {10.1007/11678809\_10},
+	Author = {Parunak, H. Van Dyke},
+	Bdsk-_Url-1 = {http://www.springerlink.com/content/2538k675375g4337/},
+	Bdsk-_Url-2 = {http://dx._doi.org/10.1007/11678809_10},
+	Booktitle = {Environments for Multi-Agent Systems II},
+	Date-Added = {2014-01-27 10:59:20 +0000},
+	Date-Modified = {2014-01-27 11:02:34 +0000},
+	Editor = {Weyns, Danny and Parunak, H. Van Dyke and Michel, Fabien},
+	Pages = {163--186},
+	Publisher = {Springer},
+	Series = {LNCS},
+	Title = {A Survey of Environments and Mechanisms for Human-Human Stigmergy},
+	Volume = 3830,
+	Year = 2006}
+
+@inproceedings{tota-aamas2005,
+	_Doi = {10.1145/1082473.1082537},
+	_Isbn = {1-59593-093-0},
+	Address = {New York, NY, USA},
+	Author = {Mamei, Marco and Zambonelli, Franco},
+	Bdsk-_Url-1 = {http://dx._doi.org/10.1145/1082473.1082537},
+	Booktitle = {4th International Joint Conference on Autonomous Agents and Multiagent Systems (AAMAS 2005)},
+	Date-Added = {2014-01-27 10:59:06 +0000},
+	Date-Modified = {2014-01-27 10:59:06 +0000},
+	Location = {Utrecht, The Netherlands},
+	Pages = {415--422},
+	Publisher = {ACM},
+	Title = {Programming Stigmergic Coordination with the {TOTA} Middleware},
+	Year = 2005}
+
+@article{MameiZ07,
+  author    = {Marco Mamei and
+               Franco Zambonelli},
+  title     = {Pervasive pheromone-based interaction with {RFID} tags},
+  journal   = {TAAS},
+  volume    = {2},
+  number    = {2},
+  year      = {2007},
+  ee        = {http://doi.acm.org/10.1145/1242060.1242061},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@book{swarmintelligence-book1999,
+	_Url = {http://ukcatalogue.oup.com/product/9780195131581.do},
+	Author = {Bonabeau, Eric and Dorigo, Marco and Theraulaz, Guy},
+	Bdsk-_Url-1 = {http://ukcatalogue.oup.com/product/9780195131581.do},
+	Booktitle = {Swarm Intelligence: from Natural to Artificial Systems},
+	Publisher = {Oxford University Press},
+	Title = {Swarm Intelligence: From Natural to Artificial Systems},
+	Year = 1999}
+s
+@article{AC-Survey,
+author = {Simon Dobson and Spyros Denazis and Antonio Fern\'andez and Dominique Ga\"iti and Erol Gelenbe and Fabio Massacci and Paddy Nixon and Fabrice Saffre and Nikita Schmidt and Franco Zambonelli},
+title = {A survey of autonomic communications},
+journal = {ACM Transactions on Autonomous and Adaptive Systems},
+volume = 1,
+number = 2,
+month = {December},
+pages = {223--259},
+year = 2006,
+keywords = {autonomic systems, survey, Lero, SPC},
+}
+
+@techreport{manola2004primer,
+  added-at = {2014-12-15T10:33:10.000+0100},
+  author = {Manola, Frank and Miller, Eric},
+  biburl = {http://www.bibsonomy.org/bibtex/262f1b63e1c13b7ce6ce79c6439f96be8/asalber},
+  institution = {World Wide Web Consortium},
+  interhash = {c70eb989b40c4f552bd2e822d7c03aaf},
+  intrahash = {62f1b63e1c13b7ce6ce79c6439f96be8},
+  keywords = {RDF semantic-web},
+  month = {February},
+  owner = {Mauro},
+  timestamp = {2014-12-15T10:33:10.000+0100},
+  title = {{RDF} Primer},
+  type = {{W3C} Recommendation},
+  url = {http://www.w3.org/TR/rdf-primer/},
+  year = 2004
+}
+
+@inproceedings{sapereecolaws-sac2012,
+	Address = {Riva del Garda, TN, Italy},
+	Author = {Viroli, Mirko and Pianini, Danilo and Montagna, Sara and Stevenson, Graeme},
+	Booktitle = {27th Annual ACM Symposium on Applied Computing (SAC 2012)},
+	Doi = {10.1145/2245276.2245336},
+	Editor = {Ossowski, Sascha and Lecca, Paola and Hung, Chih-Cheng and Hong, Jiman},
+	Isbn = {978-1-4503-0857-1},
+	Month = {26--30~} # mar,
+	Publisher = {ACM},
+	Title = {Pervasive Ecosystems: a Coordination Model based on Semantic Chemistry},
+	Url = {http://dl.acm.org/citation.cfm?doid=2245276.2245336},
+	Year = 2012}
+
+@book{alberts,
+	Author = {Alberts, Bruce and Johnson, Alexander and Lewis, Julian and Raff, Martin and Roberts, Keith and Walter, Peter},
+	Bdsk-Url-1 = {http://www.garlandscience.com/textbooks/0815332181.asp},
+	Booktitle = {Molecular Biology of the Cell},
+	Edition = {{F}ourth},
+	Isbn = {0815332181},
+	Month = jun,
+	Pages = {1616},
+	Publisher = {Garland Science},
+	Series = {Garland Science Textbooks},
+	Title = {Molecular Biology of the Cell},
+	Url = {http://www.garlandscience.com/textbooks/0815332181.asp},
+	Year = {2002}
+	}
+	
+@book{gilbert2006-devbio,
+	Author = {Gilbert, Scott F.},
+	Booktitle = {Developmental Biology},
+	Edition = {{E}ighth},
+	Isbn = {087893250X},
+	Month = mar,
+	Pages = {751},
+	Publisher = {Sinauer Associates Inc.},
+	Title = {Developmental Biology,  Eighth Edition},	
+	Year = {2006}
+	}
+	
+@article{reinitz95,
+    author = {Reinitz, John and Sharp, David H.},
+    doi = {10.1016/0925-4773(94)00310-J},
+    issn = {09254773},
+    journal = {Mechanisms of Development},
+    month = jan,
+    number = {1-2},
+    pages = {133--158},
+    title = {{Mechanism of eve stripe formation}},
+    volume = {49},
+    year = {1995}
+}
+
+@article{gursky04,
+    author = {Gursky, Vitaly V. and Jaeger, Johannes and Kozlov, Konstantin N. and Reinitz, John and Samsonov, Alexander M.},
+    citeulike-article-id = {1239926},
+    citeulike-linkout-0 = {http://www.sciencedirect.com/science/article/B6TVK-4D8MRSX-1/2/8f7adf7277bf6825aa850d8ba44afed1},
+    day = {15},
+    journal = {Physica D: Nonlinear Phenomena},
+    keywords = {gene--bcd, key--expression\_pattern, key--regulatory\_network, key--segmentation, system--dmel\_embryo, tech--network\_modeling},
+    month = {October},
+    number = {3-4},
+    pages = {286--302},
+    posted-at = {2007-04-20 16:43:20},
+    priority = {4},
+    title = {Pattern formation and nuclear divisions are uncoupled in Drosophila segmentation: comparison of spatially discrete and continuous models},
+    url = {http://www.sciencedirect.com/science/article/B6TVK-4D8MRSX-1/2/8f7adf7277bf6825aa850d8ba44afed1},
+    volume = {197},
+    year = {2004}
+}
+
+@article{flyex2009,
+  author    = {Andrei Pisarev and
+               Ekaterina Poustelnikova and
+               Maria Samsonova and
+               John Reinitz},
+  title     = {FlyEx, the quantitative atlas on segmentation gene expression
+               at cellular resolution},
+  journal   = {Nucleic Acids Research},
+  volume    = {37},
+  number    = {Database-Issue},
+  year      = {2009},
+  pages     = {560--566}
+}
+
+@article{perkins-compbio06,
+    author = {Perkins, Theodore J AND Jaeger, Johannes AND Reinitz, John AND Glass, Leon},
+    journal = {PLoS Computational Biology},
+    publisher = {Public Library of Science},
+    title = {Reverse Engineering the Gap Gene Network of \emph{Drosophila Melanogaster}},
+    year = {2006},
+    month = {05},
+    volume = {2},
+    url = {http://dx.plos.org/10.1371%2Fjournal.pcbi.0020051},
+    pages = {e51},
+    number = {5},
+    doi = {10.1371/journal.pcbi.0020051}
+}
+
+@article{database-2008,
+title = "Characterization of the {D}rosophila segment determination morphome",
+journal = "Developmental Biology",
+volume = "313",
+number = "2",
+pages = "844 - 862",
+year = "2008",
+author = "Svetlana Surkova and David Kosman and Konstantin Kozlov and Manu and Ekaterina Myasnikova and Anastasia A. Samsonova and Alexander Spirov and Carlos E. Vanario-Alonso and Maria Samsonova and John Reinitz"
+}
+
+@article{RiveraPomar,
+title = "From gradients to stripes in Drosophila embryogenesis: filling in the gaps",
+journal = "Trends in Genetics",
+volume = "12",
+number = "11",
+pages = "478 - 483",
+year = "1996",
+note = "",
+issn = "0168-9525",
+doi = "DOI: 10.1016/0168-9525(96)10044-5",
+url = "http://www.sciencedirect.com/science/article/B6TCY-3W2594M-H/2/3b4dd8daa4425918fedd88266b0f193a",
+author = "Rolando Rivera-Pomar and Herbert Jackle"
+}
+
+@article{biotapestry-2009,
+title = "Visualization, documentation, analysis, and communication of large-scale gene regulatory networks",
+journal = "Biochimica et Biophysica Acta (BBA) - Gene Regulatory Mechanisms",
+volume = "1789",
+number = "4",
+pages = "363--374",
+year = "2009",
+author = "William J.R. Longabaugh and Eric H. Davidson and Hamid Bolouri"
+}
+
+@InProceedings{bealBasisSCW10,
+  author = 	 {Jacob Beal},
+  title = 	 {A Basis Set of Operators for Space-Time Computations},
+  booktitle = {Spatial Computing Workshop},
+  note = {Available at: {\tt http://www.spatial-computing.org/scw10/}},
+  year = 	 {2010}
+}
+
+@article{BealUsbeck12,
+author = {Beal, Jacob and Usbeck, Kyle and Benyo, Brett},
+title = {On the Evaluation of Space-Time Functions},
+year = {2013},
+volume = 56,
+number = 12,
+pages = {1500--1517},
+Note = {doi: 10.1093/comjnl/bxs099},
+doi = {10.1093/comjnl/bxs099},
+journal = {The Computer Journal}
+}
+
+@incollection{upp,
+year={2005},
+isbn={978-3-540-27884-9},
+booktitle={Unconventional Programming Paradigms},
+volume={3566},
+series={Lecture Notes in Computer Science},
+editor={Banatre, Jean-Pierre and Fradet, Pascal and Giavitto, Jean-Louis and Michel, Olivier},
+doi={10.1007/11527800\_10},
+title={Programming an Amorphous Computational Medium},
+url={http://dx.doi.org/10.1007/11527800\_10},
+publisher={Springer Berlin Heidelberg},
+author={Beal, Jacob},
+pages={121-136}
+}
+
+@Book{RelativityIntroduction,
+  author = {Edwin F. Taylor and John Archibald Wheeler},
+  title = {Spacetime Physics: Introduction to Special Relativity},
+  edition = {2nd ed.},
+  publisher = {W. H. Freeman \& Company},
+  year= 1992
+}
+
+@book{Lynch:1996:DA:525656,
+ author = {Lynch, Nancy A.},
+ title = {Distributed Algorithms},
+ year = {1996},
+ isbn = {1558603484},
+ publisher = {Morgan Kaufmann Publishers Inc.},
+ address = {San Francisco, CA, USA},
+}
+
+@InBook{LebesgueIntegral,
+  author = 	 {Kestelman, H},
+  title = 	 {Modern Theories of Integration},
+  chapter = 	 {"Lebesgue Integral of a Non-Negative Function" and "Lebesgue Integrals of Functions Which Are Sometimes Negative." (Chapter 5-6)},
+  publisher = 	 {Dover},
+  year = 	 {1960},
+  address = 	 {New York},
+  edition = 	 {2nd. rev. ed.},
+  pages = 	 {113--160}
+}
+
+@INPROCEEDINGS{561342, 
+author={Henzinger, T.A.}, 
+booktitle={Logic in Computer Science, 1996. LICS '96. Proceedings., Eleventh Annual IEEE Symposium on}, 
+title={The theory of hybrid automata}, 
+year={1996}, 
+month={Jul}, 
+pages={278-292}, 
+keywords={automata theory;finite automata;formal verification;discrete concurrent systems;finite-state systems;hybrid automata theory;partly continuous systems;uncountable state spaces;Automata;Automatic control;Continuous time systems;Digital control;Force control;Labeling;State-space methods;Switches;Temperature control;Thermostats}, 
+doi={10.1109/LICS.1996.561342}, 
+ISSN={1043-6871},}
+
+@techreport{maclennanCSA,
+ title = {Continuous Spatial Automata},
+ author = {Bruce MacLennan},
+ institution = {University of Tennessee, Knoxville},
+ number = {Department of Computer Science Technical Report CS-90-121},
+ month = {November},
+ year = {1990}
+}
+
+
+@inproceedings{hood,
+ author = {Kamin Whitehouse and Cory Sharp and Eric Brewer and David Culler},
+ title = {Hood: a neighborhood abstraction for sensor networks},
+ booktitle = {Proceedings of the 2nd international conference on Mobile systems, applications, and services},
+ year = {2004},
+ location = {Boston, MA, USA},
+ publisher = {ACM Press}
+ }
+ 
+@incollection{GiavittoMGS05,
+year={2005},
+isbn={978-3-540-27884-9},
+booktitle={Unconventional Programming Paradigms},
+volume={3566},
+series={Lecture Notes in Computer Science},
+editor={Banâtre, Jean-Pierre and Fradet, Pascal and Giavitto, Jean-Louis and Michel, Olivier},
+doi={10.1007/11527800_11},
+title={Computations in Space and Space in Computations},
+DISABLEDurl={http://dx.doi.org/10.1007/11527800_11},
+publisher={Springer Berlin Heidelberg},
+author={Giavitto, Jean-Louis and Michel, Olivier and Cohen, Julien and Spicher, Antoine},
+pages={137-152}
+}
+
+@inproceedings{welsh2004regions,
+  author = {Matt Welsh and Geoff Mainland},
+  title = {Programming Sensor Networks Using Abstract Regions},
+  booktitle = {Proceedings of the First USENIX/ACM Symposium on Networked Systems Design and Implementation (NSDI '04)},
+  month = mar,
+  year = {2004}
+}
+
+@book{starlisp,
+  author = {C. Lasser and J.P. Massar and J. Miney and L. Dayton},
+  title = {Starlisp Reference Manual},
+  publisher = {Thinking Machines Corporation},
+  year = 1988
+}
+
+@article{SDEF,
+title = "The SDEF programming system",
+journal = "Journal of Parallel and Distributed Computing",
+volume = "7",
+number = "2",
+pages = "201 - 231",
+year = "1989",
+author = "Bradley R. Engstrom and Peter R. Cappello"
+}
+
+@InProceedings{ReLaCS,
+  author = 	 {Raimbault, F and Lavenier, D},
+  title = 	 {ReLaCS for Systolic Programming},
+  booktitle = {Int'l Conf. on Application-Specific Array Processors},
+  pages = 	 {132--135},
+  year = 	 {1993},
+  month = 	 {October},
+}
+
+@article{zavattaro,
+  author    = {Nadia Busi and
+               Roberto Gorrieri and
+               Gianluigi Zavattaro},
+  title     = {On the Turing equivalence of Linda coordination primitives},
+  journal   = {Electr. Notes Theor. Comput. Sci.},
+  volume    = {7},
+  year      = {1997},
+  pages     = {75},
+  ee        = {http://dx.doi.org/10.1016/S1571-0661(05)80467-0},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@incollection{SemanticSapereIGI2012,
+	isbn-10 = {9781466620896},
+	booktitle = {Adaptive Web Services for Modular and Reusable Software Development: Tactics and Solution},
+	isbn-13 = 1466620897,
+	publisher = {IGI Global },
+	author = {Viroli, Mirko AND Zambonelli, Franco AND Stevenson, Graeme AND Dobson, Simon},
+	title = {From SOA to Pervasive Service Ecosystems: an approach based on Semantic Web technologies},
+	chapter = 8,
+	isbn = {978-1-4666-2091-9},
+	year = 2012,
+	_note = {Available to download at: http://apice.unibo.it/xwiki/bin/download/Publications/SemanticSapereIGI2012/chapter.pdf},
+	abstract = {Emerging pervasive computing scenarios require open service frameworks promoting situated adaptive behaviors and supporting diversity in services and long-term ability to evolve. We argue that this calls for a nature-inspired approach in which pervasive services are modeled and deployed as autonomous individuals in an ecosystem of other services, data sources, and pervasive devices. We discuss how standard service-oriented architectures have to evolve to tackle the above issues, present a general architecture based on a shared spatial substrate mediating interactions of all the individual services of the pervasive computing system, and finally show that this architecture can be implemented relying primarily on standard W3C Semantic Web technologies, like RDF and SPARQL. A use case of adaptive pervasive displays for crowd steering applications is exploited as reference example.},
+	pdf-local = {chapter.pdf},
+	keywords = {Pervasive Computing, Service Oriented Architectures, RDF, Pervasive Ecosystems},
+	status = {Published},
+	pages = {207--237},
+	venue = {--},
+	_url = {http://www.igi-global.com/chapter/soa-pervasive-service-ecosystems/69475},
+	editor = {Cubo, Javier AND Ortiz, Guadalupe},
+	doi = {10.4018/978-1-4666-2089-6.ch008}}
+
+@article{ranganathan2004ontologies,
+  author = "Anand Ranganathan and Robert E. McGrath and Roy H. Campbell and M. Dennis Mickunas",
+  title = "Use of Ontologies in a Pervasive Computing Environment",
+  number = "3",
+  volume = "18",
+  journal = "Knowledge Engineering Review",
+  publisher = "Cambridge University Press",
+  pages = "209--220",
+  year = "2004",
+}
+
+@inproceedings{V-SCW2013,
+	Address = {AAMAS 2013, Saint Paul, Minnesota, USA},
+	Author = {Viroli, Mirko},
+	Booktitle = {Spatial Computing Workshop (SCW 2013)},
+	Keywords = {Computational fields, self-organisation, self-stabilisation, spatial computing, confluence},
+	Month = may,
+	Title = {Engineering Confluent Computational Fields: from Functions to Rewrite Rules},
+	Year = 2013
+}
+
+@article{zavattaro2,
+  author    = {Nadia Busi and
+               Roberto Gorrieri and
+               Gianluigi Zavattaro},
+  title     = {A Process Algebraic View of Linda Coordination Primitives},
+  journal   = {Theor. Comput. Sci.},
+  volume    = {192},
+  number    = {2},
+  year      = {1998},
+  pages     = {167-199},
+  ee        = {http://dx.doi.org/10.1016/S0304-3975(97)00149-7},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{GorrieriLZ06,
+  author    = {Roberto Gorrieri and
+               Roberto Lucchi and
+               Gianluigi Zavattaro},
+  title     = {Supporting Secure Coordination in SecSpaces},
+  journal   = {Fundam. Inform.},
+  volume    = {73},
+  number    = {4},
+  year      = {2006},
+  pages     = {479-506},
+  ee        = {http://iospress.metapress.com/content/b89dxbd1hkumkyp2/},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{J-ORV-AAECC2005,
+    Author = {Omicini, Andrea and Ricci, Alessandro and Viroli, Mirko},
+    Doi = {10.1007/s00200-005-0174-z},
+    Editor = {Viroli, Mirko AND Omicini, Andrea},
+    Issn = {0938-1279},
+    Issn-On-Line = {1432-0622},
+    Journal = {Applicable Algebra in Engineering, Communication and Computing},
+    Month = aug,
+    _Note = {Special Issue: Process Algebras and Multi-Agent Systems},
+    Number = {2-3},
+    Openurl = {http://springerlink.metapress.com/openurl.asp?genre=article&issn=0938-1279&volume=16&issue=2&spage=151},
+    Pages = {151--178},
+    Publisher = {Springer},
+    Title = {An Algebraic Approach for Modelling Organisation, Roles and Contexts in {MAS}},
+    Url = {http://dx.doi.org/10.1007/s00200-005-0174-z},
+    Volume = 16,
+    Year = 2005}
+
+    @inProceedings{RVO-ATAI2004,
+   author =    {Ricci, Alessandro AND Viroli, Mirko AND Omicini, Andrea},
+   title =     {Agent Coordination Context: From Theory to Practice},
+   booktitle = {Cybernetics and Systems 2004},
+   editor =    {Trappl, Robert},
+   year =      2004,
+   volume =    2,
+   pages =     {618--623},
+   publisher = {Austrian Society for Cybernetic Studies},
+   address =   {Vienna, Austria},
+   isbn =      {3-85206-169-5},
+   note =      "17th European Meeting on Cybernetics and Systems Research (EMCSR 2004), Vienna, Austria, 13--16 " # apr # " 2004. Proceedings",
+}
+
+@article{VO-FI2006,
+	Author = {Viroli, Mirko and Omicini, Andrea},
+	Date-Modified = {2006-06-22 23:35:47 +0200},
+	Editor = {Brogi, Antonio and Jacquet, Jean-Marie and Kok, Joost},
+	Issn = {0169-2968},
+	Journal = {Fundamenta Informaticae},
+	_Note = {Special Issue: Best papers of FOCLASA 2002},
+	Number = 4,
+	Open-Url = {http://iospress.metapress.com/openurl.asp?genre=article&issn=0169-2968&volume=73&issue=4&spage=507},
+	Pages = {507--534},
+	Publisher = {IOS Press},
+	Title = {Coordination as a Service},
+	Volume = 73,
+	Year = 2006}
+
+@inproceedings{TerepetaNN12,
+  author    = {Michal Terepeta and
+               Hanne Riis Nielson and
+               Flemming Nielson},
+  title     = {Recursive Advice for Coordination},
+  year      = {2012},
+  pages     = {137-151},
+  ee        = {http://dx.doi.org/10.1007/978-3-642-30829-1_10},
+  booktitle     = {Coordination Models and Languages - 14th International Conference,
+               COORDINATION 2012, Stockholm, Sweden, June 14-15, 2012.
+               Proceedings},
+  publisher = {Springer},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {7274},
+  year      = {2012},
+  isbn      = {978-3-642-30828-4},
+  ee        = {http://dx.doi.org/10.1007/978-3-642-30829-1},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{BortolussiLM13,
+  author    = {Luca Bortolussi and
+               Diego Latella and
+               Mieke Massink},
+  title     = {Stochastic Process Algebra and Stability Analysis of Collective Systems},
+  booktitle = {COORDINATION},
+  year      = {2013},
+  pages     = {1-15},
+  booktitle     = {Coordination Models and Languages, 15th International Conference,
+               COORDINATION 2013, Held as Part of the 8th International
+               Federated Conference on Distributed Computing Techniques,
+               DisCoTec 2013, Florence, Italy, June 3-5, 2013. Proceedings},
+  publisher = {Springer},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {7890},
+  year      = {2013},
+  isbn      = {978-3-642-38492-9, 978-3-642-38493-6},
+  ee        = {http://dx.doi.org/10.1007/978-3-642-38493-6},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{MassinkL12,
+  author    = {Mieke Massink and
+               Diego Latella},
+  title     = {Fluid Analysis of Foraging Ants},
+  booktitle = {COORDINATION},
+  year      = {2012},
+  pages     = {152-165},
+  booktitle     = {Coordination Models and Languages - 14th International Conference,
+               COORDINATION 2012, Stockholm, Sweden, June 14-15, 2012.
+               Proceedings},
+  publisher = {Springer},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {7274},
+  year      = {2012},
+  isbn      = {978-3-642-30828-4},
+  ee        = {http://dx.doi.org/10.1007/978-3-642-30829-1},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{LaneseBF13,
+  author    = {Ivan Lanese and
+               Luca Bedogni and
+               Marco Di Felice},
+  title     = {Internet of things: a process calculus approach},
+  booktitle = {SAC},
+  year      = {2013},
+  pages     = {1339-1346},
+  booktitle     = {Proceedings of the 28th Annual ACM Symposium on Applied
+               Computing, SAC '13, Coimbra, Portugal, March 18-22, 2013},
+  booktitle = {SAC},
+  publisher = {ACM},
+  year      = {2013},
+  isbn      = {978-1-4503-1656-9},
+  ee        = {http://dl.acm.org/citation.cfm?id=2480362},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{RicciOD02,
+  author    = {Alessandro Ricci and
+               Andrea Omicini and
+               Enrico Denti},
+  title     = {Objective vs. Subjective Coordination in Agent-Based Systems: A Case Study},
+  booktitle = {COORDINATION},
+  year      = {2002},
+  pages     = {291-299},
+  editor    = {Farhad Arbab and
+               Carolyn L. Talcott},
+  booktitle     = {Coordination Models and Languages, 5th International Conference,
+               COORDINATION 2002, YORK, UK, April 8-11, 2002, Proceedings},
+  publisher = {Springer},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {2315},
+  year      = {2002},
+  isbn      = {3-540-43410-0},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{DeNicolaLM05,
+  author    = {Rocco {De Nicola} and
+               Diego Latella and
+               Mieke Massink},
+  title     = {Formal modeling and quantitative analysis of KLAIM-based mobile systems},
+  booktitle = {SAC},
+  year      = {2005},
+  pages     = {428-435},
+  booktitle     = {Proceedings of the 2005 ACM Symposium on Applied Computing
+               (SAC), Santa Fe, New Mexico, USA, March 13-17, 2005},
+  publisher = {ACM},
+  year      = {2005},
+  isbn      = {1-58113-964-0},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{mars,
+   author =  {Cabri, Giacomo AND Leonardi, Letizia AND Zambonelli, Franco},
+   title =   {{MARS}: A Programmable Coordination Architecture for Mobile Agents},
+   journal = {IEEE Internet Computing},
+   volume =  4,
+   number =  4,
+   pages =   {26--35},
+   year =    2000
+}
+
+@article{klaim,
+  author    = {Rocco De Nicola and
+               Gian Luigi Ferrari and
+               Rosario Pugliese},
+  title     = {KLAIM: A Kernel Language for Agents Interaction and Mobility},
+  journal   = {IEEE Trans. Software Eng.},
+  volume    = {24},
+  number    = {5},
+  year      = {1998},
+  pages     = {315-330},
+  ee        = {http://doi.ieeecomputersociety.org/10.1109/32.685256},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{GeoLinda,
+  author = {Julien Pauty and Paul Couderc and Michel Banatre and Yolande Berbers},
+  title = {Geo-Linda: a Geometry Aware Distributed Tuple Space},
+  booktitle = {IEEE 21st International Conference on Advanced Networking and 
+  Applications (AINA '07)}, 
+  pages = {370--377}, 
+  month = {May},
+  year = 2007
+}
+
+@Article{ambients,
+  author =       "Luca Cardelli and Andrew D. Gordon",
+  title =        "Mobile ambients",
+  journal =      "Theoretical Computer Science",
+  volume =       "240",
+  number =       "1",
+  pages =        "177--213",
+  day =          "6",
+  month =        jun,
+  year =         "2000",
+  CODEN =        "TCSCDI",
+  ISSN =         "0304-3975",
+  bibdate =      "Tue Oct 31 11:38:25 MST 2000",
+  _URL =          "http://www.elsevier.nl/gej-ng/10/41/16/174/21/27/abstract.html;
+                 http://www.elsevier.nl/gej-ng/10/41/16/174/21/27/article.pdf",
+  acknowledgement = ack-nhfb,
+}
+
+@inproceedings{CardelliG10,
+  author    = {Luca Cardelli and
+               Philippa Gardner},
+  title     = {Processes in Space},
+  year      = {2010},
+  pages     = {78-87},
+  _editor    = {Fernando Ferreira and
+               Benedikt L{\"o}we and
+               Elvira Mayordomo and
+               Lu\'{\i}s Mendes Gomes},
+  booktitle     = {Programs, Proofs, Processes, 6th Conference on Computability
+               in Europe, CiE 2010},
+  publisher = {Springer},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {6158},
+  year      = {2010},
+  isbn      = {978-3-642-13961-1},
+  ee        = {http://dx.doi.org/10.1007/978-3-642-13962-8},
+}
+
+@article{SpatialComputing,
+ author = {Beal, Jacob and Michel, Olivier and Schultz, Ulrik Pagh},
+ title = {Spatial Computing: Distributed Systems That Take Advantage of Our Geometric World},
+ journal = {ACM Transactions on Autonomous and Adaptive Systems},
+ issue_date = {June 2011},
+ volume = {6},
+ issue = {2},
+ month = {June},
+ year = {2011},
+ issn = {1556-4665},
+ pages = {11:1--11:3},
+ articleno = {11},
+ numpages = {3},
+ url = {http://doi.acm.org/10.1145/1968513.1968514},
+ doi = {http://doi.acm.org/10.1145/1968513.1968514},
+ acmid = {1968514},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@InProceedings{ProtoTime,
+  title = {Continuous Space-Time Semantics Allow Adaptive Program Execution}, 
+  author = {Jonathan Bachrach and Jacob Beal and Takeshi Fujiwara},
+  booktitle = {IEEE SASO 2007}, 
+  month = {July},
+  year = {2007},
+  publisher = {IEEE},
+  address = {New York},
+  pages = {315--319}
+} 
+
+@inproceedings{spatialcomputing-sac11,
+	Address = {Tunghai University, TaiChung, Taiwan},
+	Author = {Viroli, Mirko and Beal, Jake and Casadei, Matteo},
+	Booktitle = {26th Annual ACM Symposium on Applied Computing (SAC 2011)},
+	Month = {21--25~} # mar,
+	Publisher = {ACM},
+	Title = {Core Operational Semantics of {P}roto},
+	Url = {http://apice.unibo.it/xwiki/bin/view/Publications/SpatialcomputingSac11},
+	Year = 2011}
+
+@article{wsnpa,
+  author    = {Anu Singh and
+               C. R. Ramakrishnan and
+               Scott A. Smolka},
+  title     = {A process calculus for Mobile Ad Hoc Networks},
+  journal   = {Sci. Comput. Program.},
+  volume    = {75},
+  number    = {6},
+  year      = {2010},
+  pages     = {440-469},
+  ee        = {http://dx.doi.org/10.1016/j.scico.2009.07.008},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{mass2011,
+	booktitle = {Proceedings of the Federated Conference on Computer Science and Information Systems},
+	publisher = {IEEE Computer Society Press},
+	author = {Pianini, Danilo and  Montagna, Sara and Viroli, Mirko },
+	title = {A Chemical Inspired Simulation Framework for Pervasive Services Ecosystems},
+	isbn = {978-83-60810-22-4},
+	year = 2011,
+	status = {Published},
+	pages = {667--674},
+	venue = {MASS},
+	_editor = {Ganzha, Maria and Maciaszek, Leszek and Paprzycki, Marcin},
+	_address = {Szczecin, Poland},
+	_month = {18-21 September}}
+
+@inproceedings{flexiblegradients,
+  author    = {Jacob Beal},
+  title     = {Flexible self-healing gradients},
+  year      = {2009},
+  pages     = {1197-1201},
+  _editor    = {Sung Y. Shin and
+               Sascha Ossowski},
+  booktitle     = {Proceedings of the 2009 ACM Symposium on Applied Computing
+               (SAC)},
+  publisher = {ACM},
+  year      = {2009},
+  isbn      = {978-1-60558-166-8}
+}
+
+@INPROCEEDINGS{terBeek:06:ASSCFISFM,
+    author = {Maurice Beek and Antonio Bucchiarone and Stefania Gnesi},
+    title = {A Survey on Service Composition Approaches: From Industrial Standards to Formal Methods},
+    booktitle = {Technical Report 2006TR-15, Istituto},
+    year = {2006},
+    pages = {15--20},
+    publisher = {IEEE CS Press}
+}
+
+@inproceedings{wu2007automatic,
+  title={Automatic composition of semantic web services using process and data mediation},
+  author={Wu, Z. and Ranabahu, A. and Gomadam, K. and Sheth, A.P. and Miller, J.A.},
+  booktitle={Proc. of the 9th Intl. Conf. on Enterprise Information Systems},
+  pages={453--461},
+  year={2007}
+}
+
+@inproceedings{Canfora2005,
+ author = {Canfora, Gerardo and Di Penta, Massimiliano and Esposito, Raffaele and Villani, Maria Luisa},
+ title = {An approach for QoS-aware service composition based on genetic algorithms},
+ booktitle = {Proceedings of the 2005 conference on Genetic and evolutionary computation},
+ series = {GECCO '05},
+ year = {2005},
+ isbn = {1-59593-010-8},
+ location = {Washington DC, USA},
+ pages = {1069--1075},
+ numpages = {7},
+ url = {http://doi.acm.org/10.1145/1068009.1068189},
+ doi = {http://doi.acm.org/10.1145/1068009.1068189},
+ acmid = {1068189},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {QoS--aware composition, service--oriented software engineering},
+} 
+
+@article{Norman2010,
+	Abstract = {Regulating the behavior of autonomous agents is necessary to solve coordination problems and minimize conflicts in multi-agent systems (MAS). Social conventions can be regarded as coordination schemes that can be employed by agents to successfully coordinate. However, to have agents agree on good conventions, without the need of a central authority, is a challenging issue. In this paper we design a novel spreading-based convention emergence mechanism that helps agents distributedly agree on the best convention when there are multiple alternatives. We apply our convention emergence mechanism to a problem with a large convention space: finding a common vocabulary (lexicon) for the agents of a MAS that allows them to perfectly communicate with neither ambiguity nor inconsistencies. Thus, we empirically show the scalability of our approach in large (in terms of agents and conventions) scenarios that change over time. Moreover, since communication is crucial to spreading, we also show that our proposed spreading mechanism is resilient to unreliable communications, thus guaranteeing the robust emergence of conventions.},
+	Author = {Salazar, Norman and Rodriguez-Aguilar, Juan A. and Arcos, Josep L.},
+	Date-Added = {2010-12-08 15:45:09 +0100},
+	Date-Modified = {2010-12-08 15:45:09 +0100},
+	Journal = {AI Communications},
+	M3 = {10.3233/AIC-2010-0479},
+	Number = {4},
+	Pages = {357--372},
+	Title = {Robust coordination in large convention spaces},
+	Ty = {JOUR},
+	OPTurl = {http://dx.doi.org/10.3233/AIC-2010-0479},
+	Volume = {23},
+	Year = {2010},
+	Bdsk-Url-1 = {http://dx.doi.org/10.3233/AIC-2010-0479}}
+
+@techreport{Viroli:11:SOACCPS,
+    author = {Viroli, Mirko},
+    title = {A Self-Organising Approach to Competition and Composition of Pervasive Services},
+    number = {SAPERE TR.WP2.2011.4},
+   OPTurl = {saperewiki},
+    year = {2011}
+    
+}
+
+@article{Berryman:1992,
+        Author = {Berryman, Alan A.},
+        Journal = {Ecology},
+        Month = {October},
+        Number = {5},
+        Pages = {1530--1535},
+        Title = {The Origins and Evolution of Predator-Prey Theory},
+        Volume = {73},
+        Year = {1992}}
+
+@TechReport{seaborne2011sparql,
+  author      = "Andy Seaborne and Steve Harris",
+  title       = "{SPARQL} 1.1 Query",
+  month       = oct,
+  note        = "http://www.w3.org/TR/2009/WD-sparql11-query-20091022/",
+  year        = "2009",
+  bibsource   = "http://w2.syronex.com/jmr/w3c-biblio",
+  type        = "{W3C} Working Draft",
+  institution = "W3C",
+}
+
+@article{sirin2007pellet,
+ author = {Sirin, Evren and Parsia, Bijan and Grau, Bernardo Cuenca and Kalyanpur, Aditya and Katz, Yarden},
+ title = {Pellet: A practical {OWL-DL} reasoner},
+ journal = {Web Semant.},
+ volume = {5},
+ issue = {2},
+ month = {June},
+ year = {2007},
+ issn = {1570-8268},
+ pages = {51--53},
+ numpages = {3},
+ _doi = {10.1016/j.websem.2007.03.004},
+ acmid = {1265744},
+ publisher = {Elsevier Science Publishers B. V.},
+ address = {Amsterdam, The Netherlands, The Netherlands}
+}
+
+@article{Kazman2009,
+ author = {Kazman, Rick and Chen, Hong-Mei},
+ title = {The metropolis model a new logic for development of crowdsourced systems},
+ journal = {Commun. ACM},
+ issue_date = {July 2009},
+ volume = {52},
+ issue = {7},
+ month = jul,
+ year = {2009},
+ issn = {0001-0782},
+ pages = {76--84},
+ numpages = {9},
+ url = {http://doi.acm.org/10.1145/1538788.1538808},
+ doi = {http://doi.acm.org/10.1145/1538788.1538808},
+ acmid = {1538808},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@incollection{biocore,
+   author = {Fernandez-Marquez, Jose Luis and Serugendo, Giovanna Di Marzo and Montagna, Sara},
+   affiliation = {University of Geneva, Switzerland},
+   title = {BIO-CORE: Bio-inspired Self-organising Mechanisms Core},
+   booktitle = {Bio-Inspired Models of Networks, Information, and Computing Systems},
+   series = {Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering},
+   editor = {Hart, Emma and Timmis, Jon and Mitchell, Paul and Nakamo, Takadash and Dabiri, Foad and Akan, Ozgur and Bellavista, Paolo and Cao, Jiannong and Dressler, Falko and Ferrari, Domenico and Gerla, Mario and Kobayashi, Hisashi and Palazzo, Sergio and Sahni, Sartaj and Shen, Xuemin (Sherman) and Stan, Mircea and Xiaohua, Jia and Zomaya, Albert and Coulson, Geoffrey},
+   publisher = {Springer Berlin Heidelberg},
+   isbn = {978-3-642-32711-7},
+   keyword = {Computer Science},
+   pages = {59-72},
+   volume = {103},
+   url = {http://dx.doi.org/10.1007/978-3-642-32711-7_5},
+   year = {2012}
+}
+
+@inproceedings{interactioncomplexity-iccci2013,
+	Author = {Omicini, Andrea and Contucci, Pierluigi},
+	Booktitle = {Computational Collective Intelligence. Technologies and Applications},
+	Doi = {10.1007/978-3-642-40495-5_1},
+	Editor = {B{\u a}dic{\u a}, Costin and Nguyen, Ngoc Thanh and Brezovan, Marius},
+	Isbn = {978-3-642-40494-8},
+	Isbn-Online = {978-3-642-40495-5},
+	Issn = {0302-9743},
+	Keywords = {Complex systems, interaction, interacting systems, statistical mechanics, coordination models, socio-technical systems},
+	Location = {Craiova, Romania},
+	Note = {5th International Conference (ICCCI 2013). Craiova, Romania, 11--13~} # sep # {~2013, Proceedings. Invited Paper},
+	Pages = {1--10},
+	Publisher = {Springer Berlin Heidelberg},
+	ScopusId = {2-s2.0-84892631295},
+	Series = {Lecture Notes in Computer Science},
+	Title = {Complexity and Interaction: Blurring Borders between Physical, Computational, and Social Systems. {P}reliminary Notes},
+	Url = {http://link.springer.com/chapter/10.1007/978-3-642-40495-5_1},
+	Volume = 8083,
+	Year = 2013}
+
+@article{DBLP:journals/percom/YeDM12,
+  author    = {Juan Ye and
+               Simon Dobson and
+               Susan McKeever},
+  title     = {Situation identification techniques in pervasive computing:
+               A review},
+  journal   = {Pervasive and Mobile Computing},
+  volume    = {8},
+  number    = {1},
+  year      = {2012},
+  pages     = {36-66},
+  ee        = {http://dx.doi.org/10.1016/j.pmcj.2011.01.004},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+
