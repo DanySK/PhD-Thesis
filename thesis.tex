@@ -135,15 +135,64 @@ My contribution can be divided in three main branches:
 
 \chapter{About this thesis}
 
-This chapter briefly presents how the work is organised, and which contributions have been made to this field by the author.
+This chapter briefly introduces the content of this work, the main problems tackled, the reasons why it is relevant, and how the work is organised. Also, a list of publications that directly contribute to this thesis is provided.
+
+This thesis contributes to the emergent field of computational ecosystems, namely complex systems in which multiple distributed services and applications live and evolve, possibly interacting among them.
 %
-Using a scheme, we will frame this work, providing some guide for to be kept in mind throught the reading of the document.
+Also, the situation is complicated by the fact that in general there is no guarantee of a centralised network node or service that may provide the computation required, as it is the case in cloud systems.
+
+Such complex systems require novel engineering procedures and tools, because they deeply differ from the systems classical software engineering is devoted to.
+%
+This thesis contributes to the engineering of complex computational ecosystems in four areas:
+\begin{description}
+ \item[Language area] Evolution of computer science is, in a sense, evolution of paradigms and languages. One of the possible approaches to the novel field subject of this research is to work at this fundamental level, providing proper abstractions that provide the desired expressive power leaving out unnecessary low-level details.
+ \item[Toolchain area] In classic systems, powerful testing and verification tools exist to that guarantee certain properties to hold. Testing happen on the very same code that is going to be deployed, and it is very often applicable at the unit level. A similar tool chain is not effective in testing complex ecosystems: the main reason is that most of the desired behaviours have little sense for a single device, but rather are a property of the aggregate of devices itself. Moreover, the environment in which the system is deployed may consistently influence the behaviour. In such complexity, simulation is very often the only way out.
+ \item[Design pattern area] Classical design patterns can not be applied for the engineering of distributed ecosystems. However, a different kind of patterns can be found in literature: a library of local (device level) behaviours whose interaction result in global behaviours is available. This thesis relies on existing work and extends it with a ``channel'' pattern and, more notably, with an anticipative adaptation pattern.
+ \item[Application prototype area] Which applications can we build upon this new paradigm? Are the presented languages and patterns really helpful in satisfying the requirements? In this work, some insights are provided for each technique, tool, or language, in order to put the proposed solutions at work.
+\end{description}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/schemas/contribution}
+	\caption[Engineering Computational Ecosystems]{Abstract structure of the engineering process and toolchain for complex ecosystems}
+	\label{img:contribution}
+\end{figure}
+
+In \Cref{img:contribution} we give an overview of the engineering process behind a computational ecosystem, also showing which components would be required in order to have a proper toolchain.
+%
+The goal is to have one or more distributed \emph{programs} that run on a \textit{runtime}.
+%
+Such programs are written in a specific \textit{language}, or rely on some \emph{coordination model}, and possibly use \emph{libraries or design patterns} (in the sense of spatial pattern, as discussed above).
+%
+Designing such programs and testing them prior to deployment requires another series of tools, which are enclosed in a dashed shape.
+%
+In the schema, we suppose a meta-meta model, which is instanced once for each language or coordination model that should be supported by the development and testing toolchain, generating a meta-model.
+%
+In order to test some program, it must be fed to the meta-model along with a model of the environment, since it has a strong influence on the behaviour of the whole system.
+%
+The environment description could be possibly provided in a dedicated domain specific language, that, along with the program to simulate, constitutes the model.
+%
+Such model can be tested and simulated, provided that a suitable engine exists.
+%
+Once verified, the program can be deployed on the actual runtime.
+
+\section{Structure of this thesis}
+
+This thesis is organised in five parts.
+
+\begin{description}
+ \item [\Cref{background}] introduces the work, describing the background and motivating the thesis. It presents the evolution and the current state of the pervasive communication technologies, which are the practical devices on which computational ecosystems are designed to run. Also, it discusses the state of the art in the software world for what concerns computational ecosystems. It describes both existing middlewares and engineering tools.
+ \item [\Cref{alchemist-part}] presents the first contribution of this thesis, namely a toolchain for engineering computational ecosystems. With respect to \Cref{img:contribution}, this part describes a novel work that occupies the whole structure on the right-hand side of the schema (enclosed with a dashed line).
+ \item [\Cref{contribution-pattern}] focuses on the left-hand side of \Cref{img:contribution}, introducing two novel spatial patterns (which fit in the yellow box), a process algebra (that belongs to the ``Coordination model'' balloon), and a series of case studies demonstrating the effectiveness of pervasive ecosystems (which would be best inserted in the orange ``Program'' box).
+ \item [\Cref{aggregate-programming-part}] focusses on a more fundamental approach, trying to define novel languages suitable for programming aggregates of devices. Most of the content of this part fits into the ``Language'' top left box in \Cref{img:contribution}. One of the presented languages also features a meta-model for the toolchain mentioned in \Cref{alchemist-part} and a runtime, that make it a practical possibility for programming aggregates.
+ \item [\Cref{conclusion-futureworks-part}] draws conclusions and paves the way for future works.
+\end{description}
 
 
 
 
 
-\section{List of author's publications}
+\section{List of publications}
 \nobibliography*
 \begin{itemize}
  \item \bibentry{wordNet}
@@ -5667,6 +5716,7 @@ We claim that, assuming the traces to be a representative sampling of the actual
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \part{Aggregate programming languages}
+\label{aggregate-programming-part}
 \chapter{Tuple based aggregate programming}
 
 A common viewpoint in developing coordination models on top of Linda~\cite{linda-toplas7} is that tuples are a mechanism to reify and exchange events/data/knowledge that are important to system coordination, and to synchronise the activities of coordinated components in a parallel and/or distributed system.
@@ -7388,6 +7438,7 @@ When there is a problem with dependencies, the device invokes {\tt stopProcess} 
 In this screenshot, the supplies database has crashed, causing many of the other services to gracefully shut themselves down.  As soon as the supplies database is restarted, however, the rest of the services automatically bring themselves up in dependency order.
 
 \part{Conclusion}
+\label{conclusion-futureworks-part}
 \chapter{Results achieved and future works}
 
 This\levelText{}summarises the most notable contributions of this thesis.
