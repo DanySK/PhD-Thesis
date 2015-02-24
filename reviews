@@ -1,0 +1,137 @@
+REVIEWER 1: Simon Dobson, University of St. Andrews
+
+This is clearly a substantial piece of work, clearly creative and
+well-executed in an important area.
+
+I've marked-up minor changes in the text where it could use elaboration.
+Mostly these are typographical or stylistic, for example not using
+citations as nouns (say "as mentioned by Viroli [VB12]" instead of "as
+mentioned in [VB12]"). I would include a section up-front with a list of
+your publications that contribute directly to the work in the thesis, to
+show clearly that it's been published and peer-reviewed: I know this,
+another reader wouldn't, and nothing makes an external examiner's heart
+sink more than a thesis with no publications, so there's no other
+independent judgement of the work.
+
+There are three comments that are more substantive, however.
+
+Firstly, it's a bit abrupt. We jump from abstract straight into
+background, for example. I think it needs an introduction to say what
+the thesis is about, why the are is important, the general problem being
+solved the approach we've taken, the specific contributions the thesis
+makes, and an overview of the structure of the rest of the document.
+Similarly for the conclusion: make sure all the contributions are
+enumerated, related to the sections in which they're discussed, so the
+reader can recap what he's read. You're actually contributing more than
+just the three points on aggregate programming languages on p. 232: make
+sure it all comes out clearly.
+
+At the chapter level, each chapter could do with a couple of paragraphs
+to introduce the material and a couple to conclude and to lead into the
+next chapter. As it stands, it reads like a report: the reader gets no
+help to follow the flow of the argument, which is fine if you're you (or
+me) who knows the argument already, but not great for a newcomer. This
+is especially true of the first and last chapters in a section: they
+need to round-out the material so the reader can see how it fits
+together, If you think of what would happen if you took on a new PhD
+student and gave them the thesis to get them up to speed on the state of
+the art, you can see that they'd need a bot more structure to understand
+what you've done: that's what makes a thesis different to a report. It's
+about the content, not the timeline.
+
+(There's a notion in English that for any document or presentation you
+should "tell them what they're going to tell them, then tell them, then
+tell them what you just told them" -- so a summary front and back, and
+the detail in the middle. Another way to think about this is that a
+reader would read the introduction and conclusion and know what you've
+done, referring to body of the text for clarification and detail only.
+This applies to chapters, and to the document as a whole.)
+
+Secondly, there are a few places where you're talking about concepts and
+ideas and then start talking about Alchemist -- for example p.39, at
+which point Alchemist has never been mentioned. Again this is a matter
+of flow: separate the ideas from the implementation and talk about them
+separately. Then you can explain how important the ideas are, how they
+fit together, and how they address the problem being tackled (which
+you'll have explained in the introduction), before explaining and
+evaluating the implementation.
+
+Thirdly, there are a *lot* of languages and syntaxes being described.
+Partly I think this is because you're following the timeline of the work
+rather than the logic of a thesis. If the languages are needed, that's
+fine: but you might consider removing some of the syntax, or re-using
+it, to reduce the surface area of new language.
+
+The languages also include calculi, and this is where I think you need
+to re-think a bit. The only purpose of a calculus is to calculate, which
+in our case means proving things that can't easily be derived from the
+code. You do this for the final field calculus, but not for the earlier
+ones, where you state some properties (subject reduction, for example)
+but don't state others (string normalisation?) and don't prove any of
+them. Without a proof theory, a calculus is just a re-stating of a
+programming language into a mathematical form, which looks impressive
+but doesn't really do anything, and gives an examiner (me :-)) a stick
+to beat you with by exploring what you can prove and how. It's perfectly
+acceptable to give a structured operation semantics to a concrete
+syntax, for example, which would take you as far as you need to go.
+
+Chapter 21 on field calculus is very different and much more
+mathematical. I got a it worried that a lot of the maths is
+unnecessarily complicated: as far as I can tell you don't use smoothness
+of tangent fields in any of the arguments, so Riemannian-nees isn't
+needed, and nor are Lesbesgue integrals: they sound good, but just serve
+to confuse the unwary. It's also clearly adapted very literally from a
+paper, and needs to read more like a chapter.
+
+
+
+
+
+###################################################################
+
+
+REVIEWER 2: Giovanna di Marzo, University of Geneva
+
+General Comments
+This is a very good,  dense and consistent work, corresponds to more than one phd in my opinion!
+
+It will be useful to make a recapitulation of the different paradigms, showing how they all articulate with each other. There are many languages, calculus, examples, etc. It is not clear why so many and how they relate with each other or with the topic of engineering complext computations.
+A figure showing how the different elements go together would be useful, also to give an overview of the phd.
+
+Chapter 5 about Alchemist seems a bit short to me.
+Patterns are not expressed following the patterns approach of Eric Gamma et al. It may be misleading to refer to them as patterns, even though I agree they qualify to be patterns.
+
+
+
+Missing refs/citations
+1. Chapter 2, fig. 2.1, this figure is very similar to the one that is in the BIO-CORE paper. 
+See how to make a reference to that point. this is your ref: [FMSM12]
+
+2. Chapter 2, when discussing Figure 2.4, you should say that this way of separating the concerns is also inspired by the works done in SAPERE, see refs:
+1.      Giovanna Di Marzo Serugendo, Jose Luis Fernandez-Marquez, Francesco L. De Angelis (2014). Engineering Spatial Services:  Concepts, Architecture and Execution Models. In Emerging Architectural Trends in Service-driven Computing Raja Ramanathan (Ed), IGI Global, 2014
+   Giovanna Di Marzo Serugendo, Jose Luis Fernandez-Marquez, Francesco L. De Angelis. Self-Organising Services. IEEE Int. Conf. on Self-Adaptive and Self-Organizing Systems (SASO), Philadelphia, USA, 2013.
+
+3. 3. Chapter 16, Self-composition, section 16.1
+You need to add a paragraph and a bold title for the approach developed by Francesco:
+Francesco L. De Angelis, Jose Luis Fernandez-Marquez, Giovanna Di Marzo Serugendo. Self-composition of services with chemical reactions. ACM Symposium on Applied Computing (SAC 2014), Korea, 2014.
+F. L. De Angelis, J. L. Fernandez-Marquez, G. Di Marzo Serugendo. Self-composition of Services in Pervasive Systems: A Chemical-Inspired Approach. KES-AMSTA Conference on Agent and Multi-Agent Systems: Technologies and Applications, 37-46, Chania, Greece, 2014.
+
+4. Chapter 17, 17.2.2. fig. 17.2
+The initial idea of spreading a gradient and aggregating the result as we go along with chemotaxis, was described in Jose Luis paper, you need to refer to this point. The paper from Erika and others came after and never properly referred to that one:
+Jose Luis Fernandez-Marquez, Graeme Stevenson, Akla-Esso Tchao, Juan Ye, Giovanna Di Marzo Serugendo and Simon Dobson. Analysis of new gradient based aggregation algorithms for data-propagation in distributed networks. First International Workshop on Adaptive Service Ecosystems: Nature and Socially Inspired Solutions (ASENSIS) at Sixth IEEE International Conference on Self-Adaptive and Self-Organizing Systems (SASO’12), IEEE Computer Society, September 2012
+
+5. Chapter 22, fig. 22.2
+The way Protelis is injected in Alchemist looks very similar to the way the SAPERE middleware was integrated into The ONE. You need to say that the Protelis integration is similar or inspired from TheOne-SAPERE:
+1.      J. L. Fernandez-Marquez, F. L. De Angelis, G. Di Marzo Serugendo, G. Stevenson, G. Castelli. The ONE-SAPERE Simulator: A Prototyping Tool for Engineering Self-Organisation in Pervasive Environments. IEEE Int. Conf. on Self-Adaptive and Self-Organizing Systems (SASO), London, UK, 2014.
+
+
+Typos
+ 1. section 2.5.2, 2nd par: network. . Field ...
+ 2. p.27 Basics and Syntax: through its the syntax -> through its syntax
+3. p. 30 last line: [VBC11?]
+4. Fi. 2.6, p. 32: Why is it called Device Semantics (why Device?), should Operational Semantics (?)
+5. If I am not wrong the acronym DES is not explained the first time it appears (chap. 3), but later in Chapter 7.
+6. section 8.1.3: two group of people -> two groups / two point of interest -> two points
+7. section 8.1.4: have been run -> ran
+8. caption of Fig. 8.2: with of the -> with the
+9. section 13.1.2: needs not -> does not need
