@@ -328,6 +328,12 @@ Jacob Beal, Mirko Viroli, and Ferruccio Damiani.
 \newblock In {\em 7th Spatial Computing Workshop (SCW 2014)}, AAMAS 2014,
   Paris, France, May 2014.
 
+\bibitem[BVPD14]{tetc}
+Jacob Beal, Mirko Viroli, Danilo Pianini, and Ferruccio Damiani.
+\newblock Scale-independent computations in situated networks.
+\newblock {\em IEEE Transaction on Emergent Topics in Computing}, 2014.
+\newblock Submitted for publication.
+
 \bibitem[BW08]{BabulakIJOE2008}
 Eduard Babulak and Ming Wang.
 \newblock Discrete event simulation: State of the art.
@@ -935,12 +941,19 @@ Amy~L. Murphy, Gian~Pietro Picco, and Gruia-Catalin Roman.
 \newblock {\em ACM Trans. on Software Engineering and Methodology},
   15(3):279--328, 2006.
 
-\bibitem[MPV12]{anticipativegradient-SASO12}
+\bibitem[MPV12a]{anticipativegradient-SASO12}
 Sara Montagna, Danilo Pianini, and Mirko Viroli.
 \newblock Gradient-based self-organisation patterns of anticipative adaptation.
 \newblock In {\em Proceedings of 6th IEEE International Conference on
   Self-Adaptive and Self-Organizing Systems (SASO 2012)}, pages 169--174,
   September 2012.
+
+\bibitem[MPV12b]{drosophilaSAC2011}
+Sara Montagna, Danilo Pianini, and Mirko Viroli.
+\newblock A model for drosophila melanogaster development from a single cell to
+  stripe pattern formation.
+\newblock In {\em Proceedings of the {ACM} Symposium on Applied Computing,
+  {SAC} 2012, Riva, Trento, Italy, March 26-30, 2012}, pages 1406--1412, 2012.
 
 \bibitem[MT03]{adaptivenesslinda-esoaI}
 Ronaldo Menezes and Robert Tolksdorf.
@@ -975,6 +988,21 @@ Sara Montagna, Mirko Viroli, Jose~Luis Fernandez-Marquez, Giovanna
   Di~Marzo~Serugendo, and Franco Zambonelli.
 \newblock Injecting self-organisation into pervasive service ecosystems.
 \newblock {\em Mobile Networks and Applications}, 18(3):398--412, 2013.
+
+\bibitem[MVPFM12]{selfcomp-woa2012}
+Sara Montagna, Mirko Viroli, Danilo Pianini, and Jose~Luis Fernandez-Marquez.
+\newblock Towards a comprehensive approach to spontaneous self-composition in
+  pervasive ecosystems.
+\newblock In Flavio De~Paoli and Giuseppe Vizzari, editors, {\em Proceedings of
+  the 13th Workshop on Objects and Agents}. CEUR-WS, 12 September 2012.
+
+\bibitem[MVR{\etalchar{+}}11]{serene2011}
+Sara Montagna, Mirko Viroli, Matteo Risoldi, Danilo Pianini, and Giovanna
+  Di~Marzo Serugendo.
+\newblock Self-organising pervasive ecosystems: {A} crowd evacuation example.
+\newblock In {\em Software Engineering for Resilient Systems - Third
+  International Workshop, {SERENE} 2011, Geneva, Switzerland, September 29-30,
+  2011. Proceedings}, pages 115--129, 2011.
 
 \bibitem[MYT07]{Meyer07}
 Thomas Meyer, Lidia Yamamoto, and Christian~F. Tschudin.
@@ -1147,6 +1175,12 @@ H.~Van~Dyke Parunak, Sven Brueckner, and John Sauter.
   International Joint Conference on Autonomous Agents and Multiagent systems},
   volume~1, pages 449--450, New York, NY, USA, 15--19July 2002. ACM.
 
+\bibitem[PBV15]{PBV-SAC2015}
+Danilo Pianini, Jacob Beal, and Mirko Viroli.
+\newblock Practical aggregate programming with {\sc protelis}.
+\newblock In {\em ACM Symposium on Applied Computing (SAC 2015)}, 2015.
+\newblock To appear.
+
 \bibitem[PCBB07]{GeoLinda}
 Julien Pauty, Paul Couderc, Michel Banatre, and Yolande Berbers.
 \newblock Geo-linda: a geometry aware distributed tuple space.
@@ -1217,12 +1251,34 @@ Corrado Priami, Aviv Regev, Ehud Shapiro, and William Silverman.
   and simulation of molecular processes.
 \newblock {\em Information Processing Letters}, 80:25--31, October 2001.
 
+\bibitem[PSV14]{hpcs14apmc}
+Danilo Pianini, Stefano Sebastio, and Andrea Vandin.
+\newblock Distributed statistical analysis of complex systems modeled through a
+  chemical metaphor.
+\newblock In {\em International Conference on High Performance Computing {\&}
+  Simulation, {HPCS} 2014, Bologna, Italy, 21-25 July, 2014}, pages 416--423,
+  2014.
+
 \bibitem[PVM{\etalchar{+}}10]{wordNet}
 Danilo Pianini, Sascia Virruso, Ronaldo Menezes, Andrea Omicini, and Mirko
   Viroli.
 \newblock Self organization in coordination systems using a wordnet-based
   ontology.
 \newblock In {\em SASO}, pages 114--123, 2010.
+
+\bibitem[PVM11]{woa2011}
+Danilo Pianini, Mirko Viroli, and Sara Montagna.
+\newblock A simulation framework for pervasive services ecosystems.
+\newblock In {\em Proceedings of the 12th Workshop on Objects and Agents, Rende
+  (CS), Italy, Jul 4-6, 2011}, pages 150--157, 2011.
+
+\bibitem[PVZF14]{hpcs14urban}
+Danilo Pianini, Mirko Viroli, Franco Zambonelli, and Alois Ferscha.
+\newblock {HPC} from a self-organisation perspective: The case of crowd
+  steering at the urban scale.
+\newblock In {\em International Conference on High Performance Computing {\&}
+  Simulation, {HPCS} 2014, Bologna, Italy, 21-25 July, 2014}, pages 460--467,
+  2014.
 
 \bibitem[Ras04]{rasmussen2004}
 CarlEdward Rasmussen.
@@ -1501,6 +1557,13 @@ Mirko Viroli.
   rules.
 \newblock In {\em Spatial Computing Workshop (SCW 2013)}, AAMAS 2013, Saint
   Paul, Minnesota, USA, May 2013.
+
+\bibitem[VMP{\etalchar{+}}14]{VMPSZ-SCP}
+Mirko Viroli, Sara Montagna, Danilo Pianini, Graeme Stevenson, and Franco
+  Zambonelli.
+\newblock A coordination model of pervasive service ecosystems.
+\newblock {\em Science of Computer Programming}, 2014.
+\newblock Submitted for publication.
 
 \bibitem[VO06]{VO-FI2006}
 Mirko Viroli and Andrea Omicini.
