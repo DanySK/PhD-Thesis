@@ -10,4 +10,4 @@ syntax: glob
 *.dvi
 *.lot
 *.lof
-
+*.log
