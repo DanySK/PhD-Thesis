@@ -126,13 +126,22 @@ My contribution can be divided in three main branches:
  \item creation of a new language and interpreter based on ``field calculus'' and its integration with the previously mentioned tool
 \end{enumerate}
 %
-Finally, I draw conclusions and future works.
 
 \mainmatter
 
 % stile della pagina
 \pagestyle{fancy}
 \fancyhead[LE,RO]{\bfseries\thepage}
+
+\chapter{Introduction to this work}
+
+\section{Organisation}
+
+\section{Related Publications}
+\begin{thebibliography}{99}
+ ×
+\end{thebibliography}
+
 
 \part{Background and Motivation}
 \label{background}
@@ -1570,7 +1579,7 @@ We argue that Gibson-Bruck offers a more suitable base for a general purpose DES
 %
 This intrinsic feature allows to neatly separate the generation of times (namely, the time distribution of each event) and the actual scheduling (choice of which event should run next).
 %
-We chose the Next Reaction Method for \alchemist{}, and, consequently, the main simulation algorithm follows the basic steps listed in \Cref{algo:engine}.
+We chose the Next Reaction Method, and, consequently, the main simulation algorithm follows the basic steps listed in \Cref{algo:engine}.
 
 \begin{algorithm}
 \begin{distribalgo}[1]
@@ -1594,7 +1603,7 @@ We chose the Next Reaction Method for \alchemist{}, and, consequently, the main 
     \ENDIF
     \STATE{generate a new putative time for \texttt{r}}
 \ENDWHILE
-\caption{Simulation flow in \alchemist{}}
+\caption{Simulation flow}
 \label{algo:engine}
 \end{distribalgo}
 \end{algorithm}
@@ -1832,7 +1841,7 @@ It also allows to define which kind of time distribution to use to trigger react
 \label{subsec:architecture}
 \begin{figure}%[H]
   \begin{center}
-    \includegraphics[width=0.7\columnwidth]{img/structure.pdf}
+    \includegraphics[width=0.9\columnwidth]{img/schemas/architecture}
     \caption[\alchemist{} architecture]{\alchemist{} architecture. Elements drawn with continuous lines indicates components common for every scenario and already developed, those with dotted lines are extension-specific components which have to be developed with a specific incarnation in mind.}
     \label{img:arch}
   \end{center}
@@ -1888,7 +1897,8 @@ In particular, it offers a fast and reliable random number generation algorithm,
 %
 Though still under development, it is freely available\footnote{\url{http://alchemist.apice.unibo.it}}, released under the terms of GNU General Public License 3.0\footnote{http://www.gnu.org/copyleft/gpl.html} with linking exception.
 
-\chapter{Performance}
+\section{Performance}
+
 \begin{figure}[t]
     \includegraphics[width=0.999999\columnwidth]{img/jos-graph01}
     \caption{Chart showing the performance scaling of \alchemist{}}

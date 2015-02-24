@@ -97,7 +97,7 @@ Finally, I desire to thank these other great researchers and professionals I hav
 \chapter*{\centering Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 
-This work presents advancements of the latest three years in the engineering techniques for self-organising pervasive ecosystems of devices and services.
+Self-organising pervasive ecosystems of devices are set to become a major vehicle for delivering infrastructure and end-user services.
 %
 The inherent complexity of such systems poses new challenges to those who try to dominate the complexity by applying the principles of engineering.
 
@@ -126,13 +126,45 @@ My contribution can be divided in three main branches:
  \item creation of a new language and interpreter based on ``field calculus'' and its integration with the previously mentioned tool
 \end{enumerate}
 %
-Finally, I draw conclusions and future works.
 
 \mainmatter
 
 % stile della pagina
 \pagestyle{fancy}
 \fancyhead[LE,RO]{\bfseries\thepage}
+
+\chapter{About this thesis}
+
+This chapter briefly presents how the work is organised, and which contributions have been made to this field by the author.
+%
+Using a scheme, we will frame this work, providing some guide for to be kept in mind throught the reading of the document.
+
+
+
+
+
+\section{List of author's publications}
+\nobibliography*
+\begin{itemize}
+ \item \bibentry{wordNet}
+ \item \bibentry{woa2011}
+ \item \bibentry{serene2011}
+ \item \bibentry{mass2011}
+ \item \bibentry{anticipativegradient-SASO12}
+ \item \bibentry{drosophilaSAC2011}
+ \item \bibentry{selfcomp-woa2012}
+ \item \bibentry{sapereecolaws-sac2012}
+ \item \bibentry{VPB-COORD2012}
+ \item \bibentry{socinfo2013}
+ \item \bibentry{SemMatchingSAC2013}
+ \item \bibentry{alchemist-jos2013}
+ \item \bibentry{hpcs14urban}
+ \item \bibentry{hpcs14apmc}
+ \item \bibentry{ker2014}
+ \item \bibentry{PBV-SAC2015}
+ \item \bibentry{VMPSZ-SCP}
+ \item \bibentry{tetc}
+\end{itemize}
 
 \part{Background and Motivation}
 \label{background}
@@ -1570,7 +1602,7 @@ We argue that Gibson-Bruck offers a more suitable base for a general purpose DES
 %
 This intrinsic feature allows to neatly separate the generation of times (namely, the time distribution of each event) and the actual scheduling (choice of which event should run next).
 %
-We chose the Next Reaction Method for \alchemist{}, and, consequently, the main simulation algorithm follows the basic steps listed in \Cref{algo:engine}.
+We chose the Next Reaction Method, and, consequently, the main simulation algorithm follows the basic steps listed in \Cref{algo:engine}.
 
 \begin{algorithm}
 \begin{distribalgo}[1]
@@ -1594,7 +1626,7 @@ We chose the Next Reaction Method for \alchemist{}, and, consequently, the main 
     \ENDIF
     \STATE{generate a new putative time for \texttt{r}}
 \ENDWHILE
-\caption{Simulation flow in \alchemist{}}
+\caption{Simulation flow}
 \label{algo:engine}
 \end{distribalgo}
 \end{algorithm}
@@ -1888,7 +1920,8 @@ In particular, it offers a fast and reliable random number generation algorithm,
 %
 Though still under development, it is freely available\footnote{\url{http://alchemist.apice.unibo.it}}, released under the terms of GNU General Public License 3.0\footnote{http://www.gnu.org/copyleft/gpl.html} with linking exception.
 
-\chapter{Performance}
+\section{Performance}
+
 \begin{figure}[t]
     \includegraphics[width=0.999999\columnwidth]{img/jos-graph01}
     \caption{Chart showing the performance scaling of \alchemist{}}
