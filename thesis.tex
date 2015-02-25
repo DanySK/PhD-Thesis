@@ -117,7 +117,7 @@ Such local-to-global issue makes the application of engineering principles chall
 
 In this thesis, we lay the foundations of my contribution by first analysing the state of the art in coordination systems, namely in those software frameworks devoted to control and promote interactions among independent software entities.
 %
-I then motivate my work, by describing the main issues of pre-existing tools and practices and identifying the improvements that would benefit the design of such complex software ecosystems.
+We then motivate my work, by describing the main issues of pre-existing tools and practices and identifying the improvements that would benefit the design of such complex software ecosystems.
 
 The contribution can be divided in three main branches.
 %
@@ -230,15 +230,15 @@ Laptops boosted the process, offering user a personal and mobile device.
 
 The pervasive revolution, however took place when the phones became ``smart'', and with the subsequent improvements in the communication technologies.
 %
-In this\levelText{} I try to briefly walk the path of success of personal mobile devices, describing also the probable newcomer, namely wearable devices.
+In this\levelText{} we try to briefly walk the path of success of personal mobile devices, describing also the probable newcomer, namely wearable devices.
 %
-I also focus on the current status of the communication protocols, their range and usage, and I try to foresee which world are we going to build if the current trend continues.
+We also focus on the current status of the communication protocols, their range and usage, and we try to foresee which world are we going to build if the current trend continues.
 
 \section{Smart, portable devices}
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\textwidth]{img/iphone}
+	\includegraphics[width=0.6\textwidth]{img/iphone}
 	\caption[Apple iPhone]{Apple iPhone is one of the first devices without any physical keyboard, and the first smartphone to gain worldwide success. \emph{Source: Wikimedia.}}
 	\label{img:iphone}
 \end{figure}
@@ -331,7 +331,7 @@ In later years, many communication means arose.
 %
 They largely differ in terms of range, protocols, and availability.
 %
-In this\levelText{}I try to resume the most diffused technologies available on today's devices, but the reader is warned: keep in mind that such technologies are evolving very quickly, and the scenario is incredibly fluid.
+In this\levelText{}we try to resume the most diffused technologies available on today's devices, but the reader is warned: keep in mind that such technologies are evolving very quickly, and the scenario is incredibly fluid.
 
 \subsection{International Mobile Telecommunications}
 \label{International Mobile Telecommunications}
@@ -419,13 +419,13 @@ The most interesting features of Bluetooth are not the bandwidth nor the range (
 %
 Thanks to those features Bluetooth found widespread diffusion as a mean to connect low consumption peripherals, such as headsets.
 %
-Also, it is diffused in cars, and allows user to use the car's audio system as a speakerphone for making calls or listen to music.
+Also, it has diffused in cars, and allows user to use the car's audio system as a speakerphone for making calls or listen to music.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.99\textwidth]{img/ibeacon}
 	\caption[iBeacon]{
-		A iBeacon, compared to a \EUR{2} coin.
+		A iBeacon.
 	}
 	\label{img:ibeacon}
 \end{figure}
@@ -526,7 +526,7 @@ In particular, we argue, this strategy is interesting when the information could
 %
 This path, however, gets harder and harder to follow with device density: besides the obvious increasing on the total information produced, and consequently of the information to transmit and process, there are two other problems: the saturation of the wireless medium, and the locality of information.
 
-Who tried to use its own smartphone in a very crowded environment has probably experienced connection or network issues.
+Whoever has tried to use its own smartphone in a very crowded environment has probably experienced connection or network issues.
 %
 The problem, as discussed in \Cref{International Mobile Telecommunications}, is that current technology must share a common medium among all the devices in the same area.
 %
@@ -556,7 +556,7 @@ One notable example is Firechat \footnote{\url{https://opengarden.com/firechat}}
 %
 Similarly to what was done during Arab springs in 2011 \cite{arab-spring}, protesters relied on Internet services to organise and coordinate themselves.
 %
-The Chinese government policy on Internet is not exactly a bright example of openness and neutrality \cite{china-censorship}, and services such as Facebook adn Twitter, widely exploited during Arab springs, were already effectively blocked in the land.
+The Chinese government policy towards the Internet remains restrictive \cite{china-censorship}, and services such as Facebook adn Twitter, widely exploited during Arab springs, were already effectively blocked in the land.
 %
 In short time, other social network were closed (such as Instagram), in order to cut protesters' communication means.
 %
@@ -576,16 +576,26 @@ It relies on WiFi to create a ad-hoc peer-to-peer network among devices.
 %
 Due to this lower level aspect, Serval Mesh requires privileged access to the hardware and some higher skill than Firechat, which is easier to setup but requires the availability of a Internet connection.
 %
-In \cite{mesh-network-telephony}, Serval Mesh is used to build an alternative, purely peer-to-peer telephony network.
+Serval Mesh has been used \cite{mesh-network-telephony} to build an alternative, purely peer-to-peer telephony network.
 
 Despite the existence of such mesh-oriented applications, however, a general and widespread approach for easily design and program the devices that compose our pervasive continuum is still under investigation \cite{Ray13}.
+
+\section{Final remarks}
+
+In this chapter we have discussed how quickly technology is evolving, in particular for what concerns communications.
+%
+We have walked through the recent history of mobile devices, and got a glimpse to the evolving area of wearable devices.
+%
+We have analysed the most diffused communication technologies: International Mobile Telecommunications, WiFi, Bluetooth and NFC.
+%
+Finally, we have presented the fascinating idea of considering our world as a pervasive computational continuum, which calls for novel paradigms and engineering procedures and tools.
 %
 The most consistent contribution of this thesis is devoted to the research of general, well engineered approaches to build such systems.
 
 \chapter{Self-organisation}
 \label{coordination-infrastructures}
 
-In \Cref{pervasive-devices} we took a look to the world of pervasive devices, also describing their communication means and hypothesising the near future development.
+% In \Cref{pervasive-devices} we took a look to the world of pervasive devices, also describing their communication means and hypothesising the near future development.
 %
 In this\levelText{}we focus on the software, and in particular on the challenges of engineering the development of software that will run on an ensemble of pervasive devices.
 %
@@ -620,13 +630,13 @@ In both of these cases, and a number of other areas facing similar challenges (e
 %
 The goal of such engineering paradigms is to find reliable processes that lead to self-organising aggregates that act more as a collective service than as individual machines \cite{Cabri03,Bis11,Social12,PSC13}.
 
-\section{Nature inspiration}
+\section{Taking inspiration from nature}
 
 Natural systems are good in dealing with the \emph{complexity} of coordinating large-scale software ecosystems \cite{nic-ieeeis19,facets,nic-cacm49}, since they natively feature key properties such as autonomy, openness, fault tolerance, situated behaviour, self-adaptation and robustness.
 %
 Many specific models have been proposed in literature, taking inspiration from natural ecosystems, social insects, biochemistry, chemistry and also physics \cite{ecosystems-jpcc7}.
 
-\subsection{Physical-inspiration}
+\subsection{Physical inspiration}
 
 To the category of physical inspired systems belong all those works that take inspiration on the way physical particles move and self-organise according to gravitational and electromagnetic forces.
 %
