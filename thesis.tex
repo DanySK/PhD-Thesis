@@ -2876,7 +2876,7 @@ Several concrete approaches to the structure of an LSA description can be taken.
 %
 For the sake of exemplification, following the work in \cite{SemanticSapereIGI2012,sapereecolaws-sac2012,SemMatchingSAC2013} we  take a semantic approach based on Resource Description Framework (RDF) representation \cite{manola2004primer}, in which an LSA is a set of multi-valued properties, or equivalently, a set of triples (subject, predicate, object) of an LSA-id, the property name, and the assigned value, expressed as literals (strings) or URIs (terms qualified by universally-accessible namespaces, to which an ontological interpretation can be given \cite{ranganathan2004ontologies}).
 %
-An example LSA advertising an exhibition in a smartcity, to be diffused around, would be: 
+An example LSA advertising an exhibition in a smart city, to be diffused around, would be: 
 
 {\begin{Verbatim}[samepage=true,frame=single,commandchars=\\\{\}]
 [ app:type = app:poi, app:event = app:exhibition,
@@ -4196,19 +4196,19 @@ For $k = 0.1$ we obtained the best performance for the system for both  simulate
 
 \subsection{Resilience to node failures}
 
-\begin{figure}
-  \begin{center}
-  \includegraphics[width=\columnwidth]{img/resilience}
-  \end{center}
-  \caption{Resilience to temporary node failures}
-  \label{fig:resilience}
-\end{figure}
-
 Among the many simulations analysing resilience aspects, we focused on the case in which all nodes experience temporary failures, i.e., they  work correctly only for a percentage of time.
 %
 We expect the system to still be safe, i.e., be able to drive people out of the room in reasonable time, in spite of the changes in gradient values around the broken nodes. 
 %
 The results of simulation with 50, 100 and 225 persons are shown in \Cref{fig:resilience}: the time to exit does not significantly increase even in the case of nodes failing 30\%-40\% of the time, and people are still able to eventually reach the exit even with 80\% of node downtime.
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=\columnwidth]{img/resilience}
+  \end{center}
+  \caption{Resilience to temporary node failures. Numbers in the key represent the number of people.}
+  \label{fig:resilience}
+\end{figure}
 
 
 \chapter{Case Study: Crowd steering}
@@ -4364,7 +4364,7 @@ For instance, in the context of the second case, \Cref{img:jos-graph} shows how 
 \begin{figure}
 \begin{center}
    \includegraphics[width=0.99\columnwidth]{img/jos-graph}
-   \vspace{-10pt}\caption[Crowd parameter]{Time units of convergence time with different values of crowd parameter and different percentages of people}\label{img:jos-graph}\vspace{-10pt}
+   \vspace{-10pt}\caption[Crowd parameter]{Time units of convergence time with different values of crowd parameter. For each line, we measure the time required for a certain percentage of people to arrive to destination. For instance, the red line measures the time required for 70\% of the group to arrive to destination.}\label{img:jos-graph}
 \end{center}
 \end{figure}
 
@@ -4557,7 +4557,7 @@ They are in charge to define the  new population of parameters according to the 
 \noindent The emergent idea is that, after a transition period, system makes available only those services that better fit user preferences. For instance, for those users interested in quickly reach the sources, only those gradients that ensure the lowest arrival time should survive.
 
 
-\section{A formal model for gradients self-compositions}
+\section{A model for gradients self-compositions}
 To describe how self-composition of gradients can be built in the SAPERE framework, we first introduce the implementation schema for gradients which we shall rely upon to formalise the self-composition task in the specific example of crowd service exploitation.
 
 \subsection{The gradient service}
@@ -4739,13 +4739,13 @@ In these early experiments, parameter $k$ in function $\delta$ is not computed d
 %
 Users chose one gradients randomly but considering also the associated satisfaction value  that measures the velocity of the best path each gradient proposes. This feedback is computed by each user once reached the target, given the length of the path and the distance walked.
 
-The goal is to observe that, satisfaction values, initially the same for each composition, dynamically change according to feedbacks from the users, and only best compositions survive. In \Cref{fig:scsimu} such process is shown for different values of parameter $k$: the system reaches a stable state with $k=0.5$ ensuring the faster path while the other compositions decay.
+The goal is to observe that satisfaction values, initially the same for each composition, dynamically change according to feedbacks from the users, and only the best compositions survive. In \Cref{fig:scsimu} such process is shown for different values of parameter $k$: the system reaches a stable state with $k=0.5$ ensuring the faster path while the other compositions decay.
 
 \begin{figure}
 	\begin{center}
  		\includegraphics[width=\textwidth]{img/sc-simu.pdf}
 \end{center}
-\caption{Satisfaction values for different compositions changing over time.}
+\caption{Satisfaction values for different compositions changing over time. $k$ is the parameter that differentiates services. The system stabilises with $k=0.5$.}
 \label{fig:scsimu} 
 \end{figure}
 
@@ -4854,7 +4854,7 @@ Applying this algorithm to the above example yields the scores: $A1$=$.92$, $A2$
 We now clarify how standard self-organisation patterns can be augmented with semantic reasoning so as to support a decentralised approach to resource discovery in pervasive computing applications.
 
 \subsection{Self-organisation Patterns}
-This section briefly reviews those patters that form our interaction building blocks.
+This section briefly reviews those patterns that form our interaction building blocks.
 
 \subsubsection{Spreading}
 The Spreading pattern progressively sends information over the system from one node to its neighbourhood, iteratively, so as to make it available globally by using only local interactions.
@@ -5305,28 +5305,30 @@ The imprecision that was introduced by the approximation of the devices' locatio
 Figure \ref{fig:segments} visualizes the described segmentation and computed densities for three time intervals in the morning, midday and evening of the event day.
 
 \begin{figure}
-	\subfigure[]{
-		\setlength\fboxsep{0pt}
-		\setlength\fboxrule{0.5pt}
-		\setlength\fboxsep{0pt}
-		\fbox{\includegraphics[width=0.28\columnwidth]{img/segments_1}
-		\label{fig:seg1}}
-		
-	}
-	\subfigure[]{
-		\setlength\fboxsep{0pt}
-		\setlength\fboxrule{0.5pt}
-		\setlength\fboxsep{0pt}
-		\fbox{\includegraphics[width=0.28\columnwidth]{img/segments_2}
-		\label{fig:seg2}}
-	}
-	\subfigure[]{
-		\setlength\fboxsep{0pt}
-		\setlength\fboxrule{0.5pt}
-		\setlength\fboxsep{0pt}
-		\fbox{\includegraphics[width=0.30\columnwidth]{img/segments_3}
-		\label{fig:seg3}}
-	}
+	\begin{center}
+		\subfigure[]{
+			\setlength\fboxsep{0pt}
+			\setlength\fboxrule{0.5pt}
+			\setlength\fboxsep{0pt}
+			\fbox{\includegraphics[width=0.45\columnwidth]{img/segments_1}
+			\label{fig:seg1}}
+			
+		}
+		\subfigure[]{
+			\setlength\fboxsep{0pt}
+			\setlength\fboxrule{0.5pt}
+			\setlength\fboxsep{0pt}
+			\fbox{\includegraphics[width=0.45\columnwidth]{img/segments_2}
+			\label{fig:seg2}}
+		}
+		\subfigure[]{
+			\setlength\fboxsep{0pt}
+			\setlength\fboxrule{0.5pt}
+			\setlength\fboxsep{0pt}
+			\fbox{\includegraphics[width=0.45\columnwidth]{img/segments_3}
+			\label{fig:seg3}}
+		}
+	\end{center}
 	\caption[Segmentation and crowd densities]{Segmentation and crowd densities for (a) the morning, (b) midday and (c) the evening of the event day. In this visualization segment densities above 150 spectators per segment were clipped to 150. All values were subsequently divided by 150 and mapped to gray scale.}
 	\label{fig:segments}
 \end{figure}
@@ -5376,27 +5378,29 @@ The dummy node was connected via network edges to all segments, however to not c
 We computed these flows using an established algorithm -- described in \cite{berkelaar2004} -- to solve linear programming challenges such as the minimum-cost flow problem.
 
 \begin{figure}
-	\subfigure[]{
-		\setlength\fboxsep{0pt}
-		\setlength\fboxrule{0.5pt}
-		\setlength\fboxsep{0pt}
-		\fbox{\includegraphics[width=0.28\columnwidth]{img/flows_1}
-		\label{fig:flow1}}
-	}
-	\subfigure[]{
-		\setlength\fboxsep{0pt}
-		\setlength\fboxrule{0.5pt}
-		\setlength\fboxsep{0pt}
-		\fbox{\includegraphics[width=0.28\columnwidth]{img/flows_2}
-		\label{fig:flow2}}
-	}
-	\subfigure[]{
-		\setlength\fboxsep{0pt}
-		\setlength\fboxrule{0.5pt}
-		\setlength\fboxsep{0pt}
-		\fbox{\includegraphics[width=0.3\columnwidth]{img/flows_3}
-		\label{fig:flow3}}
-	}
+	\begin{center}
+		\subfigure[]{
+			\setlength\fboxsep{0pt}
+			\setlength\fboxrule{0.5pt}
+			\setlength\fboxsep{0pt}
+			\fbox{\includegraphics[width=0.45\columnwidth]{img/flows_1}
+			\label{fig:flow1}}
+		}
+		\subfigure[]{
+			\setlength\fboxsep{0pt}
+			\setlength\fboxrule{0.5pt}
+			\setlength\fboxsep{0pt}
+			\fbox{\includegraphics[width=0.45\columnwidth]{img/flows_2}
+			\label{fig:flow2}}
+		}
+		\subfigure[]{
+			\setlength\fboxsep{0pt}
+			\setlength\fboxrule{0.5pt}
+			\setlength\fboxsep{0pt}
+			\fbox{\includegraphics[width=0.45\columnwidth]{img/flows_3}
+			\label{fig:flow3}}
+		}
+	\end{center}
 	\caption[Visualization of the flows between segments]{Visualization of the flows between segments for (a) the morning, (b) midday and (c) the evening of the event day. In this visualization flows above 8 were clipped to 8. All values were subsequently divided by 8 and mapped to grayscale.}
 	\label{fig:flows}
 \end{figure}
