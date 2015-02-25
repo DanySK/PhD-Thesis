@@ -640,13 +640,13 @@ Many specific models have been proposed in literature, taking inspiration from n
 
 To the category of physical inspired systems belong all those works that take inspiration on the way physical particles move and self-organise according to gravitational and electromagnetic forces.
 %
-For instance, in \cite{fieldbasedcoordination-mamei06}, computational ``force fields'' -- generated either by coordinated components or by the coordination middleware -- propagate across a spatial environment, leading to distributed data structures that affect the actions and motions of the agents in that environment.
+For instance, in TOTA \cite{fieldbasedcoordination-mamei06}, computational ``force fields'' -- generated either by coordinated components or by the coordination middleware -- propagate across a spatial environment, leading to distributed data structures that affect the actions and motions of the agents in that environment.
 %
 A similar approach is proposed in Co-fields \cite{cofields--esawIII}, exploiting composite computational fields to coordinate the motion of users and robots in an environment.
 %
-Physical inspiration also has influenced self-assembly, for instance in \cite{guo2012} the adoption of virtual force fields is suggested in order to control the material's shape.
+Physical inspiration also has influenced self-assembly, for instance Guo et al. \cite{guo2012} suggest the adoption of virtual force fields in order to control the material's shape.
 
-A number of ``bottom-up'' methods implement computational fields using only the local view, including the Hood sensor network abstraction~\cite{hood}, Butera's ``paintable computing'' hardware model \cite{butera}, TOTA~\cite{mamei2009acm}, the chemical models in \cite{VCMZ-TAAS2011}, and Meld~\cite{Meld}.
+A number of ``bottom-up'' methods implement computational fields using only the local view, including the Hood sensor network abstraction~\cite{hood}, Butera's ``paintable computing'' hardware model \cite{butera}, TOTA~\cite{mamei2009acm}, the chemical models \cite{VCMZ-TAAS2011}, and Meld~\cite{Meld}.
 %
 The MGS language~\cite{GiavittoMGS05} takes a notable and different approach, using a method like local field computation to define and evolve the shape of the manifolds on which it executes.
 
@@ -690,7 +690,7 @@ In the computer science literature, the term ``stigmergy'' refers to a set of na
 %
 Agents deposit data into a distributed, shared, environment so as to collectively (yet implicitly) build distributed data structures that can help them navigate in such environments.
 %
-The notion of \emph{stigmergy} was introduced in \cite{stigmergy-grasse59} as the fundamental coordination mechanism in termite societies.
+The notion of \emph{stigmergy} was introduced as the fundamental coordination mechanism in termite societies \cite{stigmergy-grasse59}.
 
 Nowadays, the most widely-studied example of stigmergic coordination in insect societies is probably that of ant colonies~\cite{dorigo-aco2004}.
 %
@@ -718,7 +718,7 @@ In this work, from now on, we will use the word ``pattern'' to refer to such sel
 %
 Recent studies on self-organisation identified existing and new patterns to design computing applications featuring desirable properties of adaptation and robustness to unpredicted changes in the environment, such as human interaction, network mobility and faults, events in the physical environment.
 %
-As a reference, we consider the work in \cite{FDMVA-NACO2012}, in which a catalogue of patterns for self-organisation is introduced.
+As a reference, we consider the work of Fernandez-Marquez et al. \cite{FDMVA-NACO2012}, in which a catalogue of patterns for self-organisation is introduced.
 %
 Following a series of work in self-organising coordination \cite{VCMZ-TAAS2011,sapereecolaws-sac2012}, such a catalogue uses a paradigm of chemical-like transformation rules (manipulating information items residing in the network nodes) to specify pattern behaviour and pattern combination.
 %
@@ -754,7 +754,7 @@ This can be understood as a computational field \cite{SpatialIGI2013,mamei2009ac
 
 Interestingly, the Gradient pattern can be designed to automatically self-heal to changes in the topology and to movement of the source \cite{flexiblegradients}.
 %
-An interesting issue with such gradients is framed in \cite{crf}, and concerns the asymmetry between how quickly the distributed data structure reacts to changes if they are rising or decreasing the value.
+An interesting issue with such gradients concerns the asymmetry between how quickly the distributed data structure reacts to changes if they are rising or decreasing the value \cite{crf}.
 %
 Since the proposed implementation chooses the minimum gradient value from neighbours, it is very quick in detecting and self-healing in case the gradient value should decrease: as soon as a new neighbour discovers a better route towards source, the node updates and gets the correct value.
 %
@@ -762,7 +762,7 @@ In case the optimal path is broken, instead, at each ``computational round'' the
 %
 This problem, known as ``rising values problem'', gets worse with the density of the network\footnote{If the density is higher and the number of neighbours is constant, then necessarily there is a smaller distance between nodes. Since the gradient uses distance between nodes to compute its value, this is detrimental to performance.}.
 %
-A solution for this problem is given in \cite{crf}.
+A solution for this problem is available in literature \cite{crf}.
 %
 In this thesis we will often use the most classic implementation of gradient, and consequently we will run across the rising value problem.
 %
@@ -840,7 +840,7 @@ SAPERE\footnote{The model was developed as part of an EU-funded research project
 \label{img:sapere-architecture}
 \end{figure}
 %
-Its reference architecture and coordination model synthesize from existing nature-inspired approaches, such as \cite{biochemicalTupleSpaces, frameworkSelfOrg, VCMZ-TAAS2011, wordNet}, and is based on an assumption of spatial, local interactions (to be realized via a network of distributed tuple spaces), which is in line with all nature-inspired approaches.
+Its reference architecture and coordination model synthesize from existing nature-inspired approaches \cite{biochemicalTupleSpaces, frameworkSelfOrg, VCMZ-TAAS2011, wordNet}, and is based on an assumption of spatial, local interactions (to be realized via a network of distributed tuple spaces), which is in line with all nature-inspired approaches.
 %
 Its coordination laws make it possible to express and deploy general nature-inspired distributed algorithms and coordination patterns.
 %
@@ -977,7 +977,7 @@ In practice, in fact, effective aggregate programming for real-world distributed
 %
 Some of the prior approaches on which field calculus is based provide very similar semantics (most notably Proto), but they all suffer from some combination of design and implementation problems that render them impractical for widespread adoption.
 %
-Besides Proto, which is probably the closest to a practical programming environment and whose problems have already been described in \Cref{proto}, others, such as \cite{VPB-COORD2012}, have only minimal implementation.
+Besides Proto, which is probably the closest to a practical programming environment and whose problems have already been described in \Cref{proto}, others \cite{VPB-COORD2012}, have only minimal implementation.
 
 \subsubsection{Basics and Syntax}
 
@@ -1108,7 +1108,7 @@ The first point is very relevant for this thesis, since a solid mathematical bac
 %
 The second point will be exploited in \Cref{protelis-language}, where a new practical language building on Field Calculus will be presented.
 %
-Such language's interpreter adheres to the operational semantics defined in \Cref{fig:calculus}, and consequently shares all the nice properties of field calculus demonstrated in \cite{VDB-FOCLASA-CIC2013}.
+Such language's interpreter adheres to the operational semantics defined in \Cref{fig:calculus}, and consequently shares all the nice properties of field calculus \cite{VDB-FOCLASA-CIC2013}.
 
 %
 % $\sigma$ ranges over device unique identifiers and $\fvalue$ over field values (mapping set of devices to local values).
@@ -1655,7 +1655,7 @@ Such algorithm is event-driven in that it executes only one reaction/event at a 
 %-------------------------------------------------------------------------------
 \section{Gillespie's optimised versions}
 %-------------------------------------------------------------------------------
-This algorithm has been improved in various works in literature, particularly notable is the work in \cite{gibson2000} and \cite{slepoy2008}.
+This algorithm has been improved in various works in literature, particularly notable is the work of Gibson and Bruck \cite{gibson2000} and Slepoy et al. \cite{slepoy2008}.
 %
 Both works optimise the base algorithm in two phases: the selection of the next reaction to execute and the update of the reaction pool -- pending event list -- once an event has been executed.
 %
@@ -1752,7 +1752,7 @@ Ideally, it would be possible to just drop the optimisation or reuse the classic
 %
 This approach would lead to a massive performance impact, since the dependency computation is the most expensive operation.
 %
-As evidence, in \cite{slepoy2008} some charts show the difference between Gibson-Bruck and Slepoy et al. algorithms with and without a dependency graph: the result is very strongly in favour of the former.
+As evidence, some performance analysis \cite{slepoy2008} show the difference between Gibson-Bruck and Slepoy et al. algorithms with and without a dependency graph: the result is very strongly in favour of the former.
 
 A possibility for efficiently adapting a dependency graph to a network of compartments could be to define the input and output contexts for each reaction, namely the places where reactions respectively ``read'' their reactants and ``write'' their products.
 %
@@ -1792,7 +1792,7 @@ An issue that arises with addition and removal of nodes from the simulation is t
   \end{center}
 \end{figure}
 
-Our idea is, for each node, to keep track of the number of descendant per branch, having in such way the possibility to keep the tree balanced when adding nodes. In \Cref{img:ipq} we show how the same IPQ drawn in \cite{gibson2000} would appear with our extension. Given this data structure, the procedures to add and remove a new node \texttt{n} are described respectively in \Cref{algo:newnode} and \Cref{algo:remnode}, in which the procedure \texttt{UPDATE\_AUX(n)} is the same described in \cite{gibson2000}.
+Our idea is, for each node, to keep track of the number of descendant per branch, having in such way the possibility to keep the tree balanced when adding nodes. In \Cref{img:ipq} we show how the same IPQ drawn in Gibson and Bruck's work \cite{gibson2000} would appear with our extension. Given this data structure, the procedures to add and remove a new node \texttt{n} are described respectively in \Cref{algo:newnode} and \Cref{algo:remnode}, in which the procedure \texttt{UPDATE\_AUX(n)} is the same described by Gibson and Bruck \cite{gibson2000}.
 
 \begin{algorithm}
 \begin{distribalgo}[1]
@@ -2112,25 +2112,25 @@ This is probably the component which gives the highest impact in this case, sinc
 %
 Since it allows for in-simulation modifications of the environment, it can be considered to belong to the fourth generation of DESs according to \cite{BabulakIJOE2008}.
 %
-The work in \cite{Pollacia89} surveys the classical DES approaches: according to it, \alchemist{} belongs to the category of simulators featuring ``internal clock'', ``next-event time advance'', and adhering to the ``Event-scheduling World View'', namely, the simulator handles events and is concerned with their effect on system states.
+According to Pollacia's survey \cite{Pollacia89}, \alchemist{} belongs to the category of simulators featuring ``internal clock'', ``next-event time advance'', and adhering to the ``Event-scheduling World View'', namely, the simulator handles events and is concerned with their effect on system states.
 
 Apart from the meta-model adopted, the main innovative aspect of \alchemist{} with respect to the general DES approach is its ability of optimising the ``compile current event list'' stage \cite{Pollacia89}, which \alchemist{} quickly executes incrementally by means of the management of dependencies that the adoption of a chemical-like model enables.
 
 As far as the simulator model is concerned, instead, the class of DES more related to our approach are those commonly used to simulate biological-like systems.
 %
-A recent overview of them is available in \cite{EwaldJOS2007}, which takes into account: DEVS \cite{zeigler1984}, Petri Nets \cite{murata1989}, State Charts \cite{Harel1987} and stochastic $\pi$-calculus \cite{Priami1995}.
+A recent overview of them is available \cite{EwaldJOS2007}, which takes into account: DEVS \cite{zeigler1984}, Petri Nets \cite{murata1989}, State Charts \cite{Harel1987} and stochastic $\pi$-calculus \cite{Priami1995}.
 %
 Such an overview however emphasises that all such models require a considerable effort to map biological components into abstractions of the chosen formalism: this is because none of them was specifically developed with biology or bio-inspiration in mind.
 %
-As described in \Cref{meta-meta-model}, our model is meant to overcome such limitations, since all the enhancements to the basic chemical model we support can be seen as a generalisation of the abstractions of the works presented in \cite{EwaldJOS2007}, and add to them the possibly of customising with much greater flexibility a simulation to the scenarios of bio-inspired computational systems.
+As described in \Cref{meta-meta-model}, our model is meant to overcome such limitations, since all the enhancements to the basic chemical model we support can be seen as a generalisation of the abstractions of the works presented in literature \cite{EwaldJOS2007}, and add to them the possibly of customising with much greater flexibility a simulation to the scenarios of bio-inspired computational systems.
 
 We should finally note that the DES approach typically contrasts the use of mathematical techniques (e.g. modelling the system by differential equations).
 %
 However, the possible different choice of translating a system model to ordinary or partial different equations -- which can be solved numerically in a time considerably shorter than a set of stochastic simulations -- is shown to be impractical in our case.
 %
-This path, explored for example by \cite{MallavarapuInterface2008}, can provide good results for dynamics that progress at more or less the same speed, and in which abundance of species (data-items or agents in our case) is so high that it can be relaxed to real-valued variables \cite{EwaldJOS2007}.
+This path, explored by other works in literature \cite{MallavarapuInterface2008}, can provide good results for dynamics that progress at more or less the same speed, and in which abundance of species (data-items or agents in our case) is so high that it can be relaxed to real-valued variables \cite{EwaldJOS2007}.
 %
-This is not the case for many scenarios even in system biology (see, for example, \cite{Cowan2000, UhrmacherWSC2005}), not to mention scenarios like pervasive computing where reaction rates do not change continuously, and where the effect on an even small number of agents can be key to a given system evolution.
+This is not the case for many scenarios even in system biology \cite{Cowan2000, UhrmacherWSC2005}, not to mention scenarios like pervasive computing where reaction rates do not change continuously, and where the effect on an even small number of agents can be key to a given system evolution.
 
 \section{\alchemist{} as a MABS}
 
@@ -2603,17 +2603,21 @@ A well known example of multicellular development is given by \emph{Drosophila M
 %
 To show the spatial-temporal evolution of the pattern, the organism has been object of several modelling attempts, most of which focus their investigation in gene interactions and protein diffusion mechanisms, bounding the window of analysis at a period of development that does not massively involve nuclear or cellular divisions. 
 %
-To cite few of them, in \cite{reinitz95} the change of protein concentration is modelled as an Ordinary Differential Equation depending on the process of gene regulation, diffusion over a  discretised space and decay.  Mitosis are also modelled as a synchronous  atomic process that suspends the synthesis of protein and causes a doubled number of cell nuclei.
+To cite few of them, Reinitz and Sharp \cite{reinitz95} model the change of protein concentration as an Ordinary Differential Equation depending on the process of gene regulation, diffusion over a  discretised space and decay.
 %
-In \cite{gursky04} it is presented a continuous mathematical model based on a set of coupled non linear reaction-diffusion Partial Differential Equations  that describe how protein concentrations change over time and space as a result of the mechanisms of protein synthesis and degradation, gene inhibition and activation, protein diffusion. They replace embryo's cellular structure with a continuum and do not model nuclear divisions. 
+Mitoses are also modelled as a synchronous  atomic process that suspends the synthesis of protein and causes a doubled number of cell nuclei.
+%
+Gursky et al. \cite{gursky04} present a continuous mathematical model based on a set of coupled non linear reaction-diffusion Partial Differential Equations that describe how protein concentrations change over time and space as a result of the mechanisms of protein synthesis and degradation, gene inhibition and activation, protein diffusion. They replace embryo's cellular structure with a continuum and do not model nuclear divisions.
 %
 %Simulations are performed from cl. cyc 11 to 14.
 %
-In \cite{montagna-cs2bio10} it is described a stochastic and discrete version of  \cite{gursky04} based on a set of interacting compartments inside which chemical reactions implementing the gene regulatory network can occur. It does not count for changes in the network topology due to compartment movement and mitosis.
+Montagna and Viroli \cite{montagna-cs2bio10} describe a stochastic and discrete version of Gursky's work based on a set of interacting compartments inside which chemical reactions implementing the gene regulatory network can occur. It does not count for changes in the network topology due to compartment movement and mitosis.
 %
 These models run over a simulation window that start from cleavage cycle 11 to cleavage cycle 14.
 %
-In \cite{LeccaJIB2010} the gradient formation of the Drosophila \emph{bicoid} protein, mainly caused by the morphogen diffusion, is simulated with an innovative stochastic model of reaction-diffusion systems implemented into a Gillespie-like stochastic simulation algorithm. They do not model neither gene interactions nor cellular / nuclear divisions.
+Lecca et al. \cite{LeccaJIB2010} simulate the gradient formation of the Drosophila's \emph{bicoid} protein, mainly caused by the morphogen diffusion, with an innovative stochastic model of reaction-diffusion systems implemented into a Gillespie-like stochastic simulation algorithm.
+%
+They do not model neither gene interactions nor cellular / nuclear divisions.
 %
 
 To capture a bigger window of embryo development we built on top of \alchemist{}'s chemical meta-model a model of \emph{Drosophila} development so as to capture  both nuclear division and molecular processes such as  morphogen diffusion and gene regulatory networks.
@@ -2689,11 +2693,13 @@ Molecules move from one nucleus into a neighbour location of the environment pic
 %
 Diffusion among locations of the environment follows the same law, implementing a Brownian motion.
 
-In \Cref{fig:genenetwork} it is shown the network of interactions among maternal effectors and gap genes we considered. As in \cite{perkins-compbio06}, an other gap gene, \emph{tailess} (tll), also  appears as input of the network whose regulation is not clear and we do not represent in the model. 
+In \Cref{fig:genenetwork} it is shown the network of interactions among maternal effectors and gap genes we considered.
+%
+Another gap gene, \emph{tailess} (tll), also appears as input of the network whose regulation is not clear \cite{perkins-compbio06} and we do not represent in the model.
 
 \begin{figure}
 \centering{\includegraphics[width=0.99\textwidth]{img/network}}
-\caption[Gene regulatory relationships as in the model presented in \cite{perkins-compbio06,RiveraPomar,gursky04}]{Gene regulatory relationships as in the model presented in \cite{perkins-compbio06,RiveraPomar,gursky04}. The diagram is realised with BioTapestry \cite{biotapestry-2009}. The type of link is pointed out by its shape: links with arrowhead are enhancers, while the repressor links have a foot.}
+\caption[Gene regulatory relationships]{Gene regulatory relationships \cite{perkins-compbio06,RiveraPomar,gursky04}. The diagram is realised with BioTapestry \cite{biotapestry-2009}. The type of link is pointed out by its shape: links with arrowhead are enhancers, while the repressor links have a foot.}
 \label{fig:genenetwork}
 \end{figure}
 
@@ -2874,7 +2880,7 @@ LSAs have a unique, system-wide identifier (LSA-id), needed to support a notion 
 %
 Several concrete approaches to the structure of an LSA description can be taken.
 %
-For the sake of exemplification, following the work in \cite{SemanticSapereIGI2012,sapereecolaws-sac2012,SemMatchingSAC2013} we  take a semantic approach based on Resource Description Framework (RDF) representation \cite{manola2004primer}, in which an LSA is a set of multi-valued properties, or equivalently, a set of triples (subject, predicate, object) of an LSA-id, the property name, and the assigned value, expressed as literals (strings) or URIs (terms qualified by universally-accessible namespaces, to which an ontological interpretation can be given \cite{ranganathan2004ontologies}).
+For the sake of exemplification, following existing works \cite{SemanticSapereIGI2012,sapereecolaws-sac2012,SemMatchingSAC2013}, we take a semantic approach based on Resource Description Framework (RDF) representation \cite{manola2004primer}, in which an LSA is a set of multi-valued properties, or equivalently, a set of triples (subject, predicate, object) of an LSA-id, the property name, and the assigned value, expressed as literals (strings) or URIs (terms qualified by universally-accessible namespaces, to which an ontological interpretation can be given \cite{ranganathan2004ontologies}).
 %
 An example LSA advertising an exhibition in a smart city, to be diffused around, would be: 
 
@@ -2925,7 +2931,7 @@ As already mentioned, our description of eco-laws abstracts from the actual stru
  
  \[X^{\rightsquigarrow Y} + Y \rightarrow X + Y\]
  
- \item \texttt{diffusion} | The diffusion eco-law is used to create a clone of an LSA to be shipped to all neighbours of the current node. This eco-law applies to an LSA $X$ that has a particular structure (typically, given property-value associations). The LSA $X'$ accordingly created has a new identifier along with an updated value of some special properties that can keep track of the increased distance from the source (the notion of distance can be extended to consider advanced forms of context-dependency as described in \cite{SemMatchingSAC2013}). Note that such a new LSA has no owner: it is typically used to create a distributed structure of LSAs representing the global outcome of a single LSA initially created by an agent. By denoting with notation $\overrightarrow{X'}$, an LSA $X'$ to be spread to neighbours, we can express the structure of this eco-law as:
+ \item \texttt{diffusion} | The diffusion eco-law is used to create a clone of an LSA to be shipped to all neighbours of the current node. This eco-law applies to an LSA $X$ that has a particular structure (typically, given property-value associations). The LSA $X'$ accordingly created has a new identifier along with an updated value of some special properties that can keep track of the increased distance from the source (the notion of distance can be extended to consider advanced forms of context-dependency \cite{SemMatchingSAC2013}). Note that such a new LSA has no owner: it is typically used to create a distributed structure of LSAs representing the global outcome of a single LSA initially created by an agent. By denoting with notation $\overrightarrow{X'}$, an LSA $X'$ to be spread to neighbours, we can express the structure of this eco-law as:
  
  \[X \rightarrow X + \overrightarrow{X'}\]
  
@@ -2941,7 +2947,7 @@ As already mentioned, our description of eco-laws abstracts from the actual stru
 
 \section{Formalisation}
 
-In this\levelText{}we provide a formalisation of the proposed coordination model as informally presented in previous section. We adopt the style that has now became a standard after a series of previous works---starting from the work of Zavattaro et.al. \cite{zavattaro}, as surveyed in \cite{VO-FI2006}, and more recently including, e.g., \cite{VPB-COORD2012,TerepetaNN12,BortolussiLM13,MassinkL12,LaneseBF13}.
+In this\levelText{}we provide a formalisation of the proposed coordination model as informally presented in previous section. We adopt the style that has now became a standard after a series of previous works \cite{zavattaro,VO-FI2006,VPB-COORD2012,TerepetaNN12,BortolussiLM13,MassinkL12,LaneseBF13}.
 %
 Namely, this is presented in the form of a process algebra, in which a system state is conceived as a ``soup'' (or networked set of soups) where agents and LSAs float: subjective coordination is realised by agents performing coordination primitives amounting to interactions with the local space (producing/consuming/modifying LSAs), while objective coordination is realised by eco-laws executing as rules continuously manipulating the space on top \cite{biochemicalTupleSpaces,tucson-aamas99,RicciOD02}.
 %
@@ -3259,7 +3265,7 @@ The operational semantics is defined as a transition system with judgement $\sCf
 %
 The operational semantics is split in three parts: general congruence rules (\Cref{fig:congruence_rules}), rules defining agent behaviour (\Cref{fig:agent_rules}), and finally rules defining eco-laws (\Cref{fig:eco_laws}), described in turn.
 
-In \Cref{fig:congruence_rules}, rule [CGR-C] is the standard rule making congruent configurations be considered equivalent, rule [NEST] allows one to recursively enter a space, and finally rule [SHIP] defines the broadcast semantics: when an LSA-to-be-spread $\cLSA{\sStar}{\sDe}$ occurs in a space, a copy of it is sent to all neighbours (by action $\lship{\cList{\sId}}$, where $\cList{\sId}$ is a set of externally provided freshly-generated identifiers)---note that we abuse the notation as in \cite{FJ}, writing $\cList{\sId}$ for $\sId_1,\ldots,\sId_k$ and similarly for $\cList{\sSI}$.
+In \Cref{fig:congruence_rules}, rule [CGR-C] is the standard rule making congruent configurations be considered equivalent, rule [NEST] allows one to recursively enter a space, and finally rule [SHIP] defines the broadcast semantics: when an LSA-to-be-spread $\cLSA{\sStar}{\sDe}$ occurs in a space, a copy of it is sent to all neighbours (by action $\lship{\cList{\sId}}$, where $\cList{\sId}$ is a set of externally provided freshly-generated identifiers)---note that, as in other works \cite{FJ}, we abuse the notation writing $\cList{\sId}$ for $\sId_1,\ldots,\sId_k$ and similarly for $\cList{\sSI}$.
 
 \Cref{fig:agent_rules} provides the rules defining the internal behaviour of spaces, affecting agent behaviour.
 %
@@ -3375,7 +3381,7 @@ We now present an example application of the coordination model proposed in \Cre
 
 \section{A semantic-oriented instantiation}
 
-We give an RDF-oriented concrete definition of data representation, which can be useful in a large number of pervasive computing applications, including the example to come---a rigorous mapping to RDF and SPARQL can be given along the lines of \cite{SemanticSapereIGI2012}.
+We give an RDF-oriented concrete definition of data representation, which can be useful in a large number of pervasive computing applications, including the example to come---a rigorous mapping to RDF and SPARQL can be given \cite{SemanticSapereIGI2012}.
 %
 Namely, we provide:
 \begin{itemize}
@@ -3516,7 +3522,7 @@ iterate \{
 \caption{Multi-agent system for creating a distributed gradient data structure}\label{f:grad}
 \end{figure}
 
-Assume an adaptive display infrastructure, where a huge number of displays are deployed more or less uniformly in a wide and possibly articulated area, like a smartcity \cite{Montagna-MONET2012}.
+Assume an adaptive display infrastructure, where a huge number of displays are deployed more or less uniformly in a wide and possibly articulated area, like a smart city \cite{Montagna-MONET2012}.
 %
 In a given location, called the \emph{source}, a point-of-interest (POI) is deployed: several pedestrians around may be interested in reaching that POI according to a convenient path.
 %
@@ -3545,7 +3551,7 @@ Finally, a \emph{contextualiser} agent is in charge of enacting the situation re
 %
 After suitable requests for bonding as in the previous case, and creation of an empty LSA called \texttt{?GRAD}, it iteratively checks whether there is a temporaneous gradient LSA and if there is no ``blocking'' LSA: if both conditions hold, it simply copies the content of gradient LSA into \texttt{?GRAD} and moves the flag to \texttt{false} (so that diffusion/aggregation will carry on), otherwise it empties \texttt{?GRAD} entirely.
 
-The gradient structure created by this process enjoys self-stabilisation as defined in \cite{VD-COORD2014-LNCS2014}, namely, it repairs in response to \emph{any} change in the environment, including topological changes and re-positioning of POI.
+The gradient structure created by this process enjoys self-stabilisation \cite{VD-COORD2014-LNCS2014}, namely, it repairs in response to \emph{any} change in the environment, including topological changes and re-positioning of POI.
 
 \begin{figure}
 \centering\includegraphics[width=\textwidth]{img/channel}
@@ -3629,7 +3635,7 @@ The LSA it produces and maintains is representative of the direction of the sign
 
 \begin{figure}
 \begin{center}{\includegraphics[width=0.8\textwidth]{img/london-channel}}\end{center}
-\caption[Channel deployed in London]{The distributed channels deployed in a smartcity (London) for pedestrian steering. Red nodes represent devices inside the channel area, while black nodes correspond to ``obstacle'' areas.}
+\caption[Channel deployed in London]{The distributed channels deployed in a smart city (London) for pedestrian steering. Red nodes represent devices inside the channel area, while black nodes correspond to ``obstacle'' areas.}
 \label{f:london}
 \end{figure}
 
@@ -3661,15 +3667,15 @@ First, one can note that the resulting channel data structure is highly independ
 %
 Second, the way the channel is created allows one to use distributed concepts of ``source'' and ``destination'' of a channel, and even to consider the case of a channel starting from multiple sources---e.g., to guide different groups of interested people.
 %
-This is because self-organisation is achieved here by the functional combination of well-engineered spatial structures, as advocated in works such as \cite{SpatialIGI2013}.
+This is because self-organisation is achieved here by the functional combination of well-engineered spatial structures, as advocated in other works \cite{SpatialIGI2013}.
 %
 Third, this structure automatically adapts to the shape of the network, properly bypassing obstacle areas.
 %
-This happens since it can be shown that the diffusion-aggregation process underlying gradients enjoys self-stabilisation as defined in \cite{VD-COORD2014-LNCS2014} (diffusion always increments distance, and aggregation is performed based on minimum values).
+This happens since it can be shown that the diffusion-aggregation process underlying gradients enjoys self-stabilisation \cite{VD-COORD2014-LNCS2014} (diffusion always increments distance, and aggregation is performed based on minimum values).
 
 The presented technique can hence be usefully employed in complex environments, where it is difficult to predict the contingent situations.
 %
-We consider, as an example scenario, pedestrian steering in smartcities.
+We consider, as an example scenario, pedestrian steering in smart cities.
 %
 \Cref{f:london} shows a snapshot of a simulation corresponding to a deployment over a London map.
 %
@@ -3693,13 +3699,13 @@ The speed of information diffusion is approximatively computed as the distance o
 %
 \Cref{f:london3} and \Cref{f:london4} study self-stabilisation in response to changes in the environment, corresponding to the addition/removal of all obstacles shown in \Cref{f:london}, which requires a complete (spontaneous) re-calculation of the path.
 %
-These charts confirm the estimation of stabilisation time studied in \cite{crf}.
+These charts confirm the estimation of stabilisation time available in literature \cite{crf}.
 %
 Namely, the repair time is much faster with removal of obstacles, since in this case gradient values quickly fall down to their new values (i.e., distances quickly decrease).
 %
 On the other hand, with obstacles added instead, values more slowly grow to the new stable state.
 %
-This happens because of the issue of slow ``raising values'' pointed out in \cite{crf}.
+This happens because of the issue of slow ``raising values'' pointed out in previous works about gradients \cite{crf}.
 
 
 \chapter{Pattern: Anticipative adaptation}
@@ -3724,13 +3730,13 @@ In this\levelText{}we first motivate and analyse the problem, then elaborate a s
 
 \subsection{Motivations and problem analysis}
 
-A basic application of the Gradient pattern is to steer a requester from its current location to the Gradient's source location---namely, what is called Chemotaxis pattern in \cite{FDMVA-NACO2012}.
+A basic application of the Gradient pattern is to steer a requester from its current location to the Gradient's source location---namely, what is called Chemotaxis pattern \cite{FDMVA-NACO2012}.
 %
 Such a requester (which we here generally refer to as an agent) can either be a mobile software agent roaming a network to find proper information, a person guided in a complex environment by signs dynamically appearing in its smartphone \cite{mass2011}, a car which is given traffic control suggestions through its navigation system, or an information item directed to the target of a communication \cite{VCMZ-TAAS2011}.
 %
 It is quite standard to make the Gradient field adapt to contingencies as soon as they appear: for instance, interruption of a road can reflect into a change of the network topology, leading to the automatic recalculation of the Gradient structure to identify a new path towards the target of interest.
 %
-Following that line, in \cite{sapereecolaws-sac2012} it was studied how dynamically-formed crowded areas can be perceived as areas to be circumvented by other people roaming the environment.
+Following that line, it was studied how dynamically-formed crowded areas can be perceived as areas to be circumvented by other people roaming the environment \cite{sapereecolaws-sac2012}.
 
 We address the design of a different mechanism which, to the best of our knowledge, has never been considered so far: how Gradient-based self-organisation mechanisms can be extended to deal with the case in which in some node(s) there is knowledge about an event that will occur there in the future and prevent/modify the ability of an agent to transit across the node.
 %
@@ -4404,18 +4410,18 @@ Their basic goal is to analyse a description of the services to compose and comp
 One of the main challenges of these approaches is their limited scalability and the strong requirements they pose on the detail of service description.
 
 \subsubsection{Evolutionary techniques}
-Evolutionary approaches such as those based on Genetics Algorithms (GA) have been proposed as well for service composition, such as in \cite{Canfora2005}, motivated by the need of determining the services participating in a composition that satisfies certain QoS constraints, which is known to be a NP-Hard problem.
+Evolutionary approaches such as those based on Genetics Algorithms (GA) have been proposed as well for service composition \cite{Canfora2005}, motivated by the need of determining the services participating in a composition that satisfies certain QoS constraints, which is known to be a NP-Hard problem.
 %
 More generally, evolutionary approaches have been used in the field of autonomic computing to establish the set of norms, policies or rules that drive the system to the desired emergent behaviour \cite{Norman2010}.
 %
 We observe that this approach has a potential for service composition: in the same way as the genetic programming determine the proper execution of functions and their parameters, it could be used to find which services, their order of execution and the parameters that its service should receive. 
 
 \subsubsection{Competition-based approaches}
-In order to tackle the potentially high number of different compositions that can arise in an open system, in \cite{Viroli:11:SOACCPS} a mechanism of \emph{coordination reactions} for networked tuple spaces is proposed, showing how it can be applied to support competition and composition in a fully distributed setting---services opportunistically compose in those regions of the network where this results in a more competitive service.
+In order to tackle the potentially high number of different compositions that can arise in an open system, a mechanism of \emph{coordination reactions} for networked tuple spaces is proposed \cite{Viroli:11:SOACCPS}, showing how it can be applied to support competition and composition in a fully distributed setting---services opportunistically compose in those regions of the network where this results in a more competitive service.
 %
 While all compositions can possibly take place, thanks to a positive/negative feedback only successful ones are meant to ``survive'' in the system, the others fading until becoming never actually selected.
 %
-This is achieved by matching services with requests through a self-regulating dynamics inspired by prey-predator model of population dynamics \cite{Berryman:1992}, and by diffusing service tuples using a computational-field approach similar to the one presented in \cite{tota-aamas2005,proto}.
+This is achieved by matching services with requests through a self-regulating dynamics inspired by prey-predator model of population dynamics \cite{Berryman:1992}, and by diffusing service tuples using a computational-field approach \cite{tota-aamas2005,proto}.
 
 
 
@@ -4563,7 +4569,7 @@ To describe how self-composition of gradients can be built in the SAPERE framewo
 \subsection{The gradient service}
 Our strategy for modelling gradient's features: 
 \begin{enumerate}
- \item a continuous broadcast of information in each node as in \cite{flexiblegradients}, with latter information always overwriting previous one;
+ \item a continuous broadcast of information in each node \cite{flexiblegradients}, with latter information always overwriting previous one;
  \item propagation of estimated distance, computed by summing the contributions given by property \texttt{mid:distance} in neighbour annotation;
  \item propagation with no horizon (it is easy to impose a distance bound to the propagation of information);
  \item after been sent to a neighbour, an annotation is subject to a contextualisation phase (in which e.g. aggregations are executed) before being spread again.
@@ -4634,7 +4640,7 @@ This rules fires at diffusion rate \texttt{?R}: according to CTMC semantics, thi
 %
 The effect of firing this rule is twofold: it increases the value of property \texttt{sos:step} of the source annotation, and creates (by cloning the source) a new annotation \texttt{?GRAD} of type \texttt{sos:diff} and \texttt{sos:aggr} (original type \texttt{sos:source} is removed), and declaring distance $0$ and orientation \texttt{here} with respect to the source---these properties will be update as the annotation is spread around.
 %
-Note that the right-hand side of a rule mentions only changes in annotations, without any need of repeating information provided in the left-hand side which has not changed: this allows a simpler structuring of rules with respect to more syntactic approaches like the one in \cite{mass2011}.
+Note that the right-hand side of a rule mentions only changes in annotations, without any need of repeating information provided in the left-hand side which has not changed: this allows a simpler structuring of rules with respect to more syntactic approaches \cite{mass2011}.
 
 Rule [DIFF] is used to diffuse a cloned version \texttt{?GRAD1} of a gradient annotation \texttt{?GRAD} in one neighbour.
 %
@@ -4969,7 +4975,7 @@ As before, application specified contextual factors may readily be accounted for
 \subsubsection{Receipt of replies}
 The requestor will eventually receive aggregated replies, providing information about (summary) distance, (summary) match-degree, resource provider (or resources provider), and direction to reach the service.
 %
-Such information can then be used, for example, to steer the requestor agent towards a selected resource or selected resources, as developed in \cite{sapereecolaws-sac2012}.
+Such information can then be used, for example, to steer the requestor agent towards a selected resource or selected resources \cite{sapereecolaws-sac2012}.
 
 \subsubsection{Dynamic self-healing}
 The evolution of ecosystem states over time is supported by the Decay pattern, which is employed to periodically remove older information while newer information is concurrently refreshed.
@@ -5234,7 +5240,7 @@ On average, each trace contains 128 samples with a duration of 265 minutes where
 %
 The Bluetooth data was collected by 3352 active users that detected 38816 unique ids and generated 1092694 proximity relations overall.
 %
-In \cite{Su2006} the authors substantiate that assuming bidirectional communication links between moving Bluetooth devices in urban environments is feasible.
+In Su et al. \cite{Su2006} the authors substantiate that assuming bidirectional communication links between moving Bluetooth devices in urban environments is feasible.
 
 %-----------------------------------------------------------------------------------
 \subsection{Similar spatial data-based models}
@@ -5243,13 +5249,13 @@ In \cite{Su2006} the authors substantiate that assuming bidirectional communicat
 
 Many similar datasets for spatial data have been collected in previous works.
 %
-A rather accurate dataset of position traces that represents the movement of taxis in an urban environment was presented in \cite{jetcheva2003}.
+A rather accurate dataset of position traces that represents the movement of taxis in an urban environment was presented in 2003 \cite{jetcheva2003}.
 %
 Roughly 500 cars in the city of San Francisco were tracked in a time frame of 30 days.
 %
 Samples were created in 10 second intervals.
 %
-In \cite{lee2009}, the authors investigated the properties of human walk patterns.
+In 2009 Lee et al. investigated the properties of human walk patterns \cite{lee2009}.
 %
 To this end 8-32 users were tracked in diverse locations such as universities, cities or amusement parks.
 %
@@ -5257,27 +5263,27 @@ Locations were collected once every 10 seconds.
 %
 The durations of the collected traces ranged from a few hours to an entire week.
 %
-A location-based dataset featuring more users was created by Microsoft Research and described in \cite{zheng2008}.
+A location-based dataset featuring more users was created by Microsoft Research \cite{zheng2008}.
 %
 128 Chinese volunteers were observed for more than five years with samples being taken every 1-5 seconds or 5-10 meters.
 %
 Scientific works that presents datasets of Bluetooth relations -- collected by commercially available, non-customized sensors -- have been published for almost 10 years.
 %
-One of the first was presented in \cite{eagle2005} using the ``Serendipity'' framework.
+One of the first was using the ``Serendipity'' framework \cite{eagle2005}.
 %
 100 students were using this software for 9 months -- mostly on a university campus -- and detected 2798 unique Bluetooth devices.
 %
-In \cite{Su2006}, the authors describe a ``war-driving''-based approach to capture the Bluetooth-landscape of Toronto.
+Su et al. describe a ``war-driving''-based approach to capture the Bluetooth-landscape of Toronto \cite{Su2006}.
 %
 To this end, 5 devices were used in 3 different locations in the city, with the result of identifying 296 unique devices.
 %
-\cite{Pietilainen2012} presents a Bluetooth dataset that was collected in the frame of the SIGCOMM 2009 conference.
+Pietil\"{a}inen and Diot presented a Bluetooth dataset that was collected in the frame of the SIGCOMM 2009 conference \cite{Pietilainen2012}.
 %
 76 active devices were used in a 2 day period identifying close to 16000 unique ids.
 %
 The sampling rate for the acquisition of this data was 2 minutes.
 %
-Another dataset that describes the Bluetooth landscape of an urban environment was presented in \cite{Natarajan2007}.
+Another dataset describes the Bluetooth landscape of an urban environment \cite{Natarajan2007}.
 %
 3 static and 9 mobile devices discovered over 10,673 unique devices and recorded over 362,599 unidirectional relations in a 4 month period.
 %
@@ -5375,7 +5381,7 @@ The dummy node was connected via network edges to all segments, however to not c
 %
 \Cref{fig:flows} visualizes the computed network flows for three time intervals in the morning, midday and evening of the event day -- captured at similar times as in \Cref{fig:segments}.
 %
-We computed these flows using an established algorithm -- described in \cite{berkelaar2004} -- to solve linear programming challenges such as the minimum-cost flow problem.
+We computed these flows using an established algorithm \cite{berkelaar2004} to solve linear programming challenges such as the minimum-cost flow problem.
 
 \begin{figure}
 	\begin{center}
@@ -5707,7 +5713,7 @@ Although it is not part of this very experiment, the reply could be tuned to be 
 %
 For instance, a value representing the ``level of matching'' between the request and the response could be embedded in the gradient, and used to modify its spatial structure in such a way that POIs more affine with the request are preferred even if farther.
 %
-Some example of similar usage of gradients is available in \cite{SemMatchingSAC2013}.
+Some example of similar usage of gradients is available \cite{SemMatchingSAC2013}.
 
 Now that a basic form of steering is in place, we can improve it by adding contextual information.
 %
@@ -5836,7 +5842,7 @@ A tuple is, however, a very point-wise abstraction, and applications often need 
 %
 There is thus a need for coordination models and languages that raise the level of abstraction from the single tuple to a spatial structure of tuples, without forgetting the possibility that such a structure, as well as being distributed, may also be highly dynamic and mobile.
 
-Based on the works such as \cite{VCMZ-TAAS2011,mamei2009acm,klaim,GeoLinda}, and on an existing trend of studies of concurrency ``in space'' \cite{ambients,CardelliG10,SpatialComputing,proto}, we introduce a new coordination model and language aiming at further bridging the gap between coordination and the continuum ideas of spatial computing.
+Based on existing works \cite{VCMZ-TAAS2011,mamei2009acm,klaim,GeoLinda}, and on an existing trend of studies of concurrency ``in space'' \cite{ambients,CardelliG10,SpatialComputing,proto}, we introduce a new coordination model and language aiming at further bridging the gap between coordination and the continuum ideas of spatial computing.
 %
 In our model, we make situated agents interact by injecting into the coordination substrate so-called \emph{space-time activities}, namely, processes that manipulate the space-time configuration of tuples in the network.
 %
@@ -5897,7 +5903,7 @@ Read and removal are predicative: they are non-blocking and yield a negative res
 %
 To these, we add a fourth primitive, ``\texttt{eval $pred$}'', which evaluates the predicate expression $pred$.
 
-When such actions are defined for an activity injected by an agent, and are executed in the tuple space where the agent is situated in, then a notification result is shipped to the agent---although, following the spirit of \cite{zavattaro}, we shall not discuss internal aspects of agent interactions in this thesis.
+When such actions are defined for an activity injected by an agent, and are executed in the tuple space where the agent is situated in, then a notification result is shipped to the agent---although, following the spirit of Busi et al. \cite{zavattaro}, we shall not discuss internal aspects of agent interactions in this thesis.
 
 \subsubsection*{Protocols}
 
@@ -6072,7 +6078,7 @@ The result of their execution is that only one tuple \texttt{T} will remain in t
 
 \section{Core Calculus}
 
-In this\levelText{}we introduce a formalisation of the proposed framework similar in spirit to those of \cite{zavattaro,klaim,biochemicalTupleSpaces}, namely, by a core calculus taking the shape of a process algebra.
+In this\levelText{}we introduce a formalisation of the proposed framework similar in spirit to other works in literature \cite{zavattaro,klaim,biochemicalTupleSpaces}, namely, by a core calculus taking the shape of a process algebra.
 
 \subsection{Syntax}
 
@@ -6197,7 +6203,7 @@ Semantic rules are shown in \Cref{f:gra} (c).
 
 Rule (STR) defines classical structural congruence.
 %
-Rules (BRO) and (SND) recursively handle broadcasting (mostly in line with \cite{wsnpa}), namely, create messages for all neighbours as soon as a process $P$ is scheduled for broadcasting.
+Rules (BRO) and (SND) recursively handle broadcasting (mostly in line with similar works \cite{wsnpa}), namely, create messages for all neighbours as soon as a process $P$ is scheduled for broadcasting.
 %
 Rule (SND) recursively selects a neighbour $\sigma'$ at orientation $t$, and creates a message for it in which orientation variable $\vorn$ is substituted with $t$.
 %
@@ -6241,7 +6247,7 @@ $C\otimes\scope{S}{\sigma}{\tau,\tau'}\stackrel{\labsilent{\sigma}}{\nrightarrow
 
 \subsection{Adaptive Crowd Steering}
 
-As a first example we study a specification able to support the case study presented in \cite{sapereecolaws-sac2012,mass2011}, with the goal of showing how $\sigma\tau$-Linda can provide support to easily define complex, distributed and adaptive data structures, and how they can be used in practice in a pervasive computing scenario.
+As a first example we study a specification able to support the case study presented in other works \cite{sapereecolaws-sac2012,mass2011}, with the goal of showing how $\sigma\tau$-Linda can provide support to easily define complex, distributed and adaptive data structures, and how they can be used in practice in a pervasive computing scenario.
 
 \begin{figure}
 {\begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}, label={\small \bf Crowd-aware gradient}]
@@ -6400,9 +6406,9 @@ Likewise, the density of devices is likely to vary greatly in time, both as incr
 
 We contend that the development and maintenance of distributed systems in the face of such fluctuations will only be tractable if they make use of techniques that ensure ``by construction'' that computations are inherently resilient against such forms of variability.
 %
-Toward that end, the first contribution of this\levelText{}(as an extension of the work in \cite{BVD-SCW14}), is the identification of a notion of \emph{consistency} of a space-time computation, stating that the outcome of a computation converges as the density of computing devices increases toward infinity.
+Toward that end, the first contribution of this\levelText{}(as an extension of the work of Beal et al.\cite{BVD-SCW14}), is the identification of a notion of \emph{consistency} of a space-time computation, stating that the outcome of a computation converges as the density of computing devices increases toward infinity.
 %
-This is further refined to \emph{eventual consistency}, which focuses only on the stable outcome of a computation (e.g., self-stabilizing patterns as studied in~\cite{VD-COORD2014-LNCS2014}).
+This is further refined to \emph{eventual consistency}, which focuses only on the stable outcome of a computation (e.g., self-stabilizing patterns as studied by Viroli and Damiani\cite{VD-COORD2014-LNCS2014}).
 
 Second, we identify a set of sufficient conditions for this property to hold, expressed as constructs defining a general purpose spatial language~\cite{SpatialIGI2013} useful for a wide variety of applications.
 %
@@ -6755,7 +6761,7 @@ computes a field that is $\lfalse$ except at an infinitely thin boundary of $\lt
 
 This is not a special case related to {\tt distance-to}, but a deeper conflict for situated distributed algorithms, between the discrete values commonly used in algorithms (e.g., Booleans, branches, state machines) and the continuous space-time environment in which devices are embedded.
 %
-In particular, any non-trivial field with a discrete range cannot be continuous (proof in Supplementary Information), meaning that it either is itself not approximable or else contains some measure-zero boundary region that, if handled badly, can generate unpredictable behaviour (as in the bisector example).
+In particular, any non-trivial field with a discrete range cannot be continuous, meaning that it either is itself not approximable or else contains some measure-zero boundary region that, if handled badly, can generate unpredictable behaviour (as in the bisector example).
 
 It is not practical to eliminate every program element that could either generate boundary regions or generate unpredictable behaviour due to values at a boundary.
 %
@@ -6899,7 +6905,7 @@ We can now prove that GPI calculus accomplishes the goal for which it has been d
   $\environment$ that are continuous on $\validdomain{\environment}$.
 \end{thm}
 
-We approach this proof in three stages (see \Cref{proofs}).
+We approach this proof in three stages (see Appendix \ref{proofs}).
 %
 First, we prove that any finite composition of operators that are eventually consistent and preserve certain continuity properties is also eventually consistent and continuity preserving.
 %
@@ -6953,7 +6959,7 @@ This version of channel takes two source fields \texttt{a} and \texttt{b}, and a
 \end{Verbatim}
 The {\tt broadcast} expression sends to every device the distance from {\tt b} perceived by devices in \texttt{a}.  Composition by the built-in functions \texttt{<} and \texttt{+} does the remainder of the job.
 %
-This example emphasizes how function composition can generate a plethora of spatial structures, e.g., in the spirit of \cite{anticipativegradient-SASO12}.
+This example emphasizes how function composition can generate a plethora of spatial structures \cite{anticipativegradient-SASO12}.
 
 Another key feature of \calculus{} is the ability to modulate the behavior of algorithms by restricting their domain with construct $\ifN$.
 %
@@ -7574,7 +7580,7 @@ The toolchain also comprises a distributed statistical model checker (\multivest
 
 We contributed in a range of advances in the area of patterns for self-organisation.
 
-One of the most important contributions is a process algebra for SAPERE. The key contribution of a process algebra to provide a unequivocal description of the components of the infrastructure, and also serves as an executable specification from which can be derived proofs of behavioural properties, like self-stabilisation of the self-organising spatial structures that are useful in the context of pervasive computing systems (along the lines of \cite{V-SCW2013}).
+One of the most important contributions is a process algebra for SAPERE. The key contribution of a process algebra to provide a unequivocal description of the components of the infrastructure, and also serves as an executable specification from which can be derived proofs of behavioural properties, like self-stabilisation of the self-organising spatial structures that are useful in the context of pervasive computing systems \cite{V-SCW2013}.
 
 We devised and studied some spatial patterns: the Channel, that marks devices along the path connecting a source and a destination, and the Anticipative Gradient.
 %
@@ -7625,7 +7631,7 @@ Here is where \protelis{} comes into play: it represents our effort to bring Fie
 %
 The reason is that we wanted to provide a language whose underlying mechanisms may allow for any kind of program to be written, and not just ``well behaving'' ones.
 
-\protelis{} ensures universality and coherence between aggregate specification and local execution by building atop the field calculus introduced in \cite{VDB-FOCLASA-CIC2013}.
+\protelis{} ensures universality and coherence between aggregate specification and local execution by building atop the field calculus introduced by Viroli et al\cite{VDB-FOCLASA-CIC2013}.
 %
 At the same time, accessibility, portability, and ease of integration are ensured by embedding \protelis{} within Java.
 %
