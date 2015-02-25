@@ -660,7 +660,7 @@ More explicit models of field computations are provided by some sensor nework pr
 as a number of parallel computing models, most notably StarLisp~\cite{starlisp} and systolic computing (e.g.,~\cite{SDEF,ReLaCS}), which use parallel shifting of data on a structured network.
 
 
-\subsection{(Bio)chemical-inspiration}
+\subsection{(Bio)chemical inspiration}
 
 Chemical reactions can be seen as an ensemble of myriads of simple laws that generate and regulate the evolution of extraordinarily complex molecular structures.
 %
@@ -706,13 +706,15 @@ In the area of networking, stigmergy has been exploited to realize effective rou
 
 \begin{figure}
 \begin{center}
-	\includegraphics[width=\textwidth]{img/sc-basic-mech.pdf}
+	\includegraphics[width=0.9\textwidth]{img/sc-basic-mech.pdf}
 \end{center}
-\caption{Self-organising patterns and their relationships}
+\caption{Self-organising patterns and their relationships. More fundamental, simpler mechanisms are in the bottom layer, higher level patterns are at the top. The Gradient pattern plays a fundamental role, being the pillar sustaining the higher level patterns. Image adapted from the work of Fernandez-Marquez et al.\cite{biocore}.}
 \label{fig:patterns} 
 \end{figure}
 
 Several recent works (\cite{FDMVA-NACO2012,GVO-CEEMAS2007,Mam06,Wolf2007}) have focussed on the issue of making self-organisation mechanisms systematically applicable, by proposing descriptions of those mechanisms under the form of catalogues of software design patterns~\cite{Gamma1995}.
+%
+In this work, from now on, we will use the word ``pattern'' to refer to such self-organisation mechanisms, despite the fact that their genesis and applicability is different from the work of Gamma.
 %
 Recent studies on self-organisation identified existing and new patterns to design computing applications featuring desirable properties of adaptation and robustness to unpredicted changes in the environment, such as human interaction, network mobility and faults, events in the physical environment.
 %
@@ -721,6 +723,12 @@ As a reference, we consider the work in \cite{FDMVA-NACO2012}, in which a catalo
 Following a series of work in self-organising coordination \cite{VCMZ-TAAS2011,sapereecolaws-sac2012}, such a catalogue uses a paradigm of chemical-like transformation rules (manipulating information items residing in the network nodes) to specify pattern behaviour and pattern combination.
 %
 This catalogue is organised in layers (see \Cref{fig:patterns}): low-level patterns achieve basic self-organisation mechanisms (Spreading, Aggregation and Evaporation), middle-level patterns are used to spatially organise information (gradient), and high-level patterns exploit such information to achieve individual or social goals in a multi-agent system (quorum sensing, chemotaxis, morphogenesis).
+%
+In the following, we will analyse the gradient pattern.
+%
+It has a central role, and will be used extensively in the next chapters.
+%
+We will also quickly discuss Chemotaxis, as an example of upper-level pattern leveraging gradient.
 
 \subsection{Gradient}
 \label{gradient}
@@ -787,7 +795,7 @@ Several implementations from both academia and industry exist.
 
  \item[Biochemical tuple spaces] \cite{biochemicalTupleSpaces} is a framework in which a tuple resembles a chemical substance, a notion of activity/pertinency value for tuples is used to model chemical concentration, coordination rules are structured as chemical reactions evolving tuple concentration over time, a tuple space resembles a single-compartment solution, and finally a network of tuple spaces resembles a tissue-like biological system.
 
- \item[\cartago{}] \cite{RPV-JAAMAS2011} is a general purpose framework/infrastructure that makes it possible to program and execute virtual environments - also said virtual / application / software environments - for multi-agent systems.
+ \item[CArtAgO] \cite{RPV-JAAMAS2011} is a general purpose framework/infrastructure that makes it possible to program and execute virtual environments - also said virtual / application / software environments - for multi-agent systems.
 
  \item[GigaSpaces XAP]\footnote{\url{http://www.gigaspaces.com}} (pronounced zap) is a scale-out application server.
 
@@ -891,6 +899,7 @@ Aggregate programming generally attempts to address this problem by providing co
  \item the overall system is specified by composing aggregate-level operations, and this specification is then transformed into a complete distributed implementation by a suitable mapping.
 \end{enumerate}
 
+\noindent{}
 In short, the key idea behind aggregate programming is to provide languages and APIs that allow a distributed collection of devices to be programmed in terms of their collective behaviours, keeping outside the sight of the software designer details on how such coordination is actually implemented.
 
 A large number of very diverse aggregate programming approaches have been proposed, including abstract graph processing (e.g.,~\cite{kairos}), declarative logic (e.g.,~\cite{Meld}), map-reduce (e.g.,~\cite{dean2008mapreduce}), streaming databases (e.g.,~\cite{tinydb}), and knowledge-based ensembles (e.g.,~\cite{SCEL})---for a detailed review, see~\cite{SpatialIGI2013}.
@@ -919,7 +928,7 @@ Such complexity is one of the pillars sustaining the efforts behind Field Calcul
 
 Field Calculus is an attempt to find a unifying model for programming \emph{computational fields} as a generalization of a wide range of existing approaches.
 %
-It is a fragment of Proto, (see \Cref{proto}), but it also takes inspiration from \cite{mamei2009acm,regiment,VCMZ-TAAS2011,tota2,nagpalphd,yamins,regiment}.
+It is a fragment of Proto, (see \Cref{proto}), but it also takes inspiration from various other efforts in the literature \cite{mamei2009acm,regiment,VCMZ-TAAS2011,tota2,nagpalphd,yamins,regiment}.
 %
 Formalized as the computational field calculus~\cite{VDB-FOCLASA-CIC2013}, this universal language appears to provide a theoretical foundation on which effective general aggregate programming platforms can be built.
 
@@ -957,7 +966,7 @@ Moreover, it can have its space-time extent modulated and controlled by restrict
 
 \begin{figure}
 \centering
-\includegraphics[width=0.99\textwidth]{img/aggregate-tower}
+\includegraphics[width=0.7\textwidth]{img/aggregate-tower}
 \caption[Layered approach]{Layered approach for development of spatially-distributed systems via aggregate programming.}
 \label{img:researchprogram}
 \end{figure}
@@ -1041,7 +1050,7 @@ As an example \mbox{\texttt{(if $\e_{\mathit{fah}}$ $\e_t$ (convert $\e_t$))}} i
 %
 Restriction is the most subtle of the five mechanisms, because it has the effect of preventing the unexpected spreading of computation to devices outside of the required domain, even within arbitrarily nested function calls, as will be clarified in the following.
 
-Here are some examples to illustrate how these five key mechanisms can be combined to implement useful spatial patterns.
+A simple example illustrates how these five key mechanisms can be combined to implement useful spatial patterns.
 %
 \begin{samepage}
 \begin{Verbatim}[
@@ -1568,12 +1577,45 @@ The idea behind this tool is to rely on the basic model of chemical reactions, w
 %
 The tool also includes a probabilistic model checker, which can be leveraged to estimate with the desired precision the value of model properties that would be otherwise hard to evaluate.
 
+\section{Final remarks}
+
+In this chapter, we have focussed on the state of the art in self-organisation.
+%
+We have described the main features of a software ecosystem (namely: situatedness, autonomy and self-adaptivity, prosumption and diversity, eternity) seeing how most of the existing works take inspiration from nature (either from physics, chemistry, biochemistry or stigmergy) in order to deliver self-* properties.
+%
+We have discussed the existing efforts to extract from those approaches a catalogue of reusable mechanisms, named spatial patterns (taking inspiration from the work of Gamma et al. \cite{Gamma1995}, even though they refer to a different kind of patterns).
+%
+We described the most important of them, the gradient, which is used by higher level patterns as a mechanism.
+%
+Two of the most prominent approaches to the organisation of a computational ecosystems were presented: tuple based coordination (with a deeper analysis of the Self-Aware Pervasive Ecosystems approach) and aggregate programming (with an analysis of Proto and its distillate Field Calculus).
+%
+Finally, the importance of simulation and the lack of comprehensive tools and procedures for engineering computational ecosystems was discussed.
+
+
 
 \part{An integrated toolchain for pervasive ecosystems}
 \label{alchemist-part}
-
+% \chapter{Introduction}
 \chapter{Chemical-inspired engine}
 \label{chemical-engine}
+This part of the thesis is devoted to describing a novel toolchain whose final goal is to provide proper support to engineers of pervasive ecosystems.
+
+As suggested in the introduction to this work, such a software must provide a very generic meta-meta model, that will need to be instanced in a meta-model that exposes the abstractions the designer intends to use in order to build the final system.
+%
+This meta-model is then instanced into a specific model (e.g., if the meta-model is a programming language, then the model is a program); and must be tested and verified.
+%
+In order to do so, the model must be supported by a formal description of the environment: being the system evolution strongly influenced by the context in which it is deployed, the environment must be considered in the testing phase.
+
+As previously discussed, simulation is often the only viable solution to the analysis of such complex system.
+%
+In order to run simulations on the model, a simulation engine is required.
+%
+Moreover, if we want to reuse such engine for every meta-model, it must be flexible enough to simulate any instance of the meta-meta model.
+
+Once we have a complete simulation solution, a question arises: how many simulations should the designer run in order to measure some property with the desired confidence and approximation?
+%
+The answer will be given in this part, and an automation solution will be proposed chaining the simulator described above with an existing stochastic model checker.
+
 In the following, we present a discrete event simulation engine derived from the popular and successful Gillespie's stochastic simulation algorithm \cite{gillespie1977}, and in particular from its notable and more efficient extensions developed by Gibson-Bruck \cite{gibson2000} and by Slepoy \cite{slepoy2008}.   
 %
 Gillespie's SSA is a discrete and stochastic method that intrinsically owns the event-driven properties \cite{spatialeventgillespie}: introduced to model chemical systems, nowadays it represents the basis of many simulation platforms, in particular those developed for the investigation of biochemical systems \cite{Priami:2001,Kierzek01032002,CiocchettaH09,versari08,montagna-cs2bio10,btssoc-jos7,Hoops15122006}. 
@@ -1720,13 +1762,13 @@ In a purely chemical simulation, all the reactions have a \localc{} input contex
 
 Let $dep: R^2 \longrightarrow boolean$ be the function that is used to build the static dependency graph in every SSA: given two reactions \texttt{r1} and \texttt{r2}, $dep(\texttt{r1}, \texttt{r2})$ returns \texttt{true} if the propensity of \texttt{r2} may be influenced by the execution of \texttt{r1}.
 %
-In a multi-compartment scenario, \texttt{r1} influences \texttt{r2} (there is an oriented edge in the dependency graph connecting \texttt{r1} to \texttt{r2}) iff $dep(\texttt{r1},\texttt{r2})$ is \texttt{true} and:
+In a multi-compartment scenario, \texttt{r1} influences \texttt{r2} (there is an oriented edge in the dependency graph connecting \texttt{r1} to \texttt{r2}) iff $dep(\texttt{r1},\texttt{r2})$ and at least one of the following are \texttt{true}:
 \begin{itemize}
- \item \texttt{r1} and \texttt{r2} are on the same node OR
- \item \texttt{r1}'s output context is \globalc{} OR
- \item \texttt{r2}'s input context is \globalc{} OR
- \item \texttt{r1}'s output context is \neighborhood{} and \texttt{r2}'s node is in \texttt{r1}'s node neighbourhood OR
- \item \texttt{r2}'s input context is \neighborhood{} and \texttt{r1}'s node is in \texttt{r2}'s node neighbourhood OR
+ \item \texttt{r1} and \texttt{r2} are on the same node;
+ \item \texttt{r1}'s output context is \globalc{};
+ \item \texttt{r2}'s input context is \globalc{};
+ \item \texttt{r1}'s output context is \neighborhood{} and \texttt{r2}'s node is in \texttt{r1}'s node neighbourhood;
+ \item \texttt{r2}'s input context is \neighborhood{} and \texttt{r1}'s node is in \texttt{r2}'s node neighbourhood;
  \item \texttt{r1}'s output context and \texttt{r2}'s input context are both \neighborhood\ and the neighbourhoods of their nodes have at least one common node. 
 \end{itemize}
 %
@@ -1809,14 +1851,32 @@ Our idea is, for each node, to keep track of the number of descendant per branch
 
 Using the two procedures described above, the topology of the whole tree is constrained to remain balanced despite the dynamic addition and removal of reactions.
 
+\section{Final remarks}
+
+This chapter introduced a novel the engine for our toolchain targeting the engineering of pervasive ecosystems.
+%
+We first analysed the existing literature, evaluating pros and cons of the famous extensions to the original Gillespie's stochastic simulation algorithm.
+%
+We argue that Gibson/Bruck algorithm provides a suitable foundation on which a more general simulation algorithm can be built.
+
+We extended such algorithm in order to be able to simulate more complex scenarios, and in particular to be able to deal with multiple and intercommunicating compartments that may join and leave the system, and whose interconnections may change with time.
+%
+To the best of our knowledge, no previous attempt was made to extend existing chemical-oriented engines in this direction.
+
 \chapter{Meta-meta model}
 \label{meta-meta-model}
-The complexity of the systems we want to design is achieved by the following set of common key properties:
+In this chapter, we will introduce a meta-meta model that the engine described in the previous chapter would be able to simulate.
+%
+Such meta-meta model is a sort of extended chemistry, that we believe is able to capture the complexity of computational ecosystems.
+% 
+Such complexity is achieved by the following set of common key properties:
 \begin{itemize}
  \item situatedness -- they deal with spatially- and possibly socially-situated activities of entities, and should therefore be able to interact with a limited portion of the surrounding world and contextualise their behaviour accordingly; 
  \item adaptivity -- they should inherently exhibit properties of autonomous adaptation and management to survive contingencies without external intervention, global supervision, or both; 
  \item self-organisation -- spatial and temporal patterns of behaviour should emerge out of local interactions and without a central authority that imposes pre-defined plans.
 \end{itemize}
+
+\section{Limitations of pure chemistry}
 
 Among the many natural metaphors one can use as inspiration for modelling and developing artificial systems with the above properties \cite{ecosystems-jpcc7}, we consider chemistry following a series of work in the field of pervasive computing \cite{VCMZ-TAAS2011,VZ-INS2010,sapere-procedia7}. 
 %
@@ -1827,6 +1887,9 @@ We argue that there are three main issues to be resolved in order to build a met
  \item the only data item that chemical reactions can manipulate are molecules' concentrations, namely numbers connected to a particular token.
 \end{enumerate}
 
+
+\section{Environment and connection model}
+
 In the following discussion, we will use interchangeably compartment/agent/node and reaction/events as synonyms.
 %
 As first step, we introduce the environment, absent in chemistry-derived SSAs, as first class abstraction.
@@ -1836,6 +1899,8 @@ The environment has responsibility to provide, for each compartment, a set of co
 The rule which is applied to determine whether or not a node belongs to another node's neighbourhood  can be arbitrarily complicated.
 %
 Also, it is responsible of exposing possible physical boundaries, namely, to limit the possible movements of compartments situated within the environment.
+
+\section{Reactions, conditions, actions}
 
 The fact that reactions are the only abstraction the modeller can rely upon in order to let the simulated system progress is not a difficult problem by itself.
 %
@@ -1869,9 +1934,23 @@ In case of a Poisson process, a negative exponential time distribution initialis
 %
 In case of a repetitive event, such as a timer, a Dirac comb may be used.
 
+\begin{figure*}%[H]
+  \begin{center}
+    \includegraphics[width=0.99\textwidth]{img/reaction.pdf}
+    \caption[\alchemist{} model of reaction]{Reaction model: a set of conditions on the environment that determines whether the reaction is executable, a rate equation describing how the speed of the reaction changes in response to environment modifications, a probability distribution for the event and a set of actions, which will be the neat effect of the execution of the reaction.}
+    \label{img:reaction}
+  \end{center}
+\end{figure*}
+
+The concept of reaction is graphically depicted in \Cref{img:reaction}.
+%
+It allows, for example, to model reactions which are faster if a node has many neighbours, or also reactions that resemble complex biological phenomena such as the diffusion of morphogenes during embryo development as described in the work of Lecca et al. \cite{LeccaJIB2010}.
+
 In this model the atomicity of the reactions represent a double edged sword: on the one hand, they allow for arbitrarily complex behaviours to be ordered and executed within a DES, on the other hand they make it difficult to model events that last in time, e.g. to simulate devices with limited computational power on which some complex task takes a not negligible amount of time to get completed.
 %
 To support something similar, two reactions should be defined: one to trigger the start of the computation, and another to actually run it and complete.
+
+\section{Concentrations and incarnations}
 
 The low expressive power of the classical concentration is probably the hardest challenge to tackle when trying to extend a chemical-born meta model towards a richer world, where data items can be complex structures and not just simple numbers.
 %
@@ -1885,42 +1964,30 @@ We call this set of concentration-specific instances of conditions and actions a
 %
 This sort of model inheritance justifies our double ``meta'' level: the model described is a meta-meta-model, an incarnation is a meta-model, and, finally, a specific scenario instancing one of such meta-models is a model.
 
+\section{Final remarks}
+
 \label{model}
 \begin{figure}%[H]
   \begin{center}
     \includegraphics[width=0.99\columnwidth]{img/model.pdf}
-    \caption[\alchemist{} computational model]{\alchemist{} computational model: it features a possibly continuous space embedding a linking rule and containing nodes. Each node is programmed with a set of reactions and contains a set of structured molecules.}
+    \caption[\alchemist{} computational model]{Meta-meta model: it features a possibly continuous space embedding a linking rule and containing nodes. Each node is programmed with a set of reactions and contains a set of structured molecules.}
     \label{img:model}
   \end{center}
 \end{figure}
 
-A pictorial representation of the underlying meta-meta-model is shown in \Cref{img:model}.
+A pictorial representation of the proposed meta-meta-model is shown in \Cref{img:model}.
 %
 In this vision of the world, an environment is a multi dimensional space, continuous or discrete, which is able to contain nodes and which is responsible of linking them following a rule.
 %
 The environment may or not allow nodes to move.
 %
-Nodes are entities which can be programmed with a set of reactions, possibly changing over time.
+Nodes are entities which can be programmed with a set of reactions (internally made of conditions and actions), possibly changing over time.
 %
 They also contain molecules, each one equipped with a data structure generalising on the concept of ``concentration''.
 
-\begin{figure*}%[H]
-  \begin{center}
-    \includegraphics[width=0.99\textwidth]{img/reaction.pdf}
-    \caption[\alchemist{} model of reaction]{\alchemist{} model of reaction: a set of conditions on the environment that determines whether the reaction is executable, a rate equation describing how the speed of the reaction changes in response to environment modifications, a probability distribution for the event and a set of actions, which will be the neat effect of the execution of the reaction.}
-    \label{img:reaction}
-  \end{center}
-\end{figure*}
-
-The concept of reaction is graphically depicted in \Cref{img:reaction}.
-%
-It allows, for example, to model reactions which are faster if a node has many neighbours, or also reactions that resemble complex biological phenomena such as the diffusion of morphogenes during embryo development as described in \cite{LeccaJIB2010}.
-%
-It also allows to define which kind of time distribution to use to trigger reactions: this enables us to model and simulate systems based on Continuous Time Markov Chains (CTMCs), to add triggers, or also to rely just on classical discrete time ``ticks''.
-
+The specific definition of concentration, along with a proper set of conditions and actions, composes a so-called incarnation, or meta-model.
 
 \chapter{Architecture}
-%TODO: architettura da rifare
 
 \label{subsec:architecture}
 \begin{figure}%[H]
@@ -1930,6 +1997,8 @@ It also allows to define which kind of time distribution to use to trigger react
     \label{img:arch}
   \end{center}
 \end{figure}
+
+This chapter will discuss architectural details of the framework: how simulations can be written, how the architecture is conceived, implementation details and performance of the engine with respect to an existing ABM simulator. We named the toolchain ``\alchemist{}'' after its ``extended chemistry'' nature, we will use this name from now on.
 
 The whole framework has been designed to be fully modular and extensible.
 %
@@ -1948,6 +2017,8 @@ If we adopt this vision, \alchemist{} can be a simulator for a network of tuple 
 Each time a new definition of concentration and molecule is made, a new ``incarnation'' of \alchemist{} is automatically defined. For each incarnation, a set of specific actions, conditions, reactions and nodes can be defined, and all the entities already defined for a more generic concentration type can be reused.
 %
 An incarnation, namely a meta-model instance of the meta-meta model of \alchemist{} is required for the modeller to be able to write a simulation.
+
+\section{Language chain}
 
 As shown in \Cref{img:arch}, the simulations are written in a specific XML language containing a complete description of environment and reactions.
 %
@@ -2018,6 +2089,8 @@ No graphical interface were attached to the simulators while running the batch, 
 The system we used was an Intel Core i5-2500 equipped with 8GB RAM, with Sabayon Linux 7 as operating system and Sun Java HotSpot\texttrademark{} 64-Bit Server version 1.6.0\_26-b03 as Java Virtual Machine.
 %
 Results are shown in \Cref{img:repastperf}.
+%
+Even though \alchemist{} apparently scales linearly, it actually does not: simply, the consistent performance gap flattens the curve.
 
 Results show the simulator built upon the \alchemist{} framework to be at least twice faster and to scale better than the one built on Repast.
 %
@@ -2101,7 +2174,9 @@ Although possible in principle, performing this task too frequently is likely br
 
 This\levelText{}analyses the main features of \alchemist{} that can be exploited regardless the specific ``incarnation''.
 %
-They add a great value to the tool, since they can be used immediately after the creation of a novel meta-model, with no need to specifically write any new code besides some minimal glue.
+Any of those feature, in fact, only depends on the meta-meta model, and consequently it is immediately available for being used as soon as a meta-model is instanced.
+%
+Being so generic, they add a great value to the tool since they can be used with no need to specifically write any new code, besides possibly some minimal glue or new incarnation-related features.
 
 \section{Distributed statistical analysis}
 
@@ -2403,10 +2478,13 @@ The reusage happens on two levels:
 %
 Moreover,  by combining these two features, it is possible to reuse simulations for multiple parametric properties (e.g. $MainMQ$ of \Cref{listing:parametricMQ}).
 %
-As explicated by \Cref{tab:reuse} (whose reported analysis have been performed resorting to 48 servers), 	parametric expressions (second column) allowed us to save a stunning {%\color{blue}
-96}\% of execution time with respect to the simple expressions case without reuse of simulations (first column). Moreover, the parametric multi-expression feature (third column) allowed us to further cut down this time to a third.
+As explicated by \Cref{tab:reuse} (whose reported analysis have been performed resorting to 48 servers), parametric expressions (second column) allowed us to save a stunning 96\% of execution time with respect to the simple expressions case without reuse of simulations (first column).
 %
-We can thus advocate that, by exploiting reuse of simulations, for the considered scenario we obtained a more than 64 times faster analysis.
+Moreover, the parametric multi-expression feature (third column) allowed us to further cut down this time to a third.
+%
+Of course, when using parametric multi-expressions we had no way to measure the time required to measure each of the properties, since they are all evaluated in a single shot: for each simulation (sample) all the properties are evaluated, and the sequence of simulations is interrupted when all the properties are measured with the desired approximation and confidence.
+%
+We can advocate that, by exploiting reuse of simulations, for the considered scenario we obtained a more than 64 times faster analysis.
 %
 Clearly, the performance gains change depending on the considered scenario or properties. In fact, the more simulations are required, and the longer they take, the greater will be the advantage.
 
@@ -2752,6 +2830,23 @@ Such language allow the modeller to specify multiple elements, and for each of t
  \item [Group of nodes] -- Nodes can be specified one by one with their position or in groups. In the latter case, the modeller can choose if she wants the node of the group to occupy a rectangle or a circle. Once the shape is chosen, it is possible to specify how randomly the nodes should be displaced inside: they can be displaced in any level between perfect regularity to total randomness by acting on a parameter. For each group, it is possible to specify the content of the nodes (the LSAs that will be present when the model is loaded) and their program. Contents can be injected selectively, by specifying a spatial constrain: only nodes whose position respect such constrain will get the content injected.
  \item[Scenario number] -- Controls the positioning of nodes, it is a sort of seed for the scenario: since the position of nodes in groups can be randomised, there is need to be able to reproduce the exact same scenario, e.g. for debugging. 
 \end{description}
+
+\section{Final remarks}
+In this part, we have presented a novel toolchain supporting the engineering of pervasive computational ecosystems.
+%
+The idea behind the tool is to provide a very generic meta-meta model, on which languages and coordination models can be mapped, in an operation of model-to-model, generating a meta-model.
+%
+Such meta model can then be instanced, along with a description of an environment, into a model that can be fed to the simulator engine.
+
+We took inspiration from the stochastic simulators for chemistry, which are known for their high performance, and we extended one of the most efficient algorithms (Gibson/Bruck) up to the point that it is able to support multiple compartments, communications, situatedness and mobility.
+
+We defined our meta-meta model as an extended version of chemistry that includes the concept of environment and communication model, and possesses considerably more generic concept of reaction.
+%
+Also, we identified what a meta-model (or incarnation) should define: its own concept of ``concentration'', namely data type which it manipulates, and possibly a set of targeted conditions and actions.
+
+We introduced two important tools which are incarnation-agnostic: a probabilistic model checker obtained chaining \alchemist{} and \multivesta{}, and the support for real-world maps.
+%
+Finally, we introduced two of the available incarnations, supporting biochemistry (with an example of morphogenesis) and supporting programmable tuple spaces with the SAPERE metaphor.
 
 \part{Methods and patterns for self-organisation}
 \label{contribution-pattern}
