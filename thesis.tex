@@ -1990,7 +1990,7 @@ They also contain molecules, each one equipped with a data structure generalisin
 The specific definition of concentration, along with a proper set of conditions and actions, composes a so-called incarnation, or meta-model.
 
 \chapter{Architecture}
-
+\label{alchemist-architecture}
 \label{subsec:architecture}
 \begin{figure}%[H]
   \begin{center}
@@ -2107,7 +2107,7 @@ Since the concept of neighbourhood was part of the computational model, it was p
 This is probably the component which gives the highest impact in this case, since most interactions occur among an agent and its neighbourhood.
 
 \chapter{Collocation in literature}
-
+\label{alchemist-literature}
 \section{\alchemist{} as a DES}
 
 \alchemist{} is a discrete event simulator (DES), since it combines a continuous time base with the description of system dynamics by distinguished state changes \cite{Zeigler2000}.
@@ -2181,7 +2181,7 @@ Any of those feature, in fact, only depends on the meta-meta model, and conseque
 Being so generic, they add a great value to the tool since they can be used with no need to specifically write any new code, besides possibly some minimal glue or new incarnation-related features.
 
 \section{Distributed statistical analysis}
-
+\label{modelchecker-alchemist}
 As we have seen in \Cref{engineering-and-tools}, simulation represents a key step in the engineering of pervasive systems.
 %
 Being a simulation basically a sampling over an enormous probability space, obvious questions accompany these procedures:
@@ -2564,7 +2564,7 @@ In this sense, \alchemist{} automatically detects when a real-world environment 
 
 
 \chapter{Chemical meta-model}
-
+\label{morphogenesis-droso}
 The chemical incarnation of \alchemist{} was the first and simpler incarnation developed.
 %
 As the reader may expect, it defines a molecule as a token, and its concentration as a numeric value.
@@ -2748,7 +2748,7 @@ The expression of  \emph{gt} is finally observable between 10\% and 30\% and 80\
 
 
 \chapter{SAPERE meta-model}
-
+\label{sapere-incarnation}
 In the previous chapter we have described the simplest incarnation of \alchemist{}, that basically brings the model back to its chemical origins.
 %
 In this\levelText{}we will instead focus on a more complex incarnation, meant to provide support for the abstractions on which SAPERE (see \Cref{sapere}) relies upon.
@@ -3945,7 +3945,7 @@ We checked the basic correctness of the proposed self-organisation pattern by si
 \Cref{fig:sims} shows what is the average (with standard deviation) improvement for nodes in the Warning area depending on the width of the Wave. Clearly, there is a greater improvement in using the Anticipative Gradient pattern in those cases where the future event lasts longer, namely, with higher width ($Te-Ts$) of the Wave.
 
 \chapter{Case Study: Crowd evacuation}
-
+\label{crowd-evacuation}
 \begin{figure}
     \includegraphics[width=\columnwidth]{img/run}
     \caption[Reference exposition for crowd evacuation]{A simulation run of the reference exposition: three snapshots\label{fig:generalmap}}    
@@ -4395,7 +4395,7 @@ For instance, in the context of the second case, \Cref{img:jos-graph} shows how 
 
 
 \chapter{Case study: Self composition}
-
+\label{selfcomp-chap}
 Services are one of the main actors in pervasive and ubiquitous computing. 
 %
 Composing services is a big issue in these contexts, providing new applications or high level services.
@@ -4775,6 +4775,7 @@ The goal is to observe that satisfaction values, initially the same for each com
 \end{figure}
 
 \chapter{Case study: Semantic resource discovery}
+\label{resource-discovery}
 
 Supporting expressive resource discovery atop this unstructured, highly-dynamic substrate presents a challenge, with the combination of semantic reasoning, context-awareness and self-organisation techniques offering intriguing possibilities: semantic matching provides a flexible framework for quantitatively assessing the suitability of resources to a given request; context-awareness may account for application quality of service concerns that are important, but orthogonal to the matching process, and self-organisation techniques provide a means of adapting to changing environmental conditions---the arrival and removal or resources, the mobility of interacting agents, and the ever evolving network topology.
 
@@ -5156,7 +5157,7 @@ Our reference environment is the same as previous case, but we added $100$ resou
 Both charts show that, even if the environment has no specific clusters, there is a significant gain in the quality of replies.
 
 \chapter{Case study: Crowd disasters prediction}
-
+\label{crowd-disaster-prediction}
 %===================================================================================
 \section{Human Crowd Density and Safety}
 \label{sec:human-density-safety}
@@ -5841,6 +5842,18 @@ In the central part of the walk, however, the path suggested by the crowd-sensit
 %
 We claim that, assuming the traces to be a representative sampling of the actual population of the area and the more crowded areas to be slower to walk (both assumptions sound rather straightforward to the authors), then the crowd sensitive algorithm guarantees an average lower time to destination.
 
+\section{Final remarks}
+In this part of the thesis we have focussed on methods and patterns for self-organisation.
+%
+We contributed with a process algebra for SAPERE, upon which we build as a proof of concept a non-trivial spatial pattern (the channel).
+%
+We also devised a new pattern devoted to anticipate future events and react accordingly.
+%
+In order to work correctly, such pattern needs to have information about future events: relying on an existing database of a massive urban sport event, we have studied ways to predict the possible formation of dangerous crowds.
+%
+Also, we provided a serie of case studies that comprise crowd steering and evacuation, self composition, and semantic resource discovery.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -5856,7 +5869,7 @@ We claim that, assuming the traces to be a representative sampling of the actual
 \part{Aggregate programming languages}
 \label{aggregate-programming-part}
 \chapter{Tuple based aggregate programming}
-
+\label{linda-space-time}
 In this part, we take a more fundamental approach and try to tackle the issue of engineering computational ecosystems by working at the language level.
 %
 Working at this level implies identifying proper abstractions and being able to provide a mean for the developer to directly write using those abstractions rather than lower level building blocks.
@@ -7608,6 +7621,11 @@ When there is a problem with dependencies, the device invokes {\tt stopProcess} 
 %
 In this screenshot, the supplies database has crashed, causing many of the other services to gracefully shut themselves down.  As soon as the supplies database is restarted, however, the rest of the services automatically bring themselves up in dependency order.
 
+\section{Final remarks}
+In this part of the thesis, we have contributed to the field of aggregate programming.
+%
+The contribution can be split in three macro areas: the adaptation of classic tuple based coordinatio to space and time computation, a preliminary study on computations that are scale (namely, device-density) independent, and the introduction of a novel language, based on Field Calculus, and featuring higher order functions and integration with \alchemist{}.
+
 \part{Conclusion}
 \label{conclusion-futureworks-part}
 \chapter{Results achieved and future works}
@@ -7616,49 +7634,49 @@ This\levelText{}summarises the most notable contributions of this thesis.
 
 \section{Integrated toolchain for pervasive ecosystems}
 
-The first relevant novelty is the introduction of a toolchain for pervasive ecosystems, built from scratch taking inspiration from stochastic simulators, first of its kind to the best of our knowledge.
+The first relevant novelty is the introduction of a toolchain for pervasive ecosystems, built from scratch taking inspiration from stochastic simulators (\Cref{chemical-engine}), first of its kind to the best of our knowledge.
 
-This platform exposes a generic meta-meta model and supports a variety of concrete incarnations at the same time, making it possible to rely on such architecture for a plethora of different usages.
+This platform exposes a generic meta-meta model (\Cref{meta-meta-model}) and supports a variety of concrete incarnations at the same time, making it possible to rely on such architecture for a plethora of different usages.
 %
-As demonstration of flexibility, we have shown a variety of examples relying on the SAPERE incarnation, one example that uses the chemical incarnation and, finally, two examples that run \protelis{} programs inside the platform.
+As demonstration of flexibility, we have shown a variety of examples relying on the SAPERE incarnation (\Cref{sapere-incarnation}), one example that uses the chemical incarnation (\Cref{morphogenesis-droso}) and, finally, an example that runs \protelis{} programs inside the platform (\Cref{protelis-rendezvous}).
 %
-The environments and applications varied greatly, ranging from the simulation of a morphogenesis process to crowd steering in a city, relying on existing GPS traces and realistic navigation system.
+The environments and applications varied greatly, ranging from the simulation of a morphogenesis process (\Cref{morphogenesis-droso}) to crowd steering in a city, relying on existing GPS traces and realistic navigation system (\Cref{real-world-maps}).
 
-\alchemist{} itself can be classified a discrete event simulator, and its model suits well a certain category of agent based model.
+\alchemist{} itself can be classified a discrete event simulator, and its model suits well a certain category of agent based model (\Cref{alchemist-literature}).
 %
-The engine was conceived with performance in mind, and it demonstrated its qualities when compared to similar ABMs, such as Repast Symphony.
+The engine was conceived with performance in mind, and it demonstrated its qualities when compared to similar ABMs, such as Repast Symphony (\Cref{alchemist-architecture}).
 
-The toolchain also comprises a distributed statistical model checker (\multivesta{}), which allows the engineer to evaluate properties of models with the desired confidence and approximation, also speeding up the process by re-use and distribution of computation.
+The toolchain also comprises a distributed statistical model checker (\multivesta{}), which allows the engineer to evaluate properties of models with the desired confidence and approximation, also speeding up the process by re-use and distribution of computation (\Cref{modelchecker-alchemist}).
 
 \section{Methods and patterns for self organisation}
 
 We contributed in a range of advances in the area of patterns for self-organisation.
 
-One of the most important contributions is a process algebra for SAPERE. The key contribution of a process algebra to provide a unequivocal description of the components of the infrastructure, and also serves as an executable specification from which can be derived proofs of behavioural properties, like self-stabilisation of the self-organising spatial structures that are useful in the context of pervasive computing systems \cite{V-SCW2013}.
+One of the most important contributions is a process algebra for SAPERE (\Cref{sapere-process-algebra}). The key contribution of a process algebra to provide a unequivocal description of the components of the infrastructure, and also serves as an executable specification.
 
-We devised and studied some spatial patterns: the Channel, that marks devices along the path connecting a source and a destination, and the Anticipative Gradient.
+We devised and studied some spatial patterns: the Channel (\Cref{pattern-channel}), that marks devices along the path connecting a source and a destination, and the Anticipative Gradient (\Cref{anticipative-gradient}).
 %
 The latter represents a contribution towards the anticipative adaptation: if information about future events is available, it can be exploited in a totally distributed manner to improve the overall system performance.
 %
-Also, we studied a urban sport mass event dataset in order to understand which methodologies may be suitable to obtain such data.
+Also, we studied a urban sport mass event dataset in order to understand which methodologies may be suitable to obtain such data (\Cref{crowd-disaster-prediction}).
 
-We often focussed on the problem of crowd steering and evacuation: besides the importance for safety and efficiency, this problems turns out to be rather complex to face, presenting continuously moving participants whose actions in space-time must impact the outcome of the steering system.
+We often focussed on the problem of crowd steering (\Cref{jos-museum}) and evacuation (\Cref{crowd-evacuation,ahpc-steering}): besides the importance for safety and efficiency, this problems turns out to be rather complex to face, presenting continuously moving participants whose actions in space-time must impact the outcome of the steering system.
 %
-We faced the problem at a different grain, from indoor evacuation to urban-level crowd steering.
+We faced the problem at a different grain, from indoor evacuation (\Cref{crowd-evacuation}) to urban-level crowd steering (\Cref{ahpc-steering}).
 
-We developed, relying on the SAPERE metaphors, a resource discovery system.
+We developed, relying on the SAPERE metaphors, a resource discovery system (\Cref{resource-discovery}).
 %
 To the best of our knowledge, it is the first approach using the semantic match-degree as a mean of shaping the communications between network nodes, and incorporating extrinsic contextual features into the discovery process in such a way that resource selection emerges as an active property of the bio-inspired communication process, as contrasted to \emph{post hoc} analysis and filtering.
 
-Finally, we started experimenting on self-composition of services, trying to embed evolutionary algorithms in pervasive system in order to let the fittest combination of services ``survive''.
+Finally, we started experimenting on self-composition of services, trying to embed evolutionary algorithms in pervasive system in order to let the fittest combination of services ``survive'' (\Cref{selfcomp-chap}).
 
 \section{Aggregate programming languages}
 
 This thesis contributed to the advancements in aggregate programming in three ways:
 \begin{enumerate}
- \item A novel tuple based coordination medium is devised, that closes the gap between Linda-inspired coordination and space-time programming;
- \item A first study on scale-independent computations in space and time is provided, building upon Field Calculus a new operator demonstrably eventually consistent;
- \item The implementation of a practical version of Field Calculus, enriched with higher order functions: \protelis{}.
+ \item A novel tuple based coordination medium is devised, that closes the gap between Linda-inspired coordination and space-time programming (\Cref{linda-space-time});
+ \item A first study on scale-independent computations in space and time is provided, building upon Field Calculus a new operator demonstrably eventually consistent (\Cref{scale-independent-computations});
+ \item The implementation of a practical version of Field Calculus, enriched with higher order functions: \protelis{} (\Cref{protelis-language}).
 \end{enumerate}
 
 We have developed the first practical distributed language which provides guarantees that all distributed algorithms expressed in this language are resilient against changes in the number and distribution of devices in a network.
