@@ -615,16 +615,16 @@ Regardless the name that we want to use, being it ``Internet of Things'' rather 
 \begin{description}
 \item[Situatedness] | Pervasive services are typically time- and space-dependent, and feature physically- or socially-situated activities. Components of pervasive systems should be able to interact with the surrounding physical and social world by adapting their behaviour accordingly.
 %
-\item[Autonomy and self-adaptivity] | While individual components should be autonomous in the face of the inherent dynamics of their operational environment~\cite{agents-ieeecn6}, pervasive systems should also feature \emph{system-level autonomy} to deal globally with the unpredictability of the environment, providing properties such as self-adaptation, self-management, and self-organization~\cite{Mam06}.
+\item[Autonomy and self-adaptivity] | While individual components should be autonomous in the face of the inherent dynamics of their operational environment~\cite{agents-ieeecn6}, pervasive systems should also feature \emph{system-level autonomy} to deal globally with the unpredictability of the environment, providing properties such as self-adaptation, self-management, and self-organization \cite{Mam06}.
 %
-\item[Prosumption and diversity] | Infrastructures for pervasive systems must promote open models of component integration, to be able to take advantage of the injection of new services and components~\cite{ZamO04}. This is particularly true in the context of \emph{socio-technical systems}~\cite{interactioncomplexity-iccci2013}, where human users and software agents act as \emph{prosumers} -- both consumers and producers -- of devices, data, and services.
+\item[Prosumption and diversity] | Infrastructures for pervasive systems must promote open models of component integration, to be able to take advantage of the injection of new services and components \cite{ZamO04}. This is particularly true in the context of \emph{socio-technical systems} \cite{interactioncomplexity-iccci2013}, where human users and software agents act as \emph{prosumers} -- both consumers and producers -- of devices, data, and services.
 %
-\item[Eternity] | As well as short-term adaptation, a pervasive systems infrastructure should allow for the long-term evolution of organizations, components, and patterns of usage, in order to accommodate technological advances as well as the mutable needs of users without requiring extensive re-engineering effort~\cite{softwareevolution-iwpse2005}. In fact, pervasive systems are better conceived as \emph{eternal} systems, engineered for continuous, unlimited service, upgrading, and maintenance over time.
+\item[Eternity] | As well as short-term adaptation, a pervasive systems infrastructure should allow for the long-term evolution of organizations, components, and patterns of usage, in order to accommodate technological advances as well as the mutable needs of users without requiring extensive re-engineering effort \cite{softwareevolution-iwpse2005}. In fact, pervasive systems are better conceived as \emph{eternal} systems, engineered for continuous, unlimited service, upgrading, and maintenance over time.
 \end{description}
 
 At the same time, ``traditional'' networks are also increasing in scale and importance for enterprises both large and small.
 %
-In an increasingly information-dependent and interconnected world, the rising cost of managing and maintaining such systems is driving a search for solutions that can increase the autonomy of computing systems, enabling them to act more as collective services than individual machines~\cite{eze2012autonomic, hu2011cloudreview}, and continuing working over time.
+In an increasingly information-dependent and interconnected world, the rising cost of managing and maintaining such systems is driving a search for solutions that can increase the autonomy of computing systems, enabling them to act more as collective services than individual machines \cite{eze2012autonomic, hu2011cloudreview}, and continuing working over time.
 %
 In both of these cases, and a number of other areas facing similar challenges (e.g., large-scale sensor networks, multi-UAV control), there is a growing recognition that new paradigms are needed to face the challenge of coordination, namely, engineering the space of interactions \cite{Wegner}.
 %
@@ -646,9 +646,9 @@ A similar approach is proposed in Co-fields \cite{cofields--esawIII}, exploiting
 %
 Physical inspiration also has influenced self-assembly, for instance Guo et al. \cite{guo2012} suggest the adoption of virtual force fields in order to control the material's shape.
 
-A number of ``bottom-up'' methods implement computational fields using only the local view, including the Hood sensor network abstraction~\cite{hood}, Butera's ``paintable computing'' hardware model \cite{butera}, TOTA~\cite{mamei2009acm}, the chemical models \cite{VCMZ-TAAS2011}, and Meld~\cite{Meld}.
+A number of ``bottom-up'' methods implement computational fields using only the local view, including the Hood sensor network abstraction \cite{hood}, Butera's ``paintable computing'' hardware model \cite{butera}, TOTA \cite{mamei2009acm}, the chemical models \cite{VCMZ-TAAS2011}, and Meld \cite{Meld}.
 %
-The MGS language~\cite{GiavittoMGS05} takes a notable and different approach, using a method like local field computation to define and evolve the shape of the manifolds on which it executes.
+The MGS language \cite{GiavittoMGS05} takes a notable and different approach, using a method like local field computation to define and evolve the shape of the manifolds on which it executes.
 
 Hybrid automata \cite{561342} are particularly interesting for they are relying on a continuous computational space.
 %
@@ -656,8 +656,8 @@ They are based on the idea of coupling discrete, automata-like descriptions with
 %
 Continuous Spatial Automata \cite{maclennanCSA} push the idea further, by also assuming a continuous spatial substrate over which computation can occur.
 
-More explicit models of field computations are provided by some sensor nework programming models (e.g., Abstract Regions~\cite{welsh2004regions} and Regiment~\cite{regiment}), as well
-as a number of parallel computing models, most notably StarLisp~\cite{starlisp} and systolic computing (e.g.,~\cite{SDEF,ReLaCS}), which use parallel shifting of data on a structured network.
+More explicit models of field computations are provided by some sensor nework programming models (e.g., Abstract Regions \cite{welsh2004regions} and Regiment \cite{regiment}), as well
+as a number of parallel computing models, most notably StarLisp \cite{starlisp} and systolic computing (e.g., \cite{SDEF,ReLaCS}), which use parallel shifting of data on a structured network.
 
 
 \subsection{(Bio)chemical inspiration}
@@ -902,7 +902,7 @@ Aggregate programming generally attempts to address this problem by providing co
 \noindent{}
 In short, the key idea behind aggregate programming is to provide languages and APIs that allow a distributed collection of devices to be programmed in terms of their collective behaviours, keeping outside the sight of the software designer details on how such coordination is actually implemented.
 
-A large number of very diverse aggregate programming approaches have been proposed, including abstract graph processing (e.g.,~\cite{kairos}), declarative logic (e.g.,~\cite{Meld}), map-reduce (e.g.,~\cite{dean2008mapreduce}), streaming databases (e.g.,~\cite{tinydb}), and knowledge-based ensembles (e.g.,~\cite{SCEL})---for a detailed review, see~\cite{SpatialIGI2013}.
+A large number of very diverse aggregate programming approaches have been proposed, including abstract graph processing \cite{kairos}, declarative logic \cite{Meld}, map-reduce \cite{dean2008mapreduce}, streaming databases \cite{tinydb}, and knowledge-based ensembles \cite{SCEL}---for a detailed review, see~\cite{SpatialIGI2013}.
 
 Despite the fact that all of them are based on viewing the collection of devices as an approximation of continuous space (as depicted in \Cref{img:space}), most aggregate programming approaches, however, have been too specialized for particular assumptions or applications to be able to address the complex challenges of these emerging environments.
 
@@ -933,7 +933,7 @@ It is a fragment of Proto, (see \Cref{proto}), but it also takes inspiration fro
 Formalized as the computational field calculus~\cite{VDB-FOCLASA-CIC2013}, this universal language appears to provide a theoretical foundation on which effective general aggregate programming platforms can be built.
 
 Critically, although originally derived from continuous-space concepts, the calculus does not depend on them and is applicable to any network.
-. %
+%
 Field calculus is expressive enough to be a universal computing model~\cite{BVD-SCW14} but terse enough to enable a provable mapping from aggregate specifications to equivalent local implementations.
 
 Field calculus~\cite{VDB-FOCLASA-CIC2013} hence provides a key theoretical and methodological foundation for aggregate programming.
@@ -975,13 +975,15 @@ Such a core calculus, like any other, is more a theoretical framework than a pra
 %
 In practice, in fact, effective aggregate programming for real-world distributed applications is likely to require a layered approach such as the one depicted in \Cref{img:researchprogram}, of which field calculus represents the first block.
 %
+This kind of layering has been proposed also for works that tackle the same issues with an approach different from aggregate programming, e.g. within the SAPERE project \cite{gio-chapter,gio-selfcomp}.
+%
 Some of the prior approaches on which field calculus is based provide very similar semantics (most notably Proto), but they all suffer from some combination of design and implementation problems that render them impractical for widespread adoption.
 %
 Besides Proto, which is probably the closest to a practical programming environment and whose problems have already been described in \Cref{proto}, others \cite{VPB-COORD2012}, have only minimal implementation.
 
 \subsubsection{Basics and Syntax}
 
-The basic mechanisms behind Field Calculus can be studied through its the syntax, reported in Figure \ref{fig:source:syntax}.
+The basic mechanisms behind Field Calculus can be studied through its syntax, reported in Figure \ref{fig:source:syntax}.
 %
 We take the global, aggregate-level viewpoint, considering the main syntactic element $\e$ as being a field expression, or simply a field.
 %
@@ -1326,7 +1328,7 @@ Such language's interpreter adheres to the operational semantics defined in \Cre
 }\end{array}
 \end{small}
 \end{array}$}
-}\caption{Device Semantics} \label{fig:calculus}
+}\caption{Device Operational Semantics} \label{fig:calculus}
 \end{figure}
 
 % \paragraph{Runtime Expression Syntax}
@@ -1695,7 +1697,7 @@ However, once the reaction has been executed, all the dependent reactions must b
 
 Both the Gisbon-Bruck's and Slepoy's schedulers are granted to correctly simulate a Poisson process.
 %
-However, in order to build a full-fledged DES engine, we must offer the possibility to schedule also non-Markovian events.
+However, in order to build a full-fledged Discrete Event Simulation (DES) engine, we must offer the possibility to schedule also non-Markovian events.
 %
 Imagine, for instance, that we want to simulate an agent that does an action every fixed time interval (e.g. a man walking).
 %
@@ -2203,9 +2205,9 @@ The benefits obtained by chaining the simulator with \multivesta{} are:
  \item a client-server architecture to distribute simulations.
 \end{enumerate}
 
-\multivesta{} is independent on the model specification language: it only assumes that discrete event simulations can be performed on the input model.
+\multivesta{} \cite{multivesta} is independent on the model specification language: it only assumes that discrete event simulations can be performed on the input model.
 %
-As described in~\cite{multivesta}, the tool offers a clean interface to integrate existing discrete event simulators, enriching them with a property specification language, and with efficient distributed statistical analysis capabilities.
+The tool offers a clean interface to integrate existing discrete event simulators, enriching them with a property specification language, and with efficient distributed statistical analysis capabilities.
 
 \subsection{\multivesta{} and \multiquatex{}}
 
@@ -2319,7 +2321,7 @@ Depending on the model at hand, it may be necessary to refine the model-independ
 
 This\levelText{}discusses the analysis performed on a crowd steering scenario, similar to the one which will be presented in detail in \Cref{jos-museum}.
 %
-In such scenario, two group of people are inside an indoor environment, and are steered towards two point of interest (POI) such that their ideal trajectory intersect, creating a crowd.
+In such scenario, two groups of people are inside an indoor environment, and are steered towards two points of interest (POIs) such that their ideal trajectory intersect, creating a crowd.
 %
 The steering system is implemented leveraging the SAPERE meta-model, and as such data items in this scenario are called \texttt{LSA}s.
 %
@@ -2414,7 +2416,7 @@ Results are summarized by the dark line of \Cref{img:performance}, showing that 
  \includegraphics[width=0.99\textwidth]{img/scaling}
  \end{center}
 %  \caption{Performance improvement reusing simulations (left), performance scaling a the varying of the number of used cores (right).}
- \caption{Performance scaling with of the number of running servers.}
+ \caption{Performance scaling with the number of running servers.}
  \label{img:performance}
 \end{figure}
 
@@ -2858,13 +2860,25 @@ Finally, we introduced two of the available incarnations, supporting biochemistr
 \label{contribution-pattern}
 \chapter{A process algebra for SAPERE}
 \label{sapere-process-algebra}
-In this\levelText{}we present a possible formalisation of the SAPERE concepts, in terms of a model whose evolution is specifyied by means of a process algebra.
+This part of the thesis presents a number of contributions in terms of novel spatial patterns and case studies.
+%
+The first chapter introduces a possible formalisation of SAPERE through a process algebra.
+%
+Such formalisation provides a way of resolving possible ambiguities, and also guidance for the construction of simulations or middlewares.
+%
+Such abstract formalisation will be concretely instanced in \Cref{pattern-channel}, along with a simulated example.
+%
+Subsequent examples will be provided using a simpler and possibly more intuitive syntax, but they could be mapped onto the formal model presented in the following.
+
+We formalised the SAPERE concepts in terms of a model whose evolution is specified by means of a process algebra.
 %
 Not only does this formalisation act as a non-ambiguous description, it is also an executable specification and can hence serve as ground for developing simulations of self-organisation mechanisms and for deriving formal proofs of behavioural properties, like self-stabilisation \cite{V-SCW2013}.
 %
 Few works attempted at a process algebraic formalisation of self-organisation \cite{VPB-COORD2012,VDB-FOCLASA-CIC2013}, developing on top of well-known works on coordination and spatial computing \cite{zavattaro2,proto}.
 %
 However, the one presented here is -- to the best of our knowledge -- the first process algebra of self-organising multiagent systems capturing the clear separation of agent behaviour and self-organised interactions, hence effectively expressing the behaviour of large-scale and situated pervasive computing scenarios.
+
+A suggestion for the reader, to better understand how the algebra works, is to make sure she understand the example in \Cref{sapere-semantics-example}.
 
 \section{Model}
 
@@ -2892,7 +2906,8 @@ An example LSA advertising an exhibition in a smart city, to be diffused around,
 
 \noindent URI \texttt{app:artist} represents a property name, assigned to the literal values \mbox{\texttt{"caravaggio"}} and \mbox{\texttt{"michelangelo"}}. Alternatively, a value can be an URI again, like \texttt{app:exhibition} that is associated with \texttt{app:event}. Namespace \texttt{app} is used here to refer to a publicly accessible ontology supporting semantic reasoning on top of those properties and values \cite{SemMatchingSAC2013}.
 
-\subsection{Agent primitives}\label{s:agent}
+\subsection{Agent primitives}
+\label{s:agent}
 
 Standard tuple-based coordination models allow agents to insert, read, and remove any tuple (by primitives \texttt{out}, \texttt{rd} and \texttt{in}) without specific access control constraints---although some models explore their orthogonal adoption, like SecSpaces \cite{GorrieriLZ06} and coordination contexts \cite{J-ORV-AAECC2005,RVO-ATAI2004}.
 %
@@ -2989,7 +3004,7 @@ Agent behaviour $\sAg$ can be of four kinds:
  \item $0$ is the empty agent;
  \item $\sAc \oSeq \sAg$ is the agent executing action $\sAc$ and then the continuation $\sAg$;
  \item $\sAg\oOr\sAgB$ is a try-catch construct (execute $\sAg$, and when/if a failure occurs, $\sAgB$ is executed);
- \item $\cRecR{\sAg}{\sAgB}$ is iterative (infinite) execution of $\sAg$ preceded by execution of current iteration $\sAgB$.
+ \item $\cRecR{\sAg}{\sAgB}$ is iterative (infinite) execution of $\sAg$ preceded by execution of current iteration $\sAgB$. Namely, it consumes
 \end{enumerate}
 %
 Note that in the iteration construct the appendix $\sAgB$ is not present in the surface syntax: it is initially set to $0$ and will dynamically keep track of the state of current iteration.
@@ -3302,6 +3317,7 @@ The bond eco-law creates a bond between two LSAs if they stay in the $\fBond$ pr
 Conversely, the debond eco-law drops any bond that the bond eco-law would not create.
 
 \subsection{Example}
+\label{sapere-semantics-example}
 
 Whereas exemplifying eco-laws will better be done in next section while discussing the case study, it is here useful to provide a simple agent program to show how the operational semantics works.
 %
@@ -3329,7 +3345,7 @@ Without bonds, observation keeps fail and the space of LSAs will not change.
 %
 If instead at some point a new LSA $\cLSA{m}{e=\texttt{true}}$ is injected in this space, and a bond to it is created by the bonding eco-law, then observation succeeds, so at some point we would move to state
 %
-\[(n)\cRecR{A}{\cUpd{n}{q=0}:\cUpd{n}{q=1}}\oCPar\cLSA{n}{q=2}\oCPar\cLSA{m}{e=\texttt{true}}\]
+\[(n)\cRecR{A}{\cUpd{n}{q=0}:\cUpd{n}{q=1}}\oCPar\cLSA{n}{q=1}\oCPar\cLSA{m}{e=\texttt{true}}\]
 %
 and then after update to:
 %
@@ -3371,8 +3387,11 @@ We now state two fundamental properties for the proposed calculus:
 \end{itemize}
 
 \chapter{Pattern: Channel}
+\label{pattern-channel}
+We now present an example application of the process algebra proposed in \Cref{sapere-process-algebra}, in which the abstract syntax in \Cref{sapere-process-algebra} is concretely instanced into RDF, and the operational semantics is applied to let the system progress.
 
-We now present an example application of the coordination model proposed in \Cref{sapere-process-algebra}, specifically targeted at emphasising its ability to tackle a number of interesting issues:
+Such instantiation is specifically targeted at emphasising its ability to tackle a number of interesting issues:
+
 \begin{enumerate}
  \item enact robust self-organising design patterns \cite{FDMVA-NACO2012};
  \item code relevant classes of agents (contextualizers, combinators of spatial structures, initiators of aggregation/diffusion processes);
@@ -3414,7 +3433,7 @@ Function $\fDiff$ takes the description of an LSA $l$ with the assignments \text
 %
 The output is a description obtained by the input one with two changes: \emph{(i)} properties $p_1,\ldots p_n$ are no longer assigned to their old values $v_1,\ldots,v_n$, but to the result of $f(v_1,\ldots,v_n)$ which is assumed to be a tuple of $n$ values, and \emph{(ii)} property \texttt{eco:decay} is set to \texttt{"true"} so that as soon as the LSA is diffused and processed remotely, it will then be decayed.
 %
-Note that function $f$ needs not be total, hence the diffusion process can be defined so as to eventually terminate.
+Note that function $f$ does not need to be total, hence the diffusion process can be defined so as to eventually terminate.
 %
 For instance, an LSA with description
 
@@ -4950,6 +4969,8 @@ This allows the process to update and self-heal under conditions where:
 \subsubsection{Augmenting matches with application context}
 As the reply LSA is routed, aggregation may be employed to modify, either positively or negatively, the reported match-degree, using information external to the reply.
 %
+The approach of aggregating LSAs contextually to routing was inspired by the work of Fernandez-Marquez et al. \cite{fernandez-marquez2012analysis}.
+%
 This is achieved by applying an aggregation function to any LSA directed towards a request source that accounts for contextual factors (\emph{any information that can be used to characterise the situation of entities that are considered relevant to the interaction}~\cite{dey2001conceptual}) specified by the application; and with such information readily available for consumption through its expression in an LSA.
 %
 For example, $\lsa{S_0, 0.9, 0.75}$ (resource, original-match-degree, match-degree) might represent a reply LSA that has been updated to account for the distance an LSA has travelled, or the presence of physically crowded regions along the response path. 
@@ -5836,7 +5857,19 @@ We claim that, assuming the traces to be a representative sampling of the actual
 \label{aggregate-programming-part}
 \chapter{Tuple based aggregate programming}
 
-A common viewpoint in developing coordination models on top of Linda~\cite{linda-toplas7} is that tuples are a mechanism to reify and exchange events/data/knowledge that are important to system coordination, and to synchronise the activities of coordinated components in a parallel and/or distributed system.
+In this part, we take a more fundamental approach and try to tackle the issue of engineering computational ecosystems by working at the language level.
+%
+Working at this level implies identifying proper abstractions and being able to provide a mean for the developer to directly write using those abstractions rather than lower level building blocks.
+%
+We initially try to extend the existing tuple based coordination toward space and time programming.
+%
+As a second step, we reason about programming space and time rather than devices, and about what happens when device density changes: can we build a programming abstraction that works regardless the number of devices disseminated in the space?
+%
+Finally, we introduce Protelis, the last contribution of this thesis.
+%
+Protelis is an aggregate programming language that inherits the operational semantics of Field Calculus and provides practical tools: a working interpreter and virtual machine, and an integration with \alchemist{}, that allow the very same code to be tested in the simulator and deployed in real devices.
+
+A common viewpoint in developing coordination models on top of tuple spaces is that tuples are a mechanism to reify and exchange events/data/knowledge that are important to system coordination, and to synchronise the activities of coordinated components in a parallel and/or distributed system.
 %
 A tuple is, however, a very point-wise abstraction, and applications often need to express relationships articulated across the physical environment through which the computational system is distributed.
 %
@@ -5853,7 +5886,7 @@ Such activities are expressed in terms of a process-algebra like language, compo
  \item accessing space-time contextual information to link the configuration of tuples with the actual physical space.
 \end{enumerate}
 
-\section{Linda in space-time}
+\section{Tuples in space-time}
 
 \subsection{Basic model}
 
@@ -5877,7 +5910,7 @@ In our model, each node undergoes the following \emph{computation round}:
  \item then it sleeps again, returning to the beginning of the cycle.
 \end{enumerate}
 %
-The duration of the computation round is dictated by the underlying infrastructure, and could possibly change over time or from device to device (as in~\cite{ProtoTime}).
+The duration of the computation round is dictated by the underlying infrastructure, and could possibly change over time or from device to device \cite{ProtoTime}.
 %
 We only assume that it is long enough for executing steps (2-3-4) above.
 %
@@ -5997,7 +6030,11 @@ We now expand it, beginning by adding construct \texttt{next} to situate activit
 %
 Executing action ``\texttt{next} $P$'' (where $P$ is the protocol -- also called process -- defining an activity), amounts to scheduling $P$ for execution at the next computation round of the current node.
 %
-Special variable \texttt{\$delay} can be used in $P$ and evaluates to the amount of time passed in between the current computation round and the previous one. Similarly, variable \texttt{\$this} can be used to denote the identifier of the node on which it is evaluated.
+Special variable \texttt{\$delay} can be used in $P$ and evaluates to the amount of time passed in between the current computation round and the previous one.
+%
+In fact, even though the time model is discrete at the device level and measured in rounds, devices are supposed to be able to measure how long a round is, and consequently be able to reason about continuous time (even though they sample it discretely).
+%
+Similarly, variable \texttt{\$this} can be used to denote the identifier of the node on which it is evaluated.
 %
 Useful examples of definitions (along with a brief descriptions of them) are then the following ones:
 {
@@ -6079,6 +6116,8 @@ The result of their execution is that only one tuple \texttt{T} will remain in t
 \section{Core Calculus}
 
 In this\levelText{}we introduce a formalisation of the proposed framework similar in spirit to other works in literature \cite{zavattaro,klaim,biochemicalTupleSpaces}, namely, by a core calculus taking the shape of a process algebra.
+%
+As in previous examples, a process algebra is a way for us to formalise our target system with rewriting rules, making sure it is well defined and ambiguities are resolved.
 
 \subsection{Syntax}
 
@@ -6322,7 +6361,7 @@ Note that not only every visitor reached the POI, but they all bypassed the crow
 %
 Further simulations we do not describe here for the sake of space show that the above properties hold for a large set of situations, including presence of crowds in different locations and dynamic formation and movement of such crowds during simulation\footnote{The interested reader can download an example clip at: {\url{http://apice.unibo.it/xwiki/bin/download/Publications/Coord2012/museum-small.avi}}}.
 
-\subsection{Linda in a mobile ad-hoc environment}
+\subsection{Tuples in a mobile ad-hoc environment}
 
 As a second case study we show a possible extension for Linda standard primitives taking into account both time and spatiality.
 %
@@ -6455,7 +6494,7 @@ $\inforegion{\event}$     & Intersection $\hoodof{\event} \cap \closure{\pastof{
 \label{f:symbols}
 \end{figure}
 
-This\levelText{}presents a model of computation over continuous space-time, per~\cite{bealBasisSCW10,BVD-SCW14,BealUsbeck12},  and defines properties linking it with approximate implementation on a wireless network.
+This\levelText{}presents a model of computation over continuous space-time \cite{bealBasisSCW10,BVD-SCW14,BealUsbeck12}, and defines properties linking it with approximate implementation on a wireless network.
 %
 The continuous abstraction allows specification of a physically situated computation without consideration of the particulars of the network that will be used to implement it.
 %
@@ -6463,28 +6502,35 @@ This in turn provides certain types of scalability and resilience: any computati
 %
 In addition, this abstraction supports higher-level specification of distributed algorithms, since many are natural to describe in geometric terms, e.g., distances, regions, information flow.
 
-As many readers may be unfamiliar with prior results in this area, we begin with a review of the manifold model of space-time adapted from physics in~\cite{upp,bealBasisSCW10}, which then forms a basis for space-time computation, per~\cite{bealBasisSCW10,BVD-SCW14,BealUsbeck12}.
+As many readers may be unfamiliar with prior results in this area, we begin with a review of the manifold model of space-time adapted from physics \cite{upp,bealBasisSCW10}, which then forms a basis for space-time computation \cite{bealBasisSCW10,BVD-SCW14,BealUsbeck12}.
 %
 We then use these concepts to define {\em eventually consistent} programs and examine the utility of this definition.
 
-For additional assistance to the reader, we provide a table of the symbols (\Cref{f:symbols}), and a chart of the relationship between definitions (\Cref{f:definitions}).
+For additional assistance to the reader, we provide a table of the symbols (\Cref{f:symbols}).
+% , and a chart of the relationship between definitions (\Cref{f:definitions}).
 
-\begin{figure}
-\centering
-\includegraphics[width=0.8\columnwidth]{img/definitions}
-\caption[Continuous computation and space-time manifolds]{The definition of {\em eventually consistent} programs depends on prior work on continuous computation (blue) and space-time manifolds (red).}
-\label{f:definitions}
-\end{figure}
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.8\columnwidth]{img/definitions}
+% \caption[Continuous computation and space-time manifolds]{The definition of {\em eventually consistent} programs depends on prior work on continuous computation (blue) and space-time manifolds (red).}
+% \label{f:definitions}
+% \end{figure}
 
 \subsection{Modelling Networks as Space-Time Manifolds}
 
 Many physically situated networks perform computations that can be naturally described in terms of the physical space through which the devices comprising the network are distributed.
 %
-As observed in~\cite{upp} and~\cite{bealBasisSCW10}, such a network can be viewed as a discrete approximation of the continuous physical space and programmed accordingly.
+As observed in literature \cite{upp,bealBasisSCW10}, such a network can be viewed as a discrete approximation of the continuous physical space and programmed accordingly.
 
 Under the continuous model developed in those papers, computation takes place on a Riemannian manifold $\manifold$ with both space and time dimensions.
 %
-A manifold is a space that is locally Euclidean, but may have more complex structure over a longer range.  Riemannian manifolds also support familiar geometric constructs like angles, lengths, curvature, integrals and derivatives.
+A manifold is a space that is locally Euclidean, but may have more complex structure over a longer range.
+%
+The reader may interpret such manifold as a Euclidean space ``extended'' with support for ``holes'' and for arbitrary distance metrics, and where the shortest distance between two points may not be unique.
+%
+Actually, the only property we must strictly require for a manifold in this work is be paracompact-ness.
+%
+However, Riemannian manifolds, which are a subset of paracompact manifolds, also support familiar geometric constructs like angles, lengths, curvature, integrals and derivatives.
 %
 This allows communication and mobility constraints to be embedded in manifold's geometry, measuring distance through the manifold rather than using absolute (e.g., latitude/longitude) coordinates.
 %
@@ -6529,9 +6575,9 @@ Spatial sections are essentially snapshots in time, without attempting to enforc
 
 \subsection{Computations on Continuous Space and Time}
 
-Typical formulations of distributed computation (e.g.,~\cite{Lynch:1996:DA:525656}) cannot be applied to space-time manifolds, as any manifold contains an uncountably infinite number of events, and thus the events of the computation cannot be ordered.
+Typical formulations of distributed computation \cite{Lynch:1996:DA:525656} cannot be applied to space-time manifolds, as any manifold contains an uncountably infinite number of events, and thus the events of the computation cannot be ordered.
 %
-Instead, computation may be defined in terms of fields, per~\cite{bealBasisSCW10,BVD-SCW14,BealUsbeck12}:
+Instead, computation may be defined in terms of fields \cite{bealBasisSCW10,BVD-SCW14,BealUsbeck12}:
 \begin{thrdefn}[Continuous Computational Field]
   A field is a function $\field: \manifold \rightarrow \spaceof{\datavalue}$ that maps every event $\event$ in a Riemannian manifold $\manifold$ to some data value in $\spaceof{\datavalue}$.
 \end{thrdefn}
@@ -6552,7 +6598,7 @@ The computations we are interested in are those physically realizable: those tha
 Approximability is determined by comparing values in a continuous field to the nearest points in a corresponding discrete field:
 
 \begin{thrdefn}[$\epsilon$-approximation]\label{def:eapprox}
-  Let $\discreteset_{\epsilon} \subset \manifold$ be a discrete set such that every event $\event \in \manifold$ is within distance $\epsilon$ of some event in $\discreteset_{\epsilon}$.
+  Let $\discreteset_{\epsilon} \subset \manifold$ be a set such that every event $\event \in \manifold$ is within distance $\epsilon$ of some event in $\discreteset_{\epsilon}$.
   %
   The $\epsilon$-approximation of field $\field: \discreteset_{\epsilon} \rightarrow \spaceof{\datavalue}$ is a field mapping every point in $\manifold$ to the value of $\field$ at the nearest point in $\discreteset_{\epsilon}$ (choosing arbitrarily for equidistant points).
 \end{thrdefn}
@@ -6571,7 +6617,7 @@ A field produced by a computation is approximable if at least one such approxima
 Some notes on technicalities.
 \begin{itemize}
  \item The reason to use a sequence of potentially different manifolds $M_i$ is because program branches can create subspaces dynamically, and these necessarily depend on the details of approximation.
- \item It is generally necessary to evaluate the value difference using a Lebesgue integral~\cite{LebesgueIntegral}, since the more typical Riemann integral is ill-defined on many discontinuous fields.
+ \item It is generally necessary to evaluate the value difference using a Lebesgue integral\cite{LebesgueIntegral}, since the more typical Riemann integral is ill-defined on many discontinuous fields.
 \end{itemize}
 
 \begin{figure}
@@ -6653,7 +6699,7 @@ A {\em space-time program} is then any functional composition of operator instan
 %
 Allowing compositions to be defined as new operators by usual means such as lambda calculus, programs may be recursive as well, with an evaluation structure determined dynamically by their environment.
 %
-In~\cite{BealUsbeck12} and~\cite{BVD-SCW14}, space-time programs are formalized as dataflow graphs; here we use an equivalent syntactic formulation and consider only the restricted language developed next.
+Space-time programs can be formalized as dataflow graphs\cite{BealUsbeck12,BVD-SCW14}; here we use an equivalent syntactic formulation and consider only the restricted language developed next.
 
 For clarity in the description of programs, we will abuse terminology; in the context of a program, a ``field'' is not actually the mathematical object itself, but the input or output of an operator instance, which takes on a field value when evaluated in the context of an environment.
 
@@ -6686,7 +6732,7 @@ For many programs, however, the constructs used to ensure eventual consistency o
 
 In this\levelText{}we develop a language that generates only eventually consistent programs.
 %
-This language, \calculus{}, derives both its syntax and semantics from field calculus~\cite{VDB-FOCLASA-CIC2013}, but is restricted to a set of eventually consistent operators that compose to produce programs that are also guaranteed to be eventually consistent.
+This language, \calculus{}, derives both its syntax and semantics from field calculus \cite{VDB-FOCLASA-CIC2013}, but is restricted to a set of eventually consistent operators that compose to produce programs that are also guaranteed to be eventually consistent.
 
 \subsection{From Consistency Failures to Fragility}
 
@@ -6878,7 +6924,7 @@ In \calculus{}, it may also be $\boundary$, in which case, neither branch is eva
 %
 This change, however, is entirely neutral with respect to the interactions of $\ifN$ with other elements of the semantics, and so does not affect any of the properties established in~\cite{VDB-FOCLASA-CIC2013}.
 
-We may also interpret \calculus{} with a continuous semantics following the model of~\cite{BealUsbeck12}.
+We may also interpret \calculus{} with a continuous semantics \cite{BealUsbeck12}.
 %
 Given an environment domain $\manifold$, literals are constant-valued fields, the built-in operators act pointwise on fields, function calls and variable references are evaluated through a substitution model, and $\ifN$ evaluates its subexpressions on environments with domains restricted to match the subspaces of its test argument.
 %
@@ -6927,7 +6973,7 @@ Simulations of these scenarios demonstrate both the potential impact of our resu
 
 \subsection{Distance-Based Patterns}
 
-Distributed distance calculation is one of the most frequently used building blocks for self-organizing systems~\cite{FDMVA-NACO2012}.
+Distributed distance calculation is one of the most frequently used building blocks for self-organizing systems \cite{FDMVA-NACO2012}.
 %
 As we have seen in the previous section, distance fields can be computed via a straightforward application of $\OneOp$.
 %
@@ -6995,7 +7041,7 @@ The {\tt channel-with-obstacle} pattern provides one possible implementation, ma
 %
 A {\tt broadcast} restricted to this channel with $\ifN$ can then effectively relay the data with enough replication to prevent data loss, but with much less resource consumption than an unrestricted broadcast.
 %
-\Cref{f:wsn} shows an example of this scenario simulated in \alchemist{}~\cite{alchemist-jos2013}.
+\Cref{f:wsn} shows an example of this scenario simulated in \alchemist{} \cite{alchemist-jos2013}.
 %
 Note how the consistency of the pattern does not change significantly for different densities of devices: a change in density only affects the precision of the channel shape.
 
@@ -7157,7 +7203,7 @@ As predicted from our analytical results, these values converge with respect to 
 
 \chapter{\protelis{}: practical aggregate programming}
 \label{protelis-language}
-We have designed the \protelis{} language as an implementation of the field calculus \cite{VDB-FOCLASA-CIC2013} closely related to Proto~\cite{proto}.
+We have designed the \protelis{} language as an implementation of the field calculus \cite{VDB-FOCLASA-CIC2013} closely related to Proto \cite{proto}.
 %
 On the one hand, it incorporates the main spatial computing features of the field calculus, hence enjoying its universality, consistency, and self-stabilization properties \cite{BVD-SCW14,VD-COORD2014-LNCS2014}.
 %
@@ -7236,7 +7282,7 @@ Following the style of C-family languages, a function's body is a sequence of st
 %
 Each statement is an expression to be evaluated (\e), possibly in the context of the creation of a new variable ($\km{\letK} \vb{\var} \km{\asgK} \e$) or a re-assignment ($\vb{\var} \km{\asgK} \e$)\footnote{Technically, ``re-assignment'' is actually the creation of a new variable that shadows the old.}.
 %
-As an example, consider the following function taking four fields as parameters, after the ``channel'' pattern from~\cite{butera}:
+As an example, consider the following function taking four fields as parameters, after the ``channel'' pattern \cite{butera}:
 \begin{center}
 \begin{Verbatim}[samepage=true, frame=single, commandchars=\\\{\}]
 \km{def} \fn{channel}(\vb{distA}, \vb{distB}, \vb{distAB}, \vb{width}) \{
@@ -7369,7 +7415,9 @@ Two such instantiations are presented in this thesis: as a simulation in the \al
 \end{figure}
 
 
-In \protelis{}, we designed an architecture, subsumed in \Cref{img:protelis-abstract}, following the same general pattern as was used for the Proto Virtual Machine~\cite{protokernel}.
+In \protelis{}, we designed an architecture, subsumed in \Cref{img:protelis-abstract}, following the same general pattern as was used for the Proto Virtual Machine \cite{protokernel}.
+%
+A similar architecture can also be found in The ONE-SAPERE, a simulator developed to let the real SAPERE middleware run in a controlled environment \cite{Fernandez-MarquezASSC14}.
 %
 First, a parser translates a text Protelis program into a valid representation of field calculus semantics.
 %
@@ -7383,9 +7431,9 @@ One key reason for this choice is that Java is highly portable across systems an
 %
 Another key reason (discussed further in the next section) is that Java's reflection mechanisms make it easy to import a large variety of useful libraries and APIs for use in Protelis.
 %
-Finally, the pragmatics of execution on embedded devices have also changed significantly since the publication of~\cite{protokernel}: a much wider variety of low cost embedded devices are now capable of supporting Java, while at the same time improvements in Java implementations have made it much more competitive in speed and resource cost with low-level languages like C \cite{bull2003, oancea2011}.
+Finally, the pragmatics of execution on embedded devices have also changed significantly since the publication of \cite{protokernel}: a much wider variety of low cost embedded devices are now capable of supporting Java, while at the same time improvements in Java implementations have made it much more competitive in speed and resource cost with low-level languages like C \cite{bull2003, oancea2011}.
 
-In particular, we have chosen to implement Protelis and its architecture via the Xtext language generator~\cite{eysholdt2010xtext} and within the \alchemist{} framework~\cite{alchemist-jos2013}.
+In particular, we have chosen to implement Protelis and its architecture via the Xtext language generator \cite{eysholdt2010xtext} and within the \alchemist{} framework \cite{alchemist-jos2013}.
 %
 Usefully, Xtext also features support for generating a language-specific Eclipse plug-in, which provides developer assistance through code highlighting, completion suggestions, and compile-time error detection.
 
@@ -7510,7 +7558,7 @@ continue to run normally (green).}
 
 \Cref{f:restartScenario} shows an example scenario of an enterprise network for a small manufacturing and supply company, with dependencies between two key databases and the internal and external servers running web applications.
 %
-This scenario was implemented on a network of EmuLab~\cite{EmuLab} servers.
+This scenario was implemented on a network of EmuLab \cite{EmuLab} servers.
 %
 The services were emulated as simple query-response networking programs in Java that entered a ``hung'' state either upon being externally triggered to crash or after their queries began to consistently fail. 
 
@@ -7615,7 +7663,7 @@ If it is possible to ensure that the only programs that can be expressed are tho
 
 When we introduced Field Calculus in \Cref{field-calculus}, we said that it is more a theoretical than a practical framework.
 %
-Building on the foundation of field calculus, the subsequent step is to provide a framework that can be practically leveraged to express a collection of higher-level ``building block'' algorithms, each a simple and generalized basis element of an ``algebra'' of programs with desirable resilience properties (e.g., the operators presented in~\cite{BV-FOCAS2014}).
+Building on the foundation of field calculus, the subsequent step is to provide a framework that can be practically leveraged to express a collection of higher-level ``building block'' algorithms, each a simple and generalized basis element of an ``algebra'' of programs with desirable resilience properties \cite{BV-FOCAS2014}.
 %
 On top of this, higher-level library APIs can be built, enabling simple and transparent construction of robust distributed systems.
 %

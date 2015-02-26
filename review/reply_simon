@@ -1,0 +1,78 @@
+%%%%%%%% SUBSTANTIAL %%%%%%%%
+
+I have introduced a new chapter at the beginning of the thesis, which includes a new schema, classifies the subsequent contributions and also includes the list of publications I have contributed to. Also, I have introduced premises and conclusions to chapters that were beginning/ending abruptly. It should read more fluently now.
+
+
+
+
+
+Ch2 3 (was 2)
+* The grammar in figure 3.5 (was 2.5) is correct: $P::= \overbar{F} e$ refers to a program, which is a sequence of function definitions followed by an expression (which may use the previously defined functions). No change was made wrt the previous version.
+
+Part 2
+As suggested, I have re-organised the way I present the toolchain focussing more on the meta-meta model. Along with the new schema inserted in the introductory chapter, I think that it is now clearer that any part of the toolchain that depends only on the meta-meta model is incarnation-agnostic. For instance, maps are incarnation-agnostic: the support was defined once, and they can be used both by SAPERE and Protelis incarnation. The second one, being more recent, have currently no specific code at all, but it can use all the generic features of the maps tooling already (e.g. import a map, simulate on a map, follow a GPS trace).
+
+Ch 6
+* Alchemist does not scale linearly in figure 6.1, but it is way more efficient than its competitor. The difference is so consistent that in a chart with linear axis drawing both lines makes the Alchemist's appear flattened. I did not want to adopt a logarithmic scale in this case for two reasons: "time" is something humans perceive linearly, and there are no exponential phenomena. Since I realise such figure may be misleading, I have added a note in the explaining text.
+
+Ch 8
+* In table 8.1, it was not clear why with parametric multi expressions there was no measure of time for the single properties. The reason is that all those properties are evaluated at the same time re-using the same simulations. With no reuse, for each sample of our space (namely, for each simulation) only a property is evaluated. When the property is measured with the appropriate confidence and approximation, the system starts evaluating the subsequent property using new samples (starting new simulations). This way, it was possible to measure how long it took to measure each property separately. With simulation re-use, instead, for each sample all the properties are evaluated in a single shot, and the sampling is terminated when all of them reach the desired confidence and approximation. I have added a sentence in the explanation of the table clearing this point.
+
+Ch. 11/12
+* I have better motivated why a process algebra is useful at the beginning of the chapter. Basically, I argue that: i) it provides a mean to solve possible ambiguities and ii) it is a useful base for implementing simulations or real middlewares. Also, I noted that you are worried because this syntax is not used anywhere else. Actually, the description of Ch.11 is abstract, and requires a more concrete instantiation in order to be actually of use. An example of such instantiation is given in Ch. 12. The idea behind the chapter is: "look: the process algebra makes sense, we are able to simulate the rules and the system evolves creating a non trivial pattern".
+* I also stated clearly that after Ch.12 we resort to simpler and more intuitive syntaxes. I think that may turn useful in case the reader just picks the chapter she's interested in and only reads that.
+* ($\overbar{n}$)A does not represent a try/catch, but it is an agent with behaviour A and possessing LSAs with identifier $\overbar{n}$
+* I see it is not immediately clear how the algebra works, in particular iterate and try/catch. In fact, the explanatory example in 11.2.3 is not mentioned before such section, and as a consequence the reader may put just too much effort forcing herself to try to understand how the formal system works without using an example. I have mentioned the example in the chapter introduction. Such example shows both how [ITER] and [TRY]/[CATCH] work: could you give it a shot, and tell me if it seems explanatory enough to you?
+* I have tried to make clearer that we do not need the semantics to build the channel. The channel is just an example showing that such formalisation works and is able to provide support for building  non-trivial setups.
+
+Ch. 21
+* About Riemannian-ness - you are right, we don't need it smoothness of tangent spaces, the only property we really need for the manifold is to be paracompact. Riemannian manifolds are a sub-set of paracompact manifolds, which are useful because they preserve useful geometric concepts we are used to from euclidean geometry. I have added a note about that.
+* I have added a comment about the idea of a Euclidean space with holes. We use a Euclidean space, but we inject in it an arbitrary metric for distances, and holes for the obstacles. The problem is that the only euclidean space of n dimensions is R^n, and holes are not allowed (some things collapse if you accept holes, for instance the shortest segment connecting two points is no longer unique). Riemannian manifolds, for how I understand them, are basically euclidean spaces supporting "holes" and with no "cusps" in their "external surface" (we don't actually need the second one, but it is handy).
+
+%%%%%%% DETAILS %%%%%%%%%
+
+General:
+* Fixed I -> we
+* I have decided to leave URLs separated from the main bibliography. The reason is that URLs are generally way more volatile, most of them cease to exist or become a redirect to some main page in a few years. I prefer the bibliography to be a "stable" part of this work.
+* Fixed the typos as suggested
+* Removed citation nouns
+
+Abstract: Your suggestions have been integrated in the abstract.
+
+Ch. 2 (was 1)
+* Reduced the size of iPhone image
+* Figure 2.4 (was 1.4) contains a chart of download bandwidths. I have taken data from the the reported technologies protocols and made the chart myself. You ask for a reference: should I cite the RFCs? At the moment I have not changed the caption.
+* Figure 2.5 (was 1.5) contains a picture of an iBeacon that I took myself, that is why there is no source. Should I write something to say that?
+
+Ch. 3 (was 2)
+* Image 3.1 (was 2.1) has been properly modified, commented and referenced
+* Image 3.4 (was 2.4) has been resized as requested
+* Fixed missing reference
+
+Ch. 4 (was 3)
+* Got rid of the ORs in the bullet points
+
+Ch 5 (was 4)
+* Re-organised, now also includes the former ch. 5
+
+Ch 20
+* Switched to a more generic "tuple based coordination" rather than Linda, as suggested
+* Added an explanation about computational rounds and continuois time
+* According to the proposed semantics, neig( neigh out $distance) would make every neighbor of a neighbor of mine write a tuple containing the distance between me and my neighbor. In fact, $distance is evaluated immediately. If you desired each "tier-2" neighbor to write the distance between itself and my tier-1 neighbor, it should have done it as:
+op2 is (neigh out $distance)
+neigh(op2)
+this way $distance would have been evaluated on the tier-1 neighbor, and the tier-2 neighbor would have injected such distance in its own space.
+* It was not clear why we introduced (yet another) process algebra. I have added a sentence in the introduction motivating the adoption, as usual, I say that it helps in resolving ambiguities. It is my opinion that a process algebra is useful besides the ability to formally prove things.
+
+Ch. 21
+* Removed Fig 21.2 that was more chaotic than useful
+* Yes, distance in Definition 3 is manifold distance (it is a sampling in space)
+
+
+
+
+
+
+
+
+
