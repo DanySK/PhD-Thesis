@@ -6567,8 +6567,14 @@ Spatial sections are essentially snapshots in time, without attempting to enforc
 \centering
 \includegraphics[width=\columnwidth]{img/spacetime}
 \caption[Example of space-time relations on a manifold]{Example of space-time relations on a manifold representing a network of wireless devices.
-  %
-  Sensor nodes are stationary, while the phone moves along a time-like trajectory (i.e., slope less than diagonal).
+%
+Sensor nodes are stationary, while the phone moves along a time-like trajectory (i.e., slope less than diagonal).
+%
+This image resorts to a relativistic view of the world, in which the speed of light is constant and time and space are together in a continuum.
+%
+In this view, an event happening far away in space becomes accessible only after some time: as an example, the light emitted from Sun takes about eight minutes to come to Earth, so what we are watching when we look at the Sun is actually its status eight minutes ago.
+%
+In this image, diagonals represent light cones, namely the future and past ``field of views'' of events of each device.
 }
 \label{f:spacetime}
 \end{figure}
@@ -6614,11 +6620,11 @@ In other words, a sequence of increasingly fine discrete sets approximates a con
 %
 A field produced by a computation is approximable if at least one such approximation sequence can be constructed.
 %
-Some notes on technicalities.
-\begin{itemize}
- \item The reason to use a sequence of potentially different manifolds $M_i$ is because program branches can create subspaces dynamically, and these necessarily depend on the details of approximation.
- \item It is generally necessary to evaluate the value difference using a Lebesgue integral\cite{LebesgueIntegral}, since the more typical Riemann integral is ill-defined on many discontinuous fields.
-\end{itemize}
+% Some notes on technicalities.
+% \begin{itemize}
+%  \item The reason to use a sequence of potentially different manifolds $M_i$ is because program branches can create subspaces dynamically, and these necessarily depend on the details of approximation.
+%  \item It is generally necessary to evaluate the value difference using a Lebesgue integral\cite{LebesgueIntegral}, since the more typical Riemann integral is ill-defined on many discontinuous fields.
+% \end{itemize}
 
 \begin{figure}
 \centering
