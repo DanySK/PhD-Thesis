@@ -67,8 +67,8 @@ this way $distance would have been evaluated on the tier-1 neighbor, and the tie
 Ch. 21
 * Removed Fig 21.2 that was more chaotic than useful
 * Yes, distance in Definition 3 is manifold distance (it is a sampling in space)
-
-
+* I have tried to briefly describe light cones in Fig 21.3 as suggested
+* A couple of technicalities have been removed: the consideration about multiple manifolds being used because of programs branching, and the possible necessity of resorting to Lebesgue integral when fields are discontinuous.
 
 
 
