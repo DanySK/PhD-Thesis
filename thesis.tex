@@ -66,7 +66,7 @@ I'd like to thank first Mirko Viroli, who supervised me for the past three years
 %
 Sara Montagna, who shares the APICe laboratory with me, also deserves a special mention.
 %
-I want to thank the work packages leaders of SAPERE, a European project that kickstarted me in the world of research: Franco Zambonelli, Giovanna di Marzo, Simon Dobson, Marco Mamei, Alois Ferscha (that also supervised me for three months in Linz) and Andrea Omicini.
+I want to thank the work packages leaders of SAPERE, a European project that kickstarted me in the world of research: Franco Zambonelli, Giovanna di Marzo, Simon Dobson, Marco Mamei, Alois Ferscha (who also supervised me for three months in Linz) and Andrea Omicini.
 %
 A special thank to Jacob ``Jake'' Beal, that supervised (and also hosted) me during my last three months in the United States.
 %
@@ -125,7 +125,7 @@ First, we introduce a novel simulation toolchain for pervasive ecosystems. Such 
 %
 Second, we leverage existing coordination models and patterns in order to create new spatial structures.
 %
-Third, we introduce a novel language, which comes along with its interpreter and runtime; such language, based on the existing ``field calculus'' and integrated with the aforementioned toolchain, is designed to be usable for practical aggregate programming.
+Third, we introduce a novel language, which comes along with its interpreter and runtime; such language, based on the existing ``Field Calculus'' and integrated with the aforementioned toolchain, is designed to be usable for practical aggregate programming.
 
 Finally, we draw conclusions and future works.
 
@@ -930,19 +930,19 @@ Field Calculus is an attempt to find a unifying model for programming \emph{comp
 %
 It is a fragment of Proto, (see \Cref{proto}), but it also takes inspiration from various other efforts in the literature \cite{mamei2009acm,regiment,VCMZ-TAAS2011,tota2,nagpalphd,yamins,regiment}.
 %
-Formalized as the computational field calculus~\cite{VDB-FOCLASA-CIC2013}, this universal language appears to provide a theoretical foundation on which effective general aggregate programming platforms can be built.
+Formalized as the computational Field Calculus~\cite{VDB-FOCLASA-CIC2013}, this universal language appears to provide a theoretical foundation on which effective general aggregate programming platforms can be built.
 
 Critically, although originally derived from continuous-space concepts, the calculus does not depend on them and is applicable to any network.
 %
-Field calculus is expressive enough to be a universal computing model~\cite{BVD-SCW14} but terse enough to enable a provable mapping from aggregate specifications to equivalent local implementations.
+Field Calculus is expressive enough to be a universal computing model~\cite{BVD-SCW14} but terse enough to enable a provable mapping from aggregate specifications to equivalent local implementations.
 
-Field calculus~\cite{VDB-FOCLASA-CIC2013} hence provides a key theoretical and methodological foundation for aggregate programming.
+Field Calculus~\cite{VDB-FOCLASA-CIC2013} hence provides a key theoretical and methodological foundation for aggregate programming.
 %
 Its aim is to provide a universal model that is suitable for mathematical proofs of general properties about aggregate programming and the aggregate/local relationship, just as $\lambda$-calculus~\cite{LambdaCalculus} provides for functional programming, $\pi$-calculus for parallel programming~\cite{PiCalculus}, or Featherweight Java~\cite{FJ} for Java-like object-oriented programming.
 
-In the field calculus, everything is a field: computational fields are used to model every aspect of distributed computation, including input from sensors, network structure, environment interactions, distributed computations (e.g. progressive aggregation and spreading processes), and output for actuators.
+In the Field Calculus, everything is a field: computational fields are used to model every aspect of distributed computation, including input from sensors, network structure, environment interactions, distributed computations (e.g. progressive aggregation and spreading processes), and output for actuators.
 %
-In particular, field calculus is constructed using five basic constructs:
+In particular, Field Calculus is constructed using five basic constructs:
 \begin{enumerate}
  \item function definition and evaluation;
  \item ``built-in'' operations for stateless local computation, e.g.,
@@ -954,11 +954,11 @@ addition, multiplication, reading a sensor;
 
 As well as in Proto, in Field Calculus the semantics of programs created by combining such constructs is defined in terms of a sequence of (possibly synchronous) ``computational rounds''.
 
-The minimal syntax of field calculus has allowed its semantics, including proper coherence of device interactions, to be proven correct and consistent~\cite{VDB-FOCLASA-CIC2013}.
+The minimal syntax of Field Calculus has allowed its semantics, including proper coherence of device interactions, to be proven correct and consistent~\cite{VDB-FOCLASA-CIC2013}.
 %
-Additionally, despite its definition in terms of discrete semantics, field calculus is also space-time universal~\cite{BVD-SCW14}, meaning that it can approximate any field computation, either discrete or continuous, with arbitrary precision given a dense enough network of devices.
+Additionally, despite its definition in terms of discrete semantics, Field Calculus is also space-time universal~\cite{BVD-SCW14}, meaning that it can approximate any field computation, either discrete or continuous, with arbitrary precision given a dense enough network of devices.
 
-This, then, is the key contribution of field calculus: any coordination method with a coherent aggregate-level interpretation is guaranteed to be expressible in field calculus.
+This, then, is the key contribution of Field Calculus: any coordination method with a coherent aggregate-level interpretation is guaranteed to be expressible in Field Calculus.
 %
 Such a method can then be abstracted into a new aggregate-level operation, which can be composed with any other aggregate operation using the rules of built-in functions over fields.
 %
@@ -973,11 +973,11 @@ Moreover, it can have its space-time extent modulated and controlled by restrict
 
 Such a core calculus, like any other, is more a theoretical framework than a practical programming language.
 %
-In practice, in fact, effective aggregate programming for real-world distributed applications is likely to require a layered approach such as the one depicted in \Cref{img:researchprogram}, of which field calculus represents the first block.
+In practice, in fact, effective aggregate programming for real-world distributed applications is likely to require a layered approach such as the one depicted in \Cref{img:researchprogram}, of which Field Calculus represents the first block.
 %
 This kind of layering has been proposed also for works that tackle the same issues with an approach different from aggregate programming, e.g. within the SAPERE project \cite{gio-chapter,gio-selfcomp}.
 %
-Some of the prior approaches on which field calculus is based provide very similar semantics (most notably Proto), but they all suffer from some combination of design and implementation problems that render them impractical for widespread adoption.
+Some of the prior approaches on which Field Calculus is based provide very similar semantics (most notably Proto), but they all suffer from some combination of design and implementation problems that render them impractical for widespread adoption.
 %
 Besides Proto, which is probably the closest to a practical programming environment and whose problems have already been described in \Cref{proto}, others \cite{VPB-COORD2012}, have only minimal implementation.
 
@@ -1092,7 +1092,7 @@ As a result, distance estimation as provided by {\tt distance-to} automatically 
 
 \subsubsection{Semantics}
 
-The computational field calculus formalisation is set forth in \Cref{fig:calculus}.
+The computational Field Calculus formalisation is set forth in \Cref{fig:calculus}.
 %
 For a complete description of the symbols and their meaning, the interested reader should refer to \cite{VDB-FOCLASA-CIC2013}.
 
@@ -1110,7 +1110,7 @@ The first point is very relevant for this thesis, since a solid mathematical bac
 %
 The second point will be exploited in \Cref{protelis-language}, where a new practical language building on Field Calculus will be presented.
 %
-Such language's interpreter adheres to the operational semantics defined in \Cref{fig:calculus}, and consequently shares all the nice properties of field calculus \cite{VDB-FOCLASA-CIC2013}.
+Such language's interpreter adheres to the operational semantics defined in \Cref{fig:calculus}, and consequently shares all the nice properties of Field Calculus \cite{VDB-FOCLASA-CIC2013}.
 
 %
 % $\sigma$ ranges over device unique identifiers and $\fvalue$ over field values (mapping set of devices to local values).
@@ -6464,7 +6464,7 @@ This is further refined to \emph{eventual consistency}, which focuses only on th
 
 Second, we identify a set of sufficient conditions for this property to hold, expressed as constructs defining a general purpose spatial language~\cite{SpatialIGI2013} useful for a wide variety of applications.
 %
-The language is based on the notation of~\emph{computational field}, and it is defined as a restriction of the universal \emph{Field calculus} introduced in \Cref{field-calculus} to a subset of expressions that generate only eventually consistent fields, and features a new construct, ``gradient-following path integral'' ($\OneOp$), that generalizes a number of frequently used self-organization patterns.
+The language is based on the notation of~\emph{computational field}, and it is defined as a restriction of the universal \emph{Field Calculus} introduced in \Cref{field-calculus} to a subset of expressions that generate only eventually consistent fields, and features a new construct, ``gradient-following path integral'' ($\OneOp$), that generalizes a number of frequently used self-organization patterns.
 %
 We show how $\OneOp$ can be used to implement well-known self-organization patterns such as distance calculation, broadcast, and path forecasting~\cite{Montagna-MONET2012,VD-COORD2014-LNCS2014}, (which are hence also proven to be eventually consistent).
 %
@@ -6748,10 +6748,11 @@ As defined, eventual consistency is a conservative property, saying nothing abou
 For many programs, however, the constructs used to ensure eventual consistency often produce more broad resilience.
 
 \section{Eventually Consistent Language}
+\label{gpi-calculus}
 
 In this\levelText{}we develop a language that generates only eventually consistent programs.
 %
-This language, \calculus{}, derives both its syntax and semantics from field calculus \cite{VDB-FOCLASA-CIC2013}, but is restricted to a set of eventually consistent operators that compose to produce programs that are also guaranteed to be eventually consistent.
+This language, \calculus{}, derives both its syntax and semantics from Field Calculus \cite{VDB-FOCLASA-CIC2013}, but is restricted to a set of eventually consistent operators that compose to produce programs that are also guaranteed to be eventually consistent.
 
 \subsection{From Consistency Failures to Fragility}
 
@@ -6765,7 +6766,7 @@ We can eliminate this by the simple but harsh method of prohibiting recursive fu
 
 Let us turn next to a problem related to distributed computation: interactions between devices frequently lead to scalability problems due to implicit dependence on the distribution of devices.
 %
-Consider, for example, the field calculus program:
+Consider, for example, the Field Calculus program:
 \begin{samepage}
 \begin{Verbatim}[samepage=true,
                   frame=single,
@@ -6837,9 +6838,9 @@ Instead, the approach we present accepts that problematic boundaries will exist,
 \subsection{\calculus}
 \label{s:calculus}
 
-Having identified ways in which consistency fails, introducing fragility to distributed algorithms, we now present a new language, \calculus{}, that restricts the syntax of field calculus and ensures that all programs it can express are eventually consistent.
+Having identified ways in which consistency fails, introducing fragility to distributed algorithms, we now present a new language, \calculus{}, that restricts the syntax of Field Calculus and ensures that all programs it can express are eventually consistent.
 %
-We accomplish this by dynamically marking and tracking potential problems, with the following key changes to field calculus:
+We accomplish this by dynamically marking and tracking potential problems, with the following key changes to Field Calculus:
 \begin{itemize}
 \item A new value, $\boundary$, is adjoined to the set of data values, representing a boundary between value regions, and is passed unchanged through all functions.
 \item Comparing real numbers produces $\boundary$, rather than a Boolean, when the numbers are precisely equal.
@@ -6849,7 +6850,7 @@ With these changes, well-written programs will ensure eventual consistency by ef
 %
 Poorly written programs (e.g., {\tt (= (sqrt 2) (sqrt 2))}) may still contaminate large areas with $\boundary$ values, but will still converge---just not to a particularly useful result.
 
-Key to this approach is the new operator $\OneOp$, a ``gradient-following path integral,'' which we define as the field calculus function:
+Key to this approach is the new operator $\OneOp$, a ``gradient-following path integral,'' which we define as the Field Calculus function:
 \begin{Verbatim}[samepage=true,
                   frame=single,
                   %baselinestretch=,
@@ -6917,7 +6918,7 @@ which eliminates stretch by setting it to constant $1$ and obtains distance by i
 \label{f:newcalc}
 \end{figure}
 
-The complete syntax of \calculus{}, shown in \Cref{f:newcalc}, is then defined as a restriction of field calculus:
+The complete syntax of \calculus{}, shown in \Cref{f:newcalc}, is then defined as a restriction of Field Calculus:
 \begin{itemize}
 \item The $\repN$ and $\nbrN$ constructs are only available indirectly via the $\OneOp$ construct as defined above.
 \item Literals are restricted to only Booleans ($\Boolean$), Integers ($\Integer$) and real numbers ($\Real$).
@@ -6935,9 +6936,9 @@ The available built-in operators are:
 \end{itemize}
 We can interpret the same syntax with both discrete and continuous semantics; our goal will be to show that the discrete is eventually consistent with the continuous for every well-defined program (i.e., one without syntax or semantic errors).
 
-The discrete semantics of \calculus{} is identical to that of field calculus, with one restriction (function calls may not be recursive) and one trivial modification to the semantics of $\ifN$.
+The discrete semantics of \calculus{} is identical to that of Field Calculus, with one restriction (function calls may not be recursive) and one trivial modification to the semantics of $\ifN$.
 %
-In field calculus, the first input to $\ifN$, the test value, must be a Boolean.
+In Field Calculus, the first input to $\ifN$, the test value, must be a Boolean.
 %
 In \calculus{}, it may also be $\boundary$, in which case, neither branch is evaluated, state is erased from both branches, and the result is $\boundary$.
 %
@@ -7217,16 +7218,16 @@ The properties measured are:
 \noindent
 As predicted from our analytical results, these values converge with respect to both time and number of devices, confirming our predictions.
 
-% \chapter{Higher order functions in field calculus}
+% \chapter{Higher order functions in Field Calculus}
 % \section{Impact on alignment}
 
 \chapter{\protelis{}: practical aggregate programming}
 \label{protelis-language}
-We have designed the \protelis{} language as an implementation of the field calculus \cite{VDB-FOCLASA-CIC2013} closely related to Proto \cite{proto}.
+We have designed the \protelis{} language as an implementation of the Field Calculus \cite{VDB-FOCLASA-CIC2013} closely related to Proto \cite{proto}.
 %
-On the one hand, it incorporates the main spatial computing features of the field calculus, hence enjoying its universality, consistency, and self-stabilization properties \cite{BVD-SCW14,VD-COORD2014-LNCS2014}.
+On the one hand, it incorporates the main spatial computing features of the Field Calculus, hence enjoying its universality, consistency, and self-stabilization properties \cite{BVD-SCW14,VD-COORD2014-LNCS2014}.
 %
-On the other hand, it turns the field calculus into a modern specification language, improving over Proto by providing
+On the other hand, it turns the Field Calculus into a modern specification language, improving over Proto by providing
 \begin{itemize}
  \item access to a richer API through Java integration;
  \item support for code mobility through first-order functions;
@@ -7286,7 +7287,7 @@ Overbar notation $\overline{y}$ generally means a comma-separated list $y_1,\ldo
       \comment{Neighbourhood values}  \\
  \end{array}
  $}
-\caption[Abstract syntax of \protelis{}]{\protelis{} abstract syntax, colored to emphasize definition and application (red), functions (blue), variables (green), and special field calculus operators (purple).}
+\caption[Abstract syntax of \protelis{}]{\protelis{} abstract syntax, colored to emphasize definition and application (red), functions (blue), variables (green), and special Field Calculus operators (purple).}
 \label{img:protelis-syntax}
 \end{figure}
 
@@ -7353,13 +7354,13 @@ The alias is created automatically as the bare method name for single imports or
 
 % Note that between {\tt apply} and Java reflection, Protelis offers many of the features of first-class functions.
 %
-% Critically, however, there are important questions about how to manage aggregate/local relations for distributed first-class functions~\cite{beal2009dynamically}, which are not yet addressed by field calculus.
+% Critically, however, there are important questions about how to manage aggregate/local relations for distributed first-class functions~\cite{beal2009dynamically}, which are not yet addressed by Field Calculus.
 %
 % For this reason, Protelis does not yet offer any neighbourhood summary operations applicable to either Java or Protelis functions.
 
 \section{Special Field Calculus Operators}
 \label{protelis-special-operators}
-The remaining constructs of Protelis are the special operations specific to field calculus, dealing with the movement of information across space and time:
+The remaining constructs of Protelis are the special operations specific to Field Calculus, dealing with the movement of information across space and time:
 \begin{itemize}
 	\item Construct $\repK{\vb{\var}}{\we}{\bodyK{\overline{\s};}}$ defines a locally-visible variable $\vb{\var}$ initialized with $\we$ and updated at each computation round with the result of executing body $\bodyK{\overline{\s};}$: it provides a means to define a field evolving over time according to the update policy specified by $\bodyK{\overline{\s};}$.
 %
@@ -7438,7 +7439,7 @@ In \protelis{}, we designed an architecture, subsumed in \Cref{img:protelis-abst
 %
 A similar architecture can also be found in The ONE-SAPERE, a simulator developed to let the real SAPERE middleware run in a controlled environment \cite{Fernandez-MarquezASSC14}.
 %
-First, a parser translates a text Protelis program into a valid representation of field calculus semantics.
+First, a parser translates a text Protelis program into a valid representation of Field Calculus semantics.
 %
 This is then executed by a Protelis interpreter at regular intervals, communicating with other devices and drawing contextual information from environment variables implemented as a tuple store of $(token, value)$ pairs.
 %
@@ -7652,17 +7653,17 @@ The toolchain also comprises a distributed statistical model checker (\multivest
 
 We contributed in a range of advances in the area of patterns for self-organisation.
 
-One of the most important contributions is a process algebra for SAPERE (\Cref{sapere-process-algebra}). The key contribution of a process algebra to provide a unequivocal description of the components of the infrastructure, and also serves as an executable specification.
+An important contributions is a process algebra for SAPERE (\Cref{sapere-process-algebra}). The key contribution of a process algebra to provide a unequivocal description of the components of the infrastructure, and also serves as an executable specification.
 
 We devised and studied some spatial patterns: the Channel (\Cref{pattern-channel}), that marks devices along the path connecting a source and a destination, and the Anticipative Gradient (\Cref{anticipative-gradient}).
 %
-The latter represents a contribution towards the anticipative adaptation: if information about future events is available, it can be exploited in a totally distributed manner to improve the overall system performance.
+The latter represents a contribution towards anticipative adaptation: if information about future events is available, it can be exploited in a totally distributed manner to improve the overall system performance.
 %
 Also, we studied a urban sport mass event dataset in order to understand which methodologies may be suitable to obtain such data (\Cref{crowd-disaster-prediction}).
 
 We often focussed on the problem of crowd steering (\Cref{jos-museum}) and evacuation (\Cref{crowd-evacuation,ahpc-steering}): besides the importance for safety and efficiency, this problems turns out to be rather complex to face, presenting continuously moving participants whose actions in space-time must impact the outcome of the steering system.
 %
-We faced the problem at a different grain, from indoor evacuation (\Cref{crowd-evacuation}) to urban-level crowd steering (\Cref{ahpc-steering}).
+We faced the problem at different grains, from indoor evacuation (\Cref{crowd-evacuation}) to urban-level crowd steering (\Cref{ahpc-steering}).
 
 We developed, relying on the SAPERE metaphors, a resource discovery system (\Cref{resource-discovery}).
 %
@@ -7676,7 +7677,7 @@ This thesis contributed to the advancements in aggregate programming in three wa
 \begin{enumerate}
  \item A novel tuple based coordination medium is devised, that closes the gap between Linda-inspired coordination and space-time programming (\Cref{linda-space-time});
  \item A first study on scale-independent computations in space and time is provided, building upon Field Calculus a new operator demonstrably eventually consistent (\Cref{scale-independent-computations});
- \item The implementation of a practical version of Field Calculus, enriched with higher order functions: \protelis{} (\Cref{protelis-language}).
+ \item The implementation of a practical programming language inspired to the Field Calculus, enriched with higher order functions: \protelis{} (\Cref{protelis-language}).
 \end{enumerate}
 
 We have developed the first practical distributed language which provides guarantees that all distributed algorithms expressed in this language are resilient against changes in the number and distribution of devices in a network.
@@ -7687,11 +7688,11 @@ If it is possible to ensure that the only programs that can be expressed are tho
 
 When we introduced Field Calculus in \Cref{field-calculus}, we said that it is more a theoretical than a practical framework.
 %
-Building on the foundation of field calculus, the subsequent step is to provide a framework that can be practically leveraged to express a collection of higher-level ``building block'' algorithms, each a simple and generalized basis element of an ``algebra'' of programs with desirable resilience properties \cite{BV-FOCAS2014}.
+Building on the foundation of Field Calculus, the subsequent step is to provide a framework that can be practically leveraged to express a collection of higher-level ``building block'' algorithms, each a simple and generalized basis element of an ``algebra'' of programs with desirable resilience properties \cite{BV-FOCAS2014}.
 %
 On top of this, higher-level library APIs can be built, enabling simple and transparent construction of robust distributed systems.
 %
-Any practical implementation of field calculus must embed a field calculus interpreter within an architecture that handles the pragmatics of communication, execution, and interfacing with hardware, operating system, and other software.
+Any practical implementation of Field Calculus must embed a Field Calculus interpreter within an architecture that handles the pragmatics of communication, execution, and interfacing with hardware, operating system, and other software.
 %
 At the same time, it is important that this system be readily portable across both simulation environments and real networked devices.
 %
@@ -7699,11 +7700,11 @@ Finally, both system development and maintainability are greatly enhanced if the
 %
 Here is where \protelis{} comes into play: it represents our effort to bring Field Calculus to practice, satisfying the requirements stated above.
 %
-\protelis{} was designed upon Field Calculus and not on GPI-calculus.
+\protelis{} was designed upon Field Calculus rather than higher level, more safe derivatives like GPI-Calculus (\Cref{gpi-calculus}).
 %
 The reason is that we wanted to provide a language whose underlying mechanisms may allow for any kind of program to be written, and not just ``well behaving'' ones.
 
-\protelis{} ensures universality and coherence between aggregate specification and local execution by building atop the field calculus introduced by Viroli et al\cite{VDB-FOCLASA-CIC2013}.
+\protelis{} ensures universality and coherence between aggregate specification and local execution by building atop the Field Calculus introduced by Viroli et al\cite{VDB-FOCLASA-CIC2013}.
 %
 At the same time, accessibility, portability, and ease of integration are ensured by embedding \protelis{} within Java.
 %
@@ -7715,7 +7716,7 @@ This implementation of \protelis{} thus forms an important component of the tool
 
 This work brought notable advancements in the field of engineering for pervasive ecosystems.
 %
-As most research efforts do, however, it also shed a think ray of light upon new lines of research that deserve to be explored.
+As most research efforts do, however, it also shed a thin ray of light upon new lines of research that deserve to be explored.
 %
 In this section, we will try to list some of the work directions that are still to be pursued, both in terms of scientific research and tool development.
 
@@ -7770,7 +7771,7 @@ Also, we observe that the current situation is much like that of cooperative mul
 %
 We think that \protelis{} could be a new architecture for decentralized pre-emptive management of distributed processes, which provides these same sort of capabilities for distributed systems.
 %
-In particular, we want to exploit the extension to first-class functions of field calculus model, which enables its alignment mechanism for pre-emptive control of the scope of a distributed computation to be used for process managament.
+In particular, we want to exploit the extension to first-class functions of Field Calculus model, which enables its alignment mechanism for pre-emptive control of the scope of a distributed computation to be used for process managament.
 %
 These mechanisms enable the construction of a prototype ``thread manager'' for pervasive and distributed systems, including the ability to preempt a process, to kill a rogue process, or to dynamically manage the scope of a process.
 %
@@ -7847,7 +7848,7 @@ We now move on to proving that each of the operators in \calculus{} provides suf
 \begin{lem}\label{thm:math}
   Any built-in operators $\cmath$ is consistent and has output $\field_o$ continuous on $\validdomain{\field_o}$ if its inputs $\field_i$ are approximable and continuous on $\validdomain{\field_i}$.
 \end{lem}
-  The output of any $\cmath$ operator at any event $\event$ is affected only by the values of its inputs at $\event$.  $\cmath$ is also continuous by definition, and (by the semantics of field calculus) requires all inputs to have the same domain.
+  The output of any $\cmath$ operator at any event $\event$ is affected only by the values of its inputs at $\event$.  $\cmath$ is also continuous by definition, and (by the semantics of Field Calculus) requires all inputs to have the same domain.
   %
   Thus, since the composition of continuous functions is continuous, when each input $\field_i$ is continuous on $\validdomain{\field_i}$, it must be the case that the output $\field_o$ is continuous on $\bigcap_i \validdomain{\field_i}$.
   %
@@ -7927,7 +7928,7 @@ We now move on to proving that each of the operators in \calculus{} provides suf
 \begin{lem}\label{thm:GPI}
   Operator $\OneOp$ is eventually consistent and has output $\field_o$ continuous on $\validdomain{\field_o}$ in the future of some spatial section $\sectionof{\manifold}$ if its environment $\environment$ and inputs $\field_i$ are approximable and continuous in the future of some spatial section $\sectionof{\manifold}$ on $\validdomain{\environment}$ and $\validdomain{\field_i}$ respectively.
 \end{lem}
-  Following the semantics of field calculus to interpret the $\OneOp$ algorithm given in Section~3 of the main text, the first element of the tuple computed in the {\tt rep} statement implements a computation of distance via the triangle inequality ({\tt nbr-range} is a metric, and a metric multiplied by a continuous positive scalar function is still a metric).
+  Following the semantics of Field Calculus to interpret the $\OneOp$ algorithm given in Section~3 of the main text, the first element of the tuple computed in the {\tt rep} statement implements a computation of distance via the triangle inequality ({\tt nbr-range} is a metric, and a metric multiplied by a continuous positive scalar function is still a metric).
 
   Thus, if there is a spatial section $\sectionof{\manifold}$ such that the values of all of the inputs do not change at any device on $\futureof{\sectionof{\manifold}}$, then since we assume that manifolds have finite diameter, it must be the case that all the distance estimates (first values of the {\tt distance-integral} tuple) eventually converge to a continuous field of distance estimates.
   %
